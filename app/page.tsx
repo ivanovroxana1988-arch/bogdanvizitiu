@@ -1,12 +1,13 @@
 import {ArrowLink,Eyebrow} from '@/components/ui'
 import {ConceptImage,EditorialImage} from '@/components/portrait'
-import {getPrograms} from '@/lib/data'
+import {getPrograms,getPublishedInsights} from '@/lib/data'
 import {getCopy,getLocale} from '@/lib/i18n'
 
 export default function Home({searchParams}:{searchParams?:{lang?:string}}){
   const locale=getLocale(searchParams?.lang)
   const copy=getCopy(locale).home
   const programs=getPrograms(locale)
+  const insights=getPublishedInsights(locale).slice(0,3)
   const areas=[...copy.areas,{title:copy.performanceTitle,description:copy.performanceDescription}]
 
   return <>
@@ -24,6 +25,8 @@ export default function Home({searchParams}:{searchParams?:{lang?:string}}){
     <section className="programs shell"><div className="program-intro"><Eyebrow>{copy.programsEyebrow}</Eyebrow><h2>{copy.programsStatement}</h2><p>{copy.programsIntro}</p></div>{programs.map((program,i)=><article className="program-row" key={program.slug}><span>0{i+1}</span><h3>{program.title}</h3><p>{program.description}</p><ArrowLink href={`/programs/${program.slug}`}>{copy.viewProgram}</ArrowLink></article>)}</section>
 
     <section className="dark"><div className="shell corporate-grid"><div className="corporate-title"><Eyebrow>{copy.corporateEyebrow}</Eyebrow><h2>{copy.corporateTitle}</h2></div><div className="corporate-copy"><p>{copy.corporateText}</p><ArrowLink href="/corporate">{copy.corporateCta}</ArrowLink></div><div className="domain-list">{copy.corporateDomains.map((domain,i)=><div key={domain}><span>0{i+1}</span>{domain}</div>)}</div><ConceptImage asset="workshopNotes" kind="wide"/></div></section>
+
+    <section className="programs shell"><div className="section-head"><div><Eyebrow>{copy.insightsEyebrow}</Eyebrow><h2 className="section-title">{copy.insightsTitle}</h2></div><ArrowLink href="/insights">{copy.viewInsights}</ArrowLink></div>{insights.map((insight,i)=><article className="program-row" key={insight.slug}><span>0{i+1}</span><h3>{insight.title}</h3><p>{insight.excerpt}</p><ArrowLink href={`/insights/${insight.slug}`}>{copy.readArticle}</ArrowLink></article>)}</section>
 
     <section className="final-loop"><div className="shell final-grid"><h2>{copy.finalTitle}</h2><div><p>{copy.finalText}</p><ArrowLink href="/contact">{copy.finalCta}</ArrowLink></div></div></section>
   </>
