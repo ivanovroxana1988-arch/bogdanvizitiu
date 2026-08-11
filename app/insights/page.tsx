@@ -7,7 +7,7 @@ import {getCopy,getLocale} from '@/lib/i18n'
 const insightImages:Record<string,'speaking'|'coaching'|'workshop'|'candid'>={
   'networkingul-nu-incepe-cu-schimbul-de-contacte':'speaking',
   'de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives':'coaching',
-  'nu-invatam-doar-cu-mintea-invatam-si-cu-emotiile':'workshop',
+  'nu-invatam-doar-cu-mintea':'workshop',
   'cat-din-viata-traim-pe-pilot-automat':'candid',
 }
 
