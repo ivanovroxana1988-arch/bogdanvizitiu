@@ -1,0 +1,256 @@
+{
+  "ro": {
+    "programs": {
+      "eyebrow": "Programe deschise",
+      "title": "Nu ai nevoie de încă un curs pe care să-l uiți luni.",
+      "intro": "Ai nevoie de un spațiu în care să lucrezi pe situații pe care chiar le întâlnești: conversații, relații, decizii și negocieri care au miză.",
+      "approachEyebrow": "Ce au în comun",
+      "approachTitle": "Înțelegi. Exersezi. Aplici.",
+      "approachItems": [
+        {"title": "Situații reale", "description": "Pornim de la contexte pe care le întâlnești deja, nu de la exemple care funcționează doar pe slide."},
+        {"title": "Practică", "description": "Conversația și exercițiul au loc în program, nu sunt lăsate ca temă pentru o zi care probabil nu vine."},
+        {"title": "Transfer", "description": "Ideea bună contează doar dacă te ajută să alegi sau să faci ceva diferit după program."}
+      ],
+      "choiceEyebrow": "Alege situația",
+      "choiceTitle": "Pe ce vrei să lucrezi?",
+      "viewProgram": "Vezi dacă ți se potrivește",
+      "tailoredTitle": "Problema este a echipei, nu doar a unui participant?",
+      "tailoredText": "Dacă situația ține de o echipă, de management sau de un context comercial comun, un program deschis poate să nu fie răspunsul potrivit.",
+      "tailoredCta": "Vezi programele pentru organizații"
+    },
+    "programDetail": {
+      "eyebrow": "Program deschis",
+      "recognitionEyebrow": "Poate recunoști situația",
+      "forWhomEyebrow": "Ți se potrivește?",
+      "notForEyebrow": "Ce nu este",
+      "problemEyebrow": "De ce contează",
+      "outcomesEyebrow": "Ce vrei să poți face diferit",
+      "learnEyebrow": "Ce lucrăm",
+      "formatEyebrow": "Practica",
+      "instructorEyebrow": "De ce Bogdan",
+      "instructorTitle": "Experiență din business, vânzări, management și dezvoltarea oamenilor.",
+      "instructorText": "Experiența lui trece prin vânzări, management, consultanță, training, coaching și antreprenoriat. În program, asta se traduce prin lucru pe situații reale, nu prin teorie livrată în gol.",
+      "faqEyebrow": "Reducem necunoscutele",
+      "faqTitle": "Date, locație și format",
+      "faqText": "Sunt anunțate separat pentru fiecare ediție. Dacă vrei să lucrezi tema cu o echipă sau într-un context organizațional, programul poate fi adaptat.",
+      "ctaEyebrow": "Următorul pas",
+      "cta": "Cere detalii"
+    },
+    "corporate": {
+      "eyebrow": "Pentru organizații",
+      "title": "Nu pornim de la curs. Pornim de la ce trebuie să funcționeze mai bine.",
+      "intro": "O echipă nu are nevoie de un program generic. Are nevoie de o intervenție care pornește de la conversațiile, deciziile și comportamentele care îi influențează rezultatele.",
+      "diagnosticEyebrow": "Înainte de format",
+      "diagnosticTitle": "Ce se întâmplă acum?",
+      "diagnosticItems": [
+        "Managerii evită sau amână conversațiile dificile.",
+        "Echipa muncește mult, dar acordurile și responsabilitățile rămân neclare.",
+        "Oamenii negociază sau vând foarte diferit și rezultatele depind prea mult de persoană.",
+        "Există o schimbare importantă, dar nu este încă limpede ce trebuie să facă oamenii diferit.",
+        "Managementul are nevoie să clarifice o problemă înainte să aleagă soluția."
+      ],
+      "sectionTitle": "Înainte să propun conținut, vreau să înțeleg problema.",
+      "sectionText": "Ce se întâmplă acum? Ce ar trebui să se întâmple diferit? Cine este implicat? Ce a fost deja încercat? Abia apoi decidem dacă este nevoie de training, workshop, facilitare, coaching sau o combinație între ele.",
+      "processEyebrow": "Cum construim intervenția",
+      "processTitle": "Problemă. Comportament. Format.",
+      "processItems": [
+        {"title": "Înțelegem problema", "description": "Clarificăm contextul, miza, oamenii implicați și ce a fost deja încercat."},
+        {"title": "Definim ce trebuie să fie diferit", "description": "Nu ne oprim la «mai mult leadership» sau «comunicare mai bună». Căutăm comportamente observabile și decizii concrete."},
+        {"title": "Alegem intervenția", "description": "Abia acum alegem formatul și exercițiile care au sens pentru situație."}
+      ],
+      "domainsEyebrow": "Unde lucrăm frecvent",
+      "domainsTitle": "Teme care apar în munca reală.",
+      "blocks": [
+        {"title": "Leadership", "description": "Pentru situațiile în care managerii au nevoie de mai multă claritate în roluri, decizii, responsabilitate și conversațiile cu oamenii lor."},
+        {"title": "Eficiența echipelor", "description": "Pentru echipe care muncesc mult, dar se lovesc de acorduri neclare, colaborare dificilă sau conversații amânate."},
+        {"title": "Negociere & vânzări", "description": "Pentru oameni care intră în conversații cu miză și au nevoie de mai multă pregătire, opțiuni și claritate asupra intereselor."},
+        {"title": "Sesiuni pentru management", "description": "Pentru momentele în care echipa de management nu are nevoie de încă o prezentare, ci de spațiu să clarifice problema și să decidă ce urmează."}
+      ],
+      "formatsEyebrow": "Formate posibile",
+      "formatsTitle": "Formatul urmează problema, nu invers.",
+      "formats": ["Training aplicat", "Workshop", "Facilitare", "Coaching"],
+      "proofEyebrow": "Experiența din spate",
+      "proofTitle": "Business înainte de sală.",
+      "proofText": "Bogdan a lucrat în vânzări, management comercial, consultanță, training și coaching și a coordonat echipe în contexte de business. Asta înseamnă că intervenția poate rămâne conectată la presiunea, limbajul și deciziile din organizație.",
+      "ctaTitle": "Ce ar trebui să funcționeze mai bine după intervenție?",
+      "cta": "Începem cu problema"
+    },
+    "speaking": {
+      "eyebrow": "Speaking & facilitare",
+      "title": "Nu vreau doar să țin o prezentare. Vreau să rămână o conversație.",
+      "intro": "Un eveniment merită timpul oamenilor atunci când le oferă o idee pe care o pot duce mai departe, nu doar o oră pe care au bifat-o în agendă.",
+      "questionEyebrow": "Înainte de scenă",
+      "questionTitle": "Ce vrem să rămână după eveniment?",
+      "questions": [
+        "Ce merită oamenii să vadă altfel?",
+        "Ce întrebare vrem să continue după sesiune?",
+        "Ce ar fi util să poată aplica atunci când se întorc la muncă?"
+      ],
+      "sectionTitle": "O idee bună trebuie să continue după ce se stinge microfonul.",
+      "paragraphs": [
+        "Pornesc de la audiență și de la întrebarea pe care vrem să o punem în mișcare. Ce merită oamenii să vadă altfel? Ce conversație vrem să înceapă după sesiune?",
+        "Temele pot include leadership, negociere, networking, relații profesionale, eficiența echipelor și deciziile dificile. Formatul se adaptează contextului: keynote, workshop, panel sau conversație facilitată.",
+        "Nu mă interesează să umplu scena cu mai multe idei decât poate folosi publicul. Mă interesează să rămână ceva suficient de clar încât oamenii să îl ducă înapoi în munca lor."
+      ],
+      "themesEyebrow": "Teme",
+      "themesTitle": "Idei care pot susține o conversație.",
+      "themes": ["Leadership", "Negociere", "Networking", "Relații profesionale", "Eficiența echipelor", "Decizii dificile"],
+      "formatsEyebrow": "Formate",
+      "formatsTitle": "În funcție de ce trebuie să se întâmple în sală.",
+      "formats": [
+        {"title": "Keynote", "description": "O idee centrală, construită pentru audiență și context."},
+        {"title": "Workshop", "description": "Mai mult spațiu pentru exercițiu, conversație și aplicare."},
+        {"title": "Panel", "description": "Întrebări care ajută discuția să treacă de răspunsurile convenabile."},
+        {"title": "Facilitare", "description": "Structură pentru o conversație în care audiența sau echipa trebuie să participe, nu doar să asculte."}
+      ],
+      "ctaTitle": "Ce conversație vrei să înceapă după eveniment?",
+      "cta": "Discută contextul evenimentului"
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Cu ce situație lucrezi acum?",
+      "intro": "Nu trebuie să știi deja ce format îți trebuie. Spune-mi ce se întâmplă, cine este implicat și ce ai vrea să fie diferit. De acolo putem vedea dacă și cum are sens să lucrăm împreună.",
+      "formEyebrow": "Începe cu contextul",
+      "formTitle": "Nu ai nevoie de un brief perfect.",
+      "formText": "Câteva rânduri despre situație sunt suficiente pentru început.",
+      "name": "Nume",
+      "email": "Email",
+      "interest": "Context",
+      "interestPlaceholder": "Echipă, negociere, leadership, networking, eveniment...",
+      "message": "Ce se întâmplă acum?",
+      "messagePlaceholder": "Contextul, oamenii implicați, ce ai observat...",
+      "desiredChange": "Ce ai vrea să fie diferit?",
+      "desiredChangePlaceholder": "Ce rezultat, comportament sau conversație ar conta?",
+      "scope": "Este pentru tine sau pentru o organizație?",
+      "scopeOptions": ["Pentru mine", "Pentru o echipă / organizație"],
+      "submit": "Începem conversația"
+    }
+  },
+  "en": {
+    "programs": {
+      "eyebrow": "Open programs",
+      "title": "You do not need another course to forget by Monday.",
+      "intro": "You need a place to work on situations you actually face: conversations, relationships, decisions and negotiations where something is at stake.",
+      "approachEyebrow": "What they share",
+      "approachTitle": "Understand. Practice. Apply.",
+      "approachItems": [
+        {"title": "Real situations", "description": "We begin with contexts you already encounter, not examples that only work on a slide."},
+        {"title": "Practice", "description": "Conversation and practice happen inside the program rather than being left as homework for a day that probably never comes."},
+        {"title": "Transfer", "description": "A good idea matters only when it helps you choose or do something differently after the program."}
+      ],
+      "choiceEyebrow": "Choose the situation",
+      "choiceTitle": "What do you want to work on?",
+      "viewProgram": "See if it fits",
+      "tailoredTitle": "Is the challenge bigger than one participant?",
+      "tailoredText": "If the situation belongs to a team, management group or shared commercial context, an open program may not be the right answer.",
+      "tailoredCta": "Explore programs for organizations"
+    },
+    "programDetail": {
+      "eyebrow": "Open program",
+      "recognitionEyebrow": "You may recognize the situation",
+      "forWhomEyebrow": "Is it for you?",
+      "notForEyebrow": "What it is not",
+      "problemEyebrow": "Why it matters",
+      "outcomesEyebrow": "What you want to do differently",
+      "learnEyebrow": "What we work on",
+      "formatEyebrow": "The practice",
+      "instructorEyebrow": "Why Bogdan",
+      "instructorTitle": "Experience across business, sales, management and people development.",
+      "instructorText": "His experience spans sales, management, consulting, training, coaching and entrepreneurship. In the program, that means working with real situations rather than theory delivered in isolation.",
+      "faqEyebrow": "Reducing uncertainty",
+      "faqTitle": "Dates, location and format",
+      "faqText": "These are announced separately for each edition. If you want to work on the topic with a team or inside an organization, the program can be adapted.",
+      "ctaEyebrow": "Next step",
+      "cta": "Request details"
+    },
+    "corporate": {
+      "eyebrow": "For organizations",
+      "title": "We do not start with the course. We start with what needs to work better.",
+      "intro": "A team does not need a generic program. It needs an intervention built around the conversations, decisions and behaviors that shape its results.",
+      "diagnosticEyebrow": "Before the format",
+      "diagnosticTitle": "What is happening now?",
+      "diagnosticItems": [
+        "Managers avoid or postpone difficult conversations.",
+        "The team works hard, but agreements and responsibilities remain unclear.",
+        "People negotiate or sell in very different ways and results depend too heavily on the individual.",
+        "An important change is underway, but it is not yet clear what people need to do differently.",
+        "Management needs to clarify the problem before choosing the solution."
+      ],
+      "sectionTitle": "Before I propose content, I want to understand the problem.",
+      "sectionText": "What is happening now? What needs to happen differently? Who is involved? What has already been tried? Only then do we decide whether the right format is training, a workshop, facilitation, coaching or a combination of them.",
+      "processEyebrow": "How we build the intervention",
+      "processTitle": "Problem. Behavior. Format.",
+      "processItems": [
+        {"title": "Understand the problem", "description": "Clarify the context, stakes, people involved and what has already been tried."},
+        {"title": "Define what needs to be different", "description": "We do not stop at ‘more leadership’ or ‘better communication’. We look for observable behaviors and concrete decisions."},
+        {"title": "Choose the intervention", "description": "Only then do we choose the format and practice that make sense for the situation."}
+      ],
+      "domainsEyebrow": "Where we often work",
+      "domainsTitle": "Themes that show up in real work.",
+      "blocks": [
+        {"title": "Leadership", "description": "For situations where managers need greater clarity around roles, decisions, accountability and conversations with their people."},
+        {"title": "Team effectiveness", "description": "For teams that work hard but get caught in unclear agreements, difficult collaboration or conversations that keep being postponed."},
+        {"title": "Negotiation & sales", "description": "For people entering high-stakes conversations who need better preparation, more options and greater clarity about interests."},
+        {"title": "Management sessions", "description": "For moments when a management team does not need another presentation, but space to clarify the problem and decide what happens next."}
+      ],
+      "formatsEyebrow": "Possible formats",
+      "formatsTitle": "The format follows the problem, not the other way around.",
+      "formats": ["Applied training", "Workshop", "Facilitation", "Coaching"],
+      "proofEyebrow": "Experience behind the work",
+      "proofTitle": "Business before the training room.",
+      "proofText": "Bogdan has worked across sales, commercial management, consulting, training and coaching, and has led teams in business contexts. That helps keep the intervention connected to the pressure, language and decisions inside the organization.",
+      "ctaTitle": "What needs to work better after the intervention?",
+      "cta": "Start with the problem"
+    },
+    "speaking": {
+      "eyebrow": "Speaking & facilitation",
+      "title": "I do not just want to give a presentation. I want to leave a conversation behind.",
+      "intro": "An event is worth people's time when it gives them an idea they can carry forward, not simply another hour checked off the agenda.",
+      "questionEyebrow": "Before the stage",
+      "questionTitle": "What should remain after the event?",
+      "questions": [
+        "What is worth seeing differently?",
+        "What question should continue after the session?",
+        "What would be useful to apply when people return to work?"
+      ],
+      "sectionTitle": "A good idea should keep moving after the microphone is off.",
+      "paragraphs": [
+        "I start with the audience and the question we want to put into motion. What is worth seeing differently? What conversation should begin after the session?",
+        "Topics can include leadership, negotiation, networking, professional relationships, team effectiveness and difficult decisions. The format follows the context: keynote, workshop, panel or facilitated conversation.",
+        "I am not interested in filling the stage with more ideas than people can use. I want something clear enough to travel back into their real work."
+      ],
+      "themesEyebrow": "Themes",
+      "themesTitle": "Ideas that can support a conversation.",
+      "themes": ["Leadership", "Negotiation", "Networking", "Professional relationships", "Team effectiveness", "Difficult decisions"],
+      "formatsEyebrow": "Formats",
+      "formatsTitle": "Based on what needs to happen in the room.",
+      "formats": [
+        {"title": "Keynote", "description": "One central idea built for the audience and context."},
+        {"title": "Workshop", "description": "More room for practice, conversation and application."},
+        {"title": "Panel", "description": "Questions that help the discussion move beyond convenient answers."},
+        {"title": "Facilitation", "description": "Structure for a conversation where the audience or team needs to participate, not only listen."}
+      ],
+      "ctaTitle": "What conversation should begin after the event?",
+      "cta": "Discuss the event context"
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "What situation are you working with right now?",
+      "intro": "You do not need to know which format you need yet. Tell me what is happening, who is involved and what you would like to be different. From there, we can see whether and how it makes sense to work together.",
+      "formEyebrow": "Start with context",
+      "formTitle": "You do not need a perfect brief.",
+      "formText": "A few lines about the situation are enough to begin.",
+      "name": "Name",
+      "email": "Email",
+      "interest": "Context",
+      "interestPlaceholder": "Team, negotiation, leadership, networking, event...",
+      "message": "What is happening now?",
+      "messagePlaceholder": "The context, people involved, what you have noticed...",
+      "desiredChange": "What would you like to be different?",
+      "desiredChangePlaceholder": "What result, behavior or conversation would matter?",
+      "scope": "Is this for you or for an organization?",
+      "scopeOptions": ["For me", "For a team / organization"],
+      "submit": "Start the conversation"
+    }
+  }
+}
