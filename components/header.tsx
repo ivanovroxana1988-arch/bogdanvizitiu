@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import {usePathname,useSearchParams} from 'next/navigation'
-import {useEffect,useState} from 'react'
-import {getCopy,getLocale,withLocale} from '@/lib/i18n'
+import {Suspense,useEffect,useState} from 'react'
+import {getCopy,getLocale,withLocale,type Locale} from '@/lib/i18n'
 
 const links = [
   ['about','/about'],
@@ -14,16 +14,9 @@ const links = [
   ['contact','/contact'],
 ] as const
 
-export function Header(){
+function HeaderView({locale,pathname}:{locale:Locale;pathname:string}){
   const [open,setOpen]=useState(false)
-  const pathname=usePathname()
-  const searchParams=useSearchParams()
-  const locale=getLocale(searchParams.get('lang'))
   const copy=getCopy(locale)
-
-  useEffect(()=>{
-    document.documentElement.lang=locale
-  },[locale])
 
   return <header className="header"><div className="shell nav">
     <Link href={withLocale('/',locale)} className="logo" aria-label="Bogdan Vizitiu home">BGV.</Link>
@@ -38,4 +31,20 @@ export function Header(){
       <Link className="nav-cta" href={withLocale('/programs',locale)}>{copy.navigation.programsCta}</Link>
     </nav>
   </div></header>
+}
+
+function LocalizedHeader(){
+  const pathname=usePathname()
+  const searchParams=useSearchParams()
+  const locale=getLocale(searchParams.get('lang'))
+
+  useEffect(()=>{
+    document.documentElement.lang=locale
+  },[locale])
+
+  return <HeaderView locale={locale} pathname={pathname}/>
+}
+
+export function Header(){
+  return <Suspense fallback={<HeaderView locale="ro" pathname="/"/>}><LocalizedHeader/></Suspense>
 }

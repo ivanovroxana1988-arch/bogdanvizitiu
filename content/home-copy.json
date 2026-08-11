@@ -1,0 +1,132 @@
+{
+  "ro": {
+    "eyebrow": "Bogdan Vizitiu",
+    "headline": ["Leadership.", "Negociere.", "Relații care contează."],
+    "introduction": "Programe, coaching și conversații de lucru pentru oameni care conduc, negociază, construiesc echipe și iau decizii cu miză.",
+    "primaryCta": "Vezi programele",
+    "secondaryCta": "Despre Bogdan",
+    "areasEyebrow": "Arii de lucru",
+    "areas": [
+      {
+        "title": "Leadership & echipe",
+        "description": "Roluri mai clare, conversații mai bune și decizii pe care oamenii le pot înțelege și urma."
+      },
+      {
+        "title": "Negociere & vânzări",
+        "description": "Mai puțină improvizație. Mai multă pregătire, interese explicite și opțiuni reale."
+      },
+      {
+        "title": "Networking & influență",
+        "description": "Relații profesionale construite cu intenție, relevanță și reciprocitate, dincolo de simplul schimb de contacte."
+      }
+    ],
+    "positionQuote": "Claritatea schimbă conversațiile. Conversațiile schimbă rezultatele.",
+    "positionText": "Bogdan lucrează la intersecția dintre leadership, negociere, relații profesionale și performanță. Punctul de plecare este situația reală: oamenii implicați, tensiunile, alegerile și ceea ce trebuie să funcționeze mai bine după conversație.",
+    "programsEyebrow": "Experiențe de învățare",
+    "programsTitle": "Programe deschise",
+    "programsIntro": "Formate practice pentru profesioniști, manageri și antreprenori care vor să transforme ideile în comportamente pe care le pot folosi imediat.",
+    "viewProgram": "Vezi programul",
+    "corporateEyebrow": "Pentru organizații",
+    "corporateTitle": "Nu pornim de la curs. Pornim de la ce trebuie să funcționeze mai bine.",
+    "corporateText": "Workshopuri și programe construite în jurul provocărilor reale ale organizației, de la leadership și colaborare la negociere, vânzări și conversații cu miză.",
+    "corporateCta": "Programe corporate",
+    "corporateDomains": ["Leadership", "Eficiența echipelor", "Negociere & vânzări"],
+    "methodEyebrow": "Cum lucrez",
+    "methodTitle": "Învățarea devine utilă când se vede în ce faci diferit.",
+    "methodItems": [
+      {
+        "title": "Înțelegi",
+        "description": "Clarificăm situația, oamenii, interesele și problema care merită de fapt rezolvată."
+      },
+      {
+        "title": "Exersezi",
+        "description": "Lucrăm prin întrebări, exemple, simulări și situații suficient de apropiate de realitate încât să conteze."
+      },
+      {
+        "title": "Aplici",
+        "description": "Pleci cu idei și instrumente pe care le poți testa în conversația, decizia sau relația următoare."
+      }
+    ],
+    "insightsEyebrow": "Idei & observații",
+    "insightsTitle": "Resurse",
+    "viewInsights": "Vezi toate resursele",
+    "readArticle": "Citește articolul",
+    "speakingEyebrow": "Speaking & facilitare",
+    "speakingTitle": "Conversații care merită timpul oamenilor din sală.",
+    "speakingText": "Keynote-uri, workshopuri, paneluri și sesiuni construite în jurul unei idei relevante pentru audiență și al unei conversații care continuă după eveniment.",
+    "speakingCta": "Evenimente & workshopuri",
+    "newsletterTitle": "Idei despre leadership, negociere și relațiile din spatele rezultatelor.",
+    "newsletterText": "Note, cadre de lucru și observații publicate ocazional de Bogdan. Fără zgomot inutil.",
+    "followLinkedIn": "Urmărește pe LinkedIn",
+    "emailPlaceholder": "Adresa de email",
+    "subscribe": "Abonează-te",
+    "contactTitle": "Ai o provocare reală? Începem de acolo.",
+    "contactOptions": "Programe corporate · Coaching · Speaking\nParteneriate · Cursuri deschise",
+    "contactCta": "Scrie-mi"
+  },
+  "en": {
+    "eyebrow": "Bogdan Vizitiu",
+    "headline": ["Leadership.", "Negotiation.", "Relationships that matter."],
+    "introduction": "Programs, coaching and working conversations for people who lead, negotiate, build teams and make consequential decisions.",
+    "primaryCta": "Explore programs",
+    "secondaryCta": "About Bogdan",
+    "areasEyebrow": "Areas of work",
+    "areas": [
+      {
+        "title": "Leadership & teams",
+        "description": "Clearer roles, better conversations and decisions people can understand and act on."
+      },
+      {
+        "title": "Negotiation & sales",
+        "description": "Less improvisation. Better preparation, explicit interests and real options."
+      },
+      {
+        "title": "Networking & influence",
+        "description": "Professional relationships built with intention, relevance and reciprocity, beyond simply exchanging contacts."
+      }
+    ],
+    "positionQuote": "Clarity changes conversations. Conversations change outcomes.",
+    "positionText": "Bogdan works at the intersection of leadership, negotiation, professional relationships and performance. The starting point is the real situation: the people involved, the tensions, the choices and what needs to work better after the conversation.",
+    "programsEyebrow": "Learning experiences",
+    "programsTitle": "Open programs",
+    "programsIntro": "Practical formats for professionals, managers and entrepreneurs who want to turn ideas into behaviors they can use immediately.",
+    "viewProgram": "View program",
+    "corporateEyebrow": "For organizations",
+    "corporateTitle": "We do not start with a course. We start with what needs to work better.",
+    "corporateText": "Workshops and programs designed around real organizational challenges, from leadership and collaboration to negotiation, sales and high-stakes conversations.",
+    "corporateCta": "Corporate programs",
+    "corporateDomains": ["Leadership", "Team effectiveness", "Negotiation & sales"],
+    "methodEyebrow": "How I work",
+    "methodTitle": "Learning becomes useful when it changes what you do.",
+    "methodItems": [
+      {
+        "title": "Understand",
+        "description": "Clarify the situation, the people, the interests and the problem actually worth solving."
+      },
+      {
+        "title": "Practice",
+        "description": "Work through questions, examples, simulations and situations close enough to reality to matter."
+      },
+      {
+        "title": "Apply",
+        "description": "Leave with ideas and tools you can test in your next conversation, decision or professional relationship."
+      }
+    ],
+    "insightsEyebrow": "Ideas & observations",
+    "insightsTitle": "Insights",
+    "viewInsights": "View all insights",
+    "readArticle": "Read article",
+    "speakingEyebrow": "Speaking & facilitation",
+    "speakingTitle": "Conversations worth the room's time.",
+    "speakingText": "Keynotes, workshops, panels and sessions built around an idea that matters to the audience and a conversation that continues after the event.",
+    "speakingCta": "Speaking & workshops",
+    "newsletterTitle": "Ideas on leadership, negotiation and the relationships behind results.",
+    "newsletterText": "Occasional notes, frameworks and observations from Bogdan. No unnecessary noise.",
+    "followLinkedIn": "Follow on LinkedIn",
+    "emailPlaceholder": "Email address",
+    "subscribe": "Subscribe",
+    "contactTitle": "Have a real challenge? Start there.",
+    "contactOptions": "Corporate programs · Coaching · Speaking\nPartnerships · Open courses",
+    "contactCta": "Get in touch"
+  }
+}

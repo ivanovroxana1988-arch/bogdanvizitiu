@@ -1,0 +1,48 @@
+{
+  "ro": {
+    "eyebrow": "Despre Bogdan",
+    "title": "Nu încep cu un model. Încep cu situația.",
+    "intro": "Când oamenii au de condus, negociat, colaborat sau decis, problema reală este rareori lipsa de informație. De cele mai multe ori, au nevoie de claritate, practică și o conversație mai bună.",
+    "sectionEyebrow": "Cum lucrez",
+    "sectionTitle": "Lucrurile utile trebuie să funcționeze și luni dimineață.",
+    "paragraphs": [
+      "Lucrez cu profesioniști, manageri, antreprenori și echipe în contexte în care oamenii, obiectivele și presiunea se întâlnesc: leadership, negociere, relații profesionale și performanță.",
+      "Încep prin a înțelege ce se întâmplă de fapt. Care este miza? Ce nu se spune? Ce trebuie decis? Unde se blochează conversația sau acțiunea? Abia apoi alegem instrumentele potrivite.",
+      "Uneori asta înseamnă structură. Alteori înseamnă exercițiu, feedback, o întrebare mai bună sau conversația care a fost amânată.",
+      "Scopul este simplu: mai multă claritate în momentul în care trebuie să alegi și ceva concret pe care îl poți folosi în munca reală."
+    ],
+    "blocks": [
+      {"title": "Leadership & echipe", "description": "Cum conduci cu mai multă claritate, fără să devii răspunsul la fiecare întrebare."},
+      {"title": "Negociere & vânzări", "description": "Cum pregătești conversația, înțelegi interesele și construiești opțiuni reale."},
+      {"title": "Networking & influență", "description": "Cum construiești relații profesionale care au sens și după schimbul de contacte."},
+      {"title": "Carieră & performanță", "description": "Cum separi ce contează de zgomot și transformi intenția în acțiune."},
+      {"title": "Coaching", "description": "Spațiu pentru claritate, decizii și conversații pe care nu le poți delega."},
+      {"title": "Training & facilitare", "description": "Învățare practică, construită în jurul oamenilor din sală și al contextului lor."}
+    ],
+    "ctaTitle": "Ai ceva de clarificat?",
+    "cta": "Începem cu o conversație"
+  },
+  "en": {
+    "eyebrow": "About Bogdan",
+    "title": "I don't start with a framework. I start with the situation.",
+    "intro": "When people need to lead, negotiate, collaborate or decide, the real problem is rarely a lack of information. More often, they need clarity, practice and a better conversation.",
+    "sectionEyebrow": "How I work",
+    "sectionTitle": "Useful ideas still need to work on Monday morning.",
+    "paragraphs": [
+      "I work with professionals, managers, entrepreneurs and teams where people, goals and pressure meet: leadership, negotiation, professional relationships and performance.",
+      "I start by understanding what is actually happening. What is at stake? What is not being said? What needs to be decided? Where is the conversation or action getting stuck? Only then do we choose the right tools.",
+      "Sometimes that means structure. Sometimes it means practice, feedback, a better question or the conversation that has been postponed.",
+      "The goal is simple: more clarity when a choice has to be made, and something concrete you can use in real work."
+    ],
+    "blocks": [
+      {"title": "Leadership & teams", "description": "Lead with greater clarity without becoming the answer to every question."},
+      {"title": "Negotiation & sales", "description": "Prepare the conversation, understand interests and build real options."},
+      {"title": "Networking & influence", "description": "Build professional relationships that still matter after the contact exchange."},
+      {"title": "Career & performance", "description": "Separate what matters from the noise and turn intention into action."},
+      {"title": "Coaching", "description": "Space for clarity, decisions and conversations you cannot delegate."},
+      {"title": "Training & facilitation", "description": "Practical learning built around the people in the room and their context."}
+    ],
+    "ctaTitle": "Something to clarify?",
+    "cta": "Start with a conversation"
+  }
+}
