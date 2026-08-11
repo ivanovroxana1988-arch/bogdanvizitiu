@@ -10,7 +10,6 @@ const links = [
   ['programs','/programs'],
   ['corporate','/corporate'],
   ['insights','/insights'],
-  ['speaking','/speaking'],
   ['contact','/contact'],
 ] as const
 
@@ -22,7 +21,7 @@ function HeaderView({locale,pathname}:{locale:Locale;pathname:string}){
     <Link href={withLocale('/',locale)} className="logo" aria-label="Bogdan Vizitiu home">BGV.</Link>
     <button className="menu" onClick={()=>setOpen(!open)} aria-expanded={open} aria-controls="navigation">{copy.navigation.menu}</button>
     <nav id="navigation" className={open?'open':''} aria-label="Main navigation">
-      {links.map(([key,href])=><Link onClick={()=>setOpen(false)} key={href} href={withLocale(href,locale)}>{copy.navigation[key]}</Link>)}
+      {links.map(([key,href])=><Link onClick={()=>setOpen(false)} key={href} href={withLocale(href,locale)} aria-current={pathname===href?'page':undefined}>{copy.navigation[key]}</Link>)}
       <span className="language-switch" aria-label="Language">
         <Link href={withLocale(pathname,'ro')} aria-current={locale==='ro'?'page':undefined}>RO</Link>
         <span aria-hidden> / </span>

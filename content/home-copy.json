@@ -1,7 +1,11 @@
 {
   "ro": {
     "eyebrow": "Bogdan Vizitiu",
-    "headline": ["Leadership.", "Negociere.", "Relații care contează."],
+    "headline": [
+      "Leadership.",
+      "Negociere.",
+      "Relații care contează."
+    ],
     "introduction": "Programe, coaching și conversații de lucru pentru oameni care conduc, negociază, construiesc echipe și iau decizii cu miză.",
     "primaryCta": "Vezi programele",
     "secondaryCta": "Despre Bogdan",
@@ -30,7 +34,11 @@
     "corporateTitle": "Nu pornim de la curs. Pornim de la ce trebuie să funcționeze mai bine.",
     "corporateText": "Workshopuri și programe construite în jurul provocărilor reale ale organizației, de la leadership și colaborare la negociere, vânzări și conversații cu miză.",
     "corporateCta": "Programe corporate",
-    "corporateDomains": ["Leadership", "Eficiența echipelor", "Negociere & vânzări"],
+    "corporateDomains": [
+      "Leadership",
+      "Eficiența echipelor",
+      "Negociere & vânzări"
+    ],
     "methodEyebrow": "Cum lucrez",
     "methodTitle": "Învățarea devine utilă când se vede în ce faci diferit.",
     "methodItems": [
@@ -62,11 +70,40 @@
     "subscribe": "Abonează-te",
     "contactTitle": "Ai o provocare reală? Începem de acolo.",
     "contactOptions": "Programe corporate · Coaching · Speaking\nParteneriate · Cursuri deschise",
-    "contactCta": "Scrie-mi"
+    "contactCta": "Scrie-mi",
+    "heroHeadline": [
+      "Soluția vine după ce",
+      "înțelegem problema.",
+      "Nu înainte."
+    ],
+    "heroIntro": "Un spațiu de lucru pentru conversații mai clare, alegeri mai bune și idei care pot fi puse în practică.",
+    "recognitionEyebrow": "Recunoaștere / 02",
+    "recognitionTitle": "Poate problema nu este că nu știi suficient.",
+    "recognitionItems": [
+      "Știi ce trebuie făcut, dar nu reușești să miști lucrurile.",
+      "Ai multe opțiuni, dar nicio alegere nu pare suficient de clară.",
+      "Echipa muncește, dar nu în aceeași direcție.",
+      "Conversațiile importante sunt amânate prea mult."
+    ],
+    "pointEyebrow": "Întrebare / 03",
+    "pointTitle": "Ce se întâmplă de fapt?",
+    "pointText": "Punctul de plecare este contextul real: oamenii implicați, tensiunile, alegerile și ceea ce trebuie să funcționeze mai bine după conversație.",
+    "areasTitle": "Patru perspective asupra muncii cu oamenii.",
+    "performanceTitle": "Carieră & performanță",
+    "performanceDescription": "Priorități și alegeri mai clare în contexte profesionale reale.",
+    "programsStatement": "Ideile devin utile când schimbă ceea ce facem.",
+    "finalEyebrow": "Întrebarea rămâne / 08",
+    "finalTitle": "Ce se întâmplă de fapt?",
+    "finalText": "Uneori, următorul pas devine clar abia după ce formulăm întrebarea potrivită.",
+    "finalCta": "Începem conversația"
   },
   "en": {
     "eyebrow": "Bogdan Vizitiu",
-    "headline": ["Leadership.", "Negotiation.", "Relationships that matter."],
+    "headline": [
+      "Leadership.",
+      "Negotiation.",
+      "Relationships that matter."
+    ],
     "introduction": "Programs, coaching and working conversations for people who lead, negotiate, build teams and make consequential decisions.",
     "primaryCta": "Explore programs",
     "secondaryCta": "About Bogdan",
@@ -95,7 +132,11 @@
     "corporateTitle": "We do not start with a course. We start with what needs to work better.",
     "corporateText": "Workshops and programs designed around real organizational challenges, from leadership and collaboration to negotiation, sales and high-stakes conversations.",
     "corporateCta": "Corporate programs",
-    "corporateDomains": ["Leadership", "Team effectiveness", "Negotiation & sales"],
+    "corporateDomains": [
+      "Leadership",
+      "Team effectiveness",
+      "Negotiation & sales"
+    ],
     "methodEyebrow": "How I work",
     "methodTitle": "Learning becomes useful when it changes what you do.",
     "methodItems": [
@@ -127,6 +168,31 @@
     "subscribe": "Subscribe",
     "contactTitle": "Have a real challenge? Start there.",
     "contactOptions": "Corporate programs · Coaching · Speaking\nPartnerships · Open courses",
-    "contactCta": "Get in touch"
+    "contactCta": "Get in touch",
+    "heroHeadline": [
+      "The solution comes after",
+      "we understand the problem.",
+      "Not before."
+    ],
+    "heroIntro": "A working space for clearer conversations, better choices and ideas that can be put into practice.",
+    "recognitionEyebrow": "Recognition / 02",
+    "recognitionTitle": "Maybe the problem is not that you do not know enough.",
+    "recognitionItems": [
+      "You know what needs to happen, but things are not moving.",
+      "You have many options, yet none feels clear enough.",
+      "The team is working, but not in the same direction.",
+      "Important conversations are postponed for too long."
+    ],
+    "pointEyebrow": "Question / 03",
+    "pointTitle": "What is actually happening?",
+    "pointText": "The starting point is the real context: the people involved, the tensions, the choices and what needs to work better after the conversation.",
+    "areasTitle": "Four perspectives on working with people.",
+    "performanceTitle": "Career & performance",
+    "performanceDescription": "Clearer priorities and choices in real professional contexts.",
+    "programsStatement": "Ideas become useful when they change what we do.",
+    "finalEyebrow": "The question remains / 08",
+    "finalTitle": "What is actually happening?",
+    "finalText": "Sometimes the next step only becomes clear after we find the right question.",
+    "finalCta": "Start a conversation"
   }
 }
