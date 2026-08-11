@@ -1,5 +1,5 @@
 import {ArrowLink,Eyebrow} from '@/components/ui'
-import {ConceptImage} from '@/components/portrait'
+import {EditorialImage} from '@/components/portrait'
 import {getCopy,getLocale} from '@/lib/i18n'
 import styles from '../commercial.module.css'
 
@@ -35,7 +35,9 @@ export default function Corporate({searchParams}:{searchParams?:{lang?:string}})
         <div><h2 className={styles.statement}>{copy.sectionTitle}</h2></div>
         <p className={styles.sectionIntro}>{copy.sectionText}</p>
       </div>
-      <ConceptImage asset="workshopNotes" kind="wide"/>
+      <div style={{maxWidth:'760px'}}>
+        <EditorialImage asset="coaching" kind="portrait"/>
+      </div>
     </section>
 
     <section className={styles.section}>
