@@ -2,12 +2,11 @@ import type {Metadata} from 'next'
 import {notFound} from 'next/navigation'
 import {getPublishedInsights,publishedInsightSlugs} from '@/lib/data'
 import {PageHero,Eyebrow,ArrowLink} from '@/components/ui'
-import {EditorialImage} from '@/components/portrait'
+import {ConceptImage,EditorialImage} from '@/components/portrait'
 import {getCopy,getLocale} from '@/lib/i18n'
 import styles from '../insights.module.css'
 
 const insightImages:Record<string,'speaking'|'coaching'|'workshop'|'candid'>={
-  'networkingul-nu-incepe-cu-schimbul-de-contacte':'speaking',
   'de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives':'coaching',
   'nu-invatam-doar-cu-mintea':'workshop',
   'cat-din-viata-traim-pe-pilot-automat':'candid',
@@ -63,6 +62,8 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
     day:'numeric',month:'long',year:'numeric'
   }).format(new Date(`${insight.publishedAt}T12:00:00Z`))
 
+  const isNetworking=insight.slug==='networkingul-nu-incepe-cu-schimbul-de-contacte'
+
   return <>
     <PageHero eyebrow={insight.category} title={insight.title} intro={insight.subtitle || insight.excerpt}/>
     <section className={`shell ${styles.articleGrid}`}>
@@ -71,7 +72,10 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
         <p><strong>Bogdan Vizitiu</strong><br/>{date}<br/>{insight.readTime}</p>
       </aside>
       <article className={styles.body}>
-        <EditorialImage asset={insightImages[insight.slug]||'candid'} kind="event" className={styles.heroImage}/>
+        {isNetworking
+          ? <ConceptImage asset="insightsWorkspace" kind="wide" className={styles.heroImage}/>
+          : <EditorialImage asset={insightImages[insight.slug]||'candid'} kind="event" className={styles.heroImage}/>
+        }
 
         {insight.intro.map(paragraph=><p key={paragraph}>{paragraph}</p>)}
 
