@@ -54,6 +54,27 @@
         "title": "Aplicăm",
         "description": "Transformăm claritatea în ceva concret: o conversație, o decizie, un comportament sau un experiment pe care îl poți testa în realitate."
       }
+    ],
+    "proofEyebrow": "Repere profesionale",
+    "proofTitle": "Experiență reală, în contexte diferite.",
+    "proofIntro": "Câteva repere din traseul profesional care stă în spatele modului în care lucrez astăzi.",
+    "proofItems": [
+      {
+        "title": "Orange România",
+        "description": "Concept Store Manager (2011–2012) și Direct Sales Manager (2012–2016), cu responsabilități de strategie comercială, dezvoltare de echipă, coaching și mentoring."
+      },
+      {
+        "title": "Trend Consult",
+        "description": "Consultanță comercială, training și coaching în vânzări, dezvoltarea afacerilor și personalizarea curriculei, începând din 2016."
+      },
+      {
+        "title": "YoungMinds",
+        "description": "Fondator și managing partner al brandului YoungMinds, dezvoltat în zona de afterschool și loc de joacă."
+      },
+      {
+        "title": "Formare & educație",
+        "description": "Formator ANC (2013), Manager de Proiect ANC (2010), master în Management în Turism Internațional la ASE București și studii de Geografia Turismului la Universitatea din București."
+      }
     ]
   },
   "en": {
@@ -110,6 +131,27 @@
       {
         "title": "Apply",
         "description": "We turn clarity into something concrete: a conversation, a decision, a behavior or an experiment you can test in the real world."
+      }
+    ],
+    "proofEyebrow": "Professional milestones",
+    "proofTitle": "Real experience, across different contexts.",
+    "proofIntro": "A few selected milestones from the professional journey behind how I work today.",
+    "proofItems": [
+      {
+        "title": "Orange Romania",
+        "description": "Concept Store Manager (2011–2012) and Direct Sales Manager (2012–2016), with responsibilities spanning commercial strategy, team development, coaching and mentoring."
+      },
+      {
+        "title": "Trend Consult",
+        "description": "Commercial consulting, sales training and coaching, business development and curriculum customization, starting in 2016."
+      },
+      {
+        "title": "YoungMinds",
+        "description": "Founder and managing partner of YoungMinds, a brand developed around after-school education and play."
+      },
+      {
+        "title": "Training & education",
+        "description": "ANC-certified Trainer (2013), ANC-certified Project Manager (2010), a master’s degree in International Tourism Management from Bucharest University of Economic Studies, and Geography of Tourism studies at the University of Bucharest."
       }
     ]
   }
