@@ -1,4 +1,5 @@
 import {ArrowLink,Eyebrow} from '@/components/ui'
+import {ConceptImage} from '@/components/portrait'
 import {getPrograms} from '@/lib/data'
 import {getCopy,getLocale} from '@/lib/i18n'
 import styles from '../commercial.module.css'
@@ -32,6 +33,9 @@ export default function Programs({searchParams}:{searchParams?:{lang?:string}}){
           <h3>{item.title}</h3>
           <p>{item.description}</p>
         </article>)}
+      </div>
+      <div style={{marginTop:'clamp(54px,7vw,90px)'}}>
+        <ConceptImage asset="planningDesk" kind="wide"/>
       </div>
     </section>
 
