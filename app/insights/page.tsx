@@ -41,7 +41,7 @@ export default function Insights({searchParams}:{searchParams?:{lang?:string}}){
     />
     <section className={`shell ${styles.indexSection}`}><div className={styles.grid}>
       <article className={styles.feature}>
-        <ConceptImage asset="insightsWorkspace" kind="wide" className={styles.featureImage}/>
+        <ConceptImage asset="networkingEditorial" kind="wide" className={styles.featureImage}/>
         <div className={styles.meta}><span className={styles.category}>{feature.category}</span><span>{feature.readTime}</span></div>
         <h2>{feature.title}</h2><p>{feature.excerpt}</p>
         <ArrowLink href={`/insights/${feature.slug}`}>{copy.readArticle}</ArrowLink>
