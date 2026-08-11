@@ -1,9 +1,17 @@
 import products from '@/content/products.json'
 import insightItems from '@/content/insights.json'
 import livesInsight from '@/content/insights/lives.json'
+import emotionsLearningInsight from '@/content/insights/emotii-invatare.json'
+import autopilotInsight from '@/content/insights/pilot-automat.json'
 import type {Locale} from '@/lib/i18n'
 
-const allInsightItems=[insightItems[0],livesInsight,...insightItems.slice(1)]
+const allInsightItems=[
+  insightItems[0],
+  livesInsight,
+  emotionsLearningInsight,
+  autopilotInsight,
+  ...insightItems.slice(1),
+]
 
 export function getPrograms(locale: Locale) {
   return products.map((product) => ({
