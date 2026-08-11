@@ -27,5 +27,22 @@ export default function About({searchParams}:{searchParams?:{lang?:string}}){
         <div style={{marginTop:'36px'}}><ArrowLink href="/programs">{copy.cta}</ArrowLink></div>
       </div>
     </section>
+
+    <section className="shell areas" id="experience">
+      <div className="section-head">
+        <div>
+          <Eyebrow>{copy.experienceEyebrow}</Eyebrow>
+          <h2 className="section-title">{copy.experienceTitle}</h2>
+        </div>
+        <p>{copy.experienceIntro}</p>
+      </div>
+      <div className="area-grid">
+        {copy.experienceItems.map((item,i)=><article className="area" key={item.title}>
+          <span className="num">0{i+1}</span>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </article>)}
+      </div>
+    </section>
   </>
 }
