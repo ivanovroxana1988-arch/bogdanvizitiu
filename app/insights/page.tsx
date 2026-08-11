@@ -10,6 +10,7 @@ const insightImages:Record<string,'speaking'|'coaching'|'workshop'|'candid'>={
   'de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives':'coaching',
   'nu-invatam-doar-cu-mintea':'workshop',
   'cat-din-viata-traim-pe-pilot-automat':'candid',
+  'negocierea-nu-este-doar-despre-argumente':'workshop',
 }
 
 export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):Metadata{
