@@ -6,16 +6,58 @@
     "status": "validated",
     "proof": ["Stup"],
     "description": {
-      "ro": "Un program despre cum construiești relații profesionale relevante, fără conversații de complezență și fără colecționarea inutilă de contacte.",
-      "en": "A program about building relevant professional relationships without empty small talk or collecting contacts for the sake of it."
+      "ro": "Pentru oamenii care cunosc mulți oameni, dar vor să construiască relații profesionale care continuă după prima conversație.",
+      "en": "For people who meet plenty of people but want to build professional relationships that continue after the first conversation."
     },
     "detail": {
-      "ro": "Networkingul util înseamnă claritate despre cine ești, ce poți oferi, ce cauți și cum construiești încredere în timp. Programul transformă ideea vagă de «a cunoaște oameni» într-o practică profesională intenționată.",
-      "en": "Useful networking starts with clarity about who you are, what you can offer, what you are looking for and how trust is built over time. The program turns the vague idea of “meeting people” into an intentional professional practice."
+      "ro": "Cunoști oameni. Dar câte dintre relațiile acelea chiar funcționează? Networkingul nu începe cu numărul de contacte. Începe cu felul în care intri într-o conversație, ce observi și ce faci după ce conversația s-a terminat.",
+      "en": "You meet people. But how many of those relationships actually go somewhere? Networking does not start with the number of contacts. It starts with how you enter a conversation, what you notice and what you do after the conversation ends."
+    },
+    "forWhomTitle": {
+      "ro": "Pentru cei care nu vor să «facă networking». Vor să construiască relații.",
+      "en": "For people who do not want to ‘do networking’. They want to build relationships."
+    },
+    "forWhomText": {
+      "ro": "Manageri, antreprenori, specialiști, oameni de vânzări și profesioniști pentru care oportunitățile, colaborarea sau influența depind și de relațiile pe care le construiesc.",
+      "en": "Managers, entrepreneurs, specialists, sales professionals and others whose opportunities, collaboration or influence also depend on the relationships they build."
+    },
+    "problemTitle": {
+      "ro": "Să cunoști oameni nu este același lucru cu a construi relații.",
+      "en": "Meeting people is not the same as building relationships."
+    },
+    "problemText": {
+      "ro": "Poți pleca de la un eveniment cu zece contacte și niciuna dintre conversații să nu ducă nicăieri. Problema nu este întotdeauna lipsa de oameni. De multe ori este lipsa de intenție, relevanță sau continuitate.",
+      "en": "You can leave an event with ten new contacts and still have none of those conversations lead anywhere. The problem is not always a lack of people. Often it is a lack of intention, relevance or continuity."
+    },
+    "learnTitle": {
+      "ro": "Ce faci înainte, în timpul și după conversație.",
+      "en": "What you do before, during and after the conversation."
     },
     "topics": {
-      "ro": ["Construirea relațiilor profesionale", "Conversații cu sens", "Reciprocitate și încredere", "Follow-up și continuitate"],
-      "en": ["Building professional relationships", "Meaningful conversations", "Reciprocity and trust", "Follow-up and continuity"]
+      "ro": [
+        "Cum intri într-o conversație fără să o transformi într-un pitch",
+        "Cum descoperi ce contează pentru celălalt",
+        "Cum construiești reciprocitate fără să devină tranzacțională",
+        "Cum faci follow-up fără să apari doar când ai nevoie de ceva"
+      ],
+      "en": [
+        "How to enter a conversation without turning it into a pitch",
+        "How to discover what matters to the other person",
+        "How to build reciprocity without making it transactional",
+        "How to follow up without appearing only when you need something"
+      ]
+    },
+    "formatTitle": {
+      "ro": "Conversații, exercițiu, situații reale.",
+      "en": "Conversations, practice, real situations."
+    },
+    "formatText": {
+      "ro": "Lucrăm pe situații de networking pe care le întâlnești deja: evenimente, introduceri, conversații unu-la-unu, follow-up și relații pe care vrei să le dezvolți. Ideea nu este să memorezi replici, ci să observi mai bine și să alegi mai intenționat ce faci.",
+      "en": "We work with networking situations you already encounter: events, introductions, one-to-one conversations, follow-up and relationships you want to develop. The goal is not to memorize lines, but to notice more and choose your actions more intentionally."
+    },
+    "ctaTitle": {
+      "ro": "Cu cine ai vrea să construiești o relație mai bună?",
+      "en": "Who would you like to build a better professional relationship with?"
     },
     "dates": [],
     "price": null
@@ -27,16 +69,58 @@
     "status": "validated",
     "proof": ["Stup"],
     "description": {
-      "ro": "Un program practic despre pregătire, interese, opțiuni și conversațiile care fac diferența într-o negociere.",
-      "en": "A practical program about preparation, interests, options and the conversations that make the difference in a negotiation."
+      "ro": "Pentru profesioniști care vor să intre în negocieri mai bine pregătiți, cu interese mai clare și mai multe opțiuni decât «da» sau «nu».",
+      "en": "For professionals who want to enter negotiations better prepared, with clearer interests and more options than simply ‘yes’ or ‘no’."
     },
     "detail": {
-      "ro": "Negocierea nu începe la masă și nu se reduce la argumente bune. Programul lucrează cu pregătirea, pozițiile și interesele, alternativele, întrebările și relația dintre rezultat și colaborarea pe termen lung.",
-      "en": "Negotiation starts before people sit at the table and it is not simply about having better arguments. The program works with preparation, positions and interests, alternatives, questions and the relationship between outcomes and long-term collaboration."
+      "ro": "Negocierea începe cu mult înainte să ajungi la masă. Începe cu ce vrei, ce crezi că vrea celălalt și ce faci dacă răspunsul nu este cel pe care îl așteptai.",
+      "en": "Negotiation begins long before you sit down at the table. It starts with what you want, what you think the other person wants and what you will do if the answer is not the one you expected."
+    },
+    "forWhomTitle": {
+      "ro": "Pentru oamenii care negociază chiar și când întâlnirea nu se numește negociere.",
+      "en": "For people who negotiate even when the meeting is not called a negotiation."
+    },
+    "forWhomText": {
+      "ro": "Manageri, antreprenori, oameni de vânzări și profesioniști care discută prețuri, termene, priorități, resurse, responsabilități sau decizii în care interesele nu sunt perfect aliniate.",
+      "en": "Managers, entrepreneurs, sales professionals and others who discuss price, timing, priorities, resources, responsibilities or decisions where interests are not perfectly aligned."
+    },
+    "problemTitle": {
+      "ro": "Argumentele bune nu repară o negociere prost pregătită.",
+      "en": "Good arguments do not repair a poorly prepared negotiation."
+    },
+    "problemText": {
+      "ro": "Când intri într-o negociere fără să știi clar ce urmărești, unde poți ceda și ce alternative ai, presiunea începe să decidă în locul tău. Pregătirea bună îți dă mai multe alegeri înainte să ai nevoie de ele.",
+      "en": "When you enter a negotiation without clarity about what you want, where you can move and what alternatives you have, pressure starts making decisions for you. Good preparation gives you more choices before you need them."
+    },
+    "learnTitle": {
+      "ro": "Pregătire, interese, opțiuni și conversația propriu-zisă.",
+      "en": "Preparation, interests, options and the conversation itself."
     },
     "topics": {
-      "ro": ["Pregătirea negocierii", "Poziții și interese", "Alternative și opțiuni", "Întrebări, influență și acord"],
-      "en": ["Negotiation preparation", "Positions and interests", "Alternatives and options", "Questions, influence and agreement"]
+      "ro": [
+        "Cum clarifici miza și ce vrei de fapt",
+        "Cum separi pozițiile declarate de interesele din spatele lor",
+        "Cum îți construiești alternative înainte să fii presat să spui da",
+        "Cum folosești întrebările și gestionezi momentele dificile"
+      ],
+      "en": [
+        "How to clarify the stakes and what you actually want",
+        "How to separate stated positions from the interests behind them",
+        "How to build alternatives before pressure pushes you toward yes",
+        "How to use questions and handle difficult moments"
+      ]
+    },
+    "formatTitle": {
+      "ro": "Negocierea se învață negociind.",
+      "en": "You learn negotiation by negotiating."
+    },
+    "formatText": {
+      "ro": "Lucrăm prin scenarii, conversații, exerciții și reflecție pe situații reale. Nu urmărim o formulă perfectă, ci capacitatea de a observa mai bine ce se întâmplă și de a avea mai multe opțiuni când conversația devine dificilă.",
+      "en": "We work through scenarios, conversations, exercises and reflection on real situations. The goal is not a perfect formula, but the ability to notice what is happening and have more options when the conversation becomes difficult."
+    },
+    "ctaTitle": {
+      "ro": "Ce negociere ai vrea să pregătești mai bine data viitoare?",
+      "en": "Which negotiation would you like to prepare better next time?"
     },
     "dates": [],
     "price": null
