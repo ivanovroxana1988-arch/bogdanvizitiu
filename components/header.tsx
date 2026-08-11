@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import {usePathname,useSearchParams} from 'next/navigation'
-import {useState} from 'react'
+import {useEffect,useState} from 'react'
 import {getCopy,getLocale,withLocale} from '@/lib/i18n'
 
 const links = [
@@ -21,6 +21,10 @@ export function Header(){
   const locale=getLocale(searchParams.get('lang'))
   const copy=getCopy(locale)
 
+  useEffect(()=>{
+    document.documentElement.lang=locale
+  },[locale])
+
   return <header className="header"><div className="shell nav">
     <Link href={withLocale('/',locale)} className="logo" aria-label="Bogdan Vizitiu home">BGV.</Link>
     <button className="menu" onClick={()=>setOpen(!open)} aria-expanded={open} aria-controls="navigation">{copy.navigation.menu}</button>
@@ -28,7 +32,7 @@ export function Header(){
       {links.map(([key,href])=><Link onClick={()=>setOpen(false)} key={href} href={withLocale(href,locale)}>{copy.navigation[key]}</Link>)}
       <span className="language-switch" aria-label="Language">
         <Link href={withLocale(pathname,'ro')} aria-current={locale==='ro'?'page':undefined}>RO</Link>
-        <span aria-hidden>/</span>
+        <span aria-hidden> / </span>
         <Link href={withLocale(pathname,'en')} aria-current={locale==='en'?'page':undefined}>EN</Link>
       </span>
       <Link className="nav-cta" href={withLocale('/programs',locale)}>{copy.navigation.programsCta}</Link>
