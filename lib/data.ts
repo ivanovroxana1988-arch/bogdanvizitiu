@@ -3,7 +3,7 @@ import insightItems from '@/content/insights.json'
 import livesInsight from '@/content/insights/lives.json'
 import type {Locale} from '@/lib/i18n'
 
-const allInsightItems=[...insightItems,livesInsight]
+const allInsightItems=[insightItems[0],livesInsight,...insightItems.slice(1)]
 
 export function getPrograms(locale: Locale) {
   return products.map((product) => ({
