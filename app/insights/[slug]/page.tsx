@@ -4,6 +4,7 @@ import {getPublishedInsights,publishedInsightSlugs} from '@/lib/data'
 import {PageHero,Eyebrow,ArrowLink} from '@/components/ui'
 import {EditorialImage} from '@/components/portrait'
 import {getCopy,getLocale} from '@/lib/i18n'
+import styles from '../insights.module.css'
 
 const insightImages:Record<string,'speaking'|'coaching'|'workshop'|'candid'>={
   'networkingul-nu-incepe-cu-schimbul-de-contacte':'speaking',
@@ -45,6 +46,7 @@ export function generateMetadata({params,searchParams}:{params:{slug:string};sea
       authors:['Bogdan Vizitiu'],
       locale:locale==='ro'?'ro_RO':'en_GB',
     },
+    twitter:{card:'summary_large_image',title:insight.title,description:insight.excerpt},
   }
 }
 
@@ -62,13 +64,13 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
 
   return <>
     <PageHero eyebrow={insight.category} title={insight.title} intro={insight.subtitle || insight.excerpt}/>
-    <section className="shell content-grid">
-      <aside>
+    <section className={`shell ${styles.articleGrid}`}>
+      <aside className={styles.articleMeta}>
         <Eyebrow>{locale==='ro'?'Articol':'Article'}</Eyebrow>
         <p><strong>Bogdan Vizitiu</strong><br/>{date}<br/>{insight.readTime}</p>
       </aside>
-      <article className="prose">
-        <EditorialImage asset={insightImages[insight.slug]||'candid'} kind="event"/>
+      <article className={styles.body}>
+        <EditorialImage asset={insightImages[insight.slug]||'candid'} kind="event" className={styles.heroImage}/>
 
         {insight.intro.map(paragraph=><p key={paragraph}>{paragraph}</p>)}
 
@@ -92,12 +94,12 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
           </ul>
         </section>}
 
-        <section>
+        <section className={styles.related}>
           <h2>{locale==='ro'?'Mai departe':'Continue reading'}</h2>
           {related.map(item=><p key={item.slug}><ArrowLink href={`/insights/${item.slug}`}>{item.title}</ArrowLink></p>)}
         </section>
 
-        <ArrowLink href="/insights">{copy.back}</ArrowLink>
+        <ArrowLink href="/insights" className={styles.back}>{copy.back}</ArrowLink>
       </article>
     </section>
   </>
