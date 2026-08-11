@@ -17,8 +17,27 @@
     "roleLine": "Coach. Trainer. Antreprenor.",
     "closing": "Dar, înainte de toate, un partener de gândire pentru situațiile în care răspunsul nu este chiar atât de simplu pe cât părea la început.",
     "cta": "Descoperă cum lucrez",
+    "experienceEyebrow": "Experiență",
     "experienceTitle": "Experiența din spatele conversației",
-    "experienceItems": []
+    "experienceIntro": "Perspectiva mea s-a format în contexte în care deciziile au consecințe, relațiile contează, iar teoria trebuie să supraviețuiască întâlnirii cu realitatea.",
+    "experienceItems": [
+      {
+        "title": "Business & antreprenoriat",
+        "description": "Decizii, priorități, responsabilitate și nevoia de a transforma intenția în ceva care funcționează în practică."
+      },
+      {
+        "title": "Vânzări & negociere",
+        "description": "Conversații cu miză, interese diferite, presiune și căutarea unor opțiuni care să poată susține o relație, nu doar un rezultat imediat."
+      },
+      {
+        "title": "Leadership & oameni",
+        "description": "Situații în care rezultatele depind de claritate, încredere, responsabilitate și felul în care oamenii lucrează împreună."
+      },
+      {
+        "title": "Training & coaching",
+        "description": "Spații în care întrebările bune, practica și feedbackul pot schimba felul în care cineva vede și abordează o situație reală."
+      }
+    ]
   },
   "en": {
     "eyebrow": "About Bogdan",
@@ -38,7 +57,26 @@
     "roleLine": "Coach. Trainer. Entrepreneur.",
     "closing": "But before any of those, a thinking partner for situations where the answer is not quite as simple as it first appeared.",
     "cta": "Discover how I work",
+    "experienceEyebrow": "Experience",
     "experienceTitle": "The experience behind the conversation",
-    "experienceItems": []
+    "experienceIntro": "My perspective was shaped in contexts where decisions have consequences, relationships matter and theory has to survive contact with reality.",
+    "experienceItems": [
+      {
+        "title": "Business & entrepreneurship",
+        "description": "Decisions, priorities, accountability and the need to turn intention into something that actually works in practice."
+      },
+      {
+        "title": "Sales & negotiation",
+        "description": "High-stakes conversations, different interests, pressure and the search for options that can sustain a relationship, not just an immediate result."
+      },
+      {
+        "title": "Leadership & people",
+        "description": "Situations where outcomes depend on clarity, trust, accountability and how people work together."
+      },
+      {
+        "title": "Training & coaching",
+        "description": "Spaces where better questions, practice and feedback can change how someone sees and approaches a real situation."
+      }
+    ]
   }
 }
