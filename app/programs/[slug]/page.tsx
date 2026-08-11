@@ -16,13 +16,13 @@ export default function Program({params,searchParams}:{params:{slug:string};sear
   return <>
     <PageHero eyebrow={copy.eyebrow} title={program.title} intro={program.detail}/>
     <section className="shell detail-list">
-      <article><Eyebrow>{copy.forWhomEyebrow}</Eyebrow><h2>{copy.forWhomTitle}</h2><p>{copy.forWhomText}</p></article>
-      <article><Eyebrow>{copy.problemEyebrow}</Eyebrow><h2>{copy.problemTitle}</h2><p>{copy.problemText}</p></article>
-      <article><Eyebrow>{copy.learnEyebrow}</Eyebrow><h2>{copy.learnTitle}</h2><ul>{program.topics.map(topic=><li key={topic}>{topic}</li>)}</ul></article>
-      <article><Eyebrow>{copy.formatEyebrow}</Eyebrow><h2>{copy.formatTitle}</h2><p>{copy.formatText}</p></article>
+      <article><Eyebrow>{copy.forWhomEyebrow}</Eyebrow><h2>{program.forWhomTitle}</h2><p>{program.forWhomText}</p></article>
+      <article><Eyebrow>{copy.problemEyebrow}</Eyebrow><h2>{program.problemTitle}</h2><p>{program.problemText}</p></article>
+      <article><Eyebrow>{copy.learnEyebrow}</Eyebrow><h2>{program.learnTitle}</h2><ul>{program.topics.map(topic=><li key={topic}>{topic}</li>)}</ul></article>
+      <article><Eyebrow>{copy.formatEyebrow}</Eyebrow><h2>{program.formatTitle}</h2><p>{program.formatText}</p></article>
       <article><Eyebrow>{copy.instructorEyebrow}</Eyebrow><h2>{copy.instructorTitle}</h2><p>{copy.instructorText}</p></article>
       <article><Eyebrow>{copy.faqEyebrow}</Eyebrow><h2>{copy.faqTitle}</h2><p>{copy.faqText}</p></article>
     </section>
-    <section className="shell cta-panel"><h2>{copy.ctaTitle}</h2><ArrowLink href="/contact">{copy.cta}</ArrowLink></section>
+    <section className="shell cta-panel"><h2>{program.ctaTitle}</h2><ArrowLink href="/contact">{copy.cta}</ArrowLink></section>
   </>
 }
