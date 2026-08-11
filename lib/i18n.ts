@@ -1,4 +1,5 @@
 import siteCopy from '@/content/site-copy.json'
+import homeCopy from '@/content/home-copy.json'
 
 export type Locale = 'ro' | 'en'
 
@@ -7,7 +8,10 @@ export function getLocale(value?: string | null): Locale {
 }
 
 export function getCopy(locale: Locale) {
-  return siteCopy[locale]
+  return {
+    ...siteCopy[locale],
+    home: homeCopy[locale],
+  }
 }
 
 export function withLocale(href: string, locale: Locale) {
