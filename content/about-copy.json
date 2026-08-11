@@ -1,50 +1,44 @@
 {
   "ro": {
     "eyebrow": "Despre Bogdan",
-    "title": "Nu încep cu soluția. Încep cu ce se întâmplă de fapt.",
-    "intro": "Nu orice problemă are nevoie de încă o soluție. Uneori, primul lucru de care ai nevoie este să vezi mai clar situația, să pui întrebarea potrivită și să înțelegi ce poți face diferit.",
-    "sectionEyebrow": "Cum lucrez",
-    "sectionTitle": "Lucrurile utile trebuie să funcționeze și luni dimineață.",
+    "titleLines": [
+      "Nu încep cu soluția.",
+      "Încep cu ce se întâmplă de fapt."
+    ],
+    "intro": "Am petrecut o bună parte din carieră în business, vânzări, leadership, training și coaching. În contexte diferite, am observat același lucru: oamenii nu au întotdeauna nevoie de mai multă informație. De multe ori știu deja foarte multe.",
     "paragraphs": [
-      "De aici începe munca mea: cu realitatea așa cum este, nu cu un răspuns pregătit dinainte.",
-      "Lucrez cu profesioniști, manageri, antreprenori și echipe în contexte în care oamenii, obiectivele și presiunea se întâlnesc: leadership, negociere, relații profesionale și performanță.",
-      "Încep prin a înțelege ce se întâmplă de fapt. Care este miza? Ce nu se spune? Ce trebuie decis? Unde se blochează conversația sau acțiunea? Abia apoi alegem instrumentele potrivite.",
-      "Uneori asta înseamnă structură. Alteori înseamnă exercițiu, feedback, o întrebare mai bună sau conversația care a fost amânată.",
-      "Scopul este simplu: mai multă claritate în momentul în care trebuie să alegi și ceva concret pe care îl poți folosi în munca reală."
+      "Au nevoie să înțeleagă mai bine situația în care sunt.",
+      "Ce se întâmplă cu adevărat? Ce încearcă să obțină? Ce îi ține pe loc? Ce nu văd încă? Și, mai ales, ce pot face diferit de aici înainte?",
+      "Asta este și felul în care lucrez.",
+      "Nu cred în soluții universale aplicate mecanic oamenilor. Folosesc modele, instrumente și experiență, dar ele vin după ce înțelegem problema, nu înainte.",
+      "Fie că vorbim despre leadership, negociere, networking, performanță sau o decizie profesională dificilă, pentru mine munca bună începe cu o conversație suficient de sinceră încât să putem vedea lucrurile așa cum sunt.",
+      "Apoi putem face ceva cu ele."
     ],
-    "blocks": [
-      {"title": "Leadership & echipe", "description": "Cum conduci cu mai multă claritate, fără să devii răspunsul la fiecare întrebare."},
-      {"title": "Negociere & vânzări", "description": "Cum pregătești conversația, înțelegi interesele și construiești opțiuni reale."},
-      {"title": "Networking & influență", "description": "Cum construiești relații profesionale care au sens și după schimbul de contacte."},
-      {"title": "Carieră & performanță", "description": "Cum separi ce contează de zgomot și transformi intenția în acțiune."},
-      {"title": "Coaching", "description": "Spațiu pentru claritate, decizii și conversații pe care nu le poți delega."},
-      {"title": "Training & facilitare", "description": "Învățare practică, construită în jurul oamenilor din sală și al contextului lor."}
-    ],
-    "ctaTitle": "Ai ceva de clarificat?",
-    "cta": "Începem cu o conversație"
+    "roleLine": "Coach. Trainer. Antreprenor.",
+    "closing": "Dar, înainte de toate, un partener de gândire pentru situațiile în care răspunsul nu este chiar atât de simplu pe cât părea la început.",
+    "cta": "Descoperă cum lucrez",
+    "experienceTitle": "Experiența din spatele conversației",
+    "experienceItems": []
   },
   "en": {
     "eyebrow": "About Bogdan",
-    "title": "I don't start with the solution. I start with what is actually happening.",
-    "intro": "Not every problem needs another solution. Sometimes the first thing you need is to see the situation more clearly, ask the right question and understand what you can do differently.",
-    "sectionEyebrow": "How I work",
-    "sectionTitle": "Useful ideas still need to work on Monday morning.",
+    "titleLines": [
+      "I don’t start with the solution.",
+      "I start with what is actually happening."
+    ],
+    "intro": "I have spent a significant part of my career in business, sales, leadership, training and coaching. Across very different contexts, I kept noticing the same thing: people do not always need more information. Often, they already know a great deal.",
     "paragraphs": [
-      "That is where my work begins: with reality as it is, not with an answer prepared in advance.",
-      "I work with professionals, managers, entrepreneurs and teams where people, goals and pressure meet: leadership, negotiation, professional relationships and performance.",
-      "I start by understanding what is actually happening. What is at stake? What is not being said? What needs to be decided? Where is the conversation or action getting stuck? Only then do we choose the right tools.",
-      "Sometimes that means structure. Sometimes it means practice, feedback, a better question or the conversation that has been postponed.",
-      "The goal is simple: more clarity when a choice has to be made, and something concrete you can use in real work."
+      "They need to understand the situation they are in more clearly.",
+      "What is really happening? What are they trying to achieve? What is holding them back? What are they not seeing yet? And, above all, what can they do differently from here?",
+      "That is also how I work.",
+      "I do not believe in universal solutions applied mechanically to people. I use models, tools and experience, but they come after we understand the problem, not before.",
+      "Whether we are talking about leadership, negotiation, networking, performance or a difficult professional decision, good work begins, for me, with a conversation honest enough to let us see things as they are.",
+      "Then we can do something with them."
     ],
-    "blocks": [
-      {"title": "Leadership & teams", "description": "Lead with greater clarity without becoming the answer to every question."},
-      {"title": "Negotiation & sales", "description": "Prepare the conversation, understand interests and build real options."},
-      {"title": "Networking & influence", "description": "Build professional relationships that still matter after the contact exchange."},
-      {"title": "Career & performance", "description": "Separate what matters from the noise and turn intention into action."},
-      {"title": "Coaching", "description": "Space for clarity, decisions and conversations you cannot delegate."},
-      {"title": "Training & facilitation", "description": "Practical learning built around the people in the room and their context."}
-    ],
-    "ctaTitle": "Something to clarify?",
-    "cta": "Start with a conversation"
+    "roleLine": "Coach. Trainer. Entrepreneur.",
+    "closing": "But before any of those, a thinking partner for situations where the answer is not quite as simple as it first appeared.",
+    "cta": "Discover how I work",
+    "experienceTitle": "The experience behind the conversation",
+    "experienceItems": []
   }
 }
