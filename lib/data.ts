@@ -8,7 +8,15 @@ export function getPrograms(locale: Locale) {
     title: product.title[locale],
     description: product.description[locale],
     detail: product.detail[locale],
+    forWhomTitle: product.forWhomTitle[locale],
+    forWhomText: product.forWhomText[locale],
+    problemTitle: product.problemTitle[locale],
+    problemText: product.problemText[locale],
+    learnTitle: product.learnTitle[locale],
     topics: product.topics[locale],
+    formatTitle: product.formatTitle[locale],
+    formatText: product.formatText[locale],
+    ctaTitle: product.ctaTitle[locale],
     proof: product.proof,
   }))
 }
