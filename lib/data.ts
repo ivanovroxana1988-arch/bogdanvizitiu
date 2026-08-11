@@ -61,5 +61,12 @@ export function getInsights(locale: Locale) {
   }))
 }
 
+export function getPublishedInsights(locale: Locale) {
+  return getInsights(locale).filter((insight) => insight.status === 'published')
+}
+
 export const programSlugs = products.map((product) => product.slug)
 export const insightSlugs = allInsightItems.map((insight) => insight.slug)
+export const publishedInsightSlugs = allInsightItems
+  .filter((insight) => insight.status === 'published')
+  .map((insight) => insight.slug)
