@@ -18,7 +18,7 @@ export default function OpenGraphImage(){
       fontFamily:'Arial, sans-serif',
     }}>
       <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-        <div style={{fontSize:34,fontWeight:700,letterSpacing:-1}}>BGV<span style={{color:'#315F78'}}>.</span></div>
+        <div style={{display:'flex',fontSize:34,fontWeight:700,letterSpacing:-1}}>BGV<span style={{color:'#315F78'}}>.</span></div>
         <div style={{fontSize:22,color:'#315F78'}}>bogdanvizitiu.com</div>
       </div>
       <div style={{display:'flex',flexDirection:'column',maxWidth:930}}>
