@@ -37,6 +37,44 @@
       "status": "asset-missing"
     }
   },
+  "concepts": {
+    "workshopNotes": {
+      "src": "https://unsplash.com/photos/ZEVl7apdxrA/download?force=true&w=1800",
+      "alt": "Caiet și instrumente de scris pe o masă, cu un workshop neclar în fundal",
+      "usage": "training and corporate context only; never presented as a Bogdan Vizitiu event",
+      "status": "approved",
+      "rights_status": "licensed",
+      "source": "Unsplash",
+      "source_url": "https://unsplash.com/photos/notebook-and-pens-on-table-with-blurred-audience-and-speaker-ZEVl7apdxrA",
+      "license": "Unsplash License",
+      "license_url": "https://unsplash.com/license",
+      "credit": "maks_d"
+    },
+    "architectureStair": {
+      "src": "https://unsplash.com/photos/H4c1u0IAbS0/download?force=true&w=1800",
+      "alt": "Scară spiralată modernă desenată de lumină și umbre",
+      "usage": "editorial concept for perspective, transition and insights",
+      "status": "approved",
+      "rights_status": "licensed",
+      "source": "Unsplash",
+      "source_url": "https://unsplash.com/photos/modern-spiral-staircase-with-dramatic-shadows-and-light-H4c1u0IAbS0",
+      "license": "Unsplash License",
+      "license_url": "https://unsplash.com/license",
+      "credit": "Ilnur (@mrw0rld)"
+    },
+    "planningDesk": {
+      "src": "https://unsplash.com/photos/alS_6YuAsXI/download?force=true&w=1800",
+      "alt": "Mâini ținând un caiet deschis lângă laptop și cafea",
+      "usage": "program and planning context only",
+      "status": "approved",
+      "rights_status": "licensed",
+      "source": "Unsplash",
+      "source_url": "https://unsplash.com/photos/hands-holding-a-blank-notebook-with-coffee-and-laptop-alS_6YuAsXI",
+      "license": "Unsplash License",
+      "license_url": "https://unsplash.com/license",
+      "credit": "Kelly Sikkema (@kellysikkema)"
+    }
+  },
   "appearances": [],
-  "editorialNote": "Do not render missing assets as real photographs. Add approved files at the exact paths above, then change status to approved. Appearance records require a title, outlet, date, URL, and verification source."
+  "editorialNote": "First-party photography remains the only source for Bogdan's likeness and real-event representation. Concept photography may be used only as atmospheric/contextual imagery when rights_status is licensed and status is approved. Never imply that stock subjects are Bogdan, his clients, or participants in his events."
 }
