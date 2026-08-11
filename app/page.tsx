@@ -1,5 +1,3 @@
-import { ArrowLink, Eyebrow } from '@/components/ui'
-import { Portrait } from '@/components/portrait'
+import { Homepage } from '@/components/homepage'
 import { getPublicProducts } from '@/lib/content/load-content'
-
-export default function Home(){const products=getPublicProducts('ro');return <><section className="hero shell"><div className="hero-grid"><div className="hero-copy"><Eyebrow>Bogdan Vizitiu</Eyebrow><h1>Bogdan<br/>Vizitiu.</h1><p className="lead">Coach · Trainer · Antreprenor · Facilitator</p><div className="actions"><ArrowLink href="/cursuri">Vezi cursurile</ArrowLink><a className="text-link" href="/despre">Despre Bogdan</a></div></div><Portrait/></div></section><section className="areas shell"><Eyebrow>Domenii</Eyebrow><div className="area-grid">{['Leadership & Teams','Negotiation & Sales','Networking & Influence','Career & Personal Performance'].map((area,index)=><article className="area" key={area}><span className="num">0{index+1}</span><h3>{area}</h3></article>)}</div></section>{products.length>0&&<section className="programs shell"><Eyebrow>Cursuri deschise</Eyebrow>{products.map((p,i)=><article className="program-row" key={p.slug}><span>0{i+1}</span><h3>{p.title}</h3><p>{p.description}</p><ArrowLink href={`/cursuri/${p.slug}`}>{p.cta}</ArrowLink></article>)}</section>}<section className="contact-band shell"><h2>Hai să discutăm.</h2><ArrowLink href="/contact">Contact</ArrowLink></section></>}
+export default function Home(){return <Homepage locale="ro" products={getPublicProducts('ro')} />}

@@ -1,42 +1,17 @@
-type EditorialImageProps = {
-  kind?: "portrait" | "event" | "workshop" | "insight";
-  label?: string;
-  className?: string;
-};
+import { EditorialMedia } from './editorial-image'
 
-/**
- * Editorial photography placeholder.
- * Replace this component with `next/image` once Bogdan's approved photography is available.
- * Recommended crops: portrait 4:5, event/workshop 3:2, insight 16:10.
- */
-export function EditorialImage({
-  kind = "portrait",
-  label,
-  className = "",
-}: EditorialImageProps) {
-  const accessibleLabel =
-    label ??
-    (kind === "portrait"
-      ? "Portrait photography placeholder for Bogdan Vizitiu"
-      : `${kind} photography placeholder`);
+/** Compatibility wrapper for internal pages. New work should use the named image treatments. */
+export const Portrait = ({ event = false }: { event?: boolean }) => event
+  ? <EditorialMedia mediaKey="speaking" label="Speaking documentation" crop="3:2" treatment="color" />
+  : <EditorialMedia mediaKey="portraitDark" label="Editorial portrait" crop="4:5" treatment="monochrome" />
 
-  return (
-    <div
-      className={`editorial-image editorial-image--${kind} ${className}`}
-      role="img"
-      aria-label={accessibleLabel}
-    >
-      <span className="image-index" aria-hidden="true">
-        BGV / {kind === "portrait" ? "01" : kind === "event" ? "02" : kind === "workshop" ? "03" : "04"}
-      </span>
-      <span className="image-caption" aria-hidden="true">
-        Photography placeholder · replace before launch
-      </span>
-      <span className="image-subject" aria-hidden="true" />
-    </div>
-  );
+export const EditorialImage = ({ kind = 'portrait', label }: { kind?: 'portrait' | 'event' | 'workshop' | 'insight'; label?: string }) => {
+  const configuration = {
+    portrait: { mediaKey: 'portraitDark', crop: '4:5', treatment: 'monochrome' },
+    event: { mediaKey: 'speaking', crop: '3:2', treatment: 'color' },
+    workshop: { mediaKey: 'workshop', crop: '16:9', treatment: 'warm' },
+    insight: { mediaKey: 'candid', crop: '16:10', treatment: 'monochrome' },
+  } as const
+  const selected = configuration[kind]
+  return <EditorialMedia {...selected} label={label ?? `${kind} photography`} />
 }
-
-export const Portrait = ({ event = false }: { event?: boolean }) => (
-  <EditorialImage kind={event ? "event" : "portrait"} />
-);

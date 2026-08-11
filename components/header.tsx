@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const routePairs: Array<[string, string]> = [
   ['/', '/en'], ['/despre', '/en/about'], ['/cursuri', '/en/courses'],
@@ -26,9 +26,15 @@ export function Header() {
   const pathname = usePathname()
   const locale = pathname === '/en' || pathname.startsWith('/en/') ? 'en' : 'ro'
   const [open, setOpen] = useState(false)
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : ''
+    const closeOnEscape = (event: KeyboardEvent) => event.key === 'Escape' && setOpen(false)
+    window.addEventListener('keydown', closeOnEscape)
+    return () => { document.body.style.overflow = ''; window.removeEventListener('keydown', closeOnEscape) }
+  }, [open])
   return <header className="header"><div className="shell nav">
     <Link href={locale === 'ro' ? '/' : '/en'} className="logo" aria-label="Bogdan Vizitiu — home">BGV.</Link>
-    <button className="menu" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="navigation">{locale === 'ro' ? 'Meniu' : 'Menu'}</button>
+    <button className="menu" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="navigation">{open ? (locale === 'ro' ? 'Închide' : 'Close') : (locale === 'ro' ? 'Meniu' : 'Menu')}</button>
     <nav id="navigation" className={open ? 'open' : ''} aria-label={locale === 'ro' ? 'Navigație principală' : 'Main navigation'}>
       {navigation[locale].map(([label,href])=><Link onClick={()=>setOpen(false)} key={href} href={href}>{label}</Link>)}
       <span className="language-switcher" aria-label={locale === 'ro' ? 'Alege limba' : 'Choose language'}>
