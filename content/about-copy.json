@@ -37,6 +37,23 @@
         "title": "Training & coaching",
         "description": "Spații în care întrebările bune, practica și feedbackul pot schimba felul în care cineva vede și abordează o situație reală."
       }
+    ],
+    "methodEyebrow": "Cum lucrez",
+    "methodTitle": "Înțelegem. Clarificăm. Aplicăm.",
+    "methodIntro": "Nu pornesc de la un instrument pe care trebuie să îl folosim. Pornesc de la situație și alegem împreună ce este util pentru ea.",
+    "methodItems": [
+      {
+        "title": "Înțelegem",
+        "description": "Ne uităm la ce se întâmplă de fapt: context, oameni, miză, tensiuni și ce ai încercat deja."
+      },
+      {
+        "title": "Clarificăm",
+        "description": "Separăm problema reală de zgomot, testăm presupunerile și vedem mai limpede ce merită schimbat."
+      },
+      {
+        "title": "Aplicăm",
+        "description": "Transformăm claritatea în ceva concret: o conversație, o decizie, un comportament sau un experiment pe care îl poți testa în realitate."
+      }
     ]
   },
   "en": {
@@ -76,6 +93,23 @@
       {
         "title": "Training & coaching",
         "description": "Spaces where better questions, practice and feedback can change how someone sees and approaches a real situation."
+      }
+    ],
+    "methodEyebrow": "How I work",
+    "methodTitle": "Understand. Clarify. Apply.",
+    "methodIntro": "I do not begin with a tool we have to use. I begin with the situation, and together we choose what is useful for it.",
+    "methodItems": [
+      {
+        "title": "Understand",
+        "description": "We look at what is actually happening: the context, the people, the stakes, the tensions and what you have already tried."
+      },
+      {
+        "title": "Clarify",
+        "description": "We separate the real problem from the noise, test assumptions and see more clearly what is worth changing."
+      },
+      {
+        "title": "Apply",
+        "description": "We turn clarity into something concrete: a conversation, a decision, a behavior or an experiment you can test in the real world."
       }
     ]
   }
