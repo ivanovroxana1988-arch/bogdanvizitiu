@@ -1,0 +1,3 @@
+import {PageHero} from '@/components/ui'
+export const metadata={title:'Contact'}
+export default function Contact(){return <><PageHero eyebrow="Contact" title="Let’s build something useful." intro="For corporate programs, speaking, partnerships and open course enquiries."/><section className="shell"><form className="contact-form"><label>Name<input name="name" autoComplete="name" required/></label><label>Email<input name="email" type="email" autoComplete="email" required/></label><label>Area of interest<input name="interest" placeholder="Corporate, speaking, partnership or course"/></label><label>What would be useful to discuss?<textarea name="message" required/></label><button type="submit">Send enquiry →</button></form></section></>}

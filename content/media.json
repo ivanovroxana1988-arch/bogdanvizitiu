@@ -1,0 +1,42 @@
+{
+  "images": {
+    "hero": {
+      "src": "/images/bogdan/bogdan-hero.jpg",
+      "alt": "Bogdan Vizitiu",
+      "usage": "homepage hero",
+      "status": "asset-missing"
+    },
+    "portraitDark": {
+      "src": "/images/bogdan/bogdan-portrait-dark.jpg",
+      "alt": "Portret al lui Bogdan Vizitiu",
+      "usage": "about page portrait",
+      "status": "asset-missing"
+    },
+    "speaking": {
+      "src": "/images/bogdan/bogdan-speaking-01.jpg",
+      "alt": "Bogdan Vizitiu în timpul unei prezentări",
+      "usage": "media and speaking sections",
+      "status": "asset-missing"
+    },
+    "workshop": {
+      "src": "/images/bogdan/bogdan-workshop-01.jpg",
+      "alt": "Bogdan Vizitiu facilitând un workshop",
+      "usage": "corporate section",
+      "status": "asset-missing"
+    },
+    "coaching": {
+      "src": "/images/bogdan/bogdan-coaching.jpg",
+      "alt": "Bogdan Vizitiu într-o conversație de coaching",
+      "usage": "coaching page",
+      "status": "asset-missing"
+    },
+    "candid": {
+      "src": "/images/bogdan/bogdan-candid-01.jpg",
+      "alt": "Bogdan Vizitiu",
+      "usage": "editorial supporting image",
+      "status": "asset-missing"
+    }
+  },
+  "appearances": [],
+  "editorialNote": "Do not render missing assets as real photographs. Add approved files at the exact paths above, then change status to approved. Appearance records require a title, outlet, date, URL, and verification source."
+}
