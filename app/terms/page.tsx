@@ -1,1 +1,15 @@
-import {PageHero} from '@/components/ui';export const metadata={title:'Terms'};export default function Terms(){return <><PageHero eyebrow="Information" title="Terms" intro="Website and program terms will be added alongside confirmed enrollment and delivery processes."/><section className="shell prose"><p className="placeholder-warning">Legal placeholder — requires review before launch.</p><p>No enrollment or payment functionality is active in this prototype.</p></section></>}
+import {PageHero} from '@/components/ui'
+import legalCopy from '@/content/legal-copy.json'
+import {getLocale} from '@/lib/i18n'
+
+export const metadata={title:'Terms'}
+
+export default function Terms({searchParams}:{searchParams?:{lang?:string}}){
+  const locale=getLocale(searchParams?.lang)
+  const copy=legalCopy[locale].terms
+
+  return <>
+    <PageHero eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro}/>
+    <section className="shell prose"><p className="placeholder-warning">{copy.warning}</p><p>{copy.body}</p></section>
+  </>
+}
