@@ -1,5 +1,5 @@
 import {ArrowLink,Eyebrow} from '@/components/ui'
-import {Portrait} from '@/components/portrait'
+import {EditorialImage} from '@/components/portrait'
 import {getCopy,getLocale} from '@/lib/i18n'
 import styles from '../commercial.module.css'
 
@@ -32,7 +32,7 @@ export default function Speaking({searchParams}:{searchParams?:{lang?:string}}){
 
     <section className={styles.section}>
       <div className={styles.aboutNarrative}>
-        <Portrait event/>
+        <EditorialImage asset="speaking" kind="portrait"/>
         <div className={styles.prose}>
           <h2 className={styles.statementSmall}>{copy.sectionTitle}</h2>
           <div style={{marginTop:'42px'}}>

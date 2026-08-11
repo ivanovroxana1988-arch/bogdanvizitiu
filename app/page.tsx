@@ -17,7 +17,7 @@ export default function Home({searchParams}:{searchParams?:{lang?:string}}){
 
     <section id="recognition" className="recognition"><div className="shell recognition-grid"><div><Eyebrow>{copy.recognitionEyebrow}</Eyebrow><h2>{copy.recognitionTitle}</h2></div><ol className="recognition-list">{copy.recognitionItems.map((item,i)=><li key={item}><span>0{i+1}</span><p>{item}</p></li>)}</ol></div></section>
 
-    <section className="point-of-view"><div className="shell point-grid"><EditorialImage asset="portraitDark" kind="portrait"/><div><Eyebrow>{copy.pointEyebrow}</Eyebrow><h2>{copy.pointTitle}</h2><p>{copy.pointText}</p><ArrowLink href="/about">{copy.secondaryCta}</ArrowLink></div></div></section>
+    <section className="point-of-view"><div className="shell point-grid"><EditorialImage asset="candid" kind="portrait"/><div><Eyebrow>{copy.pointEyebrow}</Eyebrow><h2>{copy.pointTitle}</h2><p>{copy.pointText}</p><ArrowLink href="/about">{copy.secondaryCta}</ArrowLink></div></div></section>
 
     <section className="areas shell"><div className="section-head"><div><Eyebrow>{copy.areasEyebrow} / 04</Eyebrow><h2 className="section-title">{copy.areasTitle}</h2></div></div><div className="area-list">{areas.map((area,i)=><article className="area-row" key={area.title}><span>0{i+1}</span><h3>{area.title}</h3><p>{area.description}</p></article>)}</div></section>
 

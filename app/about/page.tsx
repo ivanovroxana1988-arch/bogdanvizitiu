@@ -1,5 +1,5 @@
 import {ArrowLink,Eyebrow} from '@/components/ui'
-import {Portrait} from '@/components/portrait'
+import {EditorialImage} from '@/components/portrait'
 import {getCopy,getLocale} from '@/lib/i18n'
 import aboutCopy from '@/content/about-copy.json'
 import styles from '../commercial.module.css'
@@ -22,7 +22,7 @@ export default function About({searchParams}:{searchParams?:{lang?:string}}){
 
     <section className={styles.section}>
       <div className={styles.aboutNarrative}>
-        <Portrait/>
+        <EditorialImage asset="portraitDark" kind="portrait"/>
         <div className={styles.prose}>
           {copy.paragraphs.map(paragraph=><p key={paragraph}>{paragraph}</p>)}
           <p className={styles.roleLine}>{copy.roleLine}</p>

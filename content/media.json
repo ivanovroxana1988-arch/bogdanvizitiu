@@ -1,40 +1,52 @@
 {
   "images": {
     "hero": {
-      "src": "/images/bogdan/bogdan-hero.jpg",
-      "alt": "Bogdan Vizitiu",
+      "src": "/images/bogdan/bogdan-hero.avif",
+      "alt": "Bogdan Vizitiu, portret cu brațele încrucișate",
       "usage": "homepage hero",
-      "status": "asset-missing"
+      "status": "approved",
+      "rights_status": "approved-for-site-by-user",
+      "source": "user-supplied project upload"
     },
     "portraitDark": {
-      "src": "/images/bogdan/bogdan-portrait-dark.jpg",
+      "src": "/images/bogdan/bogdan-portrait-dark.avif",
       "alt": "Portret al lui Bogdan Vizitiu",
       "usage": "about page portrait",
-      "status": "asset-missing"
+      "status": "approved",
+      "rights_status": "approved-for-site-by-user",
+      "source": "user-supplied project upload"
     },
     "speaking": {
-      "src": "/images/bogdan/bogdan-speaking-01.jpg",
-      "alt": "Bogdan Vizitiu în timpul unei prezentări",
+      "src": "/images/bogdan/bogdan-speaking-01.avif",
+      "alt": "Bogdan Vizitiu pe scenă, în timpul unei prezentări",
       "usage": "media and speaking sections",
-      "status": "asset-missing"
+      "status": "approved",
+      "rights_status": "approved-for-site-by-user",
+      "source": "user-supplied project upload"
     },
     "workshop": {
-      "src": "/images/bogdan/bogdan-workshop-01.jpg",
-      "alt": "Bogdan Vizitiu facilitând un workshop",
-      "usage": "corporate section",
-      "status": "asset-missing"
+      "src": "/images/bogdan/bogdan-workshop-01.avif",
+      "alt": "Bogdan Vizitiu cu microfonul, în context de training",
+      "usage": "programs and training sections",
+      "status": "approved",
+      "rights_status": "approved-for-site-by-user",
+      "source": "user-supplied project upload"
     },
     "coaching": {
-      "src": "/images/bogdan/bogdan-coaching.jpg",
-      "alt": "Bogdan Vizitiu într-o conversație de coaching",
-      "usage": "coaching page",
-      "status": "asset-missing"
+      "src": "/images/bogdan/bogdan-coaching.avif",
+      "alt": "Portret editorial al lui Bogdan Vizitiu",
+      "usage": "coaching and consulting sections",
+      "status": "approved",
+      "rights_status": "approved-for-site-by-user",
+      "source": "user-supplied project upload"
     },
     "candid": {
-      "src": "/images/bogdan/bogdan-candid-01.jpg",
-      "alt": "Bogdan Vizitiu",
-      "usage": "editorial supporting image",
-      "status": "asset-missing"
+      "src": "/images/bogdan/bogdan-candid-01.avif",
+      "alt": "Bogdan Vizitiu la o cafenea",
+      "usage": "homepage editorial supporting image",
+      "status": "approved",
+      "rights_status": "approved-for-site-by-user",
+      "source": "user-supplied project upload"
     }
   },
   "concepts": {
@@ -76,5 +88,5 @@
     }
   },
   "appearances": [],
-  "editorialNote": "First-party photography remains the only source for Bogdan's likeness and real-event representation. Concept photography may be used only as atmospheric/contextual imagery when rights_status is licensed and status is approved. Never imply that stock subjects are Bogdan, his clients, or participants in his events."
+  "editorialNote": "First-party photography remains the only source for Bogdan's likeness and real-event representation. The six local images marked approved were supplied by the user in the project workflow and explicitly approved for site implementation on 2026-08-11. Concept photography may be used only as atmospheric/contextual imagery when rights_status is licensed and status is approved. Never imply that stock subjects are Bogdan, his clients, or participants in his events."
 }
