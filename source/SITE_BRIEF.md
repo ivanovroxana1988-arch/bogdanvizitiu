@@ -26,7 +26,7 @@ seeking training or coaching, and individuals considering open courses.
 - Warm, premium, masculine, and human
 - Restrained palette and motion
 - Clear paths for courses, coaching, corporate work, media, resources, and contact
-- Romanian is the primary interface language unless the content strategy changes
+- Romanian is the primary interface language, with a complete English alternative
 
 ## Non-negotiable content constraints
 
@@ -47,4 +47,3 @@ workshop, coaching conversation, and candid editorial context.
 The public site is not launch-ready until all items in the launch-gaps section of
 `IMPLEMENTATION_PLAN.md` are resolved and every published factual claim has a
 source recorded in `SOURCES.md` or the master database.
-
