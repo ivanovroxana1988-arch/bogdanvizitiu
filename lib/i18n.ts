@@ -1,5 +1,6 @@
 import siteCopy from '@/content/site-copy.json'
 import homeCopy from '@/content/home-copy.json'
+import commercialCopy from '@/content/commercial-copy.json'
 
 export type Locale = 'ro' | 'en'
 
@@ -11,6 +12,11 @@ export function getCopy(locale: Locale) {
   return {
     ...siteCopy[locale],
     home: homeCopy[locale],
+    programs: commercialCopy[locale].programs,
+    programDetail: commercialCopy[locale].programDetail,
+    corporate: commercialCopy[locale].corporate,
+    speaking: commercialCopy[locale].speaking,
+    contact: commercialCopy[locale].contact,
   }
 }
 
