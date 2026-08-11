@@ -73,7 +73,7 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
       </aside>
       <article className={styles.body}>
         {isNetworking
-          ? <ConceptImage asset="insightsWorkspace" kind="wide" className={styles.heroImage}/>
+          ? <ConceptImage asset="networkingEditorial" kind="wide" className={styles.heroImage}/>
           : <EditorialImage asset={insightImages[insight.slug]||'candid'} kind="event" className={styles.heroImage}/>
         }
 
