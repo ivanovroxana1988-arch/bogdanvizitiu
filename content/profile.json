@@ -1,20 +1,31 @@
 {
-  "name": "Bogdan Vizitiu",
-  "status": "needs-confirmation",
-  "roles": [
-    "Coach",
-    "Trainer",
-    "Entrepreneur",
-    "Facilitator"
+  "name":"Bogdan Vizitiu",
+  "status":"verified-partial",
+  "roles":["Coach","Trainer","Entrepreneur","Facilitator"],
+  "expertise":["Leadership & Teams","Negotiation & Sales","Networking & Influence","Career & Personal Performance"],
+  "biography":null,
+  "credentials":[
+    {
+      "name":"International Coach Academy graduate",
+      "year":2020,
+      "status":"historical-verified",
+      "publishable":true,
+      "source_ref":"S05"
+    },
+    {
+      "name":"PCC ICF",
+      "status":"historical-only",
+      "publishable":false,
+      "editorialNote":"Do not present as a current 2026 credential until current proof is supplied."
+    }
   ],
-  "expertise": [
-    "Leadership & Teams",
-    "Negotiation & Sales",
-    "Networking & Influence",
-    "Career & Personal Performance"
+  "socialLinks":[],
+  "verifiedFacts":[
+    {"id":"F01","fact":"Coach, trainer and entrepreneur","source_ref":"S02"},
+    {"id":"F02","fact":"24 years in sales at source verification time","source_ref":"S02"},
+    {"id":"F03","fact":"13 years in coaching and leadership at source verification time","source_ref":"S02"},
+    {"id":"F05","fact":"Founder & Managing Partner YoungMinds since 2019","source_ref":"S03"},
+    {"id":"F13","fact":"Creator of the LIVES coaching model","source_ref":"S05"}
   ],
-  "biography": null,
-  "credentials": [],
-  "socialLinks": [],
-  "editorialNote": "Roles and expertise reflect the supplied project direction and require client confirmation before launch. Biography, credentials, and links remain intentionally empty."
+  "editorialNote":"Only source-backed facts are stored here. Current ICF status, final biography and official social links remain blocked pending approved inputs."
 }

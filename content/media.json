@@ -1,112 +1,30 @@
 {
   "images": {
-    "hero": {
-      "src": "/images/bogdan/bogdan-hero.avif",
-      "alt": "Bogdan Vizitiu, portret cu brațele încrucișate",
-      "usage": "homepage hero",
-      "status": "approved",
-      "rights_status": "approved-for-site-by-user",
-      "source": "user-supplied project upload"
-    },
-    "portraitDark": {
-      "src": "/images/bogdan/bogdan-portrait-dark.avif",
-      "alt": "Portret al lui Bogdan Vizitiu",
-      "usage": "about page portrait",
-      "status": "approved",
-      "rights_status": "approved-for-site-by-user",
-      "source": "user-supplied project upload"
-    },
-    "speaking": {
-      "src": "/images/bogdan/bogdan-speaking-01.avif",
-      "alt": "Bogdan Vizitiu pe scenă, în timpul unei prezentări",
-      "usage": "media and speaking sections",
-      "status": "approved",
-      "rights_status": "approved-for-site-by-user",
-      "source": "user-supplied project upload"
-    },
-    "workshop": {
-      "src": "/images/bogdan/bogdan-workshop-01.avif",
-      "alt": "Bogdan Vizitiu cu microfonul, în context de training",
-      "usage": "programs and training sections",
-      "status": "approved",
-      "rights_status": "approved-for-site-by-user",
-      "source": "user-supplied project upload"
-    },
-    "coaching": {
-      "src": "/images/bogdan/bogdan-coaching.avif",
-      "alt": "Portret editorial al lui Bogdan Vizitiu",
-      "usage": "coaching and consulting sections",
-      "status": "approved",
-      "rights_status": "approved-for-site-by-user",
-      "source": "user-supplied project upload"
-    },
-    "candid": {
-      "src": "/images/bogdan/bogdan-candid-01.avif",
-      "alt": "Bogdan Vizitiu la o cafenea",
-      "usage": "homepage editorial supporting image",
-      "status": "approved",
-      "rights_status": "approved-for-site-by-user",
-      "source": "user-supplied project upload"
-    }
+    "hero":{"src":"/images/bogdan/bogdan-hero.avif","alt":"Bogdan Vizitiu, portret cu brațele încrucișate","usage":"homepage hero","status":"approved","rights_status":"approved-for-site-by-user","source":"user-supplied project upload"},
+    "portraitDark":{"src":"/images/bogdan/bogdan-portrait-dark.avif","alt":"Portret al lui Bogdan Vizitiu","usage":"about page portrait","status":"approved","rights_status":"approved-for-site-by-user","source":"user-supplied project upload"},
+    "speaking":{"src":"/images/bogdan/bogdan-speaking-01.avif","alt":"Bogdan Vizitiu pe scenă, în timpul unei prezentări","usage":"media and speaking sections","status":"approved","rights_status":"approved-for-site-by-user","source":"user-supplied project upload"},
+    "workshop":{"src":"/images/bogdan/bogdan-workshop-01.avif","alt":"Bogdan Vizitiu cu microfonul, în context de training","usage":"programs and training sections","status":"approved","rights_status":"approved-for-site-by-user","source":"user-supplied project upload"},
+    "coaching":{"src":"/images/bogdan/bogdan-coaching.avif","alt":"Portret editorial al lui Bogdan Vizitiu","usage":"coaching and consulting sections","status":"approved","rights_status":"approved-for-site-by-user","source":"user-supplied project upload"},
+    "candid":{"src":"/images/bogdan/bogdan-candid-01.avif","alt":"Bogdan Vizitiu la o cafenea","usage":"homepage editorial supporting image","status":"approved","rights_status":"approved-for-site-by-user","source":"user-supplied project upload"}
   },
   "concepts": {
-    "workshopNotes": {
-      "src": "https://unsplash.com/photos/ZEVl7apdxrA/download?force=true&w=1800",
-      "alt": "Caiet și instrumente de scris pe o masă, cu un workshop neclar în fundal",
-      "usage": "training and corporate context only; never presented as a Bogdan Vizitiu event",
-      "status": "approved",
-      "rights_status": "licensed",
-      "source": "Unsplash",
-      "source_url": "https://unsplash.com/photos/notebook-and-pens-on-table-with-blurred-audience-and-speaker-ZEVl7apdxrA",
-      "license": "Unsplash License",
-      "license_url": "https://unsplash.com/license",
-      "credit": "maks_d"
-    },
-    "architectureStair": {
-      "src": "https://unsplash.com/photos/H4c1u0IAbS0/download?force=true&w=1800",
-      "alt": "Scară spiralată modernă desenată de lumină și umbre",
-      "usage": "editorial concept for perspective, transition and insights",
-      "status": "approved",
-      "rights_status": "licensed",
-      "source": "Unsplash",
-      "source_url": "https://unsplash.com/photos/modern-spiral-staircase-with-dramatic-shadows-and-light-H4c1u0IAbS0",
-      "license": "Unsplash License",
-      "license_url": "https://unsplash.com/license",
-      "credit": "Ilnur (@mrw0rld)"
-    },
-    "planningDesk": {
-      "src": "https://unsplash.com/photos/alS_6YuAsXI/download?force=true&w=1800",
-      "alt": "Mâini ținând un caiet deschis lângă laptop și cafea",
-      "usage": "program and planning context only",
-      "status": "approved",
-      "rights_status": "licensed",
-      "source": "Unsplash",
-      "source_url": "https://unsplash.com/photos/hands-holding-a-blank-notebook-with-coffee-and-laptop-alS_6YuAsXI",
-      "license": "Unsplash License",
-      "license_url": "https://unsplash.com/license",
-      "credit": "Kelly Sikkema (@kellysikkema)"
-    },
-    "insightsWorkspace": {
-      "src": "https://images.unsplash.com/photo-1743385779534-f53c018c21f5?auto=format&fit=crop&fm=jpg&q=82&w=1800",
-      "alt": "Caiet deschis, instrumente de scris, căști și cafea pe un birou din lemn",
-      "usage": "resources and editorial articles",
-      "status": "approved",
-      "rights_status": "licensed",
-      "source": "Unsplash",
-      "source_url": "https://unsplash.com/photos/notebook-pen-headphones-and-coffee-on-a-wooden-desk-wl2qQ2JHMXA",
-      "license": "Unsplash License",
-      "license_url": "https://unsplash.com/license",
-      "credit": "Kelly Sikkema (@kellysikkema)"
-    },
-    "networkingEditorial": {
-      "src": "/images/editorial/networking-bogdan.svg",
-      "alt": "Ilustrație editorială generată cu Bogdan Vizitiu într-o conversație de networking",
-      "usage": "networking resource only; illustrative scene, not documentary evidence of a real event",
-      "status": "approved",
-      "rights_status": "approved-ai-editorial",
-      "source": "OpenAI image generation using user-supplied approved reference photography"
-    }
+    "workshopNotes":{"src":"https://unsplash.com/photos/ZEVl7apdxrA/download?force=true&w=1800","alt":"Caiet și instrumente de scris pe o masă, cu un workshop neclar în fundal","usage":"training and corporate context only; never presented as a Bogdan Vizitiu event","status":"approved","rights_status":"licensed","source":"Unsplash","source_url":"https://unsplash.com/photos/notebook-and-pens-on-table-with-blurred-audience-and-speaker-ZEVl7apdxrA","license":"Unsplash License","license_url":"https://unsplash.com/license","credit":"maks_d"},
+    "architectureStair":{"src":"https://unsplash.com/photos/H4c1u0IAbS0/download?force=true&w=1800","alt":"Scară spiralată modernă desenată de lumină și umbre","usage":"editorial concept for perspective, transition and insights","status":"approved","rights_status":"licensed","source":"Unsplash","source_url":"https://unsplash.com/photos/modern-spiral-staircase-with-dramatic-shadows-and-light-H4c1u0IAbS0","license":"Unsplash License","license_url":"https://unsplash.com/license","credit":"Ilnur (@mrw0rld)"},
+    "planningDesk":{"src":"https://unsplash.com/photos/alS_6YuAsXI/download?force=true&w=1800","alt":"Mâini ținând un caiet deschis lângă laptop și cafea","usage":"program and planning context only","status":"approved","rights_status":"licensed","source":"Unsplash","source_url":"https://unsplash.com/photos/hands-holding-a-blank-notebook-with-coffee-and-laptop-alS_6YuAsXI","license":"Unsplash License","license_url":"https://unsplash.com/license","credit":"Kelly Sikkema (@kellysikkema)"},
+    "insightsWorkspace":{"src":"https://images.unsplash.com/photo-1743385779534-f53c018c21f5?auto=format&fit=crop&fm=jpg&q=82&w=1800","alt":"Caiet deschis, instrumente de scris, căști și cafea pe un birou din lemn","usage":"resources and editorial articles","status":"approved","rights_status":"licensed","source":"Unsplash","source_url":"https://unsplash.com/photos/notebook-pen-headphones-and-coffee-on-a-wooden-desk-wl2qQ2JHMXA","license":"Unsplash License","license_url":"https://unsplash.com/license","credit":"Kelly Sikkema (@kellysikkema)"},
+    "networkingEditorial":{"src":"/images/editorial/networking-bogdan.svg","alt":"Ilustrație editorială generată cu Bogdan Vizitiu într-o conversație de networking","usage":"networking resource only; illustrative scene, not documentary evidence of a real event","status":"approved","rights_status":"permission","editorial_status":"approved-ai-editorial","source":"OpenAI image generation using user-supplied approved reference photography"}
   },
-  "appearances": [],
-  "editorialNote": "First-party photography remains the only source for documentary representation of Bogdan and real events. The six local images marked approved were supplied by the user in the project workflow and explicitly approved for site implementation on 2026-08-11. Licensed concept photography may be used only as atmospheric/contextual imagery. AI-generated editorial imagery may be used only where explicitly marked approved-ai-editorial and must not be presented as documentary evidence of a real event."
+  "appearances": [
+    {"id":"M01","title":"Stup Unplugged S3 cu Bogdan Vizitiu","type":"podcast","published_at":"2025-06-30","external_url":"https://stup.bancatransilvania.ro/newsroom/articole/articol/stup-unplugged-s3-cu-bogdan-vizitiu","status":"verified","rights_status":"embed-only","source_ref":"S12","duration":"1h07","topics":["networking","growth mindset"]},
+    {"id":"M02","title":"Totul despre Networking — Stup","type":"workshop","published_at":"2026-06-23","external_url":"https://stup.bancatransilvania.ro/evenimente/eveniment?e=1990","status":"verified","rights_status":"embed-only","source_ref":"S06"},
+    {"id":"M03","title":"Totul despre Networking — Stup","type":"workshop","published_at":"2026-02-24","external_url":"https://stup.bancatransilvania.ro/evenimente/eveniment?e=1888","status":"verified","rights_status":"embed-only","source_ref":"S07"},
+    {"id":"M04","title":"Totul despre Networking — Stup","type":"workshop","published_at":"2026-01-29","external_url":"https://stup.bancatransilvania.ro/evenimente/eveniment?e=1867","status":"verified","rights_status":"embed-only","source_ref":"S08"},
+    {"id":"M05","title":"Totul despre Networking — Stup","type":"workshop","published_at":"2025-07-31","external_url":"https://stup.bancatransilvania.ro/evenimente/eveniment?e=1745","status":"verified","rights_status":"embed-only","source_ref":"S09"},
+    {"id":"M06","title":"Totul despre Networking — Stup","type":"workshop","published_at":"2025-01-30","external_url":"https://stup.bancatransilvania.ro/evenimente/eveniment?e=1619","status":"verified","rights_status":"embed-only","source_ref":"S10"},
+    {"id":"M07","title":"Arta Negocierii în Business — Stup","type":"workshop","published_at":"2026-03-31","external_url":"https://stup.bancatransilvania.ro/evenimente/eveniment?e=1919","status":"verified","rights_status":"embed-only","source_ref":"S11","duration":"4h","capacity_at_source":"81 places"},
+    {"id":"M08","title":"Boost Your Impact — Influence","type":"workshop","external_url":"https://www.humanisticlearning.com/course/boost-your-impact-influence/","status":"verified","rights_status":"embed-only","source_ref":"S14"},
+    {"id":"M09","title":"Leading High Performance Teams","type":"workshop","external_url":"https://www.humanisticlearning.com/trainer/vizitiu-bogdan/","status":"verified","rights_status":"embed-only","source_ref":"S04"},
+    {"id":"M10","title":"Negotiation Skills","type":"workshop","external_url":"https://www.humanisticlearning.com/trainer/vizitiu-bogdan/","status":"verified","rights_status":"embed-only","source_ref":"S04"}
+  ],
+  "editorialNote":"First-party photography remains the only source for documentary representation of Bogdan and real events. User-supplied images keep their explicit site approval. Licensed concept photography is contextual only. AI-generated editorial imagery is marked separately and is illustrative, never documentary. External appearances may be linked or embedded according to their recorded rights status; third-party event imagery is not reused without permission."
 }

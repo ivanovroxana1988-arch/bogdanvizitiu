@@ -1,0 +1,110 @@
+[
+  {
+    "slug":"networking",
+    "title":{"ro":"Totul despre Networking","en":"Everything About Networking"},
+    "type":"open-course",
+    "status":"validated",
+    "category":"Open course",
+    "audience":"Freelancers, solopreneurs, entrepreneurs",
+    "format":"Live workshop, 4h",
+    "proof":["S06","S07","S08","S09","S10"],
+    "commercial_direction":"Open ticket + corporate + digital mini-course",
+    "priority":"critical"
+  },
+  {
+    "slug":"arta-negocierii",
+    "title":{"ro":"Arta Negocierii în Business","en":"The Art of Business Negotiation"},
+    "type":"open-course",
+    "status":"validated",
+    "category":"Open course",
+    "audience":"Entrepreneurs, managers, sales",
+    "format":"Live workshop, 4h",
+    "proof":["S11"],
+    "commercial_direction":"Open ticket + corporate + bundle",
+    "priority":"critical"
+  },
+  {
+    "slug":"boost-your-impact-influence",
+    "title":{"ro":"Boost Your Impact — Influence","en":"Boost Your Impact — Influence"},
+    "type":"training",
+    "status":"evidence-verified",
+    "category":"Training",
+    "audience":"Managers, sales, entrepreneurs",
+    "format":"Workshop",
+    "proof":["S14"],
+    "commercial_direction":"Open / corporate",
+    "priority":"high"
+  },
+  {
+    "slug":"leading-high-performance-teams",
+    "title":{"ro":"Leading High Performance Teams","en":"Leading High Performance Teams"},
+    "type":"training",
+    "status":"evidence-verified",
+    "category":"Training",
+    "audience":"Managers, team leads",
+    "format":"Workshop",
+    "proof":["S04"],
+    "commercial_direction":"Corporate + premium open",
+    "priority":"high"
+  },
+  {
+    "slug":"negotiation-skills",
+    "title":{"ro":"Negotiation Skills","en":"Negotiation Skills"},
+    "type":"training",
+    "status":"evidence-verified",
+    "category":"Training",
+    "audience":"Sales, managers",
+    "format":"Workshop",
+    "proof":["S04"],
+    "commercial_direction":"Corporate / English edition",
+    "priority":"medium"
+  },
+  {
+    "slug":"executive-management-coaching",
+    "title":{"ro":"Executive / Management Coaching","en":"Executive / Management Coaching"},
+    "type":"coaching",
+    "status":"evidence-verified",
+    "category":"1:1 coaching",
+    "audience":"Executives, managers, talent",
+    "format":"Packages",
+    "proof":["S03"],
+    "commercial_direction":"3/6 month package rather than isolated session",
+    "priority":"critical"
+  },
+  {
+    "slug":"career-performance-coaching",
+    "title":{"ro":"Career & Performance Coaching","en":"Career & Performance Coaching"},
+    "type":"coaching",
+    "status":"evidence-verified",
+    "category":"1:1 coaching",
+    "audience":"Professionals",
+    "format":"Packages",
+    "proof":["S03"],
+    "commercial_direction":"6–8 session package",
+    "priority":"high"
+  },
+  {
+    "slug":"team-coaching-facilitation",
+    "title":{"ro":"Team Coaching / Facilitation","en":"Team Coaching / Facilitation"},
+    "type":"corporate",
+    "status":"evidence-verified",
+    "category":"Corporate",
+    "audience":"Management teams",
+    "format":"Custom program",
+    "proof":["S02","S04"],
+    "commercial_direction":"Custom B2B",
+    "priority":"high"
+  },
+  {
+    "slug":"speaker-moderator",
+    "title":{"ro":"Speaker / Moderator","en":"Speaker / Moderator"},
+    "type":"media-events",
+    "status":"evidence-verified",
+    "category":"Media/events",
+    "audience":"Conferences, communities, companies",
+    "format":"Keynote/panel/workshop",
+    "proof":["S12","S13"],
+    "commercial_direction":"Per-event fee",
+    "priority":"medium"
+  }
+]
