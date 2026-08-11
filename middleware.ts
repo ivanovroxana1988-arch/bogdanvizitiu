@@ -24,6 +24,11 @@ export function middleware(request:NextRequest){
     return NextResponse.redirect(url,308)
   }
 
+  if(url.pathname.startsWith('/programs/')){
+    url.pathname=url.pathname.replace(/^\/programs\//,'/cursuri/')
+    return NextResponse.redirect(url,308)
+  }
+
   return NextResponse.next()
 }
 

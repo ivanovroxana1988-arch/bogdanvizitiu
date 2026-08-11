@@ -11,6 +11,7 @@ import commercialCopyJson from '@/content/commercial-copy.json'
 import legalCopyJson from '@/content/legal-copy.json'
 import servicePagesJson from '@/content/service-pages.json'
 import navigationJson from '@/content/navigation.json'
+import contactCopyJson from '@/content/contact-copy.json'
 import {
   validateLocalizedRoot,
   validateMediaCollection,
@@ -35,4 +36,5 @@ export const content={
   legalCopy:validateLocalizedRoot(legalCopyJson,'legal-copy'),
   servicePages:validateLocalizedRoot(servicePagesJson,'service-pages'),
   navigation:validateLocalizedRoot(navigationJson,'navigation'),
+  contactCopy:validateLocalizedRoot(contactCopyJson,'contact-copy'),
 }

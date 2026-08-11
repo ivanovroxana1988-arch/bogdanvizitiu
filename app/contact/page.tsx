@@ -1,14 +1,16 @@
+import Link from 'next/link'
 import {Eyebrow} from '@/components/ui'
-import {getCopy,getLocale} from '@/lib/i18n'
+import contactCopy from '@/content/contact-copy.json'
+import {getLocale,withLocale} from '@/lib/i18n'
 import styles from '../commercial.module.css'
 
 export const metadata={title:'Contact'}
 
 export default function Contact({searchParams}:{searchParams?:{lang?:string}}){
   const locale=getLocale(searchParams?.lang)
-  const copy=getCopy(locale).contact
+  const copy=contactCopy[locale]
 
-  return <main className={styles.page}>
+  return <div className={styles.page}>
     <section className={styles.hero}>
       <Eyebrow>{copy.eyebrow}</Eyebrow>
       <div className={styles.heroGrid}>
@@ -25,26 +27,33 @@ export default function Contact({searchParams}:{searchParams?:{lang?:string}}){
           <p>{copy.formText}</p>
         </div>
 
-        <form className={styles.form}>
+        <form className={styles.form} aria-describedby="contact-pending">
           <label>{copy.name}<input name="name" autoComplete="name" required/></label>
           <label>{copy.email}<input name="email" type="email" autoComplete="email" required/></label>
+          <label className={styles.full}>{copy.requestType}
+            <select name="requestType" defaultValue="" required>
+              <option value="" disabled>{copy.requestTypePlaceholder}</option>
+              {copy.requestTypeOptions.map(option=><option key={option} value={option}>{option}</option>)}
+            </select>
+          </label>
           <label className={styles.full}>{copy.scope}
             <select name="scope" defaultValue={copy.scopeOptions[0]}>
               {copy.scopeOptions.map(option=><option key={option} value={option}>{option}</option>)}
             </select>
           </label>
-          <label className={styles.full}>{copy.interest}
-            <input name="interest" placeholder={copy.interestPlaceholder}/>
-          </label>
-          <label className={styles.full}>{copy.message}
-            <textarea name="message" placeholder={copy.messagePlaceholder} required/>
-          </label>
-          <label className={styles.full}>{copy.desiredChange}
-            <textarea name="desiredChange" placeholder={copy.desiredChangePlaceholder}/>
-          </label>
-          <button type="submit">{copy.submit} →</button>
+          <label className={styles.full}>{copy.interest}<input name="interest" placeholder={copy.interestPlaceholder}/></label>
+          <label className={styles.full}>{copy.message}<textarea name="message" placeholder={copy.messagePlaceholder} required/></label>
+          <label className={styles.full}>{copy.desiredChange}<textarea name="desiredChange" placeholder={copy.desiredChangePlaceholder}/></label>
+          <div className={styles.full}>
+            <label style={{display:'flex',gridTemplateColumns:'none',alignItems:'flex-start',gap:12,textTransform:'none',letterSpacing:0,fontSize:14,fontWeight:400,lineHeight:1.5}}>
+              <input name="consent" type="checkbox" required style={{width:'auto',marginTop:3}}/>
+              <span>{copy.consent} <Link href={withLocale('/confidentialitate',locale)}>{copy.privacy}</Link></span>
+            </label>
+          </div>
+          <p id="contact-pending" className={styles.full} style={{margin:0,color:'var(--commercial-muted)',lineHeight:1.6}}>{copy.pending}</p>
+          <button type="button" disabled aria-disabled="true" style={{cursor:'not-allowed',opacity:.55}}>{copy.submit} →</button>
         </form>
       </div>
     </section>
-  </main>
+  </div>
 }
