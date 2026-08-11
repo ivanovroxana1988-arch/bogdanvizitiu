@@ -31,6 +31,9 @@ npm run build
 check fails fast if legacy `app/insights`, `app/programs`, `lib/data.ts`, or an
 `@/lib/data` import is reintroduced.
 
+For deployment diagnosis, including the global `useSearchParams`/Suspense failure
+mode, see [`VERCEL_TROUBLESHOOTING.md`](./VERCEL_TROUBLESHOOTING.md).
+
 Contact submissions are delivered only when `CONTACT_WEBHOOK_URL` is configured.
 Without it, the form returns an honest unavailable state and does not display a
 false success confirmation. Copy `.env.example` to `.env.local` for local setup.

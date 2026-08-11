@@ -29,4 +29,16 @@ const fixtureImports = sourceRoots
 
 if (fixtureImports.length) throw new Error(`Forbidden @/lib/data imports found:\n${fixtureImports.join('\n')}`)
 
-console.log('Architecture check passed: no legacy fixture routes or @/lib/data imports.')
+const globalNavigationFiles = ['components/header.tsx', 'components/footer.tsx']
+const searchParamConsumers = globalNavigationFiles.filter((file) => {
+  const path = join(root, file)
+  return existsSync(path) && /\buseSearchParams\b/.test(readFileSync(path, 'utf8'))
+})
+
+if (searchParamConsumers.length) {
+  throw new Error(
+    `Global navigation must not use useSearchParams for locale state. Use locale routes and usePathname instead:\n${searchParamConsumers.join('\n')}`,
+  )
+}
+
+console.log('Architecture check passed: no legacy fixtures or global useSearchParams consumers.')
