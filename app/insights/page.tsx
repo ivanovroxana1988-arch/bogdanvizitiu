@@ -1,12 +1,11 @@
 import type {Metadata} from 'next'
 import {PageHero,ArrowLink} from '@/components/ui'
-import {EditorialImage} from '@/components/portrait'
+import {ConceptImage,EditorialImage} from '@/components/portrait'
 import {getPublishedInsights} from '@/lib/data'
 import {getCopy,getLocale} from '@/lib/i18n'
 import styles from './insights.module.css'
 
 const insightImages:Record<string,'speaking'|'coaching'|'workshop'|'candid'>={
-  'networkingul-nu-incepe-cu-schimbul-de-contacte':'speaking',
   'de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives':'coaching',
   'nu-invatam-doar-cu-mintea':'workshop',
   'cat-din-viata-traim-pe-pilot-automat':'candid',
@@ -42,7 +41,7 @@ export default function Insights({searchParams}:{searchParams?:{lang?:string}}){
     />
     <section className={`shell ${styles.indexSection}`}><div className={styles.grid}>
       <article className={styles.feature}>
-        <EditorialImage asset={insightImages[feature.slug]||'speaking'} kind="event" className={styles.featureImage}/>
+        <ConceptImage asset="insightsWorkspace" kind="wide" className={styles.featureImage}/>
         <div className={styles.meta}><span className={styles.category}>{feature.category}</span><span>{feature.readTime}</span></div>
         <h2>{feature.title}</h2><p>{feature.excerpt}</p>
         <ArrowLink href={`/insights/${feature.slug}`}>{copy.readArticle}</ArrowLink>
