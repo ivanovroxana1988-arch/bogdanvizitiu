@@ -61,5 +61,21 @@ export default function About({searchParams}:{searchParams?:{lang?:string}}){
         </article>)}
       </div>
     </section>
+
+    <section className="shell areas" id="professional-milestones">
+      <div className="section-head">
+        <div>
+          <Eyebrow>{copy.proofEyebrow}</Eyebrow>
+          <h2 className="section-title">{copy.proofTitle}</h2>
+        </div>
+        <p>{copy.proofIntro}</p>
+      </div>
+      <div className="blocks">
+        {copy.proofItems.map(item=><article className="block" key={item.title}>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </article>)}
+      </div>
+    </section>
   </>
 }
