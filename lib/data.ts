@@ -3,6 +3,7 @@ import insightItems from '@/content/insights.json'
 import livesInsight from '@/content/insights/lives.json'
 import emotionsLearningInsight from '@/content/insights/emotii-invatare.json'
 import autopilotInsight from '@/content/insights/pilot-automat.json'
+import negotiationEmotionsInsight from '@/content/insights/negociere-emotii.json'
 import type {Locale} from '@/lib/i18n'
 
 const allInsightItems=[
@@ -10,6 +11,7 @@ const allInsightItems=[
   livesInsight,
   emotionsLearningInsight,
   autopilotInsight,
+  negotiationEmotionsInsight,
   ...insightItems.slice(1),
 ]
 
