@@ -1,5 +1,5 @@
 import {ArrowLink,Eyebrow} from '@/components/ui'
-import {EditorialImage} from '@/components/portrait'
+import {ConceptImage,EditorialImage} from '@/components/portrait'
 import {getPrograms} from '@/lib/data'
 import {getCopy,getLocale} from '@/lib/i18n'
 
@@ -23,7 +23,7 @@ export default function Home({searchParams}:{searchParams?:{lang?:string}}){
 
     <section className="programs shell"><div className="program-intro"><Eyebrow>{copy.programsEyebrow} / 05</Eyebrow><h2>{copy.programsStatement}</h2><p>{copy.programsIntro}</p></div>{programs.map((program,i)=><article className="program-row" key={program.slug}><span>0{i+1}</span><h3>{program.title}</h3><p>{program.description}</p><ArrowLink href={`/programs/${program.slug}`}>{copy.viewProgram}</ArrowLink></article>)}</section>
 
-    <section className="dark"><div className="shell corporate-grid"><div className="corporate-title"><Eyebrow>{copy.corporateEyebrow} / 06</Eyebrow><h2>{copy.corporateTitle}</h2></div><div className="corporate-copy"><p>{copy.corporateText}</p><ArrowLink href="/corporate">{copy.corporateCta}</ArrowLink></div><div className="domain-list">{copy.corporateDomains.map((domain,i)=><div key={domain}><span>0{i+1}</span>{domain}</div>)}</div><EditorialImage asset="workshop" kind="workshop"/></div></section>
+    <section className="dark"><div className="shell corporate-grid"><div className="corporate-title"><Eyebrow>{copy.corporateEyebrow} / 06</Eyebrow><h2>{copy.corporateTitle}</h2></div><div className="corporate-copy"><p>{copy.corporateText}</p><ArrowLink href="/corporate">{copy.corporateCta}</ArrowLink></div><div className="domain-list">{copy.corporateDomains.map((domain,i)=><div key={domain}><span>0{i+1}</span>{domain}</div>)}</div><ConceptImage asset="workshopNotes" kind="wide"/></div></section>
 
     <section className="final-loop"><div className="shell final-grid"><Eyebrow>{copy.finalEyebrow}</Eyebrow><h2>{copy.finalTitle}</h2><div><p>{copy.finalText}</p><ArrowLink href="/contact">{copy.finalCta}</ArrowLink></div></div></section>
   </>
