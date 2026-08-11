@@ -19,12 +19,12 @@ export function EditorialImage({asset='hero',kind='portrait',className=''}:Edito
 }
 
 /**
- * Renders licensed conceptual photography only as context or atmosphere.
- * These images must never be presented as Bogdan, his clients, or his real events.
+ * Renders approved conceptual/editorial imagery only as context or atmosphere.
+ * Stock imagery and AI-generated editorial scenes must never be presented as real Bogdan Vizitiu events.
  */
 export function ConceptImage({asset,kind='wide',className=''}:ConceptImageProps){
   const item=media.concepts[asset]
-  const approved=item.status==='approved' && item.rights_status==='licensed'
+  const approved=item.status==='approved' && (item.rights_status==='licensed' || item.rights_status==='approved-ai-editorial')
 
   return <figure className={`${styles.conceptImage} ${styles[kind]} ${className}`}>
     {approved
