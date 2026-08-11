@@ -1,0 +1,34 @@
+{
+  "ro": {
+    "privacy": {
+      "eyebrow": "Informații",
+      "title": "Confidențialitate",
+      "intro": "O informare completă privind confidențialitatea va fi publicată înainte de activarea formularelor, newsletterului și instrumentelor de analiză.",
+      "warning": "Text juridic provizoriu — necesită revizuire înainte de lansare.",
+      "body": "Site-ul va colecta doar informațiile necesare pentru a răspunde solicitărilor și, numai cu acord explicit, pentru a trimite actualizări ocazionale."
+    },
+    "terms": {
+      "eyebrow": "Informații",
+      "title": "Termeni",
+      "intro": "Termenii de utilizare și condițiile programelor vor fi publicați împreună cu procesele confirmate de înscriere și livrare.",
+      "warning": "Text juridic provizoriu — necesită revizuire înainte de lansare.",
+      "body": "În această versiune a site-ului nu este activă nicio funcționalitate de înscriere sau plată online."
+    }
+  },
+  "en": {
+    "privacy": {
+      "eyebrow": "Information",
+      "title": "Privacy",
+      "intro": "A complete privacy notice will be published before forms, newsletter functionality and analytics are activated.",
+      "warning": "Legal placeholder — requires review before launch.",
+      "body": "The website will collect only the information needed to respond to enquiries and, with explicit consent, send occasional updates."
+    },
+    "terms": {
+      "eyebrow": "Information",
+      "title": "Terms",
+      "intro": "Website terms and program conditions will be published alongside confirmed enrollment and delivery processes.",
+      "warning": "Legal placeholder — requires review before launch.",
+      "body": "No online enrollment or payment functionality is active in this version of the website."
+    }
+  }
+}

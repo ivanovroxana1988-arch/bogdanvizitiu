@@ -1,3 +1,20 @@
 import {PageHero} from '@/components/ui'
+import {getCopy,getLocale} from '@/lib/i18n'
+
 export const metadata={title:'Contact'}
-export default function Contact(){return <><PageHero eyebrow="Contact" title="Let’s build something useful." intro="For corporate programs, speaking, partnerships and open course enquiries."/><section className="shell"><form className="contact-form"><label>Name<input name="name" autoComplete="name" required/></label><label>Email<input name="email" type="email" autoComplete="email" required/></label><label>Area of interest<input name="interest" placeholder="Corporate, speaking, partnership or course"/></label><label>What would be useful to discuss?<textarea name="message" required/></label><button type="submit">Send enquiry →</button></form></section></>}
+
+export default function Contact({searchParams}:{searchParams?:{lang?:string}}){
+  const locale=getLocale(searchParams?.lang)
+  const copy=getCopy(locale).contact
+
+  return <>
+    <PageHero eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro}/>
+    <section className="shell"><form className="contact-form">
+      <label>{copy.name}<input name="name" autoComplete="name" required/></label>
+      <label>{copy.email}<input name="email" type="email" autoComplete="email" required/></label>
+      <label>{copy.interest}<input name="interest" placeholder={copy.interestPlaceholder}/></label>
+      <label>{copy.message}<textarea name="message" required/></label>
+      <button type="submit">{copy.submit} →</button>
+    </form></section>
+  </>
+}

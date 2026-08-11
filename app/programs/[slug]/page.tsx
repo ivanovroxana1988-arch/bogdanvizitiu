@@ -1,4 +1,28 @@
-import {notFound} from 'next/navigation';import {programs} from '@/lib/data';import {PageHero,ArrowLink,Eyebrow} from '@/components/ui'
-export function generateStaticParams(){return programs.map(p=>({slug:p.slug}))}
-export function generateMetadata({params}:{params:{slug:string}}){const p=programs.find(x=>x.slug===params.slug);return {title:p?.title||'Program'}}
-export default function Program({params}:{params:{slug:string}}){const p=programs.find(x=>x.slug===params.slug);if(!p)notFound();return <><PageHero eyebrow="Program" title={p.title} intro={p.detail}/><section className="shell detail-list"><article><Eyebrow>Who it is for</Eyebrow><h2>Professionals with consequential work.</h2><p>Leaders, managers and specialists navigating complexity, competing priorities and interdependent decisions.</p></article><article><Eyebrow>The problem</Eyebrow><h2>Activity is not the same as progress.</h2><p>The program creates space to examine how choices are made and build practices that survive beyond the classroom.</p></article><article><Eyebrow>What you will learn</Eyebrow><h2>From insight to action.</h2><ul>{p.topics.map(x=><li key={x}>{x}</li>)}</ul></article><article><Eyebrow>Format</Eyebrow><h2>{p.duration}</h2><p>Interactive teaching, individual reflection and applied group work. Upcoming dates: <strong>to be confirmed.</strong></p></article><article><Eyebrow>Instructor</Eyebrow><h2>Bogdan Vizitiu</h2><p>Executive educator and advisor working at the intersection of leadership, strategy and execution.</p></article><article><Eyebrow>Participant voice</Eyebrow><h2>Testimonials pending.</h2><p>Verified participant feedback will be published here. No fabricated claims are used.</p></article><article><Eyebrow>FAQ</Eyebrow><h2>What language is used?</h2><p>Delivery language and location are confirmed for each cohort. Contact us for an in-company edition.</p></article></section><section className="shell cta-panel"><h2>Ready to take part?</h2><ArrowLink href="/contact">Reserve your place</ArrowLink></section></>}
+import {notFound} from 'next/navigation'
+import {getPrograms,programSlugs} from '@/lib/data'
+import {PageHero,ArrowLink,Eyebrow} from '@/components/ui'
+import {getCopy,getLocale} from '@/lib/i18n'
+
+export function generateStaticParams(){
+  return programSlugs.map(slug=>({slug}))
+}
+
+export default function Program({params,searchParams}:{params:{slug:string};searchParams?:{lang?:string}}){
+  const locale=getLocale(searchParams?.lang)
+  const copy=getCopy(locale).programDetail
+  const program=getPrograms(locale).find(item=>item.slug===params.slug)
+  if(!program)notFound()
+
+  return <>
+    <PageHero eyebrow={copy.eyebrow} title={program.title} intro={program.detail}/>
+    <section className="shell detail-list">
+      <article><Eyebrow>{copy.forWhomEyebrow}</Eyebrow><h2>{copy.forWhomTitle}</h2><p>{copy.forWhomText}</p></article>
+      <article><Eyebrow>{copy.problemEyebrow}</Eyebrow><h2>{copy.problemTitle}</h2><p>{copy.problemText}</p></article>
+      <article><Eyebrow>{copy.learnEyebrow}</Eyebrow><h2>{copy.learnTitle}</h2><ul>{program.topics.map(topic=><li key={topic}>{topic}</li>)}</ul></article>
+      <article><Eyebrow>{copy.formatEyebrow}</Eyebrow><h2>{copy.formatTitle}</h2><p>{copy.formatText}</p></article>
+      <article><Eyebrow>{copy.instructorEyebrow}</Eyebrow><h2>{copy.instructorTitle}</h2><p>{copy.instructorText}</p></article>
+      <article><Eyebrow>{copy.faqEyebrow}</Eyebrow><h2>{copy.faqTitle}</h2><p>{copy.faqText}</p></article>
+    </section>
+    <section className="shell cta-panel"><h2>{copy.ctaTitle}</h2><ArrowLink href="/contact">{copy.cta}</ArrowLink></section>
+  </>
+}

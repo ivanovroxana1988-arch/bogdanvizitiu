@@ -1,3 +1,17 @@
-import {PageHero,ArrowLink,Eyebrow} from '@/components/ui';import {Portrait} from '@/components/portrait'
+import {PageHero,ArrowLink,Eyebrow} from '@/components/ui'
+import {Portrait} from '@/components/portrait'
+import {getCopy,getLocale} from '@/lib/i18n'
+
 export const metadata={title:'About'}
-export default function About(){return <><PageHero eyebrow="About" title="Bogdan Vizitiu" intro="Strategy is useful only when it changes what people do."/><section className="shell content-grid"><Portrait/><div className="prose"><Eyebrow>A working biography</Eyebrow><h2>Clear thinking, made practical.</h2><p>Bogdan is an executive educator, strategic thinker, advisor and trainer working across leadership, strategy, organizations and professional development.</p><p>His work begins with the real situation—not a ready-made framework. He helps leaders examine assumptions, create shared clarity and translate intent into disciplined action.</p><p>This biography is intentionally concise. Verified career history, credentials and selected engagements will be added before publication.</p></div></section><section className="shell blocks">{[['Experience','Executive education, advisory and organizational learning. Verified details pending.'],['Areas of work','Leadership · Strategy · Organizational development · Execution'],['Philosophy','Better questions, clearer choices and learning connected to work.'],['Selected projects','Project references are placeholders pending client approval.'],['Speaking','Keynotes, panels, workshops and executive conversations.'],['Collaboration','Designed around context, not copied from a catalogue.']].map(x=><article className="block" key={x[0]}><h3>{x[0]}</h3><p>{x[1]}</p></article>)}</section><section className="shell cta-panel"><h2>Continue with a program.</h2><ArrowLink href="/programs">Explore programs</ArrowLink></section></>}
+
+export default function About({searchParams}:{searchParams?:{lang?:string}}){
+  const locale=getLocale(searchParams?.lang)
+  const copy=getCopy(locale).about
+
+  return <>
+    <PageHero eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro}/>
+    <section className="shell content-grid"><Portrait/><div className="prose"><Eyebrow>{copy.sectionEyebrow}</Eyebrow><h2>{copy.sectionTitle}</h2>{copy.paragraphs.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</div></section>
+    <section className="shell blocks">{copy.blocks.map(block=><article className="block" key={block.title}><h3>{block.title}</h3><p>{block.description}</p></article>)}</section>
+    <section className="shell cta-panel"><h2>{copy.ctaTitle}</h2><ArrowLink href="/programs">{copy.cta}</ArrowLink></section>
+  </>
+}

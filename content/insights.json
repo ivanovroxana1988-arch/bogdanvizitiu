@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "better-questions",
+    "status": "editorial-draft",
+    "category": {"ro": "Leadership", "en": "Leadership"},
+    "title": {"ro": "Liderii mai buni pun întrebări mai bune", "en": "Better leaders ask better questions"},
+    "excerpt": {
+      "ro": "Calitatea unei decizii se schimbă adesea după ce se schimbă calitatea conversației.",
+      "en": "The quality of a decision often changes after the quality of the conversation changes."
+    }
+  },
+  {
+    "slug": "negotiation-before-table",
+    "status": "editorial-draft",
+    "category": {"ro": "Negociere", "en": "Negotiation"},
+    "title": {"ro": "Negocierea începe înainte de masă", "en": "Negotiation starts before the table"},
+    "excerpt": {
+      "ro": "Interesele, alternativele și întrebările bune contează înainte ca primul argument să fie formulat.",
+      "en": "Interests, alternatives and better questions matter before the first argument is made."
+    }
+  },
+  {
+    "slug": "networking-with-intention",
+    "status": "editorial-draft",
+    "category": {"ro": "Networking", "en": "Networking"},
+    "title": {"ro": "Networkingul util începe cu intenția", "en": "Useful networking starts with intention"},
+    "excerpt": {
+      "ro": "Relațiile profesionale devin valoroase când există relevanță, reciprocitate și continuitate.",
+      "en": "Professional relationships become valuable when relevance, reciprocity and continuity are present."
+    }
+  }
+]

@@ -1,3 +1,15 @@
-import {PageHero,ArrowLink} from '@/components/ui';import {Portrait} from '@/components/portrait'
+import {PageHero,ArrowLink} from '@/components/ui'
+import {Portrait} from '@/components/portrait'
+import {getCopy,getLocale} from '@/lib/i18n'
+
 export const metadata={title:'Speaking'}
-export default function Speaking(){return <><PageHero eyebrow="Speaking & facilitation" title="Ideas worth discussing." intro="Keynotes, workshops, panels and executive sessions designed to make the next conversation more useful."/><section className="shell speaking"><Portrait event/><div className="prose"><h2>Substance for the room.</h2><p>Topics can include leadership judgment, strategic clarity, decision making, team effectiveness and the practical work of execution.</p><p>Every contribution is shaped around the audience, context and desired shift—not simply delivered from a standard deck.</p><ArrowLink href="/contact">Discuss your event</ArrowLink></div></section></>}
+
+export default function Speaking({searchParams}:{searchParams?:{lang?:string}}){
+  const locale=getLocale(searchParams?.lang)
+  const copy=getCopy(locale).speaking
+
+  return <>
+    <PageHero eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro}/>
+    <section className="shell speaking"><Portrait event/><div className="prose"><h2>{copy.sectionTitle}</h2>{copy.paragraphs.map(paragraph=><p key={paragraph}>{paragraph}</p>)}<ArrowLink href="/contact">{copy.cta}</ArrowLink></div></section>
+  </>
+}

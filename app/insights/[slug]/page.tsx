@@ -1,3 +1,20 @@
-import {notFound} from 'next/navigation';import {insights} from '@/lib/data';import {PageHero,Eyebrow,ArrowLink} from '@/components/ui'
-export function generateStaticParams(){return insights.map(x=>({slug:x.slug}))}
-export default function Insight({params}:{params:{slug:string}}){const x=insights.find(i=>i.slug===params.slug);if(!x)notFound();return <><PageHero eyebrow={x.category} title={x.title} intro={x.excerpt}/><section className="shell content-grid"><div><Eyebrow>Field note</Eyebrow><p className="placeholder-warning">Editorial draft / placeholder</p></div><article className="prose"><p>Useful thinking rarely starts with a complicated model. It starts by noticing where language, priorities and behavior no longer agree.</p><p>This article space is prepared for Bogdan’s original writing. The final essay, publication date and reading time should be added to the content layer before launch.</p><h2>A question to take into the room</h2><p>What would become easier if everyone understood the choice—not just the plan?</p><ArrowLink href="/insights">Back to insights</ArrowLink></article></section></>}
+import {notFound} from 'next/navigation'
+import {getInsights,insightSlugs} from '@/lib/data'
+import {PageHero,Eyebrow,ArrowLink} from '@/components/ui'
+import {getCopy,getLocale} from '@/lib/i18n'
+
+export function generateStaticParams(){
+  return insightSlugs.map(slug=>({slug}))
+}
+
+export default function Insight({params,searchParams}:{params:{slug:string};searchParams?:{lang?:string}}){
+  const locale=getLocale(searchParams?.lang)
+  const copy=getCopy(locale).insights
+  const insight=getInsights(locale).find(item=>item.slug===params.slug)
+  if(!insight)notFound()
+
+  return <>
+    <PageHero eyebrow={insight.category} title={insight.title} intro={insight.excerpt}/>
+    <section className="shell content-grid"><div><Eyebrow>{copy.fieldNote}</Eyebrow><p className="placeholder-warning">{copy.draftLabel}</p></div><article className="prose">{copy.articleParagraphs.map(paragraph=><p key={paragraph}>{paragraph}</p>)}<h2>{copy.questionTitle}</h2><p>{copy.questionText}</p><ArrowLink href="/insights">{copy.back}</ArrowLink></article></section>
+  </>
+}

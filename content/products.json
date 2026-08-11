@@ -1,23 +1,43 @@
 [
   {
     "slug": "networking",
-    "title": "Networking",
+    "title": {"ro": "Networking", "en": "Networking"},
     "type": "open-course",
     "status": "validated",
     "proof": ["Stup"],
-    "cta": "Vezi cursul",
-    "description": null,
+    "description": {
+      "ro": "Un program despre cum construiești relații profesionale relevante, fără conversații de complezență și fără colecționarea inutilă de contacte.",
+      "en": "A program about building relevant professional relationships without empty small talk or collecting contacts for the sake of it."
+    },
+    "detail": {
+      "ro": "Networkingul util înseamnă claritate despre cine ești, ce poți oferi, ce cauți și cum construiești încredere în timp. Programul transformă ideea vagă de «a cunoaște oameni» într-o practică profesională intenționată.",
+      "en": "Useful networking starts with clarity about who you are, what you can offer, what you are looking for and how trust is built over time. The program turns the vague idea of “meeting people” into an intentional professional practice."
+    },
+    "topics": {
+      "ro": ["Construirea relațiilor profesionale", "Conversații cu sens", "Reciprocitate și încredere", "Follow-up și continuitate"],
+      "en": ["Building professional relationships", "Meaningful conversations", "Reciprocity and trust", "Follow-up and continuity"]
+    },
     "dates": [],
     "price": null
   },
   {
     "slug": "arta-negocierii",
-    "title": "Arta Negocierii",
+    "title": {"ro": "Arta Negocierii", "en": "The Art of Negotiation"},
     "type": "open-course",
     "status": "validated",
     "proof": ["Stup"],
-    "cta": "Vezi cursul",
-    "description": null,
+    "description": {
+      "ro": "Un program practic despre pregătire, interese, opțiuni și conversațiile care fac diferența într-o negociere.",
+      "en": "A practical program about preparation, interests, options and the conversations that make the difference in a negotiation."
+    },
+    "detail": {
+      "ro": "Negocierea nu începe la masă și nu se reduce la argumente bune. Programul lucrează cu pregătirea, pozițiile și interesele, alternativele, întrebările și relația dintre rezultat și colaborarea pe termen lung.",
+      "en": "Negotiation starts before people sit at the table and it is not simply about having better arguments. The program works with preparation, positions and interests, alternatives, questions and the relationship between outcomes and long-term collaboration."
+    },
+    "topics": {
+      "ro": ["Pregătirea negocierii", "Poziții și interese", "Alternative și opțiuni", "Întrebări, influență și acord"],
+      "en": ["Negotiation preparation", "Positions and interests", "Alternatives and options", "Questions, influence and agreement"]
+    },
     "dates": [],
     "price": null
   }
