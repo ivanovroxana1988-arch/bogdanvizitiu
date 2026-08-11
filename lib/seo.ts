@@ -9,6 +9,9 @@ export function localizedUrl(path:string,locale:Locale){
 
 export function buildPageMetadata({title,description,path,locale}:{title:string;description:string;path:string;locale:Locale}):Metadata{
   const canonical=localizedUrl(path,locale)
+  const socialImage=`${SITE_URL}/opengraph-image`
+  const imageAlt=`${title} — Bogdan Vizitiu`
+
   return {
     title,
     description,
@@ -27,8 +30,14 @@ export function buildPageMetadata({title,description,path,locale}:{title:string;
       url:canonical,
       siteName:'Bogdan Vizitiu',
       locale:locale==='ro'?'ro_RO':'en_GB',
+      images:[{url:socialImage,width:1200,height:630,alt:imageAlt,type:'image/png'}],
     },
-    twitter:{card:'summary_large_image',title,description},
+    twitter:{
+      card:'summary_large_image',
+      title,
+      description,
+      images:[{url:socialImage,alt:imageAlt}],
+    },
   }
 }
 
