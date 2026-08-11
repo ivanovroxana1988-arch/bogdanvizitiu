@@ -1,0 +1,3 @@
+import {PageHero,ArrowLink} from '@/components/ui';import {programs} from '@/lib/data'
+export const metadata={title:'Programs'}
+export default function Programs(){return <><PageHero eyebrow="Open learning" title="Programs" intro="Focused learning experiences for professionals and leaders who want to think better and act with greater clarity."/><section className="shell index-list">{programs.map((p,i)=><article className="program-row" key={p.slug}><span>0{i+1}</span><h3>{p.title}</h3><p>{p.description}</p><ArrowLink href={`/programs/${p.slug}`}>View program</ArrowLink></article>)}</section><section className="shell cta-panel"><h2>Need a tailored format?</h2><ArrowLink href="/corporate">Corporate learning</ArrowLink></section></>}

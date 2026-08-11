@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "networking",
+    "title": "Networking",
+    "type": "open-course",
+    "status": "validated",
+    "proof": ["Stup"],
+    "cta": "Vezi cursul",
+    "description": null,
+    "dates": [],
+    "price": null
+  },
+  {
+    "slug": "arta-negocierii",
+    "title": "Arta Negocierii",
+    "type": "open-course",
+    "status": "validated",
+    "proof": ["Stup"],
+    "cta": "Vezi cursul",
+    "description": null,
+    "dates": [],
+    "price": null
+  }
+]
