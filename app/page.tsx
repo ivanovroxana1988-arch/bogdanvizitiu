@@ -1,8 +1,21 @@
+import type {Metadata} from 'next'
 import {ArrowLink,Eyebrow} from '@/components/ui'
 import {ConceptImage,EditorialImage} from '@/components/portrait'
 import {getMediaAppearances,getPrograms,getPublishedInsights} from '@/lib/data'
 import {getCopy,getLocale} from '@/lib/i18n'
+import {buildPageMetadata} from '@/lib/seo'
 import servicePages from '@/content/service-pages.json'
+
+export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):Metadata{
+  const locale=getLocale(searchParams?.lang)
+  const copy=getCopy(locale).home
+  return buildPageMetadata({
+    title:locale==='ro'?'Leadership, negociere și relații profesionale':'Leadership, negotiation and professional relationships',
+    description:copy.heroIntro,
+    path:'/',
+    locale,
+  })
+}
 
 export default function Home({searchParams}:{searchParams?:{lang?:string}}){
   const locale=getLocale(searchParams?.lang)

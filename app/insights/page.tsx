@@ -3,6 +3,7 @@ import {PageHero,ArrowLink} from '@/components/ui'
 import {ConceptImage,EditorialImage} from '@/components/portrait'
 import {getPublishedInsights} from '@/lib/data'
 import {getCopy,getLocale} from '@/lib/i18n'
+import {buildPageMetadata} from '@/lib/seo'
 import styles from './insights.module.css'
 
 const insightImages:Record<string,'speaking'|'coaching'|'workshop'|'candid'>={
@@ -15,13 +16,14 @@ const insightImages:Record<string,'speaking'|'coaching'|'workshop'|'candid'>={
 export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):Metadata{
   const locale=getLocale(searchParams?.lang)
   const isRo=locale==='ro'
-  return {
-    title:isRo?'Resurse | Bogdan Vizitiu':'Insights | Bogdan Vizitiu',
+  return buildPageMetadata({
+    title:isRo?'Resurse':'Insights',
     description:isRo
       ?'Idei pe care Bogdan Vizitiu le folosește în coaching, training și conversațiile de lucru despre leadership, negociere, relații și performanță.'
       :'Ideas Bogdan Vizitiu uses in coaching, training and working conversations about leadership, negotiation, relationships and performance.',
-    alternates:{canonical:'https://bogdanvizitiu.com/insights'},
-  }
+    path:'/insights',
+    locale,
+  })
 }
 
 export default function Insights({searchParams}:{searchParams?:{lang?:string}}){

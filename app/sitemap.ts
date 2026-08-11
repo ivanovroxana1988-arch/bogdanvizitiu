@@ -17,5 +17,5 @@ export default function sitemap():MetadataRoute.Sitemap{
     ...publishedInsightSlugs.map(slug=>`/insights/${slug}`),
   ]
 
-  return Array.from(new Set(routes)).map(url=>({url:base+url,lastModified:new Date()}))
+  return Array.from(new Set(routes)).map(url=>({url:base+url}))
 }

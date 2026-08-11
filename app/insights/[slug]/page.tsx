@@ -3,7 +3,9 @@ import {notFound} from 'next/navigation'
 import {getPublishedInsights,publishedInsightSlugs} from '@/lib/data'
 import {PageHero,Eyebrow,ArrowLink} from '@/components/ui'
 import {ConceptImage,EditorialImage} from '@/components/portrait'
+import {JsonLd} from '@/components/json-ld'
 import {getCopy,getLocale} from '@/lib/i18n'
+import {localizedUrl,SITE_URL} from '@/lib/seo'
 import styles from '../insights.module.css'
 
 const insightImages:Record<string,'speaking'|'coaching'|'workshop'|'candid'>={
@@ -23,17 +25,18 @@ export function generateMetadata({params,searchParams}:{params:{slug:string};sea
   if(!insight)return {}
 
   const path=`/insights/${insight.slug}`
-  const canonical=`https://bogdanvizitiu.com${path}${locale==='en'?'?lang=en':''}`
+  const canonical=localizedUrl(path,locale)
 
   return {
-    title:`${insight.title} | Bogdan Vizitiu`,
+    title:insight.title,
     description:insight.excerpt,
-    authors:[{name:'Bogdan Vizitiu'}],
+    authors:[{name:'Bogdan Vizitiu',url:`${SITE_URL}/despre`}],
     alternates:{
       canonical,
       languages:{
-        'ro-RO':`https://bogdanvizitiu.com${path}`,
-        'en':`https://bogdanvizitiu.com${path}?lang=en`,
+        'ro-RO':`${SITE_URL}${path}`,
+        'en':`${SITE_URL}${path}?lang=en`,
+        'x-default':`${SITE_URL}${path}`,
       },
     },
     openGraph:{
@@ -63,8 +66,28 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
   }).format(new Date(`${insight.publishedAt}T12:00:00Z`))
 
   const isNetworking=insight.slug==='networkingul-nu-incepe-cu-schimbul-de-contacte'
+  const path=`/insights/${insight.slug}`
+  const canonical=localizedUrl(path,locale)
+  const articleJsonLd={
+    '@context':'https://schema.org',
+    '@type':'BlogPosting',
+    '@id':`${canonical}#article`,
+    headline:insight.title,
+    description:insight.excerpt,
+    image:`${SITE_URL}${path}/opengraph-image`,
+    datePublished:`${insight.publishedAt}T12:00:00+03:00`,
+    inLanguage:locale==='ro'?'ro-RO':'en',
+    mainEntityOfPage:{'@type':'WebPage','@id':canonical},
+    author:{
+      '@type':'Person',
+      '@id':`${SITE_URL}/#person`,
+      name:'Bogdan Vizitiu',
+      url:`${SITE_URL}/despre`,
+    },
+  }
 
   return <>
+    <JsonLd data={articleJsonLd}/>
     <PageHero eyebrow={insight.category} title={insight.title} intro={insight.subtitle || insight.excerpt}/>
     <section className={`shell ${styles.articleGrid}`}>
       <aside className={styles.articleMeta}>

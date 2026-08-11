@@ -5,7 +5,7 @@ export default function robots():MetadataRoute.Robots{
     rules:{
       userAgent:'*',
       allow:'/',
-      disallow:['/about','/programs','/speaking','/privacy','/terms','/cursuri/leadership-teams'],
+      disallow:['/cursuri/leadership-teams'],
     },
     sitemap:'https://bogdanvizitiu.com/sitemap.xml',
     host:'https://bogdanvizitiu.com',
