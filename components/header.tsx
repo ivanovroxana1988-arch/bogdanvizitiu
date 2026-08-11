@@ -18,7 +18,7 @@ function HeaderView({locale,pathname}:{locale:Locale;pathname:string}){
   const copy=getCopy(locale)
 
   return <header className="header"><div className="shell nav">
-    <Link href={withLocale('/',locale)} className="logo" aria-label="Bogdan Vizitiu home">BGV.</Link>
+    <Link href={withLocale('/',locale)} className="logo" aria-label="Bogdan Vizitiu home">BGV<span aria-hidden>.</span></Link>
     <button className="menu" onClick={()=>setOpen(!open)} aria-expanded={open} aria-controls="navigation">{copy.navigation.menu}</button>
     <nav id="navigation" className={open?'open':''} aria-label="Main navigation">
       {links.map(([key,href])=><Link onClick={()=>setOpen(false)} key={href} href={withLocale(href,locale)} aria-current={pathname===href?'page':undefined}>{copy.navigation[key]}</Link>)}
