@@ -1,33 +1,27 @@
 [
   {
     "slug": "networking",
-    "title": "Networking",
     "category": "open-course",
-    "pillars": [
-      "Networking & Influence"
-    ],
+    "pillars": ["Networking & Influence"],
     "status": "validated",
-    "proofSources": [
-      "Stup"
-    ],
-    "cta": "Vezi cursul",
-    "description": null,
+    "proofSources": ["Stup"],
+    "locales": {
+      "ro": { "title": "Networking", "description": null, "cta": "Vezi cursul" },
+      "en": { "title": "Networking", "description": null, "cta": "View course" }
+    },
     "dates": [],
     "price": null
   },
   {
     "slug": "arta-negocierii",
-    "title": "Arta Negocierii",
     "category": "open-course",
-    "pillars": [
-      "Negotiation & Sales"
-    ],
+    "pillars": ["Negotiation & Sales"],
     "status": "validated",
-    "proofSources": [
-      "Stup"
-    ],
-    "cta": "Vezi cursul",
-    "description": null,
+    "proofSources": ["Stup"],
+    "locales": {
+      "ro": { "title": "Arta Negocierii", "description": null, "cta": "Vezi cursul" },
+      "en": { "title": "The Art of Negotiation", "description": null, "cta": "View course" }
+    },
     "dates": [],
     "price": null
   }

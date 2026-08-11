@@ -1,15 +1,12 @@
 import type { MetadataRoute } from 'next'
-import products from '@/content/products.json'
-import { programs, insights } from '@/lib/data'
-
-const base = 'https://bogdanvizitiu.com'
+import { getPublicProducts } from '@/lib/content/load-content'
+import { canonicalOrigin, indexingApproved } from '@/lib/content/metadata'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const english = ['', '/about', '/programs', '/coaching', '/corporate', '/insights', '/speaking', '/contact',
-    ...programs.map(({ slug }) => `/programs/${slug}`),
-    ...insights.map(({ slug }) => `/insights/${slug}`)]
-  const romanian = ['/ro', '/ro/despre', '/ro/cursuri', '/ro/coaching', '/ro/corporate', '/ro/media', '/ro/resurse', '/ro/contact',
-    ...products.map(({ slug }) => `/ro/cursuri/${slug}`)]
-
-  return [...english, ...romanian].map((path) => ({ url: `${base}${path}`, lastModified: new Date() }))
+  if (!indexingApproved || !canonicalOrigin) return []
+  const routes = ['/', '/despre', '/cursuri', '/coaching', '/corporate', '/media', '/resurse', '/contact',
+    '/en', '/en/about', '/en/courses', '/en/coaching', '/en/corporate', '/en/media', '/en/resources', '/en/contact',
+    ...getPublicProducts('ro').map(({slug})=>`/cursuri/${slug}`),
+    ...getPublicProducts('en').map(({slug})=>`/en/courses/${slug}`)]
+  return routes.map((route)=>({url:`${canonicalOrigin}${route}`}))
 }

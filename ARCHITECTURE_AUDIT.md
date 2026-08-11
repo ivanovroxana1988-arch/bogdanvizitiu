@@ -5,6 +5,28 @@
 **Method:** route inventory, component inventory, content-state review, navigation
 review, SEO/indexing review, and inspection of available project scripts.
 
+## Remediation update
+
+The following P0 decisions and controls were implemented after the original
+inventory below:
+
+- Romanian is canonical at `/`; English is namespaced under `/en`; legacy `/ro`
+  and former unprefixed English routes receive permanent redirects.
+- The MVP conversion model is **inquiry/reservation**, not checkout. Checkout,
+  account and LMS remain deliberately deferred.
+- Public products now pass through `lib/content/` validation and publication
+  filters. `validated` records are excluded from public lists and detail routes.
+- `lib/data.ts` was removed and both locales use the same bilingual product model.
+- Robots and sitemap now respect `content/seo.json`; indexing remains blocked.
+- Contact submission has validation, consent, a honeypot, localized failure
+  states and localized noindex confirmation pages. Delivery succeeds only when
+  `CONTACT_WEBHOOK_URL` is configured.
+
+The original S01–S18 matrix is retained as the baseline audit. It must be
+re-audited after approved content, legal copy, integrations and photography are
+supplied. Steps requiring human approval—content, biography, legal text,
+photography and usage rights—remain open and were not inferred.
+
 ## Executive conclusion
 
 The repository is a visual and routing prototype, not an MVP implementation of

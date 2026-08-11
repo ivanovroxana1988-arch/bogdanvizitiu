@@ -20,9 +20,15 @@ copy, placeholder imagery, or legacy routes as verified content.
 ```bash
 npm install
 npm run dev
+npm run validate:content
+npm run lint
 npm run typecheck
 npm run build
 ```
+
+Contact submissions are delivered only when `CONTACT_WEBHOOK_URL` is configured.
+Without it, the form returns an honest unavailable state and does not display a
+false success confirmation. Copy `.env.example` to `.env.local` for local setup.
 
 ## Source assets
 
