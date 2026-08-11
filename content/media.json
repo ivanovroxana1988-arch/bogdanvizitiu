@@ -85,6 +85,18 @@
       "license": "Unsplash License",
       "license_url": "https://unsplash.com/license",
       "credit": "Kelly Sikkema (@kellysikkema)"
+    },
+    "insightsWorkspace": {
+      "src": "https://images.unsplash.com/photo-1743385779534-f53c018c21f5?auto=format&fit=crop&fm=jpg&q=82&w=1800",
+      "alt": "Caiet deschis, instrumente de scris, căști și cafea pe un birou din lemn",
+      "usage": "resources and editorial articles",
+      "status": "approved",
+      "rights_status": "licensed",
+      "source": "Unsplash",
+      "source_url": "https://unsplash.com/photos/notebook-pen-headphones-and-coffee-on-a-wooden-desk-wl2qQ2JHMXA",
+      "license": "Unsplash License",
+      "license_url": "https://unsplash.com/license",
+      "credit": "Kelly Sikkema (@kellysikkema)"
     }
   },
   "appearances": [],
