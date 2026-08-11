@@ -1,5 +1,5 @@
 import type {MetadataRoute} from 'next'
-import {programSlugs,insightSlugs} from '@/lib/data'
+import {programSlugs,publishedInsightSlugs} from '@/lib/data'
 
 export default function sitemap():MetadataRoute.Sitemap{
   const base='https://bogdanvizitiu.com'
@@ -14,7 +14,7 @@ export default function sitemap():MetadataRoute.Sitemap{
     '/privacy',
     '/terms',
     ...programSlugs.map(slug=>`/programs/${slug}`),
-    ...insightSlugs.map(slug=>`/insights/${slug}`),
+    ...publishedInsightSlugs.map(slug=>`/insights/${slug}`),
   ]
 
   return routes.map(url=>({url:base+url,lastModified:new Date()}))
