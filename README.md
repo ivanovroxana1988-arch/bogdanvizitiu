@@ -21,10 +21,15 @@ copy, placeholder imagery, or legacy routes as verified content.
 npm install
 npm run dev
 npm run validate:content
+npm run check:architecture
 npm run lint
 npm run typecheck
 npm run build
 ```
+
+`npm run build` runs the content and architecture checks first. The architecture
+check fails fast if legacy `app/insights`, `app/programs`, `lib/data.ts`, or an
+`@/lib/data` import is reintroduced.
 
 Contact submissions are delivered only when `CONTACT_WEBHOOK_URL` is configured.
 Without it, the form returns an honest unavailable state and does not display a
