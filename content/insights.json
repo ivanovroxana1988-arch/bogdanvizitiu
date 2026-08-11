@@ -1,32 +1,226 @@
 [
   {
+    "slug": "networkingul-nu-incepe-cu-schimbul-de-contacte",
+    "status": "published",
+    "category": {"ro": "Networking", "en": "Networking"},
+    "title": {"ro": "Networkingul nu începe cu schimbul de contacte", "en": "Networking does not start with exchanging contacts"},
+    "subtitle": {"ro": "Cum construiești relații profesionale care chiar au sens", "en": "How to build professional relationships that actually matter"},
+    "excerpt": {
+      "ro": "Networkingul bun nu începe cu o listă de oameni pe care îi poți folosi. Începe cu curiozitate, relevanță și disponibilitatea de a construi o relație.",
+      "en": "Good networking does not start with a list of people you can use. It starts with curiosity, relevance and a willingness to build a relationship."
+    },
+    "readTime": {"ro": "7 min", "en": "7 min"},
+    "publishedAt": "2026-08-11",
+    "intro": {
+      "ro": [
+        "Am întâlnit mulți oameni care spun că nu le place networkingul. Și îi înțeleg.",
+        "Dacă prin networking înțelegem să intri într-o încăpere plină de oameni pe care nu îi cunoști, să vorbești despre tine câteva minute, să schimbi niște contacte și să pleci acasă cu senzația că ai fost la o probă practică de autopromovare, probabil că problema nu este networkingul. Problema este felul în care am ajuns să îl înțelegem."
+      ],
+      "en": [
+        "I have met plenty of people who say they dislike networking. I understand why.",
+        "If networking means walking into a room full of strangers, talking about yourself for a few minutes, exchanging contacts and leaving with the feeling that you just sat a practical exam in self-promotion, the problem may not be networking itself. It may be the way we have learned to think about it."
+      ]
+    },
+    "sections": {
+      "ro": [
+        {
+          "heading": "Nu începe cu „Ce pot obține de aici?”",
+          "paragraphs": [
+            "Când intrăm într-o conversație profesională cu un obiectiv foarte precis, tindem să îl vedem pe celălalt prin acel obiectiv: un potențial client, un partener, cineva care ne poate recomanda sau cineva care cunoaște pe cineva.",
+            "În momentul acela, conversația riscă să devină o tranzacție înainte să existe măcar o relație. Iar oamenii simt asta destul de repede.",
+            "O conversație bună începe mai degrabă cu curiozitate. Cine este omul din fața mea? Ce face? Ce îl preocupă? Ce încearcă să construiască? Ce avem în comun?",
+            "Nu toate conversațiile trebuie să ducă undeva. Uneori valoarea unei conversații este pur și simplu faptul că ai cunoscut un om interesant. Paradoxal, tocmai de acolo apar adesea relațiile care, în timp, ajung să conteze."
+          ]
+        },
+        {
+          "heading": "Rețeaua nu este o listă de contacte",
+          "paragraphs": [
+            "Putem avea mii de conexiuni pe LinkedIn și foarte puțini oameni pe care îi putem suna atunci când avem nevoie de o perspectivă sinceră, de o recomandare sau de ajutor.",
+            "A avea acces la cineva nu înseamnă că avem o relație cu acel om. Relațiile profesionale se construiesc în timp, prin conversații repetate, încredere și prin lucrurile pe care le facem atunci când nu avem nimic imediat de câștigat.",
+            "De aceea prefer să mă gândesc la networking ca la dezvoltarea unei rețele de relații, nu ca la acumularea unei baze de date. Diferența pare semantică. În practică schimbă aproape tot."
+          ]
+        },
+        {
+          "heading": "O întrebare mai bună: „Ce pot aduce eu în relația asta?”",
+          "paragraphs": [
+            "Networkingul devine mult mai simplu când renunțăm pentru câteva minute la presiunea de a ne vinde.",
+            "Poate știi ceva ce îl poate ajuta pe omul din fața ta. Poate îi poți recomanda o persoană. Poate îi poți da o perspectivă. Poate pur și simplu îl poți asculta.",
+            "Nu vorbesc despre generozitate folosită ca strategie ascunsă de vânzare. Asta este aceeași tranzacție, doar îmbrăcată mai elegant. Vorbesc despre disponibilitatea reală de a participa la o relație.",
+            "Pentru mine, aici începe networkingul bun: nu cu «Cum mă poate ajuta omul acesta?», ci cu «Există ceva valoros pe care îl putem construi sau împărtăși?»."
+          ]
+        },
+        {
+          "heading": "Valorile comune fac relațiile mai ușor de păstrat",
+          "paragraphs": [
+            "Nu avem nevoie de relații cu toată lumea. Și nici nu cred că ar trebui să încercăm.",
+            "Unele dintre cele mai bune relații profesionale apar atunci când descoperim că vedem anumite lucruri într-un mod asemănător: munca, corectitudinea, oamenii, businessul sau felul în care vrem să construim ceva.",
+            "Interesele comune pot începe o conversație. Valorile comune o pot face să dureze."
+          ]
+        },
+        {
+          "heading": "„Nu sunt bun la networking”",
+          "paragraphs": [
+            "Este una dintre frazele pe care le aud des. De multe ori, în spatele ei nu se află lipsa unei abilități, ci o barieră: «Nu știu cum să încep conversația», «Nu vreau să deranjez», «Nu știu ce să spun despre mine» sau «Toți ceilalți par să se cunoască».",
+            "Toate sunt perfect de înțeles. Dar niciuna nu este o sentință.",
+            "Networkingul este un set de comportamente care poate fi exersat. Poți învăța să începi o conversație, să pui întrebări mai bune, să vorbești despre tine fără să transformi conversația într-un pitch și să observi când există o conexiune reală."
+          ]
+        },
+        {
+          "heading": "Nu încerca să fii interesant. Fii interesat.",
+          "paragraphs": [
+            "Există multă presiune în jurul ideii de a face o impresie bună: ce spun, cum mă prezint, cum par mai interesant, cum îl fac pe celălalt să mă țină minte?",
+            "Uneori, una dintre cele mai eficiente schimbări este să mutăm atenția în direcția opusă. Să devenim interesați.",
+            "Să punem o întrebare și să ascultăm răspunsul. Apoi să punem următoarea întrebare pornind de la ce tocmai am auzit, nu de la următorul lucru pe care voiam noi să-l spunem.",
+            "Pare elementar. Nu este. Oamenii care ascultă cu adevărat sunt surprinzător de ușor de ținut minte."
+          ]
+        },
+        {
+          "heading": "Networkingul nu se termină când se termină evenimentul",
+          "paragraphs": [
+            "Ai avut o conversație bună. Ați făcut schimb de contacte. Și apoi?",
+            "Foarte multe relații potențiale se opresc aici, nu pentru că oamenii nu s-au plăcut, ci pentru că fiecare se întoarce la viața lui și presupune că va relua conversația când va exista un motiv important.",
+            "Dar relațiile nu funcționează prea bine dacă apar doar atunci când avem nevoie de ceva. Un mesaj, un articol despre care ți-ai amintit că l-ar interesa, o felicitare pentru ceva ce a realizat, o invitație la cafea sau o introducere către altcineva pot părea gesturi mici. Efectul lor, în timp, nu este."
+          ]
+        },
+        {
+          "heading": "Poate că networkingul este mai simplu decât l-am făcut noi",
+          "paragraphs": [
+            "Nu trebuie să intri într-o încăpere și să cunoști douăzeci de oameni. Poate cunoști unul, dar ai o conversație bună.",
+            "Nu trebuie să transformi fiecare întâlnire într-o oportunitate. Unele relații nu vor produce niciodată business. Și este în regulă.",
+            "O rețea profesională sănătoasă nu este construită doar din oameni de la care putem obține ceva. Este construită din oameni pe care îi cunoaștem, în care avem încredere, cu care putem schimba idei și împreună cu care, uneori, apar oportunități pe care niciunul dintre noi nu le-ar fi putut anticipa la prima conversație."
+          ]
+        }
+      ],
+      "en": [
+        {
+          "heading": "Do not start with ‘What can I get from this?’",
+          "paragraphs": [
+            "When we enter a professional conversation with a very precise goal, we tend to see the other person through that goal: a potential client, a partner, someone who can recommend us or someone who knows someone.",
+            "The conversation can become a transaction before there is even a relationship. People usually notice that quickly.",
+            "A better conversation starts with curiosity. Who is the person in front of me? What are they building? What matters to them? What do we have in common?",
+            "Not every conversation has to lead somewhere. Sometimes its value is simply that you met an interesting person. Paradoxically, those are often the relationships that become important over time."
+          ]
+        },
+        {
+          "heading": "A network is not a contact list",
+          "paragraphs": [
+            "We can have thousands of LinkedIn connections and very few people we can actually call when we need an honest perspective, a recommendation or help.",
+            "Having access to someone does not mean having a relationship with them. Professional relationships are built over time through repeated conversations, trust and what we do when there is nothing immediate to gain.",
+            "That is why I prefer to think about networking as developing a network of relationships rather than accumulating a database. The difference sounds semantic. In practice, it changes almost everything."
+          ]
+        },
+        {
+          "heading": "A better question: ‘What can I bring to this relationship?’",
+          "paragraphs": [
+            "Networking becomes much simpler when we let go, for a moment, of the pressure to sell ourselves.",
+            "You may know something useful to the person in front of you. You may be able to introduce them to someone, offer a perspective or simply listen.",
+            "This is not generosity used as a hidden sales tactic. That is the same transaction in better clothes. It is a genuine willingness to participate in a relationship.",
+            "For me, good networking starts not with ‘How can this person help me?’ but with ‘Is there something valuable we can build or share?’"
+          ]
+        },
+        {
+          "heading": "Shared values make relationships easier to keep",
+          "paragraphs": [
+            "We do not need relationships with everyone, and I do not think we should try.",
+            "Some of the strongest professional relationships appear when we discover that we see work, fairness, people, business or the way we want to build things in a similar way.",
+            "Shared interests can start a conversation. Shared values can make it last."
+          ]
+        },
+        {
+          "heading": "‘I am not good at networking’",
+          "paragraphs": [
+            "I hear this often. Behind it there is usually not a lack of ability but a barrier: ‘I do not know how to start’, ‘I do not want to bother people’, ‘I do not know what to say about myself’ or ‘Everyone else seems to know each other.’",
+            "All of those reactions make sense. None of them is a sentence.",
+            "Networking is a set of behaviours that can be practised. You can learn to start conversations, ask better questions, talk about yourself without turning the exchange into a pitch and notice when there is a genuine connection."
+          ]
+        },
+        {
+          "heading": "Do not try to be interesting. Be interested.",
+          "paragraphs": [
+            "There is a lot of pressure around making a good impression: what do I say, how do I introduce myself, how do I become memorable?",
+            "Sometimes the most useful move is to shift attention in the opposite direction and become interested.",
+            "Ask a question and listen to the answer. Then ask the next question based on what you just heard rather than on the next thing you planned to say.",
+            "It sounds elementary. It is not. People who truly listen are surprisingly easy to remember."
+          ]
+        },
+        {
+          "heading": "Networking does not end when the event ends",
+          "paragraphs": [
+            "You had a good conversation. You exchanged details. What happens next?",
+            "Many potentially useful relationships stop here, not because the people disliked each other, but because everyone returns to daily life and assumes they will reconnect when an important reason appears.",
+            "Relationships do not work particularly well when they only reappear when we need something. A message, an article you thought the other person might appreciate, a congratulations, a coffee invitation or an introduction can seem small. Over time, their effect is not."
+          ]
+        },
+        {
+          "heading": "Perhaps networking is simpler than we make it",
+          "paragraphs": [
+            "You do not have to walk into a room and meet twenty people. You might meet one and have a good conversation.",
+            "You do not have to turn every meeting into an opportunity. Some relationships will never create business, and that is perfectly fine.",
+            "A healthy professional network is not built only from people we can get something from. It is built from people we know, trust and can exchange ideas with, and with whom opportunities sometimes appear that neither person could have predicted in the first conversation."
+          ]
+        }
+      ]
+    },
+    "closing": {
+      "ro": [
+        "De aceea, data viitoare când intri într-o încăpere în care nu cunoști pe nimeni, poate că obiectivul nu trebuie să fie «Trebuie să fac networking».",
+        "Poate fi ceva mult mai simplu: «Hai să văd pe cine pot cunoaște.» Restul poate veni mai târziu."
+      ],
+      "en": [
+        "So the next time you walk into a room where you know nobody, the objective does not have to be ‘I need to network.’",
+        "It can be much simpler: ‘Let me see who I can get to know.’ The rest can come later."
+      ]
+    },
+    "cta": {
+      "title": {"ro": "Vrei să exersezi, nu doar să citești despre networking?", "en": "Want to practise networking, not just read about it?"},
+      "label": {"ro": "Descoperă programul de Networking", "en": "Explore the Networking program"},
+      "href": "/programs/networking"
+    },
+    "sourceNote": {
+      "ro": "Articol dezvoltat pornind din ideile și workshopurile despre networking susținute de Bogdan Vizitiu și din conversația Stup Unplugged despre networking și growth mindset.",
+      "en": "This article develops ideas from Bogdan Vizitiu’s networking workshops and his Stup Unplugged conversation about networking and growth mindset."
+    },
+    "sources": [
+      {"label": "Stup Unplugged S3 — cu Bogdan Vizitiu", "url": "https://stup.bancatransilvania.ro/newsroom/articole/articol/stup-unplugged-s3-cu-bogdan-vizitiu"},
+      {"label": "Stup — Totul despre networking | Practică și Teorie", "url": "https://stup.bancatransilvania.ro/evenimente/eveniment?e=1990"}
+    ]
+  },
+  {
     "slug": "better-questions",
     "status": "editorial-draft",
     "category": {"ro": "Leadership", "en": "Leadership"},
     "title": {"ro": "Liderii mai buni pun întrebări mai bune", "en": "Better leaders ask better questions"},
+    "subtitle": {"ro": "", "en": ""},
     "excerpt": {
       "ro": "Calitatea unei decizii se schimbă adesea după ce se schimbă calitatea conversației.",
       "en": "The quality of a decision often changes after the quality of the conversation changes."
-    }
+    },
+    "readTime": {"ro": "6 min", "en": "6 min"},
+    "publishedAt": "",
+    "intro": {"ro": [], "en": []},
+    "sections": {"ro": [], "en": []},
+    "closing": {"ro": [], "en": []},
+    "cta": {"title": {"ro": "", "en": ""}, "label": {"ro": "", "en": ""}, "href": ""},
+    "sourceNote": {"ro": "", "en": ""},
+    "sources": []
   },
   {
     "slug": "negotiation-before-table",
     "status": "editorial-draft",
     "category": {"ro": "Negociere", "en": "Negotiation"},
     "title": {"ro": "Negocierea începe înainte de masă", "en": "Negotiation starts before the table"},
+    "subtitle": {"ro": "", "en": ""},
     "excerpt": {
       "ro": "Interesele, alternativele și întrebările bune contează înainte ca primul argument să fie formulat.",
       "en": "Interests, alternatives and better questions matter before the first argument is made."
-    }
-  },
-  {
-    "slug": "networking-with-intention",
-    "status": "editorial-draft",
-    "category": {"ro": "Networking", "en": "Networking"},
-    "title": {"ro": "Networkingul util începe cu intenția", "en": "Useful networking starts with intention"},
-    "excerpt": {
-      "ro": "Relațiile profesionale devin valoroase când există relevanță, reciprocitate și continuitate.",
-      "en": "Professional relationships become valuable when relevance, reciprocity and continuity are present."
-    }
+    },
+    "readTime": {"ro": "6 min", "en": "6 min"},
+    "publishedAt": "",
+    "intro": {"ro": [], "en": []},
+    "sections": {"ro": [], "en": []},
+    "closing": {"ro": [], "en": []},
+    "cta": {"title": {"ro": "", "en": ""}, "label": {"ro": "", "en": ""}, "href": ""},
+    "sourceNote": {"ro": "", "en": ""},
+    "sources": []
   }
 ]
