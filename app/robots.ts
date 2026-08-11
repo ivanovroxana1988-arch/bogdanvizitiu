@@ -1,1 +1,1 @@
-import type {MetadataRoute} from 'next';export default function robots():MetadataRoute.Robots{return {rules:{userAgent:'*',allow:'/'},sitemap:'https://bogdanvizitiu.ro/sitemap.xml'}}
+import type {MetadataRoute} from 'next';export default function robots():MetadataRoute.Robots{return {rules:{userAgent:'*',allow:'/'},sitemap:'https://bogdanvizitiu.com/sitemap.xml'}}
