@@ -33,7 +33,20 @@ export function getInsights(locale: Locale) {
     status: insight.status,
     category: insight.category[locale],
     title: insight.title[locale],
+    subtitle: insight.subtitle[locale],
     excerpt: insight.excerpt[locale],
+    readTime: insight.readTime[locale],
+    publishedAt: insight.publishedAt,
+    intro: insight.intro[locale],
+    sections: insight.sections[locale],
+    closing: insight.closing[locale],
+    cta: {
+      title: insight.cta.title[locale],
+      label: insight.cta.label[locale],
+      href: insight.cta.href,
+    },
+    sourceNote: insight.sourceNote[locale],
+    sources: insight.sources,
   }))
 }
 
