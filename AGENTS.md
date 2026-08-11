@@ -4,8 +4,7 @@
 
 Build a premium personal-brand website for Bogdan Vizitiu.
 
-The site must position Bogdan as an experienced coach, trainer, entrepreneur,
-and facilitator. This is **not** a generic motivational-coach website.
+The site must position Bogdan as an experienced coach, trainer, entrepreneur, and facilitator. This is **not** a generic motivational-coach website.
 
 ## Brand positioning
 
@@ -27,31 +26,22 @@ Primary pillars:
 
 ## Brand personality
 
-Calm. Intelligent. Warm. Experienced. Human. Confident without being arrogant.
-Premium without looking corporate or sterile.
+Calm. Intelligent. Warm. Experienced. Human. Confident without being arrogant. Premium without looking corporate or sterile.
 
-Avoid:
-
-- Generic coaching clichés (including “unlock your potential”)
-- Excessive gradients
-- Fake statistics, testimonials, or client logos
-- Stock-photo aesthetics
-- SaaS landing-page patterns and repeated card grids
+Avoid generic coaching clichés, excessive gradients, fake statistics/testimonials/client logos, stock-photo aesthetics, SaaS landing-page patterns, and repeated card grids.
 
 ## Source of truth
 
-Use the structured content files in `/content` as the public-content source of
-truth. Source provenance and verification rules live in `/source/SOURCES.md`.
+Read these before changing public UI or copy:
 
-The intended original research database is:
+1. `/source/MASTER_DATABASE.md` — repo-readable research/evidence master derived from the supplied workbook
+2. `/TODO.md` — execution order, dependencies, and definition of done
+3. `/content` — structured records the application may render
+4. `/source/SOURCES.md` — provenance and verification rules
+5. `/source/SITE_BRIEF.md` — product/brand direction
+6. `/IMPLEMENTATION_PLAN.md` — target architecture and release gates
 
-`/source/Bogdan_Vizitiu_Master_Database_Site.xlsx`
-
-If that file is absent, do not infer its contents. Never invent credentials,
-companies, certifications, testimonials, participant numbers, dates, or
-professional experience. Anything marked `needs-confirmation`, `draft`, or
-`placeholder` must not appear as a verified public fact. Empty content arrays
-are intentional until evidence is supplied.
+Never invent credentials, companies, certifications, testimonials, participant numbers, dates, prices, professional experience, or usage rights. Anything marked `needs-confirmation`, `draft`, `placeholder`, unapproved, or lacking required rights must not appear as a verified public fact.
 
 ## Technology
 
@@ -69,30 +59,33 @@ are intentional until evidence is supplied.
 - Home (`/`)
 - About (`/despre`)
 - Courses (`/cursuri`)
-- Course detail (`/cursuri/[slug]`)
+- Networking (`/cursuri/networking`)
+- Negotiation (`/cursuri/arta-negocierii`)
+- Leadership & Teams (`/cursuri/leadership-teams`)
 - Coaching (`/coaching`)
 - Corporate (`/corporate`)
-- Media / appearances (`/media`)
-- Resources / insights (`/resurse`)
+- Media (`/media`)
+- Insights (`/insights`)
+- Resources (`/resurse`)
 - Contact (`/contact`)
+- Privacy (`/confidentialitate`)
+- Terms (`/termeni`)
+
+Preserve the bilingual capability already introduced in the codebase. Romanian is the default/canonical interface; English must obey the same source and approval rules.
 
 ## Design principle
 
-Create an editorial personal-brand website rather than a SaaS landing page.
-Use large approved photography, generous whitespace, strong typography, and
-restrained interaction. Bogdan must remain the visual focus.
+Create an editorial personal-brand website rather than a SaaS landing page. Use large approved photography, generous whitespace, strong typography, and restrained interaction. Bogdan must remain the visual focus.
 
 ## Development rules
 
-- Read this file, `/content`, `/source/SITE_BRIEF.md`, and
-  `/source/SOURCES.md` before changing public UI or copy.
+- Work through `TODO.md` in dependency order; do not wait on external inputs for tasks marked BUILD NOW.
 - Keep content separate from presentation.
-- Create reusable sections and components; avoid page-specific duplication.
+- Create reusable sections/components; avoid page-specific duplication.
 - Avoid unnecessary dependencies.
 - Do not replace verified content with placeholder marketing copy.
-- Do not present draft copy as a factual claim.
-- Use only assets mapped in `content/media.json`; never generate a likeness of
-  Bogdan or substitute stock photography.
-- Run lint, typecheck, and production build after major changes. If a script is
-  unavailable, add it deliberately or document the limitation.
-
+- Omit public sections that have no publishable content.
+- Use only assets with sufficient recorded rights.
+- Never generate a likeness of Bogdan or substitute stock photography.
+- Run lint, typecheck, and production build after major changes.
+- Before marking the site launch-ready, pass the release gate in `IMPLEMENTATION_PLAN.md`.

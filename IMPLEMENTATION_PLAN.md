@@ -1,149 +1,121 @@
 # Implementation plan
 
-## 1. Current-state analysis
+Updated: 2026-08-11
 
-The repository contains a visual prototype, but it must not be treated as an
-approved implementation. Its public copy is embedded directly in TSX and
-`lib/data.ts`, several credentials and program concepts are unsupported, the UI
-is English-first, routes use the former `/about`, `/programs`, `/insights`, and
-`/speaking` model, and the canonical domain is configured as
-`bogdanvizitiu.ro`. The intended architecture is Romanian-first and the supplied
-domain is `bogdanvizitiu.com`.
+## 1. Current state
 
-The existing editorial styling is a useful visual exploration, but content and
-image placeholders currently sit in presentation components. The next build
-must consume the structured content layer and omit unverified modules instead
-of publishing plausible placeholder claims.
+The repository contains a working Next.js visual prototype and a recently added bilingual copy layer. It is still a prototype, not the approved final website.
 
-## 2. Proposed information architecture
+The supplied research workbook has now been normalized into the repo-readable master:
 
-| Route | Purpose | Primary content |
-| --- | --- | --- |
-| `/` | Establish identity and routes into the offer | Profile, pillars, featured courses, coaching, corporate, appearances, resources, contact |
-| `/despre` | Editorial biography and working philosophy | Approved biography, roles, portrait, selected verified experience |
-| `/cursuri` | Discover open courses | Validated product index and filters only if scale requires them |
-| `/cursuri/[slug]` | Understand and act on one course | Audience, outcomes, format, dates, proof, CTA—all verified |
-| `/coaching` | Explain individual/team coaching | Scope, fit, approach, engagement CTA |
-| `/corporate` | Present organizational work | Challenges, formats, pillars, verified case evidence, inquiry CTA |
-| `/media` | Establish public credibility | Verified appearances, interviews, podcasts, event media |
-| `/resurse` | Publish useful thinking | Articles, guides, video, newsletter when operational |
-| `/contact` | Route qualified inquiries | Inquiry categories, privacy notice, contact method |
+`/source/MASTER_DATABASE.md`
 
-Legacy English routes should receive permanent redirects only after the new
-pages exist and canonical URLs are confirmed.
+That master contains the working registers for 14 planned pages, 9 products/services, verified facts and sources, media/events, IP/content, visual rights, proof, SEO, missing inputs, and the CMS field model. The updated workbook also contains a `TODO build` sheet for project management outside the repo.
 
-## 3. Reusable component architecture
+The structured public-content layer remains `/content`. The master is the evidence/research layer; `/content` is what the application may render after status, approval, and rights rules are applied.
 
-```text
-components/
-├── navigation/
-│   ├── site-header.tsx
-│   ├── mobile-navigation.tsx
-│   └── site-footer.tsx
-├── sections/
-│   ├── hero.tsx
-│   ├── expertise-index.tsx
-│   ├── featured-courses.tsx
-│   ├── coaching-intro.tsx
-│   ├── corporate-intro.tsx
-│   ├── appearances-index.tsx
-│   ├── resource-feature.tsx
-│   └── contact-band.tsx
-├── cards/
-│   ├── course-list-item.tsx
-│   ├── appearance-item.tsx
-│   └── resource-story.tsx
-└── ui/
-    ├── editorial-image.tsx
-    ├── arrow-link.tsx
-    ├── eyebrow.tsx
-    ├── section-heading.tsx
-    └── container.tsx
-```
+## 2. Target information architecture
 
-“Cards” here means reusable content records, not automatically boxed visual
-surfaces. Default presentation should use rows, lines, columns, and whitespace.
+| ID | Route | Purpose | Priority |
+|---|---|---|---|
+| P01 | `/` | Positioning + conversion | Critical |
+| P02 | `/despre` | Biography, credibility, philosophy | High |
+| P03 | `/cursuri` | Open-course catalog | Critical |
+| P04 | `/cursuri/networking` | Networking course sales page | Critical |
+| P05 | `/cursuri/arta-negocierii` | Negotiation course sales page | Critical |
+| P06 | `/cursuri/leadership-teams` | Leadership & Teams / waitlist | High |
+| P07 | `/coaching` | 1:1 coaching | High |
+| P08 | `/corporate` | B2B lead generation | Critical |
+| P09 | `/media` | Public authority / appearances | Medium |
+| P10 | `/insights` | SEO + thought leadership | Medium |
+| P11 | `/resurse` | Lead magnets / reusable IP | Medium |
+| P12 | `/contact` | Qualified inquiries | Critical |
+| P13 | `/confidentialitate` | Privacy / GDPR | Critical before launch |
+| P14 | `/termeni` | Commercial/legal terms | Critical before launch |
 
-## 4. Content model
+Legacy routes should be redirected only after the new destination routes exist.
 
-- `profile.json`: identity, roles, expertise, biography, credentials, social links
-- `products.json`: course identity, lifecycle status, evidence, detail, dates,
-  price, and CTA
-- `media.json`: approved image registry and verified appearance records
-- `testimonials.json`: approved quotes with attribution, consent, and provenance
-- `site-copy.json`: localized navigation and approved interface/section copy
-- `SOURCES.md`: human-readable evidence register and conflict rules
+## 3. Content model and publishing gates
 
-Before implementation, formalize TypeScript schemas in `lib/content/` and load
-JSON server-side. Validate required fields at build time. Publication logic must
-exclude non-public statuses and must not silently substitute copy.
+Formalize TypeScript schemas and build-time validation for the master CMS collections and the existing `/content` JSON files.
 
-## 5. Visual design system
+Minimum public records: profile, products, media, posts/resources, testimonials, assets, and localized site/interface copy.
 
-- **Art direction:** premium editorial personal brand; calm, warm, intellectual
-- **Palette:** warm ivory, charcoal, muted warm gray; one restrained olive,
-  cognac, or burgundy accent
-- **Type:** expressive editorial serif for display; neutral humanist sans for UI
-  and body; Romanian diacritics must be supported
-- **Grid:** max-width 1280–1400px, 12-column desktop base, asymmetric compositions
-- **Space:** 140–200px major desktop rhythm; 80–120px mobile rhythm
-- **Surfaces:** no shadows or gradients; square/low-radius geometry; fine rules
-- **Photography:** large approved crops, never small decorative thumbnails or
-  generated likenesses
-- **Motion:** underlines, 4–6px arrow movement, ~1.02 image scale; respect reduced
-  motion
-- **Accessibility:** visible focus, semantic landmarks/headings, keyboard menu,
-  descriptive alt text, WCAG AA contrast
+Publishing must fail closed:
 
-## 6. Homepage order
+- unapproved or `needs-confirmation` content is not public
+- `permission=false` testimonials are not public
+- assets with unknown or insufficient rights are not public
+- no missing value may be silently replaced by plausible marketing copy
+- certification claims reflect the current verified status, not historical profile wording
 
-1. Asymmetric identity hero using approved Bogdan photography
-2. Four expertise pillars as a numbered editorial index
-3. Featured validated open courses
-4. Coaching positioning and route
-5. Corporate work and route
-6. Verified credibility / appearances (omit while empty)
-7. Resources / insights (omit while empty)
-8. Restrained final contact CTA
+## 4. Visual system
 
-The homepage should progressively answer: who Bogdan is, what areas he works in,
-which relevant ways of working are available, why the visitor should trust the
-material, and what to do next.
+Keep the editorial personal-brand direction: warm ivory/charcoal/restrained accent palette, expressive serif + clean humanist sans, large approved photography, generous whitespace, asymmetric editorial grid, minimal cards/shadows/gradients, subtle motion with reduced-motion support, visible focus and WCAG AA contrast.
 
-## 7. Missing information and assets before launch
+Bogdan remains the visual focus. No generated likeness and no stock-photo substitution.
 
-- Original `Bogdan_Vizitiu_Master_Database_Site.xlsx`
-- Client-confirmed roles, short positioning, biography, and credentials
-- Confirmed `.com` canonical domain and production social/contact URLs
-- Complete course detail, dates, price/payment or inquiry flow, and legal terms
-- Coaching and corporate offer scope, format, qualification, and CTA destination
-- Verified appearances and permission to use outlet/event marks
-- Approved testimonial text, attribution, and publication consent
-- Approved photographs for every path in `content/media.json`, plus usage rights
-- Resource/article inventory and author-approved copy
-- Contact form recipient, spam handling, retention policy, and consent copy
-- Romanian privacy/cookie/legal review and analytics decision
-- Open Graph images, favicon/brand assets, and final image alt text
+## 5. Homepage order
 
-## 8. Build phases
+1. Identity/positioning hero
+2. Verified credibility/proof
+3. Featured open courses
+4. Corporate
+5. Coaching
+6. Media/appearances when publishable
+7. Short biography
+8. Testimonials only when permission exists
+9. Final conversion CTA
 
-1. **Evidence audit:** ingest the workbook, reconcile statuses, and complete the
-   source register. No public implementation claims before this gate.
-2. **Content foundation:** add typed loaders, build-time validation, locale rules,
-   publishing filters, and media helpers.
-3. **Global system and homepage:** implement navigation, footer, tokens, typography,
-   homepage sections, responsive behavior, and reduced motion.
-4. **Core offer pages:** build About, Courses index/detail, Coaching, and Corporate.
-5. **Authority and conversion:** build Media, Resources, and Contact using only
-   available verified records.
-6. **Migration:** add canonical metadata, `.com` sitemap/robots, and redirects from
-   superseded routes.
-7. **Quality gate:** lint, typecheck, production build, keyboard and screen-reader
-   checks, responsive screenshots, metadata/structured-data validation, Core Web
-   Vitals review, and final factual audit.
+## 6. Build phases
 
-## 9. Immediate next task
+### Phase A — Source foundation
+- reconcile `/source/MASTER_DATABASE.md` with `/content`
+- implement typed schemas and validators
+- implement publishing/rights gates
 
-Supply and review the missing master workbook and approved photography. Then
-implement Phase 2 without rewriting or polishing unverified public copy.
+### Phase B — Architecture and global UI
+- align routes to the 14-page sitemap
+- preserve bilingual support with Romanian as default/canonical
+- implement header, mobile navigation, footer, metadata, sitemap, robots
+- prepare legacy redirects
 
+### Phase C — Home and offers
+- rebuild Home from verified content
+- build Courses index
+- build Networking and Negotiation
+- prepare Leadership & Teams as waitlist/draft until approved
+- build Coaching and Corporate
+
+### Phase D — Authority and conversion
+- build Media
+- build Insights and Resources without filler content
+- build segmented Contact
+- connect real calendar/form/payment destinations only after approved inputs exist
+
+### Phase E — Release
+- approved photography and usage rights
+- testimonials and logos with permission
+- current business/legal details
+- privacy and terms
+- analytics/consent decision
+- final factual audit
+- lint, typecheck, production build, accessibility, responsive and metadata QA
+
+## 7. External inputs still required
+
+Critical: positioning statement; short/long bio; current ICF proof or decision not to use the claim; 2026–2027 product dates/prices/capacity/status; original photography with rights; approved testimonials; business/legal/checkout data; official social channels; final scheduling flow.
+
+High/medium: video assets; partner/client logo permissions; Networking and Negotiation source materials; updated LIVES framework; newsletter/lead-magnet decision.
+
+See `TODO.md` and `/source/MASTER_DATABASE.md` for exact ownership, dependencies, evidence, and definition-of-done criteria.
+
+## 8. Immediate next task
+
+Do not wait for another strategy pass.
+
+Codex should start with:
+
+`T01 → T02 → T03 → T04 → T05 → T08 → T09 → T10`
+
+That means: lock the source baseline, reconcile content, enforce schemas and publishing gates, align routes, consolidate the design system, build global navigation, and rebuild Home using verified content only.
