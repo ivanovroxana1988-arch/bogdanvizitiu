@@ -5,17 +5,17 @@ export default function sitemap():MetadataRoute.Sitemap{
   const base='https://bogdanvizitiu.com'
   const routes=[
     '',
-    '/about',
-    '/programs',
+    '/despre',
+    '/cursuri',
+    '/coaching',
     '/corporate',
+    '/media',
     '/insights',
-    '/speaking',
+    '/resurse',
     '/contact',
-    '/privacy',
-    '/terms',
-    ...programSlugs.map(slug=>`/programs/${slug}`),
+    ...programSlugs.map(slug=>`/cursuri/${slug}`),
     ...publishedInsightSlugs.map(slug=>`/insights/${slug}`),
   ]
 
-  return routes.map(url=>({url:base+url,lastModified:new Date()}))
+  return Array.from(new Set(routes)).map(url=>({url:base+url,lastModified:new Date()}))
 }

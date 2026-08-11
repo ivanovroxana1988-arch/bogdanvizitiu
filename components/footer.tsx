@@ -3,15 +3,21 @@
 import Link from 'next/link'
 import {useSearchParams} from 'next/navigation'
 import {Suspense} from 'react'
-import {getCopy,getLocale,withLocale,type Locale} from '@/lib/i18n'
+import navigation from '@/content/navigation.json'
+import {getLocale,withLocale,type Locale} from '@/lib/i18n'
 
 function FooterView({locale}:{locale:Locale}){
-  const copy=getCopy(locale)
+  const copy=navigation[locale]
 
   return <footer><div className="shell footer-grid">
-    <div><b className="logo">BGV.</b><p>Bogdan Vizitiu<br/>{copy.footer.tagline}</p></div>
-    <div><p className="footer-label">{copy.footer.information}</p><Link href={withLocale('/privacy',locale)}>{copy.footer.privacy}</Link><Link href={withLocale('/terms',locale)}>{copy.footer.terms}</Link></div>
-  </div><div className="shell copyright">© {new Date().getFullYear()} Bogdan Vizitiu <span>{copy.footer.closing}</span></div></footer>
+    <div><b className="logo">BGV.</b><p>Bogdan Vizitiu<br/>{locale==='ro'?'Leadership, negociere și relații profesionale.':'Leadership, negotiation and professional relationships.'}</p></div>
+    <div><p className="footer-label">{copy.information}</p>
+      <Link href={withLocale('/resurse',locale)}>{copy.resources}</Link>
+      <Link href={withLocale('/contact',locale)}>{copy.contact}</Link>
+      <Link href={withLocale('/confidentialitate',locale)}>{copy.privacy}</Link>
+      <Link href={withLocale('/termeni',locale)}>{copy.terms}</Link>
+    </div>
+  </div><div className="shell copyright">© {new Date().getFullYear()} Bogdan Vizitiu <span>{locale==='ro'?'Claritate înainte de soluții.':'Clarity before solutions.'}</span></div></footer>
 }
 
 function LocalizedFooter(){
