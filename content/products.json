@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "networking",
+    "title": "Networking",
+    "category": "open-course",
+    "pillars": [
+      "Networking & Influence"
+    ],
+    "status": "validated",
+    "proofSources": [
+      "Stup"
+    ],
+    "cta": "Vezi cursul",
+    "description": null,
+    "dates": [],
+    "price": null
+  },
+  {
+    "slug": "arta-negocierii",
+    "title": "Arta Negocierii",
+    "category": "open-course",
+    "pillars": [
+      "Negotiation & Sales"
+    ],
+    "status": "validated",
+    "proofSources": [
+      "Stup"
+    ],
+    "cta": "Vezi cursul",
+    "description": null,
+    "dates": [],
+    "price": null
+  }
+]

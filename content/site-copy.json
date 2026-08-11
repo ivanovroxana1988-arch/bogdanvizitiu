@@ -1,0 +1,25 @@
+{
+  "locale": "ro-RO",
+  "navigation": {
+    "about": "Despre",
+    "courses": "Cursuri",
+    "coaching": "Coaching",
+    "corporate": "Corporate",
+    "media": "Media",
+    "resources": "Resurse",
+    "contact": "Contact"
+  },
+  "home": {
+    "eyebrow": "Bogdan Vizitiu",
+    "headline": null,
+    "introduction": null,
+    "featuredCoursesLabel": "Cursuri deschise",
+    "contactCta": "Hai să discutăm"
+  },
+  "global": {
+    "courseCta": "Vezi cursul",
+    "readMoreCta": "Citește mai mult",
+    "contactCta": "Contact"
+  },
+  "editorialNote": "Null values are deliberate: final Romanian positioning copy has not been supplied or approved. Do not fill them with generic marketing claims."
+}
