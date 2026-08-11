@@ -1,3 +1,17 @@
-import {PageHero,ArrowLink} from '@/components/ui';import {EditorialImage} from '@/components/portrait'
+import {PageHero,ArrowLink} from '@/components/ui'
+import {EditorialImage} from '@/components/portrait'
+import {getCopy,getLocale} from '@/lib/i18n'
+
 export const metadata={title:'Corporate'}
-export default function Corporate(){return <><PageHero eyebrow="For organizations" title="Learning built around reality." intro="Custom interventions that begin with an organizational challenge and end with practical shifts in how people lead, decide and execute."/><section className="shell content-grid"><EditorialImage kind="workshop" label="Corporate workshop photography placeholder"/><div className="prose"><h2>Context before content.</h2><p>Every engagement begins with the work, language and decisions already present in the organization. The learning architecture follows from there.</p></div></section><section className="shell blocks">{[['Leadership development','Build judgment, clarity and leadership capacity around the work that matters now.'],['Team effectiveness','Improve the conversations, agreements and rhythms behind collective performance.'],['Strategy & execution','Make choices visible and equip teams to carry them into everyday action.'],['Executive sessions','Focused rooms for senior teams facing consequential decisions.']].map(x=><article className="block" key={x[0]}><h3>{x[0]}</h3><p>{x[1]}</p></article>)}</section><section className="shell cta-panel"><h2>Start with the challenge.</h2><ArrowLink href="/contact">Discuss an engagement</ArrowLink></section></>}
+
+export default function Corporate({searchParams}:{searchParams?:{lang?:string}}){
+  const locale=getLocale(searchParams?.lang)
+  const copy=getCopy(locale).corporate
+
+  return <>
+    <PageHero eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro}/>
+    <section className="shell content-grid"><EditorialImage kind="workshop"/><div className="prose"><h2>{copy.sectionTitle}</h2><p>{copy.sectionText}</p></div></section>
+    <section className="shell blocks">{copy.blocks.map(block=><article className="block" key={block.title}><h3>{block.title}</h3><p>{block.description}</p></article>)}</section>
+    <section className="shell cta-panel"><h2>{copy.ctaTitle}</h2><ArrowLink href="/contact">{copy.cta}</ArrowLink></section>
+  </>
+}
