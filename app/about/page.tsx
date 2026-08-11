@@ -11,7 +11,7 @@ export default function About({searchParams}:{searchParams?:{lang?:string}}){
   const copy=aboutCopy[locale]
   const contactCopy=getCopy(locale).contact
 
-  return <main className={styles.page}>
+  return <div className={styles.page}>
     <section className={styles.hero}>
       <Eyebrow>{copy.eyebrow}</Eyebrow>
       <div className={styles.heroGrid}>
@@ -88,5 +88,5 @@ export default function About({searchParams}:{searchParams?:{lang?:string}}){
       <h2 className={styles.ctaTitle}>{contactCopy.title}</h2>
       <ArrowLink href="/contact">{contactCopy.submit}</ArrowLink>
     </section>
-  </main>
+  </div>
 }
