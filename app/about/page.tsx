@@ -1,4 +1,4 @@
-import {PageHero,ArrowLink,Eyebrow} from '@/components/ui'
+import {ArrowLink,Eyebrow} from '@/components/ui'
 import {Portrait} from '@/components/portrait'
 import {getLocale} from '@/lib/i18n'
 import aboutCopy from '@/content/about-copy.json'
@@ -10,9 +10,22 @@ export default function About({searchParams}:{searchParams?:{lang?:string}}){
   const copy=aboutCopy[locale]
 
   return <>
-    <PageHero eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro}/>
-    <section className="shell content-grid"><Portrait/><div className="prose"><Eyebrow>{copy.sectionEyebrow}</Eyebrow><h2>{copy.sectionTitle}</h2>{copy.paragraphs.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</div></section>
-    <section className="shell blocks">{copy.blocks.map(block=><article className="block" key={block.title}><h3>{block.title}</h3><p>{block.description}</p></article>)}</section>
-    <section className="shell cta-panel"><h2>{copy.ctaTitle}</h2><ArrowLink href="/contact">{copy.cta}</ArrowLink></section>
+    <section className="page-hero shell">
+      <Eyebrow>{copy.eyebrow}</Eyebrow>
+      <div className="page-hero-grid">
+        <h1>{copy.titleLines.map(line=><span key={line} style={{display:'block'}}>{line}</span>)}</h1>
+        <p>{copy.intro}</p>
+      </div>
+    </section>
+
+    <section className="shell content-grid">
+      <Portrait/>
+      <div className="prose">
+        {copy.paragraphs.map(paragraph=><p key={paragraph}>{paragraph}</p>)}
+        <p><strong>{copy.roleLine}</strong></p>
+        <p>{copy.closing}</p>
+        <div style={{marginTop:'36px'}}><ArrowLink href="/programs">{copy.cta}</ArrowLink></div>
+      </div>
+    </section>
   </>
 }
