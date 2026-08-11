@@ -10,6 +10,7 @@ Next.js project for Bogdan Vizitiu’s Romanian-first personal-brand website.
 4. Review the workbook-to-JSON contract in [`CONTENT_MAP.md`](./CONTENT_MAP.md).
 5. Check source provenance in [`source/SOURCES.md`](./source/SOURCES.md).
 6. Follow [`IMPLEMENTATION_PLAN.md`](./IMPLEMENTATION_PLAN.md).
+7. Review current architecture coverage in [`ARCHITECTURE_AUDIT.md`](./ARCHITECTURE_AUDIT.md).
 
 The current application is an earlier visual prototype. Do not treat embedded
 copy, placeholder imagery, or legacy routes as verified content.
