@@ -1,6 +1,9 @@
 import products from '@/content/products.json'
 import insightItems from '@/content/insights.json'
+import livesInsight from '@/content/insights/lives.json'
 import type {Locale} from '@/lib/i18n'
+
+const allInsightItems=[...insightItems,livesInsight]
 
 export function getPrograms(locale: Locale) {
   return products.map((product) => ({
@@ -28,7 +31,7 @@ export function getPrograms(locale: Locale) {
 }
 
 export function getInsights(locale: Locale) {
-  return insightItems.map((insight) => ({
+  return allInsightItems.map((insight) => ({
     slug: insight.slug,
     status: insight.status,
     category: insight.category[locale],
@@ -51,4 +54,4 @@ export function getInsights(locale: Locale) {
 }
 
 export const programSlugs = products.map((product) => product.slug)
-export const insightSlugs = insightItems.map((insight) => insight.slug)
+export const insightSlugs = allInsightItems.map((insight) => insight.slug)
