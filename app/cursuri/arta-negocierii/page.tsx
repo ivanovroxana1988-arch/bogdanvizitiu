@@ -1,10 +1,18 @@
 import type {Metadata} from 'next'
 import Program from '../../programs/[slug]/page'
+import {getPrograms} from '@/lib/data'
+import {getLocale} from '@/lib/i18n'
+import {buildPageMetadata} from '@/lib/seo'
 
-export const metadata:Metadata={
-  title:'Arta Negocierii în Business',
-  description:'Program practic despre pregătire, interese, opțiuni și conversațiile cu miză din business.',
-  alternates:{canonical:'/cursuri/arta-negocierii'},
+export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):Metadata{
+  const locale=getLocale(searchParams?.lang)
+  const program=getPrograms(locale).find(item=>item.slug==='arta-negocierii')
+  return buildPageMetadata({
+    title:program?.title??(locale==='ro'?'Arta Negocierii în Business':'The Art of Business Negotiation'),
+    description:program?.description??'',
+    path:'/cursuri/arta-negocierii',
+    locale,
+  })
 }
 
 export default function Negotiation({searchParams}:{searchParams?:{lang?:string}}){

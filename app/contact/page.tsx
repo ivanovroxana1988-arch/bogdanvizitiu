@@ -1,10 +1,21 @@
+import type {Metadata} from 'next'
 import Link from 'next/link'
 import {Eyebrow} from '@/components/ui'
 import contactCopy from '@/content/contact-copy.json'
 import {getLocale,withLocale} from '@/lib/i18n'
+import {buildPageMetadata} from '@/lib/seo'
 import styles from '../commercial.module.css'
 
-export const metadata={title:'Contact'}
+export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):Metadata{
+  const locale=getLocale(searchParams?.lang)
+  const copy=contactCopy[locale]
+  return buildPageMetadata({
+    title:'Contact',
+    description:copy.intro,
+    path:'/contact',
+    locale,
+  })
+}
 
 export default function Contact({searchParams}:{searchParams?:{lang?:string}}){
   const locale=getLocale(searchParams?.lang)

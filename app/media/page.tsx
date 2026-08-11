@@ -4,11 +4,17 @@ import {EditorialImage} from '@/components/portrait'
 import {getMediaAppearances} from '@/lib/data'
 import servicePages from '@/content/service-pages.json'
 import {getLocale} from '@/lib/i18n'
+import {buildPageMetadata} from '@/lib/seo'
 
-export const metadata:Metadata={
-  title:'Media & apariții',
-  description:'Podcasturi, workshopuri și apariții publice verificate ale lui Bogdan Vizitiu.',
-  alternates:{canonical:'/media'},
+export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):Metadata{
+  const locale=getLocale(searchParams?.lang)
+  const copy=servicePages[locale].media
+  return buildPageMetadata({
+    title:locale==='ro'?'Media & apariții':'Media & appearances',
+    description:copy.intro,
+    path:'/media',
+    locale,
+  })
 }
 
 export default function Media({searchParams}:{searchParams?:{lang?:string}}){

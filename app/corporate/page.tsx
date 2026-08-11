@@ -1,9 +1,20 @@
+import type {Metadata} from 'next'
 import {ArrowLink,Eyebrow} from '@/components/ui'
 import {EditorialImage} from '@/components/portrait'
 import {getCopy,getLocale} from '@/lib/i18n'
+import {buildPageMetadata} from '@/lib/seo'
 import styles from '../commercial.module.css'
 
-export const metadata={title:'Corporate'}
+export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):Metadata{
+  const locale=getLocale(searchParams?.lang)
+  const copy=getCopy(locale).corporate
+  return buildPageMetadata({
+    title:locale==='ro'?'Programe corporate':'Corporate programs',
+    description:copy.intro,
+    path:'/corporate',
+    locale,
+  })
+}
 
 export default function Corporate({searchParams}:{searchParams?:{lang?:string}}){
   const locale=getLocale(searchParams?.lang)

@@ -1,10 +1,17 @@
 import type {Metadata} from 'next'
 import Programs from '../programs/page'
+import {getCopy,getLocale} from '@/lib/i18n'
+import {buildPageMetadata} from '@/lib/seo'
 
-export const metadata:Metadata={
-  title:'Cursuri',
-  description:'Cursuri deschise despre networking și negociere, construite în jurul situațiilor reale de business.',
-  alternates:{canonical:'/cursuri'},
+export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):Metadata{
+  const locale=getLocale(searchParams?.lang)
+  const copy=getCopy(locale).programs
+  return buildPageMetadata({
+    title:locale==='ro'?'Cursuri':'Open programs',
+    description:copy.intro,
+    path:'/cursuri',
+    locale,
+  })
 }
 
 export default Programs

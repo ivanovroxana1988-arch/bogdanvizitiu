@@ -3,11 +3,17 @@ import {ArrowLink,PageHero} from '@/components/ui'
 import {getPublishedInsights} from '@/lib/data'
 import servicePages from '@/content/service-pages.json'
 import {getLocale} from '@/lib/i18n'
+import {buildPageMetadata} from '@/lib/seo'
 
-export const metadata:Metadata={
-  title:'Resurse',
-  description:'Modele, materiale și articole dezvoltate din munca publicată a lui Bogdan Vizitiu.',
-  alternates:{canonical:'/resurse'},
+export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):Metadata{
+  const locale=getLocale(searchParams?.lang)
+  const copy=servicePages[locale].resources
+  return buildPageMetadata({
+    title:locale==='ro'?'Resurse':'Resources',
+    description:copy.intro,
+    path:'/resurse',
+    locale,
+  })
 }
 
 export default function Resources({searchParams}:{searchParams?:{lang?:string}}){

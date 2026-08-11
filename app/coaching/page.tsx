@@ -3,11 +3,17 @@ import {ArrowLink,Eyebrow,PageHero} from '@/components/ui'
 import {EditorialImage} from '@/components/portrait'
 import servicePages from '@/content/service-pages.json'
 import {getLocale} from '@/lib/i18n'
+import {buildPageMetadata} from '@/lib/seo'
 
-export const metadata:Metadata={
-  title:'Coaching 1:1',
-  description:'Executive, management, career și performance coaching cu Bogdan Vizitiu.',
-  alternates:{canonical:'/coaching'},
+export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):Metadata{
+  const locale=getLocale(searchParams?.lang)
+  const copy=servicePages[locale].coaching
+  return buildPageMetadata({
+    title:locale==='ro'?'Coaching 1:1':'1:1 Coaching',
+    description:copy.intro,
+    path:'/coaching',
+    locale,
+  })
 }
 
 export default function Coaching({searchParams}:{searchParams?:{lang?:string}}){
