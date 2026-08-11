@@ -14,7 +14,7 @@ export default function Program({params,searchParams}:{params:{slug:string};sear
   const program=getPrograms(locale).find(item=>item.slug===params.slug)
   if(!program)notFound()
 
-  return <main className={styles.page}>
+  return <div className={styles.page}>
     <section className={styles.hero}>
       <Eyebrow>{copy.eyebrow}</Eyebrow>
       <div className={styles.heroGrid}>
@@ -119,5 +119,5 @@ export default function Program({params,searchParams}:{params:{slug:string};sear
       <h2 className={styles.ctaTitle}>{program.ctaTitle}</h2>
       <ArrowLink href="/contact">{copy.cta}</ArrowLink>
     </section>
-  </main>
+  </div>
 }

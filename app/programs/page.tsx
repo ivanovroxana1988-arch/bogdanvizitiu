@@ -11,7 +11,7 @@ export default function Programs({searchParams}:{searchParams?:{lang?:string}}){
   const copy=getCopy(locale).programs
   const programs=getPrograms(locale)
 
-  return <main className={styles.page}>
+  return <div className={styles.page}>
     <section className={styles.hero}>
       <Eyebrow>{copy.eyebrow}</Eyebrow>
       <div className={styles.heroGrid}>
@@ -34,7 +34,7 @@ export default function Programs({searchParams}:{searchParams?:{lang?:string}}){
           <p>{item.description}</p>
         </article>)}
       </div>
-      <div style={{marginTop:'clamp(54px,7vw,90px)',maxWidth:'760px'}}>
+      <div style={{marginTop:'clamp(42px,5vw,68px)',maxWidth:'760px'}}>
         <EditorialImage asset="workshop" kind="portrait"/>
       </div>
     </section>
@@ -51,7 +51,7 @@ export default function Programs({searchParams}:{searchParams?:{lang?:string}}){
           <span>0{i+1}</span>
           <h2>{program.title}</h2>
           <p>{program.description}</p>
-          <ArrowLink href={`/programs/${program.slug}`}>{copy.viewProgram}</ArrowLink>
+          <ArrowLink href={`/cursuri/${program.slug}`}>{copy.viewProgram}</ArrowLink>
         </article>)}
       </div>
     </section>
@@ -62,5 +62,5 @@ export default function Programs({searchParams}:{searchParams?:{lang?:string}}){
       <p className={styles.sectionIntro} style={{maxWidth:'640px',marginBottom:'34px'}}>{copy.tailoredText}</p>
       <ArrowLink href="/corporate">{copy.tailoredCta}</ArrowLink>
     </section>
-  </main>
+  </div>
 }
