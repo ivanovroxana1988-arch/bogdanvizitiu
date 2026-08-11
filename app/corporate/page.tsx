@@ -20,7 +20,7 @@ export default function Corporate({searchParams}:{searchParams?:{lang?:string}})
   const locale=getLocale(searchParams?.lang)
   const copy=getCopy(locale).corporate
 
-  return <main className={styles.page}>
+  return <div className={styles.page}>
     <section className={styles.hero}>
       <Eyebrow>{copy.eyebrow}</Eyebrow>
       <div className={styles.heroGrid}>
@@ -88,7 +88,7 @@ export default function Corporate({searchParams}:{searchParams?:{lang?:string}})
         <div><Eyebrow>{copy.formatsEyebrow}</Eyebrow></div>
         <div>
           <h2 className={styles.statementSmall}>{copy.formatsTitle}</h2>
-          <div className={styles.themeList} style={{marginTop:'54px',borderTopColor:'#55554f'}}>
+          <div className={styles.themeList} style={{marginTop:'42px',borderTopColor:'#55554f'}}>
             {copy.formats.map(format=><div className={styles.themeItem} key={format}>{format}</div>)}
           </div>
         </div>
@@ -109,5 +109,5 @@ export default function Corporate({searchParams}:{searchParams?:{lang?:string}})
       <h2 className={styles.ctaTitle}>{copy.ctaTitle}</h2>
       <ArrowLink href="/contact">{copy.cta}</ArrowLink>
     </section>
-  </main>
+  </div>
 }
