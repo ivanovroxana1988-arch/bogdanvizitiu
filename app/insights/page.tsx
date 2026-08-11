@@ -17,7 +17,7 @@ export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):
   const locale=getLocale(searchParams?.lang)
   const isRo=locale==='ro'
   return buildPageMetadata({
-    title:isRo?'Resurse':'Insights',
+    title:'Insights',
     description:isRo
       ?'Idei pe care Bogdan Vizitiu le folosește în coaching, training și conversațiile de lucru despre leadership, negociere, relații și performanță.'
       :'Ideas Bogdan Vizitiu uses in coaching, training and working conversations about leadership, negotiation, relationships and performance.',
@@ -32,15 +32,17 @@ export default function Insights({searchParams}:{searchParams?:{lang?:string}}){
   const insights=getPublishedInsights(locale)
   const feature=insights[0]
   const secondary=insights.slice(1)
+  const title='Insights'
+  const intro=locale==='ro'
+    ?'Idei pe care le folosesc în coaching, training și în conversațiile cu oamenii cu care lucrez.'
+    :'Ideas I use in coaching, training and in the conversations I have with the people I work with.'
+
+  if(!feature){
+    return <PageHero eyebrow={copy.eyebrow} title={title} intro={intro}/>
+  }
 
   return <>
-    <PageHero
-      eyebrow={copy.eyebrow}
-      title={copy.title}
-      intro={locale==='ro'
-        ?'Idei pe care le folosesc în coaching, training și în conversațiile cu oamenii cu care lucrez.'
-        :'Ideas I use in coaching, training and in the conversations I have with the people I work with.'}
-    />
+    <PageHero eyebrow={copy.eyebrow} title={title} intro={intro}/>
     <section className={`shell ${styles.indexSection}`}><div className={styles.grid}>
       <article className={styles.feature}>
         <ConceptImage asset="networkingEditorial" kind="wide" className={styles.featureImage}/>
