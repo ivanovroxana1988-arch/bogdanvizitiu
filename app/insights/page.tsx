@@ -3,6 +3,7 @@ import {PageHero,ArrowLink} from '@/components/ui'
 import {EditorialImage} from '@/components/portrait'
 import {getPublishedInsights} from '@/lib/data'
 import {getCopy,getLocale} from '@/lib/i18n'
+import styles from './insights.module.css'
 
 const insightImages:Record<string,'speaking'|'coaching'|'workshop'|'candid'>={
   'networkingul-nu-incepe-cu-schimbul-de-contacte':'speaking',
@@ -38,17 +39,17 @@ export default function Insights({searchParams}:{searchParams?:{lang?:string}}){
         ?'Idei pe care le folosesc în coaching, training și în conversațiile cu oamenii cu care lucrez.'
         :'Ideas I use in coaching, training and in the conversations I have with the people I work with.'}
     />
-    <section className="shell insights"><div className="insight-grid">
-      <article className="feature-insight">
-        <EditorialImage asset={insightImages[feature.slug]||'speaking'} kind="event"/>
-        <div className="story-meta"><span className="category">{feature.category}</span><span>{feature.readTime}</span></div>
-        <h3>{feature.title}</h3><p>{feature.excerpt}</p>
+    <section className={`shell ${styles.indexSection}`}><div className={styles.grid}>
+      <article className={styles.feature}>
+        <EditorialImage asset={insightImages[feature.slug]||'speaking'} kind="event" className={styles.featureImage}/>
+        <div className={styles.meta}><span className={styles.category}>{feature.category}</span><span>{feature.readTime}</span></div>
+        <h2>{feature.title}</h2><p>{feature.excerpt}</p>
         <ArrowLink href={`/insights/${feature.slug}`}>{copy.readArticle}</ArrowLink>
       </article>
-      <div className="secondary-stories">{secondary.map((insight,i)=><article className="insight-card" key={insight.slug}>
-        <EditorialImage asset={insightImages[insight.slug]||'candid'} kind="event"/>
-        <span className="story-number">0{i+2}</span><span className="category">{insight.category}</span>
-        <h3>{insight.title}</h3><p>{insight.excerpt}</p>
+      <div className={styles.secondary}>{secondary.map((insight,i)=><article className={styles.card} key={insight.slug}>
+        <EditorialImage asset={insightImages[insight.slug]||'candid'} kind="event" className={styles.cardImage}/>
+        <span className={styles.number}>0{i+2}</span><span className={styles.category}>{insight.category}</span>
+        <h2>{insight.title}</h2><p>{insight.excerpt}</p>
         <ArrowLink href={`/insights/${insight.slug}`}>{copy.readArticle}</ArrowLink>
       </article>)}</div>
     </div></section>
