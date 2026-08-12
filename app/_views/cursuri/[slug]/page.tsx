@@ -3,8 +3,22 @@ import {notFound} from 'next/navigation'
 import {getPrograms,programSlugs} from '@/lib/data'
 import {ArrowLink,Eyebrow} from '@/components/ui'
 import {getCopy,getLocale} from '@/lib/i18n'
+import {localizePath} from '@/lib/routes'
 import {buildPageMetadata} from '@/lib/seo'
 import styles from '../../commercial.module.css'
+
+const relatedInsightByProgram:Record<string,{slug:string;ro:string;en:string}>={
+  'arta-negocierii':{
+    slug:'negocierea-nu-este-doar-despre-argumente',
+    ro:'Negocierea nu este doar despre argumente. Este și despre emoții.',
+    en:'Negotiation is not only about arguments. It is also about emotions.',
+  },
+  'networking':{
+    slug:'networkingul-nu-incepe-cu-schimbul-de-contacte',
+    ro:'Networkingul nu începe cu schimbul de contacte',
+    en:'Networking does not start with exchanging contacts',
+  },
+}
 
 function seoTitle(slug:string,locale:'ro'|'en',fallback:string){
   if(locale==='ro'){
@@ -58,6 +72,7 @@ export default function Program({params,searchParams}:{params:{slug:string};sear
   const copy=getCopy(locale).programDetail
   const program=getPrograms(locale).find(item=>item.slug===params.slug)
   if(!program)notFound()
+  const relatedInsight=relatedInsightByProgram[program.slug]
 
   return <div className={`${styles.page} balanced-commercial-page`}>
     <section className={styles.hero}>
@@ -159,10 +174,22 @@ export default function Program({params,searchParams}:{params:{slug:string};sear
       </div>
     </section>
 
+    {relatedInsight&&<section className={styles.section}>
+      <div className={styles.sectionHead}>
+        <div>
+          <Eyebrow>{locale==='ro'?'Din Insights':'From Insights'}</Eyebrow>
+          <h2 className={styles.sectionTitle}>{locale==='ro'?'Aprofundează tema înainte de curs.':'Explore the topic before the course.'}</h2>
+        </div>
+      </div>
+      <ArrowLink href={localizePath(`/insights/${relatedInsight.slug}`,locale)}>
+        {locale==='ro'?relatedInsight.ro:relatedInsight.en}
+      </ArrowLink>
+    </section>}
+
     <section className={styles.cta}>
       <Eyebrow>{copy.ctaEyebrow}</Eyebrow>
       <h2 className={styles.ctaTitle}>{program.ctaTitle}</h2>
-      <ArrowLink href="/contact">{copy.cta}</ArrowLink>
+      <ArrowLink href={localizePath('/contact',locale)}>{copy.cta}</ArrowLink>
     </section>
   </div>
 }
