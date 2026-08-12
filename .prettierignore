@@ -1,0 +1,7 @@
+node_modules
+.next
+out
+.test-dist
+public
+content
+source
