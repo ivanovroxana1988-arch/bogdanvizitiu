@@ -1,10 +1,12 @@
 import type {Metadata} from 'next'
+import Link from 'next/link'
 import {notFound} from 'next/navigation'
 import {getPublishedInsights,publishedInsightSlugs} from '@/lib/data'
 import {PageHero,Eyebrow,ArrowLink} from '@/components/ui'
 import {ConceptImage,EditorialImage} from '@/components/portrait'
 import {JsonLd} from '@/components/json-ld'
 import {getCopy,getLocale} from '@/lib/i18n'
+import {localizePath} from '@/lib/routes'
 import {localizedUrl,SITE_URL} from '@/lib/seo'
 import styles from '../insights.module.css'
 
@@ -21,7 +23,23 @@ const commercialInsightSlugs=new Set([
   'nu-invatam-doar-cu-mintea',
   'cat-din-viata-traim-pe-pilot-automat',
   'negocierea-nu-este-doar-despre-argumente',
+  'de-ce-unele-conversatii-manageriale-schimba-lucrurile',
+  'stii-ce-ai-de-facut-de-ce-nu-faci',
+  'o-decizie-buna-incepe-inainte-sa-alegi',
+  'coaching-sau-consultanta-de-ce-ai-nevoie-de-fapt',
 ])
+
+function renderInlineLinks(text:string,locale:'ro'|'en'){
+  return text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part,index)=>{
+    const match=part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+    if(!match)return part
+    const [,label,href]=match
+    if(href.startsWith('/')){
+      return <Link key={`${href}-${index}`} href={localizePath(href,locale)}>{label}</Link>
+    }
+    return <a key={`${href}-${index}`} href={href} target="_blank" rel="noreferrer">{label}</a>
+  })
+}
 
 export function generateStaticParams(){
   return publishedInsightSlugs.map(slug=>({slug}))
@@ -114,18 +132,18 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
           : <EditorialImage asset="candid" kind="event" className={styles.heroImage} locale={locale}/>
         }
 
-        {insight.intro.map(paragraph=><p key={paragraph}>{paragraph}</p>)}
+        {insight.intro.map(paragraph=><p key={paragraph}>{renderInlineLinks(paragraph,locale)}</p>)}
 
         {insight.sections.map(section=><section key={section.heading}>
           <h2>{section.heading}</h2>
-          {section.paragraphs.map(paragraph=><p key={paragraph}>{paragraph}</p>)}
+          {section.paragraphs.map(paragraph=><p key={paragraph}>{renderInlineLinks(paragraph,locale)}</p>)}
         </section>)}
 
-        {insight.closing.map(paragraph=><p key={paragraph}>{paragraph}</p>)}
+        {insight.closing.map(paragraph=><p key={paragraph}>{renderInlineLinks(paragraph,locale)}</p>)}
 
         {insight.cta.href&&!(hasCommercialCta&&insight.cta.href==='/contact')&&<section>
           <h2>{insight.cta.title}</h2>
-          <ArrowLink href={insight.cta.href}>{insight.cta.label}</ArrowLink>
+          <ArrowLink href={localizePath(insight.cta.href,locale)}>{insight.cta.label}</ArrowLink>
         </section>}
 
         {insight.sourceNote && <section>
@@ -138,15 +156,15 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
 
         {hasCommercialCta&&<section style={{borderTop:'1px solid var(--line)',paddingTop:28}}>
           <p style={{fontSize:18,fontWeight:600,margin:'0 0 18px'}}>{commercialCta.title}</p>
-          <ArrowLink href="/contact">{commercialCta.label}</ArrowLink>
+          <ArrowLink href={localizePath('/contact',locale)}>{commercialCta.label}</ArrowLink>
         </section>}
 
         <section className={styles.related}>
           <h2>{locale==='ro'?'Mai departe':'Continue reading'}</h2>
-          {related.map(item=><p key={item.slug}><ArrowLink href={`/insights/${item.slug}`}>{item.title}</ArrowLink></p>)}
+          {related.map(item=><p key={item.slug}><ArrowLink href={localizePath(`/insights/${item.slug}`,locale)}>{item.title}</ArrowLink></p>)}
         </section>
 
-        <ArrowLink href="/insights" className={styles.back}>{copy.back}</ArrowLink>
+        <ArrowLink href={localizePath('/insights',locale)} className={styles.back}>{copy.back}</ArrowLink>
       </article>
     </section>
   </>
