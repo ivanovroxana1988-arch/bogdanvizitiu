@@ -1,6 +1,7 @@
 import type {Metadata} from 'next'
 import Link from 'next/link'
 import {notFound} from 'next/navigation'
+import media from '@/content/media.json'
 import {getPublishedInsights,publishedInsightSlugs} from '@/lib/data'
 import {PageHero,Eyebrow,ArrowLink} from '@/components/ui'
 import {ConceptImage,EditorialImage} from '@/components/portrait'
@@ -100,13 +101,15 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
   const conceptAsset=insight.slug==='networkingul-nu-incepe-cu-schimbul-de-contacte'
     ? 'networkingEditorial' as const
     : insightConcepts[insight.slug]
+  const structuredImageSource=conceptAsset?media.concepts[conceptAsset].src:media.images.candid.src
+  const structuredImage=structuredImageSource.startsWith('http')?structuredImageSource:`${SITE_URL}${structuredImageSource}`
   const articleJsonLd={
     '@context':'https://schema.org',
     '@type':'BlogPosting',
     '@id':`${canonical}#article`,
     headline:insight.title,
     description:insight.excerpt,
-    image:`${canonical}/opengraph-image`,
+    image:structuredImage,
     datePublished:`${insight.publishedAt}T12:00:00+03:00`,
     inLanguage:locale==='ro'?'ro-RO':'en',
     mainEntityOfPage:{'@type':'WebPage','@id':canonical},
