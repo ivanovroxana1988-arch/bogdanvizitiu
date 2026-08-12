@@ -22,19 +22,19 @@ import {
 } from '@/lib/content-schema'
 
 /** Central build-time validation boundary for public content. */
-export const content={
-  courseDetails:validateProductCollection(courseDetailsJson,'products'),
-  offers:validateProductCollection(offersJson,'offer-index'),
-  media:validateMediaCollection(mediaJson,'media'),
-  posts:validatePosts(postsJson,'insights'),
-  testimonials:validateTestimonials(testimonialsJson,'testimonials'),
-  profile:validateProfile(profileJson,'profile'),
-  siteCopy:validateLocalizedRoot(siteCopyJson,'site-copy'),
-  homeCopy:validateLocalizedRoot(homeCopyJson,'home-copy'),
-  aboutCopy:validateLocalizedRoot(aboutCopyJson,'about-copy'),
-  commercialCopy:validateLocalizedRoot(commercialCopyJson,'commercial-copy'),
-  legalCopy:validateLocalizedRoot(legalCopyJson,'legal-copy'),
-  servicePages:validateLocalizedRoot(servicePagesJson,'service-pages'),
-  navigation:validateLocalizedRoot(navigationJson,'navigation'),
-  contactCopy:validateLocalizedRoot(contactCopyJson,'contact-copy'),
+export const content = {
+  courseDetails: validateProductCollection(courseDetailsJson, 'products'),
+  offers: validateProductCollection(offersJson, 'offer-index'),
+  media: validateMediaCollection(mediaJson, 'media'),
+  posts: validatePosts(postsJson, 'insights'),
+  testimonials: validateTestimonials(testimonialsJson, 'testimonials'),
+  profile: validateProfile(profileJson, 'profile'),
+  siteCopy: validateLocalizedRoot(siteCopyJson, 'site-copy'),
+  homeCopy: validateLocalizedRoot(homeCopyJson, 'home-copy'),
+  aboutCopy: validateLocalizedRoot(aboutCopyJson, 'about-copy'),
+  commercialCopy: validateLocalizedRoot(commercialCopyJson, 'commercial-copy'),
+  legalCopy: validateLocalizedRoot(legalCopyJson, 'legal-copy'),
+  servicePages: validateLocalizedRoot(servicePagesJson, 'service-pages'),
+  navigation: validateLocalizedRoot(navigationJson, 'navigation'),
+  contactCopy: validateLocalizedRoot(contactCopyJson, 'contact-copy'),
 }

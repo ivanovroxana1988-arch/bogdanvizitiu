@@ -3,10 +3,7 @@ import { test } from 'node:test'
 import { resolveCanonicalRedirect } from '../lib/redirects'
 
 test('canonical requests do not redirect', () => {
-  equal(
-    resolveCanonicalRedirect({ hostname: 'bogdanvizitiu.com', pathname: '/despre' }),
-    null,
-  )
+  equal(resolveCanonicalRedirect({ hostname: 'bogdanvizitiu.com', pathname: '/despre' }), null)
 })
 
 test('www host is canonicalized while preserving query parameters', () => {
@@ -25,14 +22,11 @@ test('www host is canonicalized while preserving query parameters', () => {
 })
 
 test('legacy English routes redirect to the English route family', () => {
-  deepStrictEqual(
-    resolveCanonicalRedirect({ hostname: 'bogdanvizitiu.com', pathname: '/about' }),
-    {
-      hostname: 'bogdanvizitiu.com',
-      pathname: '/en/about',
-      search: '',
-    },
-  )
+  deepStrictEqual(resolveCanonicalRedirect({ hostname: 'bogdanvizitiu.com', pathname: '/about' }), {
+    hostname: 'bogdanvizitiu.com',
+    pathname: '/en/about',
+    search: '',
+  })
 
   deepStrictEqual(
     resolveCanonicalRedirect({

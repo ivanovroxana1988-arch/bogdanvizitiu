@@ -1,10 +1,6 @@
 import { NextResponse } from 'next/server'
 import business from '@/content/business.json'
-import {
-  clean,
-  getInvalidContactFields,
-  type ContactPayload,
-} from '@/lib/contact-validation'
+import { clean, getInvalidContactFields, type ContactPayload } from '@/lib/contact-validation'
 import { checkContactRateLimit, getClientIdentifier } from '@/lib/rate-limit'
 
 const MAX_BODY_BYTES = 20_000

@@ -18,9 +18,7 @@ const expectedBytes = 30171
 const expectedDigest = 'e70bed315028a557c3a104917aa0986e4bd015444a2d06c487f5741919a417d6'
 
 if (image.length !== expectedBytes || digest !== expectedDigest) {
-  throw new Error(
-    `Hero image integrity check failed: ${image.length} bytes, sha256 ${digest}`,
-  )
+  throw new Error(`Hero image integrity check failed: ${image.length} bytes, sha256 ${digest}`)
 }
 
 const target = resolve(root, 'public/images/bogdan/bogdan-hero.avif')
