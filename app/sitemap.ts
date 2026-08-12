@@ -1,32 +1,22 @@
 import type {MetadataRoute} from 'next'
 import {programSlugs,publishedInsightSlugs} from '@/lib/data'
-import {localizedUrl} from '@/lib/seo'
+import {localizePath} from '@/lib/routes'
 
 export default function sitemap():MetadataRoute.Sitemap{
-  const routes=[
-    '/',
+  const base='https://bogdanvizitiu.com'
+  const roRoutes=[
+    '',
     '/despre',
     '/cursuri',
     '/coaching',
     '/corporate',
-    '/media',
     '/insights',
     '/resurse',
     '/contact',
     ...programSlugs.map(slug=>`/cursuri/${slug}`),
     ...publishedInsightSlugs.map(slug=>`/insights/${slug}`),
   ]
-
-  return Array.from(new Set(routes)).flatMap(path=>{
-    const languages={
-      'ro-RO':localizedUrl(path,'ro'),
-      'en':localizedUrl(path,'en'),
-      'x-default':localizedUrl(path,'ro'),
-    }
-
-    return (['ro','en'] as const).map(locale=>({
-      url:localizedUrl(path,locale),
-      alternates:{languages},
-    }))
-  })
+  const normalizedRoRoutes=roRoutes.map(path=>path||'/')
+  const routes=[...normalizedRoRoutes,...normalizedRoRoutes.map(path=>localizePath(path,'en'))]
+  return Array.from(new Set(routes)).map(path=>({url:base+(path==='/'?'':path)}))
 }

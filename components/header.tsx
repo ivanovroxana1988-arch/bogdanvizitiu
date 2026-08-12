@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import {usePathname} from 'next/navigation'
 import {useEffect,useRef,useState} from 'react'
 import navigation from '@/content/navigation.json'
 import {withLocale,type Locale} from '@/lib/i18n'
@@ -14,33 +15,28 @@ const hrefs=[
   ['contact','/contact'],
 ] as const
 
-export function Header({locale,pathname}:{locale:Locale;pathname:string}){
+export function Header({locale}:{locale:Locale}){
+  const pathname=usePathname()
   const [open,setOpen]=useState(false)
   const menuButtonRef=useRef<HTMLButtonElement>(null)
   const copy=navigation[locale]
-  const isActive=(href:string)=>pathname===href||(href!=='/'&&pathname.startsWith(`${href}/`))
+  const isActive=(href:string)=>{
+    const target=withLocale(href,locale).split(/[?#]/)[0]
+    return pathname===target||(target!=='/'&&pathname.startsWith(`${target}/`))
+  }
 
-  useEffect(()=>{
-    setOpen(false)
-  },[pathname])
-
-  useEffect(()=>{
-    document.documentElement.lang=locale
-  },[locale])
+  useEffect(()=>setOpen(false),[pathname])
 
   useEffect(()=>{
     if(!open)return
-
     const previousOverflow=document.body.style.overflow
     document.body.style.overflow='hidden'
-
     const handleKeyDown=(event:KeyboardEvent)=>{
       if(event.key==='Escape'){
         setOpen(false)
         menuButtonRef.current?.focus()
       }
     }
-
     document.addEventListener('keydown',handleKeyDown)
     return ()=>{
       document.removeEventListener('keydown',handleKeyDown)

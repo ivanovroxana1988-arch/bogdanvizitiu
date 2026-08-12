@@ -1,16 +1,17 @@
 'use client'
 
 import Link from 'next/link'
+import {usePathname} from 'next/navigation'
 import type {ReactNode} from 'react'
-import {withLocale} from '@/lib/i18n'
-import {useLocale} from '@/components/locale-context'
+import {getLocaleFromPathname,withLocale} from '@/lib/i18n'
 
 export function Eyebrow({children}:{children:ReactNode}){
   return <p className="eyebrow">{children}</p>
 }
 
 export function ArrowLink({href,children,className=''}:{href:string;children:ReactNode;className?:string}){
-  const locale=useLocale()
+  const pathname=usePathname()??'/'
+  const locale=getLocaleFromPathname(pathname)
   return <Link className={`arrow-link ${className}`} href={withLocale(href,locale)}>{children} <span aria-hidden>→</span></Link>
 }
 

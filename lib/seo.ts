@@ -1,17 +1,10 @@
 import type {Metadata} from 'next'
-import type {Locale} from '@/lib/i18n'
+import {localizePath,type Locale} from '@/lib/routes'
 
 export const SITE_URL='https://bogdanvizitiu.com'
 
-export function localizedPath(path:string,locale:Locale){
-  const normalized=path==='/'?'/':path.startsWith('/')?path:`/${path}`
-  return locale==='en'
-    ? normalized==='/'?'/en':`/en${normalized}`
-    : normalized
-}
-
 export function localizedUrl(path:string,locale:Locale){
-  return new URL(localizedPath(path,locale),`${SITE_URL}/`).toString()
+  return `${SITE_URL}${localizePath(path,locale)}`
 }
 
 export function buildPageMetadata({title,description,path,locale}:{title:string;description:string;path:string;locale:Locale}):Metadata{
