@@ -67,8 +67,7 @@ export default function About({searchParams}:{searchParams?:{lang?:string}}){
         <p className={styles.sectionIntro}>{copy.experienceIntro}</p>
       </div>
       <div className={styles.twoGrid}>
-        {copy.experienceItems.map((item,i)=><article className={styles.editorialCard} key={item.title}>
-          <span className={styles.cardIndex}>0{i+1}</span>
+        {copy.experienceItems.map(item=><article className={styles.editorialCard} key={item.title}>
           <h3>{item.title}</h3>
           <p>{item.description}</p>
         </article>)}
@@ -84,8 +83,7 @@ export default function About({searchParams}:{searchParams?:{lang?:string}}){
         <p className={styles.sectionIntro}>{copy.methodIntro}</p>
       </div>
       <div className={styles.processList}>
-        {copy.methodItems.map((item,i)=><article className={styles.processRow} key={item.title}>
-          <span className={styles.listIndex}>0{i+1}</span>
+        {copy.methodItems.map(item=><article className={`${styles.processRow} clean-process-row`} key={item.title}>
           <h3>{item.title}</h3>
           <p>{item.description}</p>
         </article>)}
@@ -113,8 +111,7 @@ export default function About({searchParams}:{searchParams?:{lang?:string}}){
           <p style={{color:'rgba(250,249,246,.9)',lineHeight:1.75,marginTop:'28px'}}>{copy.proofIntro}</p>
         </div>
         <div className={styles.processList}>
-          {copy.proofItems.map((item,i)=><article className={styles.processRow} key={item.title}>
-            <span className={styles.listIndex} style={{color:'rgba(250,249,246,.68)'}}>0{i+1}</span>
+          {copy.proofItems.map(item=><article className={`${styles.processRow} clean-process-row`} key={item.title}>
             <h3 style={{color:'#faf9f6'}}>{item.title}</h3>
             <p style={{color:'rgba(250,249,246,.9)'}}>{item.description}</p>
           </article>)}
