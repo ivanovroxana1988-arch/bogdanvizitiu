@@ -2,6 +2,7 @@ import Link from 'next/link'
 import navigation from '@/content/navigation.json'
 import business from '@/content/business.json'
 import {withLocale,type Locale} from '@/lib/i18n'
+import {BrandLogo} from '@/components/brand-logo'
 import styles from './footer.module.css'
 
 const socialLinks=[
@@ -14,7 +15,9 @@ export function Footer({locale}:{locale:Locale}){
 
   return <footer><div className={`shell ${styles.grid}`}>
     <div className={styles.brand}>
-      <Link href={withLocale('/',locale)} className="logo" aria-label={locale==='ro'?'Bogdan Vizitiu — pagina principală':'Bogdan Vizitiu — home'}>BGV<span aria-hidden>.</span></Link>
+      <Link href={withLocale('/',locale)} className={styles.logoLink} aria-label={locale==='ro'?'Bogdan George Vizitiu — pagina principală':'Bogdan George Vizitiu — home'}>
+        <BrandLogo variant="lockup" tone="light" className={styles.logoMark}/>
+      </Link>
       <p>Bogdan Vizitiu<br/>{locale==='ro'?'Leadership, negociere și relații profesionale.':'Leadership, negotiation and professional relationships.'}</p>
       <p className={styles.legal}>
         {locale==='ro'?'Furnizor servicii':'Service provider'}: <strong>{business.legalName}</strong><br/>
