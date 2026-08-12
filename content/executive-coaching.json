@@ -1,0 +1,112 @@
+{
+  "ro": {
+    "eyebrow": "Executive Coaching",
+    "title": "Executive coaching pentru manageri și lideri care au de luat decizii reale.",
+    "intro": "Un proces de lucru 1:1 pentru executivi, manageri și antreprenori care vor să vadă mai clar o decizie, un rol, o relație profesională sau o perioadă de schimbare. Fără soluții prefabricate și fără să transformăm coachingul în consultanță mascată.",
+    "recognitionEyebrow": "Când are sens",
+    "recognitionTitle": "Nu orice problemă cere un răspuns imediat. Unele cer un spațiu în care să vezi mai bine ce se întâmplă.",
+    "recognitionItems": [
+      "Ai o decizie importantă și prea multe variabile ca să o reduci la o listă de pro și contra.",
+      "Rolul tău s-a schimbat, dar felul în care lucrezi încă aparține etapei anterioare.",
+      "Ai o conversație dificilă cu un coleg, un partener, un stakeholder sau o echipă și vrei să o pregătești mai bine.",
+      "Știi ce ar trebui să faci, dar între intenție și acțiune apare același blocaj.",
+      "Ai nevoie de un interlocutor care să nu aibă o miză în decizia ta, dar să poată lucra cu complexitatea ei."
+    ],
+    "fitEyebrow": "Ți se potrivește?",
+    "fitTitle": "Pentru oameni care au responsabilitate și nu mai caută încă o rețetă.",
+    "fitText": "Executive coachingul este potrivit pentru executivi, manageri, antreprenori și profesioniști aflați în roluri cu miză, unde deciziile, relațiile și felul în care conduci au efecte dincolo de propria listă de taskuri.",
+    "notEyebrow": "Ce nu este",
+    "notTitle": "Nu este consultanță, mentoring sau o colecție de răspunsuri corecte.",
+    "notText": "Bogdan nu intră în proces ca să decidă în locul tău. Rolul coachingului este să facă vizibile ipotezele, opțiunile, tensiunile și consecințele pe care este ușor să le ratezi când ești chiar în mijlocul situației.",
+    "problemEyebrow": "De ce contează",
+    "problemTitle": "Cu cât responsabilitatea crește, cu atât devine mai important să separi presiunea de problemă.",
+    "problemText": "În rolurile de conducere, urgența poate face orice situație să pară simplă: trebuie doar să alegi. Dar uneori alegerea bună apare abia după ce clarifici ce încerci de fapt să rezolvi, ce presupuneri faci și ce efecte poate avea decizia asupra oamenilor și a businessului.",
+    "outcomesEyebrow": "Ce urmărește procesul",
+    "outcomesTitle": "Mai multă claritate înainte de decizie. Mai multă intenție după ea.",
+    "outcomes": [
+      "Clarifici ce este problemă, ce este simptom și ce este doar presiune de moment.",
+      "Îți faci criteriile de decizie mai explicite și vezi mai multe alternative.",
+      "Pregătești conversații dificile fără să le reduci la argumente și reacții.",
+      "Observi tipare care se repetă în rol, relații sau modul în care iei decizii.",
+      "Transformi insightul în pași care pot fi testați în contextul real de lucru.",
+      "Revii asupra rezultatului și ajustezi, în loc să tratezi prima decizie ca verdict final."
+    ],
+    "processEyebrow": "Cum lucrăm",
+    "processTitle": "Context. Clarificare. Opțiuni. Acțiune. Revizuire.",
+    "processItems": [
+      {"title": "Începem cu situația reală", "description": "Nu cu o temă generică de leadership. Lucrăm cu ce se întâmplă acum: o decizie, o relație, un rol, o schimbare sau un blocaj."},
+      {"title": "Clarificăm miza", "description": "Separăm faptele de interpretări, obiectivul de presiune și ceea ce poți controla de ceea ce nu depinde de tine."},
+      {"title": "Explorăm opțiunile", "description": "Căutăm alternative, întrebări și perspective pe care este greu să le vezi când o singură soluție pare deja inevitabilă."},
+      {"title": "Testăm în practică", "description": "Procesul nu se oprește la conversația de coaching. Alegi ce faci diferit și revii cu ce s-a întâmplat în realitate."}
+    ],
+    "proofEyebrow": "De ce Bogdan",
+    "proofTitle": "Business înainte de coaching. Coaching susținut de experiență, nu înlocuit de ea.",
+    "proofText": "Bogdan are peste 20 de ani de experiență profesională și peste 16 ani de experiență comercială, inclusiv în vânzări și management. A absolvit International Coach Academy în 2020, este Professional Certified Coach (PCC) acreditat de International Coaching Federation și a absolvit Facultatea de Psihologie a Universității Titu Maiorescu în 2026.",
+    "faqEyebrow": "Întrebări frecvente",
+    "faqTitle": "Ce merită clarificat înainte să începi.",
+    "faq": [
+      {"question": "Ce este executive coachingul?", "answer": "Este un proces de lucru 1:1 centrat pe situațiile profesionale în care rolul, deciziile, relațiile și responsabilitatea devin parte din problemă. Nu pornește de la o soluție standard, ci de la contextul persoanei și de la ceea ce vrea să poată face diferit."},
+      {"question": "Cu ce tip de situații pot veni?", "answer": "Decizii cu miză, schimbări de rol, relații profesionale dificile, prioritizare, influență, conversații de leadership, performanță, perioade de tranziție sau situații în care știi ce ai de făcut, dar nu reușești să transformi claritatea teoretică în acțiune."},
+      {"question": "Care este diferența dintre coaching și consultanță?", "answer": "În consultanță, expertul poate recomanda o soluție. În coaching, punctul de plecare este că decizia și responsabilitatea rămân la client. Coachul lucrează cu întrebări, observații, perspective și procesul prin care clientul își clarifică propriile opțiuni."},
+      {"question": "Cum începe colaborarea?", "answer": "Cu o conversație despre context, obiectiv și potrivirea dintre situația ta și modul de lucru. Abia apoi are sens să stabilim formatul colaborării."}
+    ],
+    "ctaEyebrow": "Următorul pas",
+    "ctaTitle": "Ai o decizie sau un context pe care vrei să-l vezi mai clar?",
+    "cta": "Descrie situația"
+  },
+  "en": {
+    "eyebrow": "Executive Coaching",
+    "title": "Executive coaching for managers and leaders making real decisions.",
+    "intro": "A one-to-one working process for executives, managers and entrepreneurs who want more clarity around a decision, a role, a professional relationship or a period of change. No ready-made answers and no attempt to disguise consulting as coaching.",
+    "recognitionEyebrow": "When it helps",
+    "recognitionTitle": "Not every problem needs an immediate answer. Some need a space where you can see what is actually happening.",
+    "recognitionItems": [
+      "You have an important decision with too many variables to reduce it to a simple pros-and-cons list.",
+      "Your role has changed, but the way you work still belongs to the previous stage.",
+      "You have a difficult conversation with a colleague, partner, stakeholder or team and want to prepare it better.",
+      "You know what you should do, yet the same obstacle appears between intention and action.",
+      "You need a thinking partner with no stake in your decision who can still work with its complexity."
+    ],
+    "fitEyebrow": "Is it a fit?",
+    "fitTitle": "For people carrying responsibility who are no longer looking for another formula.",
+    "fitText": "Executive coaching is suited to executives, managers, entrepreneurs and professionals in roles where decisions, relationships and the way you lead have consequences beyond your own task list.",
+    "notEyebrow": "What it is not",
+    "notTitle": "It is not consulting, mentoring or a collection of correct answers.",
+    "notText": "Bogdan does not enter the process to make the decision for you. Coaching is used to make assumptions, options, tensions and consequences more visible when they are difficult to see from inside the situation.",
+    "problemEyebrow": "Why it matters",
+    "problemTitle": "As responsibility grows, separating pressure from the actual problem becomes more important.",
+    "problemText": "In leadership roles, urgency can make every situation look simple: you just need to choose. But a better decision can require clarity about what you are actually trying to solve, which assumptions you are making and how the decision may affect people and the business.",
+    "outcomesEyebrow": "What the process aims for",
+    "outcomesTitle": "More clarity before the decision. More intention after it.",
+    "outcomes": [
+      "Clarify what is the problem, what is a symptom and what is simply pressure in the moment.",
+      "Make your decision criteria more explicit and see more alternatives.",
+      "Prepare difficult conversations without reducing them to arguments and reactions.",
+      "Notice patterns that repeat in your role, relationships or decision-making.",
+      "Turn insight into steps that can be tested in the real work context.",
+      "Review what happened and adjust instead of treating the first decision as a final verdict."
+    ],
+    "processEyebrow": "How we work",
+    "processTitle": "Context. Clarity. Options. Action. Review.",
+    "processItems": [
+      {"title": "Start with the real situation", "description": "Not with a generic leadership theme. We work with what is happening now: a decision, relationship, role, change or obstacle."},
+      {"title": "Clarify the stakes", "description": "Separate facts from interpretations, the objective from the pressure and what you can influence from what sits outside your control."},
+      {"title": "Explore options", "description": "Look for alternatives, questions and perspectives that are hard to notice once a single solution already feels inevitable."},
+      {"title": "Test in practice", "description": "The process does not end with the coaching conversation. You choose what to do differently and return with what actually happened."}
+    ],
+    "proofEyebrow": "Why Bogdan",
+    "proofTitle": "Business before coaching. Experience supporting the coaching, not replacing it.",
+    "proofText": "Bogdan has more than 20 years of professional experience and more than 16 years of commercial experience, including sales and management. He graduated from International Coach Academy in 2020, is an International Coaching Federation Professional Certified Coach (PCC), and graduated from the Faculty of Psychology at Titu Maiorescu University in 2026.",
+    "faqEyebrow": "Frequently asked questions",
+    "faqTitle": "What is worth clarifying before you start.",
+    "faq": [
+      {"question": "What is executive coaching?", "answer": "It is a one-to-one working process focused on professional situations where role, decisions, relationships and responsibility become part of the challenge. It starts with the person's context and what they want to be able to do differently, rather than a standard solution."},
+      {"question": "What kinds of situations can I bring?", "answer": "High-stakes decisions, role transitions, difficult professional relationships, prioritisation, influence, leadership conversations, performance, periods of change or situations where you know what to do but struggle to turn theoretical clarity into action."},
+      {"question": "How is coaching different from consulting?", "answer": "In consulting, the expert may recommend a solution. In coaching, the decision and responsibility remain with the client. The coach works through questions, observations, perspectives and the process by which the client clarifies their own options."},
+      {"question": "How does a collaboration start?", "answer": "With a conversation about context, objective and fit between your situation and the way Bogdan works. Only then does it make sense to define the collaboration format."}
+    ],
+    "ctaEyebrow": "Next step",
+    "ctaTitle": "Is there a decision or situation you want to see more clearly?",
+    "cta": "Describe the situation"
+  }
+}
