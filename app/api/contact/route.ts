@@ -92,10 +92,12 @@ export async function POST(request:Request){
       headers:{
         Authorization:`Bearer ${apiKey}`,
         'Content-Type':'application/json',
+        'User-Agent':'bogdanvizitiu.com/contact-form',
       },
       body:JSON.stringify({
         from,
         to:[business.email],
+        reply_to:email,
         subject,
         text:body,
       }),
