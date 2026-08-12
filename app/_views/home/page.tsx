@@ -23,6 +23,19 @@ export default function Home({searchParams}:{searchParams?:{lang?:string}}){
   const services=servicePages[locale]
   const programs=getPrograms(locale)
   const insights=getPublishedInsights(locale).slice(0,3)
+  const proof=locale==='ro'?
+    [
+      {value:'20+',label:'ani de experiență profesională'},
+      {value:'16+',label:'ani de experiență comercială'},
+      {value:'PCC',label:'International Coaching Federation · din 2021'},
+      {value:'Psihologie',label:'Universitatea Titu Maiorescu · 2026'},
+    ]:
+    [
+      {value:'20+',label:'years of professional experience'},
+      {value:'16+',label:'years of commercial experience'},
+      {value:'PCC',label:'International Coaching Federation · since 2021'},
+      {value:'Psychology',label:'Titu Maiorescu University · 2026'},
+    ]
 
   return <>
     <section className="hero" aria-labelledby="hero-title"><div className="shell hero-grid">
@@ -31,6 +44,8 @@ export default function Home({searchParams}:{searchParams?:{lang?:string}}){
     </div></section>
 
     <section id="recognition" className="recognition"><div className="shell recognition-grid"><div><h2>{copy.recognitionTitle}</h2></div><ol className="recognition-list">{copy.recognitionItems.map((item,i)=><li key={item}><span>0{i+1}</span><p>{item}</p></li>)}</ol></div></section>
+
+    <section aria-label={locale==='ro'?'Repere profesionale verificate':'Verified professional credentials'} style={{paddingBlock:0}}><div className="shell" style={{borderTop:'1px solid var(--line)',borderBottom:'1px solid var(--line)',display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(190px,1fr))',columnGap:'clamp(24px,4vw,64px)'}}>{proof.map((item)=><div key={item.value} style={{padding:'30px 0 28px'}}><strong style={{display:'block',fontFamily:'var(--font-serif),fontSize:'clamp(2rem,3vw,3.1rem)',fontWeight:400,letterSpacing:'-.04em',lineHeight:1,marginBottom:'10px'}}>{item.value}</strong><span style={{display:'block',maxWidth:'230px',fontSize:'11px',lineHeight:1.55,color:'var(--muted)',letterSpacing:'.035em'}}>{item.label}</span></div>)}</div></section>
 
     <section className="programs shell"><div className="program-intro"><Eyebrow>{copy.programsEyebrow}</Eyebrow><h2>{copy.programsStatement}</h2><p>{copy.programsIntro}</p></div>{programs.map((program,i)=><article className="program-row" key={program.slug}><span>0{i+1}</span><h3>{program.title}</h3><p>{program.description}</p><ArrowLink href={`/cursuri/${program.slug}`}>{copy.viewProgram}</ArrowLink></article>)}</section>
 
