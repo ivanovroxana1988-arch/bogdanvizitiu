@@ -9,12 +9,15 @@ import {buildPageMetadata} from '@/lib/seo'
 export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):Metadata{
   const locale=getLocale(searchParams?.lang)
   const copy=servicePages[locale].media
-  return buildPageMetadata({
-    title:locale==='ro'?'Media & apariții':'Media & appearances',
-    description:copy.intro,
-    path:'/media',
-    locale,
-  })
+  return {
+    ...buildPageMetadata({
+      title:locale==='ro'?'Media & apariții':'Media & appearances',
+      description:copy.intro,
+      path:'/media',
+      locale,
+    }),
+    robots:{index:false,follow:false},
+  }
 }
 
 export default function Media({searchParams}:{searchParams?:{lang?:string}}){
