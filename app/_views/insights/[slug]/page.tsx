@@ -15,6 +15,14 @@ const insightConcepts:Record<string,'livesEditorial'|'emotionsLearningEditorial'
   'negocierea-nu-este-doar-despre-argumente':'negotiationEditorial',
 }
 
+const commercialInsightSlugs=new Set([
+  'networkingul-nu-incepe-cu-schimbul-de-contacte',
+  'de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives',
+  'nu-invatam-doar-cu-mintea',
+  'cat-din-viata-traim-pe-pilot-automat',
+  'negocierea-nu-este-doar-despre-argumente',
+])
+
 export function generateStaticParams(){
   return publishedInsightSlugs.map(slug=>({slug}))
 }
@@ -61,6 +69,10 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
   if(!insight)notFound()
 
   const related=insights.filter(item=>item.slug!==insight.slug).slice(0,2)
+  const hasCommercialCta=commercialInsightSlugs.has(insight.slug)
+  const commercialCta=locale==='ro'
+    ?{title:'Lucrezi cu o situație asemănătoare?',label:'Începe o conversație'}
+    :{title:'Working with a similar situation?',label:'Start a conversation'}
   const date=new Intl.DateTimeFormat(locale==='ro'?'ro-RO':'en-GB',{
     day:'numeric',month:'long',year:'numeric'
   }).format(new Date(`${insight.publishedAt}T12:00:00Z`))
@@ -111,7 +123,7 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
 
         {insight.closing.map(paragraph=><p key={paragraph}>{paragraph}</p>)}
 
-        {insight.cta.href && <section>
+        {insight.cta.href&&!(hasCommercialCta&&insight.cta.href==='/contact')&&<section>
           <h2>{insight.cta.title}</h2>
           <ArrowLink href={insight.cta.href}>{insight.cta.label}</ArrowLink>
         </section>}
@@ -122,6 +134,11 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
           <ul>
             {insight.sources.map(source=><li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.label}</a></li>)}
           </ul>
+        </section>}
+
+        {hasCommercialCta&&<section style={{borderTop:'1px solid var(--line)',paddingTop:28}}>
+          <p style={{fontSize:18,fontWeight:600,margin:'0 0 18px'}}>{commercialCta.title}</p>
+          <ArrowLink href="/contact">{commercialCta.label}</ArrowLink>
         </section>}
 
         <section className={styles.related}>
