@@ -8,8 +8,10 @@ export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):
   const locale=getLocale(searchParams?.lang)
   const copy=servicePages[locale].coaching
   return buildPageMetadata({
-    title:locale==='ro'?'Coaching executiv și profesional':'Executive & professional coaching',
-    description:copy.intro,
+    title:locale==='ro'?'Coaching pentru decizii, carieră și performanță':'Coaching for decisions, career and performance',
+    description:locale==='ro'
+      ?'Coaching individual pentru manageri și profesioniști care vor să clarifice decizii, roluri, schimbări de carieră și situații profesionale dificile.'
+      :'Individual coaching for managers and professionals who want to clarify decisions, roles, career transitions and difficult professional situations.',
     path:'/coaching',
     locale,
   })
