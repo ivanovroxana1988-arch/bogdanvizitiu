@@ -9,7 +9,7 @@ export function BrandLogo({className,variant='mark',tone='dark'}:BrandLogoProps)
   const blue=tone==='light'?'#9CC5EA':'#78A6D3'
 
   if(variant==='lockup'){
-    return <svg className={className} viewBox="0 0 620 242" role="img" aria-label="Bogdan George Vizitiu">
+    return <svg className={className} viewBox="0 0 620 242" width="390" height="152" role="img" aria-label="Bogdan George Vizitiu">
       <g transform="translate(188 2)">
         <text x="0" y="105" fill={ink} fontFamily="Georgia, 'Times New Roman', serif" fontSize="104" fontWeight="400">B</text>
         <text x="72" y="120" fill={blue} fontFamily="Georgia, 'Times New Roman', serif" fontSize="96" fontWeight="400">G</text>
@@ -23,7 +23,7 @@ export function BrandLogo({className,variant='mark',tone='dark'}:BrandLogoProps)
     </svg>
   }
 
-  return <svg className={className} viewBox="0 0 250 132" aria-hidden="true" focusable="false">
+  return <svg className={className} viewBox="0 0 250 132" width="118" height="62" aria-hidden="true" focusable="false">
     <text x="4" y="96" fill={ink} fontFamily="Georgia, 'Times New Roman', serif" fontSize="112" fontWeight="400">B</text>
     <text x="80" y="112" fill={blue} fontFamily="Georgia, 'Times New Roman', serif" fontSize="102" fontWeight="400">G</text>
     <path d="M145 80 C165 68 184 55 201 47 C209 43 213 46 211 59 L198 112 C195 124 198 128 206 115 L246 25" fill="none" stroke={blue} strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round"/>
