@@ -1,8 +1,20 @@
 .grid{
   display:grid;
-  grid-template-columns:minmax(260px,1.6fr) repeat(3,minmax(150px,.75fr));
+  grid-template-columns:minmax(300px,1.6fr) repeat(3,minmax(150px,.75fr));
   gap:clamp(38px,5vw,82px);
   align-items:start;
+}
+
+.logoLink{
+  display:block;
+  width:min(100%,390px);
+  margin:0 0 28px;
+}
+
+.logoMark{
+  display:block;
+  width:100%;
+  height:auto;
 }
 
 .brand p{
@@ -37,6 +49,10 @@
   .brand{
     grid-column:1/-1;
   }
+
+  .logoLink{
+    width:min(100%,360px);
+  }
 }
 
 @media(max-width:620px){
@@ -57,5 +73,9 @@
 
   .brand{
     grid-column:auto;
+  }
+
+  .logoLink{
+    width:min(100%,320px);
   }
 }
