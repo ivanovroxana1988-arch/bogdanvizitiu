@@ -1,0 +1,55 @@
+.fieldError {
+  display: block;
+  margin-top: -2px;
+  color: #9b2c2c;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.invalid {
+  border-bottom-color: #9b2c2c !important;
+}
+
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.consentLabel {
+  display: flex !important;
+  grid-template-columns: none !important;
+  align-items: flex-start;
+  gap: 12px !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.5 !important;
+  text-transform: none !important;
+}
+
+.checkbox {
+  width: auto !important;
+  margin-top: 3px;
+}
+
+.status {
+  margin: 0;
+  color: var(--commercial-muted);
+  line-height: 1.6;
+}
+
+.fallbackLink {
+  grid-column: 1 / -1;
+  width: max-content;
+  max-width: 100%;
+  border-bottom: 1px solid var(--commercial-ink);
+  padding-bottom: 4px;
+  font-size: 14px;
+  font-weight: 700;
+}
