@@ -1,0 +1,159 @@
+{
+  "slug": "stii-ce-ai-de-facut-de-ce-nu-faci",
+  "status": "published",
+  "category": {"ro": "Coaching", "en": "Coaching"},
+  "title": {"ro": "Știi ce ai de făcut. De ce nu faci?", "en": "You know what to do. Why are you not doing it?"},
+  "subtitle": {
+    "ro": "Între a înțelege ceva și a-l transforma în comportament există uneori o distanță surprinzător de mare.",
+    "en": "There can be a surprisingly large distance between understanding something and turning it into behaviour."
+  },
+  "excerpt": {
+    "ro": "Când informația există deja, blocajul poate fi în altă parte: cost perceput, teamă, identitate, control sau un comportament vechi care încă are o funcție.",
+    "en": "When the information is already there, the obstacle may sit somewhere else: perceived cost, fear, identity, control or an old behaviour that still serves a function."
+  },
+  "readTime": {"ro": "6 min", "en": "6 min"},
+  "publishedAt": "2026-08-12",
+  "intro": {
+    "ro": [
+      "„Știu.”",
+      "Este unul dintre cele mai interesante răspunsuri într-o conversație de coaching.",
+      "„Știu că ar fi util să vorbesc cu el.” „Știu că delegarea mi-ar elibera timp.” „Știu că vreau să spun nu.” „Știu că jobul ăsta nu mai este pentru mine.”",
+      "Și totuși nu se întâmplă nimic.",
+      "Problema, în astfel de situații, nu pare să fie lipsa informației. Dacă încă o explicație ar fi fost suficientă, probabil schimbarea s-ar fi produs deja."
+    ],
+    "en": [
+      "“I know.”",
+      "It is one of the most interesting answers in a coaching conversation.",
+      "“I know it would help to talk to him.” “I know delegating would free up time.” “I know I want to say no.” “I know this job is no longer right for me.”",
+      "And still, nothing happens.",
+      "In situations like these, the problem does not seem to be a lack of information. If one more explanation were enough, the change would probably have happened already."
+    ]
+  },
+  "sections": {
+    "ro": [
+      {
+        "heading": "A ști nu este același lucru cu a putea face",
+        "paragraphs": [
+          "Suntem tentați să tratăm comportamentul ca pe o ecuație simplă: înțeleg ce ar fi util, apoi fac.",
+          "Doar că oamenii nu funcționează atât de elegant.",
+          "Putem înțelege perfect o situație și, în același timp, să existe ceva care face acțiunea dificilă.",
+          "Poate costul perceput este prea mare. Poate evităm o conversație pentru că ne este teamă de conflict. Poate o decizie intră în conflict cu ceva important pentru noi.",
+          "Poate comportamentul vechi ne-a fost util foarte mult timp și încă nu am găsit unul care să îi ia locul.",
+          "De aceea „De ce nu faci?” nu este întotdeauna o acuzație. Poate fi o întrebare foarte bună."
+        ]
+      },
+      {
+        "heading": "Ce protejează comportamentul actual?",
+        "paragraphs": [
+          "Uneori un comportament care pare irațional are o funcție.",
+          "Managerul care nu delegă spune că vrea mai mult timp, dar verifică fiecare detaliu. Poate nu este o problemă de time management. Poate delegarea îl obligă să accepte că rezultatul nu va arăta exact cum l-ar fi făcut el.",
+          "Persoana care spune că vrea să schimbe jobul amână de șase luni. Poate nu îi lipsește planul. Poate schimbarea înseamnă să renunțe la o identitate profesională în care a investit zece ani.",
+          "Dacă rămânem doar la întrebarea „Ce faci mai departe?”, putem pierde partea asta.",
+          "Uneori merită să întrebăm: „Ce îți oferă situația actuală, chiar dacă spui că vrei să o schimbi?”"
+        ]
+      },
+      {
+        "heading": "Emoțiile nu anulează rațiunea",
+        "paragraphs": [
+          "Avem tendința să vorbim despre decizii ca și cum emoțiile ar fi un defect al sistemului.",
+          "„Știu logic că…” Și apoi urmează ceva ce omul continuă să evite.",
+          "Poate că emoția nu are nevoie să fie eliminată atât de repede. Poate conține informație: teamă, pierdere, nesiguranță, nevoia de control, apartenență, statut.",
+          "Asta nu înseamnă că emoția decide în locul nostru. Înseamnă doar că este greu să înțelegem un blocaj dacă eliminăm jumătate din informația disponibilă.",
+          "Este și unul dintre motivele pentru care, în modelul LIVES, emoțiile fac parte din explorarea situației, nu sunt tratate ca zgomot care dispare înainte să înceapă partea „serioasă”. [Modelul LIVES](/insights/de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives) pornește tocmai de la ideea că, înaintea acțiunii, poate fi util să înțelegem mai bine contextul."
+        ]
+      },
+      {
+        "heading": "Planurile mari sunt confortabile",
+        "paragraphs": [
+          "Există un paradox simpatic.",
+          "Uneori este mai ușor să construim un plan extraordinar decât să facem un pas foarte mic.",
+          "Planul este încă teorie. Nu poate eșua. Nu ne expune.",
+          "Acțiunea, chiar și una mică, produce informație reală.",
+          "În loc de „Vreau să deleg mai mult”, poate întrebarea devine „Ce responsabilitate concretă aleg să deleg săptămâna aceasta?”",
+          "În loc de „Vreau să am conversația”, poate întrebarea devine „Când o programez?”",
+          "Un pas mic poate părea mai puțin spectaculos. Dar are avantajul enorm că poate fi testat."
+        ]
+      },
+      {
+        "heading": "Insightul are nevoie de realitate",
+        "paragraphs": [
+          "O conversație bună poate produce o perspectivă nouă. Dar perspectiva nu este încă schimbare.",
+          "Poate fi dusă în viața reală. Într-o întâlnire. Într-un email. Într-un „nu”. Într-o decizie.",
+          "Apoi vedem ce s-a întâmplat.",
+          "Uneori funcționează. Uneori descoperim că ipoteza noastră era greșită. Și asta este util, pentru că acum avem informație nouă.",
+          "Poate că distanța dintre „știu” și „fac” nu se rezolvă cu și mai multă disciplină.",
+          "Poate începe cu o întrebare mai bună: „Ce se întâmplă între cele două?”",
+          "Este exact genul de situație care poate fi explorat într-un proces de [executive coaching](/coaching/executive-coaching)."
+        ]
+      }
+    ],
+    "en": [
+      {
+        "heading": "Knowing is not the same as being able to act",
+        "paragraphs": [
+          "We are tempted to treat behaviour like a simple equation: understand what would help, then do it.",
+          "People are not quite that tidy.",
+          "We can understand a situation perfectly and still have something that makes action difficult.",
+          "Perhaps the perceived cost is too high. Perhaps we avoid a conversation because conflict feels risky. Perhaps a decision collides with something important to us.",
+          "Perhaps the old behaviour served us well for a long time and we have not yet found something that can replace it.",
+          "That is why “Why are you not doing it?” is not always an accusation. It can be a very useful question."
+        ]
+      },
+      {
+        "heading": "What is the current behaviour protecting?",
+        "paragraphs": [
+          "Sometimes behaviour that looks irrational has a function.",
+          "A manager says they want more time but still checks every detail instead of delegating. Perhaps this is not a time-management problem. Delegating may mean accepting that the result will not look exactly as they would have done it.",
+          "Someone says they want to change jobs but has postponed the move for six months. Perhaps they do not lack a plan. The change may involve letting go of a professional identity built over ten years.",
+          "If we stay only with the question “What will you do next?”, we can miss this part.",
+          "Sometimes it is worth asking: “What does the current situation give you, even while you say you want to change it?”"
+        ]
+      },
+      {
+        "heading": "Emotions do not cancel reason",
+        "paragraphs": [
+          "We often talk about decisions as if emotions were a defect in the system.",
+          "“Logically, I know that…” And then comes something the person keeps avoiding.",
+          "Perhaps the emotion does not need to be removed so quickly. It may contain information: fear, loss, uncertainty, control, belonging, status.",
+          "That does not mean the emotion makes the decision for us. It simply means an obstacle is hard to understand if we remove half the available information.",
+          "This is one reason emotions are part of the exploration in LIVES rather than treated as noise that disappears before the “serious” work begins. [The LIVES model](/insights/de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives) starts from the idea that understanding the context can be useful before moving into action."
+        ]
+      },
+      {
+        "heading": "Big plans are comfortable",
+        "paragraphs": [
+          "There is a small paradox here.",
+          "Sometimes building an impressive plan is easier than taking one very small step.",
+          "The plan is still theory. It cannot fail. It does not expose us.",
+          "Action, even a small one, produces real information.",
+          "Instead of “I want to delegate more”, the question can become “What specific responsibility am I choosing to delegate this week?”",
+          "Instead of “I want to have the conversation”, it can become “When am I scheduling it?”",
+          "A small step can look less impressive. Its advantage is that it can be tested."
+        ]
+      },
+      {
+        "heading": "Insight needs reality",
+        "paragraphs": [
+          "A good conversation can produce a new perspective. The perspective is not yet change.",
+          "It can be taken into real life. Into a meeting. An email. A “no”. A decision.",
+          "Then we see what happened.",
+          "Sometimes it works. Sometimes we discover that our assumption was wrong. That is useful because now we have new information.",
+          "Perhaps the distance between “I know” and “I do” is not solved by adding even more discipline.",
+          "It may start with a better question: “What happens between the two?”",
+          "This is exactly the kind of situation that can be explored through [executive coaching](/coaching/executive-coaching)."
+        ]
+      }
+    ]
+  },
+  "closing": {
+    "ro": ["Uneori progresul nu începe cu încă o explicație. Începe când devine vizibil ce se întâmplă între intenție și acțiune."],
+    "en": ["Sometimes progress does not start with one more explanation. It starts when what happens between intention and action becomes visible."]
+  },
+  "cta": {
+    "title": {"ro": "Lucrezi cu o situație asemănătoare?", "en": "Working with a similar situation?"},
+    "label": {"ro": "Începe o conversație", "en": "Start a conversation"},
+    "href": "/contact"
+  },
+  "sourceNote": {"ro": "", "en": ""},
+  "sources": []
+}
