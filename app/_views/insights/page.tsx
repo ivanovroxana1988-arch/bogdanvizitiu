@@ -45,15 +45,15 @@ export default function Insights({searchParams}:{searchParams?:{lang?:string}}){
     <PageHero eyebrow={copy.eyebrow} title={title} intro={intro}/>
     <section className={`shell ${styles.indexSection}`}><div className={styles.grid}>
       <article className={styles.feature}>
-        <ConceptImage asset="networkingEditorial" kind="wide" className={styles.featureImage}/>
+        <ConceptImage asset="networkingEditorial" kind="wide" className={styles.featureImage} locale={locale}/>
         <div className={styles.meta}><span className={styles.category}>{feature.category}</span><span>{feature.readTime}</span></div>
         <h2>{feature.title}</h2><p>{feature.excerpt}</p>
         <ArrowLink href={`/insights/${feature.slug}`}>{copy.readArticle}</ArrowLink>
       </article>
       <div className={styles.secondary}>{secondary.map((insight,i)=><article className={styles.card} key={insight.slug}>
         {insightConcepts[insight.slug]
-          ? <ConceptImage asset={insightConcepts[insight.slug]} kind="wide" className={styles.cardImage}/>
-          : <EditorialImage asset="candid" kind="event" className={styles.cardImage}/>
+          ? <ConceptImage asset={insightConcepts[insight.slug]} kind="wide" className={styles.cardImage} locale={locale}/>
+          : <EditorialImage asset="candid" kind="event" className={styles.cardImage} locale={locale}/>
         }
         <span className={styles.number}>0{i+2}</span><span className={styles.category}>{insight.category}</span>
         <h2>{insight.title}</h2><p>{insight.excerpt}</p>
