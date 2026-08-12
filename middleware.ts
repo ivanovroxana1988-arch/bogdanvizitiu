@@ -9,6 +9,15 @@ const legacyEnglishExact:Record<string,string>={
   '/terms':'/termeni',
 }
 
+const legacyEnglishPublic:Record<string,string>={
+  '/en/programs/arta-negocierii':'/en/programs/negotiation-influence',
+  '/en/insights/networkingul-nu-incepe-cu-schimbul-de-contacte':'/en/insights/networking-does-not-start-with-exchanging-contacts',
+  '/en/insights/de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives':'/en/insights/from-where-i-am-to-what-i-do-next-lives-model',
+  '/en/insights/nu-invatam-doar-cu-mintea':'/en/insights/we-do-not-learn-with-the-mind-alone',
+  '/en/insights/cat-din-viata-traim-pe-pilot-automat':'/en/insights/how-much-of-life-do-we-live-on-autopilot',
+  '/en/insights/negocierea-nu-este-doar-despre-argumente':'/en/insights/negotiation-is-not-just-about-arguments',
+}
+
 function legacyToRomanian(pathname:string){
   if(legacyEnglishExact[pathname])return legacyEnglishExact[pathname]
   if(pathname.startsWith('/programs/'))return `/cursuri/${pathname.slice('/programs/'.length)}`
@@ -25,6 +34,11 @@ export function middleware(request:NextRequest){
 
   if(url.hostname==='www.bogdanvizitiu.com'){
     url.hostname='bogdanvizitiu.com'
+    shouldRedirect=true
+  }
+
+  if(legacyEnglishPublic[url.pathname]){
+    url.pathname=legacyEnglishPublic[url.pathname]
     shouldRedirect=true
   }
 

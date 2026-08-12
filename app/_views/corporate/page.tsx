@@ -47,7 +47,7 @@ export default function Corporate({searchParams}:{searchParams?:{lang?:string}})
         <p className={styles.sectionIntro}>{copy.sectionText}</p>
       </div>
       <div style={{maxWidth:'760px'}}>
-        <EditorialImage asset="coaching" kind="portrait"/>
+        <EditorialImage asset="coaching" kind="portrait" locale={locale}/>
       </div>
     </section>
 

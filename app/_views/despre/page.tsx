@@ -33,7 +33,7 @@ export default function About({searchParams}:{searchParams?:{lang?:string}}){
 
     <section className={styles.section}>
       <div className={styles.aboutNarrative}>
-        <EditorialImage asset="portraitDark" kind="portrait"/>
+        <EditorialImage asset="portraitDark" kind="portrait" locale={locale}/>
         <div className={styles.prose}>
           {copy.paragraphs.map(paragraph=><p key={paragraph}>{paragraph}</p>)}
           <p className={styles.roleLine}>{copy.roleLine}</p>

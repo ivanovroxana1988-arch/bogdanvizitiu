@@ -46,7 +46,7 @@ export default function Programs({searchParams}:{searchParams?:{lang?:string}}){
         </article>)}
       </div>
       <div style={{marginTop:'clamp(42px,5vw,68px)',maxWidth:'760px'}}>
-        <EditorialImage asset="workshop" kind="portrait"/>
+        <EditorialImage asset="workshop" kind="portrait" locale={locale}/>
       </div>
     </section>
 
