@@ -71,13 +71,13 @@ export default function About({searchParams}:{searchParams?:{lang?:string}}){
         <div>
           <Eyebrow>{copy.proofEyebrow}</Eyebrow>
           <h2 className={styles.statementSmall}>{copy.proofTitle}</h2>
-          <p style={{color:'#d7d4cc',lineHeight:1.75,marginTop:'28px'}}>{copy.proofIntro}</p>
+          <p style={{color:'rgba(250,249,246,.9)',lineHeight:1.75,marginTop:'28px'}}>{copy.proofIntro}</p>
         </div>
         <div className={styles.processList}>
           {copy.proofItems.map((item,i)=><article className={styles.processRow} key={item.title}>
-            <span className={styles.listIndex}>0{i+1}</span>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
+            <span className={styles.listIndex} style={{color:'rgba(250,249,246,.68)'}}>0{i+1}</span>
+            <h3 style={{color:'#faf9f6'}}>{item.title}</h3>
+            <p style={{color:'rgba(250,249,246,.9)'}}>{item.description}</p>
           </article>)}
         </div>
       </div>
