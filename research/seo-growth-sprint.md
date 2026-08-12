@@ -11,7 +11,7 @@ Each commercial search intent has one owner URL. Hub pages distribute context an
 
 | Priority | Primary intent | Secondary queries | Owner URL | Status |
 |---|---|---|---|---|
-| P1 | executive coaching Romania | executive coach Bucuresti; coaching pentru manageri | `/coaching/executive-coaching` | Planned |
+| P1 | executive coaching Romania | executive coach Bucuresti; coaching pentru manageri | `/coaching/executive-coaching` | Live / SEO aligned |
 | P1 | curs negociere | curs tehnici negociere; curs negociere Bucuresti | `/cursuri/arta-negocierii` | Live / SEO aligned |
 | P1 | leadership training Romania | training leadership manageri | `/corporate/leadership-training` | Planned |
 | P1 | team coaching Romania | coaching echipe management | `/corporate/team-coaching` | Planned |
@@ -29,8 +29,8 @@ Do not target generic commercial queries here.
 ### `/coaching`
 Role: individual coaching hub.
 Current SEO title: `Coaching pentru decizii, carieră și performanță`.
-Do not make this page the permanent owner of `executive coaching Romania`; that belongs to the future specialist page.
-Internal destinations when built: executive coaching; career/performance coaching.
+Do not make this page the owner of `executive coaching Romania`; that belongs to `/coaching/executive-coaching`.
+Internal destination now live: executive coaching. Career/performance coaching remains planned.
 
 ### `/corporate`
 Role: B2B hub for organizations.
@@ -44,6 +44,38 @@ Current SEO title: `Cursuri pentru profesioniști: negociere și networking`.
 Primary child pages own the specific course queries.
 
 ## Live page specifications
+
+### `/coaching/executive-coaching`
+Primary query: `executive coaching Romania`.
+Secondary: `executive coach Bucuresti`, `coaching pentru manageri`.
+Search intent: individual 1:1 coaching for leaders/managers, not a course teaching managers how to coach employees.
+SEO title: `Executive coaching pentru manageri și lideri`.
+H1: `Executive coaching pentru manageri și lideri care au de luat decizii reale.`
+Meta description: emphasizes 1:1 work, managers/leaders/entrepreneurs, decisions, role, professional relationships and change.
+
+Live sections:
+1. situations that make executive coaching relevant;
+2. fit / what the work is not;
+3. decision pressure and problem framing;
+4. outcomes the process aims for;
+5. working process: context, clarity, options, action, review;
+6. verified credibility: 20+ years professional experience, 16+ commercial experience, ICA 2020, ICF PCC, Psychology 2026;
+7. FAQ;
+8. contact CTA.
+
+Technical SEO:
+- dedicated canonical URL;
+- reciprocal RO/EN hreflang;
+- Service JSON-LD linked to the Person entity;
+- included in sitemap;
+- descriptive internal link from `/coaching`.
+
+Competitor gap observed in Romanian SERPs:
+- strong competitors use explicit executive-coaching service pages and substantial credibility proof;
+- some search results mix true 1:1 executive coaching with manager-as-coach training;
+- BGV differentiates by disambiguating 1:1 coaching immediately and framing the work around real decisions, role, relationships and action rather than generic motivation.
+
+Do not make `/coaching` compete for the same primary query.
 
 ### `/cursuri/arta-negocierii`
 Primary query: `curs negociere`.
@@ -91,24 +123,6 @@ Current blockers:
 
 ## Planned specialist landing pages
 
-### `/coaching/executive-coaching`
-Primary query: `executive coaching Romania`.
-Secondary: `executive coach Bucuresti`, `coaching pentru manageri`.
-Search intent: individual 1:1 coaching for leaders/managers, not a course teaching managers how to coach employees.
-Suggested SEO title: `Executive Coaching pentru manageri și lideri`.
-Suggested H1: `Executive coaching pentru decizii, rol și responsabilitate`.
-Required sections:
-1. what situations bring a manager to executive coaching;
-2. what the work is / is not;
-3. who it is for;
-4. themes: decisions, role, relationships, performance, transitions;
-5. how the process starts;
-6. evidence/credentials that are verified and current;
-7. FAQ;
-8. contact CTA.
-
-Competitor gap opportunity: Romanian results mix true executive coaching with manager-as-coach training. BGV page should disambiguate 1:1 service immediately.
-
 ### `/corporate/leadership-training`
 Primary query: `leadership training Romania`.
 Secondary: `training leadership manageri`.
@@ -145,7 +159,7 @@ Suggested SEO title: `Training de negociere pentru companii și echipe`.
 1. Negotiation: strong transactional pages. B04 commercial completeness is the largest gap, not copy volume.
 2. Leadership: strongest authority competition. Requires proof depth and a substantial specialist page.
 3. Team coaching: strong specialist benchmark pages with quantified proof. BGV needs clear use cases and credible evidence, not generic team language.
-4. Executive coaching: comparatively better opportunity because search intent is fragmented; clarity about 1:1 executive coaching is the main differentiation opportunity.
+4. Executive coaching: page is now live and positioned around 1:1 decision/role work; next gains depend on indexing, internal/external authority and future Search Console data.
 5. Networking: fragmented SERP suggests an opportunity, but search volume must be validated over time in Search Console rather than invented.
 
 ## Internal linking rule
@@ -161,7 +175,7 @@ Avoid generic anchors such as `vezi mai mult` when a descriptive anchor works na
 ## Next sequence
 
 1. Finish B04 commercial data for the two live open courses.
-2. Build `/coaching/executive-coaching` first.
+2. Request indexing for `/coaching/executive-coaching` after deployment.
 3. Build `/corporate/leadership-training` only when enough proof and offer detail are available.
 4. Build `/corporate/team-coaching` and `/corporate/training-negociere` after product/format confirmation.
 5. Create editorial clusters linking into the owner URLs.
