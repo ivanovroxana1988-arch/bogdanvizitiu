@@ -1,4 +1,13 @@
-import type {Metadata} from 'next'
 import View from '@/app/_views/confidentialitate/page'
-export const metadata:Metadata={title:'Confidențialitate',robots:{index:false,follow:false}}
+import {buildPageMetadata} from '@/lib/seo'
+
+export function generateMetadata(){
+  return buildPageMetadata({
+    title:'Confidențialitate',
+    description:'Cum sunt gestionate datele personale și informațiile despre analytics pe bogdanvizitiu.com.',
+    path:'/confidentialitate',
+    locale:'ro',
+  })
+}
+
 export default function Page(){return <View searchParams={{lang:'ro'}}/>}

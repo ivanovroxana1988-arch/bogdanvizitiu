@@ -1,0 +1,16 @@
+{
+  "brand": "Bogdan Vizitiu",
+  "domain": "bogdanvizitiu.com",
+  "legalName": "TECH AND PLAY ILECA S.R.L.",
+  "taxId": "40893168",
+  "tradeRegister": "J10/555/02.04.2019",
+  "euid": "ROONRC.J10/555/2019",
+  "registeredOffice": "Municipiul Buzău, Strada GÎRLAȘI nr. 11B, județ Buzău, România",
+  "email": "contact@bogdanvizitiu.com",
+  "phoneDisplay": "0744 440 095",
+  "phoneHref": "+40744440095",
+  "vatStatus": {
+    "ro": "neplătitor de TVA",
+    "en": "not registered for VAT"
+  }
+}

@@ -3,32 +3,206 @@
     "privacy": {
       "eyebrow": "Informații",
       "title": "Confidențialitate",
-      "intro": "O informare completă privind confidențialitatea va fi publicată înainte de activarea formularelor, newsletterului și instrumentelor de analiză.",
-      "warning": "Text juridic provizoriu — necesită revizuire înainte de lansare.",
-      "body": "Site-ul va colecta doar informațiile necesare pentru a răspunde solicitărilor și, numai cu acord explicit, pentru a trimite actualizări ocazionale."
+      "intro": "Această informare explică modul în care TECH AND PLAY ILECA S.R.L., operatorul bogdanvizitiu.com și furnizorul serviciilor promovate sub brandul Bogdan Vizitiu, gestionează datele cu caracter personal.",
+      "updated": "12 august 2026",
+      "sections": [
+        {
+          "title": "1. Operatorul de date",
+          "paragraphs": ["Operatorul datelor este TECH AND PLAY ILECA S.R.L. Datele complete de identificare și contact sunt afișate mai jos și permanent în footer-ul site-ului."],
+          "bullets": []
+        },
+        {
+          "title": "2. Ce date putem prelucra",
+          "paragraphs": ["Dacă ne contactezi prin email sau telefon, putem prelucra numele, datele de contact, organizația sau rolul dacă le menționezi, conținutul mesajului și orice alte informații pe care alegi să ni le transmiți.", "Formularul afișat pe pagina Contact este, în versiunea curentă, dezactivat și nu transmite date. Când va fi activat, informarea va fi actualizată dacă fluxul tehnic sau categoriile de date se modifică.", "Te rugăm să nu transmiți date sensibile sau informații despre alte persoane dacă nu sunt necesare pentru solicitarea ta."],
+          "bullets": []
+        },
+        {
+          "title": "3. Scopuri și temeiuri",
+          "paragraphs": ["Prelucrăm datele necesare pentru a răspunde solicitărilor și pentru a face demersuri, la cererea ta, înaintea încheierii unui contract, în temeiul art. 6 alin. (1) lit. b) RGPD. Pentru derularea contractelor și îndeplinirea obligațiilor legale putem utiliza, după caz, art. 6 alin. (1) lit. b) și c) RGPD. Pentru securitatea, administrarea și funcționarea site-ului putem prelucra date tehnice strict necesare în baza interesului legitim, art. 6 alin. (1) lit. f) RGPD.", "Nu folosim în prezent newsletter sau comunicări comerciale automate. Dacă acestea vor fi introduse, mesajele de marketing vor fi trimise numai în baza unui temei legal aplicabil, inclusiv consimțământ atunci când acesta este necesar."],
+          "bullets": []
+        },
+        {
+          "title": "4. Analytics și cookie-uri",
+          "paragraphs": ["Site-ul folosește Vercel Web Analytics pentru statistici agregate privind traficul. Conform documentației Vercel, Web Analytics nu utilizează cookie-uri terțe pentru identificarea vizitatorilor și nu leagă statisticile de o persoană identificabilă.", "Nu sunt instalate în prezent Google Analytics, Meta Pixel, LinkedIn Insight Tag sau alte instrumente de publicitate comportamentală. Dacă vor fi introduse tehnologii care necesită consimțământ, acestea nu vor fi încărcate înainte de exprimarea opțiunii utilizatorului."],
+          "bullets": []
+        },
+        {
+          "title": "5. Cui putem transmite datele",
+          "paragraphs": ["Datele pot fi accesibile furnizorilor tehnici necesari operării site-ului și comunicării, inclusiv furnizorului de hosting și analytics, furnizorului de email și, atunci când este necesar, prestatorilor contabili, juridici sau altor colaboratori care au nevoie legitimă de acces. Putem furniza date autorităților publice atunci când legea ne obligă."],
+          "bullets": []
+        },
+        {
+          "title": "6. Cât timp păstrăm datele",
+          "paragraphs": ["Păstrăm datele numai atât timp cât sunt necesare pentru a răspunde solicitării și pentru scopul pentru care au fost colectate. Dacă discuția conduce la un raport contractual, anumite informații pot fi păstrate ulterior conform termenelor impuse de legislația fiscală, contabilă sau de alte obligații legale și pentru apărarea drepturilor legitime."],
+          "bullets": []
+        },
+        {
+          "title": "7. Drepturile tale",
+          "paragraphs": ["În condițiile RGPD, poți exercita drepturile aplicabile situației tale printr-o solicitare trimisă la contact@bogdanvizitiu.com."],
+          "bullets": ["dreptul de acces la date", "dreptul la rectificare", "dreptul la ștergere, atunci când sunt îndeplinite condițiile legale", "dreptul la restricționarea prelucrării", "dreptul la opoziție", "dreptul la portabilitatea datelor, atunci când este aplicabil", "dreptul de a retrage consimțământul în orice moment pentru prelucrările bazate pe consimțământ", "dreptul de a depune o plângere la ANSPDCP"]
+        },
+        {
+          "title": "8. Modificări ale informării",
+          "paragraphs": ["Vom actualiza această pagină dacă se schimbă modul în care colectăm sau folosim datele, dacă activăm formularul online, newsletterul ori instrumente suplimentare de analiză sau publicitate. Data ultimei actualizări este afișată în partea de sus."],
+          "bullets": []
+        }
+      ]
     },
     "terms": {
       "eyebrow": "Informații",
-      "title": "Termeni",
-      "intro": "Termenii de utilizare și condițiile programelor vor fi publicați împreună cu procesele confirmate de înscriere și livrare.",
-      "warning": "Text juridic provizoriu — necesită revizuire înainte de lansare.",
-      "body": "În această versiune a site-ului nu este activă nicio funcționalitate de înscriere sau plată online."
+      "title": "Termeni de utilizare",
+      "intro": "Acești termeni reglementează utilizarea bogdanvizitiu.com și explică relația dintre brandul Bogdan Vizitiu și entitatea care furnizează și facturează serviciile.",
+      "updated": "12 august 2026",
+      "sections": [
+        {
+          "title": "1. Furnizorul serviciilor",
+          "paragraphs": ["Serviciile promovate pe bogdanvizitiu.com sunt furnizate și facturate de TECH AND PLAY ILECA S.R.L. Datele complete de identificare și contact sunt afișate mai jos și permanent în footer-ul site-ului."],
+          "bullets": []
+        },
+        {
+          "title": "2. Rolul site-ului",
+          "paragraphs": ["Site-ul prezintă activitatea lui Bogdan Vizitiu, cursuri, coaching, servicii corporate și conținut editorial. În versiunea curentă nu există plată online și formularul de contact nu transmite încă date.", "Informațiile despre programe descriu direcția și conținutul acestora, dar nu reprezintă o ofertă comercială fermă decât dacă acest lucru este indicat expres."],
+          "bullets": []
+        },
+        {
+          "title": "3. Oferte, contractare și condiții comerciale",
+          "paragraphs": ["Prețul, durata, data, numărul de participanți, condițiile de anulare sau reprogramare și orice alte condiții comerciale relevante sunt comunicate înainte de contractare prin ofertă, confirmare scrisă sau contract, după caz.", "Dacă există diferențe între informațiile generale de pe site și un contract ori o ofertă individuală acceptată, documentul comercial acceptat de părți prevalează."],
+          "bullets": []
+        },
+        {
+          "title": "4. Prețuri și TVA",
+          "paragraphs": ["TECH AND PLAY ILECA S.R.L. este neplătitoare de TVA la data ultimei actualizări a acestor termeni. Prețurile comunicate în ofertele comerciale vor reflecta statutul fiscal aplicabil la data ofertării și vor preciza în mod clar suma datorată."],
+          "bullets": []
+        },
+        {
+          "title": "5. Proprietate intelectuală",
+          "paragraphs": ["Textele, materialele originale, identitatea vizuală și celelalte elemente ale site-ului sunt protejate de legislația aplicabilă sau sunt utilizate în baza drepturilor ori permisiunilor corespunzătoare. Conținutul poate fi citat în limitele legii, cu indicarea sursei, dar nu poate fi copiat, republicat sau exploatat comercial în mod substanțial fără acord."],
+          "bullets": []
+        },
+        {
+          "title": "6. Conținut editorial și rezultate",
+          "paragraphs": ["Materialele publicate au scop educațional și informativ. Participarea la un curs, coaching sau workshop nu garantează un rezultat profesional, comercial sau financiar specific; rezultatele depind de context și de aplicarea individuală."],
+          "bullets": []
+        },
+        {
+          "title": "7. Linkuri către terți",
+          "paragraphs": ["Site-ul poate include linkuri către platforme sau surse externe. Nu controlăm conținutul, disponibilitatea sau politicile acelor servicii, iar accesarea lor este supusă termenilor proprii ai furnizorilor respectivi."],
+          "bullets": []
+        },
+        {
+          "title": "8. Legea aplicabilă",
+          "paragraphs": ["Acești termeni și utilizarea site-ului sunt guvernate de legea română, fără a limita drepturile obligatorii pe care legislația aplicabilă le acordă consumatorilor sau altor categorii protejate."],
+          "bullets": []
+        },
+        {
+          "title": "9. Modificări",
+          "paragraphs": ["Termenii pot fi actualizați pentru a reflecta schimbări ale serviciilor, proceselor de contractare sau cerințelor legale. Versiunea aplicabilă este cea publicată pe site la data utilizării, cu excepția situațiilor în care un contract individual prevede altfel."],
+          "bullets": []
+        }
+      ]
     }
   },
   "en": {
     "privacy": {
       "eyebrow": "Information",
       "title": "Privacy",
-      "intro": "A complete privacy notice will be published before forms, newsletter functionality and analytics are activated.",
-      "warning": "Legal placeholder — requires review before launch.",
-      "body": "The website will collect only the information needed to respond to enquiries and, with explicit consent, send occasional updates."
+      "intro": "This notice explains how TECH AND PLAY ILECA S.R.L., the operator of bogdanvizitiu.com and provider of the services promoted under the Bogdan Vizitiu brand, handles personal data.",
+      "updated": "12 August 2026",
+      "sections": [
+        {
+          "title": "1. Data controller",
+          "paragraphs": ["The data controller is TECH AND PLAY ILECA S.R.L. Full identification and contact details are displayed below and permanently in the website footer."],
+          "bullets": []
+        },
+        {
+          "title": "2. Data we may process",
+          "paragraphs": ["If you contact us by email or phone, we may process your name, contact details, organization or role if you provide them, the content of your message and any other information you choose to send.", "The form displayed on the Contact page is currently disabled and does not transmit data. When it is activated, this notice will be updated if the technical flow or data categories change.", "Please do not send sensitive data or information about other people unless it is necessary for your request."],
+          "bullets": []
+        },
+        {
+          "title": "3. Purposes and legal bases",
+          "paragraphs": ["We process data needed to respond to enquiries and to take steps at your request before entering into a contract under Article 6(1)(b) GDPR. For contract performance and legal obligations, Articles 6(1)(b) and (c) GDPR may apply. For website security, administration and operation, strictly necessary technical data may be processed on the basis of legitimate interests under Article 6(1)(f) GDPR.", "We do not currently operate a newsletter or automated marketing communications. If these are introduced, marketing messages will only be sent where an appropriate legal basis exists, including consent where required."],
+          "bullets": []
+        },
+        {
+          "title": "4. Analytics and cookies",
+          "paragraphs": ["The website uses Vercel Web Analytics for aggregated traffic statistics. According to Vercel documentation, Web Analytics does not use third-party cookies to identify visitors and does not associate statistics with an identifiable person.", "Google Analytics, Meta Pixel, LinkedIn Insight Tag and other behavioural advertising tools are not currently installed. If technologies requiring consent are introduced, they will not be loaded before the user has made a choice."],
+          "bullets": []
+        },
+        {
+          "title": "5. Recipients",
+          "paragraphs": ["Data may be accessible to technical providers needed to operate the website and communications, including hosting and analytics providers, the email provider and, where necessary, accounting, legal or other professional service providers with a legitimate need for access. We may disclose data to public authorities where required by law."],
+          "bullets": []
+        },
+        {
+          "title": "6. Retention",
+          "paragraphs": ["We retain data only for as long as necessary to respond to the request and fulfil the purpose for which it was collected. If the discussion leads to a contractual relationship, some information may subsequently be retained for periods required by tax, accounting or other legal obligations and for the establishment or defence of legal claims."],
+          "bullets": []
+        },
+        {
+          "title": "7. Your rights",
+          "paragraphs": ["Subject to the conditions of the GDPR, you may exercise the rights applicable to your situation by contacting contact@bogdanvizitiu.com."],
+          "bullets": ["right of access", "right to rectification", "right to erasure where legal conditions are met", "right to restriction of processing", "right to object", "right to data portability where applicable", "right to withdraw consent at any time for processing based on consent", "right to lodge a complaint with the competent supervisory authority"]
+        },
+        {
+          "title": "8. Changes to this notice",
+          "paragraphs": ["We will update this page if the way data is collected or used changes, or if the online form, newsletter or additional analytics or advertising tools are activated. The latest update date is shown above."],
+          "bullets": []
+        }
+      ]
     },
     "terms": {
       "eyebrow": "Information",
-      "title": "Terms",
-      "intro": "Website terms and program conditions will be published alongside confirmed enrollment and delivery processes.",
-      "warning": "Legal placeholder — requires review before launch.",
-      "body": "No online enrollment or payment functionality is active in this version of the website."
+      "title": "Terms of use",
+      "intro": "These terms govern the use of bogdanvizitiu.com and explain the relationship between the Bogdan Vizitiu brand and the entity that provides and invoices the services.",
+      "updated": "12 August 2026",
+      "sections": [
+        {
+          "title": "1. Service provider",
+          "paragraphs": ["Services promoted on bogdanvizitiu.com are provided and invoiced by TECH AND PLAY ILECA S.R.L. Full identification and contact details are displayed below and permanently in the website footer."],
+          "bullets": []
+        },
+        {
+          "title": "2. Purpose of the website",
+          "paragraphs": ["The website presents Bogdan Vizitiu's work, courses, coaching, corporate services and editorial content. The current version does not provide online payment and the contact form does not yet transmit data.", "Program descriptions communicate the direction and content of services but do not constitute a binding commercial offer unless expressly stated otherwise."],
+          "bullets": []
+        },
+        {
+          "title": "3. Offers, contracting and commercial conditions",
+          "paragraphs": ["Price, duration, date, participant numbers, cancellation or rescheduling terms and other relevant commercial conditions are communicated before contracting through an offer, written confirmation or contract, as applicable.", "If general information on the website differs from an accepted individual offer or contract, the commercial document accepted by the parties prevails."],
+          "bullets": []
+        },
+        {
+          "title": "4. Prices and VAT",
+          "paragraphs": ["TECH AND PLAY ILECA S.R.L. is not registered for VAT as of the latest update of these terms. Prices stated in commercial offers will reflect the tax status applicable on the offer date and clearly state the amount payable."],
+          "bullets": []
+        },
+        {
+          "title": "5. Intellectual property",
+          "paragraphs": ["Original texts, materials, visual identity and other website elements are protected by applicable law or used under appropriate rights or permissions. Content may be quoted within the limits of the law with source attribution, but may not be substantially copied, republished or commercially exploited without permission."],
+          "bullets": []
+        },
+        {
+          "title": "6. Editorial content and outcomes",
+          "paragraphs": ["Published materials are educational and informational. Participation in a course, coaching engagement or workshop does not guarantee a specific professional, commercial or financial outcome; results depend on context and individual application."],
+          "bullets": []
+        },
+        {
+          "title": "7. Third-party links",
+          "paragraphs": ["The website may link to external platforms or sources. We do not control their content, availability or policies, and use of those services is subject to the providers' own terms."],
+          "bullets": []
+        },
+        {
+          "title": "8. Applicable law",
+          "paragraphs": ["These terms and the use of the website are governed by Romanian law, without limiting mandatory rights granted by applicable law to consumers or other protected categories."],
+          "bullets": []
+        },
+        {
+          "title": "9. Changes",
+          "paragraphs": ["These terms may be updated to reflect changes to services, contracting processes or legal requirements. The version published on the website at the time of use applies unless an individual contract provides otherwise."],
+          "bullets": []
+        }
+      ]
     }
   }
 }

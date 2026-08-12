@@ -13,6 +13,8 @@ export default function sitemap():MetadataRoute.Sitemap{
     '/insights',
     '/resurse',
     '/contact',
+    '/confidentialitate',
+    '/termeni',
     ...programSlugs.map(slug=>`/cursuri/${slug}`),
     ...publishedInsightSlugs.map(slug=>`/insights/${slug}`),
   ]

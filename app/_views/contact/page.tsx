@@ -1,6 +1,7 @@
 import type {Metadata} from 'next'
 import Link from 'next/link'
 import {Eyebrow} from '@/components/ui'
+import business from '@/content/business.json'
 import contactCopy from '@/content/contact-copy.json'
 import {getLocale,withLocale} from '@/lib/i18n'
 import {buildPageMetadata} from '@/lib/seo'
@@ -36,6 +37,11 @@ export default function Contact({searchParams}:{searchParams?:{lang?:string}}){
           <Eyebrow>{copy.formEyebrow}</Eyebrow>
           <h2>{copy.formTitle}</h2>
           <p>{copy.formText}</p>
+          <p style={{marginTop:28,lineHeight:1.8}}>
+            <a href={`mailto:${business.email}`}><strong>{business.email}</strong></a><br/>
+            <a href={`tel:${business.phoneHref}`}>{business.phoneDisplay}</a>
+          </p>
+          <p style={{fontSize:13,lineHeight:1.7,color:'var(--commercial-muted)'}}>{business.legalName} · CUI {business.taxId}</p>
         </div>
 
         <form className={styles.form} aria-describedby="contact-pending">

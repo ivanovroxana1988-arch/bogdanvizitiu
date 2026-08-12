@@ -5,7 +5,7 @@
     "intro":"Nu trebuie să știi deja ce format îți trebuie. Spune ce se întâmplă, cine este implicat și ce ai vrea să fie diferit. De acolo putem vedea dacă și cum are sens să lucrăm împreună.",
     "formEyebrow":"Începe cu contextul",
     "formTitle":"Nu ai nevoie de un brief perfect.",
-    "formText":"Câteva rânduri despre situație sunt suficiente pentru început.",
+    "formText":"Câteva rânduri despre situație sunt suficiente pentru început. Până activăm trimiterea directă din site, ne poți contacta prin email sau telefon.",
     "name":"Nume",
     "email":"Email",
     "requestType":"Tipul solicitării",
@@ -21,7 +21,7 @@
     "desiredChangePlaceholder":"Ce rezultat, comportament sau conversație ar conta?",
     "consent":"Sunt de acord ca informațiile trimise să fie folosite pentru a răspunde acestei solicitări.",
     "privacy":"Vezi informațiile despre confidențialitate.",
-    "pending":"Trimiterea formularului va fi activată după confirmarea adresei și a fluxului oficial de contact.",
+    "pending":"Formularul online nu transmite încă date. Folosește emailul sau telefonul afișate alături.",
     "submit":"Trimitere indisponibilă momentan"
   },
   "en": {
@@ -30,7 +30,7 @@
     "intro":"You do not need to know the right format yet. Describe what is happening, who is involved and what you would like to be different. From there, we can see whether and how working together makes sense.",
     "formEyebrow":"Start with context",
     "formTitle":"You do not need a perfect brief.",
-    "formText":"A few lines about the situation are enough to begin.",
+    "formText":"A few lines about the situation are enough to begin. Until direct website submission is enabled, you can contact us by email or phone.",
     "name":"Name",
     "email":"Email",
     "requestType":"Request type",
@@ -46,7 +46,7 @@
     "desiredChangePlaceholder":"What outcome, behavior or conversation would matter?",
     "consent":"I agree that the information I provide may be used to respond to this request.",
     "privacy":"See privacy information.",
-    "pending":"Form delivery will be enabled after the official contact address and handling flow are confirmed.",
+    "pending":"The online form does not transmit data yet. Please use the email address or phone number shown alongside it.",
     "submit":"Submission currently unavailable"
   }
 }
