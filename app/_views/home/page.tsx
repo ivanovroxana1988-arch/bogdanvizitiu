@@ -23,19 +23,19 @@ export default function Home({searchParams}:{searchParams?:{lang?:string}}){
   const services=servicePages[locale]
   const programs=getPrograms(locale)
   const insights=getPublishedInsights(locale).slice(0,3)
-  const proof=locale==='ro'?
-    [
+  const proof=locale==='ro'
+    ?[
       {value:'20+',label:'ani de experiență profesională'},
       {value:'16+',label:'ani de experiență comercială'},
       {value:'PCC',label:'International Coaching Federation · din 2021'},
       {value:'Psihologie',label:'Universitatea Titu Maiorescu · 2026'},
-    ]:
-    [
+    ]
+    :[
       {value:'20+',label:'years of professional experience'},
       {value:'16+',label:'years of commercial experience'},
       {value:'PCC',label:'International Coaching Federation · since 2021'},
       {value:'Psychology',label:'Titu Maiorescu University · 2026'},
-    ]
+    ];
 
   return <>
     <section className="hero" aria-labelledby="hero-title"><div className="shell hero-grid">
