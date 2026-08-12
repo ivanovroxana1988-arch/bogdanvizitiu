@@ -14,6 +14,8 @@ type ContactPayload={
   website?:string
 }
 
+type InvalidField='name'|'email'|'requestType'|'message'|'consent'
+
 const MAX_BODY_BYTES=20_000
 
 function clean(value:unknown,max=2000){
@@ -32,7 +34,7 @@ function buildMessage(payload:Required<Pick<ContactPayload,'name'|'email'|'reque
     `Pentru / Scope: ${payload.scope}`,
     payload.interest?`Context: ${payload.interest}`:'',
     '',
-    'Ce se întâmplă acum? / What is happening now?',
+    'Context / Context',
     payload.message,
     '',
     payload.desiredChange?'Ce ar trebui să fie diferit? / What should be different?':'',
@@ -69,9 +71,16 @@ export async function POST(request:Request){
   const interest=clean(raw.interest,500)
   const message=clean(raw.message,4000)
   const desiredChange=clean(raw.desiredChange,2500)
+  const invalidFields:InvalidField[]=[]
 
-  if(!name||!isEmail(email)||!requestType||!message||raw.consent!==true){
-    return NextResponse.json({ok:false,error:'invalid_fields'},{status:400})
+  if(!name) invalidFields.push('name')
+  if(!isEmail(email)) invalidFields.push('email')
+  if(!requestType) invalidFields.push('requestType')
+  if(!message) invalidFields.push('message')
+  if(raw.consent!==true) invalidFields.push('consent')
+
+  if(invalidFields.length){
+    return NextResponse.json({ok:false,error:'invalid_fields',invalidFields},{status:400})
   }
 
   const subject=locale==='ro'
