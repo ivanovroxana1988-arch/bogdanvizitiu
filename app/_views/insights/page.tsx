@@ -50,12 +50,12 @@ export default function Insights({searchParams}:{searchParams?:{lang?:string}}){
         <h2>{feature.title}</h2><p>{feature.excerpt}</p>
         <ArrowLink href={`/insights/${feature.slug}`}>{copy.readArticle}</ArrowLink>
       </article>
-      <div className={styles.secondary}>{secondary.map((insight,i)=><article className={styles.card} key={insight.slug}>
+      <div className={styles.secondary}>{secondary.map(insight=><article className={styles.card} key={insight.slug}>
         {insightConcepts[insight.slug]
           ? <ConceptImage asset={insightConcepts[insight.slug]} kind="wide" className={styles.cardImage} locale={locale}/>
           : <EditorialImage asset="candid" kind="event" className={styles.cardImage} locale={locale}/>
         }
-        <span className={styles.number}>0{i+2}</span><span className={styles.category}>{insight.category}</span>
+        <span className={styles.category}>{insight.category}</span>
         <h2>{insight.title}</h2><p>{insight.excerpt}</p>
         <ArrowLink href={`/insights/${insight.slug}`}>{copy.readArticle}</ArrowLink>
       </article>)}</div>
