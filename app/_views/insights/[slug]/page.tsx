@@ -98,8 +98,8 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
       </aside>
       <article className={styles.body}>
         {conceptAsset
-          ? <ConceptImage asset={conceptAsset} kind="wide" className={styles.heroImage}/>
-          : <EditorialImage asset="candid" kind="event" className={styles.heroImage}/>
+          ? <ConceptImage asset={conceptAsset} kind="wide" className={styles.heroImage} locale={locale}/>
+          : <EditorialImage asset="candid" kind="event" className={styles.heroImage} locale={locale}/>
         }
 
         {insight.intro.map(paragraph=><p key={paragraph}>{paragraph}</p>)}
