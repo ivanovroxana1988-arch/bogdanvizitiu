@@ -14,10 +14,11 @@ type SearchParams={
 
 export function generateMetadata({searchParams}:{searchParams?:SearchParams}):Metadata{
   const locale=getLocale(searchParams?.lang)
-  const copy=getCopy(locale).programs
   return buildPageMetadata({
-    title:locale==='ro'?'Cursuri':'Open programs',
-    description:copy.intro,
+    title:locale==='ro'?'Cursuri pentru profesioniști: negociere și networking':'Open courses for professionals: negotiation and networking',
+    description:locale==='ro'
+      ?'Cursuri open pentru profesioniști care vor să lucreze practic pe negociere, influență, networking și relații profesionale.'
+      :'Open courses for professionals who want practical work on negotiation, influence, networking and professional relationships.',
     path:'/cursuri',
     locale,
   })
