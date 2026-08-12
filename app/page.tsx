@@ -27,7 +27,7 @@ export default function Home({searchParams}:{searchParams?:{lang?:string}}){
 
   return <>
     <section className="hero" aria-labelledby="hero-title"><div className="shell hero-grid">
-      <div className="hero-copy"><Eyebrow>{copy.eyebrow}</Eyebrow><h1 id="hero-title">{copy.heroHeadline.map((line)=><span key={line}>{line}</span>)}</h1><p className="lead">{copy.heroIntro}</p><div className="actions"><ArrowLink href="/cursuri">{copy.primaryCta}</ArrowLink><ArrowLink href="/despre" className="text-link">{copy.secondaryCta}</ArrowLink></div><a className="scroll-cue" href="#recognition">{locale==='ro'?'Continuă':'Continue'} <span aria-hidden>↓</span></a></div>
+      <div className="hero-copy"><Eyebrow>{copy.eyebrow}</Eyebrow><h1 id="hero-title">{copy.heroHeadline.map((line)=><span key={line}>{line}</span>)}</h1><p className="lead">{copy.heroIntro}</p><div className="actions"><ArrowLink href="/cursuri">{copy.primaryCta}</ArrowLink></div></div>
       <EditorialImage asset="hero" kind="portrait" className="hero-image"/>
     </div></section>
 
