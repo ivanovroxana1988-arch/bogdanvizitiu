@@ -43,8 +43,7 @@ export default function Resources({searchParams}:{searchParams?:{lang?:string}})
   return <>
     <PageHero eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro}/>
     {resources.length>0&&<section className="programs shell">
-      {resources.map((item,i)=><article className="program-row" key={item.slug}>
-        <span>{String(i+1).padStart(2,'0')}</span>
+      {resources.map(item=><article className="program-row" key={item.slug}>
         <h3>{item.title}</h3>
         <p>{item.type}<br/>{item.excerpt}</p>
         <ArrowLink href={`/insights/${item.slug}`}>{locale==='ro'?'Citește sinteza':'Read the summary'}</ArrowLink>
