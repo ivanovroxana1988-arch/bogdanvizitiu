@@ -11,7 +11,6 @@ const hrefs=[
   ['courses','/cursuri'],
   ['coaching','/coaching'],
   ['corporate','/corporate'],
-  ['media','/media'],
   ['insights','/insights'],
   ['contact','/contact'],
 ] as const
