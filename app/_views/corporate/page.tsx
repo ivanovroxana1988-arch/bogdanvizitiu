@@ -9,8 +9,10 @@ export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):
   const locale=getLocale(searchParams?.lang)
   const copy=getCopy(locale).corporate
   return buildPageMetadata({
-    title:locale==='ro'?'Programe corporate':'Corporate programs',
-    description:copy.intro,
+    title:locale==='ro'?'Programe corporate pentru leadership, negociere și echipe':'Corporate programs for leadership, negotiation and teams',
+    description:locale==='ro'
+      ?'Programe corporate pentru manageri și echipe, construite în jurul contextului real al organizației: leadership, negociere, colaborare și conversații dificile.'
+      :'Corporate programs for managers and teams built around the organization’s real context: leadership, negotiation, collaboration and difficult conversations.',
     path:'/corporate',
     locale,
   })
