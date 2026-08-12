@@ -30,13 +30,13 @@ export function generateMetadata({params,searchParams}:{params:{slug:string};sea
   return {
     title:insight.title,
     description:insight.excerpt,
-    authors:[{name:'Bogdan Vizitiu',url:`${SITE_URL}/despre`}],
+    authors:[{name:'Bogdan Vizitiu',url:localizedUrl('/despre',locale)}],
     alternates:{
       canonical,
       languages:{
-        'ro-RO':`${SITE_URL}${path}`,
-        'en':`${SITE_URL}${path}?lang=en`,
-        'x-default':`${SITE_URL}${path}`,
+        'ro-RO':localizedUrl(path,'ro'),
+        'en':localizedUrl(path,'en'),
+        'x-default':localizedUrl(path,'ro'),
       },
     },
     openGraph:{
@@ -76,7 +76,7 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
     '@id':`${canonical}#article`,
     headline:insight.title,
     description:insight.excerpt,
-    image:`${SITE_URL}${path}/opengraph-image`,
+    image:`${canonical}/opengraph-image`,
     datePublished:`${insight.publishedAt}T12:00:00+03:00`,
     inLanguage:locale==='ro'?'ro-RO':'en',
     mainEntityOfPage:{'@type':'WebPage','@id':canonical},
@@ -84,7 +84,7 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
       '@type':'Person',
       '@id':`${SITE_URL}/#person`,
       name:'Bogdan Vizitiu',
-      url:`${SITE_URL}/despre`,
+      url:localizedUrl('/despre',locale),
     },
   }
 
