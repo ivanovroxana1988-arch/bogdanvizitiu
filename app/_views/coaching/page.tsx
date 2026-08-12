@@ -8,7 +8,7 @@ export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):
   const locale=getLocale(searchParams?.lang)
   const copy=servicePages[locale].coaching
   return buildPageMetadata({
-    title:locale==='ro'?'Coaching 1:1':'1:1 Coaching',
+    title:locale==='ro'?'Coaching executiv și profesional':'Executive & professional coaching',
     description:copy.intro,
     path:'/coaching',
     locale,
