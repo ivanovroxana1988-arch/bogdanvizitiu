@@ -24,7 +24,6 @@ export default function Coaching({searchParams}:{searchParams?:{lang?:string}}){
     <section className="shell">
       <div className="prose" style={{maxWidth:'900px'}}><Eyebrow>{locale==='ro'?'Direcții de lucru':'Working directions'}</Eyebrow>{copy.areas.map(area=><article key={area.title}><h2>{area.title}</h2><p>{area.text}</p></article>)}</div>
     </section>
-    <section className="shell"><div className="cta-panel"><div><Eyebrow>{locale==='ro'?'Context verificat':'Verified background'}</Eyebrow><p style={{maxWidth:'760px',lineHeight:1.8}}>{copy.proof}</p></div></div></section>
     <section className="final-loop"><div className="shell final-grid"><h2>{copy.ctaTitle}</h2><div><ArrowLink href="/contact">{copy.cta}</ArrowLink></div></div></section>
   </>
 }
