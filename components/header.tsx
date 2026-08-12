@@ -12,7 +12,6 @@ const hrefs=[
   ['coaching','/coaching'],
   ['corporate','/corporate'],
   ['insights','/insights'],
-  ['contact','/contact'],
 ] as const
 
 export function Header({locale}:{locale:Locale}){
@@ -54,7 +53,7 @@ export function Header({locale}:{locale:Locale}){
         <span aria-hidden> / </span>
         <Link href={withLocale(pathname,'en')} aria-current={locale==='en'?'page':undefined}>EN</Link>
       </span>
-      <Link className="nav-cta" href={withLocale('/cursuri',locale)}>{copy.coursesCta}</Link>
+      <Link className="nav-cta" href={withLocale('/contact',locale)}>{copy.coursesCta}</Link>
     </nav>
   </div></header>
 }
