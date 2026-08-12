@@ -1,7 +1,7 @@
 import type {Metadata} from 'next'
 import {ArrowLink,Eyebrow} from '@/components/ui'
 import {ConceptImage,EditorialImage} from '@/components/portrait'
-import {getMediaAppearances,getPrograms,getPublishedInsights} from '@/lib/data'
+import {getPrograms,getPublishedInsights} from '@/lib/data'
 import {getCopy,getLocale} from '@/lib/i18n'
 import {buildPageMetadata} from '@/lib/seo'
 import servicePages from '@/content/service-pages.json'
@@ -23,7 +23,6 @@ export default function Home({searchParams}:{searchParams?:{lang?:string}}){
   const services=servicePages[locale]
   const programs=getPrograms(locale)
   const insights=getPublishedInsights(locale).slice(0,3)
-  const appearances=getMediaAppearances().slice(0,2)
 
   return <>
     <section className="hero" aria-labelledby="hero-title"><div className="shell hero-grid">
@@ -38,8 +37,6 @@ export default function Home({searchParams}:{searchParams?:{lang?:string}}){
     <section className="dark"><div className="shell corporate-grid"><div className="corporate-title"><Eyebrow>{copy.corporateEyebrow}</Eyebrow><h2>{copy.corporateTitle}</h2></div><div className="corporate-copy"><p>{copy.corporateText}</p><ArrowLink href="/corporate">{copy.corporateCta}</ArrowLink></div><div className="domain-list">{copy.corporateDomains.map((domain,i)=><div key={domain}><span>0{i+1}</span>{domain}</div>)}</div><ConceptImage asset="workshopNotes" kind="wide"/></div></section>
 
     <section className="point-of-view"><div className="shell point-grid"><EditorialImage asset="coaching" kind="event"/><div><Eyebrow>{services.coaching.eyebrow}</Eyebrow><h2>{services.coaching.title}</h2><p>{services.coaching.intro}</p><ArrowLink href="/coaching">{services.coaching.cta}</ArrowLink></div></div></section>
-
-    {appearances.length>0&&<section className="programs shell"><div className="section-head"><div><Eyebrow>{services.media.eyebrow}</Eyebrow><h2 className="section-title">{services.media.title}</h2></div><ArrowLink href="/media">{locale==='ro'?'Vezi aparițiile':'See appearances'}</ArrowLink></div>{appearances.map((item,i)=><article className="program-row" key={item.id}><span>0{i+1}</span><h3>{item.title}</h3><p>{item.type}{item.published_at?` · ${item.published_at}`:''}</p><ArrowLink href={item.external_url!}>{locale==='ro'?'Deschide sursa':'Open source'}</ArrowLink></article>)}</section>}
 
     <section className="programs shell"><div className="section-head"><div><Eyebrow>{copy.insightsEyebrow}</Eyebrow><h2 className="section-title">{copy.insightsTitle}</h2></div><ArrowLink href="/insights">{copy.viewInsights}</ArrowLink></div>{insights.map((insight,i)=><article className="program-row" key={insight.slug}><span>0{i+1}</span><h3>{insight.title}</h3><p>{insight.excerpt}</p><ArrowLink href={`/insights/${insight.slug}`}>{copy.readArticle}</ArrowLink></article>)}</section>
 
