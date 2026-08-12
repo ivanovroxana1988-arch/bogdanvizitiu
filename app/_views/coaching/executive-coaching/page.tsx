@@ -3,8 +3,27 @@ import {ArrowLink,Eyebrow} from '@/components/ui'
 import {JsonLd} from '@/components/json-ld'
 import executiveCoaching from '@/content/executive-coaching.json'
 import {getLocale} from '@/lib/i18n'
+import {localizePath} from '@/lib/routes'
 import {buildPageMetadata,localizedUrl,SITE_URL} from '@/lib/seo'
 import styles from '@/app/commercial.module.css'
+
+const relatedInsights=[
+  {
+    slug:'de-ce-unele-conversatii-manageriale-schimba-lucrurile',
+    ro:'De ce unele conversații manageriale schimbă lucrurile, iar altele nu',
+    en:'Why some management conversations change things and others do not',
+  },
+  {
+    slug:'o-decizie-buna-incepe-inainte-sa-alegi',
+    ro:'O decizie bună începe înainte să alegi',
+    en:'A good decision starts before you choose',
+  },
+  {
+    slug:'de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives',
+    ro:'De la „unde sunt” la „ce fac mai departe”: modelul LIVES',
+    en:'From ‘where I am’ to ‘what I do next’: the LIVES model',
+  },
+]
 
 export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):Metadata{
   const locale=getLocale(searchParams?.lang)
@@ -116,8 +135,22 @@ export default function ExecutiveCoaching({searchParams}:{searchParams?:{lang?:s
         <article className={styles.proofCard}>
           <h3>{copy.proofTitle}</h3>
           <p>{copy.proofText}</p>
-          <ArrowLink href={locale==='ro'?'/despre':'/en/about'}>{locale==='ro'?'Vezi parcursul lui Bogdan':'See Bogdan’s background'}</ArrowLink>
+          <ArrowLink href={localizePath('/despre',locale)}>{locale==='ro'?'Vezi parcursul lui Bogdan':'See Bogdan’s background'}</ArrowLink>
         </article>
+      </div>
+    </section>
+
+    <section className={styles.section}>
+      <div className={styles.sectionHead}>
+        <div>
+          <Eyebrow>{locale==='ro'?'Din Insights':'From Insights'}</Eyebrow>
+          <h2 className={styles.sectionTitle}>{locale==='ro'?'Idei pentru decizii, conversații și claritate.':'Ideas for decisions, conversations and clarity.'}</h2>
+        </div>
+      </div>
+      <div className={styles.twoGrid}>
+        {relatedInsights.map(item=><article className={styles.editorialCard} key={item.slug}>
+          <ArrowLink href={localizePath(`/insights/${item.slug}`,locale)}>{locale==='ro'?item.ro:item.en}</ArrowLink>
+        </article>)}
       </div>
     </section>
 
@@ -139,7 +172,7 @@ export default function ExecutiveCoaching({searchParams}:{searchParams?:{lang?:s
     <section className={styles.cta}>
       <Eyebrow>{copy.ctaEyebrow}</Eyebrow>
       <h2 className={styles.ctaTitle}>{copy.ctaTitle}</h2>
-      <ArrowLink href={locale==='ro'?'/contact':'/en/contact'}>{copy.cta}</ArrowLink>
+      <ArrowLink href={localizePath('/contact',locale)}>{copy.cta}</ArrowLink>
     </section>
   </div>
 }
