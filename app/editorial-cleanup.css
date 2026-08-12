@@ -1,0 +1,119 @@
+/* Final editorial cleanup: remove draft-like numeric indices and rebalance large page heroes. */
+
+.page-hero {
+  padding-block: clamp(5.5rem, 8vw, 8rem);
+}
+
+.page-hero-grid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, .72fr);
+  gap: clamp(40px, 6vw, 88px);
+  align-items: center;
+}
+
+.page-hero h1 {
+  font-size: clamp(3.5rem, 6.2vw, 6.25rem);
+  line-height: .97;
+  max-width: 820px;
+}
+
+.page-hero p {
+  max-width: 540px;
+  margin: 0;
+}
+
+.decorative-index {
+  display: none !important;
+}
+
+.recognition-list li {
+  grid-template-columns: 1fr;
+}
+
+.recognition-list li > span:first-child {
+  display: none;
+}
+
+.program-row {
+  grid-template-columns: minmax(220px, 1.15fr) minmax(280px, 1fr) auto;
+}
+
+.program-row > span:first-child {
+  display: none;
+}
+
+.domain-list div {
+  grid-template-columns: 1fr;
+}
+
+.domain-list div > span:first-child {
+  display: none;
+}
+
+.area-row {
+  grid-template-columns: minmax(220px, .8fr) minmax(280px, 1fr);
+}
+
+.area-row > span:first-child {
+  display: none;
+}
+
+.clean-process-row {
+  grid-template-columns: minmax(220px, .65fr) minmax(280px, 1fr) !important;
+}
+
+.clean-diagnostic-list li {
+  grid-template-columns: 1fr !important;
+}
+
+.clean-diagnostic-list li::before {
+  content: none !important;
+  display: none !important;
+}
+
+.clean-coaching-preview h2 {
+  font-size: clamp(3.4rem, 5.6vw, 5.8rem) !important;
+  line-height: .98 !important;
+  max-width: 780px !important;
+}
+
+.clean-coaching-preview p {
+  max-width: 640px !important;
+}
+
+@media (max-width: 900px) {
+  .page-hero {
+    padding-block: clamp(4.75rem, 15vw, 6.5rem);
+  }
+
+  .page-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    align-items: start;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(3.1rem, 11vw, 5rem);
+    max-width: 760px;
+  }
+
+  .program-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .program-row p,
+  .program-row .arrow-link {
+    grid-column: 1 !important;
+  }
+
+  .area-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .area-row p {
+    grid-column: 1 !important;
+  }
+
+  .clean-process-row {
+    grid-template-columns: 1fr !important;
+  }
+}
