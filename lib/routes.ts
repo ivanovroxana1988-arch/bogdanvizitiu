@@ -14,6 +14,14 @@ const roToEn:Record<string,string>={
   '/termeni':'/en/terms',
 }
 
+const legacyEnglishToRomanian:Record<string,string>={
+  '/about':'/despre',
+  '/programs':'/cursuri',
+  '/speaking':'/media',
+  '/privacy':'/confidentialitate',
+  '/terms':'/termeni',
+}
+
 const programSlugRoToEn:Record<string,string>={
   'networking':'networking',
   'arta-negocierii':'negotiation-influence',
@@ -44,6 +52,15 @@ export function localeFromPathname(pathname:string):Locale{
   return pathname==='/en'||pathname.startsWith('/en/')?'en':'ro'
 }
 
+function normalizeRomanianSource(pathname:string){
+  if(localeFromPathname(pathname)==='en')return toRomanian(pathname)
+  if(legacyEnglishToRomanian[pathname])return legacyEnglishToRomanian[pathname]
+  if(pathname.startsWith('/programs/')){
+    return `/cursuri/${toRomanianProgramSlug(pathname.slice('/programs/'.length))}`
+  }
+  return pathname
+}
+
 function toEnglish(pathname:string){
   if(localeFromPathname(pathname)==='en')return pathname
   if(roToEn[pathname])return roToEn[pathname]
@@ -62,5 +79,6 @@ function toRomanian(pathname:string){
 }
 
 export function localizePath(pathname:string,locale:Locale){
-  return locale==='en'?toEnglish(pathname):toRomanian(pathname)
+  const canonicalRomanianPath=normalizeRomanianSource(pathname)
+  return locale==='en'?toEnglish(canonicalRomanianPath):canonicalRomanianPath
 }
