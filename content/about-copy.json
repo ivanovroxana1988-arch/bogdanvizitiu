@@ -14,7 +14,7 @@
       "Fie că vorbim despre leadership, negociere, networking, performanță sau o decizie profesională dificilă, pentru mine munca bună începe cu o conversație suficient de sinceră încât să putem vedea lucrurile așa cum sunt.",
       "Apoi putem face ceva cu ele."
     ],
-    "roleLine": "Coach. Trainer. Antreprenor.",
+    "roleLine": "Coach. Trainer. Consultant. Antreprenor.",
     "closing": "Dar, înainte de toate, un partener de gândire pentru situațiile în care răspunsul nu este chiar atât de simplu pe cât părea la început.",
     "cta": "Descoperă cum lucrez",
     "experienceEyebrow": "Experiență",
@@ -34,8 +34,8 @@
         "description": "Situații în care rezultatele depind de claritate, încredere, responsabilitate și felul în care oamenii lucrează împreună."
       },
       {
-        "title": "Training & coaching",
-        "description": "Spații în care întrebările bune, practica și feedbackul pot schimba felul în care cineva vede și abordează o situație reală."
+        "title": "Training, coaching & psihologie",
+        "description": "Spații în care întrebările bune, practica, feedbackul și înțelegerea comportamentului pot schimba felul în care cineva vede și abordează o situație reală."
       }
     ],
     "methodEyebrow": "Cum lucrez",
@@ -61,19 +61,23 @@
     "proofItems": [
       {
         "title": "Orange România",
-        "description": "Concept Store Manager (2011–2012) și Direct Sales Manager (2012–2016), cu responsabilități de strategie comercială, dezvoltare de echipă, coaching și mentoring."
+        "description": "O parte importantă din cei peste 16 ani de experiență comercială: Business Retention Analyst, Business Sales Representative, Concept Store Manager și Direct Sales Manager, cu responsabilități de strategie comercială, dezvoltare de echipă și performanță."
       },
       {
         "title": "Trend Consult",
-        "description": "Consultanță comercială, training și coaching în vânzări, dezvoltarea afacerilor și personalizarea curriculei, începând din 2016."
+        "description": "Din 2016, consultanță, training și dezvoltare organizațională în vânzări, management, procese comerciale, KPI, CRM și dezvoltarea echipelor."
       },
       {
         "title": "YoungMinds",
-        "description": "Fondator și managing partner al brandului YoungMinds, dezvoltat în zona de afterschool și loc de joacă."
+        "description": "Fondat în 2019 ca proiect de suflet, inspirat de experiența de tată și de cele două fiice ale sale. Un spațiu în care copiii învață prin joacă, explorare, experiențe practice și experimente."
+      },
+      {
+        "title": "Coaching & psihologie",
+        "description": "Absolvent International Coach Academy în 2020, Professional Certified Coach (PCC) în cadrul International Coaching Federation și absolvent al Facultății de Psihologie, Universitatea Titu Maiorescu, în 2026."
       },
       {
         "title": "Formare & educație",
-        "description": "Formator ANC (2013), Manager de Proiect ANC (2010), master în Management în Turism Internațional la ASE București și studii de Geografia Turismului la Universitatea din București."
+        "description": "Studii în managementul turismului la Universitatea din București, continuate la Academia de Studii Economice din București, plus certificări de Project Manager, Formator și Facilitator și calificare profesională de bucătar, Nivel III."
       }
     ]
   },
@@ -92,7 +96,7 @@
       "Whether we are talking about leadership, negotiation, networking, performance or a difficult professional decision, good work begins, for me, with a conversation honest enough to let us see things as they are.",
       "Then we can do something with them."
     ],
-    "roleLine": "Coach. Trainer. Entrepreneur.",
+    "roleLine": "Coach. Trainer. Consultant. Entrepreneur.",
     "closing": "But before any of those, a thinking partner for situations where the answer is not quite as simple as it first appeared.",
     "cta": "Discover how I work",
     "experienceEyebrow": "Experience",
@@ -112,8 +116,8 @@
         "description": "Situations where outcomes depend on clarity, trust, accountability and how people work together."
       },
       {
-        "title": "Training & coaching",
-        "description": "Spaces where better questions, practice and feedback can change how someone sees and approaches a real situation."
+        "title": "Training, coaching & psychology",
+        "description": "Spaces where better questions, practice, feedback and an understanding of behavior can change how someone sees and approaches a real situation."
       }
     ],
     "methodEyebrow": "How I work",
@@ -139,19 +143,23 @@
     "proofItems": [
       {
         "title": "Orange Romania",
-        "description": "Concept Store Manager (2011–2012) and Direct Sales Manager (2012–2016), with responsibilities spanning commercial strategy, team development, coaching and mentoring."
+        "description": "A major part of more than 16 years of commercial experience, including roles as Business Retention Analyst, Business Sales Representative, Concept Store Manager and Direct Sales Manager, spanning commercial strategy, team development and performance."
       },
       {
         "title": "Trend Consult",
-        "description": "Commercial consulting, sales training and coaching, business development and curriculum customization, starting in 2016."
+        "description": "Since 2016, consulting, training and organizational development across sales, management, commercial processes, KPIs, CRM and team development."
       },
       {
         "title": "YoungMinds",
-        "description": "Founder and managing partner of YoungMinds, a brand developed around after-school education and play."
+        "description": "Founded in 2019 as a personal project inspired by his experience as a father and by his two daughters. A space where children learn through play, exploration, practical experiences and experiments."
+      },
+      {
+        "title": "Coaching & psychology",
+        "description": "International Coach Academy graduate in 2020, Professional Certified Coach (PCC) with the International Coaching Federation, and a 2026 graduate of the Faculty of Psychology at Titu Maiorescu University."
       },
       {
         "title": "Training & education",
-        "description": "ANC-certified Trainer (2013), ANC-certified Project Manager (2010), a master’s degree in International Tourism Management from Bucharest University of Economic Studies, and Geography of Tourism studies at the University of Bucharest."
+        "description": "Studies in tourism management at the University of Bucharest, followed by studies at the Bucharest University of Economic Studies, plus certifications as Project Manager, Trainer and Facilitator and a Level III professional chef qualification."
       }
     ]
   }
