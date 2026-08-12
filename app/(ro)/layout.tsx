@@ -4,6 +4,7 @@ import {Analytics} from '@vercel/analytics/next'
 import '../globals.css'
 import '../spacing.css'
 import '../editorial-cleanup.css'
+import '../a11y.css'
 import {Header} from '@/components/header'
 import {Footer} from '@/components/footer'
 import {JsonLd} from '@/components/json-ld'
@@ -23,5 +24,5 @@ export const metadata:Metadata={
 }
 
 export default function RomanianLayout({children}:{children:React.ReactNode}){
-  return <html lang="ro" className={`${sans.variable} ${serif.variable}`}><body><JsonLd data={siteIdentityJsonLd()}/><Header locale="ro"/><main>{children}</main><Footer locale="ro"/><Analytics/></body></html>
+  return <html lang="ro" className={`${sans.variable} ${serif.variable}`}><body><a className="skip-link" href="#main">Sari la conținut</a><JsonLd data={siteIdentityJsonLd()}/><Header locale="ro"/><main id="main" tabIndex={-1}>{children}</main><Footer locale="ro"/><Analytics/></body></html>
 }
