@@ -41,8 +41,6 @@ export default function Home({searchParams}:{searchParams?:{lang?:string}}){
 
     {appearances.length>0&&<section className="programs shell"><div className="section-head"><div><Eyebrow>{services.media.eyebrow}</Eyebrow><h2 className="section-title">{services.media.title}</h2></div><ArrowLink href="/media">{locale==='ro'?'Vezi aparițiile':'See appearances'}</ArrowLink></div>{appearances.map((item,i)=><article className="program-row" key={item.id}><span>0{i+1}</span><h3>{item.title}</h3><p>{item.type}{item.published_at?` · ${item.published_at}`:''}</p><ArrowLink href={item.external_url!}>{locale==='ro'?'Deschide sursa':'Open source'}</ArrowLink></article>)}</section>}
 
-    <section className="point-of-view"><div className="shell point-grid"><EditorialImage asset="candid" kind="portrait"/><div><h2>{copy.pointTitle}</h2><p>{copy.pointText}</p><ArrowLink href="/despre">{copy.secondaryCta}</ArrowLink></div></div></section>
-
     <section className="programs shell"><div className="section-head"><div><Eyebrow>{copy.insightsEyebrow}</Eyebrow><h2 className="section-title">{copy.insightsTitle}</h2></div><ArrowLink href="/insights">{copy.viewInsights}</ArrowLink></div>{insights.map((insight,i)=><article className="program-row" key={insight.slug}><span>0{i+1}</span><h3>{insight.title}</h3><p>{insight.excerpt}</p><ArrowLink href={`/insights/${insight.slug}`}>{copy.readArticle}</ArrowLink></article>)}</section>
 
     <section className="final-loop"><div className="shell final-grid"><h2>{copy.finalTitle}</h2><div><p>{copy.finalText}</p><ArrowLink href="/contact">{copy.finalCta}</ArrowLink></div></div></section>
