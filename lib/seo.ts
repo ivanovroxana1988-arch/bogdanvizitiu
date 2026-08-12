@@ -3,8 +3,15 @@ import type {Locale} from '@/lib/i18n'
 
 export const SITE_URL='https://bogdanvizitiu.com'
 
+export function localizedPath(path:string,locale:Locale){
+  const normalized=path==='/'?'/':path.startsWith('/')?path:`/${path}`
+  return locale==='en'
+    ? normalized==='/'?'/en':`/en${normalized}`
+    : normalized
+}
+
 export function localizedUrl(path:string,locale:Locale){
-  return `${SITE_URL}${path}${locale==='en'?'?lang=en':''}`
+  return new URL(localizedPath(path,locale),`${SITE_URL}/`).toString()
 }
 
 export function buildPageMetadata({title,description,path,locale}:{title:string;description:string;path:string;locale:Locale}):Metadata{
@@ -18,9 +25,9 @@ export function buildPageMetadata({title,description,path,locale}:{title:string;
     alternates:{
       canonical,
       languages:{
-        'ro-RO':`${SITE_URL}${path}`,
-        'en':`${SITE_URL}${path}?lang=en`,
-        'x-default':`${SITE_URL}${path}`,
+        'ro-RO':localizedUrl(path,'ro'),
+        'en':localizedUrl(path,'en'),
+        'x-default':localizedUrl(path,'ro'),
       },
     },
     openGraph:{

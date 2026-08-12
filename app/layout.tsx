@@ -3,8 +3,6 @@ import {Manrope,DM_Serif_Display} from 'next/font/google'
 import {Analytics} from '@vercel/analytics/next'
 import './globals.css'
 import './spacing.css'
-import {Header} from '@/components/header'
-import {Footer} from '@/components/footer'
 import {JsonLd} from '@/components/json-ld'
 import {siteIdentityJsonLd} from '@/lib/seo'
 
@@ -32,5 +30,5 @@ export const metadata:Metadata={
 }
 
 export default function RootLayout({children}:{children:React.ReactNode}){
-  return <html lang="ro" className={`${sans.variable} ${serif.variable}`}><body><JsonLd data={siteIdentityJsonLd()}/><Header/><main>{children}</main><Footer/><Analytics/></body></html>
+  return <html lang="ro" className={`${sans.variable} ${serif.variable}`}><body><JsonLd data={siteIdentityJsonLd()}/>{children}<Analytics/></body></html>
 }

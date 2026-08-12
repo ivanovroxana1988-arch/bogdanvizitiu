@@ -20,6 +20,12 @@ export function getCopy(locale: Locale) {
   }
 }
 
+export function stripLocalePrefix(pathname: string) {
+  if (pathname === '/en') return '/'
+  if (pathname.startsWith('/en/')) return pathname.slice(3) || '/'
+  return pathname || '/'
+}
+
 export function withLocale(href: string, locale: Locale) {
   if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
     return href
@@ -27,7 +33,13 @@ export function withLocale(href: string, locale: Locale) {
 
   const [base, hash] = href.split('#')
   const url = new URL(base, 'https://bogdanvizitiu.com')
-  url.searchParams.set('lang', locale)
-  const localized = `${url.pathname}${url.search}`
+  url.searchParams.delete('lang')
+
+  const pathname = stripLocalePrefix(url.pathname)
+  const localizedPath = locale === 'en'
+    ? pathname === '/' ? '/en' : `/en${pathname}`
+    : pathname
+  const localized = `${localizedPath}${url.search}`
+
   return hash ? `${localized}#${hash}` : localized
 }

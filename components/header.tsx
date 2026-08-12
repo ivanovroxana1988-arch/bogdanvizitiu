@@ -1,10 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import {usePathname,useSearchParams} from 'next/navigation'
-import {Suspense,useEffect,useRef,useState} from 'react'
+import {useEffect,useRef,useState} from 'react'
 import navigation from '@/content/navigation.json'
-import {getLocale,withLocale,type Locale} from '@/lib/i18n'
+import {withLocale,type Locale} from '@/lib/i18n'
 
 const hrefs=[
   ['about','/despre'],
@@ -15,7 +14,7 @@ const hrefs=[
   ['contact','/contact'],
 ] as const
 
-function HeaderView({locale,pathname}:{locale:Locale;pathname:string}){
+export function Header({locale,pathname}:{locale:Locale;pathname:string}){
   const [open,setOpen]=useState(false)
   const menuButtonRef=useRef<HTMLButtonElement>(null)
   const copy=navigation[locale]
@@ -24,6 +23,10 @@ function HeaderView({locale,pathname}:{locale:Locale;pathname:string}){
   useEffect(()=>{
     setOpen(false)
   },[pathname])
+
+  useEffect(()=>{
+    document.documentElement.lang=locale
+  },[locale])
 
   useEffect(()=>{
     if(!open)return
@@ -58,20 +61,4 @@ function HeaderView({locale,pathname}:{locale:Locale;pathname:string}){
       <Link className="nav-cta" href={withLocale('/cursuri',locale)}>{copy.coursesCta}</Link>
     </nav>
   </div></header>
-}
-
-function LocalizedHeader(){
-  const pathname=usePathname()
-  const searchParams=useSearchParams()
-  const locale=getLocale(searchParams.get('lang'))
-
-  useEffect(()=>{
-    document.documentElement.lang=locale
-  },[locale])
-
-  return <HeaderView locale={locale} pathname={pathname}/>
-}
-
-export function Header(){
-  return <Suspense fallback={<HeaderView locale="ro" pathname="/"/>}><LocalizedHeader/></Suspense>
 }
