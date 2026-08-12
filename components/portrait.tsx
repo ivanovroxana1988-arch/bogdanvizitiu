@@ -38,7 +38,7 @@ export function EditorialImage({asset='hero',kind='portrait',className='',locale
   const approved=hasFirstPartyRights(item)
   const alt=locale==='en'?englishMediaAlt[asset]:item.alt
   return <figure className={`editorial-image editorial-image--${kind} ${className}`} aria-label={approved?alt:undefined}>
-    {approved?<Image src={item.src} alt={alt} fill priority={asset==='hero'} sizes={asset==='hero'?'(max-width: 900px) 100vw, 55vw':'(max-width: 900px) 100vw, 50vw'}/>:<div className="image-placeholder" aria-hidden="true"><span>BGV / IMAGE {index[asset]}</span><i/><span>{kind==='portrait'?'PORTRAIT 4:5':'EDITORIAL 3:2'}</span><small>ASSET PENDING</small></div>}
+    {approved?<Image src={item.src} alt={alt} fill priority={asset==='hero'} quality={asset==='hero'?90:75} sizes={asset==='hero'?'(max-width: 900px) 100vw, (max-width: 1424px) 55vw, 748px':'(max-width: 900px) 100vw, 50vw'}/>:<div className="image-placeholder" aria-hidden="true"><span>BGV / IMAGE {index[asset]}</span><i/><span>{kind==='portrait'?'PORTRAIT 4:5':'EDITORIAL 3:2'}</span><small>ASSET PENDING</small></div>}
   </figure>
 }
 
