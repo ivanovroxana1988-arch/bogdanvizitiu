@@ -35,7 +35,7 @@ export default function Corporate({searchParams}:{searchParams?:{lang?:string}})
           <Eyebrow>{copy.diagnosticEyebrow}</Eyebrow>
           <h2 className={styles.statementSmall}>{copy.diagnosticTitle}</h2>
         </div>
-        <ul className={styles.diagnosticList}>
+        <ul className={`${styles.diagnosticList} clean-diagnostic-list`}>
           {copy.diagnosticItems.map(item=><li key={item}>{item}</li>)}
         </ul>
       </div>
@@ -59,8 +59,7 @@ export default function Corporate({searchParams}:{searchParams?:{lang?:string}})
         </div>
       </div>
       <div className={styles.processList}>
-        {copy.processItems.map((item,i)=><article className={styles.processRow} key={item.title}>
-          <span className={styles.listIndex}>0{i+1}</span>
+        {copy.processItems.map(item=><article className={`${styles.processRow} clean-process-row`} key={item.title}>
           <h3>{item.title}</h3>
           <p>{item.description}</p>
         </article>)}
@@ -75,8 +74,7 @@ export default function Corporate({searchParams}:{searchParams?:{lang?:string}})
         </div>
       </div>
       <div className={styles.twoGrid}>
-        {copy.blocks.map((block,i)=><article className={styles.editorialCard} key={block.title}>
-          <span className={styles.cardIndex}>0{i+1}</span>
+        {copy.blocks.map(block=><article className={styles.editorialCard} key={block.title}>
           <h3>{block.title}</h3>
           <p>{block.description}</p>
         </article>)}
