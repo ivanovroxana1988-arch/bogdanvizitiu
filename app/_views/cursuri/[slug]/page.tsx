@@ -6,6 +6,36 @@ import {getCopy,getLocale} from '@/lib/i18n'
 import {buildPageMetadata} from '@/lib/seo'
 import styles from '../../commercial.module.css'
 
+function seoTitle(slug:string,locale:'ro'|'en',fallback:string){
+  if(locale==='ro'){
+    if(slug==='arta-negocierii')return 'Curs de negociere pentru profesioniști'
+    if(slug==='networking')return 'Curs de networking profesional'
+  }
+  if(slug==='arta-negocierii')return 'Negotiation course for professionals'
+  if(slug==='networking')return 'Professional networking course'
+  return fallback
+}
+
+function pageHeading(slug:string,locale:'ro'|'en',fallback:string){
+  if(locale==='ro'){
+    if(slug==='arta-negocierii')return 'Curs de negociere: Negotiation & Influence'
+    if(slug==='networking')return 'Curs de networking profesional'
+  }
+  if(slug==='arta-negocierii')return 'Negotiation course: Negotiation & Influence'
+  if(slug==='networking')return 'Professional networking course'
+  return fallback
+}
+
+function seoDescription(slug:string,locale:'ro'|'en',fallback:string){
+  if(locale==='ro'){
+    if(slug==='arta-negocierii')return 'Curs de negociere pentru manageri, antreprenori, oameni de vânzări și profesioniști care vor să pregătească mai clar interesele, alternativele și concesiile.'
+    if(slug==='networking')return 'Curs de networking profesional pentru manageri, antreprenori, specialiști și oameni de vânzări care vor să construiască relații relevante și follow-up cu context.'
+  }
+  if(slug==='arta-negocierii')return 'Negotiation course for managers, entrepreneurs, salespeople and professionals who want clearer interests, alternatives and choices under pressure.'
+  if(slug==='networking')return 'Professional networking course for managers, entrepreneurs, specialists and salespeople who want relevant relationships and better follow-up.'
+  return fallback
+}
+
 export function generateStaticParams(){
   return programSlugs.map(slug=>({slug}))
 }
@@ -13,9 +43,11 @@ export function generateStaticParams(){
 export function generateMetadata({params,searchParams}:{params:{slug:string};searchParams?:{lang?:string}}):Metadata{
   const locale=getLocale(searchParams?.lang)
   const program=getPrograms(locale).find(item=>item.slug===params.slug)
+  const fallbackTitle=program?.title??(locale==='ro'?'Curs':'Program')
+  const fallbackDescription=program?.description??''
   return buildPageMetadata({
-    title:program?.title??(locale==='ro'?'Curs':'Program'),
-    description:program?.description??'',
+    title:seoTitle(params.slug,locale,fallbackTitle),
+    description:seoDescription(params.slug,locale,fallbackDescription),
     path:`/cursuri/${params.slug}`,
     locale,
   })
@@ -31,7 +63,7 @@ export default function Program({params,searchParams}:{params:{slug:string};sear
     <section className={styles.hero}>
       <Eyebrow>{copy.eyebrow}</Eyebrow>
       <div className={styles.heroGrid}>
-        <h1>{program.title}</h1>
+        <h1>{pageHeading(program.slug,locale,program.title)}</h1>
         <p className={styles.heroIntro}>{program.detail}</p>
       </div>
     </section>
