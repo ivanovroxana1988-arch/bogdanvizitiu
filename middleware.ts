@@ -3,8 +3,6 @@ import {NextRequest,NextResponse} from 'next/server'
 const legacyRedirects:Record<string,string>={
   '/about':'/despre',
   '/programs':'/cursuri',
-  '/programs/networking':'/cursuri/networking',
-  '/programs/arta-negocierii':'/cursuri/arta-negocierii',
   '/speaking':'/media',
   '/privacy':'/confidentialitate',
   '/terms':'/termeni',

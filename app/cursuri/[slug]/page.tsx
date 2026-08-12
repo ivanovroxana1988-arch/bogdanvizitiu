@@ -1,11 +1,24 @@
+import type {Metadata} from 'next'
 import {notFound} from 'next/navigation'
 import {getPrograms,programSlugs} from '@/lib/data'
 import {ArrowLink,Eyebrow} from '@/components/ui'
 import {getCopy,getLocale} from '@/lib/i18n'
+import {buildPageMetadata} from '@/lib/seo'
 import styles from '../../commercial.module.css'
 
 export function generateStaticParams(){
   return programSlugs.map(slug=>({slug}))
+}
+
+export function generateMetadata({params,searchParams}:{params:{slug:string};searchParams?:{lang?:string}}):Metadata{
+  const locale=getLocale(searchParams?.lang)
+  const program=getPrograms(locale).find(item=>item.slug===params.slug)
+  return buildPageMetadata({
+    title:program?.title??(locale==='ro'?'Curs':'Program'),
+    description:program?.description??'',
+    path:`/cursuri/${params.slug}`,
+    locale,
+  })
 }
 
 export default function Program({params,searchParams}:{params:{slug:string};searchParams?:{lang?:string}}){
