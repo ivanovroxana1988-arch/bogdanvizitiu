@@ -1,10 +1,13 @@
 import type {Metadata} from 'next'
+import {notFound} from 'next/navigation'
 import {ArrowLink,PageHero} from '@/components/ui'
 import {EditorialImage} from '@/components/portrait'
 import {getMediaAppearances} from '@/lib/data'
 import servicePages from '@/content/service-pages.json'
 import {getLocale} from '@/lib/i18n'
 import {buildPageMetadata} from '@/lib/seo'
+
+const isProduction=process.env.VERCEL_ENV==='production'
 
 export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):Metadata{
   const locale=getLocale(searchParams?.lang)
@@ -21,6 +24,8 @@ export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):
 }
 
 export default function Media({searchParams}:{searchParams?:{lang?:string}}){
+  if(isProduction)notFound()
+
   const locale=getLocale(searchParams?.lang)
   const copy=servicePages[locale].media
   const appearances=getMediaAppearances()
