@@ -23,6 +23,10 @@ export default function About({ searchParams }: { searchParams?: { lang?: string
   const copy = aboutCopy[locale]
   const contactCopy = getCopy(locale).contact
   const contactLabel = locale === 'ro' ? 'Începe o conversație' : 'Start a conversation'
+  const careerIntro =
+    locale === 'ro'
+      ? 'Două repere care au format baza comercială și de consultanță a modului în care lucrez astăzi.'
+      : 'Two milestones that shaped the commercial and consulting foundation of how I work today.'
 
   return (
     <div className={`${styles.page} balanced-commercial-page`}>
@@ -98,11 +102,11 @@ export default function About({ searchParams }: { searchParams?: { lang?: string
             <Eyebrow>{copy.careerEyebrow}</Eyebrow>
             <h2 className={styles.statementSmall}>{copy.careerTitle}</h2>
             <p style={{ color: 'rgba(250,249,246,.9)', lineHeight: 1.75, marginTop: '28px' }}>
-              {copy.careerIntro}
+              {careerIntro}
             </p>
           </div>
           <div className={styles.processList}>
-            {copy.careerItems.map((item) => (
+            {copy.careerItems.slice(0, 2).map((item) => (
               <article className={`${styles.processRow} clean-process-row`} key={item.title}>
                 <h3 style={{ color: '#faf9f6' }}>{item.title}</h3>
                 <p style={{ color: 'rgba(250,249,246,.9)' }}>{item.description}</p>
