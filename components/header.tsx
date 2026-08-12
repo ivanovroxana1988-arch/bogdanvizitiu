@@ -5,6 +5,7 @@ import {usePathname} from 'next/navigation'
 import {useEffect,useRef,useState} from 'react'
 import navigation from '@/content/navigation.json'
 import {withLocale,type Locale} from '@/lib/i18n'
+import {BrandLogo} from '@/components/brand-logo'
 
 const hrefs=[
   ['about','/despre'],
@@ -44,7 +45,9 @@ export function Header({locale}:{locale:Locale}){
   },[open])
 
   return <header className="header"><div className="shell nav">
-    <Link href={withLocale('/',locale)} className="logo" aria-label="Bogdan Vizitiu home">BGV<span aria-hidden>.</span></Link>
+    <Link href={withLocale('/',locale)} className="logo" aria-label={locale==='ro'?'Bogdan George Vizitiu — pagina principală':'Bogdan George Vizitiu — home'}>
+      <BrandLogo className="brand-logo brand-logo--header"/>
+    </Link>
     <button ref={menuButtonRef} className="menu" onClick={()=>setOpen(value=>!value)} aria-expanded={open} aria-controls="navigation">{copy.menu}</button>
     <nav id="navigation" className={open?'open':''} aria-label="Main navigation">
       {hrefs.map(([key,href])=><Link onClick={()=>setOpen(false)} key={href} href={withLocale(href,locale)} aria-current={isActive(href)?'page':undefined}>{copy[key]}</Link>)}
