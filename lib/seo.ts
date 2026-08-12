@@ -60,6 +60,10 @@ export function siteIdentityJsonLd(locale:Locale='ro'){
         url:localizedUrl('/despre',locale),
         image:`${SITE_URL}/images/bogdan/bogdan-hero.avif`,
         jobTitle:locale==='ro'?'Coach, trainer, antreprenor':'Coach, trainer, entrepreneur',
+        sameAs:[
+          'https://www.linkedin.com/in/bogdan-vizitiu-pcc-1796a73/',
+          'https://www.facebook.com/bogdan.o.vizitiu',
+        ],
       },
     ],
   }
