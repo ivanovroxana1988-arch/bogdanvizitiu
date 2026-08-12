@@ -27,7 +27,7 @@ export default function Program({params,searchParams}:{params:{slug:string};sear
   const program=getPrograms(locale).find(item=>item.slug===params.slug)
   if(!program)notFound()
 
-  return <div className={styles.page}>
+  return <div className={`${styles.page} balanced-commercial-page`}>
     <section className={styles.hero}>
       <Eyebrow>{copy.eyebrow}</Eyebrow>
       <div className={styles.heroGrid}>
