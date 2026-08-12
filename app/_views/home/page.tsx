@@ -26,7 +26,7 @@ export default function Home({searchParams}:{searchParams?:{lang?:string}}){
   const proof=[
     {value:'20+',label:locale==='ro'?'ani de experiență profesională':'years of professional experience'},
     {value:'16+',label:locale==='ro'?'ani de experiență comercială':'years of commercial experience'},
-    {value:'PCC',label:locale==='ro'?'International Coaching Federation · din 2021':'International Coaching Federation · since 2021'},
+    {value:'CPC',label:locale==='ro'?'Certificare de coach profesionist · International Coach Academy · 2020':'Professional coach certification · International Coach Academy · 2020'},
     {value:locale==='ro'?'Psihologie':'Psychology',label:locale==='ro'?'Universitatea Titu Maiorescu · 2026':'Titu Maiorescu University · 2026'},
   ];
 
