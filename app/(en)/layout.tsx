@@ -4,6 +4,7 @@ import {Analytics} from '@vercel/analytics/next'
 import '../globals.css'
 import '../spacing.css'
 import '../editorial-cleanup.css'
+import '../a11y.css'
 import {Header} from '@/components/header'
 import {Footer} from '@/components/footer'
 import {JsonLd} from '@/components/json-ld'
@@ -23,5 +24,5 @@ export const metadata:Metadata={
 }
 
 export default function EnglishLayout({children}:{children:React.ReactNode}){
-  return <html lang="en" className={`${sans.variable} ${serif.variable}`}><body><JsonLd data={siteIdentityJsonLd('en')}/><Header locale="en"/><main>{children}</main><Footer locale="en"/><Analytics/></body></html>
+  return <html lang="en" className={`${sans.variable} ${serif.variable}`}><body><a className="skip-link" href="#main">Skip to content</a><JsonLd data={siteIdentityJsonLd('en')}/><Header locale="en"/><main id="main" tabIndex={-1}>{children}</main><Footer locale="en"/><Analytics/></body></html>
 }
