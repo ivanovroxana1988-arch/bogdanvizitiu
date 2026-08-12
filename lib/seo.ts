@@ -1,10 +1,10 @@
 import type {Metadata} from 'next'
-import type {Locale} from '@/lib/i18n'
+import {localizePath,type Locale} from '@/lib/routes'
 
 export const SITE_URL='https://bogdanvizitiu.com'
 
 export function localizedUrl(path:string,locale:Locale){
-  return `${SITE_URL}${path}${locale==='en'?'?lang=en':''}`
+  return `${SITE_URL}${localizePath(path,locale)}`
 }
 
 export function buildPageMetadata({title,description,path,locale}:{title:string;description:string;path:string;locale:Locale}):Metadata{
@@ -18,9 +18,9 @@ export function buildPageMetadata({title,description,path,locale}:{title:string;
     alternates:{
       canonical,
       languages:{
-        'ro-RO':`${SITE_URL}${path}`,
-        'en':`${SITE_URL}${path}?lang=en`,
-        'x-default':`${SITE_URL}${path}`,
+        'ro-RO':localizedUrl(path,'ro'),
+        'en':localizedUrl(path,'en'),
+        'x-default':localizedUrl(path,'ro'),
       },
     },
     openGraph:{

@@ -1,24 +1,18 @@
 'use client'
 
 import Link from 'next/link'
-import {useSearchParams} from 'next/navigation'
-import {Suspense} from 'react'
+import {usePathname} from 'next/navigation'
 import type {ReactNode} from 'react'
-import {getLocale,withLocale} from '@/lib/i18n'
+import {getLocaleFromPathname,withLocale} from '@/lib/i18n'
 
 export function Eyebrow({children}:{children:ReactNode}){
   return <p className="eyebrow">{children}</p>
 }
 
-function LocalizedArrowLink({href,children,className=''}:{href:string;children:ReactNode;className?:string}){
-  const searchParams=useSearchParams()
-  const locale=getLocale(searchParams.get('lang'))
+export function ArrowLink({href,children,className=''}:{href:string;children:ReactNode;className?:string}){
+  const pathname=usePathname()??'/'
+  const locale=getLocaleFromPathname(pathname)
   return <Link className={`arrow-link ${className}`} href={withLocale(href,locale)}>{children} <span aria-hidden>→</span></Link>
-}
-
-export function ArrowLink(props:{href:string;children:ReactNode;className?:string}){
-  const fallback=<Link className={`arrow-link ${props.className??''}`} href={props.href}>{props.children} <span aria-hidden>→</span></Link>
-  return <Suspense fallback={fallback}><LocalizedArrowLink {...props}/></Suspense>
 }
 
 export function PageHero({eyebrow,title,intro}:{eyebrow:string;title:string;intro:string}){
