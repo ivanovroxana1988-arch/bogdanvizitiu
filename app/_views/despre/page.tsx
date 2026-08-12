@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { ArrowLink, Eyebrow } from '@/components/ui'
 import { EditorialImage } from '@/components/portrait'
 import { getCopy, getLocale } from '@/lib/i18n'
@@ -21,24 +22,7 @@ export default function About({ searchParams }: { searchParams?: { lang?: string
   const locale = getLocale(searchParams?.lang)
   const copy = aboutCopy[locale]
   const contactCopy = getCopy(locale).contact
-  const ideas =
-    locale === 'ro'
-      ? {
-          eyebrow: 'Idei & metodologie',
-          title: 'Cum se leagă practica de ideile din spate.',
-          intro:
-            'Modele de coaching, lucrări și instrumente dezvoltate de Bogdan oferă context pentru felul în care abordează conversațiile, învățarea și schimbarea.',
-          cta: 'Explorează resursele',
-          contact: 'Începe o conversație',
-        }
-      : {
-          eyebrow: 'Ideas & methodology',
-          title: 'How the practice connects to the ideas behind it.',
-          intro:
-            'Coaching models, papers and tools developed by Bogdan provide context for the way he approaches conversations, learning and change.',
-          cta: 'Explore resources',
-          contact: 'Start a conversation',
-        }
+  const contactLabel = locale === 'ro' ? 'Începe o conversație' : 'Start a conversation'
 
   return (
     <div className={`${styles.page} balanced-commercial-page`}>
@@ -65,23 +49,23 @@ export default function About({ searchParams }: { searchParams?: { lang?: string
             ))}
             <p className={styles.roleLine}>{copy.roleLine}</p>
             <p>{copy.closing}</p>
-            <div style={{ marginTop: '36px' }}>
+            <div style={{ marginTop: '32px' }}>
               <ArrowLink href="#how-i-work">{copy.cta}</ArrowLink>
             </div>
           </div>
         </div>
       </section>
 
-      <section className={styles.section} id="experience">
+      <section className={styles.section} id="roles">
         <div className={styles.sectionHead}>
           <div>
-            <Eyebrow>{copy.experienceEyebrow}</Eyebrow>
-            <h2 className={styles.sectionTitle}>{copy.experienceTitle}</h2>
+            <Eyebrow>{copy.rolesEyebrow}</Eyebrow>
+            <h2 className={styles.sectionTitle}>{copy.rolesTitle}</h2>
           </div>
-          <p className={styles.sectionIntro}>{copy.experienceIntro}</p>
+          <p className={styles.sectionIntro}>{copy.rolesIntro}</p>
         </div>
         <div className={styles.twoGrid}>
-          {copy.experienceItems.map((item) => (
+          {copy.rolesItems.map((item) => (
             <article className={styles.editorialCard} key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
@@ -108,30 +92,17 @@ export default function About({ searchParams }: { searchParams?: { lang?: string
         </div>
       </section>
 
-      <section className={styles.section} id="ideas-and-methodology">
-        <div className={styles.sectionHead}>
-          <div>
-            <Eyebrow>{ideas.eyebrow}</Eyebrow>
-            <h2 className={styles.sectionTitle}>{ideas.title}</h2>
-          </div>
-          <div className={styles.sectionIntro}>
-            <p style={{ marginTop: 0 }}>{ideas.intro}</p>
-            <ArrowLink href="/resurse">{ideas.cta}</ArrowLink>
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.proof} id="professional-milestones">
+      <section className={styles.proof} id="professional-journey">
         <div className={styles.proofInner}>
           <div>
-            <Eyebrow>{copy.proofEyebrow}</Eyebrow>
-            <h2 className={styles.statementSmall}>{copy.proofTitle}</h2>
+            <Eyebrow>{copy.careerEyebrow}</Eyebrow>
+            <h2 className={styles.statementSmall}>{copy.careerTitle}</h2>
             <p style={{ color: 'rgba(250,249,246,.9)', lineHeight: 1.75, marginTop: '28px' }}>
-              {copy.proofIntro}
+              {copy.careerIntro}
             </p>
           </div>
           <div className={styles.processList}>
-            {copy.proofItems.map((item) => (
+            {copy.careerItems.map((item) => (
               <article className={`${styles.processRow} clean-process-row`} key={item.title}>
                 <h3 style={{ color: '#faf9f6' }}>{item.title}</h3>
                 <p style={{ color: 'rgba(250,249,246,.9)' }}>{item.description}</p>
@@ -141,10 +112,138 @@ export default function About({ searchParams }: { searchParams?: { lang?: string
         </div>
       </section>
 
+      <section className={styles.section} id="credentials">
+        <div className={styles.sectionHead}>
+          <div>
+            <Eyebrow>{copy.credentialsEyebrow}</Eyebrow>
+            <h2 className={styles.sectionTitle}>{copy.credentialsTitle}</h2>
+          </div>
+          <p className={styles.sectionIntro}>{copy.credentialsIntro}</p>
+        </div>
+        <div className={styles.twoGrid}>
+          {copy.credentialItems.map((item) => (
+            <article className={styles.editorialCard} key={item.title}>
+              <div
+                style={{
+                  minHeight: '58px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '18px',
+                }}
+              >
+                <Image
+                  src={item.logo}
+                  alt={item.issuer}
+                  width={170}
+                  height={58}
+                  style={{ width: 'auto', height: 'auto', maxWidth: '170px', maxHeight: '58px' }}
+                />
+              </div>
+              <h3>{item.title}</h3>
+              <p style={{ fontWeight: 600 }}>{item.issuer}</p>
+              <p>{item.description}</p>
+              <a
+                className="arrow-link"
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ marginTop: '18px', display: 'inline-flex' }}
+              >
+                {item.cta} <span aria-hidden>→</span>
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.section} id="entrepreneurship">
+        <div className={styles.sectionHead}>
+          <div>
+            <Eyebrow>{copy.entrepreneurEyebrow}</Eyebrow>
+            <h2 className={styles.sectionTitle}>{copy.entrepreneurTitle}</h2>
+          </div>
+          <p className={styles.sectionIntro}>{copy.entrepreneurIntro}</p>
+        </div>
+        <div className={styles.twoGrid}>
+          {copy.entrepreneurItems.map((item) => (
+            <article className={styles.editorialCard} key={item.title}>
+              <div
+                style={{
+                  minHeight: '72px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '18px',
+                }}
+              >
+                <Image
+                  src={item.logo}
+                  alt={item.title}
+                  width={180}
+                  height={72}
+                  style={{ width: 'auto', height: 'auto', maxWidth: '180px', maxHeight: '72px' }}
+                />
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.section} id="projects-and-partnerships">
+        <div className={styles.sectionHead}>
+          <div>
+            <Eyebrow>{copy.partnershipsEyebrow}</Eyebrow>
+            <h2 className={styles.sectionTitle}>{copy.partnershipsTitle}</h2>
+          </div>
+          <p className={styles.sectionIntro}>{copy.partnershipsIntro}</p>
+        </div>
+        <div className={styles.twoGrid}>
+          {copy.partnershipItems.map((item) => (
+            <article className={styles.editorialCard} key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <a
+                className="arrow-link"
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ marginTop: '18px', display: 'inline-flex' }}
+              >
+                {item.cta} <span aria-hidden>→</span>
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.section} id="online-publications">
+        <div className={styles.sectionHead}>
+          <div>
+            <Eyebrow>{copy.resourcesEyebrow}</Eyebrow>
+            <h2 className={styles.sectionTitle}>{copy.resourcesTitle}</h2>
+          </div>
+          <div className={styles.sectionIntro}>
+            <p style={{ marginTop: 0 }}>{copy.resourcesIntro}</p>
+            <ArrowLink href="/resurse">{copy.resourcesCta}</ArrowLink>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section} id="beyond-roles">
+        <div className={styles.sectionHead}>
+          <div>
+            <Eyebrow>{copy.personalEyebrow}</Eyebrow>
+            <h2 className={styles.sectionTitle}>{copy.personalTitle}</h2>
+          </div>
+          <p className={styles.sectionIntro}>{copy.personalText}</p>
+        </div>
+      </section>
+
       <section className={styles.cta}>
         <Eyebrow>{contactCopy.eyebrow}</Eyebrow>
         <h2 className={styles.ctaTitle}>{contactCopy.title}</h2>
-        <ArrowLink href="/contact">{ideas.contact}</ArrowLink>
+        <ArrowLink href="/contact">{contactLabel}</ArrowLink>
       </section>
     </div>
   )

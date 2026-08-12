@@ -1,166 +1,272 @@
 {
   "ro": {
-    "eyebrow": "Despre Bogdan",
+    "eyebrow": "Despre mine",
     "titleLines": [
       "Am petrecut ani încercând să înțeleg de ce unele conversații schimbă lucrurile,",
       "iar altele nu."
     ],
-    "intro": "Am petrecut o bună parte din carieră în business, vânzări, leadership, training și coaching. În contexte diferite, am observat același lucru: oamenii nu au întotdeauna nevoie de mai multă informație. De multe ori știu deja foarte multe.",
+    "intro": "Sunt coach, trainer, consultant și antreprenor. Am peste 20 de ani de experiență construită la intersecția dintre business, leadership, educație și dezvoltarea oamenilor.",
     "paragraphs": [
-      "Au nevoie să înțeleagă mai bine situația în care sunt.",
-      "Ce se întâmplă cu adevărat? Ce încearcă să obțină? Ce îi ține pe loc? Ce nu văd încă? Și, mai ales, ce pot face diferit de aici înainte?",
-      "Asta este și felul în care lucrez.",
-      "Nu cred în soluții universale aplicate mecanic oamenilor. Folosesc modele, instrumente și experiență, dar ele vin după ce înțelegem problema, nu înainte.",
-      "Fie că vorbim despre leadership, negociere, networking, performanță sau o decizie profesională dificilă, pentru mine munca bună începe cu o conversație suficient de sinceră încât să putem vedea lucrurile așa cum sunt.",
-      "Apoi putem face ceva cu ele."
+      "Am început în vânzări și management, lucrând cu obiective, clienți, echipe și rezultate. În timp, am devenit tot mai interesat de mecanismele din spatele lor: cum luăm decizii, cum construim relații și ce face ca o schimbare să reziste.",
+      "Astăzi lucrez cu oameni și organizații pornind de la aceeași întrebare: ce se întâmplă de fapt aici?",
+      "Nu pornesc de la soluția care sună bine. Pornesc de la context, problemă și comportamentele care o mențin."
     ],
     "roleLine": "Coach. Trainer. Consultant. Antreprenor.",
-    "closing": "Dar, înainte de toate, un partener de gândire pentru situațiile în care răspunsul nu este chiar atât de simplu pe cât părea la început.",
-    "cta": "Descoperă cum lucrez",
-    "experienceEyebrow": "Experiență",
-    "experienceTitle": "Experiența din spatele conversației",
-    "experienceIntro": "Perspectiva mea s-a format în contexte în care deciziile au consecințe, relațiile contează, iar teoria trebuie să supraviețuiască întâlnirii cu realitatea.",
-    "experienceItems": [
+    "closing": "Pentru mine, claritatea vine înaintea soluției.",
+    "cta": "Cum lucrez",
+    "rolesEyebrow": "Ce aduc în conversație",
+    "rolesTitle": "Patru perspective. Aceeași întrebare: ce este util aici?",
+    "rolesIntro": "Rolurile sunt diferite. Modul de lucru rămâne același: înțeleg contextul înainte să aleg intervenția.",
+    "rolesItems": [
       {
-        "title": "Business & antreprenoriat",
-        "description": "Decizii, priorități, responsabilitate și nevoia de a transforma intenția în ceva care funcționează în practică."
+        "title": "Coach",
+        "description": "Lucrez cu oameni care vor să gândească mai limpede, să ia o decizie sau să schimbe un comportament care nu le mai este util."
       },
       {
-        "title": "Vânzări & negociere",
-        "description": "Conversații cu miză, interese diferite, presiune și căutarea unor opțiuni care să poată susține o relație, nu doar un rezultat imediat."
+        "title": "Trainer & facilitator",
+        "description": "Construiesc experiențe de învățare aplicate, în care situațiile reale, practica și feedbackul contează mai mult decât cantitatea de slide-uri."
       },
       {
-        "title": "Leadership & oameni",
-        "description": "Situații în care rezultatele depind de claritate, încredere, responsabilitate și felul în care oamenii lucrează împreună."
+        "title": "Consultant",
+        "description": "Lucrez cu organizații pentru a clarifica probleme comerciale și de dezvoltare și pentru a construi intervenția potrivită contextului."
       },
       {
-        "title": "Training, coaching & psihologie",
-        "description": "Spații în care întrebările bune, practica, feedbackul și înțelegerea comportamentului pot schimba felul în care cineva vede și abordează o situație reală."
+        "title": "Antreprenor",
+        "description": "Privesc dezvoltarea și din perspectiva celui care ia decizii cu bugete, clienți, risc, priorități și consecințe reale."
       }
     ],
     "methodEyebrow": "Cum lucrez",
     "methodTitle": "Înțelegem. Clarificăm. Aplicăm.",
-    "methodIntro": "Nu pornesc de la un instrument pe care trebuie să îl folosim. Pornesc de la situație și alegem împreună ce este util pentru ea.",
+    "methodIntro": "Nu pornesc de la un instrument pe care vrem neapărat să îl folosim. Pornesc de la situație.",
     "methodItems": [
       {
         "title": "Înțelegem",
-        "description": "Ne uităm la ce se întâmplă de fapt: context, oameni, miză, tensiuni și ce ai încercat deja."
+        "description": "Ne uităm la context, oameni, miză, tensiuni și la ce ai încercat deja."
       },
       {
         "title": "Clarificăm",
-        "description": "Separăm problema reală de zgomot, testăm presupunerile și vedem mai limpede ce merită schimbat."
+        "description": "Separăm problema reală de zgomot și testăm presupunerile care o țin pe loc."
       },
       {
         "title": "Aplicăm",
-        "description": "Transformăm claritatea în ceva concret: o conversație, o decizie, un comportament sau un experiment pe care îl poți testa în realitate."
+        "description": "Transformăm claritatea într-o conversație, o decizie, un comportament sau un experiment concret."
       }
     ],
-    "proofEyebrow": "Repere profesionale",
-    "proofTitle": "Experiență reală, în contexte diferite.",
-    "proofIntro": "Câteva repere din traseul profesional care stă în spatele modului în care lucrez astăzi.",
-    "proofItems": [
+    "careerEyebrow": "Parcurs profesional",
+    "careerTitle": "Experiența din spatele modului în care lucrez astăzi.",
+    "careerIntro": "Nu am ajuns la coaching și training dintr-o singură direcție. Parcursul meu trece prin vânzări, management, consultanță și antreprenoriat.",
+    "careerItems": [
       {
         "title": "Orange România",
-        "description": "O parte importantă din cei peste 16 ani de experiență comercială: Business Retention Analyst, Business Sales Representative, Concept Store Manager și Direct Sales Manager, cu responsabilități de strategie comercială, dezvoltare de echipă și performanță."
+        "description": "O mare parte din cei peste 16 ani de experiență comercială: Business Retention Analyst, Business Sales Representative, Concept Store Manager și Direct Sales Manager."
       },
       {
-        "title": "Trend Consult",
-        "description": "Din 2016, consultanță, training și dezvoltare organizațională în vânzări, management, procese comerciale, KPI, CRM și dezvoltarea echipelor."
+        "title": "Trend Consult Group · 2016–2019",
+        "description": "Consultanță în vânzări și business development, leadership, coaching, audit de vânzări și dezvoltarea de programe adaptate nevoilor clientului."
       },
+      {
+        "title": "Coaching & dezvoltarea oamenilor",
+        "description": "Am aprofundat lucrul cu deciziile, comportamentele și conversațiile prin formare profesională în coaching și prin practica directă cu oameni și echipe."
+      },
+      {
+        "title": "Antreprenoriat",
+        "description": "Am construit și susținut inițiative în educație și învățare, păstrând legătura dintre idei, experiența utilizatorului și realitatea de business."
+      }
+    ],
+    "credentialsEyebrow": "Formare & certificări",
+    "credentialsTitle": "Experiența contează. Formarea o ține onestă.",
+    "credentialsIntro": "Pentru mine, formarea profesională completează experiența și oferă repere clare pentru practică.",
+    "credentialItems": [
+      {
+        "title": "Professional Certified Coach — PCC",
+        "issuer": "International Coaching Federation",
+        "description": "Credential profesional în coaching emis de International Coaching Federation.",
+        "url": "https://www.credly.com/badges/729e8376-4af0-4b8c-86a2-e54ef36a18cf/linked_in_profile",
+        "logo": "/images/logos/icf.svg",
+        "cta": "Verifică acreditarea"
+      },
+      {
+        "title": "Certified Professional Coach — CPC",
+        "issuer": "International Coach Academy · 2020",
+        "description": "Program profesional care a inclus 125 de ore de formare specifică în coaching, mentor coaching, coaching observat și evaluare de performanță.",
+        "url": "https://www.credential.net/4b92945b-a415-47bf-9c78-119f25a9234f#acc.6M5RBnjZ",
+        "logo": "/images/logos/ica.svg",
+        "cta": "Verifică certificarea"
+      }
+    ],
+    "entrepreneurEyebrow": "Antreprenoriat",
+    "entrepreneurTitle": "Inițiative în educație și învățare.",
+    "entrepreneurIntro": "Antreprenoriatul mi-a oferit un laborator foarte concret pentru ideile despre dezvoltare: oamenii aleg, bugetele sunt finite, iar soluțiile sunt testate în realitate.",
+    "entrepreneurItems": [
       {
         "title": "YoungMinds",
-        "description": "Fondat în 2019 ca proiect de suflet, inspirat de experiența de tată și de cele două fiice ale sale. Un spațiu în care copiii învață prin joacă, explorare, experiențe practice și experimente."
+        "description": "Inițiativă antreprenorială în educație.",
+        "logo": "/images/logos/youngminds.svg"
       },
       {
-        "title": "Coaching & psihologie",
-        "description": "Certified Professional Coach (CPC), certificat de International Coach Academy în 2020, și Professional Certified Coach (PCC), acreditat în 2021 de International Coaching Federation (ICF). Absolvent al Facultății de Psihologie, Universitatea Titu Maiorescu, în 2026."
-      },
-      {
-        "title": "Formare & educație",
-        "description": "Studii în managementul turismului la Universitatea din București, continuate la Academia de Studii Economice din București, plus certificări de Project Manager, Formator și Facilitator și calificare profesională de bucătar, Nivel III."
+        "title": "Teleskop",
+        "description": "Proiect în zona tehnologiei pentru educație și feedback.",
+        "logo": "/images/logos/teleskop.svg"
       }
-    ]
+    ],
+    "partnershipsEyebrow": "Proiecte & parteneriate",
+    "partnershipsTitle": "Colaborări în care ideile ajung în practică.",
+    "partnershipsIntro": "Păstrez aici doar colaborările pentru care există context public și o legătură clară cu munca mea.",
+    "partnershipItems": [
+      {
+        "title": "STUP",
+        "description": "Am susținut în mai multe ediții workshopuri pentru antreprenori, pe teme precum networkingul, negocierea, vizibilitatea și relațiile profesionale.",
+        "url": "https://stup.bancatransilvania.ro/newsroom/articole/articol/stup-unplugged-s3-cu-bogdan-vizitiu",
+        "cta": "Vezi colaborarea"
+      },
+      {
+        "title": "Humanistic Learning",
+        "description": "Colaborez în dezvoltarea și livrarea de programe corporate dedicate leadershipului, comunicării, negocierii, vânzărilor și performanței echipelor.",
+        "url": "https://www.humanisticlearning.com/trainer/vizitiu-bogdan/",
+        "cta": "Vezi profilul Humanistic"
+      }
+    ],
+    "resourcesEyebrow": "Resurse în publicații online",
+    "resourcesTitle": "Idei publicate și în afara acestui site.",
+    "resourcesIntro": "Articole, interviuri și apariții editoriale în care dezvolt teme despre leadership, coaching, negociere, networking și relații profesionale.",
+    "resourcesCta": "Explorează resursele",
+    "personalEyebrow": "Dincolo de roluri",
+    "personalTitle": "Ce rămâne dincolo de rolurile profesionale.",
+    "personalText": "În afara muncii, mă găsești mai degrabă gătind, la un joc de societate sau petrecând timp cu familia și prietenii. Sunt lucruri simple, dar spun destul de mult despre ce apreciez: curiozitate, relații și timp petrecut cu sens."
   },
   "en": {
-    "eyebrow": "About Bogdan",
+    "eyebrow": "About me",
     "titleLines": [
       "I have spent years trying to understand why some conversations change things,",
       "while others do not."
     ],
-    "intro": "I have spent a significant part of my career in business, sales, leadership, training and coaching. Across very different contexts, I kept noticing the same thing: people do not always need more information. Often, they already know a great deal.",
+    "intro": "I am a coach, trainer, consultant and entrepreneur, with more than 20 years of experience across business, leadership, education and people development.",
     "paragraphs": [
-      "They need to understand the situation they are in more clearly.",
-      "What is really happening? What are they trying to achieve? What is holding them back? What are they not seeing yet? And, above all, what can they do differently from here?",
-      "That is also how I work.",
-      "I do not believe in universal solutions applied mechanically to people. I use models, tools and experience, but they come after we understand the problem, not before.",
-      "Whether we are talking about leadership, negotiation, networking, performance or a difficult professional decision, good work begins, for me, with a conversation honest enough to let us see things as they are.",
-      "Then we can do something with them."
+      "I started in sales and management, working with targets, clients, teams and results. Over time, I became increasingly interested in the mechanisms behind them: how we make decisions, build relationships and make change stick.",
+      "Today I work with people and organizations starting from the same question: what is actually happening here?",
+      "I do not begin with the solution that sounds good. I begin with the context, the problem and the behaviors that keep it in place."
     ],
     "roleLine": "Coach. Trainer. Consultant. Entrepreneur.",
-    "closing": "But before any of those, a thinking partner for situations where the answer is not quite as simple as it first appeared.",
-    "cta": "Discover how I work",
-    "experienceEyebrow": "Experience",
-    "experienceTitle": "The experience behind the conversation",
-    "experienceIntro": "My perspective was shaped in contexts where decisions have consequences, relationships matter and theory has to survive contact with reality.",
-    "experienceItems": [
+    "closing": "For me, clarity comes before the solution.",
+    "cta": "How I work",
+    "rolesEyebrow": "What I bring to the conversation",
+    "rolesTitle": "Four perspectives. One question: what is useful here?",
+    "rolesIntro": "The roles are different. The way I work is consistent: understand the context before choosing the intervention.",
+    "rolesItems": [
       {
-        "title": "Business & entrepreneurship",
-        "description": "Decisions, priorities, accountability and the need to turn intention into something that actually works in practice."
+        "title": "Coach",
+        "description": "I work with people who want to think more clearly, make a decision or change a behavior that is no longer useful."
       },
       {
-        "title": "Sales & negotiation",
-        "description": "High-stakes conversations, different interests, pressure and the search for options that can sustain a relationship, not just an immediate result."
+        "title": "Trainer & facilitator",
+        "description": "I design applied learning experiences where real situations, practice and feedback matter more than the number of slides."
       },
       {
-        "title": "Leadership & people",
-        "description": "Situations where outcomes depend on clarity, trust, accountability and how people work together."
+        "title": "Consultant",
+        "description": "I work with organizations to clarify commercial and development challenges and build an intervention that fits the context."
       },
       {
-        "title": "Training, coaching & psychology",
-        "description": "Spaces where better questions, practice, feedback and an understanding of behavior can change how someone sees and approaches a real situation."
+        "title": "Entrepreneur",
+        "description": "I also view development from the perspective of someone making decisions with budgets, clients, risk, priorities and real consequences."
       }
     ],
     "methodEyebrow": "How I work",
     "methodTitle": "Understand. Clarify. Apply.",
-    "methodIntro": "I do not begin with a tool we have to use. I begin with the situation, and together we choose what is useful for it.",
+    "methodIntro": "I do not begin with a tool we are determined to use. I begin with the situation.",
     "methodItems": [
       {
         "title": "Understand",
-        "description": "We look at what is actually happening: the context, the people, the stakes, the tensions and what you have already tried."
+        "description": "We look at the context, people, stakes, tensions and what you have already tried."
       },
       {
         "title": "Clarify",
-        "description": "We separate the real problem from the noise, test assumptions and see more clearly what is worth changing."
+        "description": "We separate the real problem from the noise and test the assumptions keeping it in place."
       },
       {
         "title": "Apply",
-        "description": "We turn clarity into something concrete: a conversation, a decision, a behavior or an experiment you can test in the real world."
+        "description": "We turn clarity into a conversation, decision, behavior or concrete experiment."
       }
     ],
-    "proofEyebrow": "Professional milestones",
-    "proofTitle": "Real experience, across different contexts.",
-    "proofIntro": "A few selected milestones from the professional journey behind how I work today.",
-    "proofItems": [
+    "careerEyebrow": "Professional journey",
+    "careerTitle": "The experience behind how I work today.",
+    "careerIntro": "I did not arrive at coaching and training through a single route. My path runs through sales, management, consulting and entrepreneurship.",
+    "careerItems": [
       {
         "title": "Orange Romania",
-        "description": "A major part of more than 16 years of commercial experience, including roles as Business Retention Analyst, Business Sales Representative, Concept Store Manager and Direct Sales Manager, spanning commercial strategy, team development and performance."
+        "description": "A major part of more than 16 years of commercial experience, including roles as Business Retention Analyst, Business Sales Representative, Concept Store Manager and Direct Sales Manager."
       },
       {
-        "title": "Trend Consult",
-        "description": "Since 2016, consulting, training and organizational development across sales, management, commercial processes, KPIs, CRM and team development."
+        "title": "Trend Consult Group · 2016–2019",
+        "description": "Sales and business development consulting, leadership, coaching, sales audits and the development of programs tailored to client needs."
       },
+      {
+        "title": "Coaching & people development",
+        "description": "I deepened my work with decisions, behaviors and conversations through professional coach training and direct practice with people and teams."
+      },
+      {
+        "title": "Entrepreneurship",
+        "description": "I have built and supported initiatives in education and learning, connecting ideas, user experience and business reality."
+      }
+    ],
+    "credentialsEyebrow": "Training & credentials",
+    "credentialsTitle": "Experience matters. Training keeps it honest.",
+    "credentialsIntro": "For me, professional training complements experience and provides clear reference points for practice.",
+    "credentialItems": [
+      {
+        "title": "Professional Certified Coach — PCC",
+        "issuer": "International Coaching Federation",
+        "description": "Professional coaching credential issued by the International Coaching Federation.",
+        "url": "https://www.credly.com/badges/729e8376-4af0-4b8c-86a2-e54ef36a18cf/linked_in_profile",
+        "logo": "/images/logos/icf.svg",
+        "cta": "Verify credential"
+      },
+      {
+        "title": "Certified Professional Coach — CPC",
+        "issuer": "International Coach Academy · 2020",
+        "description": "A professional program including 125 hours of coach-specific training, mentor coaching, observed coaching and performance evaluation.",
+        "url": "https://www.credential.net/4b92945b-a415-47bf-9c78-119f25a9234f#acc.6M5RBnjZ",
+        "logo": "/images/logos/ica.svg",
+        "cta": "Verify certification"
+      }
+    ],
+    "entrepreneurEyebrow": "Entrepreneurship",
+    "entrepreneurTitle": "Initiatives in education and learning.",
+    "entrepreneurIntro": "Entrepreneurship gave me a very concrete laboratory for development ideas: people choose, budgets are finite and solutions are tested in reality.",
+    "entrepreneurItems": [
       {
         "title": "YoungMinds",
-        "description": "Founded in 2019 as a personal project inspired by his experience as a father and by his two daughters. A space where children learn through play, exploration, practical experiences and experiments."
+        "description": "An entrepreneurial initiative in education.",
+        "logo": "/images/logos/youngminds.svg"
       },
       {
-        "title": "Coaching & psychology",
-        "description": "Certified Professional Coach (CPC), certified by International Coach Academy in 2020, and Professional Certified Coach (PCC), accredited in 2021 by the International Coaching Federation (ICF). A 2026 graduate of the Faculty of Psychology at Titu Maiorescu University."
-      },
-      {
-        "title": "Training & education",
-        "description": "Studies in tourism management at the University of Bucharest, followed by studies at the Bucharest University of Economic Studies, plus certifications as Project Manager, Trainer and Facilitator and a Level III professional chef qualification."
+        "title": "Teleskop",
+        "description": "A project in education technology and feedback.",
+        "logo": "/images/logos/teleskop.svg"
       }
-    ]
+    ],
+    "partnershipsEyebrow": "Projects & partnerships",
+    "partnershipsTitle": "Collaborations where ideas become practice.",
+    "partnershipsIntro": "I keep this section focused on collaborations with public context and a clear connection to my work.",
+    "partnershipItems": [
+      {
+        "title": "STUP",
+        "description": "Across multiple editions, I have delivered workshops for entrepreneurs on networking, negotiation, visibility and professional relationships.",
+        "url": "https://stup.bancatransilvania.ro/newsroom/articole/articol/stup-unplugged-s3-cu-bogdan-vizitiu",
+        "cta": "View collaboration"
+      },
+      {
+        "title": "Humanistic Learning",
+        "description": "I collaborate on the development and delivery of corporate programs focused on leadership, communication, negotiation, sales and team performance.",
+        "url": "https://www.humanisticlearning.com/trainer/vizitiu-bogdan/",
+        "cta": "View Humanistic profile"
+      }
+    ],
+    "resourcesEyebrow": "Resources in online publications",
+    "resourcesTitle": "Ideas published beyond this website.",
+    "resourcesIntro": "Articles, interviews and editorial appearances covering leadership, coaching, negotiation, networking and professional relationships.",
+    "resourcesCta": "Explore resources",
+    "personalEyebrow": "Beyond the roles",
+    "personalTitle": "What remains beyond professional roles.",
+    "personalText": "Outside work, you are more likely to find me cooking, playing a board game or spending time with family and friends. Simple things, but they say a lot about what I value: curiosity, relationships and time spent with purpose."
   }
 }
