@@ -44,8 +44,8 @@ Build priority: Positioning + Home → Open courses → About/Credibility → Co
 | F03 | 13 years coaching and leadership on older public profile | Historical support only; do not use as the current headline counter without reconfirmation. | Verified, Stup |
 | F04 | 8 years entrepreneurship on older public profile | Historical support only; YoungMinds start is confirmed separately as 2019. | Verified, Stup |
 | F05 | Founder of YoungMinds since 2019; project inspired by his experience as a father and by his two daughters | Publishable as a personal, educational milestone. Avoid turning the daughters into a marketing device. | Owner-approved, 2026-08-12; Humanistic/Hilio support founding year |
-| F06 | International Coach Academy graduate, 2020 | A absolvit International Coach Academy în 2020. | Verified, Hilio/ICA |
-| F07 | Professional Certified Coach (PCC), International Coaching Federation | Current PCC credential is confirmed and publishable in 2026. | Owner-approved, 2026-08-12 |
+| F06 | Certified Professional Coach (CPC), International Coach Academy, 2020 | Present CPC as Bogdan's professional coach certification from ICA. Keep it distinct from the separate ICF PCC credential. | Owner-approved, 2026-08-12; ICA terminology verified |
+| F07 | Professional Certified Coach (PCC), International Coaching Federation (ICF) | Present PCC as Bogdan's current ICF credential. Do not describe ICF as the body that issued the ICA/CPC certification. | Owner-approved, 2026-08-12 |
 | F08 | Experience includes Orange and MediaPro | Text fact may be used with verification; do not use logos automatically. | Verified, Humanistic |
 | F09 | Expertise: Leadership & People Management; Sales & Negotiation; Executive & Team Coaching; Entrepreneurship | Use as site taxonomy basis. | Verified, Humanistic |
 | F10 | Works with executives, leaders, entrepreneurs, teams and young adults | Use audience emphasis according to page context. | Owner-approved, 2026-08-12; public-profile support |
@@ -67,7 +67,7 @@ Ulterior, și-a mutat tot mai mult atenția de la rezultate la mecanismele din s
 
 În 2019 a fondat **Youngminds**, un proiect de suflet inspirat de experiența de tată și de cele două fiice ale sale. Youngminds a pornit din dorința de a crea un spațiu în care copiii să poată învăța altfel: prin joacă, experiențe practice, explorare, experimente și interacțiune reală cu lumea din jurul lor. Proiectul a devenit pentru Bogdan și un laborator viu de educație, dezvoltare și înțelegere a felului în care copiii își construiesc autonomia, curiozitatea și încrederea în propriile capacități.
 
-În 2020 a absolvit International Coach Academy, iar ulterior a obținut acreditarea **Professional Certified Coach (PCC)** din partea International Coaching Federation. În practica sa de coaching lucrează cu executivi, manageri, antreprenori, echipe și tineri adulți care caută mai multă claritate, performanță și direcție în perioade de schimbare.
+În 2020 a absolvit International Coach Academy și a obținut certificarea **Certified Professional Coach (CPC)**. Ulterior, a obținut credentialul **Professional Certified Coach (PCC)** din partea International Coaching Federation (ICF). În practica sa de coaching lucrează cu executivi, manageri, antreprenori, echipe și tineri adulți care caută mai multă claritate, performanță și direcție în perioade de schimbare.
 
 Interesul pentru comportamentul uman și procesele de schimbare l-a condus firesc și către psihologie. În 2026 a absolvit **Facultatea de Psihologie din cadrul Universității Titu Maiorescu**, completând experiența practică din business, training și coaching cu o perspectivă academică asupra felului în care oamenii gândesc, învață și se dezvoltă.
 
@@ -111,7 +111,7 @@ Use this as the primary biographical source. Public pages should derive shorter,
 - S12 Stup Unplugged S3: `https://stup.bancatransilvania.ro/newsroom/articole/articol/stup-unplugged-s3-cu-bogdan-vizitiu`
 - S13 Apple Podcasts — Stup Unplugged: `https://podcasts.apple.com/ro/podcast/stup-unplugged/id1748751394?l=ro`
 - S14 Boost Your Impact — Influence: `https://www.humanisticlearning.com/course/boost-your-impact-influence/`
-- S15 Project owner confirmation, 2026-08-12 — approved master biography, current ICF PCC status, 2026 Psychology graduation at Titu Maiorescu University, and YoungMinds origin story.
+- S15 Project owner confirmation, 2026-08-12 — approved master biography, ICA Certified Professional Coach (CPC) certification, current ICF Professional Certified Coach (PCC) credential, 2026 Psychology graduation at Titu Maiorescu University, and YoungMinds origin story.
 
 ## Media/events reusable records
 
@@ -170,7 +170,7 @@ Primary social distribution channels planned: LinkedIn, Facebook, Instagram, Tik
 
 ## Inputs still required from Bogdan / project owner
 
-Resolved on 2026-08-12: updated master biography (former A01) and current 2026 ICF PCC status (former A03).
+Resolved on 2026-08-12: updated master biography (former A01), ICA/CPC certification wording, and current 2026 ICF/PCC status (former A03).
 
 | ID | Priority | Required input |
 |---|---|---|
@@ -205,7 +205,7 @@ Assets: `asset_type`, required `rights_status` (`owned`, `permission`, `embed-on
 1. Public facts must be traceable to evidence or explicit project-owner approval.
 2. Final site copy is not public until approved.
 3. Every photo/logo has a rights status. Public online does not mean free to reuse.
-4. Historical credentials must not be presented as current without current proof; current PCC status is confirmed for 2026.
+4. Keep ICA/CPC certification and ICF/PCC credentialing as two distinct claims; current PCC status is confirmed for 2026.
 5. Empty/unverified content is omitted rather than replaced with plausible filler.
 
 Execution order and definitions of done live in `/TODO.md`.
