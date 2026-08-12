@@ -1,0 +1,138 @@
+.catalog {
+  display: grid;
+  gap: clamp(34px, 4vw, 54px);
+}
+
+.filterRail {
+  position: sticky;
+  top: 76px;
+  z-index: 12;
+  padding: 14px 0 16px;
+  border-bottom: 1px solid var(--line);
+  background: rgb(250 249 246 / 96%);
+  backdrop-filter: blur(12px);
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 2px 0;
+  scrollbar-width: none;
+  overscroll-behavior-inline: contain;
+}
+
+.filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filterButton {
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  padding: 10px 16px;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.filterButton:hover {
+  border-color: var(--link);
+  color: var(--link);
+}
+
+.filterButtonActive,
+.filterButtonActive:hover {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: var(--ink);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: clamp(28px, 3.2vw, 46px);
+}
+
+.card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  border-top: 1px solid var(--ink);
+}
+
+.cardBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 26px 0 6px;
+}
+
+.cardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 20px;
+  margin-bottom: 24px;
+  color: var(--link);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.card h3 {
+  margin: 0 0 18px;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -.045em;
+  line-height: .98;
+}
+
+.card p {
+  max-width: 620px;
+  margin: 0 0 30px;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.cardLink {
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  .filterRail {
+    top: 68px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+}
+
+@media (max-width: 430px) {
+  .filterRail {
+    margin-inline: -16px;
+    padding-inline: 16px;
+  }
+
+  .filterButton {
+    padding: 10px 14px;
+  }
+
+  .cardMeta {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filterButton {
+    transition: none;
+  }
+}

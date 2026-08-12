@@ -1,12 +1,18 @@
 import type {Metadata} from 'next'
+import {CourseCatalog} from '@/components/course-catalog'
 import {ArrowLink,Eyebrow} from '@/components/ui'
-import {EditorialImage} from '@/components/portrait'
 import {getPrograms} from '@/lib/data'
 import {getCopy,getLocale} from '@/lib/i18n'
 import {buildPageMetadata} from '@/lib/seo'
 import styles from '../commercial.module.css'
 
-export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):Metadata{
+type SearchParams={
+  lang?:string
+  categorie?:string
+  category?:string
+}
+
+export function generateMetadata({searchParams}:{searchParams?:SearchParams}):Metadata{
   const locale=getLocale(searchParams?.lang)
   const copy=getCopy(locale).programs
   return buildPageMetadata({
@@ -17,10 +23,11 @@ export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):
   })
 }
 
-export default function Programs({searchParams}:{searchParams?:{lang?:string}}){
+export default function Programs({searchParams}:{searchParams?:SearchParams}){
   const locale=getLocale(searchParams?.lang)
   const copy=getCopy(locale).programs
   const programs=getPrograms(locale)
+  const initialCategory=locale==='ro'?searchParams?.categorie:searchParams?.category
 
   return <div className={styles.page}>
     <section className={styles.hero}>
@@ -34,37 +41,16 @@ export default function Programs({searchParams}:{searchParams?:{lang?:string}}){
     <section className={styles.section}>
       <div className={styles.sectionHead}>
         <div>
-          <Eyebrow>{copy.approachEyebrow}</Eyebrow>
-          <h2 className={styles.sectionTitle}>{copy.approachTitle}</h2>
-        </div>
-      </div>
-      <div className={styles.threeGrid}>
-        {copy.approachItems.map((item,i)=><article className={styles.editorialCard} key={item.title}>
-          <span className={styles.cardIndex}>0{i+1}</span>
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
-        </article>)}
-      </div>
-      <div style={{marginTop:'clamp(42px,5vw,68px)',maxWidth:'760px'}}>
-        <EditorialImage asset="workshop" kind="portrait" locale={locale}/>
-      </div>
-    </section>
-
-    <section className={styles.section}>
-      <div className={styles.sectionHead}>
-        <div>
           <Eyebrow>{copy.choiceEyebrow}</Eyebrow>
           <h2 className={styles.sectionTitle}>{copy.choiceTitle}</h2>
         </div>
       </div>
-      <div className={styles.programList}>
-        {programs.map((program,i)=><article className={styles.programChoice} key={program.slug}>
-          <span>0{i+1}</span>
-          <h2>{program.title}</h2>
-          <p>{program.description}</p>
-          <ArrowLink href={`/cursuri/${program.slug}`}>{copy.viewProgram}</ArrowLink>
-        </article>)}
-      </div>
+      <CourseCatalog
+        locale={locale}
+        programs={programs}
+        initialCategory={initialCategory}
+        viewProgramLabel={copy.viewProgram}
+      />
     </section>
 
     <section className={styles.cta}>
