@@ -37,7 +37,7 @@ export default function About({searchParams}:{searchParams?:{lang?:string}}){
       contact:'Start a conversation',
     }
 
-  return <div className={styles.page}>
+  return <div className={`${styles.page} balanced-commercial-page`}>
     <section className={styles.hero}>
       <Eyebrow>{copy.eyebrow}</Eyebrow>
       <div className={styles.heroGrid}>
