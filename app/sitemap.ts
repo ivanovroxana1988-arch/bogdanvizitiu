@@ -9,6 +9,7 @@ export default function sitemap():MetadataRoute.Sitemap{
     '/despre',
     '/cursuri',
     '/coaching',
+    '/coaching/executive-coaching',
     '/corporate',
     '/insights',
     '/resurse',
