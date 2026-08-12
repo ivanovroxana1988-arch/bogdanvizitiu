@@ -22,5 +22,5 @@ export const metadata:Metadata={
 }
 
 export default function EnglishLayout({children}:{children:React.ReactNode}){
-  return <html lang="en" className={`${sans.variable} ${serif.variable}`}><body><JsonLd data={siteIdentityJsonLd()}/><Header locale="en"/><main>{children}</main><Footer locale="en"/><Analytics/></body></html>
+  return <html lang="en" className={`${sans.variable} ${serif.variable}`}><body><JsonLd data={siteIdentityJsonLd('en')}/><Header locale="en"/><main>{children}</main><Footer locale="en"/><Analytics/></body></html>
 }
