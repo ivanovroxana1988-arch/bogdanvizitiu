@@ -21,6 +21,21 @@ export default function About({searchParams}:{searchParams?:{lang?:string}}){
   const locale=getLocale(searchParams?.lang)
   const copy=aboutCopy[locale]
   const contactCopy=getCopy(locale).contact
+  const ideas=locale==='ro'
+    ?{
+      eyebrow:'Idei & metodologie',
+      title:'Cum se leagă practica de ideile din spate.',
+      intro:'Modele de coaching, lucrări și instrumente dezvoltate de Bogdan oferă context pentru felul în care abordează conversațiile, învățarea și schimbarea.',
+      cta:'Explorează resursele',
+      contact:'Începe o conversație',
+    }
+    :{
+      eyebrow:'Ideas & methodology',
+      title:'How the practice connects to the ideas behind it.',
+      intro:'Coaching models, papers and tools developed by Bogdan provide context for the way he approaches conversations, learning and change.',
+      cta:'Explore resources',
+      contact:'Start a conversation',
+    }
 
   return <div className={styles.page}>
     <section className={styles.hero}>
@@ -77,6 +92,19 @@ export default function About({searchParams}:{searchParams?:{lang?:string}}){
       </div>
     </section>
 
+    <section className={styles.section} id="ideas-and-methodology">
+      <div className={styles.sectionHead}>
+        <div>
+          <Eyebrow>{ideas.eyebrow}</Eyebrow>
+          <h2 className={styles.sectionTitle}>{ideas.title}</h2>
+        </div>
+        <div className={styles.sectionIntro}>
+          <p style={{marginTop:0}}>{ideas.intro}</p>
+          <ArrowLink href="/resurse">{ideas.cta}</ArrowLink>
+        </div>
+      </div>
+    </section>
+
     <section className={styles.proof} id="professional-milestones">
       <div className={styles.proofInner}>
         <div>
@@ -97,7 +125,7 @@ export default function About({searchParams}:{searchParams?:{lang?:string}}){
     <section className={styles.cta}>
       <Eyebrow>{contactCopy.eyebrow}</Eyebrow>
       <h2 className={styles.ctaTitle}>{contactCopy.title}</h2>
-      <ArrowLink href="/contact">{contactCopy.submit}</ArrowLink>
+      <ArrowLink href="/contact">{ideas.contact}</ArrowLink>
     </section>
   </div>
 }
