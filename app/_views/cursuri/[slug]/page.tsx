@@ -42,7 +42,7 @@ export default function Program({params,searchParams}:{params:{slug:string};sear
           <Eyebrow>{copy.recognitionEyebrow}</Eyebrow>
           <h2 className={styles.statementSmall}>{program.recognitionTitle}</h2>
         </div>
-        <ul className={styles.diagnosticList}>
+        <ul className={`${styles.diagnosticList} clean-diagnostic-list`}>
           {program.recognitionItems.map(item=><li key={item}>{item}</li>)}
         </ul>
       </div>
