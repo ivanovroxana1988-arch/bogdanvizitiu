@@ -2,9 +2,10 @@ import type {Metadata} from 'next'
 import {notFound} from 'next/navigation'
 import {getPrograms,programSlugs} from '@/lib/data'
 import {ArrowLink,Eyebrow} from '@/components/ui'
+import {JsonLd} from '@/components/json-ld'
 import {getCopy,getLocale} from '@/lib/i18n'
 import {localizePath} from '@/lib/routes'
-import {buildPageMetadata} from '@/lib/seo'
+import {buildPageMetadata,localizedUrl,SITE_URL} from '@/lib/seo'
 import styles from '../../commercial.module.css'
 
 const relatedInsightByProgram:Record<string,{slug:string;ro:string;en:string}>={
@@ -72,13 +73,38 @@ export default function Program({params,searchParams}:{params:{slug:string};sear
   const copy=getCopy(locale).programDetail
   const program=getPrograms(locale).find(item=>item.slug===params.slug)
   if(!program)notFound()
+
   const relatedInsight=relatedInsightByProgram[program.slug]
+  const canonical=localizedUrl(`/cursuri/${program.slug}`,locale)
+  const heading=pageHeading(program.slug,locale,program.title)
+  const courseJsonLd={
+    '@context':'https://schema.org',
+    '@type':'Course',
+    '@id':`${canonical}#course`,
+    name:heading,
+    description:program.description,
+    url:canonical,
+    provider:{'@id':`${SITE_URL}/#person`},
+    inLanguage:locale==='ro'?'ro-RO':'en',
+  }
+
+  const practicalTitle=locale==='ro'
+    ?'Ediții deschise: date, locație și format'
+    :'Open editions: dates, location and format'
+  const organizationTitle=locale==='ro'
+    ?'Tema este relevantă pentru o echipă sau pentru organizație?'
+    :'Is the topic relevant to a team or organization?'
+  const organizationText=locale==='ro'
+    ?'Programul poate fi adaptat unui context organizațional, pornind de la situațiile reale ale echipei și de la rezultatul pe care vrei să îl vezi diferit în practică.'
+    :'The program can be adapted to an organizational context, starting from the team’s real situations and the result you want to see change in practice.'
 
   return <div className={`${styles.page} balanced-commercial-page`}>
+    <JsonLd data={courseJsonLd}/>
+
     <section className={styles.hero}>
       <Eyebrow>{copy.eyebrow}</Eyebrow>
       <div className={styles.heroGrid}>
-        <h1>{pageHeading(program.slug,locale,program.title)}</h1>
+        <h1>{heading}</h1>
         <p className={styles.heroIntro}>{program.detail}</p>
       </div>
     </section>
@@ -160,6 +186,7 @@ export default function Program({params,searchParams}:{params:{slug:string};sear
         <article className={styles.proofCard}>
           <h3>{copy.instructorTitle}</h3>
           <p>{copy.instructorText}</p>
+          <ArrowLink href={localizePath('/despre',locale)}>{locale==='ro'?'Vezi parcursul lui Bogdan':'See Bogdan’s background'}</ArrowLink>
         </article>
       </div>
     </section>
@@ -168,10 +195,21 @@ export default function Program({params,searchParams}:{params:{slug:string};sear
       <div className={styles.practical}>
         <div><Eyebrow>{copy.faqEyebrow}</Eyebrow></div>
         <div>
-          <h2 className={styles.statementSmall}>{copy.faqTitle}</h2>
+          <h2 className={styles.statementSmall}>{practicalTitle}</h2>
           <p className={styles.sectionIntro} style={{marginTop:'28px'}}>{copy.faqText}</p>
         </div>
       </div>
+    </section>
+
+    <section className={styles.section}>
+      <div className={styles.sectionHead}>
+        <div>
+          <Eyebrow>{locale==='ro'?'Pentru organizații':'For organizations'}</Eyebrow>
+          <h2 className={styles.sectionTitle}>{organizationTitle}</h2>
+        </div>
+        <p className={styles.sectionIntro}>{organizationText}</p>
+      </div>
+      <ArrowLink href={localizePath('/corporate',locale)}>{locale==='ro'?'Vezi abordarea pentru organizații':'Explore the approach for organizations'}</ArrowLink>
     </section>
 
     {relatedInsight&&<section className={styles.section}>
