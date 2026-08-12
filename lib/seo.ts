@@ -60,6 +60,10 @@ export function siteIdentityJsonLd(){
         url:`${SITE_URL}/despre`,
         image:`${SITE_URL}/images/bogdan/bogdan-hero.avif`,
         jobTitle:'Coach, trainer, antreprenor',
+        sameAs:[
+          'https://www.linkedin.com/in/bogdan-vizitiu-pcc-1796a73/',
+          'https://www.facebook.com/bogdan.o.vizitiu',
+        ],
       },
     ],
   }
