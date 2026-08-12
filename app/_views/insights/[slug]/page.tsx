@@ -30,6 +30,24 @@ const commercialInsightSlugs=new Set([
   'coaching-sau-consultanta-de-ce-ai-nevoie-de-fapt',
 ])
 
+const editorialCommercialLinks:Record<string,{href:string;ro:string;en:string}>={
+  'de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives':{
+    href:'/coaching/executive-coaching',
+    ro:'Executive coaching pentru manageri și lideri',
+    en:'Executive coaching for managers and leaders',
+  },
+  'negocierea-nu-este-doar-despre-argumente':{
+    href:'/cursuri/arta-negocierii',
+    ro:'Curs de negociere: Negotiation & Influence',
+    en:'Negotiation course: Negotiation & Influence',
+  },
+  'networkingul-nu-incepe-cu-schimbul-de-contacte':{
+    href:'/cursuri/networking',
+    ro:'Curs de networking profesional',
+    en:'Professional networking course',
+  },
+}
+
 function renderInlineLinks(text:string,locale:'ro'|'en'){
   return text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part,index)=>{
     const match=part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
@@ -88,6 +106,7 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
   if(!insight)notFound()
 
   const related=insights.filter(item=>item.slug!==insight.slug).slice(0,2)
+  const editorialCommercialLink=editorialCommercialLinks[insight.slug]
   const hasCommercialCta=commercialInsightSlugs.has(insight.slug)
   const commercialCta=locale==='ro'
     ?{title:'Lucrezi cu o situație asemănătoare?',label:'Începe o conversație'}
@@ -143,6 +162,13 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
         </section>)}
 
         {insight.closing.map(paragraph=><p key={paragraph}>{renderInlineLinks(paragraph,locale)}</p>)}
+
+        {editorialCommercialLink&&<section style={{borderTop:'1px solid var(--line)',paddingTop:28}}>
+          <Eyebrow>{locale==='ro'?'Legat de subiect':'Related to this topic'}</Eyebrow>
+          <ArrowLink href={localizePath(editorialCommercialLink.href,locale)}>
+            {locale==='ro'?editorialCommercialLink.ro:editorialCommercialLink.en}
+          </ArrowLink>
+        </section>}
 
         {insight.cta.href&&!(hasCommercialCta&&insight.cta.href==='/contact')&&<section>
           <h2>{insight.cta.title}</h2>
