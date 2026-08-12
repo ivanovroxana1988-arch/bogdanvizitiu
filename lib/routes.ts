@@ -25,6 +25,10 @@ const insightSlugRoToEn:Record<string,string>={
   'nu-invatam-doar-cu-mintea':'we-do-not-learn-with-the-mind-alone',
   'cat-din-viata-traim-pe-pilot-automat':'how-much-of-life-do-we-live-on-autopilot',
   'negocierea-nu-este-doar-despre-argumente':'negotiation-is-not-just-about-arguments',
+  'de-ce-unele-conversatii-manageriale-schimba-lucrurile':'why-some-management-conversations-change-things',
+  'stii-ce-ai-de-facut-de-ce-nu-faci':'you-know-what-to-do-why-are-you-not-doing-it',
+  'o-decizie-buna-incepe-inainte-sa-alegi':'a-good-decision-starts-before-you-choose',
+  'coaching-sau-consultanta-de-ce-ai-nevoie-de-fapt':'coaching-or-consulting-what-do-you-actually-need',
 }
 
 const enToRo=Object.fromEntries(Object.entries(roToEn).map(([ro,en])=>[en,ro])) as Record<string,string>
