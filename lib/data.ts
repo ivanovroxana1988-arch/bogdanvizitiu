@@ -3,11 +3,19 @@ import livesInsight from '@/content/insights/lives.json'
 import emotionsLearningInsight from '@/content/insights/emotii-invatare.json'
 import autopilotInsight from '@/content/insights/pilot-automat.json'
 import negotiationEmotionsInsight from '@/content/insights/negociere-emotii.json'
+import managementConversationsInsight from '@/content/insights/conversatii-manageriale.json'
+import knowingActionInsight from '@/content/insights/stii-ce-ai-de-facut.json'
+import decisionClarityInsight from '@/content/insights/decizie-buna.json'
+import coachingConsultingInsight from '@/content/insights/coaching-sau-consultanta.json'
 import {content} from '@/lib/content'
 import {canPublishAppearance,isPublishableCourseProduct} from '@/lib/content-schema'
 import type {Locale} from '@/lib/i18n'
 
 const allInsightItems=[
+  managementConversationsInsight,
+  decisionClarityInsight,
+  coachingConsultingInsight,
+  knowingActionInsight,
   insightItems[0],
   livesInsight,
   emotionsLearningInsight,
