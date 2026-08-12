@@ -1,7 +1,7 @@
 [
   {
     "slug": "networking",
-    "title": {"ro": "Networking", "en": "Networking"},
+    "title": {"ro": "Professional Networking", "en": "Professional Networking"},
     "type": "open-course",
     "status": "validated",
     "proof": ["Stup"],
@@ -108,7 +108,7 @@
   },
   {
     "slug": "arta-negocierii",
-    "title": {"ro": "Arta Negocierii", "en": "The Art of Negotiation"},
+    "title": {"ro": "Negotiation & Influence", "en": "Negotiation & Influence"},
     "type": "open-course",
     "status": "validated",
     "proof": ["Stup"],
