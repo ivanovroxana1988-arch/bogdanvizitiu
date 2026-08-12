@@ -8,11 +8,11 @@ import {getCopy,getLocale} from '@/lib/i18n'
 import {localizedUrl,SITE_URL} from '@/lib/seo'
 import styles from '../insights.module.css'
 
-const insightImages:Record<string,'speaking'|'coaching'|'workshop'|'candid'>={
-  'de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives':'coaching',
-  'nu-invatam-doar-cu-mintea':'workshop',
-  'cat-din-viata-traim-pe-pilot-automat':'candid',
-  'negocierea-nu-este-doar-despre-argumente':'workshop',
+const insightConcepts:Record<string,'livesEditorial'|'emotionsLearningEditorial'|'mindfulnessAutopilotEditorial'|'negotiationEditorial'>={
+  'de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives':'livesEditorial',
+  'nu-invatam-doar-cu-mintea':'emotionsLearningEditorial',
+  'cat-din-viata-traim-pe-pilot-automat':'mindfulnessAutopilotEditorial',
+  'negocierea-nu-este-doar-despre-argumente':'negotiationEditorial',
 }
 
 export function generateStaticParams(){
@@ -65,9 +65,11 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
     day:'numeric',month:'long',year:'numeric'
   }).format(new Date(`${insight.publishedAt}T12:00:00Z`))
 
-  const isNetworking=insight.slug==='networkingul-nu-incepe-cu-schimbul-de-contacte'
   const path=`/insights/${insight.slug}`
   const canonical=localizedUrl(path,locale)
+  const conceptAsset=insight.slug==='networkingul-nu-incepe-cu-schimbul-de-contacte'
+    ? 'networkingEditorial' as const
+    : insightConcepts[insight.slug]
   const articleJsonLd={
     '@context':'https://schema.org',
     '@type':'BlogPosting',
@@ -95,9 +97,9 @@ export default function Insight({params,searchParams}:{params:{slug:string};sear
         <p><strong>Bogdan Vizitiu</strong><br/>{date}<br/>{insight.readTime}</p>
       </aside>
       <article className={styles.body}>
-        {isNetworking
-          ? <ConceptImage asset="networkingEditorial" kind="wide" className={styles.heroImage}/>
-          : <EditorialImage asset={insightImages[insight.slug]||'candid'} kind="event" className={styles.heroImage}/>
+        {conceptAsset
+          ? <ConceptImage asset={conceptAsset} kind="wide" className={styles.heroImage}/>
+          : <EditorialImage asset="candid" kind="event" className={styles.heroImage}/>
         }
 
         {insight.intro.map(paragraph=><p key={paragraph}>{paragraph}</p>)}

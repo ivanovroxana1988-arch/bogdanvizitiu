@@ -6,11 +6,11 @@ import {getCopy,getLocale} from '@/lib/i18n'
 import {buildPageMetadata} from '@/lib/seo'
 import styles from './insights.module.css'
 
-const insightImages:Record<string,'speaking'|'coaching'|'workshop'|'candid'>={
-  'de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives':'coaching',
-  'nu-invatam-doar-cu-mintea':'workshop',
-  'cat-din-viata-traim-pe-pilot-automat':'candid',
-  'negocierea-nu-este-doar-despre-argumente':'workshop',
+const insightConcepts:Record<string,'livesEditorial'|'emotionsLearningEditorial'|'mindfulnessAutopilotEditorial'|'negotiationEditorial'>={
+  'de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives':'livesEditorial',
+  'nu-invatam-doar-cu-mintea':'emotionsLearningEditorial',
+  'cat-din-viata-traim-pe-pilot-automat':'mindfulnessAutopilotEditorial',
+  'negocierea-nu-este-doar-despre-argumente':'negotiationEditorial',
 }
 
 export function generateMetadata({searchParams}:{searchParams?:{lang?:string}}):Metadata{
@@ -51,7 +51,10 @@ export default function Insights({searchParams}:{searchParams?:{lang?:string}}){
         <ArrowLink href={`/insights/${feature.slug}`}>{copy.readArticle}</ArrowLink>
       </article>
       <div className={styles.secondary}>{secondary.map((insight,i)=><article className={styles.card} key={insight.slug}>
-        <EditorialImage asset={insightImages[insight.slug]||'candid'} kind="event" className={styles.cardImage}/>
+        {insightConcepts[insight.slug]
+          ? <ConceptImage asset={insightConcepts[insight.slug]} kind="wide" className={styles.cardImage}/>
+          : <EditorialImage asset="candid" kind="event" className={styles.cardImage}/>
+        }
         <span className={styles.number}>0{i+2}</span><span className={styles.category}>{insight.category}</span>
         <h2>{insight.title}</h2><p>{insight.excerpt}</p>
         <ArrowLink href={`/insights/${insight.slug}`}>{copy.readArticle}</ArrowLink>
