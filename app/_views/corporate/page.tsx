@@ -20,7 +20,7 @@ export default function Corporate({searchParams}:{searchParams?:{lang?:string}})
   const locale=getLocale(searchParams?.lang)
   const copy=getCopy(locale).corporate
 
-  return <div className={styles.page}>
+  return <div className={`${styles.page} balanced-commercial-page`}>
     <section className={styles.hero}>
       <Eyebrow>{copy.eyebrow}</Eyebrow>
       <div className={styles.heroGrid}>
