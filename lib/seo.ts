@@ -41,7 +41,7 @@ export function buildPageMetadata({title,description,path,locale}:{title:string;
   }
 }
 
-export function siteIdentityJsonLd(){
+export function siteIdentityJsonLd(locale:Locale='ro'){
   return {
     '@context':'https://schema.org',
     '@graph':[
@@ -57,9 +57,9 @@ export function siteIdentityJsonLd(){
         '@type':'Person',
         '@id':`${SITE_URL}/#person`,
         name:'Bogdan Vizitiu',
-        url:`${SITE_URL}/despre`,
+        url:localizedUrl('/despre',locale),
         image:`${SITE_URL}/images/bogdan/bogdan-hero.avif`,
-        jobTitle:'Coach, trainer, antreprenor',
+        jobTitle:locale==='ro'?'Coach, trainer, antreprenor':'Coach, trainer, entrepreneur',
       },
     ],
   }
