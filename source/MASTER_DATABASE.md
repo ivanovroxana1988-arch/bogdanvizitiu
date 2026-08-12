@@ -1,6 +1,6 @@
 # Master database — BogdanVizitiu.com
 
-Snapshot generated from `Bogdan_Vizitiu_Master_Database_Site.xlsx` on 2026-08-11.
+Snapshot generated from `Bogdan_Vizitiu_Master_Database_Site.xlsx` on 2026-08-11 and updated on 2026-08-12 with project-owner-approved profile facts.
 
 This is the repo-readable research master. The original workbook remains the richer working file; this snapshot exists so Codex can build from the verified dataset without guessing.
 
@@ -11,8 +11,8 @@ This is the repo-readable research master. The original workbook remains the ric
 - Verified public sources: 14
 - Media/events records: 10
 - Visual asset records: 10
-- Missing inputs: 15
-- Critical unresolved inputs: 8
+- Missing inputs: 13
+- Critical unresolved inputs: 6
 
 Build priority: Positioning + Home → Open courses → About/Credibility → Corporate → Coaching → Media/Thought Leadership → Conversion system.
 
@@ -39,19 +39,47 @@ Build priority: Positioning + Home → Open courses → About/Credibility → Co
 
 | ID | Fact | Publication guidance | Verification |
 |---|---|---|---|
-| F01 | Coach, Trainer, Antreprenor | Coach, trainer și antreprenor cu experiență în dezvoltarea oamenilor și echipelor. | Verified, Stup |
-| F02 | 24 years in sales | 24 de ani de experiență în vânzări. | Verified, Stup; update when needed |
-| F03 | 13 years coaching and leadership | 13 ani de experiență în coaching și leadership. | Verified, Stup; update annually if confirmed |
-| F04 | 8 years entrepreneurship | 8 ani de experiență antreprenorială. | Verified, Stup; exact start still worth confirming |
-| F05 | Founder & Managing Partner YoungMinds since 2019 | În 2019 a fondat YoungMinds, concept educațional de afterschool și youth coaching. | Verified, Humanistic/Hilio |
+| F01 | Coach, trainer, consultant and entrepreneur | Bogdan Vizitiu este coach, trainer, consultant și antreprenor, cu experiență construită la intersecția dintre business, leadership, educație și dezvoltarea oamenilor. | Owner-approved, 2026-08-12 |
+| F02 | Over 20 years of professional experience; over 16 years of commercial experience | Use the owner-approved wording rather than older public-profile counters when presenting current experience. | Owner-approved, 2026-08-12 |
+| F03 | 13 years coaching and leadership on older public profile | Historical support only; do not use as the current headline counter without reconfirmation. | Verified, Stup |
+| F04 | 8 years entrepreneurship on older public profile | Historical support only; YoungMinds start is confirmed separately as 2019. | Verified, Stup |
+| F05 | Founder of YoungMinds since 2019; project inspired by his experience as a father and by his two daughters | Publishable as a personal, educational milestone. Avoid turning the daughters into a marketing device. | Owner-approved, 2026-08-12; Humanistic/Hilio support founding year |
 | F06 | International Coach Academy graduate, 2020 | A absolvit International Coach Academy în 2020. | Verified, Hilio/ICA |
-| F07 | PCC ICF appears historically on public profiles | Do not publish as a current credential until 2026 proof is supplied. | Historical verification only; public credential showed expiry 2025 |
+| F07 | Professional Certified Coach (PCC), International Coaching Federation | Current PCC credential is confirmed and publishable in 2026. | Owner-approved, 2026-08-12 |
 | F08 | Experience includes Orange and MediaPro | Text fact may be used with verification; do not use logos automatically. | Verified, Humanistic |
 | F09 | Expertise: Leadership & People Management; Sales & Negotiation; Executive & Team Coaching; Entrepreneurship | Use as site taxonomy basis. | Verified, Humanistic |
-| F10 | Works with executives, leaders and professionals | Reduce legacy youth emphasis for this brand unless Bogdan asks otherwise. | Verified/partial, Hilio |
-| F11 | Tourism degree, University of Bucharest, 2000–2004 | Confirm official degree wording before publishing formal CV details. | Profile-verified, Hilio |
-| F12 | International Tourism master, ASE, 2004–2006 | Confirm official wording. | Profile-verified, Hilio |
+| F10 | Works with executives, leaders, entrepreneurs, teams and young adults | Use audience emphasis according to page context. | Owner-approved, 2026-08-12; public-profile support |
+| F11 | University of Bucharest studies in tourism management | Publish in narrative wording. Formal diploma wording can still be checked before a detailed CV is produced. | Owner-approved, 2026-08-12; Hilio support |
+| F12 | Studies continued at Bucharest University of Economic Studies | Publish in narrative wording; confirm exact historical master title before a formal academic CV is produced. | Owner-approved, 2026-08-12; Hilio support |
 | F13 | Creator of LIVES coaching model | Can become signature framework after 2026 update. | Verified, ICA archive |
+| F14 | Graduate of the Faculty of Psychology, Titu Maiorescu University, 2026 | Treat psychology as an important evolution in his professional and intellectual trajectory, not merely another credential in a list. | Owner-approved, 2026-08-12 |
+| F15 | Project Manager, Trainer and Facilitator certifications; Level III professional chef qualification | Publishable as supporting formation details when context warrants. | Owner-approved, 2026-08-12; profile support |
+
+## Approved master biography — 2026-08-12
+
+Bogdan Vizitiu este coach, trainer, consultant și antreprenor, cu peste 20 de ani de experiență construită la intersecția dintre business, leadership, educație și dezvoltarea oamenilor.
+
+Și-a început parcursul profesional în vânzări și management, acumulând peste 16 ani de experiență comercială, o mare parte în cadrul Orange România. A ocupat roluri precum Business Retention Analyst, Business Sales Representative, Concept Store Manager și Direct Sales Manager, coordonând echipe, dezvoltând modele comerciale și lucrând direct cu procese de performanță, retenție și dezvoltare a businessului.
+
+Ulterior, și-a mutat tot mai mult atenția de la rezultate la mecanismele din spatele lor: cum iau oamenii decizii, cum se construiesc echipe performante și ce face ca o schimbare să reziste în timp.
+
+În 2016 s-a alăturat Trend Consult ca consultant, unde a fost format ca trainer și a lucrat în proiecte de dezvoltare organizațională, vânzări și management. De-a lungul timpului a dezvoltat și implementat procese de vânzare, strategii pentru echipe de sales și telesales, sisteme de KPI și recompensare, proiecte CRM și intervenții de management comercial. Ca trainer și facilitator a lucrat cu echipe și lideri în zone precum leadership, people management, sales și negociere, customer care, comunicare, mindset și performance management.
+
+În 2019 a fondat **Youngminds**, un proiect de suflet inspirat de experiența de tată și de cele două fiice ale sale. Youngminds a pornit din dorința de a crea un spațiu în care copiii să poată învăța altfel: prin joacă, experiențe practice, explorare, experimente și interacțiune reală cu lumea din jurul lor. Proiectul a devenit pentru Bogdan și un laborator viu de educație, dezvoltare și înțelegere a felului în care copiii își construiesc autonomia, curiozitatea și încrederea în propriile capacități.
+
+În 2020 a absolvit International Coach Academy, iar ulterior a obținut acreditarea **Professional Certified Coach (PCC)** din partea International Coaching Federation. În practica sa de coaching lucrează cu executivi, manageri, antreprenori, echipe și tineri adulți care caută mai multă claritate, performanță și direcție în perioade de schimbare.
+
+Interesul pentru comportamentul uman și procesele de schimbare l-a condus firesc și către psihologie. În 2026 a absolvit **Facultatea de Psihologie din cadrul Universității Titu Maiorescu**, completând experiența practică din business, training și coaching cu o perspectivă academică asupra felului în care oamenii gândesc, învață și se dezvoltă.
+
+Este absolvent al Universității din București, cu studii în managementul turismului, și și-a continuat formarea la Academia de Studii Economice din București. Parcursul său include și certificări de Project Manager, Formator și Facilitator, precum și o calificare profesională de bucătar, Nivel III, una dintre acele deviații aparent improbabile care spun, de fapt, destul de mult despre curiozitatea lui.
+
+Astăzi, Bogdan lucrează la intersecția dintre **leadership, coaching, psihologie și business**. Experiența de manager, antreprenor, trainer, coach și tată i-a construit o perspectivă în care dezvoltarea nu începe cu o soluție standard, ci cu înțelegerea contextului, a omului și a lucrurilor care se întâmplă cu adevărat.
+
+Pentru că, de cele mai multe ori, problema nu este că oamenii nu știu ce au de făcut.
+
+Este că între a ști și a face se întâmplă partea cu adevărat interesantă.
+
+Use this as the primary biographical source. Public pages should derive shorter, context-specific versions rather than publishing the entire master biography by default.
 
 ## Products & services
 
@@ -83,6 +111,7 @@ Build priority: Positioning + Home → Open courses → About/Credibility → Co
 - S12 Stup Unplugged S3: `https://stup.bancatransilvania.ro/newsroom/articole/articol/stup-unplugged-s3-cu-bogdan-vizitiu`
 - S13 Apple Podcasts — Stup Unplugged: `https://podcasts.apple.com/ro/podcast/stup-unplugged/id1748751394?l=ro`
 - S14 Boost Your Impact — Influence: `https://www.humanisticlearning.com/course/boost-your-impact-influence/`
+- S15 Project owner confirmation, 2026-08-12 — approved master biography, current ICF PCC status, 2026 Psychology graduation at Titu Maiorescu University, and YoungMinds origin story.
 
 ## Media/events reusable records
 
@@ -141,11 +170,11 @@ Primary social distribution channels planned: LinkedIn, Facebook, Instagram, Tik
 
 ## Inputs still required from Bogdan / project owner
 
+Resolved on 2026-08-12: updated master biography (former A01) and current 2026 ICF PCC status (former A03).
+
 | ID | Priority | Required input |
 |---|---|---|
-| A01 | Critical | Updated bio: 150 words + 50 words + 5 career moments |
 | A02 | Critical | Positioning answer: first choice for whom and for what problem? |
-| A03 | Critical | Current 2026 ICF credential evidence and exact wording |
 | A04 | Critical | 2026–2027 offer list with price, duration, capacity and dates |
 | A05 | Critical | 20–40 original high-resolution photographs |
 | A06 | High | 3–5 video clips + ideally new 45–60 sec intro |
@@ -173,10 +202,10 @@ Assets: `asset_type`, required `rights_status` (`owned`, `permission`, `embed-on
 
 ## Working rules
 
-1. Public facts must be traceable to evidence.
+1. Public facts must be traceable to evidence or explicit project-owner approval.
 2. Final site copy is not public until approved.
 3. Every photo/logo has a rights status. Public online does not mean free to reuse.
-4. Historical credentials must not be presented as current without current proof.
+4. Historical credentials must not be presented as current without current proof; current PCC status is confirmed for 2026.
 5. Empty/unverified content is omitted rather than replaced with plausible filler.
 
 Execution order and definitions of done live in `/TODO.md`.
