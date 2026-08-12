@@ -55,7 +55,10 @@
 }
 
 @media (max-width: 900px) {
-  .wide,
+  .wide {
+    aspect-ratio: 16 / 10;
+  }
+
   .editorial,
   .insight {
     aspect-ratio: 4 / 3;
