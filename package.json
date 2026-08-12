@@ -1,6 +1,8 @@
 {
   "scripts": {
+    "predev": "node scripts/prepare-images.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/prepare-images.mjs",
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit"
