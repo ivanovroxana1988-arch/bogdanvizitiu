@@ -20,7 +20,7 @@
   font-family: var(--font-serif), Georgia, serif;
   font-size: clamp(2rem, 3vw, 3.1rem);
   font-weight: 400;
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
   line-height: 1;
 }
 
@@ -29,7 +29,7 @@
   max-width: 230px;
   color: var(--muted);
   font-size: 11px;
-  letter-spacing: .035em;
+  letter-spacing: 0.035em;
   line-height: 1.55;
 }
 
@@ -50,8 +50,8 @@
   font-family: var(--font-serif), Georgia, serif;
   font-size: clamp(3.4rem, 6vw, 6rem);
   font-weight: 400;
-  letter-spacing: -.045em;
-  line-height: .98;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
 }
 
 .situationList {
@@ -78,7 +78,7 @@
   color: var(--link);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 

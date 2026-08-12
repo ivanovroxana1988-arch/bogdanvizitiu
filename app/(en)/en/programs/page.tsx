@@ -1,11 +1,11 @@
-import View,{generateMetadata as createMetadata} from '@/app/_views/cursuri/page'
+import View, { generateMetadata as createMetadata } from '@/app/_views/cursuri/page'
 
-type PageProps={searchParams?:{category?:string}}
+type PageProps = { searchParams?: { category?: string } }
 
-export function generateMetadata(){
-  return createMetadata({searchParams:{lang:'en'}})
+export function generateMetadata() {
+  return createMetadata({ searchParams: { lang: 'en' } })
 }
 
-export default function Page({searchParams}:PageProps){
-  return <View searchParams={{lang:'en',category:searchParams?.category}}/>
+export default function Page({ searchParams }: PageProps) {
+  return <View searchParams={{ lang: 'en', category: searchParams?.category }} />
 }

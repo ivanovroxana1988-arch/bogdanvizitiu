@@ -5,14 +5,14 @@
 }
 
 .page-hero-grid {
-  grid-template-columns: minmax(0, 1fr) minmax(320px, .82fr);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
   gap: clamp(36px, 5.5vw, 76px);
   align-items: center;
 }
 
 .page-hero h1 {
   font-size: clamp(3.15rem, 5vw, 5.25rem);
-  line-height: .99;
+  line-height: 0.99;
   max-width: 840px;
 }
 
@@ -30,14 +30,14 @@
 }
 
 .balanced-commercial-page > section:first-child > div {
-  grid-template-columns: minmax(0, 1fr) minmax(320px, .82fr) !important;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr) !important;
   gap: clamp(36px, 5.5vw, 76px) !important;
   align-items: center !important;
 }
 
 .balanced-commercial-page > section:first-child h1 {
   font-size: clamp(3.15rem, 5vw, 5.4rem) !important;
-  line-height: .99 !important;
+  line-height: 0.99 !important;
   max-width: 860px !important;
 }
 
@@ -51,25 +51,25 @@
    to prove that it is important. */
 .hero h1 {
   font-size: clamp(3.7rem, 6vw, 6.25rem);
-  line-height: .97;
+  line-height: 0.97;
 }
 
 .recognition h2,
 .program-intro h2,
 .section-title {
   font-size: clamp(3.1rem, 5vw, 5.35rem);
-  line-height: .99;
+  line-height: 0.99;
 }
 
 .point-grid h2 {
   font-size: clamp(3.4rem, 5.5vw, 5.8rem);
-  line-height: .99;
+  line-height: 0.99;
 }
 
 .dark h2,
 .final-grid h2 {
   font-size: clamp(3.6rem, 6vw, 6.25rem);
-  line-height: .98;
+  line-height: 0.98;
 }
 
 .decorative-index {
@@ -101,7 +101,7 @@
 }
 
 .area-row {
-  grid-template-columns: minmax(220px, .8fr) minmax(280px, 1fr);
+  grid-template-columns: minmax(220px, 0.8fr) minmax(280px, 1fr);
 }
 
 .area-row > span:first-child {
@@ -109,7 +109,7 @@
 }
 
 .clean-process-row {
-  grid-template-columns: minmax(220px, .65fr) minmax(280px, 1fr) !important;
+  grid-template-columns: minmax(220px, 0.65fr) minmax(280px, 1fr) !important;
 }
 
 .clean-diagnostic-list li {
@@ -123,7 +123,7 @@
 
 .clean-coaching-preview h2 {
   font-size: clamp(3.1rem, 4.8vw, 5rem) !important;
-  line-height: .99 !important;
+  line-height: 0.99 !important;
   max-width: 780px !important;
 }
 
