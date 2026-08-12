@@ -59,7 +59,7 @@ export function middleware(request:NextRequest){
     return NextResponse.redirect(url,308)
   }
 
-  if(url.pathname==='/_locale/ro'||url.pathname.startsWith('/_locale/ro/')||url.pathname==='/_locale/en'||url.pathname.startsWith('/_locale/en/')){
+  if(url.pathname==='/localized/ro'||url.pathname.startsWith('/localized/ro/')||url.pathname==='/localized/en'||url.pathname.startsWith('/localized/en/')){
     const parts=url.pathname.split('/').filter(Boolean)
     const locale=parts[1] as Locale
     const rest=parts.slice(2)
@@ -82,7 +82,7 @@ export function middleware(request:NextRequest){
   }
 
   if(isPagePath(canonicalPath)){
-    url.pathname=canonicalPath==='/'?`/_locale/${locale}`:`/_locale/${locale}${canonicalPath}`
+    url.pathname=canonicalPath==='/'?`/localized/${locale}`:`/localized/${locale}${canonicalPath}`
     return NextResponse.rewrite(url)
   }
 
