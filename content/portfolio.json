@@ -2,12 +2,12 @@
   "logoAssets": {
     "KPMG": "/images/logos/kpmg.svg",
     "PwC": "/images/logos/pwc.svg",
-    "Teleskop": "/images/logos/teleskop-original.webp",
+    "Teleskop": "/images/logos/teleskop.svg",
     "Accenture": "/images/logos/accenture.webp",
     "Amazon": "/images/logos/amazon.webp",
     "Banca Transilvania": "/images/logos/banca-transilvania.webp",
-    "Orbico": "/images/logos/orbico-original.webp",
-    "Edenred": "/images/logos/edenred-original.webp"
+    "Orbico": "/images/logos/orbico.svg",
+    "Edenred": "/images/logos/edenred.svg"
   },
   "groups": [
     {
