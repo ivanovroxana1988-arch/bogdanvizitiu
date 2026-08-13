@@ -49,10 +49,6 @@ export default function About({ searchParams }: { searchParams?: { lang?: string
           <h1 className={heroStyles.title}>{copy.titleLines.join(' ')}</h1>
           <div className={heroStyles.aside}>
             <p className={heroStyles.intro}>{copy.intro}</p>
-            <div className={heroStyles.proof} aria-label={`${copy.proofValue} ${copy.proofLabel}`}>
-              <strong className={heroStyles.proofValue}>{copy.proofValue}</strong>
-              <span className={heroStyles.proofLabel}>{copy.proofLabel}</span>
-            </div>
           </div>
         </div>
       </section>
