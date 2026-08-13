@@ -5,73 +5,67 @@ type BrandLogoProps = {
 }
 
 export function BrandLogo({ className, variant = 'mark', tone = 'dark' }: BrandLogoProps) {
-  const ink = tone === 'light' ? '#FAF9F6' : '#28343D'
-  const blue = tone === 'light' ? '#9CC5EA' : '#78A6D3'
+  const ink = tone === 'light' ? '#FAF9F6' : '#2E3942'
+  const blue = tone === 'light' ? '#A8CBE8' : '#78A6D3'
+  const serif = "var(--font-serif), Georgia, 'Times New Roman', serif"
 
   if (variant === 'lockup') {
     return (
       <svg
         className={className}
-        viewBox="0 0 620 242"
+        viewBox="0 0 620 270"
         width="390"
-        height="152"
+        height="170"
         role="img"
         aria-label="Bogdan George Vizitiu"
       >
-        <g transform="translate(188 2)">
+        <g transform="translate(126 2)">
           <text
             x="0"
-            y="105"
+            y="112"
             fill={ink}
-            fontFamily="Georgia, 'Times New Roman', serif"
-            fontSize="104"
+            fontFamily={serif}
+            fontSize="122"
             fontWeight="400"
           >
             B
           </text>
           <text
-            x="72"
-            y="120"
+            x="84"
+            y="140"
             fill={blue}
-            fontFamily="Georgia, 'Times New Roman', serif"
-            fontSize="96"
+            fontFamily={serif}
+            fontSize="112"
             fontWeight="400"
           >
             G
           </text>
           <path
-            d="M132 88 C151 76 170 64 188 54 C196 50 200 52 198 65 L185 116 C182 128 185 132 193 119 L258 18"
+            d="M164 111 L245 63 C255 57 266 53 271 60 C276 68 272 83 269 97 L250 177 C247 190 251 197 258 184 L374 12"
             fill="none"
             stroke={blue}
-            strokeWidth="5"
+            strokeWidth="4.5"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
+          <path d="M374 12 L360 19 L368 30 Z" fill={blue} />
         </g>
-        <line x1="255" y1="157" x2="299" y2="157" stroke={blue} strokeWidth="2" />
-        <circle cx="310" cy="157" r="2.5" fill={blue} />
-        <line x1="321" y1="157" x2="365" y2="157" stroke={blue} strokeWidth="2" />
+
+        <line x1="233" y1="199" x2="292" y2="199" stroke={blue} strokeWidth="2" />
+        <circle cx="310" cy="199" r="2.5" fill={blue} />
+        <line x1="328" y1="199" x2="387" y2="199" stroke={blue} strokeWidth="2" />
+
         <text
           x="310"
-          y="198"
+          y="248"
           textAnchor="middle"
           fill={ink}
           fontFamily="Arial, Helvetica, sans-serif"
-          fontSize="20"
+          fontSize="19"
+          fontWeight="400"
           letterSpacing="9"
         >
           BOGDAN GEORGE VIZITIU
-        </text>
-        <text
-          x="310"
-          y="230"
-          textAnchor="middle"
-          fill={blue}
-          fontFamily="Arial, Helvetica, sans-serif"
-          fontSize="12"
-          letterSpacing="5"
-        >
-          PSIHOLOGIE • LEADERSHIP • STRATEGIE
         </text>
       </svg>
     )
@@ -80,40 +74,41 @@ export function BrandLogo({ className, variant = 'mark', tone = 'dark' }: BrandL
   return (
     <svg
       className={className}
-      viewBox="0 0 250 132"
+      viewBox="0 0 260 145"
       width="118"
-      height="62"
+      height="66"
       aria-hidden="true"
       focusable="false"
     >
       <text
-        x="4"
-        y="96"
+        x="3"
+        y="105"
         fill={ink}
-        fontFamily="Georgia, 'Times New Roman', serif"
+        fontFamily={serif}
         fontSize="112"
         fontWeight="400"
       >
         B
       </text>
       <text
-        x="80"
-        y="112"
+        x="75"
+        y="128"
         fill={blue}
-        fontFamily="Georgia, 'Times New Roman', serif"
+        fontFamily={serif}
         fontSize="102"
         fontWeight="400"
       >
         G
       </text>
       <path
-        d="M145 80 C165 68 184 55 201 47 C209 43 213 46 211 59 L198 112 C195 124 198 128 206 115 L246 25"
+        d="M143 97 L186 70 C194 65 202 61 206 66 C210 72 207 84 205 94 L194 127 C191 137 194 141 200 131 L253 18"
         fill="none"
         stroke={blue}
-        strokeWidth="5.5"
+        strokeWidth="4.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+      <path d="M253 18 L241 24 L249 34 Z" fill={blue} />
     </svg>
   )
 }
