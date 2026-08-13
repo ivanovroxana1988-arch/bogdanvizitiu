@@ -43,7 +43,7 @@ function InsightImage({
     return (
       <figure className={`${styles.directImage} ${className}`}>
         <img
-          src="/images/editorial/decision-bogdan-stairs.avif"
+          src="/images/editorial/decision-bogdan-stairs.svg"
           alt={
             locale === 'ro'
               ? 'Bogdan Vizitiu într-un spațiu modern, într-un cadru editorial despre claritatea deciziilor'
