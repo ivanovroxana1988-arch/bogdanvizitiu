@@ -29,31 +29,6 @@ export default function Home({ searchParams }: { searchParams?: { lang?: string 
   const services = servicePages[locale]
   const programs = getPrograms(locale)
   const insights = getPublishedInsights(locale).slice(0, 3)
-  const proof = [
-    {
-      value: '20+',
-      label:
-        locale === 'ro' ? 'ani de experiență profesională' : 'years of professional experience',
-    },
-    {
-      value: '16+',
-      label: locale === 'ro' ? 'ani de experiență comercială' : 'years of commercial experience',
-    },
-    {
-      value: 'CPC',
-      label:
-        locale === 'ro'
-          ? 'Certificare de coach profesionist · International Coach Academy · 2020'
-          : 'Professional coach certification · International Coach Academy · 2020',
-    },
-    {
-      value: locale === 'ro' ? 'Psihologie' : 'Psychology',
-      label:
-        locale === 'ro'
-          ? 'Universitatea Titu Maiorescu · 2026'
-          : 'Titu Maiorescu University · 2026',
-    },
-  ]
   const situations =
     locale === 'ro'
       ? [
@@ -132,22 +107,6 @@ export default function Home({ searchParams }: { searchParams?: { lang?: string 
               </li>
             ))}
           </ol>
-        </div>
-      </section>
-
-      <section
-        aria-label={
-          locale === 'ro' ? 'Repere profesionale verificate' : 'Verified professional credentials'
-        }
-        className={homeStyles.proofSection}
-      >
-        <div className={`shell ${homeStyles.proofGrid}`}>
-          {proof.map((item) => (
-            <div key={item.value} className={homeStyles.proofItem}>
-              <strong className={homeStyles.proofValue}>{item.value}</strong>
-              <span className={homeStyles.proofLabel}>{item.label}</span>
-            </div>
-          ))}
         </div>
       </section>
 
