@@ -3,20 +3,62 @@ import { PageHero, ArrowLink } from '@/components/ui'
 import { ConceptImage, EditorialImage } from '@/components/portrait'
 import { getPublishedInsights } from '@/lib/data'
 import { getCopy, getLocale } from '@/lib/i18n'
+import { localizePath } from '@/lib/routes'
 import { buildPageMetadata } from '@/lib/seo'
 import styles from './insights.module.css'
 
 const insightConcepts: Record<
   string,
+  | 'networkingEditorial'
   | 'livesEditorial'
   | 'emotionsLearningEditorial'
   | 'mindfulnessAutopilotEditorial'
   | 'negotiationEditorial'
 > = {
+  'networkingul-nu-incepe-cu-schimbul-de-contacte': 'networkingEditorial',
   'de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives': 'livesEditorial',
   'nu-invatam-doar-cu-mintea': 'emotionsLearningEditorial',
   'cat-din-viata-traim-pe-pilot-automat': 'mindfulnessAutopilotEditorial',
   'negocierea-nu-este-doar-despre-argumente': 'negotiationEditorial',
+}
+
+const decisionSlug = 'o-decizie-buna-incepe-inainte-sa-alegi'
+
+type InsightItem = ReturnType<typeof getPublishedInsights>[number]
+
+function InsightImage({
+  insight,
+  className,
+  locale,
+}: {
+  insight: InsightItem
+  className: string
+  locale: 'ro' | 'en'
+}) {
+  const concept = insightConcepts[insight.slug]
+
+  if (insight.slug === decisionSlug) {
+    return (
+      <figure className={`${styles.directImage} ${className}`}>
+        <img
+          src="/images/editorial/decision-bogdan-stairs.avif"
+          alt={
+            locale === 'ro'
+              ? 'Bogdan Vizitiu într-un spațiu modern, într-un cadru editorial despre claritatea deciziilor'
+              : 'Bogdan Vizitiu in a modern space, in an editorial portrait about decision clarity'
+          }
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    )
+  }
+
+  if (concept) {
+    return <ConceptImage asset={concept} kind="wide" className={className} locale={locale} />
+  }
+
+  return <EditorialImage asset="candid" kind="event" className={className} locale={locale} />
 }
 
 export function generateMetadata({ searchParams }: { searchParams?: { lang?: string } }): Metadata {
@@ -52,47 +94,40 @@ export default function Insights({ searchParams }: { searchParams?: { lang?: str
     <>
       <PageHero eyebrow={copy.eyebrow} title={title} intro={intro} />
       <section className={`shell ${styles.indexSection}`}>
-        <div className={styles.grid}>
-          <article className={styles.feature}>
-            <ConceptImage
-              asset="networkingEditorial"
-              kind="wide"
-              className={styles.featureImage}
-              locale={locale}
-            />
+        <article className={styles.feature}>
+          <InsightImage
+            insight={feature}
+            className={styles.featureImage}
+            locale={locale}
+          />
+          <div className={styles.featureContent}>
             <div className={styles.meta}>
               <span className={styles.category}>{feature.category}</span>
               <span>{feature.readTime}</span>
             </div>
             <h2>{feature.title}</h2>
             <p>{feature.excerpt}</p>
-            <ArrowLink href={`/insights/${feature.slug}`}>{copy.readArticle}</ArrowLink>
-          </article>
-          <div className={styles.secondary}>
-            {secondary.map((insight) => (
-              <article className={styles.card} key={insight.slug}>
-                {insightConcepts[insight.slug] ? (
-                  <ConceptImage
-                    asset={insightConcepts[insight.slug]}
-                    kind="wide"
-                    className={styles.cardImage}
-                    locale={locale}
-                  />
-                ) : (
-                  <EditorialImage
-                    asset="candid"
-                    kind="event"
-                    className={styles.cardImage}
-                    locale={locale}
-                  />
-                )}
-                <span className={styles.category}>{insight.category}</span>
-                <h2>{insight.title}</h2>
-                <p>{insight.excerpt}</p>
-                <ArrowLink href={`/insights/${insight.slug}`}>{copy.readArticle}</ArrowLink>
-              </article>
-            ))}
+            <ArrowLink href={localizePath(`/insights/${feature.slug}`, locale)}>
+              {copy.readArticle}
+            </ArrowLink>
           </div>
+        </article>
+
+        <div className={styles.secondaryGrid}>
+          {secondary.map((insight) => (
+            <article className={styles.card} key={insight.slug}>
+              <InsightImage insight={insight} className={styles.cardImage} locale={locale} />
+              <div className={styles.cardMeta}>
+                <span className={styles.category}>{insight.category}</span>
+                <span>{insight.readTime}</span>
+              </div>
+              <h2>{insight.title}</h2>
+              <p>{insight.excerpt}</p>
+              <ArrowLink href={localizePath(`/insights/${insight.slug}`, locale)}>
+                {copy.readArticle}
+              </ArrowLink>
+            </article>
+          ))}
         </div>
       </section>
     </>
