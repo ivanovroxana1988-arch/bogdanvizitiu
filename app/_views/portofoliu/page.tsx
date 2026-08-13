@@ -6,8 +6,16 @@ import portfolio from '@/content/portfolio.json'
 import styles from './portfolio.module.css'
 
 const logoAssets = portfolio.logoAssets as Record<string, string>
+const entrepreneurshipGroup = portfolio.groups.find(
+  (group) => group.id === 'entrepreneurship-advisory',
+)
+const entrepreneurshipOrganizations = entrepreneurshipGroup?.organizations ?? []
 const organizations = Array.from(
-  new Set(portfolio.groups.flatMap((group) => group.organizations)),
+  new Set(
+    portfolio.groups
+      .filter((group) => group.id !== 'entrepreneurship-advisory')
+      .flatMap((group) => group.organizations),
+  ),
 ).sort((a, b) => a.localeCompare(b))
 
 export function generateMetadata({ searchParams }: { searchParams?: { lang?: string } }): Metadata {
@@ -47,8 +55,8 @@ export default function Portfolio({ searchParams }: { searchParams?: { lang?: st
           <div className={styles.groupHead}>
             <h2 id="portfolio-organizations" className={styles.groupTitle}>
               {locale === 'ro'
-                ? 'Organizații cu care am lucrat'
-                : 'Organizations I have worked with'}
+                ? 'Experiență în contexte organizaționale'
+                : 'Experience across organizational contexts'}
             </h2>
           </div>
 
@@ -70,6 +78,34 @@ export default function Portfolio({ searchParams }: { searchParams?: { lang?: st
             })}
           </div>
         </section>
+
+        {entrepreneurshipOrganizations.length > 0 ? (
+          <section className={styles.group} aria-labelledby="portfolio-entrepreneurship">
+            <div className={styles.groupHead}>
+              <h2 id="portfolio-entrepreneurship" className={styles.groupTitle}>
+                {locale === 'ro' ? 'Antreprenoriat & advisory' : 'Entrepreneurship & advisory'}
+              </h2>
+            </div>
+
+            <div className={styles.grid}>
+              {entrepreneurshipOrganizations.map((name) => {
+                const logo = logoAssets[name]
+                return (
+                  <article className={styles.item} key={name}>
+                    <div className={styles.logoWrap}>
+                      {logo ? (
+                        <img src={logo} alt={`${name} logo`} className={styles.logo} loading="lazy" />
+                      ) : (
+                        <strong className={styles.wordmark}>{name}</strong>
+                      )}
+                    </div>
+                    <span className={styles.name}>{name}</span>
+                  </article>
+                )
+              })}
+            </div>
+          </section>
+        ) : null}
 
         <p className={styles.note}>
           {locale === 'ro'
