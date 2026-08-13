@@ -10,7 +10,14 @@
     "Banca Transilvania": "/images/logos/banca-transilvania.webp",
     "BearingPoint": "/images/logos/portfolio-sprite-03.svg#bearingpoint",
     "BMW MotoHub": "/images/logos/portfolio-sprite-03.svg#bmw-motohub",
-    "Microsoft": "/images/logos/microsoft.svg"
+    "Microsoft": "/images/logos/microsoft.svg",
+    "Groupama": "/images/logos/groupama.svg",
+    "Ubisoft": "/images/logos/ubisoft.svg",
+    "Roche": "/images/logos/roche.svg",
+    "eMAG": "/images/logos/emag.svg",
+    "Cargus": "/images/logos/cargus.svg",
+    "Edenred": "/images/logos/edenred.svg",
+    "Hochland": "/images/logos/hochland.svg"
   },
   "groups": [
     {
