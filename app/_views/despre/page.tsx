@@ -61,24 +61,6 @@ export default function About({ searchParams }: { searchParams?: { lang?: string
         </div>
       </section>
 
-      <section className={styles.section} id="roles">
-        <div className={styles.sectionHead}>
-          <div>
-            <Eyebrow>{copy.rolesEyebrow}</Eyebrow>
-            <h2 className={styles.sectionTitle}>{copy.rolesTitle}</h2>
-          </div>
-          <p className={styles.sectionIntro}>{copy.rolesIntro}</p>
-        </div>
-        <div className={styles.twoGrid}>
-          {copy.rolesItems.map((item) => (
-            <article className={styles.editorialCard} key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className={styles.section} id="how-i-work">
         <div className={styles.sectionHead}>
           <div>
@@ -156,6 +138,34 @@ export default function About({ searchParams }: { searchParams?: { lang?: string
               >
                 {item.cta} <span aria-hidden>→</span>
               </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.section} id="roles">
+        <div className={styles.sectionHead}>
+          <div>
+            <Eyebrow>{copy.rolesEyebrow}</Eyebrow>
+            <h2 className={styles.sectionTitle}>{copy.rolesTitle}</h2>
+          </div>
+          <p className={styles.sectionIntro}>{copy.rolesIntro}</p>
+        </div>
+        <div
+          className={styles.twoGrid}
+          style={{
+            borderLeft: '1px solid var(--line, #b7c0c0)',
+            borderRight: '1px solid var(--line, #b7c0c0)',
+          }}
+        >
+          {copy.rolesItems.map((item, index) => (
+            <article
+              className={styles.editorialCard}
+              key={item.title}
+              style={index % 2 === 0 ? { borderLeft: 0, paddingLeft: 0 } : undefined}
+            >
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
             </article>
           ))}
         </div>
