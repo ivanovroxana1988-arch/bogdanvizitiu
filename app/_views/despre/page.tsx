@@ -6,6 +6,7 @@ import { getCopy, getLocale } from '@/lib/i18n'
 import aboutCopy from '@/content/about-copy.json'
 import { buildPageMetadata } from '@/lib/seo'
 import styles from '../commercial.module.css'
+import heroStyles from './about-hero.module.css'
 
 export function generateMetadata({ searchParams }: { searchParams?: { lang?: string } }): Metadata {
   const locale = getLocale(searchParams?.lang)
@@ -32,15 +33,15 @@ export default function About({ searchParams }: { searchParams?: { lang?: string
     <div className={`${styles.page} balanced-commercial-page`}>
       <section className={styles.hero}>
         <Eyebrow>{copy.eyebrow}</Eyebrow>
-        <div className={styles.heroGrid}>
-          <h1>
-            {copy.titleLines.map((line) => (
-              <span key={line} style={{ display: 'block' }}>
-                {line}
-              </span>
-            ))}
-          </h1>
-          <p className={styles.heroIntro}>{copy.intro}</p>
+        <div className={heroStyles.grid}>
+          <h1 className={heroStyles.title}>{copy.titleLines.join(' ')}</h1>
+          <div className={heroStyles.aside}>
+            <p className={heroStyles.intro}>{copy.intro}</p>
+            <div className={heroStyles.proof} aria-label={`${copy.proofValue} ${copy.proofLabel}`}>
+              <strong className={heroStyles.proofValue}>{copy.proofValue}</strong>
+              <span className={heroStyles.proofLabel}>{copy.proofLabel}</span>
+            </div>
+          </div>
         </div>
       </section>
 
