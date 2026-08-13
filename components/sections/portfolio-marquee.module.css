@@ -1,0 +1,140 @@
+.section {
+  padding-block: clamp(3.5rem, 6vw, 5.5rem);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 34px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+}
+
+.link {
+  flex: 0 0 auto;
+  padding-bottom: 4px;
+  color: var(--link);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.viewport {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+.runner {
+  display: flex;
+  width: max-content;
+  animation: portfolio-marquee 68s linear infinite;
+}
+
+.viewport:hover .runner {
+  animation-play-state: paused;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: clamp(30px, 4vw, 68px);
+  padding: 12px clamp(15px, 2vw, 34px);
+}
+
+.logoSlot {
+  display: grid;
+  place-items: center;
+  width: clamp(118px, 12vw, 170px);
+  height: 66px;
+}
+
+.logoImage {
+  display: block;
+  max-width: 100%;
+  max-height: 52px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.wordmark {
+  display: block;
+  max-width: 170px;
+  color: var(--ink);
+  font-size: clamp(0.88rem, 1.15vw, 1.02rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@keyframes portfolio-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
+
+  .runner {
+    animation-duration: 82s;
+  }
+
+  .logoSlot {
+    width: 124px;
+    height: 58px;
+  }
+
+  .logoImage {
+    max-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viewport {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .runner {
+    animation: none;
+  }
+
+  .track[aria-hidden='true'] {
+    display: none;
+  }
+}
