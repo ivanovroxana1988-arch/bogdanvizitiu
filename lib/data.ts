@@ -73,7 +73,9 @@ export function getInsights(locale: Locale) {
 }
 
 export function getPublishedInsights(locale: Locale) {
-  return getInsights(locale).filter((insight) => insight.status === 'published')
+  return getInsights(locale)
+    .filter((insight) => insight.status === 'published')
+    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
 }
 
 export function getMediaAppearances() {
