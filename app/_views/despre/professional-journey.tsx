@@ -5,6 +5,16 @@ import styles from './professional-journey.module.css'
 
 type Locale = 'ro' | 'en'
 
+const corporateLogos: Record<string, string> = {
+  'Orange România': '/images/logos/orange.svg',
+  'Orange Romania': '/images/logos/orange.svg',
+  'Trend Consult Group': '/images/logos/trend-consult.svg',
+}
+
+const entrepreneurLogoOverrides: Record<string, string> = {
+  YoungMinds: '/images/logos/youngminds-brand.svg',
+}
+
 export default function ProfessionalJourney({
   locale,
   eyebrow,
@@ -29,51 +39,70 @@ export default function ProfessionalJourney({
         <div className={styles.column}>
           <p className={styles.columnLabel}>{copy.corporateLabel}</p>
           <div className={styles.entries}>
-            {copy.corporate.map((item) => (
-              <article className={styles.entry} key={item.title}>
-                <div className={styles.entryHeader}>
-                  <div className={styles.entryHeading}>
-                    <h3 className={styles.entryTitle}>{item.title}</h3>
-                    {item.meta ? <span className={styles.meta}>{item.meta}</span> : null}
+            {copy.corporate.map((item) => {
+              const logo = corporateLogos[item.title]
+
+              return (
+                <article className={styles.entry} key={item.title}>
+                  <div className={styles.entryHeader}>
+                    {logo ? (
+                      <div className={styles.logoWrap}>
+                        <Image
+                          className={styles.logo}
+                          src={logo}
+                          alt={`${item.title} logo`}
+                          width={180}
+                          height={90}
+                        />
+                      </div>
+                    ) : null}
+                    <div className={styles.entryHeading}>
+                      <h3 className={styles.entryTitle}>{item.title}</h3>
+                      {item.meta ? <span className={styles.meta}>{item.meta}</span> : null}
+                    </div>
                   </div>
-                </div>
-                <div className={styles.paragraphs}>
-                  {item.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                </div>
-              </article>
-            ))}
+                  <div className={styles.paragraphs}>
+                    {item.paragraphs.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                </article>
+              )
+            })}
           </div>
         </div>
 
         <div className={styles.column}>
           <p className={styles.columnLabel}>{copy.entrepreneurLabel}</p>
           <div className={styles.entries}>
-            {copy.entrepreneur.map((item) => (
-              <article className={styles.entry} key={item.title}>
-                <div className={styles.entryHeader}>
-                  <div className={styles.logoWrap}>
-                    <Image
-                      className={styles.logo}
-                      src={item.logo}
-                      alt={`${item.title} logo`}
-                      width={180}
-                      height={90}
-                    />
+            {copy.entrepreneur.map((item) => {
+              const logo = entrepreneurLogoOverrides[item.title] ?? item.logo
+
+              return (
+                <article className={styles.entry} key={item.title}>
+                  <div className={styles.entryHeader}>
+                    <div className={styles.logoWrap}>
+                      <Image
+                        className={styles.logo}
+                        src={logo}
+                        alt={`${item.title} logo`}
+                        width={180}
+                        height={90}
+                      />
+                    </div>
+                    <div className={styles.entryHeading}>
+                      <h3 className={styles.entryTitle}>{item.title}</h3>
+                      {item.meta ? <span className={styles.meta}>{item.meta}</span> : null}
+                    </div>
                   </div>
-                  <div className={styles.entryHeading}>
-                    <h3 className={styles.entryTitle}>{item.title}</h3>
-                    {item.meta ? <span className={styles.meta}>{item.meta}</span> : null}
+                  <div className={styles.paragraphs}>
+                    {item.paragraphs.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
                   </div>
-                </div>
-                <div className={styles.paragraphs}>
-                  {item.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                </div>
-              </article>
-            ))}
+                </article>
+              )
+            })}
           </div>
         </div>
       </div>
