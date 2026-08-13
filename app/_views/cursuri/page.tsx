@@ -45,12 +45,6 @@ export default function Programs({ searchParams }: { searchParams?: SearchParams
       </section>
 
       <section className={styles.section}>
-        <div className={styles.sectionHead}>
-          <div>
-            <Eyebrow>{copy.choiceEyebrow}</Eyebrow>
-            <h2 className={styles.sectionTitle}>{copy.choiceTitle}</h2>
-          </div>
-        </div>
         <CourseCatalog
           locale={locale}
           programs={programs}
