@@ -14,12 +14,14 @@ const insightConcepts: Record<
   | 'emotionsLearningEditorial'
   | 'mindfulnessAutopilotEditorial'
   | 'negotiationEditorial'
+  | 'insightsWorkspace'
 > = {
   'networkingul-nu-incepe-cu-schimbul-de-contacte': 'networkingEditorial',
   'de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives': 'livesEditorial',
   'nu-invatam-doar-cu-mintea': 'emotionsLearningEditorial',
   'cat-din-viata-traim-pe-pilot-automat': 'mindfulnessAutopilotEditorial',
   'negocierea-nu-este-doar-despre-argumente': 'negotiationEditorial',
+  'stii-ce-ai-de-facut-de-ce-nu-faci': 'insightsWorkspace',
 }
 
 const decisionSlug = 'o-decizie-buna-incepe-inainte-sa-alegi'
