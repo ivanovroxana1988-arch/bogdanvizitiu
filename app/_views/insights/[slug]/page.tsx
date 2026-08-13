@@ -24,6 +24,9 @@ const insightConcepts: Record<
   'negocierea-nu-este-doar-despre-argumente': 'negotiationEditorial',
 }
 
+const coachingConsultingSlug = 'coaching-sau-consultanta-de-ce-ai-nevoie-de-fapt'
+const coachingConsultingImage = '/images/bogdan/bogdan-coaching-consultanta.webp'
+
 const commercialInsightSlugs = new Set([
   'networkingul-nu-incepe-cu-schimbul-de-contacte',
   'de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives',
@@ -33,7 +36,7 @@ const commercialInsightSlugs = new Set([
   'de-ce-unele-conversatii-manageriale-schimba-lucrurile',
   'stii-ce-ai-de-facut-de-ce-nu-faci',
   'o-decizie-buna-incepe-inainte-sa-alegi',
-  'coaching-sau-consultanta-de-ce-ai-nevoie-de-fapt',
+  coachingConsultingSlug,
 ])
 
 const editorialCommercialLinks: Record<string, { href: string; ro: string; en: string }> = {
@@ -134,6 +137,7 @@ export default function Insight({
   const related = insights.filter((item) => item.slug !== insight.slug).slice(0, 2)
   const editorialCommercialLink = editorialCommercialLinks[insight.slug]
   const hasCommercialCta = commercialInsightSlugs.has(insight.slug)
+  const hasCoachingConsultingPortrait = insight.slug === coachingConsultingSlug
   const commercialCta =
     locale === 'ro'
       ? { title: 'Lucrezi cu o situație asemănătoare?', label: 'Începe o conversație' }
@@ -150,9 +154,11 @@ export default function Insight({
     insight.slug === 'networkingul-nu-incepe-cu-schimbul-de-contacte'
       ? ('networkingEditorial' as const)
       : insightConcepts[insight.slug]
-  const structuredImageSource = conceptAsset
-    ? media.concepts[conceptAsset].src
-    : media.images.candid.src
+  const structuredImageSource = hasCoachingConsultingPortrait
+    ? coachingConsultingImage
+    : conceptAsset
+      ? media.concepts[conceptAsset].src
+      : media.images.candid.src
   const structuredImage = structuredImageSource.startsWith('http')
     ? structuredImageSource
     : `${SITE_URL}${structuredImageSource}`
@@ -194,7 +200,23 @@ export default function Insight({
           </p>
         </aside>
         <article className={styles.body}>
-          {conceptAsset ? (
+          {hasCoachingConsultingPortrait ? (
+            <figure
+              className={`${styles.heroImage} ${styles.directImage}`}
+              style={{ aspectRatio: '4 / 5', maxWidth: 680, margin: '0 auto 54px' }}
+            >
+              <img
+                src={coachingConsultingImage}
+                alt={
+                  locale === 'ro'
+                    ? 'Bogdan Vizitiu într-un cadru de conversație'
+                    : 'Bogdan Vizitiu in a conversational setting'
+                }
+                loading="eager"
+                decoding="async"
+              />
+            </figure>
+          ) : conceptAsset ? (
             <ConceptImage
               asset={conceptAsset}
               kind="wide"
