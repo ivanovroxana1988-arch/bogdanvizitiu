@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLink, Eyebrow } from '@/components/ui'
 import { ConceptImage, EditorialImage } from '@/components/portrait'
+import { PortfolioMarquee } from '@/components/sections/portfolio-marquee'
 import { getPrograms, getPublishedInsights } from '@/lib/data'
 import { getCopy, getLocale } from '@/lib/i18n'
 import { buildPageMetadata } from '@/lib/seo'
@@ -149,6 +150,8 @@ export default function Home({ searchParams }: { searchParams?: { lang?: string 
           ))}
         </div>
       </section>
+
+      <PortfolioMarquee locale={locale} />
 
       <section aria-labelledby="situation-title" className={homeStyles.situationSection}>
         <div className={`shell ${homeStyles.situationGrid}`}>
