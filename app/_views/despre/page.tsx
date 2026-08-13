@@ -54,9 +54,6 @@ export default function About({ searchParams }: { searchParams?: { lang?: string
             ))}
             <p className={styles.roleLine}>{copy.roleLine}</p>
             <p>{copy.closing}</p>
-            <div style={{ marginTop: '32px' }}>
-              <ArrowLink href="#how-i-work">{copy.cta}</ArrowLink>
-            </div>
           </div>
         </div>
       </section>
