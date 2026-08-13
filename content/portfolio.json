@@ -26,13 +26,19 @@
       "id": "other",
       "titleRo": "Alte colaborări și proiecte",
       "titleEn": "Other collaborations and projects",
-      "organizations": ["Cargus", "Philips", "STUP", "Teleskop", "YoungMinds"]
+      "organizations": ["Cargus", "Philips", "STUP"]
     },
     {
       "id": "corporate-history",
       "titleRo": "Portofoliu corporate anterior",
       "titleEn": "Earlier corporate portfolio",
       "organizations": ["KPMG", "PwC", "BNR", "ERSTE", "ING", "Banca Transilvania", "Libra Internet Bank", "OTP Leasing", "Heineken", "Carrefour", "Saint-Gobain", "HP", "BearingPoint", "Accenture", "Xerox", "NN", "MOL", "Microsoft", "Groupama", "Lidl", "Ubisoft", "Adient", "BRCI", "METRO", "Provident", "Cegeka", "Goodyear", "Luxoft", "Roche", "eMAG", "ESCP Europe", "Diaverum", "Merck", "Servier", "Vodafone"]
+    },
+    {
+      "id": "entrepreneurship-advisory",
+      "titleRo": "Antreprenoriat & advisory",
+      "titleEn": "Entrepreneurship & advisory",
+      "organizations": ["Teleskop", "YoungMinds"]
     }
   ]
 }
