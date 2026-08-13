@@ -61,33 +61,51 @@
 .track {
   display: flex;
   align-items: center;
-  gap: clamp(30px, 4vw, 68px);
-  padding: 12px clamp(15px, 2vw, 34px);
+  gap: clamp(26px, 3.4vw, 54px);
+  padding: 14px clamp(18px, 2vw, 34px);
 }
 
 .logoSlot {
   display: grid;
   place-items: center;
-  width: clamp(118px, 12vw, 170px);
-  height: 66px;
-  padding: 4px;
+  width: clamp(150px, 12vw, 190px);
+  height: 82px;
+  padding: 6px 10px;
 }
 
 .logoImage {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   object-position: center;
 }
 
+.wide .logoImage {
+  max-width: 174px;
+  max-height: 54px;
+}
+
+.medium .logoImage {
+  max-width: 154px;
+  max-height: 58px;
+}
+
+.compact .logoImage {
+  max-width: 126px;
+  max-height: 68px;
+}
+
+.stacked .logoImage {
+  max-width: 138px;
+  max-height: 72px;
+}
+
 @keyframes portfolio-marquee {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
 }
 
 @media (max-width: 700px) {
@@ -97,19 +115,19 @@
     margin-bottom: 24px;
   }
 
-  .runner {
-    animation-duration: 82s;
-  }
+  .runner { animation-duration: 82s; }
+  .track { gap: 26px; }
 
   .logoSlot {
-    width: 124px;
-    height: 58px;
+    width: 138px;
+    height: 68px;
+    padding-inline: 6px;
   }
 
-  .logoImage {
-    width: 100%;
-    height: 100%;
-  }
+  .wide .logoImage { max-width: 132px; max-height: 44px; }
+  .medium .logoImage { max-width: 120px; max-height: 48px; }
+  .compact .logoImage { max-width: 104px; max-height: 54px; }
+  .stacked .logoImage { max-width: 112px; max-height: 58px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -119,11 +137,6 @@
     -webkit-mask-image: none;
   }
 
-  .runner {
-    animation: none;
-  }
-
-  .track[aria-hidden='true'] {
-    display: none;
-  }
+  .runner { animation: none; }
+  .track[aria-hidden='true'] { display: none; }
 }
