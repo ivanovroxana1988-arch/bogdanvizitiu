@@ -6,6 +6,9 @@ import portfolio from '@/content/portfolio.json'
 import styles from './portfolio.module.css'
 
 const logoAssets = portfolio.logoAssets as Record<string, string>
+const organizations = Array.from(new Set(portfolio.groups.flatMap((group) => group.organizations))).sort((a, b) =>
+  a.localeCompare(b),
+)
 
 export function generateMetadata({ searchParams }: { searchParams?: { lang?: string } }): Metadata {
   const locale = getLocale(searchParams?.lang)
@@ -32,40 +35,37 @@ export default function Portfolio({ searchParams }: { searchParams?: { lang?: st
         </h1>
         <p className={styles.intro}>
           {locale === 'ro'
-            ? 'De-a lungul parcursului profesional am lucrat cu oameni și echipe din organizații foarte diferite, în proiecte de training, coaching, facilitare și dezvoltare. O parte dintre proiecte au fost livrate direct, iar altele în cadrul colaborărilor cu parteneri de training și consultanță. Contextul este păstrat explicit mai jos.'
-            : 'Throughout my professional career I have worked with people and teams across very different organizations, in training, coaching, facilitation and development projects. Some projects were delivered directly and others through training and consulting partnerships. The delivery context is kept explicit below.'}
+            ? 'De-a lungul parcursului profesional am lucrat cu oameni și echipe din organizații foarte diferite, în proiecte de training, coaching, facilitare și dezvoltare, livrate direct sau în cadrul unor colaborări profesionale.'
+            : 'Throughout my professional career I have worked with people and teams across very different organizations, in training, coaching, facilitation and development projects, delivered directly or within professional collaborations.'}
         </p>
       </section>
 
       <div className="shell">
-        {portfolio.groups.map((group, index) => (
-          <section className={styles.group} key={group.id} aria-labelledby={`portfolio-${group.id}`}>
-            <div className={styles.groupHead}>
-              <span className={styles.number}>0{index + 1}</span>
-              <h2 id={`portfolio-${group.id}`} className={styles.groupTitle}>
-                {locale === 'ro' ? group.titleRo : group.titleEn}
-              </h2>
-            </div>
+        <section className={styles.group} aria-labelledby="portfolio-organizations">
+          <div className={styles.groupHead}>
+            <h2 id="portfolio-organizations" className={styles.groupTitle}>
+              {locale === 'ro' ? 'Organizații cu care am lucrat' : 'Organizations I have worked with'}
+            </h2>
+          </div>
 
-            <div className={styles.grid}>
-              {group.organizations.map((name) => {
-                const logo = logoAssets[name]
-                return (
-                  <article className={styles.item} key={`${group.id}-${name}`}>
-                    <div className={styles.logoWrap}>
-                      {logo ? (
-                        <img src={logo} alt={`${name} logo`} className={styles.logo} loading="lazy" />
-                      ) : (
-                        <strong className={styles.wordmark}>{name}</strong>
-                      )}
-                    </div>
-                    <span className={styles.name}>{name}</span>
-                  </article>
-                )
-              })}
-            </div>
-          </section>
-        ))}
+          <div className={styles.grid}>
+            {organizations.map((name) => {
+              const logo = logoAssets[name]
+              return (
+                <article className={styles.item} key={name}>
+                  <div className={styles.logoWrap}>
+                    {logo ? (
+                      <img src={logo} alt={`${name} logo`} className={styles.logo} loading="lazy" />
+                    ) : (
+                      <strong className={styles.wordmark}>{name}</strong>
+                    )}
+                  </div>
+                  <span className={styles.name}>{name}</span>
+                </article>
+              )
+            })}
+          </div>
+        </section>
 
         <p className={styles.note}>
           {locale === 'ro'

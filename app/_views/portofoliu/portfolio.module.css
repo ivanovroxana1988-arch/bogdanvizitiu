@@ -39,16 +39,7 @@
 }
 
 .groupHead {
-  display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 2.2fr);
-  gap: clamp(32px, 6vw, 88px);
   margin-bottom: clamp(34px, 5vw, 58px);
-}
-
-.number {
-  color: var(--muted);
-  font-size: 11px;
-  letter-spacing: 0.1em;
 }
 
 .groupTitle {
@@ -154,11 +145,6 @@
 
   .intro {
     margin-left: 0;
-  }
-
-  .groupHead {
-    grid-template-columns: 1fr;
-    gap: 14px;
   }
 
   .grid {
