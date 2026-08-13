@@ -55,6 +55,69 @@
   text-transform: uppercase;
 }
 
+.rolesHead {
+  gap: 30px clamp(50px, 9vw, 130px);
+  align-items: center;
+  margin-bottom: clamp(68px, 6vw, 88px) !important;
+}
+
+.rolesIntro {
+  max-width: 430px;
+  padding-left: 24px;
+  border-left: 1px solid rgba(83, 99, 107, 0.24);
+}
+
+.rolesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid rgba(83, 99, 107, 0.24);
+}
+
+.roleCard {
+  min-height: 220px;
+  padding: clamp(28px, 2.6vw, 34px) clamp(28px, 3vw, 38px) clamp(32px, 3vw, 38px);
+}
+
+.roleCard:nth-child(odd) {
+  border-right: 1px solid rgba(83, 99, 107, 0.24);
+}
+
+.roleCard:nth-child(-n + 2) {
+  border-bottom: 1px solid rgba(83, 99, 107, 0.24);
+}
+
+.roleCard h3 {
+  margin: 0 0 16px;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(2rem, 2.7vw, 2.9rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+}
+
+.roleCard p {
+  max-width: 600px;
+  margin: 0;
+  color: var(--commercial-muted, #53636b);
+  line-height: 1.7;
+}
+
+.rolesBridge {
+  max-width: 760px;
+  margin-top: clamp(42px, 4.5vw, 58px);
+}
+
+.rolesBridgeText {
+  margin: 0;
+  color: var(--commercial-muted, #53636b);
+  font-size: clamp(17px, 1.35vw, 19px);
+  line-height: 1.75;
+}
+
+.rolesBridgeLink {
+  margin-top: 18px;
+}
+
 @media (max-width: 980px) {
   .grid {
     grid-template-columns: 1fr;
@@ -69,6 +132,14 @@
 
   .proof {
     width: 100%;
+    max-width: 620px;
+  }
+
+  .rolesHead {
+    margin-bottom: 58px !important;
+  }
+
+  .rolesIntro {
     max-width: 620px;
   }
 }
@@ -95,5 +166,34 @@
 
   .proofLabel {
     font-size: 11px;
+  }
+
+  .rolesHead {
+    gap: 26px;
+    margin-bottom: 44px !important;
+  }
+
+  .rolesIntro {
+    max-width: none;
+    padding-left: 18px;
+  }
+
+  .rolesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .roleCard {
+    min-height: 0;
+    padding: 28px 24px 32px;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(83, 99, 107, 0.24);
+  }
+
+  .roleCard:last-child {
+    border-bottom: 0;
+  }
+
+  .rolesBridge {
+    margin-top: 36px;
   }
 }
