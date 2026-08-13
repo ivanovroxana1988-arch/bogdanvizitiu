@@ -12,6 +12,12 @@ function Track({ hidden = false }: { hidden?: boolean }) {
     <div className={styles.track} aria-hidden={hidden || undefined}>
       {organizations.map(([name, logo]) => (
         <div className={styles.logoSlot} key={`${hidden ? 'copy-' : ''}${name}`}>
+          <img
+            src={logo}
+            alt={hidden ? '' : `${name} logo`}
+            className={styles.logoImage}
+            loading="lazy"
+          />
           <img src={logo} alt={hidden ? '' : `${name} logo`} className={styles.logoImage} loading="lazy" />
         </div>
       ))}
@@ -25,7 +31,9 @@ export function PortfolioMarquee({ locale }: { locale: Locale }) {
     <section className={styles.section} aria-labelledby="portfolio-marquee-title">
       <div className={`shell ${styles.header}`}>
         <div>
-          <p className={styles.eyebrow}>{locale === 'ro' ? 'Experiență aplicată' : 'Applied experience'}</p>
+          <p className={styles.eyebrow}>
+            {locale === 'ro' ? 'Experiență aplicată' : 'Applied experience'}
+          </p>
           <h2 id="portfolio-marquee-title" className={styles.title}>
             {locale === 'ro' ? 'Organizații cu care am lucrat' : 'Organizations I have worked with'}
           </h2>
