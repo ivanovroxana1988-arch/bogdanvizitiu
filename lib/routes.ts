@@ -6,6 +6,7 @@ const roToEn: Record<string, string> = {
   '/cursuri': '/en/programs',
   '/coaching': '/en/coaching',
   '/corporate': '/en/corporate',
+  '/portofoliu': '/en/portfolio',
   '/media': '/en/speaking',
   '/insights': '/en/insights',
   '/resurse': '/en/resources',
