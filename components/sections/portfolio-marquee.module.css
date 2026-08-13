@@ -70,15 +70,15 @@
   place-items: center;
   width: clamp(118px, 12vw, 170px);
   height: 66px;
+  padding: 4px;
 }
 
 .logoImage {
   display: block;
-  max-width: 100%;
-  max-height: 52px;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  object-position: center;
 }
 
 @keyframes portfolio-marquee {
@@ -107,7 +107,8 @@
   }
 
   .logoImage {
-    max-height: 44px;
+    width: 100%;
+    height: 100%;
   }
 }
 

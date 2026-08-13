@@ -79,18 +79,19 @@
 }
 
 .logoWrap {
-  min-height: 58px;
+  width: 100%;
+  height: 58px;
   display: flex;
   align-items: center;
+  padding: 4px 0;
 }
 
 .logo {
   display: block;
-  max-width: 145px;
-  max-height: 50px;
-  width: auto;
-  height: auto;
+  width: min(100%, 170px);
+  height: 100%;
   object-fit: contain;
+  object-position: left center;
 }
 
 .wordmark {
