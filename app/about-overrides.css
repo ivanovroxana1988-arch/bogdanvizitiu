@@ -1,0 +1,76 @@
+.balanced-commercial-page > section:first-child > div:has(> h1 > span) {
+  grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.62fr) !important;
+  gap: clamp(48px, 7vw, 112px) !important;
+  align-items: start !important;
+}
+
+.balanced-commercial-page > section:first-child h1:has(> span) {
+  font-size: clamp(3.8rem, 7vw, 7.4rem) !important;
+  line-height: 1.075 !important;
+  letter-spacing: -0.045em !important;
+  max-width: 980px !important;
+  text-wrap: balance;
+}
+
+.balanced-commercial-page > section:first-child h1:has(> span) > span {
+  display: inline !important;
+}
+
+.balanced-commercial-page > section:first-child h1:has(> span) > span + span::before {
+  content: ' ';
+}
+
+.balanced-commercial-page > section:first-child > div:has(> h1 > span) > p {
+  color: #31434b !important;
+  font-size: clamp(18px, 1.45vw, 21px) !important;
+  line-height: 1.7 !important;
+  max-width: 560px !important;
+  margin-top: clamp(4px, 0.7vw, 10px) !important;
+}
+
+.balanced-commercial-page > section:first-child > div:has(> h1 > span) > p::after {
+  display: block;
+  margin-top: clamp(32px, 4vw, 52px);
+  padding-top: 20px;
+  border-top: 1px solid #b7c0c0;
+  color: #182126;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(1.9rem, 2.8vw, 2.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+html[lang='ro'] .balanced-commercial-page > section:first-child > div:has(> h1 > span) > p::after {
+  content: '20+ ani de experiență profesională';
+}
+
+html[lang='en'] .balanced-commercial-page > section:first-child > div:has(> h1 > span) > p::after {
+  content: '20+ years of professional experience';
+}
+
+@media (max-width: 900px) {
+  .balanced-commercial-page > section:first-child > div:has(> h1 > span) {
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+    align-items: start !important;
+  }
+
+  .balanced-commercial-page > section:first-child h1:has(> span) {
+    font-size: clamp(3.2rem, 11vw, 5rem) !important;
+    line-height: 1.065 !important;
+    max-width: 760px !important;
+  }
+
+  .balanced-commercial-page > section:first-child > div:has(> h1 > span) > p {
+    margin-top: 0 !important;
+    max-width: 680px !important;
+    font-size: 18px !important;
+    line-height: 1.65 !important;
+  }
+
+  .balanced-commercial-page > section:first-child > div:has(> h1 > span) > p::after {
+    margin-top: 28px;
+    padding-top: 18px;
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+  }
+}
