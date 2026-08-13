@@ -6,39 +6,93 @@
     "Accenture": "/images/logos/accenture.webp",
     "Amazon": "/images/logos/amazon.webp",
     "Banca Transilvania": "/images/logos/banca-transilvania.webp",
+    "BT Mic": "/images/logos/bt-mic.svg",
+    "BT Leasing": "/images/logos/bt-leasing.svg",
+    "BMW MotoHub": "/images/logos/bmw-motorrad.svg",
+    "Cargus": "/images/logos/cargus.svg",
+    "Carrefour": "/images/logos/carrefour.svg",
+    "Cegeka": "/images/logos/cegeka.svg",
     "Orbico": "/images/logos/orbico.svg",
     "Edenred": "/images/logos/edenred.svg"
   },
-  "groups": [
-    {
-      "id": "humanistic-valere",
-      "titleRo": "Proiecte prin Humanistic / Valere",
-      "titleEn": "Projects delivered through Humanistic / Valere",
-      "organizations": ["Hochland", "Rotolito", "msg.group", "Naos", "Leviatan", "Amazon", "Secom", "Mega Image", "Orbico", "Ursus", "Asahi / Grolsch", "Schwarz Digits", "Edenred"]
-    },
-    {
-      "id": "hpdi",
-      "titleRo": "Proiecte prin HPDI",
-      "titleEn": "Projects delivered through HPDI",
-      "organizations": ["Banca Transilvania", "BT Mic", "BT Leasing", "BMW MotoHub", "GfK", "Hutchinson"]
-    },
-    {
-      "id": "other",
-      "titleRo": "Alte colaborări și proiecte",
-      "titleEn": "Other collaborations and projects",
-      "organizations": ["Cargus", "Philips", "STUP"]
-    },
-    {
-      "id": "corporate-history",
-      "titleRo": "Portofoliu corporate anterior",
-      "titleEn": "Earlier corporate portfolio",
-      "organizations": ["KPMG", "PwC", "BNR", "ERSTE", "ING", "Banca Transilvania", "Libra Internet Bank", "OTP Leasing", "Heineken", "Carrefour", "Saint-Gobain", "HP", "BearingPoint", "Accenture", "Xerox", "NN", "MOL", "Microsoft", "Groupama", "Lidl", "Ubisoft", "Adient", "BRCI", "METRO", "Provident", "Cegeka", "Goodyear", "Luxoft", "Roche", "eMAG", "ESCP Europe", "Diaverum", "Merck", "Servier", "Vodafone"]
-    },
-    {
-      "id": "entrepreneurship-advisory",
-      "titleRo": "Antreprenoriat & advisory",
-      "titleEn": "Entrepreneurship & advisory",
-      "organizations": ["Teleskop", "YoungMinds"]
-    }
-  ]
+  "stup": {
+    "titleRo": "STUP · Programe deschise",
+    "titleEn": "STUP · Open programs",
+    "period": "2024–2026",
+    "introRo": "În programele deschise STUP, experiența s-a construit prin ediții repetate, pe trei teme de business și relații profesionale.",
+    "introEn": "Across STUP open programs, the experience was built through repeated editions around three business and professional relationship themes.",
+    "stats": [
+      { "value": "18", "labelRo": "ediții", "labelEn": "editions" },
+      { "value": "3", "labelRo": "tematici", "labelEn": "themes" },
+      { "value": "70+", "labelRo": "ore live", "labelEn": "live hours" },
+      { "value": "1.000+", "labelRo": "participanți", "labelEn": "participants" }
+    ],
+    "programs": [
+      { "nameRo": "Totul despre Networking", "nameEn": "All About Networking", "editions": "14" },
+      { "nameRo": "Arta Negocierii în Business", "nameEn": "The Art of Business Negotiation", "editions": "3" },
+      { "nameRo": "Business Model Canvas", "nameEn": "Business Model Canvas", "editions": "1" }
+    ]
+  },
+  "humanisticValere": {
+    "titleRo": "Proiecte livrate prin Humanistic / Valere",
+    "titleEn": "Projects delivered through Humanistic / Valere",
+    "introRo": "În aceste colaborări am livrat intervenții de negociere, sales și presales, coaching individual și de echipă, dezvoltarea echipelor și soft skills. Acolo unde tema este documentată, o arăt explicit; unde nu este, păstrez doar contextul profesional.",
+    "introEn": "Across these collaborations I delivered negotiation, sales and presales, individual and team coaching, team development and soft-skills interventions. Where the topic is documented, it is shown explicitly; where it is not, only the professional context is retained.",
+    "items": [
+      { "organization": "Amazon", "interventionRo": "Negotiation Skills Workshop", "interventionEn": "Negotiation Skills Workshop" },
+      { "organization": "Hochland", "interventionRo": "Coaching individual", "interventionEn": "Individual coaching" },
+      { "organization": "Rotolito", "interventionRo": "Team Coaching · Team Dynamics · Negotiation", "interventionEn": "Team Coaching · Team Dynamics · Negotiation" },
+      { "organization": "msg.group", "interventionRo": "Atomic Presales · Atomic Sales", "interventionEn": "Atomic Presales · Atomic Sales" },
+      { "organization": "Secom", "interventionRo": "Sales · Growth Mindset", "interventionEn": "Sales · Growth Mindset" },
+      { "organization": "Edenred", "interventionRo": "Atomic Sales", "interventionEn": "Atomic Sales" },
+      { "organization": "Orbico", "interventionRo": "Negotiation", "interventionEn": "Negotiation" },
+      { "organization": "Naos", "interventionRo": "Negotiation · instrumente psihometrice", "interventionEn": "Negotiation · psychometric tools" },
+      { "organization": "Leviatan", "interventionRo": "Coaching", "interventionEn": "Coaching" },
+      { "organization": "Asahi / Grolsch", "interventionRo": "Program LT Dev", "interventionEn": "LT Dev program" },
+      { "organization": "Schwarz Digits", "interventionRo": "Soft Skills", "interventionEn": "Soft Skills" }
+    ],
+    "additionalOrganizations": ["Mega Image", "Ursus"]
+  },
+  "hpdi": {
+    "titleRo": "Proiecte livrate prin HPDI",
+    "titleEn": "Projects delivered through HPDI",
+    "introRo": "În proiectele derulate prin HPDI am lucrat în contexte de business, antreprenoriat, networking, dezvoltare în carieră, sales și coaching.",
+    "introEn": "Across projects delivered through HPDI I worked in business, entrepreneurship, networking, career development, sales and coaching contexts.",
+    "btTitleRo": "Ecosistemul Banca Transilvania",
+    "btTitleEn": "Banca Transilvania ecosystem",
+    "btOrganizations": ["Banca Transilvania", "BT Mic", "BT Leasing"],
+    "btTopicsRo": ["Școala de Business IMM", "Antreprenoriat", "Networking", "Consiliere în carieră", "Sales Retail"],
+    "btTopicsEn": ["SME Business School", "Entrepreneurship", "Networking", "Career counselling", "Retail Sales"],
+    "btNoteRo": "Temele apar în portofoliul proiectelor pentru ecosistemul BT; nu le atribuim individual fiecărei entități acolo unde distribuția exactă nu este documentată.",
+    "btNoteEn": "These themes appear across projects for the BT ecosystem; they are not assigned to individual entities where the exact distribution is not documented.",
+    "spotlights": [
+      { "organization": "BMW MotoHub", "interventionRo": "Coaching · Sales Training", "interventionEn": "Coaching · Sales Training" }
+    ],
+    "additionalOrganizations": ["GfK", "Hutchinson"]
+  },
+  "otherCollaborations": {
+    "titleRo": "Alte colaborări și proiecte",
+    "titleEn": "Other collaborations and projects",
+    "items": [
+      { "organization": "Philips", "detailRo": "Proiect livrat prin SimpleTrue", "detailEn": "Project delivered through SimpleTrue" },
+      { "organization": "Cargus", "detailRo": "Context profesional documentat", "detailEn": "Documented professional context" }
+    ]
+  },
+  "corporateHistory": {
+    "titleRo": "Experiență în contexte organizaționale diverse",
+    "titleEn": "Experience across diverse organizational contexts",
+    "introRo": "Portofoliul profesional include organizații din servicii financiare, tehnologie, retail, FMCG, industrie, consultanță, servicii profesionale, pharma și healthcare. Pentru aceste logo-uri nu atribuim public o temă specifică fără o asociere client–program documentată.",
+    "introEn": "The professional portfolio spans financial services, technology, retail, FMCG, industry, consulting, professional services, pharma and healthcare. A specific topic is not publicly assigned to these logos without a documented client–program link.",
+    "organizations": ["KPMG", "PwC", "BNR", "ERSTE", "ING", "Banca Transilvania", "Libra Internet Bank", "OTP Leasing", "Heineken", "Carrefour", "Saint-Gobain", "HP", "BearingPoint", "Accenture", "Xerox", "NN", "MOL", "Microsoft", "Groupama", "Lidl", "Ubisoft", "Adient", "BRCI", "METRO", "Provident", "Cegeka", "Goodyear", "Luxoft", "Roche", "eMAG", "ESCP Europe", "Diaverum", "Merck", "Servier", "Vodafone"]
+  },
+  "entrepreneurshipAdvisory": {
+    "titleRo": "Antreprenoriat & advisory",
+    "titleEn": "Entrepreneurship & advisory",
+    "introRo": "O parte din experiența mea vine și din construirea sau susținerea unor proiecte educaționale, nu doar din intervenții pentru clienți corporate.",
+    "introEn": "Part of my experience also comes from building or supporting educational ventures, not only from corporate client work.",
+    "items": [
+      { "organization": "YoungMinds", "detailRo": "Proiect antreprenorial în educație", "detailEn": "Entrepreneurial education project" },
+      { "organization": "Teleskop", "detailRo": "Advisory · proiect educațional", "detailEn": "Advisory · education project" }
+    ]
+  }
 }
