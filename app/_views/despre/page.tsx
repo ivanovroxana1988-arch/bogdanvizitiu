@@ -8,6 +8,17 @@ import { buildPageMetadata } from '@/lib/seo'
 import styles from '../commercial.module.css'
 import heroStyles from './about-hero.module.css'
 
+const rolesBridgeCopy = {
+  ro: {
+    text: 'În practică, rolurile nu sunt întotdeauna separate. Uneori, o conversație de coaching ajunge la o nevoie de consultanță, iar un proiect de training poate cere facilitare sau intervenție organizațională. Important pentru mine este să fie clar ce rol folosesc, când și de ce.',
+    cta: 'Coaching sau consultanță: de ce ai nevoie, de fapt?',
+  },
+  en: {
+    text: 'In practice, the roles are not always separate. A coaching conversation can surface a need for consulting, while a training project may call for facilitation or an organizational intervention. What matters to me is being clear about which role I am using, when and why.',
+    cta: 'Coaching or consulting: what do you actually need?',
+  },
+} as const
+
 export function generateMetadata({ searchParams }: { searchParams?: { lang?: string } }): Metadata {
   const locale = getLocale(searchParams?.lang)
   const copy = aboutCopy[locale]
@@ -22,6 +33,7 @@ export function generateMetadata({ searchParams }: { searchParams?: { lang?: str
 export default function About({ searchParams }: { searchParams?: { lang?: string } }) {
   const locale = getLocale(searchParams?.lang)
   const copy = aboutCopy[locale]
+  const rolesBridge = rolesBridgeCopy[locale]
   const contactCopy = getCopy(locale).contact
   const contactLabel = locale === 'ro' ? 'Începe o conversație' : 'Start a conversation'
   const careerIntro =
@@ -141,30 +153,29 @@ export default function About({ searchParams }: { searchParams?: { lang?: string
       </section>
 
       <section className={styles.section} id="roles">
-        <div className={styles.sectionHead}>
+        <div className={`${styles.sectionHead} ${heroStyles.rolesHead}`}>
           <div>
             <Eyebrow>{copy.rolesEyebrow}</Eyebrow>
             <h2 className={styles.sectionTitle}>{copy.rolesTitle}</h2>
           </div>
-          <p className={styles.sectionIntro}>{copy.rolesIntro}</p>
+          <p className={`${styles.sectionIntro} ${heroStyles.rolesIntro}`}>{copy.rolesIntro}</p>
         </div>
-        <div
-          className={styles.twoGrid}
-          style={{
-            borderLeft: '1px solid var(--line, #b7c0c0)',
-            borderRight: '1px solid var(--line, #b7c0c0)',
-          }}
-        >
-          {copy.rolesItems.map((item, index) => (
-            <article
-              className={styles.editorialCard}
-              key={item.title}
-              style={index % 2 === 0 ? { borderLeft: 0, paddingLeft: 0 } : undefined}
-            >
+        <div className={heroStyles.rolesGrid}>
+          {copy.rolesItems.map((item) => (
+            <article className={heroStyles.roleCard} key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
             </article>
           ))}
+        </div>
+        <div className={heroStyles.rolesBridge}>
+          <p className={heroStyles.rolesBridgeText}>{rolesBridge.text}</p>
+          <ArrowLink
+            className={heroStyles.rolesBridgeLink}
+            href="/insights/coaching-sau-consultanta-de-ce-ai-nevoie-de-fapt"
+          >
+            {rolesBridge.cta}
+          </ArrowLink>
         </div>
       </section>
 
