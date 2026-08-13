@@ -1,0 +1,92 @@
+{
+  "ro": {
+    "intro": "Experiențe diferite, de la corporate și consultanță la antreprenoriat și educație, care au construit felul în care lucrez astăzi.",
+    "corporateLabel": "Corporate & consultanță",
+    "entrepreneurLabel": "Antreprenoriat",
+    "footer": "Fiecare experiență a adăugat o perspectivă. Împreună, formează felul în care lucrez azi cu oameni și organizații.",
+    "corporate": [
+      {
+        "title": "Orange România",
+        "meta": "10 ani",
+        "paragraphs": [
+          "Am petrecut 10 ani în cadrul Orange România, în roluri precum Business Retention Analyst, Business Sales Representative, Concept Store Manager și Direct Sales Manager.",
+          "Am coordonat echipe, am dezvoltat modele comerciale și am lucrat direct cu procese de performanță, retenție, vânzări și dezvoltare a businessului."
+        ]
+      },
+      {
+        "title": "Trend Consult Group",
+        "meta": "2016–2019",
+        "paragraphs": [
+          "În 2016 m-am alăturat Trend Consult, unde m-am format ca trainer și consultant și am lucrat în proiecte de dezvoltare organizațională, vânzări și management.",
+          "Am dezvoltat și implementat procese și strategii de vânzare, modele pentru echipe de sales și telesales, sisteme de KPI și recompensare, proiecte CRM și intervenții de management comercial.",
+          "Ca trainer și facilitator, am lucrat cu echipe și lideri în leadership, people management, sales și negociere, customer care, comunicare și performance management."
+        ]
+      }
+    ],
+    "entrepreneur": [
+      {
+        "title": "YoungMinds",
+        "meta": "din 2019",
+        "logo": "/images/logos/youngminds.svg",
+        "paragraphs": [
+          "În 2019 am fondat YoungMinds, un proiect educațional construit în jurul învățării prin experiență, autonomie, curiozitate și explorare.",
+          "Pentru mine, YoungMinds a devenit și un laborator viu în care pot observa și înțelege mai bine cum învață copiii, ce susține motivația, cum se dezvoltă autonomia și ce rol are mediul în comportament și învățare."
+        ]
+      },
+      {
+        "title": "Teleskop",
+        "meta": "",
+        "logo": "/images/logos/teleskop.svg",
+        "paragraphs": [
+          "În perioada pandemiei m-am alăturat echipei Teleskop, un proiect construit în jurul colectării și folosirii feedbackului în educație.",
+          "Am contribuit la dezvoltarea unui ecosistem prin care profesorii și școlile puteau colecta feedback anonim, înțelege mai bine experiența de învățare și folosi datele pentru decizii și intervenții mai bune."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "intro": "Different experiences, from corporate work and consulting to entrepreneurship and education, have shaped how I work today.",
+    "corporateLabel": "Corporate & consulting",
+    "entrepreneurLabel": "Entrepreneurship",
+    "footer": "Each experience added a perspective. Together, they shape how I work today with people and organizations.",
+    "corporate": [
+      {
+        "title": "Orange Romania",
+        "meta": "10 years",
+        "paragraphs": [
+          "I spent 10 years at Orange Romania in roles including Business Retention Analyst, Business Sales Representative, Concept Store Manager and Direct Sales Manager.",
+          "I led teams, developed commercial models and worked directly with performance, retention, sales and business development processes."
+        ]
+      },
+      {
+        "title": "Trend Consult Group",
+        "meta": "2016–2019",
+        "paragraphs": [
+          "I joined Trend Consult in 2016, where I trained as a trainer and consultant and worked on organizational development, sales and management projects.",
+          "I developed and implemented sales processes and strategies, models for sales and telesales teams, KPI and reward systems, CRM projects and commercial management interventions.",
+          "As a trainer and facilitator, I worked with teams and leaders across leadership, people management, sales and negotiation, customer care, communication and performance management."
+        ]
+      }
+    ],
+    "entrepreneur": [
+      {
+        "title": "YoungMinds",
+        "meta": "since 2019",
+        "logo": "/images/logos/youngminds.svg",
+        "paragraphs": [
+          "I founded YoungMinds in 2019, an educational project built around experiential learning, autonomy, curiosity and exploration.",
+          "For me, YoungMinds has also become a living laboratory for observing and understanding how children learn, what supports motivation, how autonomy develops and how the environment influences behavior and learning."
+        ]
+      },
+      {
+        "title": "Teleskop",
+        "meta": "",
+        "logo": "/images/logos/teleskop.svg",
+        "paragraphs": [
+          "During the pandemic, I joined the Teleskop team, a project built around collecting and using feedback in education.",
+          "I contributed to developing an ecosystem that enabled teachers and schools to collect anonymous feedback, better understand the learning experience and use data for better decisions and interventions."
+        ]
+      }
+    ]
+  }
+}
