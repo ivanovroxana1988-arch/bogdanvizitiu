@@ -3,23 +3,42 @@ import portfolio from '@/content/portfolio.json'
 import styles from './portfolio-marquee.module.css'
 
 type Locale = 'ro' | 'en'
+type LogoVariant = 'wide' | 'medium' | 'compact' | 'stacked'
 
 const logoAssets = portfolio.logoAssets as Record<string, string>
 const organizations = Object.entries(logoAssets)
 
+const logoVariants: Record<string, LogoVariant> = {
+  KPMG: 'wide',
+  PwC: 'medium',
+  Teleskop: 'medium',
+  Accenture: 'wide',
+  Amazon: 'wide',
+  'Banca Transilvania': 'stacked',
+  Orbico: 'medium',
+  Edenred: 'compact',
+}
+
 function Track({ hidden = false }: { hidden?: boolean }) {
   return (
     <div className={styles.track} aria-hidden={hidden || undefined}>
-      {organizations.map(([name, logo]) => (
-        <div className={styles.logoSlot} key={`${hidden ? 'copy-' : ''}${name}`}>
-          <img
-            src={logo}
-            alt={hidden ? '' : `${name} logo`}
-            className={styles.logoImage}
-            loading="lazy"
-          />
-        </div>
-      ))}
+      {organizations.map(([name, logo]) => {
+        const variant = logoVariants[name] ?? 'medium'
+
+        return (
+          <div
+            className={`${styles.logoSlot} ${styles[variant]}`}
+            key={`${hidden ? 'copy-' : ''}${name}`}
+          >
+            <img
+              src={logo}
+              alt={hidden ? '' : `${name} logo`}
+              className={styles.logoImage}
+              loading="lazy"
+            />
+          </div>
+        )
+      })}
     </div>
   )
 }
