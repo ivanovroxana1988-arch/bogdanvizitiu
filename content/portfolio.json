@@ -4,100 +4,38 @@
     "PwC": "/images/logos/pwc.svg",
     "Teleskop": "/images/logos/teleskop.svg",
     "YoungMinds": "/images/logos/youngminds.svg",
-    "Accenture": "/images/logos/portfolio-sprite-01.svg#accenture",
+    "Accenture": "/images/logos/accenture.webp",
     "Adient": "/images/logos/portfolio-sprite-01.svg#adient",
-    "Amazon": "/images/logos/portfolio-sprite-02.svg#amazon",
-    "Banca Transilvania": "/images/logos/portfolio-sprite-02.svg#banca-transilvania",
+    "Amazon": "/images/logos/amazon.webp",
+    "Banca Transilvania": "/images/logos/banca-transilvania.webp",
     "BearingPoint": "/images/logos/portfolio-sprite-03.svg#bearingpoint",
-    "BMW MotoHub": "/images/logos/portfolio-sprite-03.svg#bmw-motohub"
+    "BMW MotoHub": "/images/logos/portfolio-sprite-03.svg#bmw-motohub",
+    "Microsoft": "/images/logos/microsoft.svg"
   },
   "groups": [
     {
       "id": "humanistic-valere",
       "titleRo": "Proiecte prin Humanistic / Valere",
       "titleEn": "Projects delivered through Humanistic / Valere",
-      "organizations": [
-        "Hochland",
-        "Rotolito",
-        "msg.group",
-        "Naos",
-        "Leviatan",
-        "Amazon",
-        "Secom",
-        "Mega Image",
-        "Orbico",
-        "Ursus",
-        "Asahi / Grolsch",
-        "Schwarz Digits",
-        "Edenred"
-      ]
+      "organizations": ["Hochland", "Rotolito", "msg.group", "Naos", "Leviatan", "Amazon", "Secom", "Mega Image", "Orbico", "Ursus", "Asahi / Grolsch", "Schwarz Digits", "Edenred"]
     },
     {
       "id": "hpdi",
       "titleRo": "Proiecte prin HPDI",
       "titleEn": "Projects delivered through HPDI",
-      "organizations": [
-        "Banca Transilvania",
-        "BT Mic",
-        "BT Leasing",
-        "BMW MotoHub",
-        "GfK",
-        "Hutchinson"
-      ]
+      "organizations": ["Banca Transilvania", "BT Mic", "BT Leasing", "BMW MotoHub", "GfK", "Hutchinson"]
     },
     {
       "id": "other",
       "titleRo": "Alte colaborări și proiecte",
       "titleEn": "Other collaborations and projects",
-      "organizations": [
-        "Cargus",
-        "Philips",
-        "STUP",
-        "Teleskop",
-        "YoungMinds"
-      ]
+      "organizations": ["Cargus", "Philips", "STUP", "Teleskop", "YoungMinds"]
     },
     {
       "id": "corporate-history",
       "titleRo": "Portofoliu corporate anterior",
       "titleEn": "Earlier corporate portfolio",
-      "organizations": [
-        "KPMG",
-        "PwC",
-        "BNR",
-        "ERSTE",
-        "ING",
-        "Banca Transilvania",
-        "Libra Internet Bank",
-        "OTP Leasing",
-        "Heineken",
-        "Carrefour",
-        "Saint-Gobain",
-        "HP",
-        "BearingPoint",
-        "Accenture",
-        "Xerox",
-        "NN",
-        "MOL",
-        "Microsoft",
-        "Groupama",
-        "Lidl",
-        "Ubisoft",
-        "Adient",
-        "BRCI",
-        "METRO",
-        "Provident",
-        "Cegeka",
-        "Goodyear",
-        "Luxoft",
-        "Roche",
-        "eMAG",
-        "ESCP Europe",
-        "Diaverum",
-        "Merck",
-        "Servier",
-        "Vodafone"
-      ]
+      "organizations": ["KPMG", "PwC", "BNR", "ERSTE", "ING", "Banca Transilvania", "Libra Internet Bank", "OTP Leasing", "Heineken", "Carrefour", "Saint-Gobain", "HP", "BearingPoint", "Accenture", "Xerox", "NN", "MOL", "Microsoft", "Groupama", "Lidl", "Ubisoft", "Adient", "BRCI", "METRO", "Provident", "Cegeka", "Goodyear", "Luxoft", "Roche", "eMAG", "ESCP Europe", "Diaverum", "Merck", "Servier", "Vodafone"]
     }
   ]
 }
