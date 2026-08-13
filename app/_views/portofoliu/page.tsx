@@ -26,7 +26,9 @@ export default function Portfolio({ searchParams }: { searchParams?: { lang?: st
   return (
     <main className={styles.page}>
       <section className={`shell ${styles.hero}`}>
-        <p className={styles.eyebrow}>{locale === 'ro' ? 'Experiență aplicată' : 'Applied experience'}</p>
+        <p className={styles.eyebrow}>
+          {locale === 'ro' ? 'Experiență aplicată' : 'Applied experience'}
+        </p>
         <h1 className={styles.title}>
           {locale === 'ro' ? 'Portofoliu de experiență' : 'Experience portfolio'}
         </h1>
@@ -39,7 +41,11 @@ export default function Portfolio({ searchParams }: { searchParams?: { lang?: st
 
       <div className="shell">
         {portfolio.groups.map((group, index) => (
-          <section className={styles.group} key={group.id} aria-labelledby={`portfolio-${group.id}`}>
+          <section
+            className={styles.group}
+            key={group.id}
+            aria-labelledby={`portfolio-${group.id}`}
+          >
             <div className={styles.groupHead}>
               <span className={styles.number}>0{index + 1}</span>
               <h2 id={`portfolio-${group.id}`} className={styles.groupTitle}>
@@ -54,7 +60,12 @@ export default function Portfolio({ searchParams }: { searchParams?: { lang?: st
                   <article className={styles.item} key={`${group.id}-${name}`}>
                     <div className={styles.logoWrap}>
                       {logo ? (
-                        <img src={logo} alt={`${name} logo`} className={styles.logo} loading="lazy" />
+                        <img
+                          src={logo}
+                          alt={`${name} logo`}
+                          className={styles.logo}
+                          loading="lazy"
+                        />
                       ) : (
                         <strong className={styles.wordmark}>{name}</strong>
                       )}

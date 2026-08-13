@@ -4,9 +4,7 @@ import styles from './portfolio-marquee.module.css'
 
 type Locale = 'ro' | 'en'
 
-const organizations = Array.from(
-  new Set(portfolio.groups.flatMap((group) => group.organizations)),
-)
+const organizations = Array.from(new Set(portfolio.groups.flatMap((group) => group.organizations)))
 
 const logoAssets = portfolio.logoAssets as Record<string, string>
 
@@ -18,7 +16,12 @@ function Track({ hidden = false }: { hidden?: boolean }) {
         return (
           <div className={styles.logoSlot} key={`${hidden ? 'copy-' : ''}${name}`}>
             {logo ? (
-              <img src={logo} alt={hidden ? '' : name} className={styles.logoImage} loading="lazy" />
+              <img
+                src={logo}
+                alt={hidden ? '' : name}
+                className={styles.logoImage}
+                loading="lazy"
+              />
             ) : (
               <span className={styles.wordmark}>{name}</span>
             )}
@@ -35,7 +38,9 @@ export function PortfolioMarquee({ locale }: { locale: Locale }) {
     <section className={styles.section} aria-labelledby="portfolio-marquee-title">
       <div className={`shell ${styles.header}`}>
         <div>
-          <p className={styles.eyebrow}>{locale === 'ro' ? 'Experiență aplicată' : 'Applied experience'}</p>
+          <p className={styles.eyebrow}>
+            {locale === 'ro' ? 'Experiență aplicată' : 'Applied experience'}
+          </p>
           <h2 id="portfolio-marquee-title" className={styles.title}>
             {locale === 'ro' ? 'Organizații cu care am lucrat' : 'Organizations I have worked with'}
           </h2>
