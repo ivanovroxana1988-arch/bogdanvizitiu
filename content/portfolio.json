@@ -9,7 +9,7 @@
     "Amazon": "/images/logos/amazon.webp",
     "Banca Transilvania": "/images/logos/banca-transilvania.webp",
     "BearingPoint": "/images/logos/portfolio-sprite-03.svg#bearingpoint",
-    "BMW MotoHub": "/images/logos/portfolio-sprite-03.svg#bmw-motohub",
+    "BMW MotoHub": "/images/logos/bmw-motorrad.svg",
     "Microsoft": "/images/logos/microsoft.svg",
     "Groupama": "/images/logos/groupama.svg",
     "Ubisoft": "/images/logos/ubisoft.svg",
@@ -30,7 +30,15 @@
     "Rotolito": "/images/logos/rotolito.svg",
     "Orbico": "/images/logos/orbico.svg",
     "METRO": "/images/logos/metro.svg",
-    "NN": "/images/logos/nn.svg"
+    "NN": "/images/logos/nn.svg",
+    "Goodyear": "/images/logos/goodyear.svg",
+    "Cegeka": "/images/logos/cegeka.svg",
+    "Hutchinson": "/images/logos/hutchinson.svg",
+    "Mega Image": "/images/logos/mega-image.svg",
+    "BT Leasing": "/images/logos/bt-leasing.svg",
+    "BT Mic": "/images/logos/bt-mic.svg",
+    "Philips": "/images/logos/philips.svg",
+    "GfK": "/images/logos/gfk.svg"
   },
   "groups": [
     {

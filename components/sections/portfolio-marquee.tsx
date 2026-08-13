@@ -4,27 +4,17 @@ import styles from './portfolio-marquee.module.css'
 
 type Locale = 'ro' | 'en'
 
-const organizations = Array.from(
-  new Set(portfolio.groups.flatMap((group) => group.organizations)),
-)
-
 const logoAssets = portfolio.logoAssets as Record<string, string>
+const organizations = Object.entries(logoAssets)
 
 function Track({ hidden = false }: { hidden?: boolean }) {
   return (
     <div className={styles.track} aria-hidden={hidden || undefined}>
-      {organizations.map((name) => {
-        const logo = logoAssets[name]
-        return (
-          <div className={styles.logoSlot} key={`${hidden ? 'copy-' : ''}${name}`}>
-            {logo ? (
-              <img src={logo} alt={hidden ? '' : name} className={styles.logoImage} loading="lazy" />
-            ) : (
-              <span className={styles.wordmark}>{name}</span>
-            )}
-          </div>
-        )
-      })}
+      {organizations.map(([name, logo]) => (
+        <div className={styles.logoSlot} key={`${hidden ? 'copy-' : ''}${name}`}>
+          <img src={logo} alt={hidden ? '' : `${name} logo`} className={styles.logoImage} loading="lazy" />
+        </div>
+      ))}
     </div>
   )
 }
