@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
-import { ArrowLink, Eyebrow, PageHero } from '@/components/ui'
+import Image from 'next/image'
+import { ArrowLink, Eyebrow } from '@/components/ui'
+import media from '@/content/media.json'
 import servicePages from '@/content/service-pages.json'
 import { getLocale } from '@/lib/i18n'
 import { buildPageMetadata } from '@/lib/seo'
+import styles from './coaching.module.css'
 
 export function generateMetadata({ searchParams }: { searchParams?: { lang?: string } }): Metadata {
   const locale = getLocale(searchParams?.lang)
@@ -23,10 +26,28 @@ export function generateMetadata({ searchParams }: { searchParams?: { lang?: str
 export default function Coaching({ searchParams }: { searchParams?: { lang?: string } }) {
   const locale = getLocale(searchParams?.lang)
   const copy = servicePages[locale].coaching
+  const coachingImage = media.images.coaching
 
   return (
     <>
-      <PageHero eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro} />
+      <section className={`page-hero shell ${styles.hero}`}>
+        <Eyebrow>{copy.eyebrow}</Eyebrow>
+        <div className={styles.heroGrid}>
+          <div className={styles.copy}>
+            <h1 className={styles.title}>{copy.title}</h1>
+            <p className={styles.intro}>{copy.intro}</p>
+          </div>
+          <figure className={styles.portrait}>
+            <Image
+              src={coachingImage.src}
+              alt={locale === 'ro' ? coachingImage.alt : coachingImage.alt_en}
+              fill
+              priority
+              sizes="(max-width: 980px) 100vw, 38vw"
+            />
+          </figure>
+        </div>
+      </section>
       <section className="shell">
         <div className="prose" style={{ maxWidth: '900px' }}>
           <Eyebrow>{locale === 'ro' ? 'Direcții de lucru' : 'Working directions'}</Eyebrow>
