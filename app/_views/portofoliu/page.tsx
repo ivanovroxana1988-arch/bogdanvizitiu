@@ -6,9 +6,9 @@ import portfolio from '@/content/portfolio.json'
 import styles from './portfolio.module.css'
 
 const logoAssets = portfolio.logoAssets as Record<string, string>
-const organizations = Array.from(new Set(portfolio.groups.flatMap((group) => group.organizations))).sort((a, b) =>
-  a.localeCompare(b),
-)
+const organizations = Array.from(
+  new Set(portfolio.groups.flatMap((group) => group.organizations)),
+).sort((a, b) => a.localeCompare(b))
 
 export function generateMetadata({ searchParams }: { searchParams?: { lang?: string } }): Metadata {
   const locale = getLocale(searchParams?.lang)
