@@ -18,7 +18,12 @@ function Track({ hidden = false }: { hidden?: boolean }) {
             className={styles.logoImage}
             loading="lazy"
           />
-          <img src={logo} alt={hidden ? '' : `${name} logo`} className={styles.logoImage} loading="lazy" />
+          <img
+            src={logo}
+            alt={hidden ? '' : `${name} logo`}
+            className={styles.logoImage}
+            loading="lazy"
+          />
         </div>
       ))}
     </div>

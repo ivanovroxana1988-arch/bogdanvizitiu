@@ -20,24 +20,10 @@ export function BrandLogo({ className, variant = 'mark', tone = 'dark' }: BrandL
         aria-label="Bogdan George Vizitiu"
       >
         <g transform="translate(126 2)">
-          <text
-            x="0"
-            y="112"
-            fill={ink}
-            fontFamily={serif}
-            fontSize="122"
-            fontWeight="400"
-          >
+          <text x="0" y="112" fill={ink} fontFamily={serif} fontSize="122" fontWeight="400">
             B
           </text>
-          <text
-            x="84"
-            y="140"
-            fill={blue}
-            fontFamily={serif}
-            fontSize="112"
-            fontWeight="400"
-          >
+          <text x="84" y="140" fill={blue} fontFamily={serif} fontSize="112" fontWeight="400">
             G
           </text>
           <path
@@ -80,24 +66,10 @@ export function BrandLogo({ className, variant = 'mark', tone = 'dark' }: BrandL
       aria-hidden="true"
       focusable="false"
     >
-      <text
-        x="3"
-        y="105"
-        fill={ink}
-        fontFamily={serif}
-        fontSize="112"
-        fontWeight="400"
-      >
+      <text x="3" y="105" fill={ink} fontFamily={serif} fontSize="112" fontWeight="400">
         B
       </text>
-      <text
-        x="75"
-        y="128"
-        fill={blue}
-        fontFamily={serif}
-        fontSize="102"
-        fontWeight="400"
-      >
+      <text x="75" y="128" fill={blue} fontFamily={serif} fontSize="102" fontWeight="400">
         G
       </text>
       <path
