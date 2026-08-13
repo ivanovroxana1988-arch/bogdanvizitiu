@@ -29,7 +29,9 @@ export default function Portfolio({ searchParams }: { searchParams?: { lang?: st
   return (
     <main className={styles.page}>
       <section className={`shell ${styles.hero}`}>
-        <p className={styles.eyebrow}>{locale === 'ro' ? 'Experiență aplicată' : 'Applied experience'}</p>
+        <p className={styles.eyebrow}>
+          {locale === 'ro' ? 'Experiență aplicată' : 'Applied experience'}
+        </p>
         <h1 className={styles.title}>
           {locale === 'ro' ? 'Portofoliu de experiență' : 'Experience portfolio'}
         </h1>
@@ -44,7 +46,9 @@ export default function Portfolio({ searchParams }: { searchParams?: { lang?: st
         <section className={styles.group} aria-labelledby="portfolio-organizations">
           <div className={styles.groupHead}>
             <h2 id="portfolio-organizations" className={styles.groupTitle}>
-              {locale === 'ro' ? 'Organizații cu care am lucrat' : 'Organizations I have worked with'}
+              {locale === 'ro'
+                ? 'Organizații cu care am lucrat'
+                : 'Organizations I have worked with'}
             </h2>
           </div>
 

@@ -97,11 +97,7 @@ export default function Insights({ searchParams }: { searchParams?: { lang?: str
       <PageHero eyebrow={copy.eyebrow} title={title} intro={intro} />
       <section className={`shell ${styles.indexSection}`}>
         <article className={styles.feature}>
-          <InsightImage
-            insight={feature}
-            className={styles.featureImage}
-            locale={locale}
-          />
+          <InsightImage insight={feature} className={styles.featureImage} locale={locale} />
           <div className={styles.featureContent}>
             <div className={styles.meta}>
               <span className={styles.category}>{feature.category}</span>
