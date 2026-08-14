@@ -11,6 +11,7 @@ const roToEn: Record<string, string> = {
   '/insights': '/en/insights',
   '/resurse': '/en/resources',
   '/contact': '/en/contact',
+  '/inscriere': '/en/register',
   '/confidentialitate': '/en/privacy',
   '/termeni': '/en/terms',
 }
