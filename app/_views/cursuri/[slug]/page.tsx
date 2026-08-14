@@ -25,9 +25,12 @@ function seoTitle(slug: string, locale: 'ro' | 'en', fallback: string) {
   if (locale === 'ro') {
     if (slug === 'arta-negocierii') return 'Curs de negociere pentru profesioniști'
     if (slug === 'networking') return 'Curs de networking profesional'
+    if (slug === 'leading-high-performance-teams')
+      return 'Curs de leadership pentru echipe performante'
   }
   if (slug === 'arta-negocierii') return 'Negotiation course for professionals'
   if (slug === 'networking') return 'Professional networking course'
+  if (slug === 'leading-high-performance-teams') return 'High-performance teams leadership course'
   return fallback
 }
 
@@ -35,9 +38,13 @@ function pageHeading(slug: string, locale: 'ro' | 'en', fallback: string) {
   if (locale === 'ro') {
     if (slug === 'arta-negocierii') return 'Curs de negociere: Negotiation & Influence'
     if (slug === 'networking') return 'Curs de networking profesional'
+    if (slug === 'leading-high-performance-teams')
+      return 'Curs de leadership: Leading High Performance Teams'
   }
   if (slug === 'arta-negocierii') return 'Negotiation course: Negotiation & Influence'
   if (slug === 'networking') return 'Professional networking course'
+  if (slug === 'leading-high-performance-teams')
+    return 'Leadership course: Leading High Performance Teams'
   return fallback
 }
 
@@ -47,11 +54,15 @@ function seoDescription(slug: string, locale: 'ro' | 'en', fallback: string) {
       return 'Curs de negociere pentru manageri, antreprenori, oameni de vânzări și profesioniști care vor să pregătească mai clar interesele, alternativele și concesiile.'
     if (slug === 'networking')
       return 'Curs de networking profesional pentru manageri, antreprenori, specialiști și oameni de vânzări care vor să construiască relații relevante și follow-up cu context.'
+    if (slug === 'leading-high-performance-teams')
+      return 'Curs de leadership pentru manageri și team leads care vor mai multă claritate, autonomie, feedback și responsabilitate în echipă.'
   }
   if (slug === 'arta-negocierii')
     return 'Negotiation course for managers, entrepreneurs, salespeople and professionals who want clearer interests, alternatives and choices under pressure.'
   if (slug === 'networking')
     return 'Professional networking course for managers, entrepreneurs, specialists and salespeople who want relevant relationships and better follow-up.'
+  if (slug === 'leading-high-performance-teams')
+    return 'Leadership course for managers and team leads who want more clarity, autonomy, feedback and ownership across their teams.'
   return fallback
 }
 
@@ -275,7 +286,9 @@ export default function Program({
       <section className={styles.cta}>
         <Eyebrow>{copy.ctaEyebrow}</Eyebrow>
         <h2 className={styles.ctaTitle}>{program.ctaTitle}</h2>
-        <ArrowLink href={localizePath('/contact', locale)}>{copy.cta}</ArrowLink>
+        <ArrowLink href={`/inscriere?course=${encodeURIComponent(program.slug)}`}>
+          {locale === 'ro' ? 'Înscrie-te' : 'Register'}
+        </ArrowLink>
       </section>
     </div>
   )
