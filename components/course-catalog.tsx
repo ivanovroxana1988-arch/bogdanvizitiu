@@ -12,8 +12,8 @@ type Program = {
   description: string
 }
 
-type CategoryKey = 'networking' | 'negotiation' | 'other'
-type ConceptAsset = 'networkingEditorial' | 'negotiationEditorial'
+type CategoryKey = 'networking' | 'negotiation' | 'leadership' | 'other'
+type ConceptAsset = 'networkingEditorial' | 'negotiationEditorial' | 'architectureStair'
 
 type CatalogMeta = {
   category: CategoryKey
@@ -31,6 +31,11 @@ const catalogMeta: Record<string, CatalogMeta> = {
     category: 'negotiation',
     label: { ro: 'Negociere & influență', en: 'Negotiation & influence' },
     image: 'negotiationEditorial',
+  },
+  'leading-high-performance-teams': {
+    category: 'leadership',
+    label: { ro: 'Leadership & echipe', en: 'Leadership & teams' },
+    image: 'architectureStair',
   },
 }
 
@@ -134,9 +139,17 @@ export function CourseCatalog({
                 </div>
                 <h3>{program.title}</h3>
                 <p>{program.description}</p>
-                <ArrowLink className={styles.cardLink} href={`/cursuri/${program.slug}`}>
-                  {viewProgramLabel}
-                </ArrowLink>
+                <div className={styles.cardActions}>
+                  <ArrowLink className={styles.cardLink} href={`/cursuri/${program.slug}`}>
+                    {locale === 'ro' ? 'Află mai multe' : viewProgramLabel}
+                  </ArrowLink>
+                  <ArrowLink
+                    className={styles.enrollLink}
+                    href={`/inscriere?course=${encodeURIComponent(program.slug)}`}
+                  >
+                    {locale === 'ro' ? 'Înscrie-te' : 'Register'}
+                  </ArrowLink>
+                </div>
               </div>
             </article>
           )
