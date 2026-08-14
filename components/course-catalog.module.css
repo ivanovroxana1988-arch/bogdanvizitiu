@@ -104,8 +104,28 @@
   line-height: 1.72;
 }
 
-.cardLink {
+.cardActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
   margin-top: auto;
+}
+
+.cardLink {
+  flex: 0 0 auto;
+}
+
+.enrollLink {
+  flex: 0 0 auto;
+  padding: 10px 15px;
+  background: var(--blue);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.enrollLink:hover {
+  opacity: 0.84;
 }
 
 @media (max-width: 900px) {
@@ -131,6 +151,11 @@
 
   .cardMeta {
     justify-content: flex-start;
+  }
+
+  .cardActions {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
