@@ -54,7 +54,7 @@ export default function DespreLayout({ children }: { children: ReactNode }) {
 
         #beyond-roles > div::before {
           grid-column: 1;
-          background-image: url('/media/bogdan-board-game.webp');
+          background-image: url('/media/bogdan-board-game.webp?v=20260814-2');
         }
 
         #beyond-roles > div::after {
