@@ -17,12 +17,12 @@ export function generateMetadata({ searchParams }: { searchParams?: SearchParams
   return buildPageMetadata({
     title:
       locale === 'ro'
-        ? 'Cursuri pentru profesioniști: negociere și networking'
-        : 'Open courses for professionals: negotiation and networking',
+        ? 'Cursuri pentru profesioniști: leadership, negociere și networking'
+        : 'Open courses for professionals: leadership, negotiation and networking',
     description:
       locale === 'ro'
-        ? 'Cursuri open pentru profesioniști care vor să lucreze practic pe negociere, influență, networking și relații profesionale.'
-        : 'Open courses for professionals who want practical work on negotiation, influence, networking and professional relationships.',
+        ? 'Cursuri open pentru profesioniști care vor să lucreze practic pe leadership, echipe, negociere, influență, networking și relații profesionale.'
+        : 'Open courses for professionals who want practical work on leadership, teams, negotiation, influence, networking and professional relationships.',
     path: '/cursuri',
     locale,
   })
