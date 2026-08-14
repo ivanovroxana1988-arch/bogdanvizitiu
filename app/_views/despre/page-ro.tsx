@@ -44,7 +44,7 @@ export default function AboutRomanian({ searchParams }: { searchParams?: { lang?
           <div className="beyondRolesBody">
             <img
               className="beyondRolesPhoto"
-              src="/media/bogdan-board-game.webp?v=20260814-3"
+              src="/media/bogdan-board-game.webp?v=20260814-4"
               alt={locale === 'ro' ? 'Bogdan Vizitiu jucând un board game acasă' : 'Bogdan Vizitiu playing a board game at home'}
               width="190"
               height="238"
