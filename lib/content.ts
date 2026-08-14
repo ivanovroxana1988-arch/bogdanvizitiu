@@ -1,4 +1,5 @@
 import courseDetailsJson from '@/content/products.json'
+import extraCourseDetailsJson from '@/content/products-extra.json'
 import offersJson from '@/content/offer-index.json'
 import mediaJson from '@/content/media.json'
 import postsJson from '@/content/insights.json'
@@ -23,7 +24,10 @@ import {
 
 /** Central build-time validation boundary for public content. */
 export const content = {
-  courseDetails: validateProductCollection(courseDetailsJson, 'products'),
+  courseDetails: validateProductCollection(
+    [...courseDetailsJson, ...extraCourseDetailsJson],
+    'products',
+  ),
   offers: validateProductCollection(offersJson, 'offer-index'),
   media: validateMediaCollection(mediaJson, 'media'),
   posts: validatePosts(postsJson, 'insights'),
