@@ -1,0 +1,112 @@
+[
+  {
+    "slug": "leading-high-performance-teams",
+    "title": {
+      "ro": "Leading High Performance Teams",
+      "en": "Leading High Performance Teams"
+    },
+    "type": "open-course",
+    "status": "approved",
+    "proof": ["S04"],
+    "description": {
+      "ro": "Pentru manageri și team leads care vor să construiască echipe care livrează bine fără ca performanța să depindă de control permanent.",
+      "en": "For managers and team leads who want teams that deliver well without making performance depend on constant control."
+    },
+    "detail": {
+      "ro": "O echipă performantă nu este doar o colecție de oameni competenți. Contează cum sunt clarificate așteptările, cum se iau deciziile, cum circulă feedbackul și ce se întâmplă când apar tensiuni sau rezultate sub așteptări.",
+      "en": "A high-performing team is not simply a collection of capable people. Performance is shaped by how expectations are clarified, decisions are made, feedback moves through the team and difficult moments are handled."
+    },
+    "recognitionTitle": {
+      "ro": "Poate oamenii sunt buni. Dar felul în care lucrează împreună încă lasă loc de mai bine.",
+      "en": "The people may be capable. The way they work together can still improve."
+    },
+    "recognitionItems": {
+      "ro": [
+        "Aceleași decizii ajung din nou la manager pentru că autonomia nu este suficient de clară.",
+        "Rolurile există pe hârtie, dar responsabilitatea se mută când apar probleme.",
+        "Feedbackul vine târziu sau doar când ceva nu mai poate fi ignorat.",
+        "Echipa livrează, dar cu prea multă energie consumată în aliniere, escaladări și corectări."
+      ],
+      "en": [
+        "The same decisions keep returning to the manager because autonomy is not clear enough.",
+        "Roles exist on paper, but responsibility shifts when problems appear.",
+        "Feedback arrives late or only when an issue can no longer be ignored.",
+        "The team delivers, but too much energy is spent on alignment, escalation and correction."
+      ]
+    },
+    "forWhomTitle": {
+      "ro": "Pentru manageri care vor performanță fără micro-management.",
+      "en": "For managers who want performance without micromanagement."
+    },
+    "forWhomText": {
+      "ro": "Manageri, team leads și coordonatori care lucrează cu echipe aflate în creștere, schimbare sau presiune și vor să îmbunătățească modul în care oamenii decid, colaborează și își asumă responsabilitatea.",
+      "en": "Managers, team leads and coordinators working with teams under growth, change or pressure who want better decision-making, collaboration and ownership."
+    },
+    "notForTitle": {
+      "ro": "Nu este un curs despre cum să controlezi mai bine oamenii.",
+      "en": "This is not a course about controlling people more effectively."
+    },
+    "notForText": {
+      "ro": "Nu lucrăm cu ideea că performanța apare din mai multe reguli sau dintr-un manager prezent în fiecare decizie. Lucrăm cu claritate, conversații, responsabilitate și condițiile în care oamenii pot funcționa bine împreună.",
+      "en": "We do not assume performance comes from more rules or a manager present in every decision. We work with clarity, conversations, ownership and the conditions that help people function well together."
+    },
+    "problemTitle": {
+      "ro": "Performanța individuală nu garantează performanța echipei.",
+      "en": "Individual performance does not guarantee team performance."
+    },
+    "problemText": {
+      "ro": "Oamenii pot fi foarte buni în rolurile lor și totuși echipa să piardă timp în neclaritate, dependență de manager sau conversații evitate. Când regulile de lucru și responsabilitatea devin mai clare, energia poate merge către rezultat, nu către fricțiune internă.",
+      "en": "People can be strong in their roles while the team still loses time to ambiguity, manager dependency or avoided conversations. Clearer ways of working and ownership free more energy for results instead of internal friction."
+    },
+    "outcomesTitle": {
+      "ro": "Mai multă claritate în echipă. Mai puțină dependență de manager.",
+      "en": "More clarity in the team. Less dependency on the manager."
+    },
+    "outcomes": {
+      "ro": [
+        "Clarifici așteptările și responsabilitatea fără să transformi totul în control.",
+        "Construiești conversații de feedback care apar înainte ca problema să devină criză.",
+        "Observi unde echipa depinde inutil de manager și unde poate crește autonomia.",
+        "Lucrezi cu tensiunile și diferențele fără să pierzi obiectivul comun."
+      ],
+      "en": [
+        "Clarify expectations and ownership without turning everything into control.",
+        "Build feedback conversations that happen before a problem becomes a crisis.",
+        "Notice where the team depends unnecessarily on the manager and where autonomy can grow.",
+        "Work with tension and differences without losing sight of the shared objective."
+      ]
+    },
+    "learnTitle": {
+      "ro": "Claritate, autonomie, feedback și responsabilitate.",
+      "en": "Clarity, autonomy, feedback and ownership."
+    },
+    "topics": {
+      "ro": [
+        "Cum clarifici roluri, așteptări și responsabilitate",
+        "Cum crești autonomia fără să pierzi controlul asupra rezultatului",
+        "Cum construiești feedback util și conversații dificile mai devreme",
+        "Cum observi tiparele de colaborare care susțin sau blochează performanța"
+      ],
+      "en": [
+        "How to clarify roles, expectations and ownership",
+        "How to increase autonomy without losing visibility over outcomes",
+        "How to build useful feedback and have difficult conversations earlier",
+        "How to notice collaboration patterns that support or block performance"
+      ]
+    },
+    "formatTitle": {
+      "ro": "Lucrăm pe situațiile reale ale managerilor și echipelor.",
+      "en": "We work with real situations from managers and teams."
+    },
+    "formatText": {
+      "ro": "Programul combină conversații, exerciții, reflecție și situații de management pe care participanții le întâlnesc deja. Accentul este pe ce poate fi observat și schimbat în practică, nu pe o listă ideală de comportamente ale unei echipe perfecte.",
+      "en": "The program combines conversation, exercises, reflection and management situations participants already face. The focus is on what can be noticed and changed in practice, not on an idealized checklist for a perfect team."
+    },
+    "ctaTitle": {
+      "ro": "Ce ar funcționa diferit dacă echipa ar avea mai multă claritate și autonomie?",
+      "en": "What would work differently if the team had more clarity and autonomy?"
+    },
+    "dates": [],
+    "price": null
+  }
+]
