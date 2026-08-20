@@ -7,11 +7,13 @@ import managementConversationsInsight from '@/content/insights/conversatii-manag
 import knowingActionInsight from '@/content/insights/stii-ce-ai-de-facut.json'
 import decisionClarityInsight from '@/content/insights/decizie-buna.json'
 import coachingConsultingInsight from '@/content/insights/coaching-sau-consultanta.json'
+import aiAdoptionChangeInsight from '@/content/insights/ai-adoption-is-a-change-problem.json'
 import { content } from '@/lib/content'
 import { canPublishAppearance, isPublishableCourseProduct } from '@/lib/content-schema'
 import type { Locale } from '@/lib/i18n'
 
 const allInsightItems = [
+  aiAdoptionChangeInsight,
   managementConversationsInsight,
   decisionClarityInsight,
   coachingConsultingInsight,
