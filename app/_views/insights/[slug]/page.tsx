@@ -196,7 +196,7 @@ export default function Insight({
       />
       <section className={`shell ${styles.articleGrid}`}>
         <aside className={styles.articleMeta}>
-          <Eyebrow>{locale === 'ro' ? 'Articol' : 'Article'}</Eyrow>
+          <Eyebrow>{locale === 'ro' ? 'Articol' : 'Article'}</Eyebrow>
           <p>
             <strong>Bogdan Vizitiu</strong>
             <br />
