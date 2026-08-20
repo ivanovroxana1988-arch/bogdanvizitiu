@@ -25,6 +25,8 @@ const insightConcepts: Record<
 }
 
 const decisionSlug = 'o-decizie-buna-incepe-inainte-sa-alegi'
+const aiAdoptionSlug = 'ai-adoption-is-a-change-problem'
+const aiAdoptionImage = '/api/ai-adoption-image'
 
 type InsightItem = ReturnType<typeof getPublishedInsights>[number]
 
@@ -38,6 +40,23 @@ function InsightImage({
   locale: 'ro' | 'en'
 }) {
   const concept = insightConcepts[insight.slug]
+
+  if (insight.slug === aiAdoptionSlug) {
+    return (
+      <figure className={`${styles.directImage} ${className}`}>
+        <img
+          src={aiAdoptionImage}
+          alt={
+            locale === 'ro'
+              ? 'Ilustrație editorială despre trecerea de la adopția AI la redesenarea modului de lucru'
+              : 'Editorial illustration about moving from AI adoption to redesigning how work gets done'
+          }
+          loading="eager"
+          decoding="async"
+        />
+      </figure>
+    )
+  }
 
   if (insight.slug === decisionSlug) {
     return (

@@ -26,6 +26,8 @@ const insightConcepts: Record<
 
 const coachingConsultingSlug = 'coaching-sau-consultanta-de-ce-ai-nevoie-de-fapt'
 const coachingConsultingImage = '/images/bogdan/bogdan-coaching-consultanta.webp'
+const aiAdoptionSlug = 'ai-adoption-is-a-change-problem'
+const aiAdoptionImage = '/api/ai-adoption-image'
 
 const commercialInsightSlugs = new Set([
   'networkingul-nu-incepe-cu-schimbul-de-contacte',
@@ -37,6 +39,7 @@ const commercialInsightSlugs = new Set([
   'stii-ce-ai-de-facut-de-ce-nu-faci',
   'o-decizie-buna-incepe-inainte-sa-alegi',
   coachingConsultingSlug,
+  aiAdoptionSlug,
 ])
 
 const editorialCommercialLinks: Record<string, { href: string; ro: string; en: string }> = {
@@ -138,6 +141,7 @@ export default function Insight({
   const editorialCommercialLink = editorialCommercialLinks[insight.slug]
   const hasCommercialCta = commercialInsightSlugs.has(insight.slug)
   const hasCoachingConsultingPortrait = insight.slug === coachingConsultingSlug
+  const hasAiAdoptionImage = insight.slug === aiAdoptionSlug
   const commercialCta =
     locale === 'ro'
       ? { title: 'Lucrezi cu o situație asemănătoare?', label: 'Începe o conversație' }
@@ -154,11 +158,13 @@ export default function Insight({
     insight.slug === 'networkingul-nu-incepe-cu-schimbul-de-contacte'
       ? ('networkingEditorial' as const)
       : insightConcepts[insight.slug]
-  const structuredImageSource = hasCoachingConsultingPortrait
-    ? coachingConsultingImage
-    : conceptAsset
-      ? media.concepts[conceptAsset].src
-      : media.images.candid.src
+  const structuredImageSource = hasAiAdoptionImage
+    ? aiAdoptionImage
+    : hasCoachingConsultingPortrait
+      ? coachingConsultingImage
+      : conceptAsset
+        ? media.concepts[conceptAsset].src
+        : media.images.candid.src
   const structuredImage = structuredImageSource.startsWith('http')
     ? structuredImageSource
     : `${SITE_URL}${structuredImageSource}`
@@ -200,7 +206,20 @@ export default function Insight({
           </p>
         </aside>
         <article className={styles.body}>
-          {hasCoachingConsultingPortrait ? (
+          {hasAiAdoptionImage ? (
+            <figure className={`${styles.heroImage} ${styles.directImage}`}>
+              <img
+                src={aiAdoptionImage}
+                alt={
+                  locale === 'ro'
+                    ? 'Ilustrație editorială despre trecerea de la adopția AI la redesenarea modului de lucru'
+                    : 'Editorial illustration about moving from AI adoption to redesigning how work gets done'
+                }
+                loading="eager"
+                decoding="async"
+              />
+            </figure>
+          ) : hasCoachingConsultingPortrait ? (
             <figure
               className={`${styles.heroImage} ${styles.directImage}`}
               style={{ aspectRatio: '4 / 5', maxWidth: 680, margin: '0 auto 54px' }}
