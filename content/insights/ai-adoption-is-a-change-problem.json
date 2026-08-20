@@ -1,0 +1,214 @@
+{
+  "slug": "ai-adoption-is-a-change-problem",
+  "status": "published",
+  "category": {"ro": "Leadership & AI", "en": "Leadership & AI"},
+  "title": {"ro": "AI Adoption Is a Change Problem", "en": "AI Adoption Is a Change Problem"},
+  "subtitle": {
+    "ro": "Adopția instrumentelor AI nu produce automat transformare. Valoarea apare când organizația își redesenează munca în jurul noilor posibilități.",
+    "en": "Adopting AI tools does not automatically create transformation. Value appears when the organization redesigns work around what the technology makes possible."
+  },
+  "excerpt": {
+    "ro": "Oamenii pot adopta AI foarte repede, în timp ce procesele, rolurile și deciziile rămân aproape neschimbate. De aici începe adevărata problemă de change management.",
+    "en": "People can adopt AI very quickly while processes, roles and decisions remain almost unchanged. That is where the real change-management problem begins."
+  },
+  "readTime": {"ro": "8 min", "en": "8 min"},
+  "publishedAt": "2026-08-20",
+  "intro": {
+    "ro": [
+      "În multe organizații, discuția despre AI începe cam la fel: alegem instrumentele, cumpărăm licențele, facem câteva sesiuni de training și îi încurajăm pe oameni să le folosească.",
+      "După câteva luni apar și cifrele de adopție. Câți angajați au acces? Câți folosesc instrumentele săptămânal? Câte ore estimează că economisesc? Câte prezentări, rapoarte sau emailuri produc mai repede?",
+      "Toate sunt date utile. Dar niciuna nu răspunde la întrebarea importantă: s-a schimbat organizația?",
+      "Dacă Maria face aceeași prezentare în 20 de minute în loc de 60, avem un câștig de productivitate. Nu avem încă o transformare.",
+      "Dacă un manager rezumă o ședință cu AI, dar ședința are în continuare 12 participanți, durează 90 de minute și produce aceleași trei decizii neclare, tehnologia nu a schimbat prea mult organizația. Doar documentăm mai eficient aceeași problemă.",
+      "Aici apare una dintre confuziile importante din conversația actuală despre AI: confundăm adopția tehnologiei cu schimbarea modului în care lucrăm."
+    ],
+    "en": [
+      "In many organizations, the AI conversation begins in roughly the same way: choose the tools, buy the licences, run a few training sessions and encourage people to use them.",
+      "A few months later, adoption metrics arrive. How many employees have access? How many use the tools every week? How many hours do they estimate they save? How many presentations, reports or emails do they produce faster?",
+      "All of that data is useful. But none of it answers the important question: has the organization changed?",
+      "If Maria creates the same presentation in 20 minutes instead of 60, we have a productivity gain. We do not yet have transformation.",
+      "If a manager uses AI to summarize a meeting but the meeting still has 12 participants, lasts 90 minutes and produces the same three unclear decisions, the technology has not changed much about the organization. We are simply documenting the same problem more efficiently.",
+      "This is one of the important confusions in the current AI conversation: we confuse technology adoption with changing the way work gets done."
+    ]
+  },
+  "sections": {
+    "ro": [
+      {
+        "heading": "Oamenii adoptă AI mai repede decât se schimbă organizațiile",
+        "paragraphs": [
+          "Un studiu McKinsey publicat în iulie 2026 descrie trei orizonturi ale transformării prin AI: enablement, automation și reinvention.",
+          "În prima etapă, organizația pune instrumentele la dispoziția oamenilor. În a doua, AI intră în procese și fluxuri de lucru. Abia în reinvention organizația pornește de la întrebarea: cum am proiecta munca dacă AI ar face parte din sistem de la început?",
+          "Doar 11% dintre liderii incluși în cercetare își plasează organizațiile în această a treia categorie. Dintre liderii organizațiilor aflate în reinvention, 48% raportează valoare la nivel de organizație, față de 24% în automation și 13% în enablement.",
+          "În organizațiile aflate încă în prima etapă, liderii sunt de 5,3 ori mai predispuși să raporteze valoare atunci când fluxurile de lucru au fost redesenate decât atunci când au rămas neschimbate.",
+          "Mesajul este destul de simplu: AI creează posibilități. Organizația decide dacă acele posibilități devin valoare."
+        ]
+      },
+      {
+        "heading": "Problema nu mai este doar „Cum îi facem pe oameni să folosească AI?”",
+        "paragraphs": [
+          "Trainingul, competențele, champions și experimentarea rămân importante. Dar AI introduce o problemă mai profundă.",
+          "Dacă un instrument poate prelua o parte semnificativă din activitatea unui rol, întrebarea nu mai este doar cum îl învățăm pe angajat să îl folosească.",
+          "Trebuie să întrebăm: ce rămâne responsabilitatea omului? Ce poate fi delegat către AI? Ce trebuie verificat? Cine răspunde atunci când AI greșește? Ce competențe devin mai importante? Ce activități nu mai au sens? Ce decizii pot fi luate mai aproape de locul în care apare informația?",
+          "Și, poate, întrebarea cea mai incomodă: dacă putem face munca diferit, de ce păstrăm procesul construit pentru lumea de dinainte de AI?",
+          "În punctul acesta, adopția devine change management."
+        ]
+      },
+      {
+        "heading": "Rezistența la AI nu este neapărat rezistență la tehnologie",
+        "paragraphs": [
+          "Când oamenii nu adoptă suficient de repede o tehnologie, explicația managerială preferată este adesea simplă: „rezistență la schimbare”. Este convenabilă. Uneori este și greșită.",
+          "Un angajat poate înțelege foarte bine avantajele AI și, în același timp, să aibă întrebări perfect raționale. Dacă devin de două ori mai eficient, primesc proiecte mai interesante sau de două ori mai multă muncă? Dacă automatizez 30% din ceea ce fac, ce se întâmplă cu rolul meu? Dacă rezultatul AI este greșit, cine răspunde?",
+          "Aceste întrebări nu sunt dovada unei mentalități anti-AI. Sunt întrebări despre încredere, identitate profesională, statut, autonomie și siguranță.",
+          "McKinsey identifică încrederea în organizație drept un factor critic în toate cele trei etape. Deloitte raportează în 2026 că 65% dintre organizațiile analizate consideră că propria cultură trebuie să se schimbe semnificativ din cauza AI, în timp ce doar 6% dintre lideri spun că fac progrese în proiectarea intenționată a interacțiunilor om-AI.",
+          "Tehnologia avansează foarte repede. Organizația, ceva mai puțin."
+        ]
+      },
+      {
+        "heading": "Trainingul este necesar. Dar nu poate repara un sistem care nu s-a schimbat.",
+        "paragraphs": [
+          "Există o tentație familiară în organizații: când apare o problemă nouă, comandăm un training.",
+          "Uneori trainingul este exact răspunsul potrivit. Dar nu putem rezolva prin training o problemă de design organizațional.",
+          "Poți învăța un manager să folosească foarte bine AI. Dacă îi ceri în continuare să aprobe manual fiecare pas al echipei, procesul rămâne lent. Poți învăța o echipă să automatizeze analiza datelor. Dacă deciziile trebuie să treacă prin aceleași cinci niveluri ierarhice, organizația nu devine automat mai agilă.",
+          "Dacă oamenii nu știu ce date pot folosi, ce riscuri pot accepta, ce trebuie verificat și unde se termină autonomia lor, vor apărea două comportamente previzibile: unii nu vor folosi AI, iar alții îl vor folosi fără să spună.",
+          "Ambele sunt probleme de management."
+        ]
+      },
+      {
+        "heading": "AI schimbă și contractul psihologic al muncii",
+        "paragraphs": [
+          "Există o conversație pe care organizațiile nu o pot evita la nesfârșit: ce facem cu timpul economisit?",
+          "Un angajat care economisește cinci ore pe săptămână poate face mai mult din aceeași muncă, poate prelua activități mai complexe, poate investi timpul în învățare, poate îmbunătăți relația cu clienții sau poate experimenta.",
+          "Sau organizația poate transforma imediat fiecare minut economisit într-o nouă unitate de output. Este tentant. Și probabil una dintre cele mai rapide metode de a transforma o tehnologie care promite autonomie într-un nou mecanism de intensificare a muncii.",
+          "Datele Deloitte din Marea Britanie surprind deja tensiunea: 44% dintre lucrătorii intervievați spun că au folosit AI pentru a automatiza o parte din propria muncă, adesea fără ca angajatorul să știe.",
+          "Uneori problema organizației nu este că oamenii nu adoptă AI. Problema este că îl adoptă înaintea organizației."
+        ]
+      },
+      {
+        "heading": "Liderii nu pot delega înțelegerea AI către departamentul IT",
+        "paragraphs": [
+          "Dacă AI schimbă doar instrumentele, poate fi tratat ca un proiect tehnologic. Dacă schimbă roluri, procese, responsabilități, competențe, autonomie, relații de putere și modul în care sunt luate deciziile, devine o problemă de leadership.",
+          "Asta nu înseamnă că fiecare lider trebuie să devină expert tehnic. Înseamnă însă că liderii trebuie să înțeleagă suficient tehnologia încât să poată pune întrebări mai bune despre muncă.",
+          "În organizațiile aflate în etapa de automation analizată de McKinsey, liderii sunt de 3,9 ori mai predispuși să raporteze valoare la nivel de organizație atunci când echipa de leadership are un nivel ridicat de AI fluency.",
+          "Nu pentru că CEO-ul trebuie să scrie prompturi spectaculoase. Ci pentru că este foarte greu să redesenezi o organizație în jurul unei tehnologii pe care o cunoști doar din prezentările altora."
+        ]
+      },
+      {
+        "heading": "Întrebarea bună nu este „Unde putem folosi AI?”",
+        "paragraphs": [
+          "Răspunsul este probabil: aproape peste tot. Tocmai de aceea nu este cea mai interesantă întrebare.",
+          "O întrebare mai utilă este: „Ce am proiecta diferit dacă am construi acest proces astăzi?”",
+          "Poate nu mai avem nevoie de același proces. Poate un rol se schimbă. Poate anumite aprobări nu mai au sens. Poate o decizie poate fi luată mai aproape de client. Poate managerul nu mai trebuie să controleze informația, ci să creeze context și criterii de judecată.",
+          "Poate expertiza umană devine mai importantă tocmai pentru că producerea unui răspuns devine foarte ieftină. Poate trebuie să învățăm oamenii nu doar să obțină răspunsuri de la AI, ci și să știe când să nu aibă încredere în ele.",
+          "Acestea nu mai sunt întrebări despre software. Sunt întrebări despre designul muncii."
+        ]
+      },
+      {
+        "heading": "Adoption is not transformation",
+        "paragraphs": [
+          "Probabil vom vedea multe dashboard-uri impresionante despre adopția AI: utilizatori activi, prompturi, ore economisite, procese automatizate și costuri reduse.",
+          "Sunt indicatori utili. Dar o organizație în care toată lumea folosește AI poate funcționa aproape exact ca înainte: aceleași ședințe, aceleași aprobări, aceleași silozuri, aceleași roluri și aceleași decizii lente. Doar cu texte produse mai repede.",
+          "Transformarea începe atunci când tehnologia ne face să reconsiderăm modul în care este organizată munca.",
+          "Asta înseamnă procese, competențe și roluri, dar și lucrurile mai greu de pus într-un dashboard: încredere, identitate, autonomie, comportamente și cultura în care oamenii încearcă să înțeleagă ce înseamnă noua tehnologie pentru ei."
+        ]
+      }
+    ],
+    "en": [
+      {
+        "heading": "People adopt AI faster than organizations change",
+        "paragraphs": [
+          "A McKinsey study published in July 2026 describes three horizons of AI transformation: enablement, automation and reinvention.",
+          "In enablement, tools reach employees. In automation, AI enters processes and workflows. Reinvention starts with a different question: how would we design the work if AI had been part of the system from the beginning?",
+          "Only 11% of leaders in the research place their organizations in reinvention. Among leaders in reinvention organizations, 48% report enterprise value, compared with 24% in automation and 13% in enablement.",
+          "At the enablement horizon, leaders are 5.3 times more likely to report enterprise value when workflows have been redesigned than when they remain unchanged.",
+          "The message is fairly simple: AI creates possibilities. The organization decides whether those possibilities become value."
+        ]
+      },
+      {
+        "heading": "The problem is no longer just 'How do we get people to use AI?'",
+        "paragraphs": [
+          "Training, skills, champions and experimentation still matter. But AI introduces a deeper problem.",
+          "If a tool can take over a meaningful part of a role, the question is no longer only how we teach the employee to use it.",
+          "We also need to ask: what remains a human responsibility? What can be delegated to AI? What must be checked? Who is accountable when AI is wrong? Which skills become more important? Which activities no longer make sense? Which decisions can move closer to where the information appears?",
+          "And perhaps the most uncomfortable question: if we can do the work differently, why keep a process designed for the pre-AI world?",
+          "At that point, adoption becomes change management."
+        ]
+      },
+      {
+        "heading": "Resistance to AI is not necessarily resistance to technology",
+        "paragraphs": [
+          "When people do not adopt a technology quickly enough, the preferred managerial explanation is often simple: resistance to change. It is convenient. It is also sometimes wrong.",
+          "An employee can understand the advantages of AI perfectly well and still have rational questions. If I become twice as efficient, do I get more interesting projects or twice as much work? If I automate 30% of what I do, what happens to my role? If AI is wrong, who is accountable?",
+          "Those questions are not evidence of an anti-AI mindset. They are questions about trust, professional identity, status, autonomy and security.",
+          "McKinsey identifies trust in the organization as critical across all three horizons. Deloitte reports in 2026 that 65% of organizations believe their culture needs to change significantly because of AI, while only 6% of leaders say they are making progress in intentionally designing human-AI interactions.",
+          "The technology is moving very quickly. The organization, rather less so."
+        ]
+      },
+      {
+        "heading": "Training is necessary. But it cannot repair a system that has not changed.",
+        "paragraphs": [
+          "Organizations have a familiar reflex: when a new problem appears, commission a training program.",
+          "Sometimes training is exactly the right response. But a work-design problem cannot be solved by training alone.",
+          "You can teach a manager to use AI very well. If they still need to approve every step the team takes, the process remains slow. You can teach a team to automate data analysis. If decisions still pass through the same five hierarchical levels, the organization does not automatically become more agile.",
+          "If people do not know which data they may use, which risks they may accept, what must be checked and where their autonomy ends, two predictable behaviours appear: some people avoid AI and others use it without saying so.",
+          "Both are management problems."
+        ]
+      },
+      {
+        "heading": "AI also changes the psychological contract of work",
+        "paragraphs": [
+          "There is a conversation organizations cannot avoid forever: what happens to the time that AI saves?",
+          "An employee who saves five hours a week can do more of the same work, take on more complex work, invest in learning, improve customer relationships or experiment.",
+          "Or the organization can immediately turn every minute saved into another unit of output. That is tempting. It is also one of the fastest ways to turn a technology associated with autonomy into a new mechanism for work intensification.",
+          "Deloitte's UK data already captures the tension: 44% of workers surveyed say they have used AI to automate part of their own job, often without their employer's knowledge.",
+          "Sometimes the organization's problem is not that people are failing to adopt AI. It is that they are adopting it before the organization does."
+        ]
+      },
+      {
+        "heading": "Leaders cannot delegate understanding AI to the IT department",
+        "paragraphs": [
+          "If AI only changes the tools we use, it can be treated as a technology project. If it changes roles, processes, responsibilities, skills, autonomy, power relationships and the way decisions are made, it becomes a leadership problem.",
+          "That does not mean every leader needs to become a technical expert. It does mean leaders need enough understanding of the technology to ask better questions about work.",
+          "In the automation horizon studied by McKinsey, leaders are 3.9 times more likely to report enterprise value when their leadership teams demonstrate high AI fluency.",
+          "Not because the CEO needs to write spectacular prompts. It is simply very difficult to redesign an organization around a technology you understand only through other people's slide decks."
+        ]
+      },
+      {
+        "heading": "The useful question is not 'Where can we use AI?'",
+        "paragraphs": [
+          "The answer is probably: almost everywhere. That is exactly why it is not the most interesting question.",
+          "A more useful question is: 'What would we design differently if we built this process today?'",
+          "Perhaps we no longer need the same process. Perhaps a role changes. Perhaps some approvals no longer make sense. Perhaps a decision can move closer to the customer. Perhaps a manager no longer needs to control information, but instead needs to create context and criteria for judgment.",
+          "Perhaps human expertise becomes more important precisely because producing an answer becomes extremely cheap. Perhaps people need to learn not only how to get answers from AI, but how to recognize when those answers should not be trusted.",
+          "These are no longer questions about software. They are questions about work design."
+        ]
+      },
+      {
+        "heading": "Adoption is not transformation",
+        "paragraphs": [
+          "We will probably see many impressive AI adoption dashboards: active users, prompts, hours saved, automated processes and lower costs.",
+          "Those are useful indicators. But an organization in which everyone uses AI can still operate almost exactly as it did before: the same meetings, approvals, silos, roles and slow decisions. Only the text is produced faster.",
+          "Transformation begins when the technology makes us reconsider how work is organized.",
+          "That includes processes, skills and roles, but also the things that are harder to put on a dashboard: trust, identity, autonomy, behaviour and the culture in which people are trying to understand what the new technology means for them."
+        ]
+      }
+    ]
+  },
+  "closing": {
+    "ro": ["De aceea, una dintre cele mai utile schimbări de perspectivă pentru lideri este și una dintre cele mai simple:", "AI adoption is not primarily a technology problem.", "It is a change problem."],
+    "en": ["That is why one of the most useful shifts in perspective for leaders is also one of the simplest:", "AI adoption is not primarily a technology problem.", "It is a change problem."]
+  },
+  "cta": {
+    "title": {"ro": "Lucrezi la adopția AI în organizație?", "en": "Working on AI adoption in your organization?"},
+    "label": {"ro": "Începe o conversație", "en": "Start a conversation"},
+    "href": "/contact"
+  },
+  "sourceNote": {
+    "ro": "Datele citate provin din cercetări publicate în 2026 de McKinsey & Company și Deloitte. Procentele și multiplicatorii sunt raportați de autorii studiilor pentru eșantioanele analizate.",
+    "en": "The data cited comes from research published in 2026 by McKinsey & Company and Deloitte. Percentages and multipliers are reported by the studies' authors for the samples analyzed."
+  },
+  "sources": [
+    {"label": "McKinsey & Company — From adoption to impact: Three horizons of AI transformation (8 July 2026)", "url": "https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/from-adoption-to-impact-three-horizons-of-ai-transformation"},
+    {"label": "Deloitte — 2026 Global Human Capital Trends", "url": "https://www.deloitte.com/us/en/insights/topics/talent/human-capital-trends/"},
+    {"label": "Deloitte UK — Key UK Findings from the 2026 Deloitte Human Capital Trends Report (8 June 2026)", "url": "https://www.deloitte.com/uk/en/about/press-room/key-uk-findings-from-the-2026-deloitte-human-capital-trends-repo.html"}
+  ]
+}
