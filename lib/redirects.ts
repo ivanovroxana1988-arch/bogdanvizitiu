@@ -19,6 +19,10 @@ const legacyEnglishPublic: Record<string, string> = {
     '/en/insights/how-much-of-life-do-we-live-on-autopilot',
   '/en/insights/negocierea-nu-este-doar-despre-argumente':
     '/en/insights/negotiation-is-not-just-about-arguments',
+  '/en/insights/stii-ce-ai-de-facut-de-ce-nu-faci':
+    '/en/insights/you-know-what-to-do-why-are-you-not-doing-it',
+  '/en/insights/o-decizie-buna-incepe-inainte-sa-alegi':
+    '/en/insights/a-good-decision-starts-before-you-choose',
 }
 
 function legacyToRomanian(pathname: string) {

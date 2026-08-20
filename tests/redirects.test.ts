@@ -81,4 +81,28 @@ test('legacy public English slugs are normalized', () => {
       search: '',
     },
   )
+
+  deepStrictEqual(
+    resolveCanonicalRedirect({
+      hostname: 'bogdanvizitiu.com',
+      pathname: '/en/insights/stii-ce-ai-de-facut-de-ce-nu-faci',
+    }),
+    {
+      hostname: 'bogdanvizitiu.com',
+      pathname: '/en/insights/you-know-what-to-do-why-are-you-not-doing-it',
+      search: '',
+    },
+  )
+
+  deepStrictEqual(
+    resolveCanonicalRedirect({
+      hostname: 'bogdanvizitiu.com',
+      pathname: '/en/insights/o-decizie-buna-incepe-inainte-sa-alegi',
+    }),
+    {
+      hostname: 'bogdanvizitiu.com',
+      pathname: '/en/insights/a-good-decision-starts-before-you-choose',
+      search: '',
+    },
+  )
 })
