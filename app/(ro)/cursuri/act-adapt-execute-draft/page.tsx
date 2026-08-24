@@ -171,7 +171,7 @@ export default function ActAdaptExecuteDraftPage() {
       <section className={visual.visualSection}>
         <div className={visual.visualGrid}>
           <ConceptImage
-            asset="planningDesk"
+            asset="workshopNotes"
             kind="editorial"
             locale="ro"
             className={visual.visualImage}
