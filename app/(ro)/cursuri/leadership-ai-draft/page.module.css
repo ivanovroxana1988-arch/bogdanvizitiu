@@ -68,11 +68,9 @@
   border-radius: 50%;
   background: var(--blue-soft);
   color: var(--link);
-}
-
-.iconWrap svg {
-  width: 36px;
-  height: 36px;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 30px;
+  line-height: 1;
 }
 
 .iconCard span {
