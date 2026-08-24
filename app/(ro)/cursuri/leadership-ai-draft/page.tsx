@@ -110,8 +110,7 @@ const outcomes = [
 
 const copy = {
   problemTitle: 'AI adoption creează o nouă problemă de management.',
-  visualTitle:
-    'Instrumentele se schimbă. Rolul managerului rămâne să facă munca mai clară.',
+  visualTitle: 'Instrumentele se schimbă. Rolul managerului rămâne să facă munca mai clară.',
   visualText:
     'Programul lucrează cu situații manageriale reale: decizii, delegare, conversații, verificare și dezvoltarea oamenilor. AI intră în ecuație ca parte din sistemul de lucru, nu ca protagonist.',
   shiftsTitle: 'Leadership-ul nu dispare. Devine mai explicit.',
@@ -169,7 +168,12 @@ export default function LeadershipAiDraftPage() {
 
       <section className={visual.visualSection}>
         <div className={visual.visualGrid}>
-          <EditorialImage asset="workshop" kind="event" locale="ro" className={visual.visualImage} />
+          <EditorialImage
+            asset="workshop"
+            kind="event"
+            locale="ro"
+            className={visual.visualImage}
+          />
           <div className={visual.visualCopy}>
             <div>
               <Eyebrow>Din sala de training în munca reală</Eyebrow>
