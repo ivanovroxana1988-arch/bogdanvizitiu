@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import { ArrowLink, Eyebrow } from '@/components/ui'
-import { EditorialImage } from '@/components/portrait'
 import styles from '@/app/commercial.module.css'
+import { EditorialImage } from '@/components/portrait'
+import { ArrowLink, Eyebrow } from '@/components/ui'
 import visual from './page.module.css'
 
 export const metadata: Metadata = {
@@ -13,45 +13,11 @@ export const metadata: Metadata = {
 
 type IconType = 'judgment' | 'delegation' | 'accountability' | 'capability'
 
-function ProgramIcon({ type }: { type: IconType }) {
-  if (type === 'judgment') {
-    return (
-      <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-        <path d="M24 38V21M24 21 14 11M24 21l10-10" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
-        <circle cx="14" cy="11" r="5" stroke="currentColor" strokeWidth="2.4" />
-        <circle cx="34" cy="11" r="5" stroke="currentColor" strokeWidth="2.4" />
-        <path d="m31.5 10.8 1.7 1.8 3.4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    )
-  }
-
-  if (type === 'delegation') {
-    return (
-      <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-        <circle cx="13" cy="16" r="5" stroke="currentColor" strokeWidth="2.4" />
-        <path d="M5 34c1.5-6 5-9 8-9s6.5 3 8 9" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
-        <rect x="29" y="11" width="13" height="13" rx="3" stroke="currentColor" strokeWidth="2.4" />
-        <path d="M32 17.5h7M35.5 14v7M22 17h5M25 14l3 3-3 3M28 31h-6M25 28l-3 3 3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M31 31h9v7h-9z" stroke="currentColor" strokeWidth="2.4" strokeLinejoin="round" />
-      </svg>
-    )
-  }
-
-  if (type === 'accountability') {
-    return (
-      <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-        <path d="M24 6 38 11v10c0 10-6.3 16.8-14 21-7.7-4.2-14-11-14-21V11L24 6Z" stroke="currentColor" strokeWidth="2.4" strokeLinejoin="round" />
-        <path d="m17.5 23.5 4.3 4.3 9-10" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    )
-  }
-
-  return (
-    <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-      <path d="M8 34h8V23H8v11ZM20 34h8V17h-8v17ZM32 34h8V10h-8v24Z" stroke="currentColor" strokeWidth="2.4" strokeLinejoin="round" />
-      <path d="m9 15 8-6 7 4 13-9M32 4h5v5" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
+const iconGlyphs: Record<IconType, string> = {
+  judgment: '◇',
+  delegation: '↔',
+  accountability: '✓',
+  capability: '↗',
 }
 
 const heroLead =
@@ -69,30 +35,35 @@ const challenges = [
 const shifts: Array<{
   index: string
   icon: IconType
+  label: string
   title: string
   text: string
 }> = [
   {
     index: '01',
     icon: 'judgment',
+    label: 'Judgment',
     title: 'De la „poate AI să facă asta?” la „ar trebui să o facă?”',
     text: 'Capabilitatea tehnică nu rezolvă întrebarea managerială. Participanții învață să decidă ce merită delegat, în ce condiții și cu ce nivel de verificare.',
   },
   {
     index: '02',
     icon: 'delegation',
+    label: 'Delegare hibridă',
     title: 'De la delegare către oameni la designul muncii human–AI',
     text: 'Munca nu mai circulă doar între manager și angajat. Liderul trebuie să configureze inteligent contribuția oamenilor, AI-ului și automatizărilor.',
   },
   {
     index: '03',
     icon: 'accountability',
+    label: 'Autonomie & accountability',
     title: 'De la control la autonomie cu limite clare',
     text: 'Autonomia devine utilă doar atunci când sunt explicite drepturile de decizie, responsabilitatea, punctele de verificare și condițiile de oprire.',
   },
   {
     index: '04',
     icon: 'capability',
+    label: 'Capability & learning',
     title: 'De la output mai rapid la capability mai bun',
     text: 'Productivitatea imediată contează, dar nu este suficientă. Programul păstrează în centru judgment-ul, învățarea și capacitatea oamenilor de a explica și verifica rezultatele.',
   },
@@ -139,7 +110,8 @@ const outcomes = [
 
 const copy = {
   problemTitle: 'AI adoption creează o nouă problemă de management.',
-  visualTitle: 'Instrumentele se schimbă. Rolul managerului rămâne să facă munca mai clară.',
+  visualTitle:
+    'Instrumentele se schimbă. Rolul managerului rămâne să facă munca mai clară.',
   visualText:
     'Programul lucrează cu situații manageriale reale: decizii, delegare, conversații, verificare și dezvoltarea oamenilor. AI intră în ecuație ca parte din sistemul de lucru, nu ca protagonist.',
   shiftsTitle: 'Leadership-ul nu dispare. Devine mai explicit.',
@@ -224,19 +196,19 @@ export default function LeadershipAiDraftPage() {
 
         <div className={visual.iconGrid}>
           {shifts.map((item) => (
-            <article className={visual.iconCard} key={item.title}>
-              <div className={visual.iconWrap}>
-                <ProgramIcon type={item.icon} />
+            <article className={visual.iconCard} key={`${item.title}-icon`}>
+              <div className={visual.iconWrap} aria-hidden="true">
+                {iconGlyphs[item.icon]}
               </div>
               <span>{item.index}</span>
-              <h3>{item.title}</h3>
+              <h3>{item.label}</h3>
             </article>
           ))}
         </div>
 
         <div className={styles.twoGrid}>
           {shifts.map((item) => (
-            <article className={styles.editorialCard} key={`${item.title}-detail`}>
+            <article className={styles.editorialCard} key={item.title}>
               <span className={styles.cardIndex}>{item.index}</span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
