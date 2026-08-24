@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import styles from '@/app/commercial.module.css'
-import { EditorialImage } from '@/components/portrait'
+import { ConceptImage } from '@/components/portrait'
 import { ArrowLink, Eyebrow } from '@/components/ui'
 import visual from './page.module.css'
 
@@ -100,6 +100,17 @@ const outcomes = [
   'Să urmărească transferul prin comportament, feedback și reguli de reevaluare la 30 și 90 de zile.',
 ]
 
+const transferSteps = [
+  ['D+2', 'Reactivare din memorie', '3 idei din memorie + primul experiment.'],
+  ['D+14', 'Provocare între colegi', 'Ce ai testat, schimbat și ce te-a blocat?'],
+  [
+    'D+30',
+    'Verificarea comportamentului',
+    'Compară semnalul cu reperul inițial: păstrează, schimbă sau oprește.',
+  ],
+  ['D+90', 'Revizuirea transferului', 'Ce a devenit rutină și ce trebuie schimbat în sistem?'],
+]
+
 const copy = {
   problemTitle: 'Dezvoltarea se blochează rar dintr-un singur motiv.',
   visualTitle: 'Nu vii cu o dorință de „a învăța ceva”. Vii cu o problemă reală.',
@@ -159,9 +170,9 @@ export default function ActAdaptExecuteDraftPage() {
 
       <section className={visual.visualSection}>
         <div className={visual.visualGrid}>
-          <EditorialImage
-            asset="workshop"
-            kind="event"
+          <ConceptImage
+            asset="planningDesk"
+            kind="editorial"
             locale="ro"
             className={visual.visualImage}
           />
@@ -270,26 +281,13 @@ export default function ActAdaptExecuteDraftPage() {
             <h2>Programul se termină. Experimentul continuă.</h2>
           </div>
           <div className={visual.transferSteps}>
-            <article>
-              <span>D+2</span>
-              <strong>Reactivare din memorie</strong>
-              <p>3 idei din memorie + primul experiment.</p>
-            </article>
-            <article>
-              <span>D+14</span>
-              <strong>Provocare între colegi</strong>
-              <p>Ce ai testat, schimbat și ce te-a blocat?</p>
-            </article>
-            <article>
-              <span>D+30</span>
-              <strong>Verificarea comportamentului</strong>
-              <p>Compară semnalul cu reperul inițial: păstrează, schimbă sau oprește.</p>
-            </article>
-            <article>
-              <span>D+90</span>
-              <strong>Revizuirea transferului</strong>
-              <p>Ce a devenit rutină și ce trebuie schimbat în sistem?</p>
-            </article>
+            {transferSteps.map(([day, title, text]) => (
+              <article key={day}>
+                <span>{day}</span>
+                <strong>{title}</strong>
+                <p>{text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
