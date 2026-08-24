@@ -169,12 +169,7 @@ export default function LeadershipAiDraftPage() {
 
       <section className={visual.visualSection}>
         <div className={visual.visualGrid}>
-          <EditorialImage
-            asset="workshop"
-            kind="event"
-            locale="ro"
-            className={visual.visualImage}
-          />
+          <EditorialImage asset="workshop" kind="event" locale="ro" className={visual.visualImage} />
           <div className={visual.visualCopy}>
             <div>
               <Eyebrow>Din sala de training în munca reală</Eyebrow>
