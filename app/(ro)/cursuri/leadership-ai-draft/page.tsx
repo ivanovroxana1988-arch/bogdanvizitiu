@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 }
 
+const heroLead =
+  'AI poate prelua tot mai multă muncă. Întrebarea de leadership este ce delegăm, ce verificăm, cine decide și cum păstrăm oamenii capabili să gândească, să învețe și să răspundă pentru rezultat.'
+const heroTransfer =
+  'Un parcurs de învățare întins pe mai multe săptămâni, construit pentru transfer în munca reală, nu pentru două zile bune de notițe într-un workbook.'
+
+const challenges = [
+  'AI a intrat deja în munca echipei, dar regulile de utilizare sunt încă implicite.',
+  'Oamenii produc mai repede, însă nu este întotdeauna clar cine verifică și cine răspunde pentru rezultat.',
+  'Managerii oscilează între supraîncredere în AI și control excesiv.',
+  'Organizația vrea adopție, dar nu vrea să cumpere productivitate cu prețul judgment-ului și al dezvoltării oamenilor.',
+]
+
 const shifts = [
   {
     index: '01',
@@ -71,29 +83,44 @@ const outcomes = [
   'Să transforme programul într-un experiment observabil în muncă, nu într-o listă de intenții bune de după training.',
 ]
 
-const challenges = [
-  'AI a intrat deja în munca echipei, dar regulile de utilizare sunt încă implicite.',
-  'Oamenii produc mai repede, însă nu este întotdeauna clar cine verifică și cine răspunde pentru rezultat.',
-  'Managerii oscilează între supraîncredere în AI și control excesiv.',
-  'Organizația vrea adopție, dar nu vrea să cumpere productivitate cu prețul judgment-ului și al dezvoltării oamenilor.',
-]
+const copy = {
+  problemTitle: 'AI adoption creează o nouă problemă de management.',
+  shiftsTitle: 'Leadership-ul nu dispare. Devine mai explicit.',
+  shiftsIntro:
+    'Programul nu pornește de la ideea că liderii trebuie să devină experți tehnici. Pornește de la munca pe care o au deja de făcut și de la deciziile care devin mai dificile atunci când AI intră în workflow.',
+  journeyTitle: 'Nu este un eveniment. Este o buclă de învățare.',
+  journeyText:
+    'Sesiunile de învățare sunt legate de perioade de aplicare în rol. Participanții lucrează cu propriile workflow-uri, testează decizii, observă consecințele și revin cu evidence din realitate. Învățarea se construiește în cicluri de practică, feedback și recalibrare.',
+  flowTitle: 'De la decizie la experiment. De la experiment la mod de lucru.',
+  flowIntro:
+    'Arhitectura exactă se adaptează contextului organizației. Principiul rămâne însă același: fiecare etapă trebuie să lase ceva observabil în muncă, nu doar o idee interesantă pe un slide.',
+  outcomesTitle: 'Ce ar trebui să poată face diferit un manager.',
+  outcomesIntro:
+    'Nu promitem „AI fluency” în abstract. Promisiunea este mai concretă: decizii mai bune despre muncă, autonomie, verificare, responsabilitate și dezvoltarea capability-ului în echipă.',
+  principleTitle:
+    'Scopul nu este să folosim mai mult AI. Scopul este să conducem mai bine munca în care AI există deja.',
+  principleText:
+    'Succesul nu se măsoară în număr de prompturi, conturi sau minute economisite. Îl căutăm în claritatea deciziilor, calitatea verificării, responsabilitate și capacitatea oamenilor de a explica, contesta, învăța și îmbunătăți felul în care lucrează.',
+  fitTitle: 'Pentru manageri care conduc deja într-un mediu hibrid.',
+  fitText:
+    'Team leaders, middle managers și senior managers ale căror echipe folosesc sau se pregătesc să folosească AI în activitatea de zi cu zi și care au nevoie de o logică comună pentru delegare, verificare, autonomie și dezvoltare.',
+  notTitle: 'Nu este un curs de prompting și nici o demonstrație de tool-uri.',
+  notText:
+    'Nu încearcă să transforme managerii în specialiști tehnici. Instrumentele se pot schimba repede. Programul lucrează cu deciziile manageriale care rămân importante indiferent ce model sau platformă este folosită luna viitoare.',
+  ctaTitle: 'Un learning journey construit în jurul muncii reale a organizației.',
+}
 
 export default function LeadershipAiDraftPage() {
   return (
-    <div className={`${styles.page} balanced-commercial-page`}>
+    <div className={styles.page}>
       <section className={styles.hero}>
         <Eyebrow>Concept program · learning journey pentru manageri</Eyebrow>
         <div className={styles.heroGrid}>
           <h1>Leadership in the AI Era</h1>
-          <p className={styles.heroIntro}>
-            AI poate prelua tot mai multă muncă. Întrebarea de leadership este ce delegăm,
-            ce verificăm, cine decide și cum păstrăm oamenii capabili să gândească, să
-            învețe și să răspundă pentru rezultat.
-            <br />
-            <br />
-            Un parcurs de învățare întins pe mai multe săptămâni, construit pentru transfer
-            în munca reală, nu pentru două zile bune de notițe într-un workbook.
-          </p>
+          <div>
+            <p className={styles.heroIntro}>{heroLead}</p>
+            <p className={styles.heroIntro}>{heroTransfer}</p>
+          </div>
         </div>
       </section>
 
@@ -101,9 +128,9 @@ export default function LeadershipAiDraftPage() {
         <div className={styles.diagnosticInner}>
           <div>
             <Eyebrow>De ce acum</Eyebrow>
-            <h2 className={styles.statementSmall}>AI adoption creează o nouă problemă de management.</h2>
+            <h2 className={styles.statementSmall}>{copy.problemTitle}</h2>
           </div>
-          <ul className={`${styles.diagnosticList} clean-diagnostic-list`}>
+          <ul className={styles.diagnosticList}>
             {challenges.map((item) => (
               <li key={item}>{item}</li>
             ))}
@@ -115,13 +142,9 @@ export default function LeadershipAiDraftPage() {
         <div className={styles.sectionHead}>
           <div>
             <Eyebrow>Ce se schimbă</Eyebrow>
-            <h2 className={styles.sectionTitle}>Leadership-ul nu dispare. Devine mai explicit.</h2>
+            <h2 className={styles.sectionTitle}>{copy.shiftsTitle}</h2>
           </div>
-          <p className={styles.sectionIntro}>
-            Programul nu pornește de la ideea că liderii trebuie să devină experți tehnici.
-            Pornește de la munca pe care o au deja de făcut și de la deciziile care devin mai
-            dificile atunci când AI intră în workflow.
-          </p>
+          <p className={styles.sectionIntro}>{copy.shiftsIntro}</p>
         </div>
 
         <div className={styles.twoGrid}>
@@ -141,13 +164,8 @@ export default function LeadershipAiDraftPage() {
             <Eyebrow>Learning journey</Eyebrow>
           </div>
           <div>
-            <h2 className={styles.statementSmall}>Nu este un eveniment. Este o buclă de învățare.</h2>
-            <p>
-              Sesiunile de învățare sunt legate de perioade de aplicare în rol. Participanții
-              lucrează cu propriile workflow-uri, testează decizii, observă consecințele și
-              revin cu evidence din realitate. Învățarea se construiește în cicluri de
-              practică, feedback și recalibrare.
-            </p>
+            <h2 className={styles.statementSmall}>{copy.journeyTitle}</h2>
+            <p>{copy.journeyText}</p>
           </div>
         </div>
       </section>
@@ -156,18 +174,14 @@ export default function LeadershipAiDraftPage() {
         <div className={styles.sectionHead}>
           <div>
             <Eyebrow>Cum curge programul</Eyebrow>
-            <h2 className={styles.sectionTitle}>De la decizie la experiment. De la experiment la mod de lucru.</h2>
+            <h2 className={styles.sectionTitle}>{copy.flowTitle}</h2>
           </div>
-          <p className={styles.sectionIntro}>
-            Arhitectura exactă se adaptează contextului organizației. Principiul rămâne însă
-            același: fiecare etapă trebuie să lase ceva observabil în muncă, nu doar o idee
-            interesantă pe un slide.
-          </p>
+          <p className={styles.sectionIntro}>{copy.flowIntro}</p>
         </div>
 
         <div className={styles.processList}>
           {journey.map((item) => (
-            <article className={`${styles.processRow} clean-process-row`} key={item.title}>
+            <article className={styles.processRow} key={item.title}>
               <span className={styles.listIndex}>{item.index}</span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
@@ -180,13 +194,9 @@ export default function LeadershipAiDraftPage() {
         <div className={styles.sectionHead}>
           <div>
             <Eyebrow>La final</Eyebrow>
-            <h2 className={styles.sectionTitle}>Ce ar trebui să poată face diferit un manager.</h2>
+            <h2 className={styles.sectionTitle}>{copy.outcomesTitle}</h2>
           </div>
-          <p className={styles.sectionIntro}>
-            Nu promitem „AI fluency” în abstract. Promisiunea este mai concretă: decizii mai
-            bune despre muncă, autonomie, verificare, responsabilitate și dezvoltarea
-            capability-ului în echipă.
-          </p>
+          <p className={styles.sectionIntro}>{copy.outcomesIntro}</p>
         </div>
 
         <ul className={styles.outcomeList}>
@@ -202,13 +212,8 @@ export default function LeadershipAiDraftPage() {
             <Eyebrow>Principiul programului</Eyebrow>
           </div>
           <article className={styles.proofCard}>
-            <h3>Scopul nu este să folosim mai mult AI. Scopul este să conducem mai bine munca în care AI există deja.</h3>
-            <p>
-              Succesul nu se măsoară în număr de prompturi, conturi sau minute economisite.
-              Îl căutăm în claritatea deciziilor, calitatea verificării, responsabilitate și
-              capacitatea oamenilor de a explica, contesta, învăța și îmbunătăți felul în care
-              lucrează.
-            </p>
+            <h3>{copy.principleTitle}</h3>
+            <p>{copy.principleText}</p>
           </article>
         </div>
       </section>
@@ -217,28 +222,20 @@ export default function LeadershipAiDraftPage() {
         <div className={styles.fitGrid}>
           <article className={styles.fitBlock}>
             <Eyebrow>Pentru cine</Eyebrow>
-            <h3>Pentru manageri care conduc deja într-un mediu hibrid.</h3>
-            <p>
-              Team leaders, middle managers și senior managers ale căror echipe folosesc sau
-              se pregătesc să folosească AI în activitatea de zi cu zi și care au nevoie de o
-              logică comună pentru delegare, verificare, autonomie și dezvoltare.
-            </p>
+            <h3>{copy.fitTitle}</h3>
+            <p>{copy.fitText}</p>
           </article>
           <article className={styles.fitBlock}>
             <Eyebrow>Ce nu este</Eyebrow>
-            <h3>Nu este un curs de prompting și nici o demonstrație de tool-uri.</h3>
-            <p>
-              Nu încearcă să transforme managerii în specialiști tehnici. Instrumentele se
-              pot schimba repede. Programul lucrează cu deciziile manageriale care rămân
-              importante indiferent ce model sau platformă este folosită luna viitoare.
-            </p>
+            <h3>{copy.notTitle}</h3>
+            <p>{copy.notText}</p>
           </article>
         </div>
       </section>
 
       <section className={styles.cta}>
         <Eyebrow>Program corporate</Eyebrow>
-        <h2 className={styles.ctaTitle}>Un learning journey construit în jurul muncii reale a organizației.</h2>
+        <h2 className={styles.ctaTitle}>{copy.ctaTitle}</h2>
         <ArrowLink href="/contact">Discută despre o versiune pentru echipa ta</ArrowLink>
       </section>
     </div>
