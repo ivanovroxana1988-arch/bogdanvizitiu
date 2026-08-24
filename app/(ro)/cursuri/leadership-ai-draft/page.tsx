@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import styles from '@/app/commercial.module.css'
-import { EditorialImage } from '@/components/portrait'
 import { ArrowLink, Eyebrow } from '@/components/ui'
 import visual from './page.module.css'
 
@@ -11,13 +10,13 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 }
 
-type IconType = 'judgment' | 'delegation' | 'accountability' | 'capability'
+type IconType = 'decision' | 'handoff' | 'target' | 'learning'
 
-const iconGlyphs: Record<IconType, string> = {
-  judgment: '◇',
-  delegation: '↔',
-  accountability: '✓',
-  capability: '↗',
+const iconClasses: Record<IconType, string> = {
+  decision: visual.iconDecision,
+  handoff: visual.iconHandoff,
+  target: visual.iconTarget,
+  learning: visual.iconLearning,
 }
 
 const heroLead =
@@ -41,28 +40,28 @@ const shifts: Array<{
 }> = [
   {
     index: '01',
-    icon: 'judgment',
+    icon: 'decision',
     label: 'Judgment',
     title: 'De la „poate AI să facă asta?” la „ar trebui să o facă?”',
     text: 'Capabilitatea tehnică nu rezolvă întrebarea managerială. Participanții învață să decidă ce merită delegat, în ce condiții și cu ce nivel de verificare.',
   },
   {
     index: '02',
-    icon: 'delegation',
+    icon: 'handoff',
     label: 'Delegare hibridă',
     title: 'De la delegare către oameni la designul muncii human–AI',
     text: 'Munca nu mai circulă doar între manager și angajat. Liderul trebuie să configureze inteligent contribuția oamenilor, AI-ului și automatizărilor.',
   },
   {
     index: '03',
-    icon: 'accountability',
+    icon: 'target',
     label: 'Autonomie & accountability',
     title: 'De la control la autonomie cu limite clare',
     text: 'Autonomia devine utilă doar atunci când sunt explicite drepturile de decizie, responsabilitatea, punctele de verificare și condițiile de oprire.',
   },
   {
     index: '04',
-    icon: 'capability',
+    icon: 'learning',
     label: 'Capability & learning',
     title: 'De la output mai rapid la capability mai bun',
     text: 'Productivitatea imediată contează, dar nu este suficientă. Programul păstrează în centru judgment-ul, învățarea și capacitatea oamenilor de a explica și verifica rezultatele.',
@@ -110,9 +109,6 @@ const outcomes = [
 
 const copy = {
   problemTitle: 'AI adoption creează o nouă problemă de management.',
-  visualTitle: 'Instrumentele se schimbă. Rolul managerului rămâne să facă munca mai clară.',
-  visualText:
-    'Programul lucrează cu situații manageriale reale: decizii, delegare, conversații, verificare și dezvoltarea oamenilor. AI intră în ecuație ca parte din sistemul de lucru, nu ca protagonist.',
   shiftsTitle: 'Leadership-ul nu dispare. Devine mai explicit.',
   shiftsIntro:
     'Programul nu pornește de la ideea că liderii trebuie să devină experți tehnici. Pornește de la munca pe care o au deja de făcut și de la deciziile care devin mai dificile atunci când AI intră în workflow.',
@@ -141,13 +137,13 @@ const copy = {
 export default function LeadershipAiDraftPage() {
   return (
     <div className={styles.page}>
-      <section className={styles.hero}>
-        <Eyebrow>Concept program · learning journey pentru manageri</Eyebrow>
-        <div className={styles.heroGrid}>
+      <section className={visual.hero}>
+        <div className={visual.heroContent}>
+          <Eyebrow>Concept program · learning journey pentru manageri</Eyebrow>
           <h1>Leadership in the AI Era</h1>
-          <div>
-            <p className={styles.heroIntro}>{heroLead}</p>
-            <p className={styles.heroIntro}>{heroTransfer}</p>
+          <div className={visual.heroCopy}>
+            <p>{heroLead}</p>
+            <p>{heroTransfer}</p>
           </div>
         </div>
       </section>
@@ -166,24 +162,6 @@ export default function LeadershipAiDraftPage() {
         </div>
       </section>
 
-      <section className={visual.visualSection}>
-        <div className={visual.visualGrid}>
-          <EditorialImage
-            asset="workshop"
-            kind="event"
-            locale="ro"
-            className={visual.visualImage}
-          />
-          <div className={visual.visualCopy}>
-            <div>
-              <Eyebrow>Din sala de training în munca reală</Eyebrow>
-              <h2>{copy.visualTitle}</h2>
-            </div>
-            <p>{copy.visualText}</p>
-          </div>
-        </div>
-      </section>
-
       <section className={styles.section}>
         <div className={styles.sectionHead}>
           <div>
@@ -193,22 +171,17 @@ export default function LeadershipAiDraftPage() {
           <p className={styles.sectionIntro}>{copy.shiftsIntro}</p>
         </div>
 
-        <div className={visual.iconGrid}>
+        <div className={visual.shiftGrid}>
           {shifts.map((item) => (
-            <article className={visual.iconCard} key={`${item.title}-icon`}>
-              <div className={visual.iconWrap} aria-hidden="true">
-                {iconGlyphs[item.icon]}
+            <article className={visual.shiftCard} key={item.title}>
+              <div
+                className={`${visual.shiftIcon} ${iconClasses[item.icon]}`}
+                aria-hidden="true"
+              />
+              <div className={visual.shiftMeta}>
+                <span>{item.index}</span>
+                <span>{item.label}</span>
               </div>
-              <span>{item.index}</span>
-              <h3>{item.label}</h3>
-            </article>
-          ))}
-        </div>
-
-        <div className={styles.twoGrid}>
-          {shifts.map((item) => (
-            <article className={styles.editorialCard} key={item.title}>
-              <span className={styles.cardIndex}>{item.index}</span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
             </article>
