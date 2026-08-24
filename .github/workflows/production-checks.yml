@@ -22,8 +22,5 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Show formatted AI leadership draft
-        run: npx prettier "app/(ro)/cursuri/leadership-ai-draft/page.tsx"
-
       - name: Lint, typecheck, test, format and build
         run: npm run check
