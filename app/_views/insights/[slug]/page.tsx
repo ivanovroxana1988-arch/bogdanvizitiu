@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Fragment } from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import media from '@/content/media.json'
@@ -57,6 +58,41 @@ const editorialCommercialLinks: Record<string, { href: string; ro: string; en: s
     href: '/cursuri/networking',
     ro: 'Curs de networking profesional',
     en: 'Professional networking course',
+  },
+  'de-ce-unele-conversatii-manageriale-schimba-lucrurile': {
+    href: '/coaching/executive-coaching',
+    ro: 'Lucrează conversațiile dificile în executive coaching',
+    en: 'Work on difficult conversations in executive coaching',
+  },
+  'o-decizie-buna-incepe-inainte-sa-alegi': {
+    href: '/coaching/executive-coaching',
+    ro: 'Lucrează decizia într-un proces de executive coaching',
+    en: 'Work through the decision in executive coaching',
+  },
+  'stii-ce-ai-de-facut-de-ce-nu-faci': {
+    href: '/coaching',
+    ro: 'Explorează coachingul individual',
+    en: 'Explore individual coaching',
+  },
+  'cat-din-viata-traim-pe-pilot-automat': {
+    href: '/coaching',
+    ro: 'Explorează coachingul individual',
+    en: 'Explore individual coaching',
+  },
+  'nu-invatam-doar-cu-mintea': {
+    href: '/corporate',
+    ro: 'Vezi cum construim programele pentru organizații',
+    en: 'See how we build programs for organizations',
+  },
+  [coachingConsultingSlug]: {
+    href: '/coaching',
+    ro: 'Vezi opțiunile de coaching',
+    en: 'Explore coaching options',
+  },
+  [aiAdoptionSlug]: {
+    href: '/corporate',
+    ro: 'Discută o intervenție de AI adoption pentru organizație',
+    en: 'Discuss an AI adoption intervention for your organization',
   },
 }
 
@@ -146,6 +182,18 @@ export default function Insight({
     locale === 'ro'
       ? { title: 'Lucrezi cu o situație asemănătoare?', label: 'Începe o conversație' }
       : { title: 'Working with a similar situation?', label: 'Start a conversation' }
+  const midCta = editorialCommercialLink
+    ? {
+        href: localizePath(editorialCommercialLink.href, locale),
+        title: locale === 'ro' ? 'Vrei să duci ideea în practică?' : 'Want to put the idea into practice?',
+        label: locale === 'ro' ? editorialCommercialLink.ro : editorialCommercialLink.en,
+      }
+    : {
+        href: `${localizePath('/contact', locale)}?source=insight-${encodeURIComponent(insight.slug)}`,
+        title: locale === 'ro' ? 'Vrei să duci ideea în practică?' : 'Want to put the idea into practice?',
+        label: locale === 'ro' ? 'Discută contextul tău' : 'Discuss your context',
+      }
+  const midpointAfter = Math.max(1, Math.ceil(insight.sections.length / 2))
   const date = new Intl.DateTimeFormat(locale === 'ro' ? 'ro-RO' : 'en-GB', {
     day: 'numeric',
     month: 'long',
@@ -187,7 +235,7 @@ export default function Insight({
   }
 
   return (
-    <>
+    <div className="conversion-page article-conversion-page">
       <JsonLd data={articleJsonLd} />
       <PageHero
         eyebrow={insight.category}
@@ -222,7 +270,7 @@ export default function Insight({
           ) : hasCoachingConsultingPortrait ? (
             <figure
               className={`${styles.heroImage} ${styles.directImage}`}
-              style={{ aspectRatio: '4 / 5', maxWidth: 680, margin: '0 auto 54px' }}
+              style={{ aspectRatio: '4 / 5', maxWidth: 680, margin: '0 auto 42px' }}
             >
               <img
                 src={coachingConsultingImage}
@@ -255,27 +303,27 @@ export default function Insight({
             <p key={paragraph}>{renderInlineLinks(paragraph, locale)}</p>
           ))}
 
-          {insight.sections.map((section) => (
-            <section key={section.heading}>
-              <h2>{section.heading}</h2>
-              {section.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{renderInlineLinks(paragraph, locale)}</p>
-              ))}
-            </section>
+          {insight.sections.map((section, index) => (
+            <Fragment key={section.heading}>
+              <section>
+                <h2>{section.heading}</h2>
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{renderInlineLinks(paragraph, locale)}</p>
+                ))}
+              </section>
+              {hasCommercialCta && index === midpointAfter - 1 && (
+                <section className="article-conversion-nudge">
+                  <Eyebrow>{locale === 'ro' ? 'Din idee în practică' : 'From idea to practice'}</Eyebrow>
+                  <h2>{midCta.title}</h2>
+                  <ArrowLink href={midCta.href}>{midCta.label}</ArrowLink>
+                </section>
+              )}
+            </Fragment>
           ))}
 
           {insight.closing.map((paragraph) => (
             <p key={paragraph}>{renderInlineLinks(paragraph, locale)}</p>
           ))}
-
-          {editorialCommercialLink && (
-            <section style={{ borderTop: '1px solid var(--line)', paddingTop: 28 }}>
-              <Eyebrow>{locale === 'ro' ? 'Legat de subiect' : 'Related to this topic'}</Eyebrow>
-              <ArrowLink href={localizePath(editorialCommercialLink.href, locale)}>
-                {locale === 'ro' ? editorialCommercialLink.ro : editorialCommercialLink.en}
-              </ArrowLink>
-            </section>
-          )}
 
           {insight.cta.href && !(hasCommercialCta && insight.cta.href === '/contact') && (
             <section>
@@ -307,7 +355,9 @@ export default function Insight({
               <p style={{ fontSize: 18, fontWeight: 600, margin: '0 0 18px' }}>
                 {commercialCta.title}
               </p>
-              <ArrowLink href={localizePath('/contact', locale)}>{commercialCta.label}</ArrowLink>
+              <ArrowLink href={`${localizePath('/contact', locale)}?source=insight-${encodeURIComponent(insight.slug)}`}>
+                {commercialCta.label}
+              </ArrowLink>
             </section>
           )}
 
@@ -327,6 +377,6 @@ export default function Insight({
           </ArrowLink>
         </article>
       </section>
-    </>
+    </div>
   )
 }
