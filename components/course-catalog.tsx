@@ -42,7 +42,7 @@ const catalogMeta: Record<string, CatalogMeta> = {
     label: { ro: 'Leadership & echipe', en: 'Leadership & teams' },
     image: 'workshopNotes',
   },
-  'leadership-ai-draft': {
+  'leadership-ai': {
     category: 'leadership',
     label: { ro: 'Leadership & AI', en: 'Leadership & AI' },
     image: 'workshopNotes',
