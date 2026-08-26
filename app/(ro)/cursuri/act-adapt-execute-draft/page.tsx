@@ -140,9 +140,11 @@ const copy = {
   ctaTitle: 'Un program de dezvoltare care continuă și după ultima sesiune.',
 }
 
+const contactHref = '/contact?source=act-adapt-execute-draft'
+
 export default function ActAdaptExecuteDraftPage() {
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} conversion-page`}>
       <section className={styles.hero}>
         <Eyebrow>Program experiențial · inspirat de Adam Grant</Eyebrow>
         <div className={styles.heroGrid}>
@@ -150,6 +152,9 @@ export default function ActAdaptExecuteDraftPage() {
           <div className={visual.heroCopy}>
             <p className={styles.heroIntro}>{heroLead}</p>
             <p className={styles.heroIntro}>{heroTransfer}</p>
+            <div className="conversion-inline-action">
+              <ArrowLink href={contactHref}>Discută un pilot pentru echipa ta</ArrowLink>
+            </div>
           </div>
         </div>
       </section>
@@ -160,11 +165,16 @@ export default function ActAdaptExecuteDraftPage() {
             <Eyebrow>De ce acum</Eyebrow>
             <h2 className={styles.statementSmall}>{copy.problemTitle}</h2>
           </div>
-          <ul className={styles.diagnosticList}>
-            {challenges.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+          <div>
+            <ul className={styles.diagnosticList}>
+              {challenges.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <div className="conversion-inline-action">
+              <ArrowLink href={contactHref}>Vezi dacă programul se potrivește contextului tău</ArrowLink>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -322,7 +332,7 @@ export default function ActAdaptExecuteDraftPage() {
       <section className={styles.cta}>
         <Eyebrow>Program pentru organizații · 6 zile</Eyebrow>
         <h2 className={styles.ctaTitle}>{copy.ctaTitle}</h2>
-        <ArrowLink href="/contact">Discută despre o versiune pentru echipa ta</ArrowLink>
+        <ArrowLink href={contactHref}>Discută despre o versiune pentru echipa ta</ArrowLink>
       </section>
     </div>
   )
