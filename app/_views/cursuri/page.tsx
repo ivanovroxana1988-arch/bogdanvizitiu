@@ -18,11 +18,11 @@ export function generateMetadata({ searchParams }: { searchParams?: SearchParams
   return buildPageMetadata({
     title:
       locale === 'ro'
-        ? 'Cursuri pentru profesioniști: leadership, AI, negociere și networking'
+        ? 'Cursuri pentru profesioniști: leadership, AI, dezvoltare, negociere și networking'
         : 'Open courses for professionals: leadership, negotiation and networking',
     description:
       locale === 'ro'
-        ? 'Cursuri și programe pentru profesioniști și organizații care vor să lucreze practic pe leadership, AI, echipe, negociere, influență, networking și relații profesionale.'
+        ? 'Cursuri și programe pentru profesioniști și organizații care vor să lucreze practic pe leadership, AI, dezvoltare, potențial, echipe, negociere, influență, networking și relații profesionale.'
         : 'Open courses for professionals who want practical work on leadership, teams, negotiation, influence, networking and professional relationships.',
     path: '/cursuri',
     locale,
@@ -45,6 +45,16 @@ export default function Programs({ searchParams }: { searchParams?: SearchParams
             href: '/cursuri/leadership-ai',
             canRegister: false,
             availabilityLabel: 'Program corporate',
+            actionLabel: 'Vezi programul',
+          },
+          {
+            slug: 'act-adapt-execute',
+            title: 'ACT · ADAPT · EXECUTE',
+            description:
+              'Pentru manageri, profesioniști și echipe care vor să transforme dezvoltarea din intenție în comportamente, experimente și transfer observabil în munca reală.',
+            href: '/cursuri/act-adapt-execute',
+            canRegister: false,
+            availabilityLabel: 'Program corporate · 6 zile',
             actionLabel: 'Vezi programul',
           },
         ]
