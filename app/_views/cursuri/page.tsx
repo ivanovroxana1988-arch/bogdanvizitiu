@@ -18,11 +18,11 @@ export function generateMetadata({ searchParams }: { searchParams?: SearchParams
   return buildPageMetadata({
     title:
       locale === 'ro'
-        ? 'Cursuri pentru profesioniști: leadership, negociere și networking'
+        ? 'Cursuri pentru profesioniști: leadership, AI, negociere și networking'
         : 'Open courses for professionals: leadership, negotiation and networking',
     description:
       locale === 'ro'
-        ? 'Cursuri open pentru profesioniști care vor să lucreze practic pe leadership, echipe, negociere, influență, networking și relații profesionale.'
+        ? 'Cursuri și programe pentru profesioniști și organizații care vor să lucreze practic pe leadership, AI, echipe, negociere, influență, networking și relații profesionale.'
         : 'Open courses for professionals who want practical work on leadership, teams, negotiation, influence, networking and professional relationships.',
     path: '/cursuri',
     locale,
@@ -32,7 +32,23 @@ export function generateMetadata({ searchParams }: { searchParams?: SearchParams
 export default function Programs({ searchParams }: { searchParams?: SearchParams }) {
   const locale = getLocale(searchParams?.lang)
   const copy = getCopy(locale).programs
-  const programs = getPrograms(locale)
+  const openPrograms = getPrograms(locale)
+  const programs =
+    locale === 'ro'
+      ? [
+          ...openPrograms,
+          {
+            slug: 'leadership-ai-draft',
+            title: 'Leadership in the AI Era',
+            description:
+              'Pentru manageri și organizații care vor reguli mai clare pentru delegare, verificare, autonomie și responsabilitate atunci când AI intră în munca reală.',
+            href: '/cursuri/leadership-ai-draft',
+            canRegister: false,
+            availabilityLabel: 'Program corporate',
+            actionLabel: 'Vezi programul',
+          },
+        ]
+      : openPrograms
   const initialCategory = locale === 'ro' ? searchParams?.categorie : searchParams?.category
 
   return (
