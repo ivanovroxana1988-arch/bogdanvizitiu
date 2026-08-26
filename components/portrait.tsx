@@ -4,7 +4,8 @@ import type { Locale } from '@/lib/routes'
 import styles from './concept-image.module.css'
 
 type MediaKey = keyof typeof media.images
-type ConceptKey = keyof typeof media.concepts
+type LocalConceptKey = 'leadershipAi'
+type ConceptKey = keyof typeof media.concepts | LocalConceptKey
 type EditorialImageProps = {
   asset?: MediaKey
   kind?: 'portrait' | 'event' | 'workshop' | 'insight'
@@ -17,6 +18,15 @@ type ConceptImageProps = {
   className?: string
   locale?: Locale
 }
+
+const localConcepts = {
+  leadershipAi: {
+    src: '/images/editorial/leadership-ai-team.webp',
+    alt: 'Echipă de manageri lucrând împreună într-un context de muncă asistată de AI',
+    status: 'approved',
+    rights_status: 'owned',
+  },
+} as const
 
 const index: Record<MediaKey, string> = {
   hero: '01',
@@ -59,6 +69,7 @@ const englishConceptAlt: Record<ConceptKey, string> = {
     'Bogdan Vizitiu standing still in a busy train station as people move around him',
   negotiationEditorial:
     'Two people in a negotiation conversation at a table with documents and notes',
+  leadershipAi: 'Managers working together in a team context with AI-assisted work',
 }
 
 export function EditorialImage({
@@ -106,7 +117,7 @@ export function ConceptImage({
   className = '',
   locale = 'ro',
 }: ConceptImageProps) {
-  const item = media.concepts[asset]
+  const item = asset === 'leadershipAi' ? localConcepts.leadershipAi : media.concepts[asset]
   const approved = hasConceptRights(item)
   const alt = locale === 'en' ? englishConceptAlt[asset] : item.alt
   return (
