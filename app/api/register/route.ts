@@ -13,6 +13,11 @@ type RegistrationPayload = {
   email?: string
   phone?: string
   website?: string
+  source?: string
+  referrer?: string
+  utm_source?: string
+  utm_medium?: string
+  utm_campaign?: string
 }
 
 type InvalidField = 'name' | 'email' | 'phone'
@@ -62,6 +67,11 @@ export async function POST(request: Request) {
   const name = clean(raw.name, 160)
   const email = clean(raw.email, 254)
   const phone = clean(raw.phone, 80)
+  const source = clean(raw.source, 200)
+  const referrer = clean(raw.referrer, 1000)
+  const utmSource = clean(raw.utm_source, 200)
+  const utmMedium = clean(raw.utm_medium, 200)
+  const utmCampaign = clean(raw.utm_campaign, 200)
   const course = getPrograms(locale).find((item) => item.slug === courseSlug)
 
   if (!course) {
@@ -87,7 +97,15 @@ export async function POST(request: Request) {
     `Nume / Name: ${name}`,
     `Email: ${email}`,
     `Telefon / Phone: ${phone}`,
-  ].join('\n')
+    '',
+    source ? `Source: ${source}` : '',
+    referrer ? `Referrer: ${referrer}` : '',
+    utmSource ? `UTM source: ${utmSource}` : '',
+    utmMedium ? `UTM medium: ${utmMedium}` : '',
+    utmCampaign ? `UTM campaign: ${utmCampaign}` : '',
+  ]
+    .filter(Boolean)
+    .join('\n')
   const fallback = mailtoFallback(subject, body)
   const apiKey = process.env.RESEND_API_KEY
   const from = process.env.CONTACT_FROM_EMAIL
