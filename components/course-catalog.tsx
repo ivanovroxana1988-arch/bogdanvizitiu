@@ -11,6 +11,10 @@ type Program = {
   slug: string
   title: string
   description: string
+  href?: string
+  canRegister?: boolean
+  availabilityLabel?: string
+  actionLabel?: string
 }
 
 type CategoryKey = 'networking' | 'negotiation' | 'leadership' | 'other'
@@ -36,6 +40,11 @@ const catalogMeta: Record<string, CatalogMeta> = {
   'leading-high-performance-teams': {
     category: 'leadership',
     label: { ro: 'Leadership & echipe', en: 'Leadership & teams' },
+    image: 'workshopNotes',
+  },
+  'leadership-ai-draft': {
+    category: 'leadership',
+    label: { ro: 'Leadership & AI', en: 'Leadership & AI' },
     image: 'workshopNotes',
   },
 }
@@ -130,6 +139,7 @@ export function CourseCatalog({
       <div className={styles.grid}>
         {filteredPrograms.map((program) => {
           const meta = getMeta(program)
+          const programHref = program.href ?? localizePath(`/cursuri/${program.slug}`, locale)
           const registrationParams = new URLSearchParams({
             course: program.slug,
             source: 'course-catalog',
@@ -142,20 +152,22 @@ export function CourseCatalog({
               <div className={styles.cardBody}>
                 <div className={styles.cardMeta}>
                   <span>{meta.label[locale]}</span>
-                  <span>{locale === 'ro' ? 'Program deschis' : 'Open program'}</span>
+                  <span>
+                    {program.availabilityLabel ??
+                      (locale === 'ro' ? 'Program deschis' : 'Open program')}
+                  </span>
                 </div>
                 <h3>{program.title}</h3>
                 <p>{program.description}</p>
                 <div className={styles.cardActions}>
-                  <ArrowLink
-                    className={styles.cardLink}
-                    href={localizePath(`/cursuri/${program.slug}`, locale)}
-                  >
-                    {locale === 'ro' ? 'Află mai multe' : viewProgramLabel}
+                  <ArrowLink className={styles.cardLink} href={programHref}>
+                    {program.actionLabel ?? (locale === 'ro' ? 'Află mai multe' : viewProgramLabel)}
                   </ArrowLink>
-                  <ArrowLink className={styles.enrollLink} href={registrationHref}>
-                    {locale === 'ro' ? 'Înscrie-te' : 'Register'}
-                  </ArrowLink>
+                  {program.canRegister !== false && (
+                    <ArrowLink className={styles.enrollLink} href={registrationHref}>
+                      {locale === 'ro' ? 'Înscrie-te' : 'Register'}
+                    </ArrowLink>
+                  )}
                 </div>
               </div>
             </article>
