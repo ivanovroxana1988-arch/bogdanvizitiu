@@ -38,11 +38,11 @@ export default function Programs({ searchParams }: { searchParams?: SearchParams
       ? [
           ...openPrograms,
           {
-            slug: 'leadership-ai-draft',
+            slug: 'leadership-ai',
             title: 'Leadership in the AI Era',
             description:
               'Pentru manageri și organizații care vor reguli mai clare pentru delegare, verificare, autonomie și responsabilitate atunci când AI intră în munca reală.',
-            href: '/cursuri/leadership-ai-draft',
+            href: '/cursuri/leadership-ai',
             canRegister: false,
             availabilityLabel: 'Program corporate',
             actionLabel: 'Vezi programul',
