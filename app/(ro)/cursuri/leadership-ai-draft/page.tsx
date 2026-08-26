@@ -134,9 +134,11 @@ const copy = {
   ctaTitle: 'Un learning journey construit în jurul muncii reale a organizației.',
 }
 
+const contactHref = '/contact?source=leadership-ai-draft'
+
 export default function LeadershipAiDraftPage() {
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} conversion-page`}>
       <section className={visual.hero}>
         <div className={visual.heroContent}>
           <Eyebrow>Concept program · learning journey pentru manageri</Eyebrow>
@@ -144,6 +146,9 @@ export default function LeadershipAiDraftPage() {
           <div className={visual.heroCopy}>
             <p>{heroLead}</p>
             <p>{heroTransfer}</p>
+            <div className="conversion-inline-action">
+              <ArrowLink href={contactHref}>Discută un pilot pentru echipa ta</ArrowLink>
+            </div>
           </div>
         </div>
       </section>
@@ -154,11 +159,16 @@ export default function LeadershipAiDraftPage() {
             <Eyebrow>De ce acum</Eyebrow>
             <h2 className={styles.statementSmall}>{copy.problemTitle}</h2>
           </div>
-          <ul className={styles.diagnosticList}>
-            {challenges.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+          <div>
+            <ul className={styles.diagnosticList}>
+              {challenges.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <div className="conversion-inline-action">
+              <ArrowLink href={contactHref}>Discută contextul organizației tale</ArrowLink>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -267,7 +277,7 @@ export default function LeadershipAiDraftPage() {
       <section className={styles.cta}>
         <Eyebrow>Program corporate</Eyebrow>
         <h2 className={styles.ctaTitle}>{copy.ctaTitle}</h2>
-        <ArrowLink href="/contact">Discută despre o versiune pentru echipa ta</ArrowLink>
+        <ArrowLink href={contactHref}>Discută despre o versiune pentru echipa ta</ArrowLink>
       </section>
     </div>
   )
