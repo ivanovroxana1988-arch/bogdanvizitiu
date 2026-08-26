@@ -18,7 +18,11 @@ type Program = {
 }
 
 type CategoryKey = 'networking' | 'negotiation' | 'leadership' | 'development' | 'other'
-type ConceptAsset = 'networkingEditorial' | 'negotiationEditorial' | 'workshopNotes'
+type ConceptAsset =
+  | 'networkingEditorial'
+  | 'negotiationEditorial'
+  | 'workshopNotes'
+  | 'leadershipAi'
 
 type CatalogMeta = {
   category: CategoryKey
@@ -45,7 +49,7 @@ const catalogMeta: Record<string, CatalogMeta> = {
   'leadership-ai': {
     category: 'leadership',
     label: { ro: 'Leadership & AI', en: 'Leadership & AI' },
-    image: 'workshopNotes',
+    image: 'leadershipAi',
   },
   'act-adapt-execute': {
     category: 'development',
