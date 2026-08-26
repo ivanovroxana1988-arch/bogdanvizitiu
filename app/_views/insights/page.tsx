@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { PageHero, ArrowLink } from '@/components/ui'
+import { PageHero, ArrowLink, Eyebrow } from '@/components/ui'
 import { ConceptImage, EditorialImage } from '@/components/portrait'
 import { getPublishedInsights } from '@/lib/data'
 import { getCopy, getLocale } from '@/lib/i18n'
@@ -112,7 +112,7 @@ export default function Insights({ searchParams }: { searchParams?: { lang?: str
   }
 
   return (
-    <>
+    <div className="conversion-page editorial-conversion-page">
       <PageHero eyebrow={copy.eyebrow} title={title} intro={intro} />
       <section className={`shell ${styles.indexSection}`}>
         <article className={styles.feature}>
@@ -129,6 +129,25 @@ export default function Insights({ searchParams }: { searchParams?: { lang?: str
             </ArrowLink>
           </div>
         </article>
+
+        <div className="conversion-editorial-strip">
+          <div>
+            <Eyebrow>{locale === 'ro' ? 'Din idee în practică' : 'From idea to practice'}</Eyebrow>
+            <h2>
+              {locale === 'ro'
+                ? 'Vrei să lucrezi practic cu una dintre temele astea?'
+                : 'Want to work practically with one of these themes?'}
+            </h2>
+          </div>
+          <div className="conversion-action-list">
+            <ArrowLink href={localizePath('/cursuri', locale)}>
+              {locale === 'ro' ? 'Vezi cursurile' : 'Explore programs'}
+            </ArrowLink>
+            <ArrowLink href={localizePath('/coaching', locale)}>
+              {locale === 'ro' ? 'Vezi opțiunile de coaching' : 'Explore coaching'}
+            </ArrowLink>
+          </div>
+        </div>
 
         <div className={styles.secondaryGrid}>
           {secondary.map((insight) => (
@@ -147,6 +166,6 @@ export default function Insights({ searchParams }: { searchParams?: { lang?: str
           ))}
         </div>
       </section>
-    </>
+    </div>
   )
 }

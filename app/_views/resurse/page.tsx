@@ -3,6 +3,7 @@ import { ArrowLink, PageHero } from '@/components/ui'
 import { getPublishedInsights } from '@/lib/data'
 import servicePages from '@/content/service-pages.json'
 import { getLocale } from '@/lib/i18n'
+import { localizePath } from '@/lib/routes'
 import { buildPageMetadata } from '@/lib/seo'
 
 const resourceDefinitions = [
@@ -39,12 +40,16 @@ export default function Resources({ searchParams }: { searchParams?: { lang?: st
     const insight = insights.find((item) => item.slug === definition.slug)
     return insight ? [{ ...insight, type: definition.type[locale] }] : []
   })
+  const nextTitle =
+    locale === 'ro'
+      ? 'Vrei să folosești ideile într-o situație reală?'
+      : 'Want to use these ideas in a real situation?'
 
   return (
-    <>
+    <div className="conversion-page resources-conversion-page">
       <PageHero eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro} />
       {resources.length > 0 && (
-        <section className="programs shell">
+        <section className="programs shell conversion-content-section">
           {resources.map((item) => (
             <article className="program-row" key={item.slug}>
               <h3>{item.title}</h3>
@@ -53,7 +58,7 @@ export default function Resources({ searchParams }: { searchParams?: { lang?: st
                 <br />
                 {item.excerpt}
               </p>
-              <ArrowLink href={`/insights/${item.slug}`}>
+              <ArrowLink href={localizePath(`/insights/${item.slug}`, locale)}>
                 {locale === 'ro' ? 'Citește sinteza' : 'Read the summary'}
               </ArrowLink>
             </article>
@@ -62,12 +67,18 @@ export default function Resources({ searchParams }: { searchParams?: { lang?: st
       )}
       <section className="final-loop">
         <div className="shell final-grid">
-          <h2>{copy.ctaTitle}</h2>
-          <div>
-            <ArrowLink href="/insights">{copy.cta}</ArrowLink>
+          <h2>{nextTitle}</h2>
+          <div className="conversion-action-list">
+            <ArrowLink href={localizePath('/cursuri', locale)}>
+              {locale === 'ro' ? 'Cursuri' : 'Programs'}
+            </ArrowLink>
+            <ArrowLink href={localizePath('/coaching', locale)}>Coaching</ArrowLink>
+            <ArrowLink href={localizePath('/corporate', locale)}>
+              {locale === 'ro' ? 'Pentru organizații' : 'For organizations'}
+            </ArrowLink>
           </div>
         </div>
       </section>
-    </>
+    </div>
   )
 }

@@ -7,7 +7,15 @@ import { getLocale } from '@/lib/i18n'
 import { buildPageMetadata } from '@/lib/seo'
 import styles from '../commercial.module.css'
 
-export function generateMetadata({ searchParams }: { searchParams?: { lang?: string } }): Metadata {
+type SearchParams = {
+  lang?: string
+  source?: string
+  utm_source?: string
+  utm_medium?: string
+  utm_campaign?: string
+}
+
+export function generateMetadata({ searchParams }: { searchParams?: SearchParams }): Metadata {
   const locale = getLocale(searchParams?.lang)
   const copy = contactCopy[locale]
   return buildPageMetadata({
@@ -18,12 +26,12 @@ export function generateMetadata({ searchParams }: { searchParams?: { lang?: str
   })
 }
 
-export default function Contact({ searchParams }: { searchParams?: { lang?: string } }) {
+export default function Contact({ searchParams }: { searchParams?: SearchParams }) {
   const locale = getLocale(searchParams?.lang)
   const copy = contactCopy[locale]
 
   return (
-    <div className={`${styles.page} balanced-commercial-page`}>
+    <div className={`${styles.page} balanced-commercial-page conversion-page`}>
       <section className={styles.hero}>
         <Eyebrow>{copy.eyebrow}</Eyebrow>
         <div className={styles.heroGrid}>
@@ -38,7 +46,7 @@ export default function Contact({ searchParams }: { searchParams?: { lang?: stri
             <Eyebrow>{copy.formEyebrow}</Eyebrow>
             <h2>{copy.formTitle}</h2>
             <p>{copy.formText}</p>
-            <p style={{ marginTop: 28, lineHeight: 1.8 }}>
+            <p style={{ marginTop: 24, lineHeight: 1.8 }}>
               <a href={`mailto:${business.email}`}>
                 <strong>{business.email}</strong>
               </a>
@@ -50,7 +58,15 @@ export default function Contact({ searchParams }: { searchParams?: { lang?: stri
             </p>
           </div>
 
-          <ContactForm locale={locale} />
+          <ContactForm
+            locale={locale}
+            tracking={{
+              source: searchParams?.source,
+              utm_source: searchParams?.utm_source,
+              utm_medium: searchParams?.utm_medium,
+              utm_campaign: searchParams?.utm_campaign,
+            }}
+          />
         </div>
       </section>
     </div>

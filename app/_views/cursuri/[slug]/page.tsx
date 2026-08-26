@@ -21,6 +21,13 @@ const relatedInsightByProgram: Record<string, { slug: string; ro: string; en: st
   },
 }
 
+type SearchParams = {
+  lang?: string
+  utm_source?: string
+  utm_medium?: string
+  utm_campaign?: string
+}
+
 function seoTitle(slug: string, locale: 'ro' | 'en', fallback: string) {
   if (locale === 'ro') {
     if (slug === 'arta-negocierii') return 'Curs de negociere pentru profesioniști'
@@ -75,7 +82,7 @@ export function generateMetadata({
   searchParams,
 }: {
   params: { slug: string }
-  searchParams?: { lang?: string }
+  searchParams?: SearchParams
 }): Metadata {
   const locale = getLocale(searchParams?.lang)
   const program = getPrograms(locale).find((item) => item.slug === params.slug)
@@ -94,7 +101,7 @@ export default function Program({
   searchParams,
 }: {
   params: { slug: string }
-  searchParams?: { lang?: string }
+  searchParams?: SearchParams
 }) {
   const locale = getLocale(searchParams?.lang)
   const copy = getCopy(locale).programDetail
@@ -102,6 +109,7 @@ export default function Program({
   if (!program) notFound()
 
   const relatedInsight = relatedInsightByProgram[program.slug]
+  const isLeadershipTeams = program.slug === 'leading-high-performance-teams'
   const canonical = localizedUrl(`/cursuri/${program.slug}`, locale)
   const heading = pageHeading(program.slug, locale, program.title)
   const courseJsonLd = {
@@ -115,6 +123,15 @@ export default function Program({
     inLanguage: locale === 'ro' ? 'ro-RO' : 'en',
   }
 
+  const registrationParams = new URLSearchParams({
+    course: program.slug,
+    source: 'program-detail',
+  })
+  if (searchParams?.utm_source) registrationParams.set('utm_source', searchParams.utm_source)
+  if (searchParams?.utm_medium) registrationParams.set('utm_medium', searchParams.utm_medium)
+  if (searchParams?.utm_campaign) registrationParams.set('utm_campaign', searchParams.utm_campaign)
+  const registrationHref = `${localizePath('/inscriere', locale)}?${registrationParams.toString()}`
+
   const practicalTitle =
     locale === 'ro'
       ? 'Ediții deschise: date, locație și format'
@@ -127,16 +144,22 @@ export default function Program({
     locale === 'ro'
       ? 'Programul poate fi adaptat unui context organizațional, pornind de la situațiile reale ale echipei și de la rezultatul pe care vrei să îl vezi diferit în practică.'
       : 'The program can be adapted to an organizational context, starting from the team’s real situations and the result you want to see change in practice.'
+  const supportGrid = relatedInsight ? styles.threeGrid : styles.twoGrid
 
   return (
-    <div className={`${styles.page} balanced-commercial-page`}>
+    <div className={`${styles.page} balanced-commercial-page conversion-page`}>
       <JsonLd data={courseJsonLd} />
 
       <section className={styles.hero}>
         <Eyebrow>{copy.eyebrow}</Eyebrow>
         <div className={styles.heroGrid}>
           <h1>{heading}</h1>
-          <p className={styles.heroIntro}>{program.detail}</p>
+          <div className="conversion-hero-copy">
+            <p className={styles.heroIntro}>{program.detail}</p>
+            <ArrowLink href={registrationHref}>
+              {locale === 'ro' ? 'Înscrie-te la program' : 'Register for the program'}
+            </ArrowLink>
+          </div>
         </div>
       </section>
 
@@ -146,11 +169,18 @@ export default function Program({
             <Eyebrow>{copy.recognitionEyebrow}</Eyebrow>
             <h2 className={styles.statementSmall}>{program.recognitionTitle}</h2>
           </div>
-          <ul className={`${styles.diagnosticList} clean-diagnostic-list`}>
-            {program.recognitionItems.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+          <div>
+            <ul className={`${styles.diagnosticList} clean-diagnostic-list`}>
+              {program.recognitionItems.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <div className="conversion-inline-action">
+              <ArrowLink href={registrationHref}>
+                {locale === 'ro' ? 'Vezi detaliile de înscriere' : 'See registration details'}
+              </ArrowLink>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -169,15 +199,40 @@ export default function Program({
         </div>
       </section>
 
-      <section className={styles.section}>
-        <div className={styles.sectionHead}>
-          <div>
-            <Eyebrow>{copy.problemEyebrow}</Eyebrow>
-            <h2 className={styles.statement}>{program.problemTitle}</h2>
+      {isLeadershipTeams && locale === 'ro' && (
+        <section className="leadership-program-band">
+          <div className="leadership-program-band__inner">
+            <div className="leadership-program-band__intro">
+              <Eyebrow>Două direcții de leadership</Eyebrow>
+              <h2>Alege problema de leadership pe care vrei să o lucrezi.</h2>
+              <p>
+                Un program lucrează cu performanța și autonomia echipei. Celălalt cu
+                deciziile manageriale care apar când AI intră în modul de lucru.
+              </p>
+            </div>
+            <div className="leadership-program-band__options">
+              <article>
+                <span>Program deschis</span>
+                <h3>Leading High Performance Teams</h3>
+                <p>
+                  Claritate, autonomie, feedback și responsabilitate pentru echipe care vor să
+                  livreze fără dependență permanentă de manager.
+                </p>
+                <ArrowLink href={registrationHref}>Înscrie-te la curs</ArrowLink>
+              </article>
+              <article>
+                <span>Program corporate</span>
+                <h3>Leadership in the AI Era</h3>
+                <p>
+                  Decizii despre ce delegăm AI-ului, ce verificăm, cine decide și cine răspunde
+                  pentru rezultat.
+                </p>
+                <ArrowLink href="/cursuri/leadership-ai">Vezi programul</ArrowLink>
+              </article>
+            </div>
           </div>
-          <p className={styles.sectionIntro}>{program.problemText}</p>
-        </div>
-      </section>
+        </section>
+      )}
 
       <section className={styles.section}>
         <div className={styles.sectionHead}>
@@ -237,56 +292,44 @@ export default function Program({
       </section>
 
       <section className={styles.section}>
-        <div className={styles.practical}>
-          <div>
+        <div className={supportGrid}>
+          <article className={styles.editorialCard}>
             <Eyebrow>{copy.faqEyebrow}</Eyebrow>
-          </div>
-          <div>
-            <h2 className={styles.statementSmall}>{practicalTitle}</h2>
-            <p className={styles.sectionIntro} style={{ marginTop: '28px' }}>
-              {copy.faqText}
-            </p>
-          </div>
-        </div>
-      </section>
+            <h3>{practicalTitle}</h3>
+            <p>{copy.faqText}</p>
+          </article>
 
-      <section className={styles.section}>
-        <div className={styles.sectionHead}>
-          <div>
+          <article className={styles.editorialCard}>
             <Eyebrow>{locale === 'ro' ? 'Pentru organizații' : 'For organizations'}</Eyebrow>
-            <h2 className={styles.sectionTitle}>{organizationTitle}</h2>
-          </div>
-          <p className={styles.sectionIntro}>{organizationText}</p>
-        </div>
-        <ArrowLink href={localizePath('/corporate', locale)}>
-          {locale === 'ro'
-            ? 'Vezi abordarea pentru organizații'
-            : 'Explore the approach for organizations'}
-        </ArrowLink>
-      </section>
+            <h3>{organizationTitle}</h3>
+            <p>{organizationText}</p>
+            <ArrowLink href={localizePath('/corporate', locale)}>
+              {locale === 'ro'
+                ? 'Vezi abordarea pentru organizații'
+                : 'Explore the approach for organizations'}
+            </ArrowLink>
+          </article>
 
-      {relatedInsight && (
-        <section className={styles.section}>
-          <div className={styles.sectionHead}>
-            <div>
+          {relatedInsight && (
+            <article className={styles.editorialCard}>
               <Eyebrow>{locale === 'ro' ? 'Din Insights' : 'From Insights'}</Eyebrow>
-              <h2 className={styles.sectionTitle}>
+              <h3>
                 {locale === 'ro'
                   ? 'Aprofundează tema înainte de curs.'
                   : 'Explore the topic before the course.'}
-              </h2>
-            </div>
-          </div>
-          <ArrowLink href={localizePath(`/insights/${relatedInsight.slug}`, locale)}>
-            {locale === 'ro' ? relatedInsight.ro : relatedInsight.en}
-          </ArrowLink>
-        </section>
-      )}
+              </h3>
+              <ArrowLink href={localizePath(`/insights/${relatedInsight.slug}`, locale)}>
+                {locale === 'ro' ? relatedInsight.ro : relatedInsight.en}
+              </ArrowLink>
+            </article>
+          )}
+        </div>
+      </section>
 
       <section className={styles.cta}>
         <Eyebrow>{copy.ctaEyebrow}</Eyebrow>
         <h2 className={styles.ctaTitle}>{program.ctaTitle}</h2>
-        <ArrowLink href={`/inscriere?course=${encodeURIComponent(program.slug)}`}>
+        <ArrowLink href={registrationHref}>
           {locale === 'ro' ? 'Înscrie-te' : 'Register'}
         </ArrowLink>
       </section>

@@ -1,29 +1,10 @@
 import type { Metadata } from 'next'
 import { ArrowLink, Eyebrow } from '@/components/ui'
 import { JsonLd } from '@/components/json-ld'
-import { EditorialImage } from '@/components/portrait'
 import { getCopy, getLocale } from '@/lib/i18n'
 import { localizePath } from '@/lib/routes'
 import { buildPageMetadata, localizedUrl, SITE_URL } from '@/lib/seo'
 import styles from '../commercial.module.css'
-
-const relatedInsights = [
-  {
-    slug: 'de-ce-unele-conversatii-manageriale-schimba-lucrurile',
-    ro: 'De ce unele conversații manageriale schimbă lucrurile, iar altele nu',
-    en: 'Why some management conversations change things and others do not',
-  },
-  {
-    slug: 'o-decizie-buna-incepe-inainte-sa-alegi',
-    ro: 'O decizie bună începe înainte să alegi',
-    en: 'A good decision starts before you choose',
-  },
-  {
-    slug: 'negocierea-nu-este-doar-despre-argumente',
-    ro: 'Negocierea nu este doar despre argumente. Este și despre emoții.',
-    en: 'Negotiation is not only about arguments. It is also about emotions.',
-  },
-]
 
 export function generateMetadata({ searchParams }: { searchParams?: { lang?: string } }): Metadata {
   const locale = getLocale(searchParams?.lang)
@@ -45,6 +26,7 @@ export default function Corporate({ searchParams }: { searchParams?: { lang?: st
   const locale = getLocale(searchParams?.lang)
   const copy = getCopy(locale).corporate
   const canonical = localizedUrl('/corporate', locale)
+  const contactHref = `${localizePath('/contact', locale)}?source=corporate`
 
   const heroTitle =
     locale === 'ro'
@@ -56,10 +38,6 @@ export default function Corporate({ searchParams }: { searchParams?: { lang?: st
           item.replace('ce trebuie să facă oamenii diferit', 'ce vrem să facă oamenii diferit'),
         )
       : copy.diagnosticItems
-  const sectionText =
-    locale === 'ro'
-      ? 'Ce se întâmplă acum? Ce am vrea să se întâmple diferit? Cine este implicat? Ce a fost deja încercat? Abia apoi alegem dacă are sens un training, un workshop, facilitare, coaching sau o combinație între ele.'
-      : copy.sectionText
   const processItems =
     locale === 'ro'
       ? copy.processItems.map((item) =>
@@ -90,14 +68,19 @@ export default function Corporate({ searchParams }: { searchParams?: { lang?: st
   }
 
   return (
-    <div className={`${styles.page} balanced-commercial-page`}>
+    <div className={`${styles.page} balanced-commercial-page conversion-page`}>
       <JsonLd data={serviceJsonLd} />
 
       <section className={styles.hero}>
         <Eyebrow>{copy.eyebrow}</Eyebrow>
         <div className={styles.heroGrid}>
           <h1>{heroTitle}</h1>
-          <p className={styles.heroIntro}>{copy.intro}</p>
+          <div className="conversion-hero-copy">
+            <p className={styles.heroIntro}>{copy.intro}</p>
+            <ArrowLink href={contactHref}>
+              {locale === 'ro' ? 'Descrie problema organizației' : 'Describe the organization’s challenge'}
+            </ArrowLink>
+          </div>
         </div>
       </section>
 
@@ -107,23 +90,18 @@ export default function Corporate({ searchParams }: { searchParams?: { lang?: st
             <Eyebrow>{copy.diagnosticEyebrow}</Eyebrow>
             <h2 className={styles.statementSmall}>{copy.diagnosticTitle}</h2>
           </div>
-          <ul className={`${styles.diagnosticList} clean-diagnostic-list`}>
-            {diagnosticItems.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <div className={styles.sectionHead}>
           <div>
-            <h2 className={styles.statement}>{copy.sectionTitle}</h2>
+            <ul className={`${styles.diagnosticList} clean-diagnostic-list`}>
+              {diagnosticItems.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <div className="conversion-inline-action">
+              <ArrowLink href={contactHref}>
+                {locale === 'ro' ? 'Spune-ne ce se întâmplă acum' : 'Tell us what is happening now'}
+              </ArrowLink>
+            </div>
           </div>
-          <p className={styles.sectionIntro}>{sectionText}</p>
-        </div>
-        <div style={{ maxWidth: '760px' }}>
-          <EditorialImage asset="coaching" kind="portrait" locale={locale} />
         </div>
       </section>
 
@@ -170,7 +148,7 @@ export default function Corporate({ searchParams }: { searchParams?: { lang?: st
             <h2 className={styles.statementSmall}>{copy.formatsTitle}</h2>
             <div
               className={styles.themeList}
-              style={{ marginTop: '42px', borderTopColor: '#55554f' }}
+              style={{ marginTop: '30px', borderTopColor: '#55554f' }}
             >
               {copy.formats.map((format) => (
                 <div className={styles.themeItem} key={format}>
@@ -179,28 +157,6 @@ export default function Corporate({ searchParams }: { searchParams?: { lang?: st
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <div className={styles.sectionHead}>
-          <div>
-            <Eyebrow>{locale === 'ro' ? 'Din Insights' : 'From Insights'}</Eyebrow>
-            <h2 className={styles.sectionTitle}>
-              {locale === 'ro'
-                ? 'Idei despre conversații, decizii și negociere în munca reală.'
-                : 'Ideas about conversations, decisions and negotiation in real work.'}
-            </h2>
-          </div>
-        </div>
-        <div className={styles.twoGrid}>
-          {relatedInsights.map((item) => (
-            <article className={styles.editorialCard} key={item.slug}>
-              <ArrowLink href={localizePath(`/insights/${item.slug}`, locale)}>
-                {locale === 'ro' ? item.ro : item.en}
-              </ArrowLink>
-            </article>
-          ))}
         </div>
       </section>
 
@@ -221,7 +177,7 @@ export default function Corporate({ searchParams }: { searchParams?: { lang?: st
 
       <section className={styles.cta}>
         <h2 className={styles.ctaTitle}>{ctaTitle}</h2>
-        <ArrowLink href={localizePath('/contact', locale)}>{copy.cta}</ArrowLink>
+        <ArrowLink href={contactHref}>{copy.cta}</ArrowLink>
       </section>
     </div>
   )

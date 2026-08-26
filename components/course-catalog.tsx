@@ -4,12 +4,17 @@ import { useMemo, useState } from 'react'
 import { ConceptImage } from '@/components/portrait'
 import { ArrowLink } from '@/components/ui'
 import type { Locale } from '@/lib/i18n'
+import { localizePath } from '@/lib/routes'
 import styles from './course-catalog.module.css'
 
 type Program = {
   slug: string
   title: string
   description: string
+  href?: string
+  canRegister?: boolean
+  availabilityLabel?: string
+  actionLabel?: string
 }
 
 type CategoryKey = 'networking' | 'negotiation' | 'leadership' | 'other'
@@ -35,6 +40,11 @@ const catalogMeta: Record<string, CatalogMeta> = {
   'leading-high-performance-teams': {
     category: 'leadership',
     label: { ro: 'Leadership & echipe', en: 'Leadership & teams' },
+    image: 'workshopNotes',
+  },
+  'leadership-ai': {
+    category: 'leadership',
+    label: { ro: 'Leadership & AI', en: 'Leadership & AI' },
     image: 'workshopNotes',
   },
 }
@@ -129,26 +139,35 @@ export function CourseCatalog({
       <div className={styles.grid}>
         {filteredPrograms.map((program) => {
           const meta = getMeta(program)
+          const programHref = program.href ?? localizePath(`/cursuri/${program.slug}`, locale)
+          const registrationParams = new URLSearchParams({
+            course: program.slug,
+            source: 'course-catalog',
+          })
+          const registrationHref = `${localizePath('/inscriere', locale)}?${registrationParams.toString()}`
+
           return (
             <article className={styles.card} key={program.slug}>
               {meta.image ? <ConceptImage asset={meta.image} kind="wide" locale={locale} /> : null}
               <div className={styles.cardBody}>
                 <div className={styles.cardMeta}>
                   <span>{meta.label[locale]}</span>
-                  <span>{locale === 'ro' ? 'Program deschis' : 'Open program'}</span>
+                  <span>
+                    {program.availabilityLabel ??
+                      (locale === 'ro' ? 'Program deschis' : 'Open program')}
+                  </span>
                 </div>
                 <h3>{program.title}</h3>
                 <p>{program.description}</p>
                 <div className={styles.cardActions}>
-                  <ArrowLink className={styles.cardLink} href={`/cursuri/${program.slug}`}>
-                    {locale === 'ro' ? 'Află mai multe' : viewProgramLabel}
+                  <ArrowLink className={styles.cardLink} href={programHref}>
+                    {program.actionLabel ?? (locale === 'ro' ? 'Află mai multe' : viewProgramLabel)}
                   </ArrowLink>
-                  <ArrowLink
-                    className={styles.enrollLink}
-                    href={`/inscriere?course=${encodeURIComponent(program.slug)}`}
-                  >
-                    {locale === 'ro' ? 'Înscrie-te' : 'Register'}
-                  </ArrowLink>
+                  {program.canRegister !== false && (
+                    <ArrowLink className={styles.enrollLink} href={registrationHref}>
+                      {locale === 'ro' ? 'Înscrie-te' : 'Register'}
+                    </ArrowLink>
+                  )}
                 </div>
               </div>
             </article>

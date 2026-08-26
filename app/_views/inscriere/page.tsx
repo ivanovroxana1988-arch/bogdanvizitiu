@@ -9,6 +9,10 @@ import styles from '../commercial.module.css'
 type SearchParams = {
   lang?: string
   course?: string
+  source?: string
+  utm_source?: string
+  utm_medium?: string
+  utm_campaign?: string
 }
 
 export function generateMetadata({ searchParams }: { searchParams?: SearchParams }): Metadata {
@@ -42,18 +46,18 @@ export default function Registration({ searchParams }: { searchParams?: SearchPa
           eyebrow: 'Înscriere',
           title: 'Lasă-ne datele și revenim cu detaliile.',
           intro:
-            'Nu e nevoie de un formular-maraton. Nume, email, telefon. Cursul este deja selectat.',
+            'Nume, email și telefon. Cursul este deja selectat, iar noi revenim cu informațiile practice.',
           selected: 'Curs selectat',
         }
       : {
           eyebrow: 'Registration',
           title: 'Leave your details and we will follow up with the next steps.',
-          intro: 'No form marathon. Name, email and phone. The course is already selected.',
+          intro: 'Name, email and phone. The course is already selected and we will follow up with the practical details.',
           selected: 'Selected course',
         }
 
   return (
-    <div className={`${styles.page} balanced-commercial-page`}>
+    <div className={`${styles.page} balanced-commercial-page conversion-page`}>
       <section className={styles.hero}>
         <Eyebrow>{copy.eyebrow}</Eyebrow>
         <div className={styles.heroGrid}>
@@ -74,6 +78,12 @@ export default function Registration({ searchParams }: { searchParams?: SearchPa
             locale={locale}
             courseSlug={selected.slug}
             courseTitle={selected.title}
+            tracking={{
+              source: searchParams?.source,
+              utm_source: searchParams?.utm_source,
+              utm_medium: searchParams?.utm_medium,
+              utm_campaign: searchParams?.utm_campaign,
+            }}
           />
         </div>
       </section>

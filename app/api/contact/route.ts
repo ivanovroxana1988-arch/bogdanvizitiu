@@ -77,6 +77,11 @@ export async function POST(request: Request) {
   const interest = clean(raw.interest, 500)
   const message = clean(raw.message, 4000)
   const desiredChange = clean(raw.desiredChange, 2500)
+  const source = clean(raw.source, 200)
+  const referrer = clean(raw.referrer, 1000)
+  const utmSource = clean(raw.utm_source, 200)
+  const utmMedium = clean(raw.utm_medium, 200)
+  const utmCampaign = clean(raw.utm_campaign, 200)
   const invalidFields = getInvalidContactFields(raw)
 
   if (invalidFields.length) {
@@ -87,7 +92,17 @@ export async function POST(request: Request) {
     locale === 'ro'
       ? `Solicitare site Bogdan Vizitiu — ${requestType}`
       : `Bogdan Vizitiu website enquiry — ${requestType}`
-  const body = buildMessage({ name, email, requestType, scope, interest, message, desiredChange })
+  const messageBody = buildMessage({ name, email, requestType, scope, interest, message, desiredChange })
+  const attribution = [
+    source ? `Source: ${source}` : '',
+    referrer ? `Referrer: ${referrer}` : '',
+    utmSource ? `UTM source: ${utmSource}` : '',
+    utmMedium ? `UTM medium: ${utmMedium}` : '',
+    utmCampaign ? `UTM campaign: ${utmCampaign}` : '',
+  ]
+    .filter(Boolean)
+    .join('\n')
+  const body = attribution ? `${messageBody}\n\nLead attribution\n${attribution}` : messageBody
   const fallback = mailtoFallback(subject, body)
   const apiKey = process.env.RESEND_API_KEY
   const from = process.env.CONTACT_FROM_EMAIL
