@@ -9,6 +9,11 @@ export type ContactPayload = {
   desiredChange?: string
   consent?: boolean
   website?: string
+  source?: string
+  referrer?: string
+  utm_source?: string
+  utm_medium?: string
+  utm_campaign?: string
 }
 
 export type InvalidField = 'name' | 'email' | 'requestType' | 'message' | 'consent'
