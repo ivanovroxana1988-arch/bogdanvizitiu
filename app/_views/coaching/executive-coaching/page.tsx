@@ -7,24 +7,6 @@ import { localizePath } from '@/lib/routes'
 import { buildPageMetadata, localizedUrl, SITE_URL } from '@/lib/seo'
 import styles from '@/app/commercial.module.css'
 
-const relatedInsights = [
-  {
-    slug: 'de-ce-unele-conversatii-manageriale-schimba-lucrurile',
-    ro: 'De ce unele conversații manageriale schimbă lucrurile, iar altele nu',
-    en: 'Why some management conversations change things and others do not',
-  },
-  {
-    slug: 'o-decizie-buna-incepe-inainte-sa-alegi',
-    ro: 'O decizie bună începe înainte să alegi',
-    en: 'A good decision starts before you choose',
-  },
-  {
-    slug: 'de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives',
-    ro: 'De la „unde sunt” la „ce fac mai departe”: modelul LIVES',
-    en: 'From ‘where I am’ to ‘what I do next’: the LIVES model',
-  },
-]
-
 export function generateMetadata({ searchParams }: { searchParams?: { lang?: string } }): Metadata {
   const locale = getLocale(searchParams?.lang)
   const copy = executiveCoaching[locale]
@@ -46,6 +28,7 @@ export default function ExecutiveCoaching({ searchParams }: { searchParams?: { l
   const locale = getLocale(searchParams?.lang)
   const copy = executiveCoaching[locale]
   const canonical = localizedUrl('/coaching/executive-coaching', locale)
+  const contactHref = `${localizePath('/contact', locale)}?source=executive-coaching`
   const serviceJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -62,14 +45,19 @@ export default function ExecutiveCoaching({ searchParams }: { searchParams?: { l
   }
 
   return (
-    <div className={`${styles.page} balanced-commercial-page`}>
+    <div className={`${styles.page} balanced-commercial-page conversion-page`}>
       <JsonLd data={serviceJsonLd} />
 
       <section className={styles.hero}>
         <Eyebrow>{copy.eyebrow}</Eyebrow>
         <div className={styles.heroGrid}>
           <h1>{copy.title}</h1>
-          <p className={styles.heroIntro}>{copy.intro}</p>
+          <div className="conversion-hero-copy">
+            <p className={styles.heroIntro}>{copy.intro}</p>
+            <ArrowLink href={contactHref}>
+              {locale === 'ro' ? 'Descrie situația pe care vrei să o clarifici' : 'Describe the situation you want to clarify'}
+            </ArrowLink>
+          </div>
         </div>
       </section>
 
@@ -79,11 +67,18 @@ export default function ExecutiveCoaching({ searchParams }: { searchParams?: { l
             <Eyebrow>{copy.recognitionEyebrow}</Eyebrow>
             <h2 className={styles.statementSmall}>{copy.recognitionTitle}</h2>
           </div>
-          <ul className={`${styles.diagnosticList} clean-diagnostic-list`}>
-            {copy.recognitionItems.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+          <div>
+            <ul className={`${styles.diagnosticList} clean-diagnostic-list`}>
+              {copy.recognitionItems.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <div className="conversion-inline-action">
+              <ArrowLink href={contactHref}>
+                {locale === 'ro' ? 'Discută contextul tău' : 'Discuss your context'}
+              </ArrowLink>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -99,16 +94,6 @@ export default function ExecutiveCoaching({ searchParams }: { searchParams?: { l
             <h3>{copy.notTitle}</h3>
             <p>{copy.notText}</p>
           </article>
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <div className={styles.sectionHead}>
-          <div>
-            <Eyebrow>{copy.problemEyebrow}</Eyebrow>
-            <h2 className={styles.statement}>{copy.problemTitle}</h2>
-          </div>
-          <p className={styles.sectionIntro}>{copy.problemText}</p>
         </div>
       </section>
 
@@ -161,28 +146,6 @@ export default function ExecutiveCoaching({ searchParams }: { searchParams?: { l
       <section className={styles.section}>
         <div className={styles.sectionHead}>
           <div>
-            <Eyebrow>{locale === 'ro' ? 'Din Insights' : 'From Insights'}</Eyebrow>
-            <h2 className={styles.sectionTitle}>
-              {locale === 'ro'
-                ? 'Idei pentru decizii, conversații și claritate.'
-                : 'Ideas for decisions, conversations and clarity.'}
-            </h2>
-          </div>
-        </div>
-        <div className={styles.twoGrid}>
-          {relatedInsights.map((item) => (
-            <article className={styles.editorialCard} key={item.slug}>
-              <ArrowLink href={localizePath(`/insights/${item.slug}`, locale)}>
-                {locale === 'ro' ? item.ro : item.en}
-              </ArrowLink>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <div className={styles.sectionHead}>
-          <div>
             <Eyebrow>{copy.faqEyebrow}</Eyebrow>
             <h2 className={styles.sectionTitle}>{copy.faqTitle}</h2>
           </div>
@@ -200,7 +163,7 @@ export default function ExecutiveCoaching({ searchParams }: { searchParams?: { l
       <section className={styles.cta}>
         <Eyebrow>{copy.ctaEyebrow}</Eyebrow>
         <h2 className={styles.ctaTitle}>{copy.ctaTitle}</h2>
-        <ArrowLink href={localizePath('/contact', locale)}>{copy.cta}</ArrowLink>
+        <ArrowLink href={contactHref}>{copy.cta}</ArrowLink>
       </section>
     </div>
   )
