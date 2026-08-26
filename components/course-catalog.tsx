@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react'
 import { ConceptImage } from '@/components/portrait'
 import { ArrowLink } from '@/components/ui'
 import type { Locale } from '@/lib/i18n'
+import { localizePath } from '@/lib/routes'
 import styles from './course-catalog.module.css'
 
 type Program = {
@@ -129,6 +130,12 @@ export function CourseCatalog({
       <div className={styles.grid}>
         {filteredPrograms.map((program) => {
           const meta = getMeta(program)
+          const registrationParams = new URLSearchParams({
+            course: program.slug,
+            source: 'course-catalog',
+          })
+          const registrationHref = `${localizePath('/inscriere', locale)}?${registrationParams.toString()}`
+
           return (
             <article className={styles.card} key={program.slug}>
               {meta.image ? <ConceptImage asset={meta.image} kind="wide" locale={locale} /> : null}
@@ -140,13 +147,13 @@ export function CourseCatalog({
                 <h3>{program.title}</h3>
                 <p>{program.description}</p>
                 <div className={styles.cardActions}>
-                  <ArrowLink className={styles.cardLink} href={`/cursuri/${program.slug}`}>
+                  <ArrowLink
+                    className={styles.cardLink}
+                    href={localizePath(`/cursuri/${program.slug}`, locale)}
+                  >
                     {locale === 'ro' ? 'Află mai multe' : viewProgramLabel}
                   </ArrowLink>
-                  <ArrowLink
-                    className={styles.enrollLink}
-                    href={`/inscriere?course=${encodeURIComponent(program.slug)}`}
-                  >
+                  <ArrowLink className={styles.enrollLink} href={registrationHref}>
                     {locale === 'ro' ? 'Înscrie-te' : 'Register'}
                   </ArrowLink>
                 </div>
