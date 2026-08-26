@@ -69,7 +69,7 @@ export default function Coaching({ searchParams }: { searchParams?: { lang?: str
                 <ArrowLink href={localizePath(area.href, locale)}>{area.linkLabel}</ArrowLink>
               ) : (
                 <ArrowLink href={contactHref}>
-                  {locale === 'ro' ? 'Discută această direcție' : 'Discuss this direction'}
+                  {locale === 'ro' ? 'Programează o discuție' : 'Schedule a conversation'}
                 </ArrowLink>
               )}
             </article>
