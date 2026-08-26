@@ -40,7 +40,9 @@ export default function Coaching({ searchParams }: { searchParams?: { lang?: str
             <p className={styles.intro}>{copy.intro}</p>
             <div className="conversion-inline-action">
               <ArrowLink href={contactHref}>
-                {locale === 'ro' ? 'Descrie situația pe care vrei să o lucrezi' : 'Describe the situation you want to work on'}
+                {locale === 'ro'
+                  ? 'Descrie situația pe care vrei să o lucrezi'
+                  : 'Describe the situation you want to work on'}
               </ArrowLink>
             </div>
           </div>
@@ -59,22 +61,19 @@ export default function Coaching({ searchParams }: { searchParams?: { lang?: str
       <section className="shell conversion-content-section">
         <div className="prose" style={{ maxWidth: '900px' }}>
           <Eyebrow>{locale === 'ro' ? 'Direcții de lucru' : 'Working directions'}</Eyebrow>
-          {copy.areas.map((area) => {
-            const hasDedicatedPage = 'href' in area && area.href && 'linkLabel' in area && area.linkLabel
-            return (
-              <article key={area.title}>
-                <h2>{area.title}</h2>
-                <p>{area.text}</p>
-                {hasDedicatedPage ? (
-                  <ArrowLink href={localizePath(area.href, locale)}>{area.linkLabel}</ArrowLink>
-                ) : (
-                  <ArrowLink href={contactHref}>
-                    {locale === 'ro' ? 'Discută această direcție' : 'Discuss this direction'}
-                  </ArrowLink>
-                )}
-              </article>
-            )
-          })}
+          {copy.areas.map((area) => (
+            <article key={area.title}>
+              <h2>{area.title}</h2>
+              <p>{area.text}</p>
+              {'href' in area && area.href && 'linkLabel' in area && area.linkLabel ? (
+                <ArrowLink href={localizePath(area.href, locale)}>{area.linkLabel}</ArrowLink>
+              ) : (
+                <ArrowLink href={contactHref}>
+                  {locale === 'ro' ? 'Discută această direcție' : 'Discuss this direction'}
+                </ArrowLink>
+              )}
+            </article>
+          ))}
         </div>
       </section>
 
