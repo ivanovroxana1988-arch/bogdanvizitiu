@@ -124,6 +124,75 @@
   margin-top: 0;
 }
 
+.leadership-program-band {
+  background: var(--blue-soft, #e8f1f5);
+  padding-block: clamp(3.3rem, 4.6vw, 4.8rem);
+}
+
+.leadership-program-band__inner {
+  width: min(calc(100% - 64px), 1360px);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(48px, 8vw, 120px);
+  align-items: start;
+}
+
+.leadership-program-band__intro h2 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(2.4rem, 4vw, 4.3rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  margin: 12px 0 20px;
+}
+
+.leadership-program-band__intro p {
+  color: var(--muted);
+  line-height: 1.72;
+  margin: 0;
+}
+
+.leadership-program-band__options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--line);
+}
+
+.leadership-program-band__options article {
+  padding: 28px 34px 10px 0;
+}
+
+.leadership-program-band__options article + article {
+  border-left: 1px solid var(--line);
+  padding-left: 34px;
+}
+
+.leadership-program-band__options span {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--link);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.leadership-program-band__options h3 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(2rem, 3vw, 3.25rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  margin: 0 0 18px;
+}
+
+.leadership-program-band__options p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 22px;
+}
+
 /* The home page keeps stronger hierarchy, but no section needs eight or nine rem
    to prove that it is important. */
 .hero h1 {
@@ -238,6 +307,26 @@
   .conversion-editorial-strip {
     grid-template-columns: 1fr;
     align-items: start;
+  }
+
+  .leadership-program-band__inner,
+  .leadership-program-band__options {
+    grid-template-columns: 1fr;
+  }
+
+  .leadership-program-band__inner {
+    width: min(calc(100% - 36px), 1360px);
+    gap: 36px;
+  }
+
+  .leadership-program-band__options article {
+    padding: 26px 0;
+  }
+
+  .leadership-program-band__options article + article {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding-left: 0;
   }
 
   .hero h1 {
