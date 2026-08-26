@@ -109,6 +109,7 @@ export default function Program({
   if (!program) notFound()
 
   const relatedInsight = relatedInsightByProgram[program.slug]
+  const isLeadershipTeams = program.slug === 'leading-high-performance-teams'
   const canonical = localizedUrl(`/cursuri/${program.slug}`, locale)
   const heading = pageHeading(program.slug, locale, program.title)
   const courseJsonLd = {
@@ -197,6 +198,41 @@ export default function Program({
           </article>
         </div>
       </section>
+
+      {isLeadershipTeams && locale === 'ro' && (
+        <section className="leadership-program-band">
+          <div className="leadership-program-band__inner">
+            <div className="leadership-program-band__intro">
+              <Eyebrow>Două direcții de leadership</Eyebrow>
+              <h2>Alege problema de leadership pe care vrei să o lucrezi.</h2>
+              <p>
+                Un program lucrează cu performanța și autonomia echipei. Celălalt cu
+                deciziile manageriale care apar când AI intră în modul de lucru.
+              </p>
+            </div>
+            <div className="leadership-program-band__options">
+              <article>
+                <span>Program deschis</span>
+                <h3>Leading High Performance Teams</h3>
+                <p>
+                  Claritate, autonomie, feedback și responsabilitate pentru echipe care vor să
+                  livreze fără dependență permanentă de manager.
+                </p>
+                <ArrowLink href={registrationHref}>Înscrie-te la curs</ArrowLink>
+              </article>
+              <article>
+                <span>Program corporate</span>
+                <h3>Leadership in the AI Era</h3>
+                <p>
+                  Decizii despre ce delegăm AI-ului, ce verificăm, cine decide și cine răspunde
+                  pentru rezultat.
+                </p>
+                <ArrowLink href="/cursuri/leadership-ai-draft">Vezi programul</ArrowLink>
+              </article>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className={styles.section}>
         <div className={styles.sectionHead}>
