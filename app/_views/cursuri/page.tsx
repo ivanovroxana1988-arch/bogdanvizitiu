@@ -3,6 +3,7 @@ import { CourseCatalog } from '@/components/course-catalog'
 import { ArrowLink, Eyebrow } from '@/components/ui'
 import { getPrograms } from '@/lib/data'
 import { getCopy, getLocale } from '@/lib/i18n'
+import { localizePath } from '@/lib/routes'
 import { buildPageMetadata } from '@/lib/seo'
 import styles from '../commercial.module.css'
 
@@ -35,7 +36,7 @@ export default function Programs({ searchParams }: { searchParams?: SearchParams
   const initialCategory = locale === 'ro' ? searchParams?.categorie : searchParams?.category
 
   return (
-    <div className={`${styles.page} balanced-commercial-page`}>
+    <div className={`${styles.page} balanced-commercial-page conversion-page`}>
       <section className={styles.hero}>
         <Eyebrow>{copy.eyebrow}</Eyebrow>
         <div className={styles.heroGrid}>
@@ -56,10 +57,10 @@ export default function Programs({ searchParams }: { searchParams?: SearchParams
       <section className={styles.cta}>
         <Eyebrow>{locale === 'ro' ? 'Pentru organizații' : 'For organizations'}</Eyebrow>
         <h2 className={styles.ctaTitle}>{copy.tailoredTitle}</h2>
-        <p className={styles.sectionIntro} style={{ maxWidth: '640px', marginBottom: '34px' }}>
+        <p className={styles.sectionIntro} style={{ maxWidth: '640px', marginBottom: '28px' }}>
           {copy.tailoredText}
         </p>
-        <ArrowLink href="/corporate">{copy.tailoredCta}</ArrowLink>
+        <ArrowLink href={localizePath('/corporate', locale)}>{copy.tailoredCta}</ArrowLink>
       </section>
     </div>
   )
