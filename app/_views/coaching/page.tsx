@@ -4,6 +4,7 @@ import { ArrowLink, Eyebrow } from '@/components/ui'
 import media from '@/content/media.json'
 import servicePages from '@/content/service-pages.json'
 import { getLocale } from '@/lib/i18n'
+import { localizePath } from '@/lib/routes'
 import { buildPageMetadata } from '@/lib/seo'
 import styles from './coaching.module.css'
 
@@ -27,15 +28,21 @@ export default function Coaching({ searchParams }: { searchParams?: { lang?: str
   const locale = getLocale(searchParams?.lang)
   const copy = servicePages[locale].coaching
   const coachingImage = media.images.coaching
+  const contactHref = `${localizePath('/contact', locale)}?source=coaching`
 
   return (
-    <>
+    <div className="conversion-page coaching-conversion-page">
       <section className={`page-hero shell ${styles.hero}`}>
         <Eyebrow>{copy.eyebrow}</Eyebrow>
         <div className={styles.heroGrid}>
           <div className={styles.copy}>
             <h1 className={styles.title}>{copy.title}</h1>
             <p className={styles.intro}>{copy.intro}</p>
+            <div className="conversion-inline-action">
+              <ArrowLink href={contactHref}>
+                {locale === 'ro' ? 'Descrie situația pe care vrei să o lucrezi' : 'Describe the situation you want to work on'}
+              </ArrowLink>
+            </div>
           </div>
           <figure className={styles.portrait}>
             <Image
@@ -48,28 +55,37 @@ export default function Coaching({ searchParams }: { searchParams?: { lang?: str
           </figure>
         </div>
       </section>
-      <section className="shell">
+
+      <section className="shell conversion-content-section">
         <div className="prose" style={{ maxWidth: '900px' }}>
           <Eyebrow>{locale === 'ro' ? 'Direcții de lucru' : 'Working directions'}</Eyebrow>
-          {copy.areas.map((area) => (
-            <article key={area.title}>
-              <h2>{area.title}</h2>
-              <p>{area.text}</p>
-              {'href' in area && area.href && 'linkLabel' in area && area.linkLabel ? (
-                <ArrowLink href={area.href}>{area.linkLabel}</ArrowLink>
-              ) : null}
-            </article>
-          ))}
+          {copy.areas.map((area) => {
+            const hasDedicatedPage = 'href' in area && area.href && 'linkLabel' in area && area.linkLabel
+            return (
+              <article key={area.title}>
+                <h2>{area.title}</h2>
+                <p>{area.text}</p>
+                {hasDedicatedPage ? (
+                  <ArrowLink href={localizePath(area.href, locale)}>{area.linkLabel}</ArrowLink>
+                ) : (
+                  <ArrowLink href={contactHref}>
+                    {locale === 'ro' ? 'Discută această direcție' : 'Discuss this direction'}
+                  </ArrowLink>
+                )}
+              </article>
+            )
+          })}
         </div>
       </section>
+
       <section className="final-loop">
         <div className="shell final-grid">
           <h2>{copy.ctaTitle}</h2>
           <div>
-            <ArrowLink href={locale === 'ro' ? '/contact' : '/en/contact'}>{copy.cta}</ArrowLink>
+            <ArrowLink href={contactHref}>{copy.cta}</ArrowLink>
           </div>
         </div>
       </section>
-    </>
+    </div>
   )
 }
