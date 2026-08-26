@@ -5,6 +5,7 @@ import { EditorialImage } from '@/components/portrait'
 import { getMediaAppearances } from '@/lib/data'
 import servicePages from '@/content/service-pages.json'
 import { getLocale } from '@/lib/i18n'
+import { localizePath } from '@/lib/routes'
 import { buildPageMetadata } from '@/lib/seo'
 
 const isProduction = process.env.VERCEL_ENV === 'production'
@@ -29,11 +30,12 @@ export default function Media({ searchParams }: { searchParams?: { lang?: string
   const locale = getLocale(searchParams?.lang)
   const copy = servicePages[locale].media
   const appearances = getMediaAppearances()
+  const contactHref = `${localizePath('/contact', locale)}?source=media`
 
   return (
-    <>
+    <div className="conversion-page media-conversion-page">
       <PageHero eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro} />
-      <section className="shell content-grid">
+      <section className="shell content-grid conversion-content-section">
         <EditorialImage asset="speaking" kind="event" locale={locale} />
         <div className="prose">
           <p>
@@ -41,9 +43,12 @@ export default function Media({ searchParams }: { searchParams?: { lang?: string
               ? 'Sursele externe sunt folosite ca dovadă și destinație. Fotografiile sau artwork-urile terților nu sunt copiate pe site fără permisiune.'
               : 'External sources are used as evidence and destinations. Third-party photography or artwork is not copied onto the site without permission.'}
           </p>
+          <ArrowLink href={contactHref}>
+            {locale === 'ro' ? 'Invită-l pe Bogdan la un eveniment' : 'Invite Bogdan to an event'}
+          </ArrowLink>
         </div>
       </section>
-      <section className="programs shell">
+      <section className="programs shell conversion-content-section">
         {appearances.map((item) => (
           <article className="program-row" key={item.id}>
             <h3>{item.title}</h3>
@@ -61,10 +66,10 @@ export default function Media({ searchParams }: { searchParams?: { lang?: string
         <div className="shell final-grid">
           <h2>{copy.ctaTitle}</h2>
           <div>
-            <ArrowLink href="/contact">{copy.cta}</ArrowLink>
+            <ArrowLink href={contactHref}>{copy.cta}</ArrowLink>
           </div>
         </div>
       </section>
-    </>
+    </div>
   )
 }
