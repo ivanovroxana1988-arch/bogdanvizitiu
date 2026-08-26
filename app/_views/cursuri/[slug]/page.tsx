@@ -227,7 +227,7 @@ export default function Program({
                   Decizii despre ce delegăm AI-ului, ce verificăm, cine decide și cine răspunde
                   pentru rezultat.
                 </p>
-                <ArrowLink href="/cursuri/leadership-ai-draft">Vezi programul</ArrowLink>
+                <ArrowLink href="/cursuri/leadership-ai">Vezi programul</ArrowLink>
               </article>
             </div>
           </div>
