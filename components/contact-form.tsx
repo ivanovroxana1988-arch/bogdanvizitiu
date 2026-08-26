@@ -11,10 +11,16 @@ import formStyles from './contact-form.module.css'
 type SubmitState = 'idle' | 'sending' | 'success' | 'fallback' | 'error'
 type FieldName = 'name' | 'email' | 'requestType' | 'message' | 'consent'
 type FieldErrors = Partial<Record<FieldName, string>>
+type Tracking = {
+  source?: string
+  utm_source?: string
+  utm_medium?: string
+  utm_campaign?: string
+}
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-function buildClientFallback(form: HTMLFormElement, locale: Locale) {
+function buildClientFallback(form: HTMLFormElement, locale: Locale, referrer: string) {
   const data = new FormData(form)
   const requestType = String(data.get('requestType') || '')
   const subject =
@@ -29,12 +35,26 @@ function buildClientFallback(form: HTMLFormElement, locale: Locale) {
     '',
     'Context / Context',
     String(data.get('message') || ''),
-  ].join('\n')
+    '',
+    String(data.get('source') || '') ? `Source: ${String(data.get('source') || '')}` : '',
+    referrer ? `Referrer: ${referrer}` : '',
+    String(data.get('utm_source') || '')
+      ? `UTM: ${String(data.get('utm_source') || '')} / ${String(data.get('utm_medium') || '')} / ${String(data.get('utm_campaign') || '')}`
+      : '',
+  ]
+    .filter(Boolean)
+    .join('\n')
 
   return `mailto:${business.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 }
 
-export function ContactForm({ locale }: { locale: Locale }) {
+export function ContactForm({
+  locale,
+  tracking = {},
+}: {
+  locale: Locale
+  tracking?: Tracking
+}) {
   const copy = contactCopy[locale]
   const [state, setState] = useState<SubmitState>('idle')
   const [errors, setErrors] = useState<FieldErrors>({})
@@ -104,6 +124,7 @@ export function ContactForm({ locale }: { locale: Locale }) {
     }
 
     const data = new FormData(form)
+    const referrer = typeof document !== 'undefined' ? document.referrer : ''
     const payload = {
       locale,
       name: String(data.get('name') || ''),
@@ -113,6 +134,11 @@ export function ContactForm({ locale }: { locale: Locale }) {
       message: String(data.get('message') || ''),
       consent: data.get('consent') === 'on',
       website: String(data.get('website') || ''),
+      source: String(data.get('source') || ''),
+      referrer,
+      utm_source: String(data.get('utm_source') || ''),
+      utm_medium: String(data.get('utm_medium') || ''),
+      utm_campaign: String(data.get('utm_campaign') || ''),
     }
 
     setState('sending')
@@ -152,7 +178,7 @@ export function ContactForm({ locale }: { locale: Locale }) {
 
       setState('error')
     } catch {
-      setFallbackHref(buildClientFallback(form, locale))
+      setFallbackHref(buildClientFallback(form, locale, referrer))
       setState('fallback')
     }
   }
@@ -173,6 +199,11 @@ export function ContactForm({ locale }: { locale: Locale }) {
       aria-describedby="contact-status"
       noValidate
     >
+      <input type="hidden" name="source" value={tracking.source || ''} />
+      <input type="hidden" name="utm_source" value={tracking.utm_source || ''} />
+      <input type="hidden" name="utm_medium" value={tracking.utm_medium || ''} />
+      <input type="hidden" name="utm_campaign" value={tracking.utm_campaign || ''} />
+
       <label>
         {copy.name}
         <input
