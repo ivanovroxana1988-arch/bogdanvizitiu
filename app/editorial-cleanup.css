@@ -47,6 +47,83 @@
   max-width: 620px !important;
 }
 
+/* Conversion pages deliberately carry more information per desktop viewport.
+   Home, About and Portfolio do not use this marker and keep their current rhythm. */
+@media (min-width: 901px) {
+  .conversion-page > section {
+    padding-block: clamp(3rem, 4.2vw, 4.35rem) !important;
+  }
+
+  .conversion-page > section:first-child {
+    padding-block: clamp(3.6rem, 5vw, 4.8rem) !important;
+  }
+
+  .conversion-page > .final-loop {
+    padding-block: clamp(3.4rem, 4.5vw, 4.6rem) !important;
+  }
+}
+
+.conversion-hero-copy {
+  display: grid;
+  gap: 24px;
+  align-content: end;
+  justify-items: start;
+}
+
+.conversion-inline-action {
+  margin-top: 24px;
+}
+
+.conversion-editorial-strip {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+  gap: clamp(34px, 6vw, 84px);
+  align-items: end;
+  margin-block: clamp(44px, 5vw, 70px);
+  padding-block: 30px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.conversion-editorial-strip h2 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(2.1rem, 3.4vw, 3.65rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.03;
+  margin: 10px 0 0;
+  max-width: 760px;
+}
+
+.conversion-action-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 30px;
+  align-items: center;
+}
+
+.article-conversion-nudge {
+  margin-block: 36px !important;
+  padding: 28px 0 !important;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.article-conversion-nudge h2 {
+  margin: 10px 0 22px !important;
+  font-size: clamp(1.9rem, 3vw, 3rem) !important;
+  line-height: 1.08 !important;
+}
+
+.coaching-conversion-page .prose article {
+  padding-block: 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.coaching-conversion-page .prose article h2 {
+  margin-top: 0;
+}
+
 /* The home page keeps stronger hierarchy, but no section needs eight or nine rem
    to prove that it is important. */
 .hero h1 {
@@ -156,6 +233,11 @@
   .balanced-commercial-page > section:first-child > div > p {
     font-size: 18px !important;
     max-width: 680px !important;
+  }
+
+  .conversion-editorial-strip {
+    grid-template-columns: 1fr;
+    align-items: start;
   }
 
   .hero h1 {
