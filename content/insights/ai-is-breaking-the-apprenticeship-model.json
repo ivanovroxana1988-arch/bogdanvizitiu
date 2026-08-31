@@ -1,1 +1,265 @@
-PLACEHOLDER
+{
+  "slug": "ai-is-breaking-the-apprenticeship-model",
+  "status": "published",
+  "category": {"ro": "Leadership & AI", "en": "Leadership & AI"},
+  "title": {"ro": "AI schimbă modelul prin care învățăm o meserie", "en": "AI Is Breaking the Apprenticeship Model"},
+  "subtitle": {
+    "ro": "AI poate elimina o parte din munca juniorilor. Dar odată cu ea poate elimina și experiențele prin care aceștia învățau să devină experți.",
+    "en": "AI can remove part of junior work. It may also remove the experiences through which junior professionals used to become experts."
+  },
+  "excerpt": {
+    "ro": "Automatizarea muncii de început de carieră ridică o problemă mai profundă decât productivitatea: dacă dispar sarcinile prin care oamenii acumulau experiență, organizațiile trebuie să reproiecteze deliberat felul în care se formează expertiza.",
+    "en": "Automating early-career work creates a problem deeper than productivity: if the tasks through which people accumulated experience disappear, organizations must deliberately redesign how expertise is built."
+  },
+  "readTime": {"ro": "10 min", "en": "10 min"},
+  "publishedAt": "2026-08-31",
+  "intro": {
+    "ro": [
+      "În majoritatea profesiilor moderne, drumul spre competență a presupus multă vreme să faci o cantitate considerabilă de muncă care, privită din exterior, nu părea deosebit de sofisticată.",
+      "Rolurile de juniori presupuneau adunarea datelor, verificarea cifrelor, pregătirea prezentărilor și constructia primelor analize, care urmau să fie revizuite de cineva mai experimentat. Avocații aflați la început de carieră citeau contracte și pregăteau documentația pentru cazuri. Analiștii construiau modele, verificau tabele și produceau primele versiuni ale unor materiale care aveau să treacă apoi prin mâinile unui manager.",
+      "În multe profesii, drumul către capacitatea de a judeca bine începea, paradoxal, cu sarcini care necesitau relativ puțină judecată.",
+      "Sistemul nu era foarte eficient. Dar era educativ.",
+      "Importanța acestor activități nu stătea doar în rezultatul lor. Ele îi puneau pe cei fără experiență în apropierea problemelor reale și, poate și mai important, în apropierea oamenilor care știau deja să le rezolve.",
+      "Un consultant junior nu învăța doar să facă un slide. Învăța de ce un partener elimina un argument și îl păstra pe altul, ce informație conta pentru client, când o cifră părea suspectă, cum vorbea un profesionist experimentat despre incertitudine în fața unui CEO sau cum își dădea seama că un răspuns corect din punct de vedere tehnic era, totuși, recomandarea greșită.",
+      "O mare parte din expertiza profesională s-a transmis întotdeauna în felul acesta: indirect, inegal și adesea fără ca cineva să numească procesul „învățare”.",
+      "Inteligența artificială începe să intervină exact în acest mecanism.",
+      "Nu pentru că poate înlocui profesioniștii seniori. Problema imediată ar putea fi aproape opusă.",
+      "AI devine tot mai capabilă să facă tocmai munca pe care organizațiile o ofereau oamenilor înainte ca aceștia să devină seniori."
+    ],
+    "en": [
+      "For most modern professions, the path to competence has long involved doing a considerable amount of work that did not look particularly sophisticated from the outside.",
+      "Junior consultants collected data, checked numbers, prepared presentations and produced first analyses that would later be reviewed by someone more experienced. Young lawyers read contracts and assembled case material. Analysts built models, reconciled spreadsheets and produced early drafts that would pass through a manager's hands.",
+      "In many professions, the route towards good judgment began, paradoxically, with tasks that required relatively little judgment.",
+      "The system was not especially efficient. But it was educational.",
+      "The value of these activities was never limited to their output. They placed inexperienced people close to real problems and, perhaps more importantly, close to people who already knew how to solve them.",
+      "A junior consultant did not simply learn to make a slide. They learned why a partner rejected one argument and kept another, which information mattered to a client, when a number looked suspicious, how an experienced professional talked about uncertainty in front of a CEO, and how a technically correct answer could still be the wrong recommendation.",
+      "Much professional expertise has always been transmitted this way: indirectly, unevenly and often without anyone calling the process learning.",
+      "Artificial intelligence is beginning to intervene in exactly this mechanism.",
+      "Not because it can replace senior professionals. The immediate problem may be almost the opposite.",
+      "AI is increasingly capable of doing precisely the work organizations traditionally gave people before they became senior."
+    ]
+  },
+  "sections": {
+    "ro": [
+      {
+        "heading": "Curriculumul nevăzut al muncii",
+        "paragraphs": [
+          "Un articol recent din Financial Times despre industria de consultanță din Marea Britanie surprinde foarte bine tensiunea. Pe măsură ce AI preia o parte mai mare din research, analiză și alte activități tehnice, firme precum EY, KPMG și PwC pun un accent mai mare pe dezvoltarea unor capacități umane precum judecata profesională, empatia, storytellingul și leadershipul.",
+          "În același timp, liderii intervievați de FT vorbesc din nou despre nevoia ca profesioniștii aflați la început de carieră să lucreze în contexte în care îi pot observa și pot învăța direct de la colegii mai experimentați. Sayeh Ghanbari, managing partner pentru consulting în cadrul EY UK & Ireland, leagă explicit această problemă de slăbirea modelului tradițional de apprenticeship în perioada muncii remote.",
+          "Discuția a alunecat, previzibil, spre încă o rundă a dezbaterii despre întoarcerea la birou.",
+          "Dar problema mai interesantă nu este unde lucrează oamenii.",
+          "Este cum învață oamenii să lucreze.",
+          "Pentru că modelul de mentorat profesional nu se bazează doar pe proximitate. Se bazează pe participare.",
+          "Cercetările despre workplace learning spun acest lucru de multă vreme. Alison Fuller și Lorna Unwin au arătat, în lucrările lor despre apprenticeship, că dezvoltarea profesională depinde puternic de relațiile sociale și pedagogice dintre oamenii aflați în proces de învățare și colegii mai experimentați.",
+          "Distincția lor între medii de învățare expansive și restrictive rămâne relevantă: organizațiile nu diferă doar prin cantitatea de training formal pe care o oferă, ci și prin accesul pe care oamenii îl au la colegi experimentați, la activități diverse, la cunoaștere și la forme de participare cu un grad tot mai mare de dificultate și responsabilitate.",
+          "Cu alte cuvinte, învățarea profesională nu se întâmplă doar atunci când cineva participă la un curs.",
+          "Se întâmplă în timp ce muncește."
+        ]
+      },
+      {
+        "heading": "Munca juniorului produce două lucruri",
+        "paragraphs": [
+          "Tindem să privim o sarcină profesională ca și cum ar produce un singur rezultat.",
+          "O analiză produce o analiză. Un model financiar produce un model. Un program produce software. O prezentare pentru client produce niște slide-uri.",
+          "Dar munca făcută la începutul unei cariere produce, de fapt, două lucruri.",
+          "Primul este evident: rezultatul muncii.",
+          "Al doilea este mult mai greu de observat: omul care, în timp, devine capabil să facă o muncă mai dificilă.",
+          "Aici apare problema AI.",
+          "Organizațiile au motive economice foarte bune să automatizeze activitățile aflate la baza ierarhiei profesionale. Research-ul de rutină, primele drafturi, analiza documentelor, sinteza informațiilor sau analiza inițială consumă foarte mult timp.",
+          "Dacă un sistem AI poate face o parte importantă din această muncă în câteva minute, pare absurd să cerem unui absolvent să petreacă șase ore făcând-o manual.",
+          "Și uneori chiar este absurd.",
+          "Nu există niciun motiv serios să conservăm munca ineficientă doar pentru că generațiile anterioare au fost obligate să o facă. Dezvoltarea profesională nu presupune suferință ritualică, oricât de nostalgici devin uneori profesioniștii seniori când povestesc despre începuturile carierei lor.",
+          "Dar eliminarea unei sarcini și înlocuirea învățării ascunse în acea sarcină sunt două decizii diferite.",
+          "Prima este relativ simplă. A doua este mult mai dificilă."
+        ]
+      },
+      {
+        "heading": "Productivitatea nu este același lucru cu învățarea",
+        "paragraphs": [
+          "Să ne imaginăm un analist junior care petrece câteva ore construind o primă analiză de piață.",
+          "Caută informații. Găsește surse contradictorii. Face câteva presupuneri greșite. Observă o cifră ciudată. Întreabă un coleg mai experimentat de ce este importantă. Își reconstruiește analiza. Managerul îi contestă concluzia. Juniorul trebuie să o apere sau să o schimbe.",
+          "După câteva zeci de asemenea experiențe, începe să se întâmple ceva greu de măsurat.",
+          "Nu mai știe doar să facă analiza. Începe să știe ce trebuie să caute.",
+          "Acum să presupunem că AI produce prima versiune a aceleiași analize în trei minute.",
+          "Organizația a economisit câteva ore. Dar ce a învățat analistul?",
+          "Răspunsul poate fi: foarte mult.",
+          "Dacă verifică rezultatul, contestă presupunerile, compară alternative, caută ceea ce lipsește și discută raționamentul cu cineva mai experimentat, AI poate deveni un instrument extraordinar de învățare.",
+          "Răspunsul poate fi însă și: aproape nimic.",
+          "Dacă primește analiza, îi corectează formulările și o trimite mai departe.",
+          "Diferența dintre cele două situații nu este, în primul rând, una tehnologică. Este una pedagogică.",
+          "Există deja cercetări care sugerează că distincția contează. Un studiu de teren foarte cunoscut, realizat pe peste 5.000 de agenți de customer support, a arătat că accesul la AI generativ a crescut productivitatea cu aproximativ 14% în medie, iar beneficiile au fost mult mai mari pentru angajații mai puțin experimentați. Una dintre explicații este că AI reușea să transfere către începători o parte dintre tiparele de lucru folosite de colegii cu performanțe ridicate.",
+          "Este o veste foarte bună pentru productivitate.",
+          "Dar a performa mai repede ca un expert și a deveni expert nu sunt neapărat același lucru.",
+          "Cercetări experimentale mai recente încep să surprindă exact această diferență. Atunci când AI preia prea mult din efortul cognitiv, oamenii pot obține rezultate imediate mai bune fără să dezvolte în aceeași măsură înțelegerea conceptuală și capacitatea de a rezolva ulterior problema fără asistență.",
+          "Asta creează o întrebare incomodă pentru organizații.",
+          "Ce optimizăm? Performanța de astăzi sau capacitatea de mâine?",
+          "Ideal, ambele. Dar AI nu garantează automat acest lucru."
+        ]
+      },
+      {
+        "heading": "Eficiența și dezvoltarea funcționează pe două orizonturi diferite",
+        "paragraphs": [
+          "Beneficiile de eficiență ale AI sunt imediate și ușor de măsurat.",
+          "Putem estima ore economisite. Putem număra outputuri. Putem compara costuri. Putem măsura timpul necesar pentru finalizarea unei sarcini.",
+          "Pierderea unor experiențe de învățare este mult mai greu de observat.",
+          "În raportul trimestrial nu există un indicator numit „judecată profesională care nu s-a dezvoltat”.",
+          "Consecințele apar peste ani, când organizația descoperă că angajați foarte competenți tehnic au avut prea puține ocazii să dezvolte înțelegerea contextuală, capacitatea de a lucra cu ambiguitatea, relația cu clientul sau judgment-ul așteptat de la un profesionist senior.",
+          "Aici apare o posibilă problemă de pipeline.",
+          "Ierarhiile profesionale au presupus dintotdeauna că oamenii devin capabili să facă muncă dificilă acumulând experiență prin activități cu un grad progresiv de complexitate.",
+          "Dacă eliminăm suficient de multe dintre treptele de jos, scara începe să arate puțin ciudat.",
+          "De aceea întrebarea relevantă nu este doar dacă AI va elimina joburile juniorilor.",
+          "Chiar dacă joburile rămân, trebuie să întrebăm: ce experiențe de dezvoltare mai rămân în interiorul lor?"
+        ]
+      },
+      {
+        "heading": "Nu trebuie să salvăm munca inutilă",
+        "paragraphs": [
+          "Concluzia facilă ar fi că organizațiile ar trebui să protejeze activitățile juniorilor de automatizare. Ar fi o greșeală.",
+          "Nu trebuie să păstrăm ore de research inutil, verificări mecanice sau producție de PowerPoint doar pentru ca noile generații să beneficieze și ele de experiența formatoare a alinierii perfecte a unor casete de text la ora 23:47.",
+          "Provocarea este alta.",
+          "Trebuie să separăm munca necesară pentru producție de experiența necesară pentru învățare.",
+          "Istoric, cele două veneau la pachet. AI începe să le separe.",
+          "Dacă AI poate produce primul draft, sarcina de dezvoltare poate deveni evaluarea acelui draft.",
+          "Dacă AI poate face research-ul inițial, juniorul poate fi pus să compare sursele, să identifice informația care lipsește și să argumenteze de ce o interpretare este mai solidă decât alta.",
+          "Dacă AI poate construi modelul, procesul de învățare se poate muta spre examinarea presupunerilor, testarea scenariilor și identificarea lucrurilor pe care modelul nu le poate ști.",
+          "Dacă execuția de rutină devine mai ieftină, poate că juniorii trebuie expuși mai devreme la ambiguitate, la clienți și la decizii reale.",
+          "În teorie, asta poate produce un model de dezvoltare profesională chiar mai bun decât cel vechi.",
+          "Dar nu se va întâmpla singur. Trebuie proiectat."
+        ]
+      },
+      {
+        "heading": "Managerii vor trebui să devină din nou profesori",
+        "paragraphs": [
+          "Există aici și o implicație mai puțin confortabilă pentru manageri.",
+          "Modelul tradițional permitea ca foarte multă învățare să se întâmple accidental, ca efect secundar al muncii.",
+          "Juniorul făcea ceva. Managerul corecta. Juniorul încerca din nou.",
+          "Nu era nevoie ca cineva să proiecteze în mod explicit fiecare experiență de învățare.",
+          "Dacă AI elimină o parte dintre aceste activități, managerii vor trebui să devină mult mai intenționați în dezvoltarea oamenilor.",
+          "Vor trebui să explice raționamente care înainte rămâneau implicite. Să analizeze împreună cu juniorii rezultate generate de AI, nu doar să se bucure că livrabilul a venit mai repede. Să facă vizibil propriul proces de gândire. Să creeze acces la conversații dificile. Să-i întrebe pe oameni de ce sunt sau nu sunt de acord cu recomandarea AI.",
+          "Să le ofere responsabilitate înainte ca aceștia să se simtă complet pregătiți, dar suficient sprijin încât experiența să rămână una de învățare.",
+          "Cu alte cuvinte, o parte din timpul economisit prin AI va trebui reinvestit în dezvoltare.",
+          "Iar aici vom vedea probabil cât de serios au vorbit organizațiile în ultimii douăzeci de ani atunci când au spus că „oamenii sunt cea mai importantă resursă”.",
+          "Varianta financiară a adopției AI este foarte tentantă: automatizăm 30% din activitatea unui junior și umplem imediat capacitatea eliberată cu încă 30% output.",
+          "Varianta de dezvoltare este mai puțin spectaculoasă într-un spreadsheet: automatizăm o parte din activitate și folosim o parte din timpul câștigat pentru a construi deliberat competențele pe care munca veche le dezvolta accidental.",
+          "Prima variantă optimizează utilizarea de anul acesta. A doua protejează expertiza de care organizația va avea nevoie peste cinci ani."
+        ]
+      },
+      {
+        "heading": "De la învățarea accidentală la învățarea proiectată",
+        "paragraphs": [
+          "Poate că aceasta este, de fapt, schimbarea importantă.",
+          "Timp de decenii, organizațiile au externalizat o parte surprinzător de mare din dezvoltarea profesională către însăși structura muncii.",
+          "Oamenii învățau pentru că trebuiau să facă lucruri la care încă nu erau foarte buni, în apropierea unor oameni care erau.",
+          "Responsabilitatea creștea treptat. Greșelile produceau feedback. Repetiția producea recunoașterea tiparelor. Observarea transmitea lucruri pe care niciun competency framework nu reușea să le descrie complet.",
+          "Nu am fost obligați să proiectăm foarte atent acest sistem pentru că munca îl producea în mod natural.",
+          "AI schimbă situația.",
+          "Pe măsură ce tehnologia devine capabilă să facă mai mult din munca oferită tradițional începătorilor, organizațiile vor trebui să identifice ce experiențe sunt necesare pentru ca acești oameni să devină experți și apoi să creeze deliberat acele experiențe.",
+          "Există chiar posibilitatea ca rezultatul să fie mai bun decât vechiul model. Putem elimina activitățile realmente inutile și le putem oferi profesioniștilor tineri acces mai devreme la analiză, decizii, probleme reale și interacțiuni cu clienții.",
+          "Dar acest rezultat nu vine odată cu licența de AI.",
+          "Tehnologia poate elimina o sarcină în câteva secunde.",
+          "Nu poate decide și ce trebuia să învețe omul făcând acea sarcină.",
+          "Asta devine o problemă de management, de leadership și, poate înainte de toate, de learning.",
+          "Iar organizațiile care vor înțelege diferența nu se vor întreba doar câtă muncă de junior pot automatiza.",
+          "Vor trebui să răspundă la o întrebare mai dificilă: dacă AI face munca prin care oamenii învățau să devină experți, cum vor mai deveni experți?"
+        ]
+      }
+    ],
+    "en": [
+      {
+        "heading": "The hidden curriculum of work",
+        "paragraphs": [
+          "A recent Financial Times article on the UK consulting industry captures the tension well. As AI takes over more research, analysis and other technical work, firms such as EY, KPMG and PwC are placing greater emphasis on human capabilities such as professional judgment, empathy, storytelling and leadership.",
+          "At the same time, leaders interviewed by the FT are again emphasizing the need for early-career professionals to work in contexts where they can observe and learn directly from more experienced colleagues. Sayeh Ghanbari, managing partner for consulting at EY UK & Ireland, explicitly connects the issue to the weakening of consulting's traditional apprenticeship model during remote work.",
+          "The discussion has predictably drifted into another round of the return-to-office debate. But the more interesting issue is not where people work. It is how people learn to work.",
+          "Professional apprenticeship is not simply about proximity. It is about participation.",
+          "Research on workplace learning has made this point for decades. Alison Fuller and Lorna Unwin showed that professional development depends heavily on the social and pedagogical relationships between learners and more experienced colleagues.",
+          "Their distinction between expansive and restrictive learning environments remains useful: organizations differ not only in how much formal training they provide, but in the access people have to experienced colleagues, varied activities, knowledge and progressively more demanding forms of participation.",
+          "Professional learning does not happen only when someone attends a course. It happens while they work."
+        ]
+      },
+      {
+        "heading": "Junior work produces two things",
+        "paragraphs": [
+          "We tend to treat a professional task as if it produced one result: an analysis produces an analysis, a financial model produces a model, software produces software and a client presentation produces slides.",
+          "But early-career work actually produces two things. The first is obvious: the output. The second is harder to see: the person who gradually becomes capable of doing more difficult work.",
+          "Organizations have strong economic reasons to automate work at the bottom of professional hierarchies. Routine research, first drafts, document review, information synthesis and initial analysis consume enormous amounts of junior time.",
+          "If AI can do a meaningful part of that work in minutes, asking a graduate to spend six hours doing it manually can look absurd. Sometimes it is.",
+          "There is no good reason to preserve inefficient work merely because previous generations had to endure it. But removing a task and replacing the learning embedded in that task are two different decisions. The first is relatively easy. The second is much harder."
+        ]
+      },
+      {
+        "heading": "Productivity is not the same as learning",
+        "paragraphs": [
+          "Imagine a junior analyst spending several hours building a first market analysis. They search for information, encounter contradictory sources, make bad assumptions, notice an odd number, ask a more experienced colleague why it matters, rebuild the analysis and defend the conclusion when a manager challenges it.",
+          "After dozens of experiences like this, something difficult to measure begins to happen. The analyst no longer merely knows how to produce the analysis. They begin to know what to look for.",
+          "Now suppose AI produces the first version of the same analysis in three minutes. The organization has saved several hours. But what has the analyst learned?",
+          "The answer may be a great deal if they verify the output, challenge assumptions, compare alternatives and discuss the reasoning with someone more experienced. It may be almost nothing if they accept the analysis, polish the wording and pass it on. The difference is not primarily technological. It is pedagogical.",
+          "A well-known field study involving more than 5,000 customer-support agents found that generative AI increased productivity by about 14% on average, with substantially larger benefits for less experienced workers. That is excellent news for productivity. But performing more like an expert and becoming an expert are not necessarily the same thing.",
+          "More recent experimental work is beginning to capture this distinction. When AI takes over too much of the cognitive effort, people can achieve better immediate results without developing conceptual understanding and independent problem-solving to the same degree.",
+          "Organizations therefore face an uncomfortable question: are we optimizing today's performance or tomorrow's capability? Ideally both. AI does not guarantee that automatically."
+        ]
+      },
+      {
+        "heading": "Efficiency and development operate on different timescales",
+        "paragraphs": [
+          "The efficiency benefits of AI are immediate and easy to measure. We can estimate hours saved, count outputs, compare costs and measure task completion time.",
+          "The loss of developmental experiences is much harder to see. Quarterly dashboards do not contain a metric called professional judgment that never developed.",
+          "The consequences appear years later, when organizations discover that technically capable employees have had too few opportunities to build contextual understanding, work with ambiguity, develop client judgment or acquire the judgment expected from senior professionals.",
+          "Professional hierarchies have always assumed that people become capable of difficult work by accumulating experience through progressively more complex work. If we remove enough of the lower rungs, the ladder begins to look rather strange.",
+          "The relevant question is therefore not only whether AI will eliminate junior jobs. Even if the jobs remain, what developmental experiences remain inside them?"
+        ]
+      },
+      {
+        "heading": "We do not need to preserve pointless work",
+        "paragraphs": [
+          "The easy conclusion would be that organizations should protect junior tasks from automation. That would be a mistake.",
+          "We do not need to preserve hours of pointless research, mechanical checking or PowerPoint production so that new generations can experience the character-building benefits of aligning text boxes at 11:47 p.m.",
+          "The challenge is to separate work required for production from experience required for learning. Historically, the two came bundled together. AI is beginning to separate them.",
+          "If AI can produce the first draft, the developmental task can become evaluating that draft. If AI can conduct initial research, the junior can compare sources, identify missing evidence and defend why one interpretation is stronger than another.",
+          "If AI can build the model, learning can move towards examining assumptions, testing scenarios and identifying what the model cannot know. If routine execution becomes cheaper, junior professionals may need earlier exposure to ambiguity, clients and real decisions.",
+          "In theory, this could produce a better development model than the old one. But it will not happen by itself. It has to be designed."
+        ]
+      },
+      {
+        "heading": "Managers will have to become teachers again",
+        "paragraphs": [
+          "There is a less comfortable implication for managers. The traditional model allowed a great deal of learning to happen accidentally, as a side effect of production. The junior did something, the manager corrected it, and the junior tried again.",
+          "If AI removes part of that work, managers will have to become much more intentional about developing people.",
+          "They will need to explain reasoning that used to remain implicit, review AI-generated work with juniors rather than simply celebrate a faster deliverable, make their own thinking visible, create access to difficult conversations and ask people why they agree or disagree with an AI recommendation.",
+          "They will also need to give people responsibility before they feel completely ready, while providing enough support for the experience to remain developmental rather than reckless.",
+          "In other words, some of the time saved through AI will need to be reinvested in development.",
+          "The financially tempting version of AI adoption is obvious: automate 30% of a junior employee's work and immediately fill the released capacity with 30% more output. The developmental version is less impressive in a spreadsheet: automate part of the work and use some of the recovered time to deliberately build capabilities that the old work used to develop accidentally.",
+          "The first approach optimizes this year's utilization. The second protects the expertise the organization will need five years from now."
+        ]
+      },
+      {
+        "heading": "From accidental learning to designed learning",
+        "paragraphs": [
+          "For decades, organizations outsourced a surprising amount of professional development to the structure of work itself.",
+          "People learned because they had to do things they were not yet very good at, close to people who were. Responsibility increased gradually. Mistakes generated feedback. Repetition created pattern recognition. Observation transmitted things no competency framework could fully describe.",
+          "We did not have to design this system particularly carefully because the work produced it naturally. AI changes that.",
+          "As technology becomes capable of doing more of the work traditionally given to beginners, organizations will have to identify which experiences people still need in order to become experts and then create those experiences deliberately.",
+          "The result could even be better than the old model. We can eliminate genuinely pointless work and give young professionals earlier access to analysis, decisions, real problems and client interactions.",
+          "But that outcome does not arrive with the AI licence. Technology can eliminate a task in seconds. It cannot decide what the person doing that task was supposed to learn from it.",
+          "That becomes a management problem, a leadership problem and, perhaps above all, a learning problem.",
+          "Organizations that understand the difference will not ask only how much junior work they can automate. They will have to answer a harder question: if AI does the work through which people used to learn to become experts, how will they become experts?"
+        ]
+      }
+    ]
+  },
+  "closing": {"ro": [], "en": []},
+  "cta": {
+    "title": {"ro": "Leadership in the AI Era", "en": "Leadership in the AI Era"},
+    "label": {"ro": "Vezi programul Leadership in the AI Era", "en": "Explore Leadership in the AI Era"},
+    "href": "/cursuri/leadership-ai"
+  },
+  "sourceNote": {
+    "ro": "Articolul pornește de la observațiile recente din industria de consultanță și le pune în contextul cercetărilor despre workplace learning, apprenticeship și efectele AI asupra productivității și învățării.",
+    "en": "The article starts from recent observations in the consulting industry and places them in the context of research on workplace learning, apprenticeship and the effects of AI on productivity and learning."
+  },
+  "sources": [
+    {"label": "Financial Times — Junior consultants called back to office as AI increases need for human skills (27 August 2026)", "url": "https://www.ft.com/content/7fd9c234-a92b-4ab2-ba1f-969cf9a23f52"},
+    {"label": "Fuller & Unwin — Learning as Apprentices in the Contemporary UK Workplace", "url": "https://journals.sagepub.com/doi/10.2304/eerj.2003.2.1.9"},
+    {"label": "NBER — Generative AI at Work", "url": "https://www.nber.org/papers/w31161"}
+  ]
+}
