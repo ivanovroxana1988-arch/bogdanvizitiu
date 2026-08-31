@@ -8,11 +8,13 @@ import knowingActionInsight from '@/content/insights/stii-ce-ai-de-facut.json'
 import decisionClarityInsight from '@/content/insights/decizie-buna.json'
 import coachingConsultingInsight from '@/content/insights/coaching-sau-consultanta.json'
 import aiAdoptionChangeInsight from '@/content/insights/ai-adoption-is-a-change-problem.json'
+import aiApprenticeshipInsight from '@/content/insights/ai-is-breaking-the-apprenticeship-model.json'
 import { content } from '@/lib/content'
 import { canPublishAppearance, isPublishableCourseProduct } from '@/lib/content-schema'
 import type { Locale } from '@/lib/i18n'
 
 const allInsightItems = [
+  aiApprenticeshipInsight,
   aiAdoptionChangeInsight,
   managementConversationsInsight,
   decisionClarityInsight,
