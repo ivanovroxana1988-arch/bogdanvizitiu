@@ -358,7 +358,7 @@ export default function ClientPortfolio2026() {
               <a className={styles.lightCta} href="mailto:contact@bogdanvizitiu.com">
                 contact@bogdanvizitiu.com <span aria-hidden="true">↗</span>
               </a>
-              <p className={styles.contactLine}>+40 744 440 095 · Bogdan Vizitiu · TECH AND PLAY ILECA S.R.L.</p>
+              <p className={styles.contactLine}>+40 744 440 095 · Bogdan Vizitiu</p>
             </div>
           </div>
         </div>
