@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/cursuri/leadership-teams'],
+      disallow: ['/cursuri/leadership-teams', '/en/b2b-portfolio-2026'],
     },
     sitemap: 'https://bogdanvizitiu.com/sitemap.xml',
     host: 'https://bogdanvizitiu.com',
