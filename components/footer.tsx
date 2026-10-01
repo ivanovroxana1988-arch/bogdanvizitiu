@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import navigation from '@/content/navigation.json'
-import business from '@/content/business.json'
 import { withLocale, type Locale } from '@/lib/i18n'
 import { BrandLogo } from '@/components/brand-logo'
 import styles from './footer.module.css'
@@ -34,18 +33,6 @@ export function Footer({ locale }: { locale: Locale }) {
             {locale === 'ro'
               ? 'Leadership, negociere și relații profesionale.'
               : 'Leadership, negotiation and professional relationships.'}
-          </p>
-          <p className={styles.legal}>
-            {locale === 'ro' ? 'Furnizor servicii' : 'Service provider'}:{' '}
-            <strong>{business.legalName}</strong>
-            <br />
-            CUI / Tax ID {business.taxId} ·{' '}
-            {locale === 'ro' ? 'Registrul Comerțului' : 'Trade Register'} {business.tradeRegister}
-            <br />
-            {business.registeredOffice}
-            <br />
-            <a href={`mailto:${business.email}`}>{business.email}</a> ·{' '}
-            <a href={`tel:${business.phoneHref}`}>{business.phoneDisplay}</a>
           </p>
         </div>
 
