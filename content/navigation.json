@@ -1,4 +1,34 @@
 {
-  "ro":{"about":"Despre","courses":"Cursuri","coaching":"Coaching","corporate":"Corporate","media":"Media","insights":"Insights","resources":"Resurse","contact":"Contact","privacy":"Confidențialitate","terms":"Termeni","menu":"Meniu","coursesCta":"Începe o conversație","information":"Informații"},
-  "en":{"about":"About","courses":"Courses","coaching":"Coaching","corporate":"Corporate","media":"Media","insights":"Insights","resources":"Resources","contact":"Contact","privacy":"Privacy","terms":"Terms","menu":"Menu","coursesCta":"Start a conversation","information":"Information"}
+  "ro": {
+    "about": "Despre",
+    "courses": "Cursuri",
+    "coaching": "Coaching",
+    "corporate": "Corporate",
+    "media": "Media",
+    "insights": "Insights",
+    "resources": "Resurse",
+    "contact": "Contact",
+    "privacy": "Confidențialitate",
+    "terms": "Termeni",
+    "menu": "Meniu",
+    "coursesCta": "Începe o conversație",
+    "information": "Informații",
+    "workshops": "Workshopuri"
+  },
+  "en": {
+    "about": "About",
+    "courses": "Courses",
+    "coaching": "Coaching",
+    "corporate": "Corporate",
+    "media": "Media",
+    "insights": "Insights",
+    "resources": "Resources",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "menu": "Menu",
+    "coursesCta": "Start a conversation",
+    "information": "Information",
+    "workshops": "Workshops"
+  }
 }
