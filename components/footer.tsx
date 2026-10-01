@@ -56,6 +56,7 @@ export function Footer({ locale }: { locale: Locale }) {
           <Link href={withLocale('/cursuri', locale)}>{copy.courses}</Link>
           <Link href={withLocale('/coaching', locale)}>{copy.coaching}</Link>
           <Link href={withLocale('/corporate', locale)}>{copy.corporate}</Link>
+          <Link href={withLocale('/workshopuri', locale)}>{copy.workshops}</Link>
           <Link href={withLocale('/contact', locale)}>{copy.contact}</Link>
         </div>
 

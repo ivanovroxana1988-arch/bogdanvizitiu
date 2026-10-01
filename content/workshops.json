@@ -1,0 +1,122 @@
+{
+  "ro": {
+    "eyebrow": "Workshopuri pentru organizații",
+    "title": "Nu încă o zi de slide-uri.",
+    "intro": "Experiențe de învățare aplicată pentru echipe care lucrează sub presiune, cu schimbare, incertitudine și decizii cu miză.",
+    "approachEyebrow": "Cum sunt construite",
+    "approachTitle": "Știință. Experiență. Reflecție. Aplicare.",
+    "approachText": "Fiecare workshop combină psihologie, neuroștiință, economie comportamentală și gândire sistemică cu simulări, jocuri de echipă și situații reale de lucru.",
+    "formatLabel": "Format tipic",
+    "formatValue": "1 zi · 8 ore · până la 15 participanți",
+    "tailoredTitle": "Construim workshopul în jurul realității echipei tale.",
+    "tailoredText": "Putem adapta exemplele, simulările și exercițiile la industria, rolurile și provocările organizației.",
+    "cta": "Discută un workshop",
+    "items": [
+      {
+        "number": "01",
+        "title": "Reziliența în stare de alertă",
+        "subtitle": "Reziliență emoțională & gestionarea stresului",
+        "promise": "Claritate cognitivă și reglare emoțională atunci când presiunea crește.",
+        "activities": ["Neurobiologia stresului și a anxietății", "Body mapping: harta semnalelor de stres", "Tehnici de grounding și reglare rapidă", "Labirintul incertitudinii: stress simulation game", "Reframing cognitiv și anti-perfecționism"],
+        "outcomes": ["Recunoașterea timpurie a semnalelor de stres", "Tehnici de ieșire din fight-or-flight", "Separarea valorii personale de rezultatul muncii"]
+      },
+      {
+        "number": "02",
+        "title": "Navigarea prin ambiguitate și complexitate",
+        "subtitle": "Critical inquiry & decizii cu date insuficiente",
+        "promise": "Mai puțină paralizie decizională. Mai multă mișcare cu ipoteze explicite.",
+        "activities": ["Aversiunea la pierdere și costul inacțiunii", "Minimum Viable Decision și teoria opțiunilor reale", "Simulare de criză și testarea apetitului la risc", "Arta de a spune «Nu știu, dar...»", "Exerciții pentru bias-ul de confirmare"],
+        "outcomes": ["Toleranță mai mare la acțiune cu date incomplete", "Întrebări mai bune pentru separarea informației de zgomot", "Reducerea timpului de paralizie decizională"]
+      },
+      {
+        "number": "03",
+        "title": "Comunicarea 5×5",
+        "subtitle": "Claritate sub presiune",
+        "promise": "Mesaje scurte, structurate și suficient de clare încât să poată fi folosite.",
+        "activities": ["Încărcare cognitivă și atenție selectivă", "SCIPAB / STAR pentru structurarea mesajelor", "Principiul piramidei", "Elevator pitch pentru o problemă", "Parafrazare și ascultare activă în condiții de presiune"],
+        "outcomes": ["Mesaje și emailuri mai scurte", "Instrucțiuni critice mai ușor de înțeles", "Ascultare activă și validare mai bune"]
+      },
+      {
+        "number": "04",
+        "title": "Managementul energiei vs. managementul timpului",
+        "subtitle": "Munca în flow & protejarea resursei cognitive",
+        "promise": "Protejarea atenției și a blocurilor de lucru care produc valoare.",
+        "activities": ["Bazele neuroștiințifice ale flow-ului", "Harta costului comutării", "Cronobiologie și cronotip", "Protocoale de echipă anti-întrerupere", "Designul protocolului de focus al echipei"],
+        "outcomes": ["Reducerea costului comutării", "Bariere concrete împotriva întreruperilor", "Identificarea ritmului optim individual de lucru"]
+      },
+      {
+        "number": "05",
+        "title": "Feedback-ul agil și siguranța psihologică",
+        "subtitle": "Feedforward și focus pe proces",
+        "promise": "Mai puțină vină. Mai multă învățare și corecție utilă.",
+        "activities": ["Bazele siguranței psihologice", "Analiza relației cu erorile", "De la feedback la feedforward", "Start · Stop · Continue", "Post-mortem non-blaming și Root Cause Analysis"],
+        "outcomes": ["Schimbarea limbajului de la «cine» la «ce»", "Feedback orientat spre proces", "Îmbunătățirea procedurilor după eșec"]
+      },
+      {
+        "number": "06",
+        "title": "Agilitate personală și toleranța la schimbare",
+        "subtitle": "De la rezistență la reacție rapidă",
+        "promise": "Adaptare mai rapidă când se schimbă prioritățile, cerințele sau ipotezele.",
+        "activities": ["Status quo bias și sunk cost fallacy", "Auditul obiceiurilor inutile", "Growth vs. fixed mindset în schimbare", "Simulare de pivotare", "Exerciții de unlearning și flexibilitate cognitivă"],
+        "outcomes": ["Identificarea surselor de rezistență", "Adoptarea mentalității test & learn", "Gestionarea frustrării când munca trebuie schimbată"]
+      },
+      {
+        "number": "07",
+        "title": "Colaborarea inter-funcțională eficientă",
+        "subtitle": "Spargerea silozurilor",
+        "promise": "Mai multă înțelegere între funcțiuni și mai puțin conflict produs de priorități nevăzute.",
+        "activities": ["Empatie, Theory of Mind și in-group bias", "Harta intereselor vs. pozițiilor", "O zi în pantofii mei", "Negociere cu inversare de rol", "Protocoale de colaborare rapidă"],
+        "outcomes": ["Identificarea silozurilor și punctelor de conflict", "Rezolvare inter-funcțională mai rapidă", "Înțelegerea constrângerilor altor departamente"]
+      },
+      {
+        "number": "08",
+        "title": "Gândirea sistemică",
+        "subtitle": "Butterfly effect & consecințe neașteptate",
+        "promise": "Capacitatea de a vedea efectele de ordin doi înainte să devină probleme.",
+        "activities": ["Feedback loops și efectul Cobra", "Puncte de pârghie", "Hartă cauză-efect", "Strategul vs. executorul", "Pre-mortem și 5W pentru risc"],
+        "outcomes": ["Înțelegerea non-linearității", "Identificarea punctelor de pârghie", "Reducerea riscurilor ascunse"]
+      },
+      {
+        "number": "09",
+        "title": "Mindset-ul de explorator",
+        "subtitle": "Curiozitatea ca instrument anti-frică",
+        "promise": "Transformarea incertitudinii din amenințare în teritoriu de explorat.",
+        "activities": ["Neurobiologia curiozității vs. fricii", "Harta emoțională frică vs. curiozitate", "Reformulare anti-frică", "Explorarea teritoriului necunoscut", "Jurnalul săptămânal de incertitudine"],
+        "outcomes": ["Transformarea fricii în acțiune bazată pe curiozitate", "Folosirea incertitudinii ca motor de învățare", "Mai multă reziliență în fața necunoscutului"]
+      },
+      {
+        "number": "10",
+        "title": "Claritatea viziunii în ceață",
+        "subtitle": "Protocolul de aliniere rapidă",
+        "promise": "Claritate asupra a ceea ce contează, ce poate aștepta și ce trebuie oprit.",
+        "activities": ["Paralizia decizională și supraîncărcarea", "North Star și Stop Doing", "Scor Impact/Efort", "Testul de aliniere", "Protocolul de refuz: «NU» și «NU ACUM»"],
+        "outcomes": ["Înțelegerea North Star-ului echipei", "Evaluarea rapidă a solicitărilor noi", "Menținerea focusului strategic în context confuz"]
+      }
+    ]
+  },
+  "en": {
+    "eyebrow": "Workshops for organizations",
+    "title": "Not another day of slides.",
+    "intro": "Applied learning experiences for teams working through pressure, change, uncertainty and consequential decisions.",
+    "approachEyebrow": "How they are built",
+    "approachTitle": "Science. Experience. Reflection. Application.",
+    "approachText": "Each workshop combines psychology, neuroscience, behavioral economics and systems thinking with simulations, team exercises and real workplace situations.",
+    "formatLabel": "Typical format",
+    "formatValue": "1 day · 8 hours · up to 15 participants",
+    "tailoredTitle": "Built around your team’s reality.",
+    "tailoredText": "Examples, simulations and exercises can be adapted to your industry, roles and current organizational challenges.",
+    "cta": "Discuss a workshop",
+    "items": [
+      {"number":"01","title":"Resilience under pressure","subtitle":"Emotional resilience & stress management","promise":"Stay cognitively clear when pressure goes up.","activities":["The neurobiology of stress and anxiety","Body mapping: recognizing stress signals","Grounding and rapid regulation techniques","Uncertainty maze: stress simulation","Cognitive reframing and anti-perfectionism"],"outcomes":["Recognize stress signals earlier","Interrupt fight-or-flight cycles","Separate self-worth from work outcomes"]},
+      {"number":"02","title":"Navigating ambiguity & complexity","subtitle":"Critical inquiry & decisions with incomplete data","promise":"Move before certainty arrives, with explicit hypotheses and calculated risk.","activities":["Loss aversion and the cost of inaction","Minimum Viable Decision and real options","Crisis simulation and risk appetite","The art of saying “I don’t know, but…”","Confirmation-bias exercises"],"outcomes":["Act with incomplete information","Separate signal from noise","Reduce decision paralysis"]},
+      {"number":"03","title":"Communication 5×5","subtitle":"Clarity under pressure","promise":"Make complex messages shorter, clearer and actionable.","activities":["Cognitive load and selective attention","SCIPAB / STAR message structures","The pyramid principle","Problem elevator pitch","Paraphrasing and active listening under pressure"],"outcomes":["Shorter messages and emails","Clearer critical instructions","Stronger active listening and validation"]},
+      {"number":"04","title":"Energy management vs. time management","subtitle":"Flow & cognitive resource protection","promise":"Protect attention and the blocks of work that create value.","activities":["The neuroscience of flow","Mapping context-switching cost","Chronobiology and chronotype","Team anti-interruption protocols","Designing a team focus protocol"],"outcomes":["Reduce context-switching cost","Create interruption barriers","Identify optimal individual work rhythms"]},
+      {"number":"05","title":"Agile feedback & psychological safety","subtitle":"Feedforward and process focus","promise":"Less blame. More learning and useful correction.","activities":["Psychological safety fundamentals","Examining our relationship with errors","From feedback to feedforward","Start · Stop · Continue","Non-blaming post-mortem and Root Cause Analysis"],"outcomes":["Shift language from who to what","Give process-oriented feedback","Improve procedures after failure"]},
+      {"number":"06","title":"Personal agility & change tolerance","subtitle":"From resistance to rapid response","promise":"Adapt faster when priorities, requirements or assumptions change.","activities":["Status quo bias and sunk cost fallacy","Audit of obsolete habits","Growth vs. fixed mindset in change","Pivot simulation","Unlearning and cognitive flexibility"],"outcomes":["Identify sources of resistance","Adopt a test-and-learn mindset","Handle frustration when work changes"]},
+      {"number":"07","title":"Effective cross-functional collaboration","subtitle":"Breaking silos","promise":"See the constraints behind other functions before conflict hardens.","activities":["Empathy, Theory of Mind and in-group bias","Interests vs. positions mapping","A day in my shoes","Role-reversal negotiation","Rapid collaboration protocols"],"outcomes":["Identify silos and conflict hotspots","Resolve cross-functional issues faster","Understand other departments’ constraints"]},
+      {"number":"08","title":"Systems thinking","subtitle":"Butterfly effect & unintended consequences","promise":"See second-order effects before they become problems.","activities":["Feedback loops and the Cobra Effect","Leverage points","Cause-and-effect mapping","Strategist vs. executor","Pre-mortem and 5W for risk"],"outcomes":["Understand non-linearity","Identify leverage points","Reduce hidden risks"]},
+      {"number":"09","title":"Explorer mindset","subtitle":"Curiosity as an antidote to fear","promise":"Turn uncertainty from a threat into territory worth exploring.","activities":["The neurobiology of curiosity vs. fear","Fear vs. curiosity emotional map","Anti-fear reframing","Exploring unknown territory","Weekly uncertainty journal"],"outcomes":["Turn fear into curiosity-led action","Use uncertainty as a learning engine","Build resilience around the unknown"]},
+      {"number":"10","title":"Clarity in the fog","subtitle":"Rapid alignment protocol","promise":"Know what matters, what can wait and what needs to stop.","activities":["Decision paralysis and overload","North Star and Stop Doing","Impact/Effort prioritization","Alignment test","The “NO” / “NOT NOW” protocol"],"outcomes":["Clarify the team’s North Star","Evaluate new requests quickly","Maintain strategic focus in a confusing context"]}
+    ]
+  }
+}

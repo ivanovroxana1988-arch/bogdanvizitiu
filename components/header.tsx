@@ -12,6 +12,7 @@ const hrefs = [
   ['courses', '/cursuri'],
   ['coaching', '/coaching'],
   ['corporate', '/corporate'],
+  ['workshops', '/workshopuri'],
   ['insights', '/insights'],
 ] as const
 
