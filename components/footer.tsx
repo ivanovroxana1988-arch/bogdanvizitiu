@@ -1,4 +1,7 @@
+"use client"
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import navigation from '@/content/navigation.json'
 import { withLocale, type Locale } from '@/lib/i18n'
 import { BrandLogo } from '@/components/brand-logo'
@@ -10,7 +13,12 @@ const socialLinks = [
 ]
 
 export function Footer({ locale }: { locale: Locale }) {
+  const pathname = usePathname()
   const copy = navigation[locale]
+
+  if (pathname === '/en/b2b-portfolio-2026' || pathname === '/b2b-portfolio-2026') {
+    return null
+  }
 
   return (
     <footer>
