@@ -88,9 +88,13 @@ export async function POST(request: Request) {
   }
 
   const subject =
-    locale === 'ro'
-      ? `Înscriere curs — ${course.title}`
-      : `Course registration — ${course.title}`
+    course.dates.length === 0
+      ? locale === 'ro'
+        ? `Notificare ediție curs — ${course.title}`
+        : `Next course edition notification — ${course.title}`
+      : locale === 'ro'
+        ? `Înscriere curs — ${course.title}`
+        : `Course registration — ${course.title}`
   const body = [
     `Curs / Course: ${course.title}`,
     `Slug: ${course.slug}`,

@@ -31,6 +31,7 @@ const allInsightItems = [
 export function getPrograms(locale: Locale) {
   return content.courseDetails.filter(isPublishableCourseProduct).map((product) => ({
     slug: product.slug,
+    dates: product.dates,
     title: product.title[locale],
     description: product.description[locale],
     detail: product.detail[locale],

@@ -59,6 +59,7 @@ export default function Workshops({ searchParams }: { searchParams?: { lang?: st
           <h1>{copy.title}</h1>
           <div>
             <p className={styles.heroLead}>{copy.intro}</p>
+            <ArrowLink href={contactHref}>{copy.cta}</ArrowLink>
             <div className={styles.meta}>
               <strong>{copy.formatLabel}</strong>
               <span>{copy.formatValue}</span>
@@ -117,6 +118,9 @@ export default function Workshops({ searchParams }: { searchParams?: { lang?: st
                   <span className={styles.detailLabel}>
                     {locale === 'ro' ? 'Rezultate urmărite' : 'Intended outcomes'}
                   </span>
+                  <ArrowLink href={`${contactHref}&workshop=${item.number}`}>
+                    {locale === 'ro' ? 'Solicită acest workshop' : 'Enquire about this workshop'}
+                  </ArrowLink>
                   <ul>
                     {item.outcomes.map((outcome) => (
                       <li key={outcome}>{outcome}</li>

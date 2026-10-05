@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { FormEvent, useState } from 'react'
+import { attribution, conversionEvent } from '@/lib/conversion-tracking'
+import { FormEvent, useRef, useState } from 'react'
 import business from '@/content/business.json'
 import contactCopy from '@/content/contact-copy.json'
 import { withLocale, type Locale } from '@/lib/i18n'
@@ -32,6 +33,7 @@ function buildClientFallback(form: HTMLFormElement, locale: Locale, referrer: st
     `Email: ${String(data.get('email') || '')}`,
     `Tip solicitare / Request type: ${requestType}`,
     `Pentru / Scope: ${String(data.get('scope') || '')}`,
+    String(data.get('interest') || '') ? `Workshop: ${String(data.get('interest') || '')}` : '',
     '',
     'Context / Context',
     String(data.get('message') || ''),
@@ -51,11 +53,16 @@ function buildClientFallback(form: HTMLFormElement, locale: Locale, referrer: st
 export function ContactForm({
   locale,
   tracking = {},
+  workshop,
 }: {
   locale: Locale
+  workshop?: string
   tracking?: Tracking
 }) {
   const copy = contactCopy[locale]
+  const started = useRef(false)
+  const emit = (event: string) =>
+    conversionEvent(event, 'contact', workshop || tracking.source || 'contact', locale)
   const [state, setState] = useState<SubmitState>('idle')
   const [errors, setErrors] = useState<FieldErrors>({})
   const [fallbackHref, setFallbackHref] = useState('')
@@ -119,26 +126,34 @@ export function ContactForm({
     const form = event.currentTarget
 
     if (!validateForm(form)) {
+      emit('form_validation_error')
       setState('idle')
       return
     }
 
     const data = new FormData(form)
     const referrer = typeof document !== 'undefined' ? document.referrer : ''
+    const original = attribution(tracking)
     const payload = {
       locale,
       name: String(data.get('name') || ''),
       email: String(data.get('email') || ''),
       requestType: String(data.get('requestType') || ''),
       scope: String(data.get('scope') || ''),
+      interest: workshop || '',
       message: String(data.get('message') || ''),
       consent: data.get('consent') === 'on',
       website: String(data.get('website') || ''),
-      source: String(data.get('source') || ''),
-      referrer,
-      utm_source: String(data.get('utm_source') || ''),
-      utm_medium: String(data.get('utm_medium') || ''),
-      utm_campaign: String(data.get('utm_campaign') || ''),
+      source: original.source || String(data.get('source') || ''),
+      referrer: original.referrer || referrer,
+      utm_source: original.utm_source || String(data.get('utm_source') || ''),
+      utm_medium: original.utm_medium || String(data.get('utm_medium') || ''),
+      utm_campaign: original.utm_campaign || String(data.get('utm_campaign') || ''),
+    }
+
+    for (const field of ['source', 'utm_source', 'utm_medium', 'utm_campaign'] as const) {
+      const input = form.elements.namedItem(field) as HTMLInputElement | null
+      if (input) input.value = payload[field] || ''
     }
 
     setState('sending')
@@ -160,10 +175,12 @@ export function ContactForm({
       if (response.ok && result.ok) {
         form.reset()
         setErrors({})
+        emit('form_success')
         setState('success')
         return
       }
 
+      if (result.error) emit('form_error')
       if (result.error === 'invalid_fields' && result.invalidFields?.length) {
         validateForm(form, result.invalidFields)
         setState('idle')
@@ -172,13 +189,17 @@ export function ContactForm({
 
       if (result.fallback) {
         setFallbackHref(result.fallback)
+        emit('form_fallback')
         setState('fallback')
         return
       }
 
+      if (!result.error) emit('form_error')
       setState('error')
     } catch {
-      setFallbackHref(buildClientFallback(form, locale, referrer))
+      emit('form_error')
+      emit('form_fallback')
+      setFallbackHref(buildClientFallback(form, locale, original.referrer || referrer))
       setState('fallback')
     }
   }
@@ -196,9 +217,22 @@ export function ContactForm({
     <form
       className={commercialStyles.form}
       onSubmit={handleSubmit}
+      onFocus={() => {
+        if (!started.current) {
+          started.current = true
+          emit('form_start')
+        }
+      }}
       aria-describedby="contact-status"
       noValidate
     >
+      {workshop && (
+        <p className={commercialStyles.full}>
+          <strong>{locale === 'ro' ? 'Workshop ales: ' : 'Selected workshop: '}</strong>
+          {workshop}
+        </p>
+      )}
+      <input type="hidden" name="interest" value={workshop || ''} />
       <input type="hidden" name="source" value={tracking.source || ''} />
       <input type="hidden" name="utm_source" value={tracking.utm_source || ''} />
       <input type="hidden" name="utm_medium" value={tracking.utm_medium || ''} />
@@ -245,7 +279,7 @@ export function ContactForm({
         {copy.requestType}
         <select
           name="requestType"
-          defaultValue=""
+          defaultValue={workshop ? copy.requestTypeOptions[2] : ''}
           required
           aria-invalid={Boolean(errors.requestType)}
           aria-describedby={errors.requestType ? 'request-type-error' : undefined}
@@ -273,7 +307,7 @@ export function ContactForm({
 
       <label className={commercialStyles.full}>
         {copy.scope}
-        <select name="scope" defaultValue={copy.scopeOptions[0]}>
+        <select name="scope" defaultValue={copy.scopeOptions[workshop ? 1 : 0]}>
           {copy.scopeOptions.map((option) => (
             <option key={option} value={option}>
               {option}
@@ -341,7 +375,11 @@ export function ContactForm({
         {statusText}
       </p>
       {state === 'fallback' && fallbackHref && (
-        <a className={formStyles.fallbackLink} href={fallbackHref}>
+        <a
+          className={formStyles.fallbackLink}
+          href={fallbackHref}
+          onClick={() => emit('email_fallback_click')}
+        >
           {copy.fallbackAction} →
         </a>
       )}

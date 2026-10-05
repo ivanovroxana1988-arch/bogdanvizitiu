@@ -12,6 +12,7 @@ type Program = {
   title: string
   description: string
   href?: string
+  dates?: string[]
   canRegister?: boolean
   availabilityLabel?: string
   actionLabel?: string
@@ -163,7 +164,13 @@ export function CourseCatalog({
                   <span>{meta.label[locale]}</span>
                   <span>
                     {program.availabilityLabel ??
-                      (locale === 'ro' ? 'Program deschis' : 'Open program')}
+                      (program.dates?.length === 0
+                        ? locale === 'ro'
+                          ? 'Ediție în pregătire'
+                          : 'Next edition not scheduled'
+                        : locale === 'ro'
+                          ? 'Program deschis'
+                          : 'Open program')}
                   </span>
                 </div>
                 <h3>{program.title}</h3>
@@ -174,7 +181,13 @@ export function CourseCatalog({
                   </ArrowLink>
                   {program.canRegister !== false && (
                     <ArrowLink className={styles.enrollLink} href={registrationHref}>
-                      {locale === 'ro' ? 'Înscrie-te' : 'Register'}
+                      {program.dates?.length === 0
+                        ? locale === 'ro'
+                          ? 'Anunță-mă despre următoarea ediție'
+                          : 'Notify me about the next edition'
+                        : locale === 'ro'
+                          ? 'Înscrie-te'
+                          : 'Register'}
                     </ArrowLink>
                   )}
                 </div>

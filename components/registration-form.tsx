@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { FormEvent, useState } from 'react'
+import { attribution, conversionEvent } from '@/lib/conversion-tracking'
+import { FormEvent, useRef, useState } from 'react'
 import business from '@/content/business.json'
 import { withLocale, type Locale } from '@/lib/i18n'
 import commercialStyles from '@/app/_views/commercial.module.css'
@@ -23,10 +24,19 @@ function validPhone(value: string) {
   return value.replace(/\D/g, '').length >= 7
 }
 
-function buildFallback(form: HTMLFormElement, locale: Locale, courseTitle: string, referrer: string) {
+function buildFallback(
+  form: HTMLFormElement,
+  locale: Locale,
+  courseTitle: string,
+  referrer: string,
+  waitlist = false,
+) {
   const data = new FormData(form)
-  const subject =
-    locale === 'ro'
+  const subject = waitlist
+    ? locale === 'ro'
+      ? `Notificare ediție curs — ${courseTitle}`
+      : `Next course edition notification — ${courseTitle}`
+    : locale === 'ro'
       ? `Înscriere curs — ${courseTitle}`
       : `Course registration — ${courseTitle}`
   const body = [
@@ -37,8 +47,12 @@ function buildFallback(form: HTMLFormElement, locale: Locale, courseTitle: strin
     '',
     String(data.get('source') || '') ? `Source: ${String(data.get('source') || '')}` : '',
     referrer ? `Referrer: ${referrer}` : '',
-    String(data.get('utm_source') || '') ? `UTM source: ${String(data.get('utm_source') || '')}` : '',
-    String(data.get('utm_medium') || '') ? `UTM medium: ${String(data.get('utm_medium') || '')}` : '',
+    String(data.get('utm_source') || '')
+      ? `UTM source: ${String(data.get('utm_source') || '')}`
+      : '',
+    String(data.get('utm_medium') || '')
+      ? `UTM medium: ${String(data.get('utm_medium') || '')}`
+      : '',
     String(data.get('utm_campaign') || '')
       ? `UTM campaign: ${String(data.get('utm_campaign') || '')}`
       : '',
@@ -54,12 +68,16 @@ export function RegistrationForm({
   courseSlug,
   courseTitle,
   tracking = {},
+  waitlist = false,
 }: {
+  waitlist?: boolean
   locale: Locale
   courseSlug: string
   courseTitle: string
   tracking?: Tracking
 }) {
+  const started = useRef(false)
+  const emit = (event: string) => conversionEvent(event, 'course', courseSlug, locale)
   const [state, setState] = useState<SubmitState>('idle')
   const [errors, setErrors] = useState<FieldErrors>({})
   const [fallbackHref, setFallbackHref] = useState('')
@@ -81,7 +99,8 @@ export function RegistrationForm({
           fallback: 'Formularul nu a putut trimite automat mesajul. Poți continua prin email.',
           fallbackAction: 'Trimite prin email',
           error: 'Nu am putut trimite formularul. Încearcă din nou.',
-          privacyPrefix: 'Datele sunt folosite doar pentru a te contacta în legătură cu înscrierea.',
+          privacyPrefix:
+            'Datele sunt folosite doar pentru a te contacta în legătură cu înscrierea.',
           privacy: 'Politica de confidențialitate',
         }
       : {
@@ -102,6 +121,19 @@ export function RegistrationForm({
           privacyPrefix: 'Your details are used only to contact you about this registration.',
           privacy: 'Privacy policy',
         }
+
+  if (waitlist) {
+    copy.submit =
+      locale === 'ro' ? 'Anunță-mă despre următoarea ediție' : 'Notify me about the next edition'
+    copy.success =
+      locale === 'ro'
+        ? 'Solicitarea de notificare a fost trimisă.'
+        : 'Your notification request has been sent.'
+    copy.privacyPrefix =
+      locale === 'ro'
+        ? 'Datele sunt folosite pentru a te anunța despre următoarea ediție a acestui curs.'
+        : 'Your details are used to notify you about the next edition of this course.'
+  }
 
   function getError(field: FieldName, form: HTMLFormElement) {
     const control = form.elements.namedItem(field) as HTMLInputElement | null
@@ -145,10 +177,14 @@ export function RegistrationForm({
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const form = event.currentTarget
-    if (!validateForm(form)) return
+    if (!validateForm(form)) {
+      emit('form_validation_error')
+      return
+    }
 
     const data = new FormData(form)
     const referrer = typeof document !== 'undefined' ? document.referrer : ''
+    const original = attribution(tracking)
     const payload = {
       locale,
       course: courseSlug,
@@ -156,11 +192,16 @@ export function RegistrationForm({
       email: String(data.get('email') || ''),
       phone: String(data.get('phone') || ''),
       website: String(data.get('website') || ''),
-      source: String(data.get('source') || ''),
-      referrer,
-      utm_source: String(data.get('utm_source') || ''),
-      utm_medium: String(data.get('utm_medium') || ''),
-      utm_campaign: String(data.get('utm_campaign') || ''),
+      source: original.source || String(data.get('source') || ''),
+      referrer: original.referrer || referrer,
+      utm_source: original.utm_source || String(data.get('utm_source') || ''),
+      utm_medium: original.utm_medium || String(data.get('utm_medium') || ''),
+      utm_campaign: original.utm_campaign || String(data.get('utm_campaign') || ''),
+    }
+
+    for (const field of ['source', 'utm_source', 'utm_medium', 'utm_campaign'] as const) {
+      const input = form.elements.namedItem(field) as HTMLInputElement | null
+      if (input) input.value = payload[field] || ''
     }
 
     setState('sending')
@@ -182,10 +223,12 @@ export function RegistrationForm({
       if (response.ok && result.ok) {
         form.reset()
         setErrors({})
+        emit('form_success')
         setState('success')
         return
       }
 
+      if (result.error) emit('form_error')
       if (result.error === 'invalid_fields' && result.invalidFields?.length) {
         const nextErrors: FieldErrors = {}
         result.invalidFields.forEach((field) => {
@@ -198,19 +241,35 @@ export function RegistrationForm({
 
       if (result.fallback) {
         setFallbackHref(result.fallback)
+        emit('form_fallback')
         setState('fallback')
         return
       }
 
+      if (!result.error) emit('form_error')
       setState('error')
     } catch {
-      setFallbackHref(buildFallback(form, locale, courseTitle, referrer))
+      emit('form_error')
+      emit('form_fallback')
+      setFallbackHref(
+        buildFallback(form, locale, courseTitle, original.referrer || referrer, waitlist),
+      )
       setState('fallback')
     }
   }
 
   return (
-    <form className={commercialStyles.form} onSubmit={handleSubmit} noValidate>
+    <form
+      className={commercialStyles.form}
+      onSubmit={handleSubmit}
+      onFocus={() => {
+        if (!started.current) {
+          started.current = true
+          emit('form_start')
+        }
+      }}
+      noValidate
+    >
       <input type="hidden" name="course" value={courseSlug} />
       <input type="hidden" name="source" value={tracking.source || ''} />
       <input type="hidden" name="utm_source" value={tracking.utm_source || ''} />
@@ -281,7 +340,11 @@ export function RegistrationForm({
       </p>
 
       {state === 'fallback' && fallbackHref && (
-        <a className={formStyles.fallbackLink} href={fallbackHref}>
+        <a
+          className={formStyles.fallbackLink}
+          href={fallbackHref}
+          onClick={() => emit('email_fallback_click')}
+        >
           {copy.fallbackAction} →
         </a>
       )}

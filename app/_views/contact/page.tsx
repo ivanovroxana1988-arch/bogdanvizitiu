@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Eyebrow } from '@/components/ui'
 import { ContactForm } from '@/components/contact-form'
 import business from '@/content/business.json'
+import workshops from '@/content/workshops.json'
 import contactCopy from '@/content/contact-copy.json'
 import { getLocale } from '@/lib/i18n'
 import { buildPageMetadata } from '@/lib/seo'
@@ -9,6 +10,7 @@ import styles from '../commercial.module.css'
 
 type SearchParams = {
   lang?: string
+  workshop?: string
   source?: string
   utm_source?: string
   utm_medium?: string
@@ -29,6 +31,8 @@ export function generateMetadata({ searchParams }: { searchParams?: SearchParams
 export default function Contact({ searchParams }: { searchParams?: SearchParams }) {
   const locale = getLocale(searchParams?.lang)
   const copy = contactCopy[locale]
+
+  const workshop = workshops[locale].items.find((item) => item.number === searchParams?.workshop)
 
   return (
     <div className={`${styles.page} balanced-commercial-page conversion-page`}>
@@ -59,6 +63,7 @@ export default function Contact({ searchParams }: { searchParams?: SearchParams 
           </div>
 
           <ContactForm
+            workshop={workshop?.title}
             locale={locale}
             tracking={{
               source: searchParams?.source,

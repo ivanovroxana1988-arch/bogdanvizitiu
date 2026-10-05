@@ -123,6 +123,15 @@ export default function Program({
     inLanguage: locale === 'ro' ? 'ro-RO' : 'en',
   }
 
+  const waitlist = program.dates.length === 0
+  const registrationLabel = waitlist
+    ? locale === 'ro'
+      ? 'Anunță-mă despre următoarea ediție'
+      : 'Notify me about the next edition'
+    : locale === 'ro'
+      ? 'Înscrie-te la program'
+      : 'Register for the program'
+
   const registrationParams = new URLSearchParams({
     course: program.slug,
     source: 'program-detail',
@@ -132,10 +141,7 @@ export default function Program({
   if (searchParams?.utm_campaign) registrationParams.set('utm_campaign', searchParams.utm_campaign)
   const registrationHref = `${localizePath('/inscriere', locale)}?${registrationParams.toString()}`
 
-  const practicalTitle =
-    locale === 'ro'
-      ? 'Ediții deschise: date, locație și format'
-      : 'Open editions: dates, location and format'
+  const practicalTitle = locale === 'ro' ? 'Următoarea ediție' : 'Next edition'
   const organizationTitle =
     locale === 'ro'
       ? 'Tema este relevantă pentru o echipă sau pentru organizație?'
@@ -156,9 +162,14 @@ export default function Program({
           <h1>{heading}</h1>
           <div className="conversion-hero-copy">
             <p className={styles.heroIntro}>{program.detail}</p>
-            <ArrowLink href={registrationHref}>
-              {locale === 'ro' ? 'Înscrie-te la program' : 'Register for the program'}
-            </ArrowLink>
+            {waitlist && (
+              <p>
+                {locale === 'ro'
+                  ? 'Nu există încă o ediție programată. Lasă-ne datele și te anunțăm când stabilim următoarea ediție.'
+                  : 'No edition is scheduled yet. Leave your details and we will notify you when the next edition is announced.'}
+              </p>
+            )}
+            <ArrowLink href={registrationHref}>{registrationLabel}</ArrowLink>
           </div>
         </div>
       </section>
@@ -176,9 +187,14 @@ export default function Program({
               ))}
             </ul>
             <div className="conversion-inline-action">
-              <ArrowLink href={registrationHref}>
-                {locale === 'ro' ? 'Vezi detaliile de înscriere' : 'See registration details'}
-              </ArrowLink>
+              {waitlist && (
+                <p>
+                  {locale === 'ro'
+                    ? 'Nu există încă o ediție programată. Lasă-ne datele și te anunțăm când stabilim următoarea ediție.'
+                    : 'No edition is scheduled yet. Leave your details and we will notify you when the next edition is announced.'}
+                </p>
+              )}
+              <ArrowLink href={registrationHref}>{registrationLabel}</ArrowLink>
             </div>
           </div>
         </div>
@@ -206,8 +222,8 @@ export default function Program({
               <Eyebrow>Două direcții de leadership</Eyebrow>
               <h2>Alege problema de leadership pe care vrei să o lucrezi.</h2>
               <p>
-                Un program lucrează cu performanța și autonomia echipei. Celălalt cu
-                deciziile manageriale care apar când AI intră în modul de lucru.
+                Un program lucrează cu performanța și autonomia echipei. Celălalt cu deciziile
+                manageriale care apar când AI intră în modul de lucru.
               </p>
             </div>
             <div className="leadership-program-band__options">
@@ -218,7 +234,14 @@ export default function Program({
                   Claritate, autonomie, feedback și responsabilitate pentru echipe care vor să
                   livreze fără dependență permanentă de manager.
                 </p>
-                <ArrowLink href={registrationHref}>Înscrie-te la curs</ArrowLink>
+                {waitlist && (
+                  <p>
+                    {locale === 'ro'
+                      ? 'Nu există încă o ediție programată. Lasă-ne datele și te anunțăm când stabilim următoarea ediție.'
+                      : 'No edition is scheduled yet. Leave your details and we will notify you when the next edition is announced.'}
+                  </p>
+                )}
+                <ArrowLink href={registrationHref}>{registrationLabel}</ArrowLink>
               </article>
               <article>
                 <span>Program corporate</span>
@@ -296,7 +319,13 @@ export default function Program({
           <article className={styles.editorialCard}>
             <Eyebrow>{copy.faqEyebrow}</Eyebrow>
             <h3>{practicalTitle}</h3>
-            <p>{copy.faqText}</p>
+            <p>
+              {waitlist
+                ? locale === 'ro'
+                  ? 'Nu există încă o ediție programată. Data, locația și prețul vor fi comunicate când următoarea ediție este stabilită.'
+                  : 'No edition is scheduled yet. Dates, location and price will be shared when the next edition is announced.'
+                : copy.faqText}
+            </p>
           </article>
 
           <article className={styles.editorialCard}>
@@ -329,9 +358,7 @@ export default function Program({
       <section className={styles.cta}>
         <Eyebrow>{copy.ctaEyebrow}</Eyebrow>
         <h2 className={styles.ctaTitle}>{program.ctaTitle}</h2>
-        <ArrowLink href={registrationHref}>
-          {locale === 'ro' ? 'Înscrie-te' : 'Register'}
-        </ArrowLink>
+        <ArrowLink href={registrationHref}>{registrationLabel}</ArrowLink>
       </section>
     </div>
   )

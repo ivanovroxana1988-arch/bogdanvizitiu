@@ -18,11 +18,12 @@ type SearchParams = {
 export function generateMetadata({ searchParams }: { searchParams?: SearchParams }): Metadata {
   const locale = getLocale(searchParams?.lang)
   const metadata = buildPageMetadata({
-    title: locale === 'ro' ? 'Înscriere curs' : 'Course registration',
+    title:
+      locale === 'ro' ? 'Notificare despre următoarea ediție' : 'Next course edition notification',
     description:
       locale === 'ro'
-        ? 'Formular de înscriere pentru cursurile Bogdan Vizitiu.'
-        : 'Registration form for Bogdan Vizitiu courses.',
+        ? 'Solicită o notificare când se stabilește următoarea ediție a cursului.'
+        : 'Request a notification when the next course edition is announced.',
     path: '/inscriere',
     locale,
   })
@@ -40,6 +41,7 @@ export default function Registration({ searchParams }: { searchParams?: SearchPa
 
   if (!selected) return null
 
+  const waitlist = selected.dates.length === 0
   const copy =
     locale === 'ro'
       ? {
@@ -52,17 +54,31 @@ export default function Registration({ searchParams }: { searchParams?: SearchPa
       : {
           eyebrow: 'Registration',
           title: 'Leave your details and we will follow up with the next steps.',
-          intro: 'Name, email and phone. The course is already selected and we will follow up with the practical details.',
+          intro:
+            'Name, email and phone. The course is already selected and we will follow up with the practical details.',
           selected: 'Selected course',
         }
+
+  const heading = waitlist
+    ? locale === 'ro'
+      ? 'Anunță-mă despre următoarea ediție.'
+      : 'Notify me about the next edition.'
+    : copy.title
+  const intro = waitlist
+    ? locale === 'ro'
+      ? 'Nu există încă o ediție programată. Solicitarea ta este pentru notificare, fără rezervarea unui loc sau obligație de plată.'
+      : 'No edition is scheduled yet. This is a notification request, with no seat reservation or payment obligation.'
+    : copy.intro
 
   return (
     <div className={`${styles.page} balanced-commercial-page conversion-page`}>
       <section className={styles.hero}>
-        <Eyebrow>{copy.eyebrow}</Eyebrow>
+        <Eyebrow>
+          {waitlist ? (locale === 'ro' ? 'Următoarea ediție' : 'Next edition') : copy.eyebrow}
+        </Eyebrow>
         <div className={styles.heroGrid}>
-          <h1>{copy.title}</h1>
-          <p className={styles.heroIntro}>{copy.intro}</p>
+          <h1>{heading}</h1>
+          <p className={styles.heroIntro}>{intro}</p>
         </div>
       </section>
 
@@ -75,6 +91,7 @@ export default function Registration({ searchParams }: { searchParams?: SearchPa
           </div>
 
           <RegistrationForm
+            waitlist={waitlist}
             locale={locale}
             courseSlug={selected.slug}
             courseTitle={selected.title}
