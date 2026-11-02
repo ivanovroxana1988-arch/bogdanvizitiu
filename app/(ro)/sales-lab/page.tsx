@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import styles from './sales-lab.module.css'
+import { EditorialImage } from '@/components/portrait'
 
 export const metadata: Metadata = {
   title: 'Sales Lab — previzualizare privată',
@@ -31,6 +32,7 @@ export default function SalesLabPreview() {
               <p className={styles.subtitle}>Conversații care construiesc încredere. Vânzări care au sens.</p>
             </div>
             <div className={styles.intro}>
+              <EditorialImage asset="speaking" kind="event" className={styles.heroPhoto} locale="ro" />
               <p>Un program intensiv de două zile pentru oamenii care vând, negociază și construiesc relații cu clienții.</p>
               <a href="#program" className="arrow-link">Descoperă programul <span>↗</span></a>
               <div className={styles.facts}><span>02 zile</span><span>16 ore</span><span>15 participanți</span></div>
