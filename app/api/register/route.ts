@@ -4,6 +4,7 @@ import { clean, isEmail } from '@/lib/contact-validation'
 import { getPrograms } from '@/lib/data'
 import { checkContactRateLimit, getClientIdentifier } from '@/lib/rate-limit'
 import { sendSalesLabConfirmation } from '@/lib/sales-lab-confirmation'
+import { syncSalesLabToSheets } from '@/lib/sales-lab-sheets'
 
 const MAX_BODY_BYTES = 10_000
 
@@ -154,6 +155,22 @@ export async function POST(request: Request) {
     }
 
     if (courseSlug === 'sales-lab') {
+      const sheetSync = await syncSalesLabToSheets({
+        name,
+        email,
+        phone,
+        company,
+        seats,
+        source,
+        referrer,
+        utmSource,
+        utmMedium,
+        utmCampaign,
+      })
+      if (sheetSync !== 'stored') {
+        console.error('Sales Lab request emailed but not yet recorded in Google Sheets', sheetSync)
+      }
+
       const acknowledgement = await sendSalesLabConfirmation({
         name,
         seats,
@@ -173,6 +190,7 @@ export async function POST(request: Request) {
         ok: true,
         delivery: 'email',
         acknowledgement: acknowledgement === 'failed' ? 'not_sent' : 'sent',
+        record: sheetSync === 'stored' ? 'saved' : 'email_only',
       })
     }
 
