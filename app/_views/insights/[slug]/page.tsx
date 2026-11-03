@@ -6,6 +6,11 @@ import media from '@/content/media.json'
 import { getPublishedInsights, publishedInsightSlugs } from '@/lib/data'
 import { PageHero, Eyebrow, ArrowLink } from '@/components/ui'
 import { ConceptImage, EditorialImage } from '@/components/portrait'
+import {
+  AiApprenticeshipImage,
+  aiApprenticeshipSlug,
+  aiApprenticeshipImage,
+} from '@/components/ai-apprenticeship-image'
 import { JsonLd } from '@/components/json-ld'
 import { getCopy, getLocale } from '@/lib/i18n'
 import { localizePath } from '@/lib/routes'
@@ -178,6 +183,7 @@ export default function Insight({
   const hasCommercialCta = commercialInsightSlugs.has(insight.slug)
   const hasCoachingConsultingPortrait = insight.slug === coachingConsultingSlug
   const hasAiAdoptionImage = insight.slug === aiAdoptionSlug
+  const hasAiApprenticeshipImage = insight.slug === aiApprenticeshipSlug
   const commercialCta =
     locale === 'ro'
       ? { title: 'Lucrezi cu o situație asemănătoare?', label: 'Începe o conversație' }
@@ -185,12 +191,18 @@ export default function Insight({
   const midCta = editorialCommercialLink
     ? {
         href: localizePath(editorialCommercialLink.href, locale),
-        title: locale === 'ro' ? 'Vrei să duci ideea în practică?' : 'Want to put the idea into practice?',
+        title:
+          locale === 'ro'
+            ? 'Vrei să duci ideea în practică?'
+            : 'Want to put the idea into practice?',
         label: locale === 'ro' ? editorialCommercialLink.ro : editorialCommercialLink.en,
       }
     : {
         href: `${localizePath('/contact', locale)}?source=insight-${encodeURIComponent(insight.slug)}`,
-        title: locale === 'ro' ? 'Vrei să duci ideea în practică?' : 'Want to put the idea into practice?',
+        title:
+          locale === 'ro'
+            ? 'Vrei să duci ideea în practică?'
+            : 'Want to put the idea into practice?',
         label: locale === 'ro' ? 'Discută contextul tău' : 'Discuss your context',
       }
   const midpointAfter = Math.max(1, Math.ceil(insight.sections.length / 2))
@@ -206,13 +218,15 @@ export default function Insight({
     insight.slug === 'networkingul-nu-incepe-cu-schimbul-de-contacte'
       ? ('networkingEditorial' as const)
       : insightConcepts[insight.slug]
-  const structuredImageSource = hasAiAdoptionImage
-    ? aiAdoptionImage
-    : hasCoachingConsultingPortrait
-      ? coachingConsultingImage
-      : conceptAsset
-        ? media.concepts[conceptAsset].src
-        : media.images.candid.src
+  const structuredImageSource = hasAiApprenticeshipImage
+    ? aiApprenticeshipImage
+    : hasAiAdoptionImage
+      ? aiAdoptionImage
+      : hasCoachingConsultingPortrait
+        ? coachingConsultingImage
+        : conceptAsset
+          ? media.concepts[conceptAsset].src
+          : media.images.candid.src
   const structuredImage = structuredImageSource.startsWith('http')
     ? structuredImageSource
     : `${SITE_URL}${structuredImageSource}`
@@ -254,7 +268,9 @@ export default function Insight({
           </p>
         </aside>
         <article className={styles.body}>
-          {hasAiAdoptionImage ? (
+          {hasAiApprenticeshipImage ? (
+            <AiApprenticeshipImage className={styles.heroImage} locale={locale} />
+          ) : hasAiAdoptionImage ? (
             <figure className={`${styles.heroImage} ${styles.directImage}`}>
               <img
                 src={aiAdoptionImage}
@@ -313,7 +329,9 @@ export default function Insight({
               </section>
               {hasCommercialCta && index === midpointAfter - 1 && (
                 <section className="article-conversion-nudge">
-                  <Eyebrow>{locale === 'ro' ? 'Din idee în practică' : 'From idea to practice'}</Eyebrow>
+                  <Eyebrow>
+                    {locale === 'ro' ? 'Din idee în practică' : 'From idea to practice'}
+                  </Eyebrow>
                   <h2>{midCta.title}</h2>
                   <ArrowLink href={midCta.href}>{midCta.label}</ArrowLink>
                 </section>
@@ -355,7 +373,9 @@ export default function Insight({
               <p style={{ fontSize: 18, fontWeight: 600, margin: '0 0 18px' }}>
                 {commercialCta.title}
               </p>
-              <ArrowLink href={`${localizePath('/contact', locale)}?source=insight-${encodeURIComponent(insight.slug)}`}>
+              <ArrowLink
+                href={`${localizePath('/contact', locale)}?source=insight-${encodeURIComponent(insight.slug)}`}
+              >
                 {commercialCta.label}
               </ArrowLink>
             </section>

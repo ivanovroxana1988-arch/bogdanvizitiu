@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHero, ArrowLink, Eyebrow } from '@/components/ui'
 import { ConceptImage, EditorialImage } from '@/components/portrait'
+import { AiApprenticeshipImage, aiApprenticeshipSlug } from '@/components/ai-apprenticeship-image'
 import { getPublishedInsights } from '@/lib/data'
 import { getCopy, getLocale } from '@/lib/i18n'
 import { localizePath } from '@/lib/routes'
@@ -41,6 +42,10 @@ function InsightImage({
   locale: 'ro' | 'en'
 }) {
   const concept = insightConcepts[insight.slug]
+
+  if (insight.slug === aiApprenticeshipSlug) {
+    return <AiApprenticeshipImage className={className} locale={locale} />
+  }
 
   if (insight.slug === aiAdoptionSlug) {
     return (
