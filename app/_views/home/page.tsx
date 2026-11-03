@@ -8,6 +8,7 @@ import { getCopy, getLocale } from '@/lib/i18n'
 import { buildPageMetadata } from '@/lib/seo'
 import servicePages from '@/content/service-pages.json'
 import homeStyles from './home.module.css'
+import { NewsletterSignup } from '@/components/newsletter-signup'
 
 export function generateMetadata({ searchParams }: { searchParams?: { lang?: string } }): Metadata {
   const locale = getLocale(searchParams?.lang)
@@ -200,6 +201,8 @@ export default function Home({ searchParams }: { searchParams?: { lang?: string 
           </article>
         ))}
       </section>
+
+      <NewsletterSignup locale={locale} />
 
       <section className="final-loop">
         <div className="shell final-grid">

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Manrope, DM_Serif_Display } from 'next/font/google'
 import { ConversionTracking } from '@/components/conversion-tracking'
+import { CookiePreferences } from '@/components/cookie-preferences'
 import { Analytics } from '@vercel/analytics/next'
 import '../globals.css'
 import '../spacing.css'
@@ -58,6 +59,7 @@ export default function EnglishLayout({ children }: { children: React.ReactNode 
         <Footer locale="en" />
         <Analytics />
         <ConversionTracking />
+        <CookiePreferences locale="en" />
       </body>
     </html>
   )
