@@ -232,6 +232,19 @@ export function RegistrationForm({
         form.reset()
         setErrors({})
         emit('form_success')
+        if (courseSlug === 'sales-lab') {
+          try {
+            localStorage.setItem('sales-lab-registration-submitted', 'true')
+            const earlyBirdEntry = sessionStorage.getItem('sales-lab-early-bird-entry')
+            if (earlyBirdEntry) {
+              conversionEvent('early_bird_registration', earlyBirdEntry, courseSlug, locale)
+              sessionStorage.removeItem('sales-lab-early-bird-entry')
+            }
+          } catch {
+            // Storage restrictions should not affect successful registration.
+          }
+          window.dispatchEvent(new Event('sales-lab-registration-success'))
+        }
         setState('success')
         return
       }
