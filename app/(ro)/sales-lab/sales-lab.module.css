@@ -9,3 +9,27 @@
 .day{padding:2rem 0}
 .session{padding:1rem 0}
 @media(max-width:760px){.section{padding:3.5rem 0}}
+
+/* Sales Lab compact layout: shorter scroll, legible right-column copy. */
+.hero{padding:clamp(3.5rem,6vw,6rem) 0}
+.heroGrid,.split{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(1.5rem,4.5vw,4rem)}
+.heroGrid>*,.split>*{min-width:0}
+.hero h1{font-size:clamp(4.5rem,9vw,9rem)}
+.subtitle{font-size:clamp(1.1rem,1.6vw,1.5rem)}
+.intro>p{font-size:clamp(1rem,1.25vw,1.2rem);line-height:1.45;margin-bottom:1.1rem}
+.facts{margin-top:2rem;padding-top:1rem;gap:1rem}
+.prose{font-size:1rem;line-height:1.5}
+.prose p{margin-bottom:.65rem}
+.section,.blueSection,.finalSection{padding:clamp(2.75rem,4.5vw,4.5rem) 0}
+.split h2{font-size:clamp(2.65rem,4.7vw,5rem)}
+.bigTitle{font-size:clamp(3.1rem,5.8vw,6rem);margin-bottom:2rem}
+.day{padding:1.5rem 0;gap:clamp(1.5rem,3vw,3rem)}
+.day h3{font-size:clamp(2rem,3.2vw,3.2rem);margin:1rem 0}
+.session{padding:.75rem 0}
+.session p{margin:.3rem 0 0}
+@media(max-width:760px){
+  .heroGrid,.split,.day{grid-template-columns:1fr}
+  .section,.blueSection,.finalSection{padding:2.5rem 0}
+  .hero{padding:3.25rem 0}
+  .hero h1{font-size:clamp(4rem,16vw,6rem)}
+}
