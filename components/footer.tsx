@@ -6,6 +6,7 @@ import navigation from '@/content/navigation.json'
 import { withLocale, type Locale } from '@/lib/i18n'
 import { BrandLogo } from '@/components/brand-logo'
 import styles from './footer.module.css'
+import { CookiePreferencesLink } from './cookie-preferences-link'
 
 const socialLinks = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/bogdan-vizitiu-pcc-1796a73/' },
@@ -66,6 +67,7 @@ export function Footer({ locale }: { locale: Locale }) {
           <p className="footer-label">{copy.information}</p>
           <Link href={withLocale('/confidentialitate', locale)}>{copy.privacy}</Link>
           <Link href={withLocale('/termeni', locale)}>{copy.terms}</Link>
+          <CookiePreferencesLink locale={locale} />
           <div className={styles.social}>
             <p className="footer-label">Social</p>
             {socialLinks.map((link) => (
