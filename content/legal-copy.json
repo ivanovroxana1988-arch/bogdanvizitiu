@@ -218,7 +218,7 @@
           "paragraphs": [
             "We process data to receive, assess and respond to enquiries, to determine whether and on what terms working together may make sense and, where an enquiry concerns a potential service engagement, to take steps at your request before entering into a contract under Article 6(1)(b) GDPR.",
             "Depending on the nature of the enquiry, processing needed to manage correspondence, secure the website and prevent abuse may rely on legitimate interests under Article 6(1)(f) GDPR. Where processing is based on consent, you may withdraw that consent at any time without affecting the lawfulness of processing before withdrawal.",
-            "For contract performance and legal obligations, Articles 6(1)(b) and (c) GDPR may apply. We do not currently operate a newsletter or automated marketing communications."
+            "For contract performance and legal obligations, Articles 6(1)(b) and (c) GDPR may apply. When the Brevo newsletter is activated, promotional email requires a separate subscription consent and double opt-in confirmation. Each newsletter includes an unsubscribe link."
           ],
           "bullets": []
         },
