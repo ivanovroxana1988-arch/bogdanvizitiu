@@ -38,6 +38,11 @@ test('short sales follow-ups retain user context', () => {
 test('Sales Lab page questions have contextual answers', () => {
   assert.match(ask('Unde este?', '/sales-lab').text, /Locația exactă se comunică ulterior/)
 })
+test('explicit coaching questions override Sales Lab page context', () => {
+  const reply = ask('Cât costă coachingul?', '/sales-lab')
+  assert.ok(reply.actions.some((a) => a.id === 'coaching'))
+  assert.ok(!reply.actions.some((a) => a.id === 'signup'))
+})
 test('expired promotions and past editions are not advertised as available', () => {
   assert.doesNotMatch(salesLabFacts('ro', Date.parse('2026-12-01')), /500|Early Bird/)
   const reply = guidedChatReply(

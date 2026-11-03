@@ -76,12 +76,10 @@ export function SiteChat({
           locale,
           pathname,
           aiConsent,
-          messages: next
-            .slice(-11)
-            .map(({ role, content }) => ({
-              role,
-              content: content.slice(0, MAX_CHAT_MESSAGE_LENGTH),
-            })),
+          messages: next.slice(-11).map(({ role, content }) => ({
+            role,
+            content: content.slice(0, MAX_CHAT_MESSAGE_LENGTH),
+          })),
         }),
       })
       if (!response.ok) throw new Error(response.status === 429 ? 'rate_limited' : 'unavailable')

@@ -140,7 +140,7 @@ export function guidedChatReply(
         : 'Team programmes are tailored to your context. How many participants are you considering, and what would you like to improve: sales, leadership or collaboration? Describe your needs in the contact form for a proposal from Bogdan.',
       ['corporate', 'contact'],
     )
-  if (sales || (followup && contextSales))
+  if (sales || (followup && contextSales && !/coach|network|leadership/.test(latest)))
     return answer(
       salesLabFacts(locale, now),
       now > Date.parse('2027-01-22T21:59:59Z') ? ['contact', 'courses'] : ['signup', 'sales'],
