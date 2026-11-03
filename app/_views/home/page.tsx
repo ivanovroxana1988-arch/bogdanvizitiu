@@ -139,6 +139,11 @@ export default function Home({ searchParams }: { searchParams?: { lang?: string 
           <Eyebrow>{copy.programsEyebrow}</Eyebrow>
           <h2>{copy.programsStatement}</h2>
           <p>{copy.programsIntro}</p>
+          {locale === 'ro' && (
+            <p>
+              Următoarea ediție open: <Link href="/sales-lab">Sales Lab – curs practic de vânzări și negociere în București, 21–22 ianuarie 2027</Link>.
+            </p>
+          )}
         </div>
         {programs.map((program, i) => (
           <article className="program-row" key={program.slug}>
