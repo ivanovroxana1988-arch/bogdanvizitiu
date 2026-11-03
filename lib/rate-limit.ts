@@ -128,3 +128,9 @@ export async function checkContactRateLimit(
 
   return durableResult ?? checkMemoryRateLimit(key, now, limit, windowSeconds)
 }
+
+export async function checkChatRateLimit(identifier: string, now = Date.now()) {
+  const key = hashIdentifier(`chat:${identifier}`)
+  const durable = await checkUpstashRateLimit(key, now, 20, 600)
+  return durable ?? checkMemoryRateLimit(key, now, 20, 600)
+}

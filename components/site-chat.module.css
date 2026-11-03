@@ -1,0 +1,245 @@
+.widget {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 80;
+  color: #21313b;
+  font-family: var(--font-sans), sans-serif;
+}
+.launcher {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #afc5d1;
+  border-radius: 30px;
+  padding: 14px 20px;
+  background: #d7e6ee;
+  color: #21313b;
+  box-shadow: 0 5px 22px #21313b1c;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+}
+.panel {
+  display: flex;
+  flex-direction: column;
+  width: min(390px, calc(100vw - 32px));
+  height: min(620px, calc(100dvh - 112px));
+  margin-bottom: 12px;
+  border: 1px solid #c8d4db;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #faf9f6;
+  box-shadow: 0 18px 70px #1c30332e;
+}
+.header {
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #c8d4db;
+  background: #d7e6ee;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+.header h2 {
+  margin: 8px 0 0;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+.header button {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 27px;
+  cursor: pointer;
+  line-height: 1;
+  color: inherit;
+  min-width: 32px;
+  min-height: 32px;
+}
+.log {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 18px;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.welcome {
+  margin: 0 0 16px;
+}
+.quick {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.quick button {
+  text-align: left;
+  padding: 11px 12px;
+  border: 1px solid #c8d4db;
+  border-radius: 8px;
+  font: inherit;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.quick button:hover {
+  background: #e8eff3;
+}
+.user,
+.assistant {
+  margin: 15px 0;
+  padding: 12px;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+.user {
+  background: #d7e6ee;
+  margin-left: 28px;
+}
+.assistant {
+  background: #fff;
+  border: 1px solid #e3e4df;
+  margin-right: 10px;
+}
+.speaker {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+}
+.user p,
+.assistant p {
+  margin: 6px 0 0;
+  white-space: pre-wrap;
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 13px;
+}
+.actions a {
+  border-bottom: 1px solid #a8bcc7;
+  padding: 6px 0;
+  font-weight: 650;
+  text-decoration: none;
+  color: #21313b;
+}
+.controls {
+  border-top: 1px solid #d8dfdf;
+  padding: 14px;
+}
+.form {
+  display: flex;
+  gap: 7px;
+}
+.form input {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid #afbec6;
+  border-radius: 7px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  font-size: 16px;
+}
+.form button {
+  width: 44px;
+  border: 0;
+  border-radius: 7px;
+  background: #21313b;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+.widget button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.widget :focus-visible {
+  outline: 2px solid #285b78;
+  outline-offset: 3px;
+}
+.note {
+  font-size: 10px;
+  color: #53636d;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+.note a,
+.footer a,
+.error a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 11px;
+}
+.footer button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin-bottom: 12px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+.consent input {
+  margin: 2px 0 0;
+}
+.waiting {
+  color: #53636d;
+}
+.error {
+  color: #8a2727;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .widget {
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+  }
+  .salesPage {
+    bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+  .panel {
+    width: calc(100vw - 24px);
+    height: min(580px, calc(100dvh - 104px));
+  }
+  .salesPage .panel {
+    height: min(550px, calc(100dvh - 175px));
+  }
+  .launcher {
+    padding: 12px 16px;
+  }
+}

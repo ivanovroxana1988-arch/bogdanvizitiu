@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Manrope, DM_Serif_Display } from 'next/font/google'
 import { ConversionTracking } from '@/components/conversion-tracking'
+import { SiteChat } from '@/components/site-chat'
+import { isChatAiConfigured } from '@/lib/chatbot-ai'
 import { SalesLabPopup } from '@/components/sales-lab-promotion'
 import { Analytics } from '@vercel/analytics/next'
 import '../globals.css'
@@ -60,6 +62,7 @@ export default function RomanianLayout({ children }: { children: React.ReactNode
         <Analytics />
         <ConversionTracking />
         <SalesLabPopup />
+        <SiteChat locale="ro" aiAvailable={isChatAiConfigured()} />
       </body>
     </html>
   )

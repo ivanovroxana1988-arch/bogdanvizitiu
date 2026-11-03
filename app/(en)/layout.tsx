@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Manrope, DM_Serif_Display } from 'next/font/google'
 import { ConversionTracking } from '@/components/conversion-tracking'
+import { SiteChat } from '@/components/site-chat'
+import { isChatAiConfigured } from '@/lib/chatbot-ai'
 import { Analytics } from '@vercel/analytics/next'
 import '../globals.css'
 import '../spacing.css'
@@ -58,6 +60,7 @@ export default function EnglishLayout({ children }: { children: React.ReactNode 
         <Footer locale="en" />
         <Analytics />
         <ConversionTracking />
+        <SiteChat locale="en" aiAvailable={isChatAiConfigured()} />
       </body>
     </html>
   )
