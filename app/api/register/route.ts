@@ -12,6 +12,8 @@ type RegistrationPayload = {
   name?: string
   email?: string
   phone?: string
+  company?: string
+  seats?: number
   website?: string
   source?: string
   referrer?: string
@@ -67,15 +69,23 @@ export async function POST(request: Request) {
   const name = clean(raw.name, 160)
   const email = clean(raw.email, 254)
   const phone = clean(raw.phone, 80)
+  const company = clean(raw.company, 160)
+  const seats = raw.seats === undefined ? 1 : Number(raw.seats)
   const source = clean(raw.source, 200)
   const referrer = clean(raw.referrer, 1000)
   const utmSource = clean(raw.utm_source, 200)
   const utmMedium = clean(raw.utm_medium, 200)
   const utmCampaign = clean(raw.utm_campaign, 200)
-  const course = getPrograms(locale).find((item) => item.slug === courseSlug)
+  const course = courseSlug === 'sales-lab' && locale === 'ro'
+    ? { slug: 'sales-lab', title: 'Sales Lab – 21–22 ianuarie 2027, București', dates: ['2027-01-21', '2027-01-22'] }
+    : getPrograms(locale).find((item) => item.slug === courseSlug)
 
   if (!course) {
     return NextResponse.json({ ok: false, error: 'invalid_course' }, { status: 400 })
+  }
+
+  if (courseSlug === 'sales-lab' && (!Number.isInteger(seats) || seats < 1 || seats > 15)) {
+    return NextResponse.json({ ok: false, error: 'invalid_seats' }, { status: 400 })
   }
 
   const invalidFields: InvalidField[] = []
@@ -101,6 +111,8 @@ export async function POST(request: Request) {
     `Nume / Name: ${name}`,
     `Email: ${email}`,
     `Telefon / Phone: ${phone}`,
+    courseSlug === 'sales-lab' ? `Locuri solicitate: ${seats}` : '',
+    company ? `Companie: ${company}` : '',
     '',
     source ? `Source: ${source}` : '',
     referrer ? `Referrer: ${referrer}` : '',
