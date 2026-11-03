@@ -18,13 +18,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/confidentialitate',
     '/termeni',
+    '/sales-lab',
     ...programSlugs.map((slug) => `/cursuri/${slug}`),
     ...publishedInsightSlugs.map((slug) => `/insights/${slug}`),
   ]
   const normalizedRoRoutes = roRoutes.map((path) => path || '/')
   const routes = [
     ...normalizedRoRoutes,
-    ...normalizedRoRoutes.map((path) => localizePath(path, 'en')),
+    ...normalizedRoRoutes.filter((path) => path !== '/sales-lab').map((path) => localizePath(path, 'en')),
   ]
   return Array.from(new Set(routes)).map((path) => ({ url: base + (path === '/' ? '' : path) }))
 }
