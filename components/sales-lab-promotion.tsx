@@ -54,7 +54,7 @@ export function SalesLabPopup() {
     let fired = false
     let timeout: ReturnType<typeof setTimeout> | undefined
     function show() {
-      if (fired || !offerIsActive() || suppressed()) return
+      if (fired || !isSalesLabEarlyBirdActive() || suppressed()) return
       fired = true
       setVisible(true)
       conversionEvent('early_bird_view', 'popup', 'sales-lab', 'ro')
@@ -206,7 +206,7 @@ export function SalesLabBanner() {
   const [active, setActive] = useState(false)
 
   useEffect(() => {
-    const check = () => setActive(offerIsActive())
+    const check = () => setActive(isSalesLabEarlyBirdActive())
     check()
     const interval = window.setInterval(check, 60000)
     return () => window.clearInterval(interval)
