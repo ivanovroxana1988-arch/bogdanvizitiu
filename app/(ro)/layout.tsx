@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Manrope, DM_Serif_Display } from 'next/font/google'
 import { ConversionTracking } from '@/components/conversion-tracking'
+import { SalesLabPopup } from '@/components/sales-lab-promotion'
 import { Analytics } from '@vercel/analytics/next'
 import '../globals.css'
 import '../spacing.css'
@@ -58,6 +59,7 @@ export default function RomanianLayout({ children }: { children: React.ReactNode
         <Footer locale="ro" />
         <Analytics />
         <ConversionTracking />
+        <SalesLabPopup />
       </body>
     </html>
   )

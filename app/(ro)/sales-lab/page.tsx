@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { JsonLd } from '@/components/json-ld'
 import { RegistrationForm } from '@/components/registration-form'
 import { SalesLabCta } from '@/components/sales-lab-cta'
+import { SalesLabBanner } from '@/components/sales-lab-promotion'
 import styles from './sales-lab.module.css'
 
 const pageUrl = 'https://bogdanvizitiu.com/sales-lab'
@@ -148,6 +149,7 @@ export default function SalesLabPage() {
   return (
     <div className={styles.page}>
       <JsonLd data={structuredData} />
+      <div className="shell" style={{ paddingTop: "1.1rem" }}><SalesLabBanner /></div>
       <section className={styles.hero} aria-labelledby="sales-lab-title">
         <div className="shell">
           <p className={styles.eyebrow}>Curs open de vânzări · București · 21–22 ianuarie 2027</p>
