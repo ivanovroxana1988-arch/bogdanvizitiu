@@ -95,3 +95,18 @@ test('generated reply suggestions stay bounded, unique plain text', () => {
   assert.deepEqual(cleanChatSuggestions(null), [])
   assert.equal(cleanChatSuggestions(['Unu', 'Doi', 'Trei', 'Patru']).length, 3)
 })
+
+test('team context is retained when tapping a sales follow-up without AI', () => {
+  const reply = guidedChatReply(
+    [
+      { role: 'user', content: 'Pentru echipa mea' },
+      { role: 'assistant', content: 'Ce vreți să îmbunătățiți?' },
+      { role: 'user', content: 'Ne interesează vânzările' },
+    ],
+    '/',
+    'ro',
+    now,
+  )
+  assert.ok(reply.actions.some((a) => a.id === 'corporate'))
+  assert.ok(!reply.actions.some((a) => a.id === 'signup'))
+})

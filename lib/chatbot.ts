@@ -181,7 +181,11 @@ export function guidedChatReply(
                   'I’d like to contact Bogdan',
                 ],
   })
-  const team = /echip|compani|corporate|team|company|organizati/.test(latest)
+  const team =
+    /echip|compani|corporate|team|company|organizati/.test(latest) ||
+    (/echip|compani|corporate|team|company|organizati/.test(prior) &&
+      /vanz|sales|leadership|suntem|colegi|participanti/.test(latest) &&
+      !/pentru mine|individual|for me/.test(latest))
   const sales = /sales|vanzar|vanzari/.test(latest)
   const followup =
     /pret|cost|cand|unde|locuri|inscr|plata|price|when|where|register|seat|payment|data|durata|cat dureaza/.test(
