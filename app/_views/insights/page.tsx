@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PageHero, ArrowLink, Eyebrow } from '@/components/ui'
 import { ConceptImage, EditorialImage } from '@/components/portrait'
 import { getPublishedInsights } from '@/lib/data'
@@ -100,7 +101,15 @@ export default function Insights({ searchParams }: { searchParams?: { lang?: str
   const copy = getCopy(locale).insights
   const insights = getPublishedInsights(locale)
   const feature = insights[0]
-  const secondary = insights.slice(1)
+  const secondary = insights.slice(1, 7)
+  const recommended = insights.slice(7)
+  const formatDate = (date: string) =>
+    new Intl.DateTimeFormat(locale === 'ro' ? 'ro-RO' : 'en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'UTC',
+    }).format(new Date(`${date}T00:00:00Z`))
   const title = 'Insights'
   const intro =
     locale === 'ro'
@@ -115,20 +124,75 @@ export default function Insights({ searchParams }: { searchParams?: { lang?: str
     <div className="conversion-page editorial-conversion-page">
       <PageHero eyebrow={copy.eyebrow} title={title} intro={intro} />
       <section className={`shell ${styles.indexSection}`}>
-        <article className={styles.feature}>
-          <InsightImage insight={feature} className={styles.featureImage} locale={locale} />
-          <div className={styles.featureContent}>
-            <div className={styles.meta}>
-              <span className={styles.category}>{feature.category}</span>
-              <span>{feature.readTime}</span>
-            </div>
-            <h2>{feature.title}</h2>
-            <p>{feature.excerpt}</p>
-            <ArrowLink href={localizePath(`/insights/${feature.slug}`, locale)}>
-              {copy.readArticle}
-            </ArrowLink>
+        <div className={styles.blogLayout}>
+          <div className={styles.feed}>
+            <article className={styles.feature}>
+              <p className={styles.sectionLabel}>
+                {locale === 'ro' ? 'Cel mai recent articol' : 'Latest article'}
+              </p>
+              <div className={styles.meta}>
+                <span className={styles.category}>{feature.category}</span>
+                <time dateTime={feature.publishedAt}>{formatDate(feature.publishedAt)}</time>
+                <span>{feature.readTime}</span>
+              </div>
+              <h2>
+                <Link href={localizePath(`/insights/${feature.slug}`, locale)}>
+                  {feature.title}
+                </Link>
+              </h2>
+              <p className={styles.featureExcerpt}>{feature.excerpt}</p>
+              <Link
+                href={localizePath(`/insights/${feature.slug}`, locale)}
+                aria-label={feature.title}
+                className={styles.imageLink}
+                tabIndex={-1}
+              >
+                <InsightImage insight={feature} className={styles.featureImage} locale={locale} />
+              </Link>
+            </article>
+
+            {secondary.length > 0 && (
+              <section className={styles.recentArticles} aria-labelledby="recent-articles">
+                <h2 id="recent-articles" className={styles.sectionLabel}>
+                  {locale === 'ro' ? 'Mai multe idei' : 'More ideas'}
+                </h2>
+                {secondary.map((insight) => (
+                  <article className={styles.compactArticle} key={insight.slug}>
+                    <div className={styles.cardMeta}>
+                      <span className={styles.category}>{insight.category}</span>
+                      <time dateTime={insight.publishedAt}>{formatDate(insight.publishedAt)}</time>
+                      <span>{insight.readTime}</span>
+                    </div>
+                    <h3>
+                      <Link href={localizePath(`/insights/${insight.slug}`, locale)}>
+                        {insight.title}
+                      </Link>
+                    </h3>
+                    <p>{insight.excerpt}</p>
+                  </article>
+                ))}
+              </section>
+            )}
           </div>
-        </article>
+
+          {recommended.length > 0 && (
+            <aside className={styles.sidebar} aria-labelledby="recommended-articles">
+              <h2 id="recommended-articles" className={styles.sectionLabel}>
+                {locale === 'ro' ? 'De explorat' : 'Explore more'}
+              </h2>
+              <ul className={styles.articleList}>
+                {recommended.map((insight) => (
+                  <li key={insight.slug}>
+                    <span className={styles.category}>{insight.category}</span>
+                    <Link href={localizePath(`/insights/${insight.slug}`, locale)}>
+                      {insight.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          )}
+        </div>
 
         <div className="conversion-editorial-strip">
           <div>
@@ -147,23 +211,6 @@ export default function Insights({ searchParams }: { searchParams?: { lang?: str
               {locale === 'ro' ? 'Vezi opțiunile de coaching' : 'Explore coaching'}
             </ArrowLink>
           </div>
-        </div>
-
-        <div className={styles.secondaryGrid}>
-          {secondary.map((insight) => (
-            <article className={styles.card} key={insight.slug}>
-              <InsightImage insight={insight} className={styles.cardImage} locale={locale} />
-              <div className={styles.cardMeta}>
-                <span className={styles.category}>{insight.category}</span>
-                <span>{insight.readTime}</span>
-              </div>
-              <h2>{insight.title}</h2>
-              <p>{insight.excerpt}</p>
-              <ArrowLink href={localizePath(`/insights/${insight.slug}`, locale)}>
-                {copy.readArticle}
-              </ArrowLink>
-            </article>
-          ))}
         </div>
       </section>
     </div>
