@@ -85,3 +85,22 @@ test('oversized chunked body is rejected without inference', async () => {
     400,
   )
 })
+
+test('a conversational reply without a navigation action keeps its generated suggestions', async () => {
+  const env = {
+    CHAT_SERVICE_TOKEN: 'test-secret',
+    DB: { prepare: () => ({ bind: () => ({ first: async () => ({ id: 'reserved' }) }) }) },
+    AI: {
+      run: async () => ({
+        response: { text: 'Ce vrei să îmbunătățești?', suggestions: ['Vânzări', 'Leadership'] },
+      }),
+    },
+  }
+  const response = await worker.fetch(req(), env)
+  assert.equal(response.status, 200)
+  assert.deepEqual(await response.json(), {
+    text: 'Ce vrei să îmbunătățești?',
+    actionIds: [],
+    suggestions: ['Vânzări', 'Leadership'],
+  })
+})

@@ -113,8 +113,7 @@ export default {
         !answer ||
         typeof answer.text !== 'string' ||
         !answer.text.trim() ||
-        answer.text.length > 600 ||
-        !Array.isArray(answer.actionIds)
+        answer.text.length > 600
       )
         return reply({ error: 'invalid_ai_output' }, 502)
       const suggestions = Array.isArray(answer.suggestions)
@@ -122,7 +121,10 @@ export default {
             .filter((s) => typeof s === 'string' && s.trim() && s.length <= 80)
             .slice(0, 3)
         : []
-      return reply({ text: answer.text, actionIds: answer.actionIds, suggestions })
+      const actionIds = Array.isArray(answer.actionIds)
+        ? answer.actionIds.filter((id) => typeof id === 'string').slice(0, 1)
+        : []
+      return reply({ text: answer.text, actionIds, suggestions })
     } catch {
       return reply({ error: 'ai_unavailable' }, 503)
     }
