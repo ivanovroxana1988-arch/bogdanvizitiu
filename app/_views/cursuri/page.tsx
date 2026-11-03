@@ -24,7 +24,7 @@ export function generateMetadata({ searchParams }: { searchParams?: SearchParams
         : 'Open courses for professionals: leadership, negotiation and networking',
     description:
       locale === 'ro'
-        ? 'Cursuri și programe pentru profesioniști și organizații care vor să lucreze practic pe leadership, AI, dezvoltare, potențial, echipe, negociere, influență, networking și relații profesionale.'
+        ? 'Descoperă Sales Lab, curs practic de vânzări și negociere în București, 21–22 ianuarie 2027, și programe viitoare de leadership, AI și networking.'
         : 'Open courses for professionals who want practical work on leadership, teams, negotiation, influence, networking and professional relationships.',
     path: '/cursuri',
     locale,
