@@ -279,8 +279,8 @@ export default function SalesLabPage() {
               </p>
               <p className={styles.credibilityNote}>
                 Lucrezi cu un facilitator care aduce în sală experiența din roluri
-                comerciale, management și proiecte de dezvoltare profesională,
-                nu testimoniale fără surse sau rezultate promise.
+                comerciale, management și proiecte de dezvoltare profesională.
+                Accentul este pus pe exerciții aplicate și feedback în sală.
               </p>
             </div>
             <div>
