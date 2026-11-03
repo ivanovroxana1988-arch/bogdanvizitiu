@@ -8,7 +8,12 @@ import {
 
 export type ChatMessage = { role: 'user' | 'assistant'; content: string }
 export type ChatAction = { id: string; label: string; href: string }
-export type ChatReply = { text: string; actions: ChatAction[]; mode: 'guided' | 'ai' }
+export type ChatReply = {
+  text: string
+  actions: ChatAction[]
+  suggestions?: string[]
+  mode: 'guided' | 'ai'
+}
 export const MAX_CHAT_MESSAGES = 12
 export const MAX_CHAT_MESSAGE_LENGTH = 600
 
@@ -58,6 +63,24 @@ export function chatActions(locale: Locale): ChatAction[] {
 export function selectChatActions(ids: string[], locale: Locale) {
   const allowed = chatActions(locale)
   return [...new Set(ids)].flatMap((id) => allowed.filter((a) => a.id === id)).slice(0, 2)
+}
+
+/** Suggestions are user reply text, never URLs, HTML or executable actions. */
+export function cleanChatSuggestions(value: unknown): string[] {
+  if (!Array.isArray(value)) return []
+  return [
+    ...new Set(
+      value
+        .filter(
+          (item): item is string =>
+            typeof item === 'string' &&
+            item.trim().length > 0 &&
+            item.length <= 80 &&
+            !/https?:|www\.|<[^>]*>|\]\(/i.test(item),
+        )
+        .map((item) => item.trim()),
+    ),
+  ].slice(0, 3)
 }
 
 export function validateChatMessages(value: unknown): value is ChatMessage[] {
@@ -125,6 +148,38 @@ export function guidedChatReply(
     text,
     actions: selectChatActions(ids, locale),
     mode: 'guided',
+    suggestions:
+      ids[0] === 'corporate'
+        ? ro
+          ? [
+              'Ne interesează vânzările',
+              'Vrem să dezvoltăm leadershipul',
+              'Vreau să discut cu Bogdan',
+            ]
+          : [
+              'We want to improve sales',
+              'We want to develop leadership',
+              'I’d like to contact Bogdan',
+            ]
+        : ids[0] === 'coaching'
+          ? ro
+            ? [
+                'Vreau claritate în carieră',
+                'Am un rol nou de manager',
+                'Vreau să discut cu Bogdan',
+              ]
+            : ['I want career clarity', 'I’m a new manager', 'I’d like to contact Bogdan']
+          : ids[0] === 'signup'
+            ? ro
+              ? ['Ce voi exersa la Sales Lab?', 'Cui i se potrivește?', 'Vreau să mă înscriu']
+              : ['What will I practise at Sales Lab?', 'Who is it for?', 'I’d like to join']
+            : ro
+              ? ['Mă interesează vânzările', 'Caut coaching', 'Vreau să discut cu Bogdan']
+              : [
+                  'I’m interested in sales',
+                  'I’m looking for coaching',
+                  'I’d like to contact Bogdan',
+                ],
   })
   const team = /echip|compani|corporate|team|company|organizati/.test(latest)
   const sales = /sales|vanzar|vanzari/.test(latest)

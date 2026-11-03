@@ -26,10 +26,10 @@
   display: flex;
   flex-direction: column;
   width: min(390px, calc(100vw - 32px));
-  height: min(620px, calc(100dvh - 112px));
+  height: min(580px, calc(100dvh - 112px));
   margin-bottom: 12px;
   border: 1px solid #c8d4db;
-  border-radius: 18px;
+  border-radius: 20px;
   overflow: hidden;
   background: #faf9f6;
   box-shadow: 0 18px 70px #1c30332e;
@@ -40,128 +40,200 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
-  border-bottom: 1px solid #c8d4db;
   background: #d7e6ee;
 }
 .eyebrow {
-  font-size: 10px;
-  letter-spacing: 0.16em;
+  font-size: 9px;
+  letter-spacing: 0.14em;
 }
 .header h2 {
-  margin: 8px 0 0;
+  margin: 7px 0 0;
   font-family: var(--font-serif), Georgia, serif;
-  font-size: 25px;
+  font-size: 27px;
   font-weight: 400;
   line-height: 1.15;
 }
-.header button {
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.headerActions > button,
+.options summary {
   border: 0;
   background: transparent;
-  font: inherit;
-  font-size: 27px;
-  cursor: pointer;
-  line-height: 1;
   color: inherit;
   min-width: 32px;
   min-height: 32px;
+  text-align: center;
+  line-height: 1;
+  font: inherit;
+  font-size: 24px;
+  cursor: pointer;
+}
+.options {
+  position: relative;
+}
+.options summary {
+  list-style: none;
+  display: grid;
+  place-items: center;
+}
+.options summary::-webkit-details-marker {
+  display: none;
+}
+.menu {
+  position: absolute;
+  top: 38px;
+  right: 0;
+  z-index: 1;
+  width: 210px;
+  padding: 8px;
+  border: 1px solid #c8d4db;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 25px #21313b1c;
+}
+.menu button,
+.menu a {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  font: inherit;
+  font-size: 12px;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.menu button:hover,
+.menu a:hover {
+  background: #edf3f6;
+  border-radius: 6px;
 }
 .log {
   flex: 1;
   min-height: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding: 18px;
-  font-size: 13px;
+  padding: 20px 16px;
+  font-size: 14px;
   line-height: 1.65;
-}
-.welcome {
-  margin: 0 0 16px;
-}
-.quick {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.quick button {
-  text-align: left;
-  padding: 11px 12px;
-  border: 1px solid #c8d4db;
-  border-radius: 8px;
-  font: inherit;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-}
-.quick button:hover {
-  background: #e8eff3;
 }
 .user,
 .assistant {
-  margin: 15px 0;
-  padding: 12px;
-  border-radius: 10px;
+  margin: 0 0 14px;
+  padding: 13px 15px;
+  border-radius: 16px;
   overflow-wrap: anywhere;
 }
 .user {
   background: #d7e6ee;
-  margin-left: 28px;
+  margin-left: 40px;
+  border-bottom-right-radius: 4px;
 }
 .assistant {
   background: #fff;
-  border: 1px solid #e3e4df;
-  margin-right: 10px;
-}
-.speaker {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  font-weight: 700;
+  border-bottom-left-radius: 4px;
+  margin-right: 16px;
 }
 .user p,
 .assistant p {
-  margin: 6px 0 0;
+  margin: 0;
   white-space: pre-wrap;
+}
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0 0 18px;
+}
+.suggestions button {
+  border: 1px solid #b5cbd7;
+  border-radius: 18px;
+  background: #edf4f7;
+  color: #29485a;
+  padding: 8px 12px;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.35;
+  text-align: left;
+  cursor: pointer;
+}
+.suggestions button:hover {
+  background: #d7e6ee;
+  border-color: #7697aa;
+}
+.suggestions .accept {
+  background: #29485a;
+  color: #fff;
+  border-color: #29485a;
+}
+.assistant .suggestions {
+  margin: 13px 0 0;
+}
+.assistant .consentNote {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #53636d;
+  margin-top: 10px;
+}
+.consentNote a,
+.note a,
+.error a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .actions {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 8px;
-  margin-top: 13px;
+  margin-top: 12px;
 }
 .actions a {
-  border-bottom: 1px solid #a8bcc7;
-  padding: 6px 0;
-  font-weight: 650;
+  padding: 8px 12px;
+  border-radius: 18px;
+  background: #29485a;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
   text-decoration: none;
-  color: #21313b;
 }
 .controls {
-  border-top: 1px solid #d8dfdf;
-  padding: 14px;
+  padding: 8px 14px 10px;
 }
-.form {
+.composer {
   display: flex;
-  gap: 7px;
+  gap: 6px;
+  align-items: center;
+  padding: 5px 5px 5px 12px;
+  border: 1px solid #c3d0d6;
+  border-radius: 26px;
+  background: #fff;
 }
-.form input {
+.composer input {
   flex: 1;
   width: 0;
   min-width: 0;
-  padding: 11px;
-  border: 1px solid #afbec6;
-  border-radius: 7px;
-  background: #fff;
+  padding: 8px 0;
+  border: 0;
+  outline-offset: 1px;
+  background: transparent;
   color: inherit;
   font: inherit;
-  font-size: 16px;
+  font-size: 14px;
 }
-.form button {
-  width: 44px;
+.composer button {
+  width: 36px;
+  height: 36px;
   border: 0;
-  border-radius: 7px;
-  background: #21313b;
+  border-radius: 50%;
+  background: #29485a;
   color: #fff;
-  font-size: 24px;
+  font-size: 23px;
   cursor: pointer;
 }
 .widget button:disabled {
@@ -176,45 +248,17 @@
   font-size: 10px;
   color: #53636d;
   line-height: 1.5;
-  margin: 10px 0;
-}
-.note a,
-.footer a,
-.error a {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  font-size: 11px;
-}
-.footer button {
-  border: 0;
-  padding: 0;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-}
-.consent {
-  display: flex;
-  align-items: flex-start;
-  gap: 7px;
-  margin-bottom: 12px;
-  font-size: 11px;
-  line-height: 1.4;
-}
-.consent input {
-  margin: 2px 0 0;
+  margin: 8px 0 0;
+  text-align: center;
 }
 .waiting {
   color: #53636d;
+  margin: 0 0 12px 8px;
+  font-size: 12px;
 }
 .error {
   color: #8a2727;
+  font-size: 12px;
 }
 .srOnly {
   position: absolute;
@@ -241,5 +285,8 @@
   }
   .launcher {
     padding: 12px 16px;
+  }
+  .composer input {
+    font-size: 16px;
   }
 }

@@ -69,7 +69,11 @@ test('provider cannot receive unbounded or caller-selected generation parameters
   const response = await worker.fetch(req({ ...body, max_tokens: 100000, model: 'expensive' }), env)
   assert.equal(response.status, 200)
   assert.equal(input.max_tokens, 400)
-  assert.deepEqual(await response.json(), { text: 'Salut', actionIds: ['contact'] })
+  assert.deepEqual(await response.json(), {
+    text: 'Salut',
+    actionIds: ['contact'],
+    suggestions: [],
+  })
 })
 test('oversized chunked body is rejected without inference', async () => {
   assert.equal(

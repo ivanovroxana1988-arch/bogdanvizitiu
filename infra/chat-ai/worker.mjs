@@ -117,7 +117,12 @@ export default {
         !Array.isArray(answer.actionIds)
       )
         return reply({ error: 'invalid_ai_output' }, 502)
-      return reply({ text: answer.text, actionIds: answer.actionIds })
+      const suggestions = Array.isArray(answer.suggestions)
+        ? answer.suggestions
+            .filter((s) => typeof s === 'string' && s.trim() && s.length <= 80)
+            .slice(0, 3)
+        : []
+      return reply({ text: answer.text, actionIds: answer.actionIds, suggestions })
     } catch {
       return reply({ error: 'ai_unavailable' }, 503)
     }
