@@ -4,6 +4,7 @@ import { JsonLd } from '@/components/json-ld'
 import { RegistrationForm } from '@/components/registration-form'
 import { SalesLabCta } from '@/components/sales-lab-cta'
 import { SalesLabBanner } from '@/components/sales-lab-promotion'
+import { SalesLabPromoNote } from '@/components/sales-lab-promo-note'
 import styles from './sales-lab.module.css'
 
 const pageUrl = 'https://bogdanvizitiu.com/sales-lab'
@@ -131,7 +132,7 @@ const faqs = [
   {
     question: 'Ce include prețul de 600 EUR?',
     answer:
-      'Participarea la programul de două zile, cu exerciții, simulări și feedback în timpul cursului. Detaliile de facturare, plată și orice alte condiții vor fi comunicate înainte de confirmarea locului.',
+      'Participarea la programul de două zile, cu exerciții, simulări și feedback în timpul cursului. 600 EUR este tariful standard; în perioada promoțională Early Bird pot exista locuri la 500 EUR, în limita primelor 5 locuri confirmate până la 30 noiembrie 2026. Tariful și detaliile de plată se confirmă individual înainte de rezervare.',
   },
   {
     question: 'Se rezervă automat locul după completarea formularului?',
@@ -178,8 +179,9 @@ export default function SalesLabPage() {
               <div className={styles.priceLine}>
                 <strong>600 €</strong>
                 <span>/ participant</span>
-                <small>Cererea nu implică plată sau rezervarea automată a locului.</small>
+                <small>Preț standard. Cererea nu implică plată sau rezervarea automată a locului.</small>
               </div>
+              <SalesLabPromoNote className={styles.promoNote} />
             </div>
             <div className={styles.visual}>
               <div className={styles.photo}>
@@ -275,6 +277,11 @@ export default function SalesLabPage() {
                 Trainer, consultant și coach, cu experiență în vânzări, management comercial
                 și dezvoltarea oamenilor.
               </p>
+              <p className={styles.credibilityNote}>
+                Lucrezi cu un facilitator care aduce în sală experiența din roluri
+                comerciale, management și proiecte de dezvoltare profesională.
+                Accentul este pus pe exerciții aplicate și feedback în sală.
+              </p>
             </div>
             <div>
               <p>
@@ -299,7 +306,8 @@ export default function SalesLabPage() {
                 <p><strong>Oraș:</strong> București; locația exactă va fi comunicată ulterior</p>
                 <p><strong>Format:</strong> în sală, două zile · 16 ore</p>
                 <p><strong>Grup:</strong> maximum 15 participanți</p>
-                <p><strong>Investiție:</strong> 600 EUR / participant</p>
+                <p><strong>Investiție:</strong> 600 EUR / participant (preț standard)</p>
+                <SalesLabPromoNote className={styles.promoNote} />
               </div>
             </div>
             <div>
@@ -324,8 +332,9 @@ export default function SalesLabPage() {
               <p className={styles.eyebrow}>Solicită înscrierea</p>
               <h2 id="inscriere-title">Locul tău la masă.</h2>
               <p className={styles.signupLead}>
-                21–22 ianuarie 2027 · București · 600 EUR / participant.
+                21–22 ianuarie 2027 · București · 600 EUR / participant (tarif standard).
               </p>
+              <SalesLabPromoNote className={styles.promoNote} />
               <p>
                 Completează formularul și revenim pentru confirmarea disponibilității,
                 detaliile de plată și informațiile logistice. Nu se face plată pe această pagină.

@@ -53,6 +53,8 @@
 .priceLine strong { font-family: var(--font-serif), Georgia, serif; font-weight: 400; font-size: 2.25rem; }
 .priceLine span { color: var(--muted); font-size: .95rem; }
 .priceLine small { color: var(--muted); font-size: .75rem; width: 100%; line-height: 1.4; }
+.promoNote { margin: 1rem 0 0; padding: .85rem 1rem; border-left: 3px solid #0c799d; background: #edf8ff; color: #17445e; font-size: .91rem; line-height: 1.55; }
+.credibilityNote { margin: 1.25rem 0 0; max-width: 540px; color: #3e5159; font-size: .95rem; line-height: 1.6; }
 .photo { position: relative; overflow: hidden; aspect-ratio: 4 / 4.3; background: var(--blue); border-radius: 4px; }
 .photoImage { object-fit: contain; object-position: center; }
 .photoCaption { margin: .8rem 0 0; text-align: right; font-size: .78rem; letter-spacing: .03em; color: #3d5662; }

@@ -5,9 +5,9 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { conversionEvent } from '@/lib/conversion-tracking'
+import { isSalesLabEarlyBirdActive } from '@/lib/sales-lab-offer'
 import styles from './sales-lab-promotion.module.css'
 
-const offerDeadline = Date.parse('2026-11-30T21:59:59.999Z')
 const sevenDays = 7 * 24 * 60 * 60 * 1000
 const dismissedKey = 'sales-lab-early-bird-dismissed-until'
 const submittedKey = 'sales-lab-registration-submitted'
@@ -20,9 +20,6 @@ const eligiblePaths = new Set([
   '/workshopuri',
 ])
 
-function offerIsActive() {
-  return Date.now() <= offerDeadline
-}
 
 function suppressed() {
   try {
@@ -52,12 +49,12 @@ export function SalesLabPopup() {
 
   useEffect(() => {
     setVisible(false)
-    if (!eligiblePaths.has(path) || !offerIsActive() || suppressed()) return
+    if (!eligiblePaths.has(path) || !isSalesLabEarlyBirdActive() || suppressed()) return
 
     let fired = false
     let timeout: ReturnType<typeof setTimeout> | undefined
     function show() {
-      if (fired || !offerIsActive() || suppressed()) return
+      if (fired || !isSalesLabEarlyBirdActive() || suppressed()) return
       fired = true
       setVisible(true)
       conversionEvent('early_bird_view', 'popup', 'sales-lab', 'ro')
@@ -99,6 +96,8 @@ export function SalesLabPopup() {
   useEffect(() => {
     if (!visible) return
     const previousFocus = document.activeElement as HTMLElement | null
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
     closeRef.current?.focus()
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === 'Escape') {
@@ -123,6 +122,7 @@ export function SalesLabPopup() {
     document.addEventListener('keydown', onKeyDown)
     return () => {
       document.removeEventListener('keydown', onKeyDown)
+      document.body.style.overflow = previousOverflow
       previousFocus?.focus?.()
     }
   }, [visible])
@@ -206,7 +206,7 @@ export function SalesLabBanner() {
   const [active, setActive] = useState(false)
 
   useEffect(() => {
-    const check = () => setActive(offerIsActive())
+    const check = () => setActive(isSalesLabEarlyBirdActive())
     check()
     const interval = window.setInterval(check, 60000)
     return () => window.clearInterval(interval)

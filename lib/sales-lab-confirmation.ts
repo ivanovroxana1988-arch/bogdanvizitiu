@@ -1,3 +1,5 @@
+import { isSalesLabEarlyBirdActive } from './sales-lab-offer'
+
 /**
  * Transactional acknowledgement only. Never add applicants to newsletter lists.
  */
@@ -43,11 +45,13 @@ function escapeHtml(value: string) {
 export function buildSalesLabConfirmation({
   name,
   seats,
-}: SalesLabApplicant): SalesLabConfirmationContent {
+}: SalesLabApplicant, now: number = Date.now()): SalesLabConfirmationContent {
   const firstName = name.trim().split(/\s+/)[0] || 'participant'
   const greeting = 'Bună, ' + firstName + '!'
   const seatLabel = seats === 1 ? '1 participant' : seats + ' participanți'
   const subject = 'Am primit solicitarea ta – Sales Lab, 21–22 ianuarie 2027'
+  const promoText = 'Early Bird: 500 EUR / participant, doar pentru primele 5 locuri confirmate până la 30 noiembrie 2026, în limita disponibilității. Tariful final va fi confirmat individual.'
+  const promoActive = isSalesLabEarlyBirdActive(now)
   const text = [
     greeting,
     '',
@@ -57,7 +61,8 @@ export function buildSalesLabConfirmation({
     'Perioada: 21–22 ianuarie 2027',
     'Locul: București (adresa exactă va fi comunicată ulterior)',
     'Format: 2 zile, 16 ore, în sală',
-    'Preț: 600 EUR / participant',
+    'Preț standard: 600 EUR / participant',
+    ...(promoActive ? [promoText] : []),
     'Locuri solicitate: ' + seatLabel,
     '',
     'IMPORTANT: Acest email confirmă doar primirea solicitării. Locul nu este încă rezervat și nu a fost efectuată nicio plată.',
@@ -87,7 +92,8 @@ export function buildSalesLabConfirmation({
     '<strong>Perioada:</strong> 21–22 ianuarie 2027<br>',
     '<strong>Locație:</strong> București (adresa exactă urmează)<br>',
     '<strong>Format:</strong> 2 zile · 16 ore · în sală<br>',
-    '<strong>Preț:</strong> 600 EUR / participant<br>',
+    '<strong>Preț standard:</strong> 600 EUR / participant<br>',
+    ...(promoActive ? ['<strong>Ofertă Early Bird:</strong> 500 EUR / participant pentru primele 5 locuri confirmate până la 30 noiembrie 2026, în limita disponibilității. Tariful final va fi confirmat individual.<br>'] : []),
     '<strong>Locuri solicitate:</strong> ' + escapeHtml(seatLabel),
     '</td></tr></table>',
     '<p style="font-size:15px;line-height:1.7;margin:24px 0 12px;"><strong>Ce urmează?</strong> Revenim personal pentru a confirma disponibilitatea și a comunica detaliile de plată și înscriere.</p>',
