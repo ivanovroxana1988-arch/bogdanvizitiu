@@ -37,6 +37,11 @@ const catalogMeta: Record<string, CatalogMeta> = {
     label: { ro: 'Networking & relații', en: 'Networking & relationships' },
     image: 'networkingEditorial',
   },
+  'sales-lab': {
+    category: 'negotiation',
+    label: { ro: 'Vânzări & negociere', en: 'Sales & negotiation' },
+    image: 'workshopNotes',
+  },
   'arta-negocierii': {
     category: 'negotiation',
     label: { ro: 'Negociere & influență', en: 'Negotiation & influence' },
