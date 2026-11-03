@@ -3,6 +3,7 @@ import business from '@/content/business.json'
 import { clean, isEmail } from '@/lib/contact-validation'
 import { getPrograms } from '@/lib/data'
 import { checkContactRateLimit, getClientIdentifier } from '@/lib/rate-limit'
+import { sendSalesLabConfirmation } from '@/lib/sales-lab-confirmation'
 
 const MAX_BODY_BYTES = 10_000
 
@@ -150,6 +151,29 @@ export async function POST(request: Request) {
     if (!response.ok) {
       console.error('Course registration email delivery failed', response.status)
       return NextResponse.json({ ok: false, delivery: 'mailto', fallback })
+    }
+
+    if (courseSlug === 'sales-lab') {
+      const acknowledgement = await sendSalesLabConfirmation({
+        name,
+        seats,
+        email,
+        replyTo: business.email,
+        brevoKey: process.env.BREVO_API_KEY,
+        brevoSenderEmail: process.env.BREVO_SENDER_EMAIL,
+        resendKey: apiKey,
+        resendFrom: from,
+      })
+
+      if (acknowledgement === 'failed') {
+        console.error('Sales Lab applicant acknowledgement failed after internal notification')
+      }
+
+      return NextResponse.json({
+        ok: true,
+        delivery: 'email',
+        acknowledgement: acknowledgement === 'failed' ? 'not_sent' : 'sent',
+      })
     }
 
     return NextResponse.json({ ok: true, delivery: 'email' })

@@ -15,6 +15,7 @@
     "lib/routes.ts",
     "lib/redirects.ts",
     "lib/contact-validation.ts",
+    "lib/sales-lab-confirmation.ts",
     "tests/**/*.test.ts"
   ]
 }
