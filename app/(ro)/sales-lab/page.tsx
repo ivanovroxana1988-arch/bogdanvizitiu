@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { JsonLd } from '@/components/json-ld'
 import { RegistrationForm } from '@/components/registration-form'
+import { SalesLabCta } from '@/components/sales-lab-cta'
 import styles from './sales-lab.module.css'
 
 const pageUrl = 'https://bogdanvizitiu.com/sales-lab'
@@ -169,7 +170,7 @@ export default function SalesLabPage() {
                 <li>16 ore · 15 locuri</li>
               </ul>
               <div className={styles.actions}>
-                <a className={styles.primaryCta} href="#inscriere">Solicită înscrierea <span aria-hidden="true">↗</span></a>
+                <SalesLabCta className={styles.primaryCta}>Solicită înscrierea <span aria-hidden="true">↗</span></SalesLabCta>
                 <a className={styles.secondaryCta} href="#program">Explorează programul <span aria-hidden="true">↓</span></a>
               </div>
               <div className={styles.priceLine}>
@@ -230,7 +231,7 @@ export default function SalesLabPage() {
               </div>
             ))}
           </div>
-          <a className={styles.textCta} href="#inscriere">Vreau să particip <span aria-hidden="true">↗</span></a>
+          <SalesLabCta className={styles.textCta}>Vreau să particip <span aria-hidden="true">↗</span></SalesLabCta>
         </div>
       </section>
 
@@ -346,7 +347,7 @@ export default function SalesLabPage() {
           </div>
         </div>
       </section>
-      <a className={styles.mobileCta} href="#inscriere">Solicită înscrierea <span aria-hidden="true">↗</span></a>
+      <SalesLabCta className={styles.mobileCta}>Solicită înscrierea <span aria-hidden="true">↗</span></SalesLabCta>
     </div>
   )
 }
