@@ -5,22 +5,23 @@ import { RegistrationForm } from '@/components/registration-form'
 import { SalesLabCta } from '@/components/sales-lab-cta'
 import { SalesLabBanner } from '@/components/sales-lab-promotion'
 import { SalesLabPromoNote } from '@/components/sales-lab-promo-note'
+import business from '@/content/business.json'
 import styles from './sales-lab.module.css'
 
 const pageUrl = 'https://bogdanvizitiu.com/sales-lab'
 const imageUrl = '/images/sales-lab/761c3d0c-2526-43a0-9779-31c2d4fbda90.png'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Curs de vânzări București | Sales Lab – Bogdan Vizitiu' },
+  title: { absolute: 'Curs de vânzări și negociere București | Sales Lab' },
   description:
-    'Sales Lab: curs practic de vânzări și negociere în București, 21–22 ianuarie 2027. Două zile, 16 ore, maximum 15 participanți. Solicită înscrierea.',
+    'Curs de vânzări și negociere în București, 21–22 ianuarie 2027. Sales Lab: 16 ore de exerciții, simulări și feedback cu Bogdan Vizitiu. 15 locuri.',
   alternates: { canonical: pageUrl },
   robots: { index: true, follow: true },
   openGraph: {
     type: 'website',
-    title: 'Sales Lab – Curs practic de vânzări | 21–22 ianuarie 2027',
+    title: 'Sales Lab – Curs de vânzări și negociere în București',
     description:
-      'Exerciții, simulări și feedback pe conversații comerciale reale. București, 21–22 ianuarie 2027 · 600 EUR / participant.',
+      'Curs open de vânzări și negociere în București, 21–22 ianuarie 2027. 16 ore de exerciții și simulări. Preț standard: 600 EUR.',
     url: pageUrl,
     siteName: 'Bogdan Vizitiu',
     locale: 'ro_RO',
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sales Lab – Curs de vânzări București',
+    title: 'Curs de vânzări și negociere București – Sales Lab',
     description: '21–22 ianuarie 2027 · 16 ore · 15 participanți · 600 EUR',
     images: [imageUrl],
   },
@@ -36,38 +37,69 @@ export const metadata: Metadata = {
 
 const structuredData: Record<string, unknown> = {
   '@context': 'https://schema.org',
-  '@type': 'Course',
-  '@id': pageUrl + '#course',
-  name: 'Sales Lab – Curs practic de vânzări și negociere',
-  description:
-    'Program intensiv de două zile cu exerciții, simulări și feedback pentru profesioniști care vând, negociază și lucrează cu clienți.',
-  url: pageUrl,
-  image: 'https://bogdanvizitiu.com' + imageUrl,
-  inLanguage: 'ro-RO',
-  provider: { '@id': 'https://bogdanvizitiu.com/#person' },
-  hasCourseInstance: {
-    '@type': 'CourseInstance',
-    courseMode: 'onsite',
-    startDate: '2027-01-21',
-    endDate: '2027-01-22',
-    location: {
-      '@type': 'Place',
-      name: 'București, România',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'București',
-        addressCountry: 'RO',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': pageUrl + '#webpage',
+      url: pageUrl,
+      name: 'Curs de vânzări și negociere București – Sales Lab',
+      description:
+        'Curs open de vânzări și negociere în București, cu exerciții aplicate și feedback.',
+      inLanguage: 'ro-RO',
+      isPartOf: { '@id': 'https://bogdanvizitiu.com/#website' },
+      mainEntity: { '@id': pageUrl + '#course' },
+      breadcrumb: { '@id': pageUrl + '#breadcrumb' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': pageUrl + '#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Acasă', item: 'https://bogdanvizitiu.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Cursuri', item: 'https://bogdanvizitiu.com/cursuri' },
+        { '@type': 'ListItem', position: 3, name: 'Sales Lab', item: pageUrl },
+      ],
+    },
+    {
+      '@type': 'Course',
+      '@id': pageUrl + '#course',
+      name: 'Sales Lab – Curs practic de vânzări și negociere',
+      description:
+        'Curs de vânzări și negociere în București, 21–22 ianuarie 2027. Două zile de exerciții, simulări de conversații comerciale și feedback.',
+      url: pageUrl,
+      image: 'https://bogdanvizitiu.com' + imageUrl,
+      inLanguage: 'ro-RO',
+      provider: {
+        '@type': 'Organization',
+        name: business.legalName,
+        url: 'https://bogdanvizitiu.com/',
+      },
+      hasCourseInstance: {
+        '@type': 'CourseInstance',
+        name: 'Sales Lab – ediția București, ianuarie 2027',
+        courseMode: 'onsite',
+        startDate: '2027-01-21',
+        endDate: '2027-01-22',
+        location: {
+          '@type': 'Place',
+          name: 'București, România',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'București',
+            addressCountry: 'RO',
+          },
+        },
+        instructor: { '@id': 'https://bogdanvizitiu.com/#person' },
+        offers: {
+          '@type': 'Offer',
+          url: pageUrl + '#inscriere',
+          price: '600',
+          priceCurrency: 'EUR',
+          category: 'Curs în sală',
+          availability: 'https://schema.org/LimitedAvailability',
+        },
       },
     },
-    instructor: { '@id': 'https://bogdanvizitiu.com/#person' },
-    offers: {
-      '@type': 'Offer',
-      url: pageUrl + '#inscriere',
-      price: '600',
-      priceCurrency: 'EUR',
-      category: 'Curs în sală',
-    },
-  },
+  ],
 }
 
 const benefits = [
@@ -151,6 +183,13 @@ export default function SalesLabPage() {
     <div className={styles.page}>
       <JsonLd data={structuredData} />
       <div className="shell" style={{ paddingTop: "1.1rem" }}><SalesLabBanner /></div>
+      <nav className={styles.breadcrumb} aria-label="Navigare în ierarhia paginii">
+        <div className="shell">
+          <a href="/">Acasă</a><span aria-hidden="true"> / </span>
+          <a href="/cursuri">Cursuri</a><span aria-hidden="true"> / </span>
+          <span aria-current="page">Sales Lab</span>
+        </div>
+      </nav>
       <section className={styles.hero} aria-labelledby="sales-lab-title">
         <div className="shell">
           <p className={styles.eyebrow}>Curs open de vânzări · București · 21–22 ianuarie 2027</p>
@@ -158,14 +197,15 @@ export default function SalesLabPage() {
             <div className={styles.heroCopy}>
               <h1 id="sales-lab-title">
                 Sales <em>Lab.</em>
-                <span>Curs practic de vânzări și negociere.</span>
+                <span>Curs practic de vânzări și negociere în București.</span>
               </h1>
               <p className={styles.lead}>
                 Conversații mai bune. Decizii comerciale mai clare.
               </p>
               <p className={styles.intro}>
-                Două zile de exerciții, simulări și feedback pentru oamenii care vor să
-                înțeleagă mai bine clientul, să gestioneze obiecțiile și să negocieze cu încredere.
+                Pe 21–22 ianuarie 2027, acest training de vânzări în sală aduce
+                două zile de exerciții, simulări și feedback. Lucrezi pe descoperirea
+                nevoilor clienților, obiecții, negociere și următorii pași ai vânzării.
               </p>
               <ul className={styles.facts} aria-label="Detalii rapide despre curs">
                 <li>21–22 ianuarie 2027</li>
@@ -264,6 +304,20 @@ export default function SalesLabPage() {
             Agenda este orientativă și poate fi ajustată în funcție de dinamica grupului.
             Programul cuprinde două zile de câte 8 ore, inclusiv pauze.
           </p>
+          <div className={styles.seoExplainer}>
+            <h3>Ce faci concret în acest curs de vânzări?</h3>
+            <p>
+              Exersezi întrebări de descoperire, prezinți valoarea unei soluții,
+              gestionezi obiecții despre preț și simulezi negocieri. Fiecare exercițiu
+              pornește de la situații comerciale întâlnite în lucrul cu clienții,
+              cu feedback și idei de aplicat după curs.
+            </p>
+            <p>
+              Sales Lab se desfășoară față în față, în București, pentru un grup
+              de maximum 15 participanți. Dacă te interesează și alte teme,
+              poți explora <a href="/cursuri">cursurile și programele viitoare</a>.
+            </p>
+          </div>
         </div>
       </section>
 
