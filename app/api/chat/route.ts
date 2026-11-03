@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { guidedChatReply, validateChatMessages } from '@/lib/chatbot'
 import { generateChatReply, isChatAiConfigured } from '@/lib/chatbot-ai'
-import { checkChatRateLimit, getClientIdentifier, reserveChatAiRequest } from '@/lib/rate-limit'
+import { checkChatRateLimit, getClientIdentifier } from '@/lib/rate-limit'
 
 export const runtime = 'nodejs'
 export const maxDuration = 20
@@ -54,9 +54,11 @@ export async function POST(request: Request) {
       ? raw.pathname
       : '/'
   const fallback = guidedChatReply(raw.messages, pathname, locale)
-  if (raw.aiConsent === true && isChatAiConfigured() && (await reserveChatAiRequest())) {
+  if (raw.aiConsent === true && isChatAiConfigured()) {
     try {
-      return json(await generateChatReply(raw.messages, pathname, locale))
+      return json(
+        await generateChatReply(raw.messages, pathname, locale, getClientIdentifier(request)),
+      )
     } catch {
       /* Never log conversation text, personal data or provider errors. */
     }

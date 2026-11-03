@@ -233,8 +233,8 @@ export function SiteChat({
                   onChange={(e) => setAiConsent(e.target.checked)}
                 />
                 {ro
-                  ? 'Permite procesarea întrebărilor de către serviciul AI.'
-                  : 'Allow the AI service to process my questions.'}
+                  ? 'Sunt de acord ca mesajele să fie prelucrate de Cloudflare Workers AI.'
+                  : 'I agree to have my messages processed by Cloudflare Workers AI.'}
               </label>
             )}
             <form className={styles.form} onSubmit={submit}>

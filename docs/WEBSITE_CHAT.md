@@ -1,53 +1,72 @@
 # Website assistant
 
-The floating assistant is mounted in both language layouts. It guides visitors to
-Sales Lab registration, the course catalog, coaching, corporate programmes and
-the contact form. Form submission remains in the existing forms; the assistant
-cannot submit leads, reserve seats, charge payments or send messages.
+The Romanian/English assistant guides visitors to Sales Lab registration, the
+course catalog, coaching, corporate programmes and the existing contact form.
+It cannot reserve seats, submit leads, take payments or send messages.
 
-## Modes
+## Live AI and consent
 
-- Guided mode (default): curated Romanian/English answers, topic follow-ups,
-  two relevant links at most. No model requests or AI costs.
-- AI mode (optional): visitor opts in before conversation text is processed by
-  Vercel AI Gateway and its model provider. Requires `CHAT_AI_ENABLED=true`, an
-  exact `AI_GATEWAY_MODEL`, secure Gateway credentials (or Vercel OIDC) and working
-  Upstash REST credentials. No new paid service is provisioned by this change.
+AI is enabled with `CHAT_AI_ENABLED=true` and the secret
+`CHAT_AI_SERVICE_TOKEN` in Vercel. The visitor explicitly opts in before recent
+messages are sent to Cloudflare Workers AI (Meta Llama 3.3 70B). Without opt-in,
+or on provider/quota/storage errors, the assistant uses curated guided replies.
+CTA destinations are always selected from a server allowlist.
 
-AI uses the existing filtered publishable course catalog and Sales Lab offer
-constants. All CTA destinations come from a server allowlist. Gateway errors,
-invalid output, missing credentials, exhausted shared quota or unavailable Redis
-fall back to guided answers. Replies label which mode produced the response.
+The inference Worker is `bogdan-site-chat-ai`, deployed in the existing
+Cloudflare account on the **Free plan**. No paid subscription or automatic
+upgrade was activated. The service token is scoped to this dedicated Worker;
+it does not grant access to Cloudflare account management. It must never be
+committed or sent to a browser. Source and bindings are in `infra/chat-ai/`.
 
-Before enabling AI, select a current text model supporting JSON schema output,
-verify its live price via the Gateway model catalog, configure a hard spend cap
-in Gateway, review privacy disclosure for Gateway/provider processing and run
-one approved live smoke test. Model IDs and prices are intentionally not pinned
-from memory. Gateway API documentation:
-https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions
+## Budget and quotas
 
-## Limits and privacy
+The user approved a maximum of EUR 20 per month on 3 November 2026. The deployed
+service stays on Workers Free. Its platform AI daily allowance is shared with
+other workloads; if exhausted, inference stops and guided mode remains usable.
 
-The application does not store or log transcripts; messages live in component
-memory and clear on refresh or Clear. AI processing may have provider retention
-policies; do not describe it as zero retention. The UI asks visitors to avoid
-personal information and sends them to existing consent-bearing lead forms.
-Analytics events contain mode/action/page only, never conversation text.
+Independent application ceilings apply before every model request:
 
-Requests are limited to 12 KB, 12 history entries and 600 characters per message.
-Per-client rate limit: 20 requests / 10 minutes. Guided mode uses the existing
-memory fallback if Redis is unavailable, which is best effort across instances.
-Paid AI additionally requires a durable shared daily quota: default 100 calls,
-configurable up to 500. It fails closed if the counter fails. This request quota
-is not a monetary budget; the Gateway cap is required before activation.
-Provider timeout is 12 seconds, client timeout 18 seconds, output ceiling 400
-tokens. Cross-origin browser requests are rejected. No tools or arbitrary URLs.
+- 1,000 inference attempts per UTC calendar month, shared across all deployments.
+- 100 attempts per UTC day; 20 per client hash per 10 minutes.
+- 18,000 bytes maximum service request; fixed model; 400 output tokens maximum.
+- Atomic conditional D1 INSERT reserves an attempt **before** inference, including
+  failed or timed-out calls. Failed storage access never bypasses this check.
 
-## Verification
+At the verified model rates ($0.293 per million input tokens, $2.253 per million
+output tokens), even a conservative byte-per-token bound plus framing stays
+below $0.01 per attempt, or $10 per 1,000 attempts, before the free allocation.
+This is a conservative reservation estimate, not a billed-spend dashboard or a
+EUR-denominated provider billing cap. Workers Free currently prevents paid AI
+usage; do not upgrade the plan or increase these ceilings without reviewing the
+approved EUR 20 maximum, then-current prices, taxes and exchange rate.
 
-Run `npm run lint`, `npm run typecheck`, `npm test`, and `npm run build`.
-Check mobile/desktop, keyboard focus, Escape, close/reopen, Clear, retry, a
-corporate sales request, a Sales Lab date/price follow-up, unknown questions,
-expired promotions, English links and the real registration/contact endpoints.
-The promotional dialog remains above the assistant; on mobile Sales Lab the
-launcher is positioned above the existing sticky registration CTA.
+Verified sources:
+https://developers.cloudflare.com/workers-ai/models/llama-3.3-70b-instruct-fp8-fast/
+https://developers.cloudflare.com/workers-ai/platform/pricing/
+
+## Privacy
+
+The application does not store or log conversation content. Messages live in
+page memory and clear on refresh or Clear. Hosting/provider technical processing
+is subject to their own policies; do not claim zero retention. The interface
+identifies Cloudflare Workers AI in its optional consent, and the bilingual
+privacy notice describes message processing and technical counters.
+
+Only quota records (month/day and a salted client hash, no raw IP or transcript)
+are stored in an EU D1 database. The daily 00:15 UTC cleanup removes records older
+than 89 days, ensuring at most 90 days of retention. Worker observability is off.
+Analytics events include mode/action/page only, never message text.
+
+## Verification and operations
+
+`npm test` runs the website tests and inference-service fail-closed tests.
+Run `npm run lint`, `npm run typecheck` and `npm run build` too. Live verification
+must include an AI reply with opt-in, guided mode without opt-in, both locale
+layouts, real form destinations and unauthorized inference-service rejection.
+No test submits lead forms or sends mail.
+
+Worker source is deployable with `infra/chat-ai/wrangler.jsonc`; set its
+`CHAT_SERVICE_TOKEN` secret to the same value as Vercel's
+`CHAT_AI_SERVICE_TOKEN`. Keep bindings and the daily cleanup schedule on updates.
+To stop AI immediately, set `CHAT_AI_ENABLED=false` in Vercel and redeploy;
+remove the Worker's AI binding if emergency server-side shutdown is required.

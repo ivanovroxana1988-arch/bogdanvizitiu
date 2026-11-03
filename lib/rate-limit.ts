@@ -134,10 +134,3 @@ export async function checkChatRateLimit(identifier: string, now = Date.now()) {
   const durable = await checkUpstashRateLimit(key, now, 20, 600)
   return durable ?? checkMemoryRateLimit(key, now, 20, 600)
 }
-
-/** Paid AI fails closed if the shared daily counter is unavailable. */
-export async function reserveChatAiRequest(now = Date.now()) {
-  const limit = Math.min(500, positiveInteger(process.env.CHAT_AI_DAILY_REQUEST_LIMIT, 100))
-  const result = await checkUpstashRateLimit(hashIdentifier('chat-ai-global'), now, limit, 86400)
-  return result?.allowed === true
-}
