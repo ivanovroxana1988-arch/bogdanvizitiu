@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { CourseCatalog } from '@/components/course-catalog'
 import { ArrowLink, Eyebrow } from '@/components/ui'
 import { getPrograms } from '@/lib/data'
@@ -6,6 +7,7 @@ import { getCopy, getLocale } from '@/lib/i18n'
 import { localizePath } from '@/lib/routes'
 import { buildPageMetadata } from '@/lib/seo'
 import styles from '../commercial.module.css'
+import featureStyles from './featured-sales-lab.module.css'
 
 type SearchParams = {
   lang?: string
@@ -37,17 +39,6 @@ export default function Programs({ searchParams }: { searchParams?: SearchParams
     locale === 'ro'
       ? [
           ...openPrograms,
-          {
-            slug: 'sales-lab',
-            title: 'Sales Lab – Curs practic de vânzări',
-            description:
-              '21–22 ianuarie 2027, București. Două zile de simulări, exerciții și feedback pe conversații comerciale reale. Maximum 15 participanți.',
-            href: '/sales-lab',
-            dates: ['2027-01-21', '2027-01-22'],
-            canRegister: false,
-            availabilityLabel: '21–22 ianuarie 2027 · București',
-            actionLabel: 'Vezi programul și înscrie-te',
-          },
           {
             slug: 'leadership-ai',
             title: 'Leadership in the AI Era',
@@ -82,7 +73,30 @@ export default function Programs({ searchParams }: { searchParams?: SearchParams
         </div>
       </section>
 
-      <section className={styles.section}>
+      {locale === 'ro' && (
+        <section className={featureStyles.featured} aria-labelledby="featured-sales-lab-title">
+          <div className={featureStyles.copy}>
+            <p className={featureStyles.eyebrow}>Înscrieri deschise · Curs recomandat</p>
+            <h2 id="featured-sales-lab-title">Sales <em>Lab.</em></h2>
+            <p className={featureStyles.lead}>Curs practic de vânzări și negociere.</p>
+            <p className={featureStyles.description}>Două zile de exerciții, simulări și feedback pe conversații comerciale reale.</p>
+            <p className={featureStyles.details}>21–22 ianuarie 2027 · București · 16 ore · Maximum 15 participanți</p>
+            <p className={featureStyles.price}>600 EUR <span>/ participant</span></p>
+            <a className={featureStyles.action} href="/sales-lab">Vezi programul și solicită înscrierea <span aria-hidden="true">↗</span></a>
+          </div>
+          <div className={featureStyles.visual}>
+            <Image src="/images/sales-lab/761c3d0c-2526-43a0-9779-31c2d4fbda90.png" alt="Imagine de prezentare Sales Lab" fill sizes="(max-width: 760px) 100vw, 46vw" className={featureStyles.image} />
+          </div>
+        </section>
+      )}
+
+      <section className={styles.section} aria-labelledby="courses-catalog-title">
+        {locale === 'ro' && (
+          <div className={featureStyles.catalogHeading}>
+            <Eyebrow>Explorează programele</Eyebrow>
+            <h2 id="courses-catalog-title" className={styles.sectionTitle}>Cursuri viitoare</h2>
+          </div>
+        )}
         <CourseCatalog
           locale={locale}
           programs={programs}
