@@ -38,6 +38,17 @@ export default function Programs({ searchParams }: { searchParams?: SearchParams
       ? [
           ...openPrograms,
           {
+            slug: 'sales-lab',
+            title: 'Sales Lab – Curs practic de vânzări',
+            description:
+              '21–22 ianuarie 2027, București. Două zile de simulări, exerciții și feedback pe conversații comerciale reale. Maximum 15 participanți.',
+            href: '/sales-lab',
+            dates: ['2027-01-21', '2027-01-22'],
+            canRegister: false,
+            availabilityLabel: '21–22 ianuarie 2027 · București',
+            actionLabel: 'Vezi programul și înscrie-te',
+          },
+          {
             slug: 'leadership-ai',
             title: 'Leadership in the AI Era',
             description:

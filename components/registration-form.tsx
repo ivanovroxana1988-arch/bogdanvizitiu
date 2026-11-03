@@ -44,6 +44,8 @@ function buildFallback(
     `Nume / Name: ${String(data.get('name') || '')}`,
     `Email: ${String(data.get('email') || '')}`,
     `Telefon / Phone: ${String(data.get('phone') || '')}`,
+    String(data.get('company') || '') ? `Companie: ${String(data.get('company') || '')}` : '',
+    String(data.get('seats') || '') ? `Locuri solicitate: ${String(data.get('seats') || '')}` : '',
     '',
     String(data.get('source') || '') ? `Source: ${String(data.get('source') || '')}` : '',
     referrer ? `Referrer: ${referrer}` : '',
@@ -69,7 +71,11 @@ export function RegistrationForm({
   courseTitle,
   tracking = {},
   waitlist = false,
+  submitLabel,
+  successMessage,
 }: {
+  submitLabel?: string
+  successMessage?: string
   waitlist?: boolean
   locale: Locale
   courseSlug: string
@@ -191,6 +197,8 @@ export function RegistrationForm({
       name: String(data.get('name') || ''),
       email: String(data.get('email') || ''),
       phone: String(data.get('phone') || ''),
+      company: courseSlug === 'sales-lab' ? String(data.get('company') || '') : '',
+      seats: courseSlug === 'sales-lab' ? Number(data.get('seats') || 1) : undefined,
       website: String(data.get('website') || ''),
       source: original.source || String(data.get('source') || ''),
       referrer: original.referrer || referrer,
@@ -317,6 +325,23 @@ export function RegistrationForm({
         {errors.phone && <span className={formStyles.fieldError}>{errors.phone}</span>}
       </label>
 
+      {courseSlug === 'sales-lab' && (
+        <>
+          <label className={commercialStyles.full}>
+            Companie (opțional)
+            <input name="company" autoComplete="organization" maxLength={160} />
+          </label>
+          <label className={commercialStyles.full}>
+            Numărul de participanți
+            <select name="seats" defaultValue="1" aria-label="Numărul de participanți solicitați">
+              {Array.from({ length: 15 }, (_, index) => index + 1).map((count) => (
+                <option key={count} value={count}>{count} {count === 1 ? 'participant' : 'participanți'}</option>
+              ))}
+            </select>
+          </label>
+        </>
+      )}
+
       <div aria-hidden="true" className={formStyles.honeypot}>
         <label>
           Website
@@ -331,7 +356,7 @@ export function RegistrationForm({
 
       <p className={`${commercialStyles.full} ${formStyles.status}`} aria-live="polite">
         {state === 'success'
-          ? copy.success
+          ? (successMessage || copy.success)
           : state === 'fallback'
             ? copy.fallback
             : state === 'error'
@@ -350,7 +375,7 @@ export function RegistrationForm({
       )}
 
       <button type="submit" disabled={state === 'sending'} aria-disabled={state === 'sending'}>
-        {state === 'sending' ? copy.sending : copy.submit} →
+        {state === 'sending' ? copy.sending : (submitLabel || copy.submit)} →
       </button>
     </form>
   )
