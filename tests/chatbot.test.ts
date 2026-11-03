@@ -2,6 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import {
   guidedChatReply,
+  cleanChatSuggestions,
   salesLabFacts,
   selectChatActions,
   validateChatMessages,
@@ -75,4 +76,22 @@ test('rejects system messages, oversized messages and malformed history', () => 
     false,
   )
   assert.equal(validateChatMessages([{ role: 'user', content: 'hi' }]), true)
+})
+
+test('generated reply suggestions stay bounded, unique plain text', () => {
+  assert.deepEqual(
+    cleanChatSuggestions([
+      ' Pentru mine ',
+      'Pentru mine',
+      '',
+      '<img src=x>',
+      'https://example.com',
+      'x'.repeat(81),
+      3,
+      'Pentru echipa mea',
+    ]),
+    ['Pentru mine', 'Pentru echipa mea'],
+  )
+  assert.deepEqual(cleanChatSuggestions(null), [])
+  assert.equal(cleanChatSuggestions(['Unu', 'Doi', 'Trei', 'Patru']).length, 3)
 })

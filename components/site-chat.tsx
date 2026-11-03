@@ -12,7 +12,11 @@ import {
 import type { Locale } from '@/lib/routes'
 import styles from './site-chat.module.css'
 
-type Message = ChatMessage & { actions?: ChatAction[]; mode?: ChatReply['mode'] }
+type Message = ChatMessage & {
+  actions?: ChatAction[]
+  suggestions?: string[]
+  mode?: ChatReply['mode']
+}
 
 export function SiteChat({
   locale,
@@ -28,21 +32,24 @@ export function SiteChat({
   const [input, setInput] = useState('')
   const [pending, setPending] = useState(false)
   const [error, setError] = useState('')
-  const [aiConsent, setAiConsent] = useState(false)
+  const [aiConsent, setAiConsent] = useState<boolean | null>(null)
+  const [consentRequested, setConsentRequested] = useState(false)
+  const deferredMessages = useRef<Message[] | null>(null)
   const launcher = useRef<HTMLButtonElement>(null)
   const panel = useRef<HTMLDivElement>(null)
   const field = useRef<HTMLInputElement>(null)
+  const options = useRef<HTMLDetailsElement>(null)
   const end = useRef<HTMLDivElement>(null)
   const controller = useRef<AbortController | null>(null)
   const inFlight = useRef(false)
 
   useEffect(() => () => controller.current?.abort(), [])
   useEffect(() => {
-    if (open) field.current?.focus()
-  }, [open])
+    if (open && !consentRequested) field.current?.focus()
+  }, [open, consentRequested])
   useEffect(() => {
     if (open) end.current?.scrollIntoView({ block: 'nearest' })
-  }, [messages, pending, open])
+  }, [messages, pending, open, consentRequested])
   useEffect(() => {
     if (!open) return
     function dismiss(event: KeyboardEvent) {
@@ -55,12 +62,8 @@ export function SiteChat({
     return () => document.removeEventListener('keydown', dismiss)
   }, [open])
 
-  async function send(value: string) {
-    const text = value.trim().slice(0, MAX_CHAT_MESSAGE_LENGTH)
-    if (!text || inFlight.current) return
-    const next: Message[] = [...messages, { role: 'user' as const, content: text }].slice(-40)
-    setMessages(next)
-    setInput('')
+  async function requestReply(next: Message[], allowAi: boolean) {
+    if (inFlight.current) return
     setError('')
     setPending(true)
     inFlight.current = true
@@ -75,7 +78,7 @@ export function SiteChat({
         body: JSON.stringify({
           locale,
           pathname,
-          aiConsent,
+          aiConsent: allowAi,
           messages: next.slice(-11).map(({ role, content }) => ({
             role,
             content: content.slice(0, MAX_CHAT_MESSAGE_LENGTH),
@@ -86,20 +89,26 @@ export function SiteChat({
       const reply: ChatReply = await response.json()
       setMessages([
         ...next,
-        { role: 'assistant', content: reply.text, actions: reply.actions, mode: reply.mode },
+        {
+          role: 'assistant',
+          content: reply.text,
+          actions: reply.actions,
+          suggestions: reply.suggestions,
+          mode: reply.mode,
+        },
       ])
       conversionEvent('chat_response', 'chat', reply.mode, locale)
     } catch (failure) {
-      setInput(text)
-      setMessages(messages)
+      setInput(next.at(-1)?.content || '')
+      setMessages(next.slice(0, -1))
       setError(
         failure instanceof Error && failure.message === 'rate_limited'
           ? ro
-            ? 'Ai trimis mai multe întrebări într-un timp scurt. Încearcă din nou peste câteva minute sau folosește formularul.'
-            : 'Too many questions in a short time. Try again in a few minutes or use the form.'
+            ? 'Luăm o scurtă pauză? Poți reveni în câteva minute sau poți discuta direct cu Bogdan.'
+            : 'Let’s take a short break. Try again in a few minutes or contact Bogdan directly.'
           : ro
-            ? 'Răspunsul nu a putut fi încărcat. Poți reîncerca sau poți folosi formularul.'
-            : 'The reply could not be loaded. Retry or use the contact form.',
+            ? 'Nu am reușit să răspund. Mai încearcă o dată sau discută direct cu Bogdan.'
+            : 'I couldn’t reply. Try again or contact Bogdan directly.',
       )
     } finally {
       clearTimeout(timer)
@@ -108,23 +117,71 @@ export function SiteChat({
     }
   }
 
+  function send(value: string) {
+    const text = value.trim().slice(0, MAX_CHAT_MESSAGE_LENGTH)
+    if (!text || inFlight.current || consentRequested) return
+    const next: Message[] = [...messages, { role: 'user' as const, content: text }].slice(-40)
+    setMessages(next)
+    setInput('')
+    setError('')
+    if (aiAvailable && aiConsent === null) {
+      deferredMessages.current = next
+      setConsentRequested(true)
+      return
+    }
+    void requestReply(next, aiConsent === true)
+  }
+
+  function chooseMode(allowAi: boolean) {
+    setAiConsent(allowAi)
+    setConsentRequested(false)
+    const next = deferredMessages.current
+    deferredMessages.current = null
+    if (next) void requestReply(next, allowAi)
+  }
   function submit(event: FormEvent) {
     event.preventDefault()
-    void send(input)
+    send(input)
   }
   function close() {
     setOpen(false)
     launcher.current?.focus()
   }
-  const quick = ro
-    ? [
-        'Cursuri pentru mine',
-        'Training pentru echipă',
-        'Coaching',
-        'Am o întrebare despre Sales Lab',
-      ]
-    : ['Courses for me', 'Team training', 'Coaching', 'I have a question about Sales Lab']
+  function clear() {
+    setMessages([])
+    setInput('')
+    setError('')
+    setConsentRequested(false)
+    deferredMessages.current = null
+    if (options.current) options.current.open = false
+    field.current?.focus()
+  }
+  const initialSuggestions =
+    pathname === '/sales-lab'
+      ? ro
+        ? ['Mi se potrivește?', 'Ce voi exersa?', 'Cum mă înscriu?']
+        : ['Is it right for me?', 'What will I practise?', 'How do I join?']
+      : ro
+        ? ['Vreau un curs', 'Pentru echipa mea', 'Mă interesează coachingul']
+        : ['I’m looking for a course', 'For my team', 'I’m interested in coaching']
   const contact = `${ro ? '/contact' : '/en/contact'}?source=chatbot`
+  const privacy = ro ? '/confidentialitate' : '/en/privacy'
+  const busy = pending || consentRequested
+
+  function suggestions(items: string[]) {
+    return (
+      <div
+        className={styles.suggestions}
+        aria-label={ro ? 'Poți răspunde și așa' : 'You could reply'}
+      >
+        {items.map((text) => (
+          <button type="button" key={text} disabled={busy} onClick={() => send(text)}>
+            {text}
+          </button>
+        ))}
+      </div>
+    )
+  }
 
   return (
     <aside
@@ -141,16 +198,51 @@ export function SiteChat({
         >
           <header className={styles.header}>
             <div>
-              <span className={styles.eyebrow}>BOGDAN VIZITIU</span>
-              <h2 id="site-chat-title">{ro ? 'Cu ce te pot ajuta?' : 'How can I help?'}</h2>
+              <span className={styles.eyebrow}>
+                BOGDAN VIZITIU · {ro ? 'ASISTENT' : 'ASSISTANT'}
+              </span>
+              <h2 id="site-chat-title">{ro ? 'Hai să vorbim.' : 'Let’s talk.'}</h2>
             </div>
-            <button
-              type="button"
-              onClick={close}
-              aria-label={ro ? 'Închide conversația' : 'Close conversation'}
-            >
-              ×
-            </button>
+            <div className={styles.headerActions}>
+              <details className={styles.options} ref={options}>
+                <summary aria-label={ro ? 'Opțiunile conversației' : 'Conversation options'}>
+                  ···
+                </summary>
+                <div className={styles.menu}>
+                  <button type="button" disabled={pending || !messages.length} onClick={clear}>
+                    {ro ? 'Conversație nouă' : 'New conversation'}
+                  </button>
+                  {aiAvailable && (
+                    <button
+                      type="button"
+                      disabled={pending || consentRequested}
+                      onClick={() => {
+                        if (options.current) options.current.open = false
+                        if (aiConsent === true) setAiConsent(false)
+                        else setConsentRequested(true)
+                      }}
+                    >
+                      {aiConsent === true
+                        ? ro
+                          ? 'Oprește răspunsurile AI'
+                          : 'Switch AI replies off'
+                        : ro
+                          ? 'Activează răspunsurile AI'
+                          : 'Switch AI replies on'}
+                    </button>
+                  )}
+                  <a href={contact}>{ro ? 'Discută cu Bogdan' : 'Contact Bogdan'}</a>
+                  <a href={privacy}>{ro ? 'Confidențialitate' : 'Privacy'}</a>
+                </div>
+              </details>
+              <button
+                type="button"
+                onClick={close}
+                aria-label={ro ? 'Închide conversația' : 'Close conversation'}
+              >
+                ×
+              </button>
+            </div>
           </header>
           <div
             className={styles.log}
@@ -159,61 +251,90 @@ export function SiteChat({
             aria-relevant="additions"
             aria-busy={pending}
           >
-            <p className={styles.welcome}>
-              {pathname === '/sales-lab'
-                ? ro
-                  ? 'Ai o întrebare despre Sales Lab? Te ajut cu programul, detaliile și cererea de înscriere.'
-                  : 'Questions about Sales Lab? I can help with the programme, details and request form.'
-                : ro
-                  ? 'Te ajut să găsești cursul sau serviciul potrivit și următorul pas.'
-                  : 'I can help you find the right course or service and your next step.'}
-            </p>
-            {messages.length === 0 && (
-              <div className={styles.quick}>
-                {quick.map((q) => (
-                  <button type="button" key={q} onClick={() => void send(q)}>
-                    {q} ↗
-                  </button>
-                ))}
-              </div>
-            )}
+            <div className={styles.assistant}>
+              <p>
+                {pathname === '/sales-lab'
+                  ? ro
+                    ? 'Bună! Hai să vedem dacă Sales Lab e potrivit pentru tine. Ce ai vrea să afli?'
+                    : 'Hi! Let’s see if Sales Lab is right for you. What would you like to know?'
+                  : ro
+                    ? 'Bună! Ce ai vrea să faci mai bine — pentru tine sau pentru echipa ta?'
+                    : 'Hi! What would you like to do better — for yourself or your team?'}
+              </p>
+            </div>
+            {messages.length === 0 && !consentRequested && suggestions(initialSuggestions)}
             {messages.map((m, index) => (
-              <div key={index} className={m.role === 'user' ? styles.user : styles.assistant}>
-                <span className={styles.speaker}>
-                  {m.role === 'user'
-                    ? ro
-                      ? 'Tu'
-                      : 'You'
-                    : m.mode === 'ai'
+              <div key={index}>
+                <div className={m.role === 'user' ? styles.user : styles.assistant}>
+                  <span className={styles.srOnly}>
+                    {m.role === 'user'
                       ? ro
-                        ? 'Asistent AI'
-                        : 'AI assistant'
-                      : ro
-                        ? 'Ghidul site-ului'
-                        : 'Website guide'}
-                </span>
-                <p>{m.content}</p>
-                {m.actions?.length ? (
-                  <div className={styles.actions}>
-                    {m.actions.map((action) => (
-                      <a
-                        key={action.id}
-                        href={action.href}
-                        onClick={() => {
-                          conversionEvent('chat_cta_click', 'chat', action.id, locale)
-                          close()
-                        }}
-                      >
-                        {action.label} ↗
-                      </a>
-                    ))}
-                  </div>
-                ) : null}
+                        ? 'Tu: '
+                        : 'You: '
+                      : m.mode === 'ai'
+                        ? ro
+                          ? 'Asistent AI: '
+                          : 'AI assistant: '
+                        : ro
+                          ? 'Ghidul site-ului: '
+                          : 'Website guide: '}
+                  </span>
+                  <p>{m.content}</p>
+                  {m.role === 'assistant' &&
+                  index === messages.length - 1 &&
+                  !busy &&
+                  m.actions?.length ? (
+                    <div className={styles.actions}>
+                      {m.actions.map((action) => (
+                        <a
+                          key={action.id}
+                          href={action.href}
+                          onClick={() => {
+                            conversionEvent('chat_cta_click', 'chat', action.id, locale)
+                            close()
+                          }}
+                        >
+                          {action.label} ↗
+                        </a>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
+                {m.role === 'assistant' &&
+                index === messages.length - 1 &&
+                !busy &&
+                m.suggestions?.length
+                  ? suggestions(m.suggestions)
+                  : null}
               </div>
             ))}
+            {consentRequested && (
+              <div className={styles.assistant}>
+                <p>
+                  {ro
+                    ? 'Continuăm cu AI? Pot adapta răspunsurile și sugestiile la ce îmi spui.'
+                    : 'Shall we continue with AI? I can adapt my replies and suggestions to what you tell me.'}
+                </p>
+                <p className={styles.consentNote}>
+                  {ro
+                    ? 'Cu acordul tău, mesajele sunt prelucrate de Cloudflare Workers AI. Evită datele personale. '
+                    : 'With your permission, Cloudflare Workers AI processes your messages. Avoid personal data. '}
+                  <a href={privacy}>{ro ? 'Detalii' : 'Details'}</a>
+                </p>
+                <div className={styles.suggestions}>
+                  <button className={styles.accept} type="button" onClick={() => chooseMode(true)}>
+                    {ro ? 'Da, hai să vorbim' : 'Yes, let’s talk'}
+                  </button>
+                  <button type="button" onClick={() => chooseMode(false)}>
+                    {ro ? 'Prefer fără AI' : 'Continue without AI'}
+                  </button>
+                </div>
+              </div>
+            )}
             {pending && (
               <p className={styles.waiting} role="status">
-                {ro ? 'Pregătesc răspunsul…' : 'Preparing a reply…'}
+                {ro ? 'Mă gândesc' : 'Thinking'}
+                <span aria-hidden="true"> ···</span>
               </p>
             )}
             {error && (
@@ -224,22 +345,9 @@ export function SiteChat({
             <div ref={end} />
           </div>
           <div className={styles.controls}>
-            {aiAvailable && (
-              <label className={styles.consent}>
-                <input
-                  type="checkbox"
-                  checked={aiConsent}
-                  disabled={pending}
-                  onChange={(e) => setAiConsent(e.target.checked)}
-                />
-                {ro
-                  ? 'Sunt de acord ca mesajele să fie prelucrate de Cloudflare Workers AI.'
-                  : 'I agree to have my messages processed by Cloudflare Workers AI.'}
-              </label>
-            )}
-            <form className={styles.form} onSubmit={submit}>
+            <form className={styles.composer} onSubmit={submit}>
               <label className={styles.srOnly} htmlFor="site-chat-input">
-                {ro ? 'Întrebarea ta' : 'Your question'}
+                {ro ? 'Mesajul tău' : 'Your message'}
               </label>
               <input
                 id="site-chat-input"
@@ -247,47 +355,30 @@ export function SiteChat({
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 maxLength={MAX_CHAT_MESSAGE_LENGTH}
-                placeholder={ro ? 'Scrie întrebarea ta…' : 'Type your question…'}
+                placeholder={
+                  ro ? 'Sau spune-mi cu cuvintele tale…' : 'Or tell me in your own words…'
+                }
                 autoComplete="off"
-                disabled={pending}
+                disabled={busy}
               />
               <button
                 type="submit"
-                disabled={pending || !input.trim()}
-                aria-label={ro ? 'Trimite întrebarea' : 'Send question'}
+                disabled={busy || !input.trim()}
+                aria-label={ro ? 'Trimite mesajul' : 'Send message'}
               >
                 ↑
               </button>
             </form>
             <p className={styles.note}>
-              {ro
-                ? 'Asistent automat. Evită datele personale. '
-                : 'Automated assistant. Avoid personal data. '}
-              <a href={ro ? '/confidentialitate' : '/en/privacy'}>
-                {ro ? 'Confidențialitate' : 'Privacy'}
-              </a>
+              {aiConsent === true
+                ? ro
+                  ? 'Conversație cu AI · '
+                  : 'AI conversation · '
+                : ro
+                  ? 'Asistent automat · '
+                  : 'Automated assistant · '}
+              <a href={privacy}>{ro ? 'Confidențialitate' : 'Privacy'}</a>
             </p>
-            <div className={styles.footer}>
-              <a
-                href={contact}
-                onClick={() => conversionEvent('chat_cta_click', 'chat', 'contact', locale)}
-              >
-                {ro ? 'Discută direct cu Bogdan ↗' : 'Contact Bogdan directly ↗'}
-              </a>
-              <button
-                type="button"
-                disabled={pending || !messages.length}
-                onClick={() => {
-                  setMessages([])
-                  setError('')
-                  setInput('')
-                  setAiConsent(false)
-                  field.current?.focus()
-                }}
-              >
-                {ro ? 'Șterge' : 'Clear'}
-              </button>
-            </div>
           </div>
         </div>
       )}

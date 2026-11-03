@@ -7,7 +7,7 @@ It cannot reserve seats, submit leads, take payments or send messages.
 ## Live AI and consent
 
 AI is enabled with `CHAT_AI_ENABLED=true` and the secret
-`CHAT_AI_SERVICE_TOKEN` in Vercel. The visitor explicitly opts in before recent
+`CHAT_AI_SERVICE_TOKEN` in Vercel. The visitor explicitly opts in through a one-time conversational choice before recent
 messages are sent to Cloudflare Workers AI (Meta Llama 3.3 70B). Without opt-in,
 or on provider/quota/storage errors, the assistant uses curated guided replies.
 CTA destinations are always selected from a server allowlist.
@@ -70,3 +70,16 @@ Worker source is deployable with `infra/chat-ai/wrangler.jsonc`; set its
 `CHAT_AI_SERVICE_TOKEN`. Keep bindings and the daily cleanup schedule on updates.
 To stop AI immediately, set `CHAT_AI_ENABLED=false` in Vercel and redeploy;
 remove the Worker's AI binding if emergency server-side shutdown is required.
+
+## Conversational suggestions
+
+The AI response includes up to three short suggested **user replies** that adapt
+to the latest message. Tapping one sends its text as a normal user message. These
+are plain text, never generated URLs or actions. The parser removes invalid,
+oversized or duplicate suggestions. Navigation CTAs use the separate allowlist
+and appear only on the latest assistant turn. The AI asks one question at a time
+and offers a page/form action when the visitor is ready or requests it.
+
+The permanent consent checkbox and footer link list are removed. The first
+message remains local until the visitor chooses AI or guided mode in the chat.
+The options menu exposes AI withdrawal, new conversation, contact and privacy.
