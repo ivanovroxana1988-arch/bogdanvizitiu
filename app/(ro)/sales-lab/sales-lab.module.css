@@ -2,6 +2,14 @@
   background: var(--paper);
   color: var(--ink);
 }
+.breadcrumb { padding: .85rem 0; background: var(--paper); font-size: .78rem; color: var(--muted); }
+.breadcrumb > div { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+.breadcrumb a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
+.breadcrumb a:hover { text-decoration-thickness: 2px; }
+.seoExplainer { max-width: 820px; margin-top: 2rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+.seoExplainer h3 { font-size: clamp(1.55rem, 2.6vw, 2.35rem); margin: 0 0 1rem; }
+.seoExplainer p { color: var(--muted); font-size: .98rem; line-height: 1.65; margin: .7rem 0; }
+.seoExplainer a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
 .page h1, .page h2, .page h3 {
   font-family: var(--font-serif), Georgia, serif;
   font-weight: 400;
