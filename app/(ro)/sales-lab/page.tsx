@@ -80,13 +80,6 @@ export default function SalesLabPreview() {
         </div>
       </section>
 
-      <section className={styles.section}>
-        <div className="shell">
-          <p className="eyebrow">Facilitator</p>
-          <div className={styles.split}><h2>Bogdan<br />Vizitiu.</h2><div className={styles.prose}><p>Un cadru de învățare bazat pe dialog, practică și reflecție. În cele două zile, Bogdan facilitează exercițiile și oferă feedback pe situațiile aduse de participanți.</p><p>Detaliile biografice și experiența relevantă vor fi preluate din profilul aprobat de pe site.</p></div></div>
-        </div>
-      </section>
-
       <section className={styles.finalSection}>
         <div className="shell">
           <p className="eyebrow">Ediție în pregătire</p>
