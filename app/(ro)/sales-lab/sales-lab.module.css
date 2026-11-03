@@ -53,8 +53,8 @@
 .priceLine strong { font-family: var(--font-serif), Georgia, serif; font-weight: 400; font-size: 2.25rem; }
 .priceLine span { color: var(--muted); font-size: .95rem; }
 .priceLine small { color: var(--muted); font-size: .75rem; width: 100%; line-height: 1.4; }
-.photo { position: relative; overflow: hidden; aspect-ratio: 4 / 4.3; background: #b2c4cc; border-radius: 4px; }
-.photoImage { object-fit: cover; object-position: center; }
+.photo { position: relative; overflow: hidden; aspect-ratio: 4 / 4.3; background: var(--blue); border-radius: 4px; }
+.photoImage { object-fit: contain; object-position: center; }
 .photoCaption { margin: .8rem 0 0; text-align: right; font-size: .78rem; letter-spacing: .03em; color: #3d5662; }
 .section, .blueSection, .trainerSection, .signup { padding: clamp(3.25rem, 5.5vw, 5.5rem) 0; }
 .sectionHead { display: grid; grid-template-columns: minmax(0, .32fr) minmax(0, .68fr); gap: 2rem; margin-bottom: 2rem; }
