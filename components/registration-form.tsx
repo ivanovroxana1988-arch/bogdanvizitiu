@@ -421,7 +421,7 @@ export function RegistrationForm({
           utilizarea tehnologiilor de publicitate necesare pentru atribuirea conversiei.
           Opțional: cererea poate fi trimisă și fără acest acord.
         </label>
-      )
+      )}
 
       <p className={`${commercialStyles.full} ${formStyles.status}`} aria-live="polite">
         {state === 'success'
