@@ -35,10 +35,6 @@ const coachingConsultingSlug = 'coaching-sau-consultanta-de-ce-ai-nevoie-de-fapt
 const coachingConsultingImage = '/images/bogdan/bogdan-coaching-consultanta.webp'
 const aiAdoptionSlug = 'ai-adoption-is-a-change-problem'
 const aiAdoptionImage = '/api/ai-adoption-image'
-const salesLabRelatedInsightSlugs = new Set([
-  'negocierea-nu-este-doar-despre-argumente',
-  'cat-valoreaza-sa-te-simti-ascultat',
-])
 
 const commercialInsightSlugs = new Set([
   'networkingul-nu-incepe-cu-schimbul-de-contacte',
@@ -350,16 +346,6 @@ export default function Insight({
                   </Eyebrow>
                   <h2>{midCta.title}</h2>
                   <ArrowLink href={midCta.href}>{midCta.label}</ArrowLink>
-                  {locale === 'ro' &&
-                    salesLabRelatedInsightSlugs.has(insight.slug) && (
-                      <p>
-                        Dacă vrei să exersezi și conversații comerciale, vezi{' '}
-                        <Link href="/sales-lab">
-                          Sales Lab – curs practic de vânzări și negociere în București
-                        </Link>
-                        .
-                      </p>
-                    )}
                 </section>
               )}
             </Fragment>
