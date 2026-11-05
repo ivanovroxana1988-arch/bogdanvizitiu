@@ -8,7 +8,7 @@ import { withLocale, type Locale } from '@/lib/i18n'
 import commercialStyles from '@/app/_views/commercial.module.css'
 import formStyles from './contact-form.module.css'
 
-type SubmitState = 'idle' | 'sending' | 'success' | 'fallback' | 'error'
+type SubmitState = 'idle' | 'sending' | 'success' | 'email_only' | 'fallback' | 'error'
 type FieldName = 'name' | 'email' | 'phone'
 type FieldErrors = Partial<Record<FieldName, string>>
 type Tracking = {
@@ -102,6 +102,7 @@ export function RegistrationForm({
           submit: 'Trimite înscrierea',
           sending: 'Se trimite…',
           success: 'Înscrierea a fost trimisă. Revenim cu detaliile pe email sau telefon.',
+          emailOnly: 'Cererea a fost trimisă prin email, dar nu a fost încă înregistrată în registru. Revenim pentru confirmare.',
           fallback: 'Formularul nu a putut trimite automat mesajul. Poți continua prin email.',
           fallbackAction: 'Trimite prin email',
           error: 'Nu am putut trimite formularul. Încearcă din nou.',
@@ -121,6 +122,7 @@ export function RegistrationForm({
           submit: 'Send registration',
           sending: 'Sending…',
           success: 'Your registration has been sent. We will follow up by email or phone.',
+          emailOnly: 'Your request was emailed but has not yet been saved in the registration sheet. We will follow up to confirm.',
           fallback: 'The form could not send automatically. You can continue by email.',
           fallbackAction: 'Send by email',
           error: 'We could not send the form. Please try again.',
@@ -226,17 +228,20 @@ export function RegistrationForm({
         fallback?: string
         error?: string
         invalidFields?: FieldName[]
+        record?: 'saved' | 'email_only'
       }
 
       if (response.ok && result.ok) {
         form.reset()
         setErrors({})
-        emit('form_success')
+        // A delivered email alone is not a saved Sales Lab registration.
+        const savedLead = courseSlug !== 'sales-lab' || result.record === 'saved'
+        emit(savedLead ? 'form_success' : 'form_email_only')
         if (courseSlug === 'sales-lab') {
           try {
             localStorage.setItem('sales-lab-registration-submitted', 'true')
             const earlyBirdEntry = sessionStorage.getItem('sales-lab-early-bird-entry')
-            if (earlyBirdEntry) {
+            if (earlyBirdEntry && savedLead) {
               conversionEvent('early_bird_registration', earlyBirdEntry, courseSlug, locale)
               sessionStorage.removeItem('sales-lab-early-bird-entry')
             }
@@ -245,7 +250,7 @@ export function RegistrationForm({
           }
           window.dispatchEvent(new Event('sales-lab-registration-success'))
         }
-        setState('success')
+        setState(savedLead ? 'success' : 'email_only')
         return
       }
 
@@ -372,7 +377,9 @@ export function RegistrationForm({
       <p className={`${commercialStyles.full} ${formStyles.status}`} aria-live="polite">
         {state === 'success'
           ? successMessage || copy.success
-          : state === 'fallback'
+          : state === 'email_only'
+            ? copy.emailOnly
+            : state === 'fallback'
             ? copy.fallback
             : state === 'error'
               ? copy.error
