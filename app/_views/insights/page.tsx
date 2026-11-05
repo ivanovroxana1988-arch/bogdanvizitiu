@@ -215,6 +215,9 @@ export default function Insights({ searchParams }: { searchParams?: { lang?: str
             <ArrowLink href={localizePath('/coaching', locale)}>
               {locale === 'ro' ? 'Vezi opțiunile de coaching' : 'Explore coaching'}
             </ArrowLink>
+            {locale === 'ro' && (
+              <ArrowLink href="/sales-lab">Sales Lab: curs de vânzări și negociere</ArrowLink>
+            )}
           </div>
         </div>
       </section>

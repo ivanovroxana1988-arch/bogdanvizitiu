@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { ArrowLink, Eyebrow } from '@/components/ui'
+import { JsonLd } from '@/components/json-ld'
 import media from '@/content/media.json'
 import servicePages from '@/content/service-pages.json'
 import { getLocale } from '@/lib/i18n'
 import { localizePath } from '@/lib/routes'
-import { buildPageMetadata } from '@/lib/seo'
+import { buildPageMetadata, localizedUrl, SITE_URL } from '@/lib/seo'
 import styles from './coaching.module.css'
 
 export function generateMetadata({ searchParams }: { searchParams?: { lang?: string } }): Metadata {
@@ -29,9 +30,22 @@ export default function Coaching({ searchParams }: { searchParams?: { lang?: str
   const copy = servicePages[locale].coaching
   const coachingImage = media.images.coaching
   const contactHref = `${localizePath('/contact', locale)}?source=coaching`
+  const canonical = localizedUrl('/coaching', locale)
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${canonical}#service`,
+    name: locale === 'ro' ? 'Coaching individual pentru manageri și profesioniști' : 'Individual coaching for managers and professionals',
+    description: copy.intro,
+    url: canonical,
+    serviceType: 'Coaching',
+    inLanguage: locale === 'ro' ? 'ro-RO' : 'en',
+    provider: { '@id': `${SITE_URL}/#person` },
+  }
 
   return (
     <div className="conversion-page coaching-conversion-page">
+      <JsonLd data={serviceJsonLd} />
       <section className={`page-hero shell ${styles.hero}`}>
         <Eyebrow>{copy.eyebrow}</Eyebrow>
         <div className={styles.heroGrid}>
@@ -74,6 +88,33 @@ export default function Coaching({ searchParams }: { searchParams?: { lang?: str
               )}
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="shell conversion-content-section" aria-labelledby="coaching-next-step">
+        <div className="prose" style={{ maxWidth: '900px' }}>
+          <Eyebrow>{locale === 'ro' ? 'Alege intervenția potrivită' : 'Find the right support'}</Eyebrow>
+          <h2 id="coaching-next-step">
+            {locale === 'ro'
+              ? 'Coaching individual sau executive coaching?'
+              : 'Individual or executive coaching?'}
+          </h2>
+          <p>
+            {locale === 'ro'
+              ? 'Dacă lucrezi cu decizii de leadership, responsabilități manageriale sau conversații dificile, explorează și formatul de executive coaching.'
+              : 'If you work through leadership decisions, management responsibilities or difficult conversations, explore executive coaching.'}
+          </p>
+          <ArrowLink href={localizePath('/coaching/executive-coaching', locale)}>
+            {locale === 'ro' ? 'Executive coaching pentru manageri și lideri' : 'Executive coaching for managers and leaders'}
+          </ArrowLink>
+          <p>
+            {locale === 'ro'
+              ? 'Nu ești sigur dacă ai nevoie de coaching sau consultanță? Citește comparația înainte să alegi.'
+              : 'Not sure whether you need coaching or consulting? Read the comparison before deciding.'}
+          </p>
+          <ArrowLink href={localizePath('/insights/coaching-sau-consultanta-de-ce-ai-nevoie-de-fapt', locale)}>
+            {locale === 'ro' ? 'Coaching sau consultanță: de ce ai nevoie?' : 'Coaching or consulting: what do you need?'}
+          </ArrowLink>
         </div>
       </section>
 

@@ -108,3 +108,19 @@ export function localizePath(pathname: string, locale: Locale) {
   const canonicalRomanianPath = normalizeRomanianSource(pathname)
   return locale === 'en' ? toEnglish(canonicalRomanianPath) : canonicalRomanianPath
 }
+
+// Some Romanian-only course pages have no English equivalent. Send the language
+// switch to the English course catalogue rather than a 404.
+const romanianOnlyCoursePaths = new Set([
+  '/cursuri/leadership-ai',
+  '/cursuri/act-adapt-execute',
+  '/cursuri/leadership-ai-draft',
+  '/cursuri/act-adapt-execute-draft',
+])
+
+export function englishNavigationTarget(pathname: string) {
+  if (pathname === '/sales-lab' || romanianOnlyCoursePaths.has(pathname)) {
+    return '/en/programs'
+  }
+  return localizePath(pathname, 'en')
+}

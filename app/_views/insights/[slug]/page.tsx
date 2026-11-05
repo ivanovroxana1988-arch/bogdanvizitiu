@@ -334,6 +334,12 @@ export default function Insight({
                   </Eyebrow>
                   <h2>{midCta.title}</h2>
                   <ArrowLink href={midCta.href}>{midCta.label}</ArrowLink>
+                  {locale === 'ro' && insight.slug === 'negocierea-nu-este-doar-despre-argumente' && (
+                    <p>
+                      Dacă vrei să exersezi și conversații comerciale, vezi{' '}
+                      <Link href="/sales-lab">Sales Lab – curs practic de vânzări și negociere în București</Link>.
+                    </p>
+                  )}
                 </section>
               )}
             </Fragment>

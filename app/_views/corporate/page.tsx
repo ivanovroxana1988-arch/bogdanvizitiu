@@ -160,6 +160,48 @@ export default function Corporate({ searchParams }: { searchParams?: { lang?: st
         </div>
       </section>
 
+      <section className={styles.section} aria-labelledby="corporate-course-formats">
+        <div className={styles.sectionHead}>
+          <div>
+            <Eyebrow>{locale === 'ro' ? 'Formatul potrivit' : 'Choose the right format'}</Eyebrow>
+            <h2 id="corporate-course-formats" className={styles.sectionTitle}>
+              {locale === 'ro'
+                ? 'Training corporate personalizat sau curs open?'
+                : 'Tailored corporate training or an open course?'}
+            </h2>
+          </div>
+        </div>
+        <p className={styles.sectionIntro}>
+          {locale === 'ro'
+            ? 'Pentru o echipă, construim intervenția pe situațiile și obiectivele organizației. Pentru participare individuală, poți explora cursurile open.'
+            : 'For a team, we tailor the program to the organization’s situations and goals. For individual participation, explore the open courses.'}
+        </p>
+        <div className={styles.twoGrid}>
+          <article className={styles.editorialCard}>
+            <h3>{locale === 'ro' ? 'Programe pentru echipe' : 'Programs for teams'}</h3>
+            <p>
+              {locale === 'ro'
+                ? 'Leadership, colaborare, negociere și conversații manageriale aplicate în contextul vostru.'
+                : 'Leadership, collaboration, negotiation and managerial conversations grounded in your context.'}
+            </p>
+            <ArrowLink href={contactHref}>
+              {locale === 'ro' ? 'Discută un program corporate' : 'Discuss a corporate program'}
+            </ArrowLink>
+          </article>
+          <article className={styles.editorialCard}>
+            <h3>{locale === 'ro' ? 'Cursuri pentru profesioniști' : 'Open courses for professionals'}</h3>
+            <p>
+              {locale === 'ro'
+                ? 'Explorează cursurile viitoare sau Sales Lab, cursul de vânzări și negociere din București.'
+                : 'Explore upcoming open courses on negotiation, leadership and professional skills.'}
+            </p>
+            <ArrowLink href={locale === 'ro' ? '/sales-lab' : localizePath('/cursuri', locale)}>
+              {locale === 'ro' ? 'Sales Lab: curs de vânzări și negociere' : 'Explore open courses'}
+            </ArrowLink>
+          </article>
+        </div>
+      </section>
+
       <section className={styles.proof}>
         <div className={styles.proofInner}>
           <div>
