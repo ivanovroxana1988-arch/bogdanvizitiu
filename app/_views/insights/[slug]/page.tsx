@@ -355,15 +355,14 @@ export default function Insight({
             <p key={paragraph}>{renderInlineLinks(paragraph, locale)}</p>
           ))}
 
-          {commercialDestination &&
-            !(hasCommercialCta && commercialDestination === '/contact') && (
-              <section>
-                <h2>{insight.cta.title}</h2>
-                <ArrowLink href={localizePath(commercialDestination, locale)}>
-                  {insight.cta.label}
-                </ArrowLink>
-              </section>
-            )}
+          {commercialDestination && !(hasCommercialCta && commercialDestination === '/contact') && (
+            <section>
+              <h2>{insight.cta.title}</h2>
+              <ArrowLink href={localizePath(commercialDestination, locale)}>
+                {insight.cta.label}
+              </ArrowLink>
+            </section>
+          )}
 
           {insight.sourceNote && (
             <section>
