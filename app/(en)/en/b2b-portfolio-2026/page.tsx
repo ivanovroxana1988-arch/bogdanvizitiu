@@ -34,7 +34,8 @@ const businessLines = [
     number: '03',
     title: 'Learning Technology',
     copy: 'Simulations, business games, AI roleplay, assessments and digital practice environments.',
-    proof: 'Technology used to create more opportunities to decide, practise, receive feedback and try again.',
+    proof:
+      'Technology used to create more opportunities to decide, practise, receive feedback and try again.',
   },
   {
     number: '04',
@@ -45,10 +46,26 @@ const businessLines = [
 ]
 
 const eventFormats = [
-  ['Networking That Actually Works', 'Conference opener · community event · 60–120 min', 'Professional Networking'],
-  ['The Negotiation Room', 'Interactive simulation · sales or leadership event', 'Negotiation & Influence'],
-  ['Leadership in the AI Era', 'Conference session · leadership event · 80–160 min', 'Leadership in the New AI Landscape'],
-  ['The Team Under Pressure', 'Team simulation · off-site · management event', 'Leading High Performance Teams'],
+  [
+    'Networking That Actually Works',
+    'Conference opener · community event · 60–120 min',
+    'Professional Networking',
+  ],
+  [
+    'The Negotiation Room',
+    'Interactive simulation · sales or leadership event',
+    'Negotiation & Influence',
+  ],
+  [
+    'Leadership in the AI Era',
+    'Conference session · leadership event · 80–160 min',
+    'Leadership in the New AI Landscape',
+  ],
+  [
+    'The Team Under Pressure',
+    'Team simulation · off-site · management event',
+    'Leading High Performance Teams',
+  ],
 ]
 
 const workshops = [
@@ -110,7 +127,9 @@ export default function ClientPortfolio2026() {
       <section className={styles.hero}>
         <div className="shell">
           <div className={styles.heroTop}>
-            <span className={styles.privateLabel}>Private client material · B2B portfolio 2026</span>
+            <span className={styles.privateLabel}>
+              Private client material · B2B portfolio 2026
+            </span>
             <span className={styles.brand}>Bogdan Vizitiu</span>
           </div>
 
@@ -125,8 +144,8 @@ export default function ClientPortfolio2026() {
             </div>
             <div className={styles.heroSide}>
               <p className={styles.lead}>
-                Four connected capabilities for organizations that need people to think better, practise differently
-                and deliver with more clarity.
+                Four connected capabilities for organizations that need people to think better,
+                practise differently and deliver with more clarity.
               </p>
               <a className={styles.primaryCta} href="#portfolio">
                 Explore the portfolio <span aria-hidden="true">↘</span>
@@ -185,8 +204,8 @@ export default function ClientPortfolio2026() {
             <p className={styles.eyebrowLight}>01 · Training & Learning Experiences</p>
             <h2>Designed for people to participate, not just attend.</h2>
             <p>
-              The strongest formats are experiential: participants enter a situation, make choices, receive feedback
-              and connect the experience to their own work.
+              The strongest formats are experiential: participants enter a situation, make choices,
+              receive feedback and connect the experience to their own work.
             </p>
           </div>
 
@@ -205,7 +224,9 @@ export default function ClientPortfolio2026() {
 
           <div className={styles.workshopIntro}>
             <p className={styles.eyebrowLight}>Workshop catalogue</p>
-            <h3>Short, focused interventions for the moments where performance usually breaks down.</h3>
+            <h3>
+              Short, focused interventions for the moments where performance usually breaks down.
+            </h3>
           </div>
 
           <div className={styles.workshopGrid}>
@@ -228,8 +249,8 @@ export default function ClientPortfolio2026() {
               <h2>Some leadership problems do not need more content.</h2>
             </div>
             <p>
-              They need a better conversation. Coaching creates a structured space for leaders and teams to think
-              through decisions, behavior, relationships and performance.
+              They need a better conversation. Coaching creates a structured space for leaders and
+              teams to think through decisions, behavior, relationships and performance.
             </p>
           </div>
           <div className={styles.serviceList}>
@@ -252,8 +273,8 @@ export default function ClientPortfolio2026() {
               <h2>Practice can scale without turning learning into content consumption.</h2>
             </div>
             <p>
-              Technology is useful when it creates more opportunities to decide, practise, receive feedback and try
-              again.
+              Technology is useful when it creates more opportunities to decide, practise, receive
+              feedback and try again.
             </p>
           </div>
 
@@ -274,8 +295,8 @@ export default function ClientPortfolio2026() {
             <p className={styles.eyebrow}>04 · Tender & Procurement Solutions</p>
             <h2>A strong offer can lose before anyone reaches the good ideas.</h2>
             <p>
-              Complex procurement requires more than good writing. It requires structure, evidence, compliance,
-              ownership and a submission process that survives scrutiny.
+              Complex procurement requires more than good writing. It requires structure, evidence,
+              compliance, ownership and a submission process that survives scrutiny.
             </p>
           </div>
 
@@ -299,10 +320,22 @@ export default function ClientPortfolio2026() {
           </div>
 
           <div className={styles.stats}>
-            <div><strong>18</strong><span>STUP editions</span></div>
-            <div><strong>70+</strong><span>live hours</span></div>
-            <div><strong>1,000+</strong><span>participants</span></div>
-            <div><strong>3</strong><span>repeat themes</span></div>
+            <div>
+              <strong>18</strong>
+              <span>STUP editions</span>
+            </div>
+            <div>
+              <strong>70+</strong>
+              <span>live hours</span>
+            </div>
+            <div>
+              <strong>1,000+</strong>
+              <span>participants</span>
+            </div>
+            <div>
+              <strong>3</strong>
+              <span>repeat themes</span>
+            </div>
           </div>
 
           <div className={styles.organisations}>
@@ -310,7 +343,9 @@ export default function ClientPortfolio2026() {
               <span key={name}>{name}</span>
             ))}
           </div>
-          <p className={styles.proofNote}>Specific client–programme associations are used only where documented.</p>
+          <p className={styles.proofNote}>
+            Specific client–programme associations are used only where documented.
+          </p>
         </div>
       </section>
 
@@ -323,7 +358,10 @@ export default function ClientPortfolio2026() {
             </div>
             <div className={styles.engagementList}>
               {[
-                ['Event / Workshop', 'A focused intervention around one behavior, decision or conversation.'],
+                [
+                  'Event / Workshop',
+                  'A focused intervention around one behavior, decision or conversation.',
+                ],
                 ['Programme', 'A sequence of live sessions with practice between touchpoints.'],
                 ['Learning Journey', 'Live + digital + simulation + coaching + measurement.'],
                 ['Custom Partnership', 'A tailored solution spanning multiple business lines.'],
@@ -346,8 +384,8 @@ export default function ClientPortfolio2026() {
             <h2>Bring us one problem.</h2>
             <div>
               <p>
-                We will frame it, identify what needs to change and propose the smallest useful intervention before
-                we propose the biggest possible programme.
+                We will frame it, identify what needs to change and propose the smallest useful
+                intervention before we propose the biggest possible programme.
               </p>
               <div className={styles.nextSteps}>
                 <span>45-minute diagnostic conversation</span>

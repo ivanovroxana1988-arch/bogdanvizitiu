@@ -188,10 +188,7 @@ export default function LeadershipAiPage() {
         <div className={visual.shiftGrid}>
           {shifts.map((item) => (
             <article className={visual.shiftCard} key={item.title}>
-              <div
-                className={`${visual.shiftIcon} ${iconClasses[item.icon]}`}
-                aria-hidden="true"
-              />
+              <div className={`${visual.shiftIcon} ${iconClasses[item.icon]}`} aria-hidden="true" />
               <div className={visual.shiftMeta}>
                 <span>{item.index}</span>
                 <span>{item.label}</span>
@@ -260,8 +257,8 @@ export default function LeadershipAiPage() {
             </h2>
           </div>
           <p className={styles.sectionIntro}>
-            Învățarea se transformă în reguli și experimente pe care echipa le poate folosi și
-            după program.
+            Învățarea se transformă în reguli și experimente pe care echipa le poate folosi și după
+            program.
           </p>
         </div>
         <ul className={styles.outcomeList}>

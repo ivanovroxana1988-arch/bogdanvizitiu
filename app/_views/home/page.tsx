@@ -142,7 +142,11 @@ export default function Home({ searchParams }: { searchParams?: { lang?: string 
           <p>{copy.programsIntro}</p>
           {locale === 'ro' && (
             <p>
-              Următoarea ediție open: <Link href="/sales-lab">Sales Lab – curs practic de vânzări și negociere în București, 21–22 ianuarie 2027</Link>.
+              Următoarea ediție open:{' '}
+              <Link href="/sales-lab">
+                Sales Lab – curs practic de vânzări și negociere în București, 21–22 ianuarie 2027
+              </Link>
+              .
             </p>
           )}
         </div>
@@ -151,7 +155,9 @@ export default function Home({ searchParams }: { searchParams?: { lang?: string 
             <span>0{i + 1}</span>
             <h3>{program.title}</h3>
             <p>{program.description}</p>
-            <ArrowLink href={localizePath(`/cursuri/${program.slug}`, locale)}>{copy.viewProgram}</ArrowLink>
+            <ArrowLink href={localizePath(`/cursuri/${program.slug}`, locale)}>
+              {copy.viewProgram}
+            </ArrowLink>
           </article>
         ))}
       </section>
@@ -202,7 +208,9 @@ export default function Home({ searchParams }: { searchParams?: { lang?: string 
             <span>0{i + 1}</span>
             <h3>{insight.title}</h3>
             <p>{insight.excerpt}</p>
-            <ArrowLink href={localizePath(`/insights/${insight.slug}`, locale)}>{copy.readArticle}</ArrowLink>
+            <ArrowLink href={localizePath(`/insights/${insight.slug}`, locale)}>
+              {copy.readArticle}
+            </ArrowLink>
           </article>
         ))}
       </section>

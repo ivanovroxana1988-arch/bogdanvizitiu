@@ -171,7 +171,9 @@ export default function ActAdaptExecutePage() {
               ))}
             </ul>
             <div className="conversion-inline-action">
-              <ArrowLink href={contactHref}>Vezi dacă programul se potrivește contextului tău</ArrowLink>
+              <ArrowLink href={contactHref}>
+                Vezi dacă programul se potrivește contextului tău
+              </ArrowLink>
             </div>
           </div>
         </div>

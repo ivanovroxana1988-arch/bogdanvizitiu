@@ -92,7 +92,15 @@ export async function POST(request: Request) {
     locale === 'ro'
       ? `Solicitare site Bogdan Vizitiu — ${requestType}`
       : `Bogdan Vizitiu website enquiry — ${requestType}`
-  const messageBody = buildMessage({ name, email, requestType, scope, interest, message, desiredChange })
+  const messageBody = buildMessage({
+    name,
+    email,
+    requestType,
+    scope,
+    interest,
+    message,
+    desiredChange,
+  })
   const attribution = [
     source ? `Source: ${source}` : '',
     referrer ? `Referrer: ${referrer}` : '',

@@ -45,7 +45,11 @@ export default function AboutRomanian({ searchParams }: { searchParams?: { lang?
             <img
               className="beyondRolesPhoto"
               src="/media/bogdan-board-game.webp?v=20260814-5"
-              alt={locale === 'ro' ? 'Bogdan Vizitiu jucând un board game acasă' : 'Bogdan Vizitiu playing a board game at home'}
+              alt={
+                locale === 'ro'
+                  ? 'Bogdan Vizitiu jucând un board game acasă'
+                  : 'Bogdan Vizitiu playing a board game at home'
+              }
               width="190"
               height="238"
               loading="lazy"
@@ -57,7 +61,11 @@ export default function AboutRomanian({ searchParams }: { searchParams?: { lang?
             <img
               className="beyondRolesPhoto"
               src="/media/bogdan-cooking-omurice.webp?v=20260814-3"
-              alt={locale === 'ro' ? 'Bogdan Vizitiu gătind în bucătărie' : 'Bogdan Vizitiu cooking in the kitchen'}
+              alt={
+                locale === 'ro'
+                  ? 'Bogdan Vizitiu gătind în bucătărie'
+                  : 'Bogdan Vizitiu cooking in the kitchen'
+              }
               width="190"
               height="238"
               loading="lazy"

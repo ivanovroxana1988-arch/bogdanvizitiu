@@ -60,7 +60,11 @@ export default function CredentialsSection({ locale }: { locale: Locale }) {
         ))}
       </div>
 
-      <footer className={styles.fourGrid} aria-label={copy.educationLabel} style={{ marginTop: '18px' }}>
+      <footer
+        className={styles.fourGrid}
+        aria-label={copy.educationLabel}
+        style={{ marginTop: '18px' }}
+      >
         <div
           style={{
             minHeight: '54px',

@@ -19,9 +19,9 @@ export function SalesLabPromoNote({ className }: { className?: string }) {
   if (!active) return null
   return (
     <p className={className}>
-      Early Bird: <strong>500 € / participant</strong> pentru primele 5 locuri confirmate
-      până la 30 noiembrie 2026, în limita disponibilității. Tariful final se confirmă
-      individual, înainte de rezervare.
+      Early Bird: <strong>500 € / participant</strong> pentru primele 5 locuri confirmate până la 30
+      noiembrie 2026, în limita disponibilității. Tariful final se confirmă individual, înainte de
+      rezervare.
     </p>
   )
 }

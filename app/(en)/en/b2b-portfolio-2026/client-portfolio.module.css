@@ -16,8 +16,7 @@
   min-height: calc(100vh - 76px);
   display: flex;
   align-items: stretch;
-  background:
-    radial-gradient(circle at 78% 20%, rgb(215 230 238 / 65%), transparent 32%),
+  background: radial-gradient(circle at 78% 20%, rgb(215 230 238 / 65%), transparent 32%),
     var(--paper);
 }
 
@@ -35,7 +34,7 @@
   border-bottom: 1px solid var(--line);
   color: var(--muted);
   font-size: 11px;
-  letter-spacing: .09em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
@@ -50,7 +49,7 @@
 
 .heroGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(300px, .55fr);
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.55fr);
   gap: clamp(44px, 8vw, 120px);
   align-items: end;
   padding-top: clamp(5rem, 11vw, 10rem);
@@ -61,7 +60,7 @@
   margin: 0 0 20px;
   font-size: 10px;
   font-weight: 750;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -79,8 +78,8 @@
   font-family: var(--font-serif), Georgia, serif;
   font-size: clamp(4rem, 8.6vw, 9.3rem);
   font-weight: 400;
-  letter-spacing: -.055em;
-  line-height: .88;
+  letter-spacing: -0.055em;
+  line-height: 0.88;
 }
 
 .heroSide {
@@ -115,7 +114,7 @@
 .splitHead,
 .finalGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr);
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
   gap: clamp(44px, 8vw, 120px);
   align-items: start;
 }
@@ -129,8 +128,8 @@
   font-family: var(--font-serif), Georgia, serif;
   font-size: clamp(2.7rem, 5.2vw, 6rem);
   font-weight: 400;
-  letter-spacing: -.045em;
-  line-height: .98;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
 }
 
 .questions {
@@ -154,7 +153,7 @@
   color: var(--muted);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
 }
 
 .question p {
@@ -168,7 +167,7 @@
 
 .sectionHead {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, .72fr);
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
   column-gap: clamp(44px, 8vw, 120px);
   align-items: end;
   margin-bottom: clamp(3.5rem, 6vw, 6rem);
@@ -206,7 +205,7 @@
   font-family: var(--font-serif), Georgia, serif;
   font-size: clamp(2rem, 3.2vw, 3.6rem);
   font-weight: 400;
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
   line-height: 1;
 }
 
@@ -236,7 +235,7 @@
 
 .sectionHeadLight {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, .72fr);
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
   column-gap: clamp(44px, 8vw, 120px);
   align-items: end;
   margin-bottom: clamp(3rem, 6vw, 5.5rem);
@@ -258,7 +257,7 @@
 
 .formatRow {
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) minmax(220px, .45fr);
+  grid-template-columns: 44px minmax(0, 1fr) minmax(220px, 0.45fr);
   gap: 24px;
   align-items: center;
   padding: 28px 0;
@@ -286,13 +285,13 @@
   color: rgb(255 255 255 / 68%);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .workshopIntro {
   display: grid;
-  grid-template-columns: minmax(0, .5fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 0.5fr) minmax(0, 1fr);
   gap: 32px;
   align-items: start;
   margin: clamp(5rem, 8vw, 8rem) 0 32px;
@@ -304,7 +303,7 @@
   font-family: var(--font-serif), Georgia, serif;
   font-size: clamp(2.2rem, 3.7vw, 4.3rem);
   font-weight: 400;
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
   line-height: 1;
 }
 
@@ -325,7 +324,7 @@
 .workshop span {
   color: rgb(255 255 255 / 38%);
   font-size: 10px;
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
 }
 
 .workshop h4 {
@@ -414,7 +413,7 @@
   font-family: var(--font-serif), Georgia, serif;
   font-size: clamp(1.55rem, 2.3vw, 2.7rem);
   font-weight: 400;
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
 }
 
 .tenderGrid {
@@ -463,15 +462,15 @@
   font-family: var(--font-serif), Georgia, serif;
   font-size: clamp(3rem, 5vw, 5.5rem);
   font-weight: 400;
-  letter-spacing: -.05em;
-  line-height: .9;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
 }
 
 .stats span {
   color: var(--muted);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -503,7 +502,7 @@
 
 .engagementList > div {
   display: grid;
-  grid-template-columns: 38px minmax(130px, .45fr) 1fr;
+  grid-template-columns: 38px minmax(130px, 0.45fr) 1fr;
   gap: 20px;
   padding: 22px 0;
   border-bottom: 1px solid var(--line);
