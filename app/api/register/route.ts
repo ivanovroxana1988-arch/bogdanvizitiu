@@ -1,3 +1,4 @@
+import { randomUUID } from 'node:crypto'
 import { NextResponse } from 'next/server'
 import business from '@/content/business.json'
 import { clean, isEmail } from '@/lib/contact-validation'
@@ -160,18 +161,22 @@ export async function POST(request: Request) {
     }
 
     if (courseSlug === 'sales-lab') {
-      const sheetSync = await syncSalesLabToSheets({
-        name,
-        email,
-        phone,
-        company,
-        seats,
-        source,
-        referrer,
-        utmSource,
-        utmMedium,
-        utmCampaign,
-      })
+      const registrationId = 'SL-' + randomUUID()
+      const sheetSync = await syncSalesLabToSheets(
+        {
+          name,
+          email,
+          phone,
+          company,
+          seats,
+          source,
+          referrer,
+          utmSource,
+          utmMedium,
+          utmCampaign,
+        },
+        registrationId,
+      )
       if (sheetSync !== 'stored') {
         console.error('Sales Lab request emailed but not yet recorded in Google Sheets', sheetSync)
       }
@@ -196,6 +201,7 @@ export async function POST(request: Request) {
         delivery: 'email',
         acknowledgement: acknowledgement === 'failed' ? 'not_sent' : 'sent',
         record: sheetSync === 'stored' ? 'saved' : 'email_only',
+        registrationId: sheetSync === 'stored' ? registrationId : undefined,
       })
     }
 
