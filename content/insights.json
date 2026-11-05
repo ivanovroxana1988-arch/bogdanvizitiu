@@ -2,14 +2,26 @@
   {
     "slug": "networkingul-nu-incepe-cu-schimbul-de-contacte",
     "status": "published",
-    "category": {"ro": "Networking", "en": "Networking"},
-    "title": {"ro": "Networkingul nu începe cu schimbul de contacte", "en": "Networking does not start with exchanging contacts"},
-    "subtitle": {"ro": "Cum construiești relații profesionale care chiar au sens", "en": "How to build professional relationships that actually matter"},
+    "category": {
+      "ro": "Networking",
+      "en": "Networking"
+    },
+    "title": {
+      "ro": "Networkingul nu începe cu schimbul de contacte",
+      "en": "Networking does not start with exchanging contacts"
+    },
+    "subtitle": {
+      "ro": "Cum construiești relații profesionale care chiar au sens",
+      "en": "How to build professional relationships that actually matter"
+    },
     "excerpt": {
       "ro": "Networkingul bun nu începe cu o listă de oameni pe care îi poți folosi. Începe cu curiozitate, relevanță și disponibilitatea de a construi o relație.",
       "en": "Good networking does not start with a list of people you can use. It starts with curiosity, relevance and a willingness to build a relationship."
     },
-    "readTime": {"ro": "7 min", "en": "7 min"},
+    "readTime": {
+      "ro": "7 min",
+      "en": "7 min"
+    },
     "publishedAt": "2026-08-11",
     "intro": {
       "ro": [
@@ -172,8 +184,14 @@
       ]
     },
     "cta": {
-      "title": {"ro": "Vrei să exersezi, nu doar să citești despre networking?", "en": "Want to practise networking, not just read about it?"},
-      "label": {"ro": "Descoperă programul de Networking", "en": "Explore the Networking program"},
+      "title": {
+        "ro": "Vrei să exersezi, nu doar să citești despre networking?",
+        "en": "Want to practise networking, not just read about it?"
+      },
+      "label": {
+        "ro": "Descoperă programul de Networking",
+        "en": "Explore the Networking program"
+      },
       "href": "/programs/networking"
     },
     "sourceNote": {
@@ -181,46 +199,249 @@
       "en": "This article develops ideas from Bogdan Vizitiu’s networking workshops and his Stup Unplugged conversation about networking and growth mindset."
     },
     "sources": [
-      {"label": "Stup Unplugged S3 — cu Bogdan Vizitiu", "url": "https://stup.bancatransilvania.ro/newsroom/articole/articol/stup-unplugged-s3-cu-bogdan-vizitiu"},
-      {"label": "Stup — Totul despre networking | Practică și Teorie", "url": "https://stup.bancatransilvania.ro/evenimente/eveniment?e=1990"}
+      {
+        "label": "Stup Unplugged S3 — cu Bogdan Vizitiu",
+        "url": "https://stup.bancatransilvania.ro/newsroom/articole/articol/stup-unplugged-s3-cu-bogdan-vizitiu"
+      },
+      {
+        "label": "Stup — Totul despre networking | Practică și Teorie",
+        "url": "https://stup.bancatransilvania.ro/evenimente/eveniment?e=1990"
+      }
     ]
   },
   {
     "slug": "better-questions",
     "status": "editorial-draft",
-    "category": {"ro": "Leadership", "en": "Leadership"},
-    "title": {"ro": "Liderii mai buni pun întrebări mai bune", "en": "Better leaders ask better questions"},
-    "subtitle": {"ro": "", "en": ""},
+    "category": {
+      "ro": "Leadership",
+      "en": "Leadership"
+    },
+    "title": {
+      "ro": "Liderii mai buni pun întrebări mai bune",
+      "en": "Better leaders ask better questions"
+    },
+    "subtitle": {
+      "ro": "",
+      "en": ""
+    },
     "excerpt": {
       "ro": "Calitatea unei decizii se schimbă adesea după ce se schimbă calitatea conversației.",
       "en": "The quality of a decision often changes after the quality of the conversation changes."
     },
-    "readTime": {"ro": "6 min", "en": "6 min"},
+    "readTime": {
+      "ro": "6 min",
+      "en": "6 min"
+    },
     "publishedAt": "",
-    "intro": {"ro": [], "en": []},
-    "sections": {"ro": [], "en": []},
-    "closing": {"ro": [], "en": []},
-    "cta": {"title": {"ro": "", "en": ""}, "label": {"ro": "", "en": ""}, "href": ""},
-    "sourceNote": {"ro": "", "en": ""},
+    "intro": {
+      "ro": [],
+      "en": []
+    },
+    "sections": {
+      "ro": [],
+      "en": []
+    },
+    "closing": {
+      "ro": [],
+      "en": []
+    },
+    "cta": {
+      "title": {
+        "ro": "",
+        "en": ""
+      },
+      "label": {
+        "ro": "",
+        "en": ""
+      },
+      "href": ""
+    },
+    "sourceNote": {
+      "ro": "",
+      "en": ""
+    },
     "sources": []
   },
   {
     "slug": "negotiation-before-table",
     "status": "editorial-draft",
-    "category": {"ro": "Negociere", "en": "Negotiation"},
-    "title": {"ro": "Negocierea începe înainte de masă", "en": "Negotiation starts before the table"},
-    "subtitle": {"ro": "", "en": ""},
+    "category": {
+      "ro": "Negociere",
+      "en": "Negotiation"
+    },
+    "title": {
+      "ro": "Negocierea începe înainte de masă",
+      "en": "Negotiation starts before the table"
+    },
+    "subtitle": {
+      "ro": "",
+      "en": ""
+    },
     "excerpt": {
       "ro": "Interesele, alternativele și întrebările bune contează înainte ca primul argument să fie formulat.",
       "en": "Interests, alternatives and better questions matter before the first argument is made."
     },
-    "readTime": {"ro": "6 min", "en": "6 min"},
+    "readTime": {
+      "ro": "6 min",
+      "en": "6 min"
+    },
     "publishedAt": "",
-    "intro": {"ro": [], "en": []},
-    "sections": {"ro": [], "en": []},
-    "closing": {"ro": [], "en": []},
-    "cta": {"title": {"ro": "", "en": ""}, "label": {"ro": "", "en": ""}, "href": ""},
-    "sourceNote": {"ro": "", "en": ""},
+    "intro": {
+      "ro": [],
+      "en": []
+    },
+    "sections": {
+      "ro": [],
+      "en": []
+    },
+    "closing": {
+      "ro": [],
+      "en": []
+    },
+    "cta": {
+      "title": {
+        "ro": "",
+        "en": ""
+      },
+      "label": {
+        "ro": "",
+        "en": ""
+      },
+      "href": ""
+    },
+    "sourceNote": {
+      "ro": "",
+      "en": ""
+    },
     "sources": []
+  },
+  {
+    "slug": "cat-valoreaza-sa-te-simti-ascultat",
+    "status": "editorial-draft",
+    "category": {
+      "ro": "Sales",
+      "en": "Sales"
+    },
+    "title": {
+      "ro": "Cât valorează să te simți ascultat?",
+      "en": "What Is Feeling Heard Worth?"
+    },
+    "subtitle": {
+      "ro": "De ce ascultarea construiește relații, dar nu garantează o recomandare bună",
+      "en": "Why listening builds relationships but does not guarantee a good recommendation"
+    },
+    "excerpt": {
+      "ro": "Ce ne spune cercetarea despre ascultarea percepută și cum transformăm conversațiile de vânzare în recomandări mai bune.",
+      "en": "What research on perceived listening tells us about better sales conversations."
+    },
+    "readTime": {
+      "ro": "9 min",
+      "en": "9 min"
+    },
+    "publishedAt": "2026-11-05",
+    "intro": {
+      "ro": [
+        "Într-o conversație de vânzare, poți pune toate întrebările potrivite și totuși să nu înțelegi clientul.",
+        "Poți să-i oferi timp să vorbească, să notezi răspunsurile și să urmărești atent fiecare obiecție. La final, ai sentimentul că întâlnirea a mers bine. Clientul a fost deschis, discuția a curs natural și ai obținut informațiile de care aveai nevoie. Dar apoi îi trimiți o propunere care nu răspunde problemei lui.",
+        "Unde s-a pierdut înțelegerea? Una dintre capcanele ascultării în vânzări este că putem fi foarte atenți la ceea ce spune clientul și, în același timp, prea preocupați să identificăm momentul potrivit pentru a prezenta soluția.",
+        "Recunoaștem un cuvânt familiar, îl asociem cu o nevoie pe care am mai întâlnit-o și începem să construim răspunsul. Uneori, înainte ca interlocutorul să termine de explicat. Nu este neapărat o problemă de atenție. Poate fi o problemă de interpretare.",
+        "În vânzări, ascultarea este una dintre competențele asupra cărora aproape toată lumea este de acord. O recomandăm, o includem în traininguri și o cerem echipelor. Mai rar ne oprim să întrebăm ce produce, de fapt.",
+        "Construiește încredere? Ne ajută să înțelegem mai bine clientul? Contribuie la performanță? Pare firesc să răspundem «da» la toate. Cercetarea oferă însă o imagine mai nuanțată și tocmai de aceea mai utilă.",
+        "Avraham Kluger și colaboratorii săi au reunit cercetări despre ascultarea percepută în contexte profesionale. Meta-analiza lor, publicată în Journal of Business and Psychology, arată că senzația de a fi ascultat este asociată cu rezultate mai bune la muncă. Legătura cea mai puternică apare în calitatea relațiilor, iar cea cu performanța este mai modestă.",
+        "Pentru cei care lucrează în sales, diferența merită atenție. Ascultarea poate crea condițiile unei conversații comerciale bune. Dar nu garantează, de una singură, că vom înțelege corect problema sau că vom recomanda soluția potrivită."
+      ],
+      "en": []
+    },
+    "sections": {
+      "ro": [
+        {
+          "heading": "Cine decide dacă ai ascultat bine?",
+          "paragraphs": [
+            "Un detaliu important al cercetării este chiar obiectul ei: ascultarea percepută. Cu alte cuvinte, experiența persoanei care vorbește.",
+            "Poți ieși dintr-o întâlnire convins că ai fost atent. Ai lăsat clientul să termine, ai notat informațiile importante și ai pus întrebările pregătite. Clientul poate avea totuși impresia că ai urmărit mai ales să ajungi la prezentarea produsului.",
+            "Să ne imaginăm o întâlnire în care un client explică dificultățile întâmpinate cu furnizorul actual. Vânzătorul ascultă, identifică nemulțumirile și începe să prezinte avantajele propriei soluții. Dar clientul încerca să explice altceva: nu era nemulțumit doar de serviciu, ci de faptul că, atunci când apăreau probleme, nimeni nu își asuma responsabilitatea rezolvării lor.",
+            "O prezentare despre caracteristicile produsului poate rata tocmai această preocupare. Diferența nu este între a asculta și a nu asculta. Este între a auzi informația și a înțelege semnificația ei pentru interlocutor.",
+            "De aceea, întrebarea utilă după o întâlnire nu este doar «Am ascultat?», ci și «Ce i-a arătat clientului că am înțeles ceea ce contează pentru el?» Răspunsul poate apărea într-o întrebare de clarificare, într-o reformulare sau în felul în care adaptăm propunerea comercială."
+          ]
+        },
+        {
+          "heading": "Când răspunsul clientului ne schimbă înțelegerea",
+          "paragraphs": [
+            "În cercetarea nevoilor, este ușor să recunoști un cuvânt și să crezi că ai înțeles problema. Clientul spune că vrea «siguranță». Pentru unul, asta poate însemna predictibilitatea costurilor. Pentru altul, continuitatea serviciului. Un al treilea se gândește la sprijinul pe care îl va primi dacă apare o problemă. Toți au folosit același cuvânt. Recomandările potrivite pentru ei pot fi diferite.",
+            "Să luăm un alt exemplu din vânzările B2B. Un client spune că oferta este prea scumpă. Prima reacție poate fi să justificăm prețul, să comparăm caracteristicile cu cele ale concurenței sau să propunem o variantă mai ieftină.",
+            "Dar dacă întrebăm ce anume face investiția dificil de acceptat, putem descoperi o problemă diferită. Poate că bugetul există, însă clientul nu știe cum să demonstreze conducerii că investiția va produce rezultatele promise. În acest caz, reducerea prețului nu rezolvă neapărat dificultatea.",
+            "Ar putea fi mai util să discutăm despre un proiect-pilot, despre criterii de evaluare sau despre dovezile de care clientul are nevoie pentru a susține decizia internă. Observăm cât de mult se schimbă recomandarea atunci când înțelegem problema din spatele primei formulări.",
+            "În loc să răspundem imediat obiecției, putem spune: «Am presupus inițial că principala dificultate este bugetul. Din ce îmi explicați, pare că problema este mai degrabă cum puteți justifica investiția și evalua rezultatele. Am înțeles bine?»",
+            "O asemenea verificare îi permite clientului să confirme, să corecteze sau să adauge ceva important. În același timp, îl obligă pe vânzător să rămână deschis unei alte explicații decât cea cu care a intrat în discuție. Una dintre cele mai valoroase forme de ascultare este disponibilitatea de a-ți schimba prima interpretare.",
+            "Aceasta este o aplicație practică a ideilor discutate, nu o concluzie testată direct de meta-analiza lui Kluger și a colaboratorilor."
+          ]
+        },
+        {
+          "heading": "O relație bună și o recomandare bună",
+          "paragraphs": [
+            "Diferența dintre relație și performanță este importantă și pentru felul în care evaluăm succesul unei întâlniri. O conversație poate fi caldă, deschisă și apreciată de client. Totuși, la final, pot rămâne întrebări esențiale: cât de importantă este problema acum, ce compromisuri acceptă clientul, cine participă la decizie și ce dovezi i-ar permite să evalueze oferta?",
+            "Un client poate spune că i-a plăcut foarte mult discuția și totuși să nu aibă suficiente motive pentru a merge mai departe. Aici intervine structura vânzării consultative. Ascultarea susține relația. Întrebările despre nevoi, criterii de decizie, constrângeri și îndoieli ne ajută să transformăm conversația în claritate.",
+            "Să presupunem că un client spune: «Avem nevoie de o soluție mai flexibilă.» Putem interpreta flexibilitatea drept posibilitatea de a modifica un abonament sau de a adăuga servicii. Dar pentru client, flexibilitatea poate însemna să poată implementa soluția treptat, fără să perturbe activitatea echipei.",
+            "Dacă nu verificăm sensul termenului, riscăm să prezentăm un avantaj real, dar irelevant pentru decizia sa. O recomandare bună presupune mai mult decât identificarea unui cuvânt-cheie. Presupune înțelegerea contextului în care acel cuvânt capătă sens.",
+            "Și, uneori, judecata profesională ne conduce la concluzia că oferta noastră nu este potrivită. Aceasta nu este neapărat o conversație comercială eșuată. Poate fi rezultatul unei evaluări corecte, care protejează relația și credibilitatea pe termen lung."
+          ]
+        },
+        {
+          "heading": "Ce aș urmări în dezvoltarea unei echipe de sales",
+          "paragraphs": [
+            "Cercetarea mă face să privesc cu mai multă atenție felul în care evaluăm ascultarea. Numărul întrebărilor și timpul în care vânzătorul a tăcut oferă informații, dar nu descriu întreaga conversație.",
+            "Un profesionist poate respecta toate regulile unui exercițiu de ascultare activă și totuși să plece cu aceeași interpretare pe care o avea înainte de întâlnire. De aceea, aș introduce în sesiunile de analiză a conversațiilor comerciale un exercițiu simplu."
+          ]
+        },
+        {
+          "heading": "Sales Listening Review: cinci întrebări după fiecare întâlnire",
+          "paragraphs": [
+            "1. Ce am aflat despre client și nu știam înainte? Dacă răspunsul conține doar informații pe care le anticipam deja, merită să verificăm cât de mult am explorat problema.",
+            "2. Ce presupunere inițială mi-a fost corectată? Nu trebuie să existe obligatoriu o presupunere greșită. Dar dacă nimic nu ne schimbă vreodată perspectiva, există riscul să căutăm doar confirmări.",
+            "3. Ce contează cel mai mult pentru decizia clientului? Nu doar ce caracteristici solicită, ci și ce rezultat urmărește, ce riscuri percepe și ce constrângeri trebuie să respecte.",
+            "4. Cum am verificat că am înțeles corect? Am reformulat problema? Am cerut confirmarea interpretării? I-am oferit clientului ocazia să ne corecteze?",
+            "5. Ce voi schimba în recomandarea mea pe baza celor aflate? Aceasta este întrebarea care conectează ascultarea cu acțiunea comercială.",
+            "Dacă propunerea arată exact la fel indiferent de ceea ce spune clientul, merită să ne întrebăm ce rol a avut conversația în construirea ei.",
+            "Cele cinci întrebări sunt un instrument practic de reflecție și coaching managerial, nu un instrument de evaluare validat științific. Ele pot fi folosite după întâlniri importante, în analiza unor conversații sau în sesiunile individuale dintre manager și membrii echipei. Scopul nu este să transformăm fiecare discuție într-un formular suplimentar, ci să dezvoltăm capacitatea de a ne ajusta înțelegerea."
+          ]
+        },
+        {
+          "heading": "Ascultarea se vede și în ceea ce faci după conversație",
+          "paragraphs": [
+            "Meta-analiza lui Kluger și a colaboratorilor ne oferă un motiv solid să luăm în serios experiența de a fi ascultat. Dar asocierea mai puternică dintre ascultarea percepută și calitatea relațiilor, comparativ cu performanța, ne invită și la prudență.",
+            "O relație bună nu înlocuiește analiza nevoilor, expertiza comercială sau calitatea recomandării. Ascultarea creează posibilitatea unei înțelegeri mai bune. Ce facem cu această posibilitate depinde de întrebările pe care le punem, de interpretările pe care suntem dispuși să le revizuim și de deciziile pe care le luăm ulterior.",
+            "În vânzări, clientul își poate da seama că ai fost atent nu doar din felul în care ai participat la conversație, ci și din ceea ce alegi să îi propui după ce l-ai ascultat."
+          ]
+        }
+      ],
+      "en": []
+    },
+    "closing": {
+      "ro": [
+        "Poate că adevărata întrebare nu este cât de bine știm să ascultăm, ci cât de mult suntem dispuși să ne schimbăm perspectiva în urma a ceea ce auzim."
+      ],
+      "en": []
+    },
+    "cta": {
+      "title": {
+        "ro": "Explorează programul Sales Lab",
+        "en": "Explore Sales Lab"
+      },
+      "label": {
+        "ro": "Descoperă Sales Lab",
+        "en": "Explore Sales Lab"
+      },
+      "href": "/sales-lab"
+    },
+    "sourceNote": {
+      "ro": "Cercetare: Kluger și colaboratorii, A Meta-analytic Systematic Review and Theory of the Effects of Perceived Listening on Work Outcomes, Journal of Business and Psychology (online 2023, volum 2024).",
+      "en": "Research: Kluger et al., Journal of Business and Psychology (2023/2024)."
+    },
+    "sources": [
+      {
+        "label": "Kluger et al. — Journal of Business and Psychology",
+        "url": "https://doi.org/10.1007/s10869-023-09897-5"
+      }
+    ]
   }
 ]
