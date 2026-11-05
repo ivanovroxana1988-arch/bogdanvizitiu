@@ -415,8 +415,8 @@ export function RegistrationForm({
         <Link href={withLocale('/confidentialitate', locale)}>{copy.privacy}</Link>.
       </p>
       {courseSlug === 'sales-lab' && (
-        <label className={commercialStyles.full} style={{ fontSize: 13, lineHeight: 1.6 }}>
-          <input type="checkbox" name="ads_measurement_consent" value="on" style={{ marginRight: 8 }} />
+        <label className={commercialStyles.full} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 13, lineHeight: 1.6, textTransform: 'none', letterSpacing: 'normal', fontWeight: 400 }}>
+          <input type="checkbox" name="ads_measurement_consent" value="on" style={{ width: 18, height: 18, flexShrink: 0, padding: 0, marginTop: 2, accentColor: '#315f78' }} />
           Sunt de acord cu măsurarea acestei înscrieri prin Google Ads, inclusiv
           utilizarea tehnologiilor de publicitate necesare pentru atribuirea conversiei.
           Opțional: cererea poate fi trimisă și fără acest acord.
