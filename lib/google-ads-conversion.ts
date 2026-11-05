@@ -1,12 +1,14 @@
 'use client'
 
+import { canReportSalesLabConversion } from './sales-lab-outcome'
+
 /**
  * Sales Lab conversion: only called after the API confirms a saved record.
  * The ad tag is not requested until a visitor explicitly opts into ad measurement.
  * Public Google Ads destination values are supplied by Vercel at build time.
  */
 export function reportSalesLabGoogleAdsConversion(reference: string, consent: boolean): boolean {
-  if (!consent || !/^SL-[0-9a-f-]{36}$/i.test(reference)) return false
+  if (!canReportSalesLabConversion('saved', reference, consent)) return false
   if (typeof window === 'undefined') return false
 
   const conversionId = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_ID
