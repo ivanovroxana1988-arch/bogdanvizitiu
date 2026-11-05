@@ -103,7 +103,8 @@ export function RegistrationForm({
           submit: 'Trimite înscrierea',
           sending: 'Se trimite…',
           success: 'Înscrierea a fost trimisă. Revenim cu detaliile pe email sau telefon.',
-          emailOnly: 'Cererea a fost trimisă prin email, dar nu a fost încă înregistrată în registru. Revenim pentru confirmare.',
+          emailOnly:
+            'Cererea a fost trimisă prin email, dar nu a fost încă înregistrată în registru. Revenim pentru confirmare.',
           fallback: 'Formularul nu a putut trimite automat mesajul. Poți continua prin email.',
           fallbackAction: 'Trimite prin email',
           error: 'Nu am putut trimite formularul. Încearcă din nou.',
@@ -123,7 +124,8 @@ export function RegistrationForm({
           submit: 'Send registration',
           sending: 'Sending…',
           success: 'Your registration has been sent. We will follow up by email or phone.',
-          emailOnly: 'Your request was emailed but has not yet been saved in the registration sheet. We will follow up to confirm.',
+          emailOnly:
+            'Your request was emailed but has not yet been saved in the registration sheet. We will follow up to confirm.',
           fallback: 'The form could not send automatically. You can continue by email.',
           fallbackAction: 'Send by email',
           error: 'We could not send the form. Please try again.',
@@ -381,10 +383,10 @@ export function RegistrationForm({
           : state === 'email_only'
             ? copy.emailOnly
             : state === 'fallback'
-            ? copy.fallback
-            : state === 'error'
-              ? copy.error
-              : ''}
+              ? copy.fallback
+              : state === 'error'
+                ? copy.error
+                : ''}
       </p>
 
       {state === 'fallback' && fallbackHref && (
