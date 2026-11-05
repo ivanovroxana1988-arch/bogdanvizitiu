@@ -17,6 +17,7 @@ type RegistrationPayload = {
   company?: string
   seats?: number
   website?: string
+  request_id?: string
   source?: string
   referrer?: string
   utm_source?: string
@@ -48,7 +49,8 @@ export async function POST(request: Request) {
   }
 
   if (clean(raw.website, 200)) {
-    return NextResponse.json({ ok: true })
+    // Never acknowledge a honeypot submission as a genuine registration.
+    return NextResponse.json({ ok: false, status: 'ignored' }, { status: 202 })
   }
 
   const rateLimit = await checkContactRateLimit(getClientIdentifier(request))
@@ -68,6 +70,7 @@ export async function POST(request: Request) {
 
   const locale = raw.locale === 'en' ? 'en' : 'ro'
   const courseSlug = clean(raw.course, 200)
+  const requestId = clean(raw.request_id, 80)
   const name = clean(raw.name, 160)
   const email = clean(raw.email, 254)
   const phone = clean(raw.phone, 80)
@@ -84,6 +87,10 @@ export async function POST(request: Request) {
 
   if (!course) {
     return NextResponse.json({ ok: false, error: 'invalid_course' }, { status: 400 })
+  }
+
+  if (courseSlug === 'sales-lab' && !/^SL-[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(requestId)) {
+    return NextResponse.json({ ok: false, error: 'invalid_request_id' }, { status: 400 })
   }
 
   if (courseSlug === 'sales-lab' && (!Number.isInteger(seats) || seats < 1 || seats > 15)) {
@@ -110,6 +117,7 @@ export async function POST(request: Request) {
   const body = [
     `Curs / Course: ${course.title}`,
     `Slug: ${course.slug}`,
+    ...(courseSlug === 'sales-lab' ? [`ID cerere: ${requestId}`] : []),
     `Nume / Name: ${name}`,
     `Email: ${email}`,
     `Telefon / Phone: ${phone}`,
@@ -139,6 +147,7 @@ export async function POST(request: Request) {
         Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
         'User-Agent': 'bogdanvizitiu.com/course-registration',
+        ...(courseSlug === 'sales-lab' ? { 'Idempotency-Key': requestId + '-organizer' } : {}),
       },
       body: JSON.stringify({
         from,
@@ -166,12 +175,12 @@ export async function POST(request: Request) {
         utmSource,
         utmMedium,
         utmCampaign,
-      })
-      if (sheetSync !== 'stored') {
+      }, requestId)
+      if (sheetSync !== 'stored' && sheetSync !== 'already_stored') {
         console.error('Sales Lab request emailed but not yet recorded in Google Sheets', sheetSync)
       }
 
-      const acknowledgement = await sendSalesLabConfirmation({
+      const acknowledgement = sheetSync === 'already_stored' ? 'previously_processed' : await sendSalesLabConfirmation({
         name,
         seats,
         email,
@@ -188,9 +197,11 @@ export async function POST(request: Request) {
 
       return NextResponse.json({
         ok: true,
+        status: sheetSync === 'already_stored' ? 'duplicate' : sheetSync === 'stored' ? 'saved' : 'email_only',
+        request_id: requestId,
         delivery: 'email',
-        acknowledgement: acknowledgement === 'failed' ? 'not_sent' : 'sent',
-        record: sheetSync === 'stored' ? 'saved' : 'email_only',
+        acknowledgement: acknowledgement === 'failed' ? 'not_sent' : acknowledgement === 'previously_processed' ? 'previously_processed' : 'sent',
+        record: sheetSync === 'stored' || sheetSync === 'already_stored' ? 'saved' : 'email_only',
       })
     }
 
