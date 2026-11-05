@@ -1,6 +1,7 @@
 import { deepStrictEqual, equal } from 'node:assert/strict'
 import { test } from 'node:test'
 import { resolveCanonicalRedirect } from '../lib/redirects'
+import { englishNavigationTarget } from '../lib/routes'
 
 test('canonical requests do not redirect', () => {
   equal(resolveCanonicalRedirect({ hostname: 'bogdanvizitiu.com', pathname: '/despre' }), null)
@@ -105,4 +106,12 @@ test('legacy public English slugs are normalized', () => {
       search: '',
     },
   )
+})
+
+test('Romanian-only Sales Lab and corporate courses never send EN visitors to nonexistent pages', () => {
+  equal(englishNavigationTarget('/sales-lab'), '/en/programs')
+  equal(englishNavigationTarget('/cursuri/leadership-ai'), '/en/programs')
+  equal(englishNavigationTarget('/cursuri/act-adapt-execute'), '/en/programs')
+  equal(englishNavigationTarget('/coaching'), '/en/coaching')
+  equal(englishNavigationTarget('/cursuri/arta-negocierii'), '/en/programs/negotiation-influence')
 })

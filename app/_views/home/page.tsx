@@ -6,6 +6,7 @@ import { PortfolioMarquee } from '@/components/sections/portfolio-marquee'
 import { getPrograms, getPublishedInsights } from '@/lib/data'
 import { getCopy, getLocale } from '@/lib/i18n'
 import { buildPageMetadata } from '@/lib/seo'
+import { localizePath } from '@/lib/routes'
 import servicePages from '@/content/service-pages.json'
 import homeStyles from './home.module.css'
 
@@ -90,7 +91,7 @@ export default function Home({ searchParams }: { searchParams?: { lang?: string 
             </h1>
             <p className="lead">{copy.heroIntro}</p>
             <div className="actions">
-              <ArrowLink href="/cursuri">{copy.primaryCta}</ArrowLink>
+              <ArrowLink href={localizePath('/cursuri', locale)}>{copy.primaryCta}</ArrowLink>
             </div>
           </div>
           <EditorialImage asset="hero" kind="portrait" className="hero-image" locale={locale} />
@@ -150,7 +151,7 @@ export default function Home({ searchParams }: { searchParams?: { lang?: string 
             <span>0{i + 1}</span>
             <h3>{program.title}</h3>
             <p>{program.description}</p>
-            <ArrowLink href={`/cursuri/${program.slug}`}>{copy.viewProgram}</ArrowLink>
+            <ArrowLink href={localizePath(`/cursuri/${program.slug}`, locale)}>{copy.viewProgram}</ArrowLink>
           </article>
         ))}
       </section>
@@ -163,7 +164,7 @@ export default function Home({ searchParams }: { searchParams?: { lang?: string 
           </div>
           <div className="corporate-copy">
             <p>{copy.corporateText}</p>
-            <ArrowLink href="/corporate">{copy.corporateCta}</ArrowLink>
+            <ArrowLink href={localizePath('/corporate', locale)}>{copy.corporateCta}</ArrowLink>
           </div>
           <div className="domain-list">
             {copy.corporateDomains.map((domain, i) => (
@@ -183,7 +184,7 @@ export default function Home({ searchParams }: { searchParams?: { lang?: string 
             <Eyebrow>{services.coaching.eyebrow}</Eyebrow>
             <h2 className={homeStyles.coachingTitle}>{services.coaching.title}</h2>
             <p className={homeStyles.coachingText}>{services.coaching.intro}</p>
-            <ArrowLink href="/coaching">{services.coaching.cta}</ArrowLink>
+            <ArrowLink href={localizePath('/coaching', locale)}>{services.coaching.cta}</ArrowLink>
           </div>
         </div>
       </section>
@@ -194,14 +195,14 @@ export default function Home({ searchParams }: { searchParams?: { lang?: string 
             <Eyebrow>{copy.insightsEyebrow}</Eyebrow>
             <h2 className="section-title">{copy.insightsTitle}</h2>
           </div>
-          <ArrowLink href="/insights">{copy.viewInsights}</ArrowLink>
+          <ArrowLink href={localizePath('/insights', locale)}>{copy.viewInsights}</ArrowLink>
         </div>
         {insights.map((insight, i) => (
           <article className="program-row" key={insight.slug}>
             <span>0{i + 1}</span>
             <h3>{insight.title}</h3>
             <p>{insight.excerpt}</p>
-            <ArrowLink href={`/insights/${insight.slug}`}>{copy.readArticle}</ArrowLink>
+            <ArrowLink href={localizePath(`/insights/${insight.slug}`, locale)}>{copy.readArticle}</ArrowLink>
           </article>
         ))}
       </section>
@@ -215,7 +216,7 @@ export default function Home({ searchParams }: { searchParams?: { lang?: string 
           </h2>
           <div>
             <p>{copy.finalText}</p>
-            <ArrowLink href="/contact">{copy.finalCta}</ArrowLink>
+            <ArrowLink href={localizePath('/contact', locale)}>{copy.finalCta}</ArrowLink>
           </div>
         </div>
       </section>

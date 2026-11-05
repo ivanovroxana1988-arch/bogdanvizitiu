@@ -20,7 +20,7 @@ export function generateMetadata({ searchParams }: { searchParams?: SearchParams
   return buildPageMetadata({
     title:
       locale === 'ro'
-        ? 'Cursuri open: vânzări, negociere și leadership | Bogdan Vizitiu'
+        ? 'Cursuri open de vânzări, negociere și leadership'
         : 'Open courses for professionals: leadership, negotiation and networking',
     description:
       locale === 'ro'

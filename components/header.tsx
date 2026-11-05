@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import navigation from '@/content/navigation.json'
 import { withLocale, type Locale } from '@/lib/i18n'
+import { englishNavigationTarget } from '@/lib/routes'
 import { BrandLogo } from '@/components/brand-logo'
 
 const hrefs = [
@@ -21,6 +22,8 @@ export function Header({ locale }: { locale: Locale }) {
   const [open, setOpen] = useState(false)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   const copy = navigation[locale]
+  const englishHref = englishNavigationTarget(pathname)
+  const isEnglishCatalogueFallback = locale === 'ro' && englishHref === '/en/programs' && pathname !== '/cursuri'
   const isActive = (href: string) => {
     const target = withLocale(href, locale).split(/[?#]/)[0]
     return pathname === target || (target !== '/' && pathname.startsWith(`${target}/`))
@@ -88,7 +91,8 @@ export function Header({ locale }: { locale: Locale }) {
             </Link>
             <span aria-hidden> / </span>
             <Link
-              href={withLocale(pathname, 'en')}
+              href={englishHref}
+              aria-label={isEnglishCatalogueFallback ? 'Vezi catalogul de cursuri în engleză' : undefined}
               aria-current={locale === 'en' ? 'page' : undefined}
             >
               EN

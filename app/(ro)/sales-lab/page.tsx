@@ -317,6 +317,11 @@ export default function SalesLabPage() {
               de maximum 15 participanți. Dacă te interesează și alte teme,
               poți explora <a href="/cursuri">cursurile și programele viitoare</a>.
             </p>
+            <p>
+              Dacă vrei să aprofundezi tema, citește și articolul despre{' '}
+              <a href="/insights/negocierea-nu-este-doar-despre-argumente">cum funcționează emoțiile în negociere</a>
+              {' '}sau explorează <a href="/cursuri/arta-negocierii">programul Negotiation &amp; Influence</a>.
+            </p>
           </div>
         </div>
       </section>
