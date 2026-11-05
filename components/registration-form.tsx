@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { attribution, conversionEvent } from '@/lib/conversion-tracking'
+import { isSavedRegistration } from '@/lib/registration-outcome'
 import { FormEvent, useRef, useState } from 'react'
 import business from '@/content/business.json'
 import { withLocale, type Locale } from '@/lib/i18n'
@@ -235,7 +236,7 @@ export function RegistrationForm({
         form.reset()
         setErrors({})
         // A delivered email alone is not a saved Sales Lab registration.
-        const savedLead = courseSlug !== 'sales-lab' || result.record === 'saved'
+        const savedLead = isSavedRegistration(courseSlug, result.record)
         emit(savedLead ? 'form_success' : 'form_email_only')
         if (courseSlug === 'sales-lab') {
           try {
