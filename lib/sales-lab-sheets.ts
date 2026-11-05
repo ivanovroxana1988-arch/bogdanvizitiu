@@ -1,4 +1,4 @@
-import { createSign, randomUUID } from 'node:crypto'
+import { createSign } from 'node:crypto'
 
 const SHEET_NAME = 'Inscrieri'
 const OAUTH_SCOPE = 'https://www.googleapis.com/auth/spreadsheets'
@@ -16,7 +16,7 @@ export type RegistrationRecord = {
   utmCampaign: string
 }
 
-export type SyncOutcome = 'stored' | 'unconfigured' | 'failed'
+export type SyncOutcome = 'stored' | 'already_stored' | 'unconfigured' | 'failed'
 
 function base64Url(value: string) {
   return Buffer.from(value).toString('base64url')
@@ -122,6 +122,7 @@ async function getWaitlistStatus(
  */
 export async function syncSalesLabToSheets(
   record: RegistrationRecord,
+  reference: string,
 ): Promise<SyncOutcome> {
   const spreadsheetId = process.env.SALES_LAB_SHEET_ID
   const clientEmail = process.env.GOOGLE_SHEETS_CLIENT_EMAIL
@@ -131,8 +132,25 @@ export async function syncSalesLabToSheets(
 
   try {
     const token = await getGoogleAccessToken(clientEmail, privateKey)
+    // A stable request ID lets retries find the original row before appending.
+    // The Sheet is not a transactional database: simultaneous writers still need
+    // an external atomic lock for an absolute exactly-once guarantee.
+    const lookupRange = encodeURIComponent("'Inscrieri'!A6:A3000")
+    const existingResponse = await fetch(
+      'https://sheets.googleapis.com/v4/spreadsheets/' +
+        encodeURIComponent(spreadsheetId) + '/values/' + lookupRange,
+      {
+        headers: { Authorization: 'Bearer ' + token },
+        signal: AbortSignal.timeout(8000),
+      },
+    )
+    if (!existingResponse.ok) {
+      throw new Error('Google Sheets request lookup returned HTTP ' + existingResponse.status)
+    }
+    const existingRows = (await existingResponse.json()) as { values?: string[][] }
+    if (existingRows.values?.some((row) => row[0] === reference)) return 'already_stored'
+
     const status = await getWaitlistStatus(spreadsheetId, token)
-    const reference = 'SL-' + randomUUID()
     const row = makeRegistrationRow(record, new Date().toISOString(), reference, status)
     const range = encodeURIComponent("'" + SHEET_NAME + "'!A:O")
     const url =

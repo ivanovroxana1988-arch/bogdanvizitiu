@@ -2,11 +2,11 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ''} https://va.vercel-scripts.com`,
+  `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ''} https://va.vercel-scripts.com https://www.googletagmanager.com`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://images.unsplash.com",
+  "img-src 'self' data: blob: https://images.unsplash.com https://www.google.com https://www.google.ro https://www.googleadservices.com https://googleads.g.doubleclick.net",
   "font-src 'self' data:",
-  "connect-src 'self' https://vitals.vercel-insights.com",
+  "connect-src 'self' https://vitals.vercel-insights.com https://www.google.com https://www.google.ro https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.googletagmanager.com",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",

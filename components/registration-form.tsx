@@ -2,13 +2,14 @@
 
 import Link from 'next/link'
 import { attribution, conversionEvent } from '@/lib/conversion-tracking'
+import { reportSalesLabGoogleAdsConversion } from '@/lib/google-ads-conversion'
 import { FormEvent, useRef, useState } from 'react'
 import business from '@/content/business.json'
 import { withLocale, type Locale } from '@/lib/i18n'
 import commercialStyles from '@/app/_views/commercial.module.css'
 import formStyles from './contact-form.module.css'
 
-type SubmitState = 'idle' | 'sending' | 'success' | 'fallback' | 'error'
+type SubmitState = 'idle' | 'sending' | 'success' | 'email_only' | 'fallback' | 'error'
 type FieldName = 'name' | 'email' | 'phone'
 type FieldErrors = Partial<Record<FieldName, string>>
 type Tracking = {
@@ -83,10 +84,12 @@ export function RegistrationForm({
   tracking?: Tracking
 }) {
   const started = useRef(false)
+  const pendingRequestId = useRef<string | null>(null)
   const emit = (event: string) => conversionEvent(event, 'course', courseSlug, locale)
   const [state, setState] = useState<SubmitState>('idle')
   const [errors, setErrors] = useState<FieldErrors>({})
   const [fallbackHref, setFallbackHref] = useState('')
+  const [acknowledgement, setAcknowledgement] = useState('')
 
   const copy =
     locale === 'ro'
@@ -191,8 +194,26 @@ export function RegistrationForm({
     const data = new FormData(form)
     const referrer = typeof document !== 'undefined' ? document.referrer : ''
     const original = attribution(tracking)
+    // Reuse the same request ID when a submission is retried after a transient error.
+    if (courseSlug === 'sales-lab' && !pendingRequestId.current) {
+      try {
+        pendingRequestId.current = sessionStorage.getItem('sales-lab-pending-request-id')
+      } catch {
+        // Session storage may be disabled.
+      }
+      if (!pendingRequestId.current) {
+        pendingRequestId.current = 'SL-' + crypto.randomUUID()
+        try {
+          sessionStorage.setItem('sales-lab-pending-request-id', pendingRequestId.current)
+        } catch {
+          // Session storage may be disabled.
+        }
+      }
+    }
+    const adsConsent = data.get('ads_measurement_consent') === 'on'
     const payload = {
       locale,
+      request_id: courseSlug === 'sales-lab' ? pendingRequestId.current : undefined,
       course: courseSlug,
       name: String(data.get('name') || ''),
       email: String(data.get('email') || ''),
@@ -226,17 +247,38 @@ export function RegistrationForm({
         fallback?: string
         error?: string
         invalidFields?: FieldName[]
+        status?: 'saved' | 'duplicate' | 'email_only' | 'ignored'
+        request_id?: string
+        acknowledgement?: 'sent' | 'not_sent' | 'previously_processed'
       }
 
-      if (response.ok && result.ok) {
+      if (response.ok && result.ok && courseSlug === 'sales-lab' &&
+          result.status === 'email_only') {
+        setAcknowledgement(result.acknowledgement || '')
+        setState('email_only')
+        return
+      }
+
+      if (response.ok && result.ok && (courseSlug !== 'sales-lab' ||
+          result.status === 'saved' || result.status === 'duplicate')) {
         form.reset()
         setErrors({})
-        emit('form_success')
+        setAcknowledgement(result.acknowledgement || '')
         if (courseSlug === 'sales-lab') {
+          if (result.status === 'saved' && result.request_id) {
+            reportSalesLabGoogleAdsConversion(result.request_id, adsConsent)
+            emit('form_success')
+          }
+          pendingRequestId.current = null
+          try {
+            sessionStorage.removeItem('sales-lab-pending-request-id')
+          } catch {
+            // Storage restrictions should not affect successful registration.
+          }
           try {
             localStorage.setItem('sales-lab-registration-submitted', 'true')
             const earlyBirdEntry = sessionStorage.getItem('sales-lab-early-bird-entry')
-            if (earlyBirdEntry) {
+            if (earlyBirdEntry && result.status === 'saved') {
               conversionEvent('early_bird_registration', earlyBirdEntry, courseSlug, locale)
               sessionStorage.removeItem('sales-lab-early-bird-entry')
             }
@@ -244,11 +286,17 @@ export function RegistrationForm({
             // Storage restrictions should not affect successful registration.
           }
           window.dispatchEvent(new Event('sales-lab-registration-success'))
+        } else {
+          emit('form_success')
         }
         setState('success')
         return
       }
 
+      if (result.status === 'ignored') {
+        setState('error')
+        return
+      }
       if (result.error) emit('form_error')
       if (result.error === 'invalid_fields' && result.invalidFields?.length) {
         const nextErrors: FieldErrors = {}
@@ -366,10 +414,23 @@ export function RegistrationForm({
         {copy.privacyPrefix}{' '}
         <Link href={withLocale('/confidentialitate', locale)}>{copy.privacy}</Link>.
       </p>
+      {courseSlug === 'sales-lab' && (
+        <label className={commercialStyles.full} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 13, lineHeight: 1.6, textTransform: 'none', letterSpacing: 'normal', fontWeight: 400 }}>
+          <input type="checkbox" name="ads_measurement_consent" value="on" style={{ width: 18, height: 18, flexShrink: 0, padding: 0, marginTop: 2, accentColor: '#315f78' }} />
+          Sunt de acord cu măsurarea acestei înscrieri prin Google Ads, inclusiv
+          utilizarea tehnologiilor de publicitate necesare pentru atribuirea conversiei.
+          Opțional: cererea poate fi trimisă și fără acest acord.
+        </label>
+      )}
 
       <p className={`${commercialStyles.full} ${formStyles.status}`} aria-live="polite">
         {state === 'success'
-          ? (successMessage || copy.success)
+          ? (successMessage || copy.success) +
+            (acknowledgement === 'not_sent'
+              ? ' Confirmarea prin email nu a putut fi trimisă; te vom contacta personal.'
+              : '')
+          : state === 'email_only'
+            ? 'Am primit cererea prin email, dar nu am putut-o salva în registrul de înscrieri. Nu este confirmată înregistrarea. Te rugăm să încerci din nou.'
           : state === 'fallback'
             ? copy.fallback
             : state === 'error'
@@ -387,7 +448,7 @@ export function RegistrationForm({
         </a>
       )}
 
-      <button type="submit" disabled={state === 'sending'} aria-disabled={state === 'sending'}>
+      <button type="submit" disabled={state === 'sending' || state === 'success'} aria-disabled={state === 'sending' || state === 'success'}>
         {state === 'sending' ? copy.sending : (submitLabel || copy.submit)} →
       </button>
     </form>
