@@ -19,6 +19,14 @@ test('classifies Romanian and English without exposing free text or personal det
     intents: ['other'],
   })
 })
+test('price intent recognizes Romanian diacritics and plain typing', () => {
+  assert.deepEqual(classifyChatQuestion('Preț și disponibilitate').intents, [
+    'price',
+    'availability',
+  ])
+  assert.deepEqual(classifyChatQuestion('pret curs').intents, ['price'])
+})
+
 test('old AI consent never implies measurement consent', () => {
   assert.equal(measurementAllowed({ aiConsent: true }), false)
   assert.equal(measurementAllowed({ analyticsConsent: true, analyticsConsentVersion: 0 }), false)

@@ -10,7 +10,7 @@ export const topicRules: [string, RegExp][] = [
   ['courses', /curs|course|training|atelier|workshop/i],
 ]
 export const intentRules: [string, RegExp][] = [
-  ['price', /pre.t|cost|price|fee|buget|budget/i],
+  ['price', /pre[țt]|cost|price|fee|buget|budget/i],
   ['signup', /inscri|înscri|inregistr|join|register|sign.?up|apply/i],
   ['date', /cand|când|data|date|when|calendar/i],
   ['venue', /unde|loca|where|venue|adresa|address/i],
