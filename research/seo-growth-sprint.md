@@ -180,3 +180,26 @@ Avoid generic anchors such as `vezi mai mult` when a descriptive anchor works na
 4. Build `/corporate/team-coaching` and `/corporate/training-negociere` after product/format confirmation.
 5. Create editorial clusters linking into the owner URLs.
 6. Use Search Console query/impression data to refine this map after enough data accumulates.
+
+
+## Measurement and editorial baseline — 2026-11-05
+
+Source: existing Google Search Console three-month Web export, native Google Sheet `bogdanvizitiu.com-Performance-on-Search-2026-11-05` (ID `1mKD0cG8YHBCQgih92UI4R6OVoyze-iCJe4CU2hJY94o`). This is an export, **not** a live URL Inspection or live Analytics query.
+
+| Metric | Baseline |
+|---|---:|
+| Organic clicks | 87 |
+| Impressions | 512 |
+| Overall CTR | ~17% |
+| Approximate average position | ~6.1 |
+| Branded query "bogdan vizitiu" | 52 clicks, 188 impressions |
+| Mobile | 42 clicks, 254 impressions |
+| Desktop | 45 clicks, 257 impressions |
+
+Relevant non-brand queries in this small sample: `networking profesional` 16 impressions/0 clicks; `curs negociere` 6/0; `coaching pentru executivi` 4/0. Pages: `/coaching` 86 impressions/1 click; `/cursuri` 38/1; `/corporate` 20/0; `/cursuri/arta-negocierii` 14/0. `/sales-lab` did not appear in the export; absence **does not prove deindexing**. New changes cannot be measured retrospectively.
+
+Editorial: publish the existing full researched article `cat-valoreaza-sa-te-simti-ascultat` (RO/EN) with its verified peer-reviewed DOI source `10.1007/s10869-023-09897-5`, link to Romanian Sales Lab, and use the English course catalogue for English readers because `/en/sales-lab` does not exist. Both published article URLs automatically enter `sitemap.xml` via `publishedInsightSlugs`.
+
+Lead measurement: the Sales Lab API distinguishes `record: saved` (Google Sheets) from `record: email_only`. Frontend `form_success` now denotes a saved Sales Lab record (or an email-delivered non-Sales-Lab form); `form_email_only` denotes an email-delivered but unsaved Sales Lab request. An early-bird success conversion requires a saved record. Email-only leads remain visible to the participant as emailed but not registered. This is **Vercel Analytics** event differentiation, not evidence that Google Ads conversion mapping is configured. Never map `form_email_only` to a confirmed registration conversion.
+
+Monitoring after rollout: use Search Console URL Inspection for `/sales-lab` and both article URLs; review page-level impressions, non-brand clicks and CTR against these baseline values after Google has had time to crawl. Measure mobile and desktop Core Web Vitals with PageSpeed Insights / Chrome UX Report; no LCP, INP or CLS values were collected in this report. Avoid claiming indexing or rankings improved without supporting Google data. No Search Console/GA4 account is currently connected through Windsor.ai.
