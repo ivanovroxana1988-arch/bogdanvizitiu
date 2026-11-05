@@ -120,9 +120,7 @@ async function getWaitlistStatus(
  * Credentials are server-side only; the public browser never receives them.
  * Keep the sheet shared exclusively with the service account and organizers.
  */
-export async function syncSalesLabToSheets(
-  record: RegistrationRecord,
-): Promise<SyncOutcome> {
+export async function syncSalesLabToSheets(record: RegistrationRecord): Promise<SyncOutcome> {
   const spreadsheetId = process.env.SALES_LAB_SHEET_ID
   const clientEmail = process.env.GOOGLE_SHEETS_CLIENT_EMAIL
   const privateKey = process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, '\n')

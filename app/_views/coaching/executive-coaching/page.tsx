@@ -55,7 +55,9 @@ export default function ExecutiveCoaching({ searchParams }: { searchParams?: { l
           <div className="conversion-hero-copy">
             <p className={styles.heroIntro}>{copy.intro}</p>
             <ArrowLink href={contactHref}>
-              {locale === 'ro' ? 'Descrie situația pe care vrei să o clarifici' : 'Describe the situation you want to clarify'}
+              {locale === 'ro'
+                ? 'Descrie situația pe care vrei să o clarifici'
+                : 'Describe the situation you want to clarify'}
             </ArrowLink>
           </div>
         </div>

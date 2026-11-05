@@ -104,8 +104,12 @@
 }
 
 @keyframes portfolio-marquee {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(-50%, 0, 0); }
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 @media (max-width: 700px) {
@@ -115,8 +119,12 @@
     margin-bottom: 24px;
   }
 
-  .runner { animation-duration: 82s; }
-  .track { gap: 26px; }
+  .runner {
+    animation-duration: 82s;
+  }
+  .track {
+    gap: 26px;
+  }
 
   .logoSlot {
     width: 138px;
@@ -124,10 +132,22 @@
     padding-inline: 6px;
   }
 
-  .wide .logoImage { max-width: 132px; max-height: 44px; }
-  .medium .logoImage { max-width: 120px; max-height: 48px; }
-  .compact .logoImage { max-width: 104px; max-height: 54px; }
-  .stacked .logoImage { max-width: 112px; max-height: 58px; }
+  .wide .logoImage {
+    max-width: 132px;
+    max-height: 44px;
+  }
+  .medium .logoImage {
+    max-width: 120px;
+    max-height: 48px;
+  }
+  .compact .logoImage {
+    max-width: 104px;
+    max-height: 54px;
+  }
+  .stacked .logoImage {
+    max-width: 112px;
+    max-height: 58px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -137,6 +157,10 @@
     -webkit-mask-image: none;
   }
 
-  .runner { animation: none; }
-  .track[aria-hidden='true'] { display: none; }
+  .runner {
+    animation: none;
+  }
+  .track[aria-hidden='true'] {
+    display: none;
+  }
 }

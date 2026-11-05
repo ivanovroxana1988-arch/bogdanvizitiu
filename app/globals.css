@@ -852,7 +852,10 @@ footer {
 
 /* Mobile navigation: visible overlay instead of a scrollable page component. */
 @media (max-width: 900px) {
-  .header { z-index: 1000; isolation: isolate; }
+  .header {
+    z-index: 1000;
+    isolation: isolate;
+  }
   .nav nav.open {
     display: flex;
     position: fixed;
@@ -879,10 +882,21 @@ footer {
     padding: 15px 0;
     border-bottom: 1px solid rgb(24 33 38 / 12%);
   }
-  .nav nav.open .language-switch { margin-top: 14px; }
-  .menu { cursor: pointer; position: relative; z-index: 1003; }
-  .page-hero h1, .hero h1 { overflow-wrap: anywhere; }
+  .nav nav.open .language-switch {
+    margin-top: 14px;
+  }
+  .menu {
+    cursor: pointer;
+    position: relative;
+    z-index: 1003;
+  }
+  .page-hero h1,
+  .hero h1 {
+    overflow-wrap: anywhere;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .nav nav { scroll-behavior: auto; }
+  .nav nav {
+    scroll-behavior: auto;
+  }
 }

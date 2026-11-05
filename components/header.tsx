@@ -23,7 +23,8 @@ export function Header({ locale }: { locale: Locale }) {
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   const copy = navigation[locale]
   const englishHref = englishNavigationTarget(pathname)
-  const isEnglishCatalogueFallback = locale === 'ro' && englishHref === '/en/programs' && pathname !== '/cursuri'
+  const isEnglishCatalogueFallback =
+    locale === 'ro' && englishHref === '/en/programs' && pathname !== '/cursuri'
   const isActive = (href: string) => {
     const target = withLocale(href, locale).split(/[?#]/)[0]
     return pathname === target || (target !== '/' && pathname.startsWith(`${target}/`))
@@ -92,7 +93,9 @@ export function Header({ locale }: { locale: Locale }) {
             <span aria-hidden> / </span>
             <Link
               href={englishHref}
-              aria-label={isEnglishCatalogueFallback ? 'Vezi catalogul de cursuri în engleză' : undefined}
+              aria-label={
+                isEnglishCatalogueFallback ? 'Vezi catalogul de cursuri în engleză' : undefined
+              }
               aria-current={locale === 'en' ? 'page' : undefined}
             >
               EN

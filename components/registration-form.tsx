@@ -348,7 +348,9 @@ export function RegistrationForm({
             Numărul de participanți
             <select name="seats" defaultValue="1" aria-label="Numărul de participanți solicitați">
               {Array.from({ length: 15 }, (_, index) => index + 1).map((count) => (
-                <option key={count} value={count}>{count} {count === 1 ? 'participant' : 'participanți'}</option>
+                <option key={count} value={count}>
+                  {count} {count === 1 ? 'participant' : 'participanți'}
+                </option>
               ))}
             </select>
           </label>
@@ -369,7 +371,7 @@ export function RegistrationForm({
 
       <p className={`${commercialStyles.full} ${formStyles.status}`} aria-live="polite">
         {state === 'success'
-          ? (successMessage || copy.success)
+          ? successMessage || copy.success
           : state === 'fallback'
             ? copy.fallback
             : state === 'error'
@@ -388,7 +390,7 @@ export function RegistrationForm({
       )}
 
       <button type="submit" disabled={state === 'sending'} aria-disabled={state === 'sending'}>
-        {state === 'sending' ? copy.sending : (submitLabel || copy.submit)} →
+        {state === 'sending' ? copy.sending : submitLabel || copy.submit} →
       </button>
     </form>
   )

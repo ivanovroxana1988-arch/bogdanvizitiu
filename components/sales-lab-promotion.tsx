@@ -20,7 +20,6 @@ const eligiblePaths = new Set([
   '/workshopuri',
 ])
 
-
 function suppressed() {
   try {
     return (
@@ -150,15 +149,21 @@ export function SalesLabPopup() {
           <span aria-hidden="true">×</span>
         </button>
         <div className={styles.popupContent}>
-          <p className={styles.brand}>SALES <span>LAB</span> <small>by Bogdan Vizitiu</small></p>
+          <p className={styles.brand}>
+            SALES <span>LAB</span> <small>by Bogdan Vizitiu</small>
+          </p>
           <p className={styles.kicker}>Ofertă de lansare · 21–22 ianuarie 2027</p>
-          <h2 id="early-bird-title">Early Bird pentru <em>primele 5 locuri.</em></h2>
+          <h2 id="early-bird-title">
+            Early Bird pentru <em>primele 5 locuri.</em>
+          </h2>
           <p id="early-bird-description" className={styles.description}>
             Două zile de exerciții, simulări și feedback pentru conversații comerciale mai bune.
           </p>
           <div className={styles.prices}>
             <strong>500 €</strong>
-            <span><s>600 €</s> / participant</span>
+            <span>
+              <s>600 €</s> / participant
+            </span>
           </div>
           <p className={styles.saving}>Economisești 100 € până la 30 noiembrie.</p>
           <p className={styles.meta}>București · 16 ore · Maximum 15 participanți</p>
@@ -166,14 +171,20 @@ export function SalesLabPopup() {
             <Link
               href="/sales-lab#inscriere"
               className={styles.primary}
-              onClick={() => { trackEntry('popup'); dismiss('navigate') }}
+              onClick={() => {
+                trackEntry('popup')
+                dismiss('navigate')
+              }}
             >
               Solicită înscrierea <span aria-hidden="true">↗</span>
             </Link>
             <Link
               href="/sales-lab"
               className={styles.secondary}
-              onClick={() => { trackEntry('popup'); dismiss('navigate') }}
+              onClick={() => {
+                trackEntry('popup')
+                dismiss('navigate')
+              }}
             >
               Vezi programul
             </Link>
@@ -222,7 +233,10 @@ export function SalesLabBanner() {
         <p>21–22 ianuarie 2027, București. Oferta expiră pe 30 noiembrie 2026.</p>
       </div>
       <div className={styles.bannerOffer}>
-        <div className={styles.bannerPrices}><strong>500 €</strong><s>600 €</s></div>
+        <div className={styles.bannerPrices}>
+          <strong>500 €</strong>
+          <s>600 €</s>
+        </div>
         <span>Economisești 100 € / participant</span>
       </div>
       <div className={styles.bannerAction}>

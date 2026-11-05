@@ -77,15 +77,31 @@ export default function Programs({ searchParams }: { searchParams?: SearchParams
         <section className={featureStyles.featured} aria-labelledby="featured-sales-lab-title">
           <div className={featureStyles.copy}>
             <p className={featureStyles.eyebrow}>Înscrieri deschise · Curs recomandat</p>
-            <h2 id="featured-sales-lab-title">Sales <em>Lab.</em></h2>
+            <h2 id="featured-sales-lab-title">
+              Sales <em>Lab.</em>
+            </h2>
             <p className={featureStyles.lead}>Curs practic de vânzări și negociere.</p>
-            <p className={featureStyles.description}>Două zile de exerciții, simulări și feedback pe conversații comerciale reale.</p>
-            <p className={featureStyles.details}>21–22 ianuarie 2027 · București · 16 ore · Maximum 15 participanți</p>
-            <p className={featureStyles.price}>600 EUR <span>/ participant</span></p>
-            <a className={featureStyles.action} href="/sales-lab">Vezi programul și solicită înscrierea <span aria-hidden="true">↗</span></a>
+            <p className={featureStyles.description}>
+              Două zile de exerciții, simulări și feedback pe conversații comerciale reale.
+            </p>
+            <p className={featureStyles.details}>
+              21–22 ianuarie 2027 · București · 16 ore · Maximum 15 participanți
+            </p>
+            <p className={featureStyles.price}>
+              600 EUR <span>/ participant</span>
+            </p>
+            <a className={featureStyles.action} href="/sales-lab">
+              Vezi programul și solicită înscrierea <span aria-hidden="true">↗</span>
+            </a>
           </div>
           <div className={featureStyles.visual}>
-            <Image src="/images/sales-lab/761c3d0c-2526-43a0-9779-31c2d4fbda90.png" alt="Imagine de prezentare Sales Lab" fill sizes="(max-width: 760px) 100vw, 46vw" className={featureStyles.image} />
+            <Image
+              src="/images/sales-lab/761c3d0c-2526-43a0-9779-31c2d4fbda90.png"
+              alt="Imagine de prezentare Sales Lab"
+              fill
+              sizes="(max-width: 760px) 100vw, 46vw"
+              className={featureStyles.image}
+            />
           </div>
         </section>
       )}
@@ -94,7 +110,9 @@ export default function Programs({ searchParams }: { searchParams?: SearchParams
         {locale === 'ro' && (
           <div className={featureStyles.catalogHeading}>
             <Eyebrow>Explorează programele</Eyebrow>
-            <h2 id="courses-catalog-title" className={styles.sectionTitle}>Cursuri viitoare</h2>
+            <h2 id="courses-catalog-title" className={styles.sectionTitle}>
+              Cursuri viitoare
+            </h2>
           </div>
         )}
         <CourseCatalog

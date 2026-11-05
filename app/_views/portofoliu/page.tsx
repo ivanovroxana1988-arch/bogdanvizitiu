@@ -32,13 +32,7 @@ function OrganizationTile({ name }: { name: string }) {
   )
 }
 
-function EvidenceRow({
-  organization,
-  detail,
-}: {
-  organization: string
-  detail: string
-}) {
+function EvidenceRow({ organization, detail }: { organization: string; detail: string }) {
   return (
     <article className={styles.evidenceRow}>
       <div className={styles.evidenceBrand}>
@@ -71,7 +65,9 @@ export default function Portfolio({ searchParams }: { searchParams?: { lang?: st
     <main className={styles.page}>
       <section className={`shell ${styles.hero}`}>
         <p className={styles.eyebrow}>{isRo ? 'Experiență aplicată' : 'Applied experience'}</p>
-        <h1 className={styles.title}>{isRo ? 'Portofoliu de experiență' : 'Experience portfolio'}</h1>
+        <h1 className={styles.title}>
+          {isRo ? 'Portofoliu de experiență' : 'Experience portfolio'}
+        </h1>
         <p className={styles.intro}>
           {isRo
             ? 'De-a lungul parcursului profesional am lucrat cu oameni și echipe din organizații foarte diferite. Unele proiecte au fost livrate direct, altele în colaborare cu parteneri de training și consultanță. Aici separ aceste contexte, ca experiența din spatele logo-urilor să fie cât mai clară.'
@@ -80,7 +76,10 @@ export default function Portfolio({ searchParams }: { searchParams?: { lang?: st
       </section>
 
       <div className="shell">
-        <section className={`${styles.group} ${styles.stupSection}`} aria-labelledby="portfolio-stup">
+        <section
+          className={`${styles.group} ${styles.stupSection}`}
+          aria-labelledby="portfolio-stup"
+        >
           <div className={styles.sectionIntroGrid}>
             <div>
               <p className={styles.sectionKicker}>{portfolio.stup.period}</p>
@@ -88,7 +87,9 @@ export default function Portfolio({ searchParams }: { searchParams?: { lang?: st
                 {isRo ? portfolio.stup.titleRo : portfolio.stup.titleEn}
               </h2>
             </div>
-            <p className={styles.groupIntro}>{isRo ? portfolio.stup.introRo : portfolio.stup.introEn}</p>
+            <p className={styles.groupIntro}>
+              {isRo ? portfolio.stup.introRo : portfolio.stup.introEn}
+            </p>
           </div>
 
           <div className={styles.stats}>
@@ -105,7 +106,14 @@ export default function Portfolio({ searchParams }: { searchParams?: { lang?: st
               <div className={styles.programRow} key={program.nameRo}>
                 <span>{isRo ? program.nameRo : program.nameEn}</span>
                 <strong>
-                  {program.editions} {isRo ? (program.editions === '1' ? 'ediție' : 'ediții') : program.editions === '1' ? 'edition' : 'editions'}
+                  {program.editions}{' '}
+                  {isRo
+                    ? program.editions === '1'
+                      ? 'ediție'
+                      : 'ediții'
+                    : program.editions === '1'
+                      ? 'edition'
+                      : 'editions'}
                 </strong>
               </div>
             ))}
@@ -133,7 +141,11 @@ export default function Portfolio({ searchParams }: { searchParams?: { lang?: st
           </div>
 
           <p className={styles.additionalLine}>
-            <span>{isRo ? 'Alte organizații din această colaborare:' : 'Other organizations in this collaboration:'}</span>{' '}
+            <span>
+              {isRo
+                ? 'Alte organizații din această colaborare:'
+                : 'Other organizations in this collaboration:'}
+            </span>{' '}
             {portfolio.humanisticValere.additionalOrganizations.join(' · ')}
           </p>
         </section>
@@ -143,12 +155,16 @@ export default function Portfolio({ searchParams }: { searchParams?: { lang?: st
             <h2 id="portfolio-hpdi" className={styles.groupTitle}>
               {isRo ? portfolio.hpdi.titleRo : portfolio.hpdi.titleEn}
             </h2>
-            <p className={styles.groupIntro}>{isRo ? portfolio.hpdi.introRo : portfolio.hpdi.introEn}</p>
+            <p className={styles.groupIntro}>
+              {isRo ? portfolio.hpdi.introRo : portfolio.hpdi.introEn}
+            </p>
           </div>
 
           <div className={styles.hpdiGrid}>
             <article className={styles.btBlock}>
-              <p className={styles.sectionKicker}>{isRo ? portfolio.hpdi.btTitleRo : portfolio.hpdi.btTitleEn}</p>
+              <p className={styles.sectionKicker}>
+                {isRo ? portfolio.hpdi.btTitleRo : portfolio.hpdi.btTitleEn}
+              </p>
               <div className={styles.miniLogoGrid}>
                 {portfolio.hpdi.btOrganizations.map((name) => (
                   <div className={styles.miniLogo} key={name}>
@@ -162,7 +178,9 @@ export default function Portfolio({ searchParams }: { searchParams?: { lang?: st
                   <span key={topic}>{topic}</span>
                 ))}
               </div>
-              <p className={styles.microNote}>{isRo ? portfolio.hpdi.btNoteRo : portfolio.hpdi.btNoteEn}</p>
+              <p className={styles.microNote}>
+                {isRo ? portfolio.hpdi.btNoteRo : portfolio.hpdi.btNoteEn}
+              </p>
             </article>
 
             <div className={styles.hpdiSide}>
@@ -218,10 +236,14 @@ export default function Portfolio({ searchParams }: { searchParams?: { lang?: st
         <section className={styles.group} aria-labelledby="portfolio-entrepreneurship">
           <div className={styles.sectionIntroGrid}>
             <h2 id="portfolio-entrepreneurship" className={styles.groupTitle}>
-              {isRo ? portfolio.entrepreneurshipAdvisory.titleRo : portfolio.entrepreneurshipAdvisory.titleEn}
+              {isRo
+                ? portfolio.entrepreneurshipAdvisory.titleRo
+                : portfolio.entrepreneurshipAdvisory.titleEn}
             </h2>
             <p className={styles.groupIntro}>
-              {isRo ? portfolio.entrepreneurshipAdvisory.introRo : portfolio.entrepreneurshipAdvisory.introEn}
+              {isRo
+                ? portfolio.entrepreneurshipAdvisory.introRo
+                : portfolio.entrepreneurshipAdvisory.introEn}
             </p>
           </div>
           <div className={styles.evidenceList}>

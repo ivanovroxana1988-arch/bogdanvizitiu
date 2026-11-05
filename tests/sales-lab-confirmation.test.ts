@@ -18,8 +18,14 @@ test('Sales Lab acknowledgement describes dates, location, price and pending sta
 })
 
 test('Sales Lab acknowledgement expires conditional promotion in the email', () => {
-  const before = buildSalesLabConfirmation({ name: 'Ana Popescu', seats: 1 }, Date.parse('2026-11-03T20:00:00Z'))
-  const after = buildSalesLabConfirmation({ name: 'Ana Popescu', seats: 1 }, Date.parse('2026-12-01T00:00:00Z'))
+  const before = buildSalesLabConfirmation(
+    { name: 'Ana Popescu', seats: 1 },
+    Date.parse('2026-11-03T20:00:00Z'),
+  )
+  const after = buildSalesLabConfirmation(
+    { name: 'Ana Popescu', seats: 1 },
+    Date.parse('2026-12-01T00:00:00Z'),
+  )
   match(before.text, /Early Bird/)
   doesNotMatch(after.text, /Early Bird/)
   doesNotMatch(after.html, /Early Bird/)

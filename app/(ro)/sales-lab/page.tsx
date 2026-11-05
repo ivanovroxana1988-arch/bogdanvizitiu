@@ -55,7 +55,12 @@ const structuredData: Record<string, unknown> = {
       '@id': pageUrl + '#breadcrumb',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Acasă', item: 'https://bogdanvizitiu.com/' },
-        { '@type': 'ListItem', position: 2, name: 'Cursuri', item: 'https://bogdanvizitiu.com/cursuri' },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Cursuri',
+          item: 'https://bogdanvizitiu.com/cursuri',
+        },
         { '@type': 'ListItem', position: 3, name: 'Sales Lab', item: pageUrl },
       ],
     },
@@ -182,11 +187,15 @@ export default function SalesLabPage() {
   return (
     <div className={styles.page}>
       <JsonLd data={structuredData} />
-      <div className="shell" style={{ paddingTop: "1.1rem" }}><SalesLabBanner /></div>
+      <div className="shell" style={{ paddingTop: '1.1rem' }}>
+        <SalesLabBanner />
+      </div>
       <nav className={styles.breadcrumb} aria-label="Navigare în ierarhia paginii">
         <div className="shell">
-          <a href="/">Acasă</a><span aria-hidden="true"> / </span>
-          <a href="/cursuri">Cursuri</a><span aria-hidden="true"> / </span>
+          <a href="/">Acasă</a>
+          <span aria-hidden="true"> / </span>
+          <a href="/cursuri">Cursuri</a>
+          <span aria-hidden="true"> / </span>
           <span aria-current="page">Sales Lab</span>
         </div>
       </nav>
@@ -199,13 +208,11 @@ export default function SalesLabPage() {
                 Sales <em>Lab.</em>
                 <span>Curs practic de vânzări și negociere în București.</span>
               </h1>
-              <p className={styles.lead}>
-                Conversații mai bune. Decizii comerciale mai clare.
-              </p>
+              <p className={styles.lead}>Conversații mai bune. Decizii comerciale mai clare.</p>
               <p className={styles.intro}>
-                Pe 21–22 ianuarie 2027, acest training de vânzări în sală aduce
-                două zile de exerciții, simulări și feedback. Lucrezi pe descoperirea
-                nevoilor clienților, obiecții, negociere și următorii pași ai vânzării.
+                Pe 21–22 ianuarie 2027, acest training de vânzări în sală aduce două zile de
+                exerciții, simulări și feedback. Lucrezi pe descoperirea nevoilor clienților,
+                obiecții, negociere și următorii pași ai vânzării.
               </p>
               <ul className={styles.facts} aria-label="Detalii rapide despre curs">
                 <li>21–22 ianuarie 2027</li>
@@ -213,13 +220,19 @@ export default function SalesLabPage() {
                 <li>16 ore · 15 locuri</li>
               </ul>
               <div className={styles.actions}>
-                <SalesLabCta className={styles.primaryCta}>Solicită înscrierea <span aria-hidden="true">↗</span></SalesLabCta>
-                <a className={styles.secondaryCta} href="#program">Explorează programul <span aria-hidden="true">↓</span></a>
+                <SalesLabCta className={styles.primaryCta}>
+                  Solicită înscrierea <span aria-hidden="true">↗</span>
+                </SalesLabCta>
+                <a className={styles.secondaryCta} href="#program">
+                  Explorează programul <span aria-hidden="true">↓</span>
+                </a>
               </div>
               <div className={styles.priceLine}>
                 <strong>600 €</strong>
                 <span>/ participant</span>
-                <small>Preț standard. Cererea nu implică plată sau rezervarea automată a locului.</small>
+                <small>
+                  Preț standard. Cererea nu implică plată sau rezervarea automată a locului.
+                </small>
               </div>
               <SalesLabPromoNote className={styles.promoNote} />
             </div>
@@ -244,7 +257,9 @@ export default function SalesLabPage() {
         <div className="shell">
           <div className={styles.sectionHead}>
             <p className={styles.eyebrow}>Recunoști situațiile?</p>
-            <h2 id="situatii-title">Nu fiecare conversație dificilă se rezolvă cu un pitch mai bun.</h2>
+            <h2 id="situatii-title">
+              Nu fiecare conversație dificilă se rezolvă cu un pitch mai bun.
+            </h2>
           </div>
           <div className={styles.problemGrid}>
             <p>Clientul spune „mai discutăm” și nu știi care este de fapt blocajul.</p>
@@ -252,8 +267,8 @@ export default function SalesLabPage() {
             <p>Întâlnirea merge bine, dar următorul pas rămâne ambiguu.</p>
           </div>
           <p className={styles.sectionClosing}>
-            În Sales Lab lucrăm exact pe tipul acesta de situații: le desfacem, le exersăm și
-            căutăm alternative mai utile decât răspunsurile automate.
+            În Sales Lab lucrăm exact pe tipul acesta de situații: le desfacem, le exersăm și căutăm
+            alternative mai utile decât răspunsurile automate.
           </p>
         </div>
       </section>
@@ -275,7 +290,9 @@ export default function SalesLabPage() {
               </div>
             ))}
           </div>
-          <SalesLabCta className={styles.textCta}>Vreau să particip <span aria-hidden="true">↗</span></SalesLabCta>
+          <SalesLabCta className={styles.textCta}>
+            Vreau să particip <span aria-hidden="true">↗</span>
+          </SalesLabCta>
         </div>
       </section>
 
@@ -292,35 +309,41 @@ export default function SalesLabPage() {
                   <span className={styles.dayDate}>{day.day}</span>
                   <span className={styles.dayTitle}>{day.name}</span>
                   <span className={styles.daySummary}>{day.summary}</span>
-                  <span className={styles.expand} aria-hidden="true">+</span>
+                  <span className={styles.expand} aria-hidden="true">
+                    +
+                  </span>
                 </summary>
                 <ul>
-                  {day.items.map((item) => <li key={item}>{item}</li>)}
+                  {day.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
                 </ul>
               </details>
             ))}
           </div>
           <p className={styles.note}>
-            Agenda este orientativă și poate fi ajustată în funcție de dinamica grupului.
-            Programul cuprinde două zile de câte 8 ore, inclusiv pauze.
+            Agenda este orientativă și poate fi ajustată în funcție de dinamica grupului. Programul
+            cuprinde două zile de câte 8 ore, inclusiv pauze.
           </p>
           <div className={styles.seoExplainer}>
             <h3>Ce faci concret în acest curs de vânzări?</h3>
             <p>
-              Exersezi întrebări de descoperire, prezinți valoarea unei soluții,
-              gestionezi obiecții despre preț și simulezi negocieri. Fiecare exercițiu
-              pornește de la situații comerciale întâlnite în lucrul cu clienții,
-              cu feedback și idei de aplicat după curs.
+              Exersezi întrebări de descoperire, prezinți valoarea unei soluții, gestionezi obiecții
+              despre preț și simulezi negocieri. Fiecare exercițiu pornește de la situații
+              comerciale întâlnite în lucrul cu clienții, cu feedback și idei de aplicat după curs.
             </p>
             <p>
-              Sales Lab se desfășoară față în față, în București, pentru un grup
-              de maximum 15 participanți. Dacă te interesează și alte teme,
-              poți explora <a href="/cursuri">cursurile și programele viitoare</a>.
+              Sales Lab se desfășoară față în față, în București, pentru un grup de maximum 15
+              participanți. Dacă te interesează și alte teme, poți explora{' '}
+              <a href="/cursuri">cursurile și programele viitoare</a>.
             </p>
             <p>
               Dacă vrei să aprofundezi tema, citește și articolul despre{' '}
-              <a href="/insights/negocierea-nu-este-doar-despre-argumente">cum funcționează emoțiile în negociere</a>
-              {' '}sau explorează <a href="/cursuri/arta-negocierii">programul Negotiation &amp; Influence</a>.
+              <a href="/insights/negocierea-nu-este-doar-despre-argumente">
+                cum funcționează emoțiile în negociere
+              </a>{' '}
+              sau explorează{' '}
+              <a href="/cursuri/arta-negocierii">programul Negotiation &amp; Influence</a>.
             </p>
           </div>
         </div>
@@ -333,22 +356,24 @@ export default function SalesLabPage() {
               <p className={styles.eyebrow}>Cine facilitează</p>
               <h2 id="trainer-title">Bogdan Vizitiu.</h2>
               <p className={styles.trainerLead}>
-                Trainer, consultant și coach, cu experiență în vânzări, management comercial
-                și dezvoltarea oamenilor.
+                Trainer, consultant și coach, cu experiență în vânzări, management comercial și
+                dezvoltarea oamenilor.
               </p>
               <p className={styles.credibilityNote}>
-                Lucrezi cu un facilitator care aduce în sală experiența din roluri
-                comerciale, management și proiecte de dezvoltare profesională.
-                Accentul este pus pe exerciții aplicate și feedback în sală.
+                Lucrezi cu un facilitator care aduce în sală experiența din roluri comerciale,
+                management și proiecte de dezvoltare profesională. Accentul este pus pe exerciții
+                aplicate și feedback în sală.
               </p>
             </div>
             <div>
               <p>
-                Parcursul său include roluri comerciale și de management la Orange România,
-                precum și proiecte de training și consultanță la Trend Consult. Lucrează cu
-                situații reale, conversații și comportamente care pot fi testate în practică.
+                Parcursul său include roluri comerciale și de management la Orange România, precum
+                și proiecte de training și consultanță la Trend Consult. Lucrează cu situații reale,
+                conversații și comportamente care pot fi testate în practică.
               </p>
-              <a className={styles.textCta} href="/despre">Descoperă experiența lui Bogdan <span aria-hidden="true">↗</span></a>
+              <a className={styles.textCta} href="/despre">
+                Descoperă experiența lui Bogdan <span aria-hidden="true">↗</span>
+              </a>
             </div>
           </div>
         </div>
@@ -361,11 +386,21 @@ export default function SalesLabPage() {
               <p className={styles.eyebrow}>Informații utile</p>
               <h2 id="detalii-title">Detaliile care contează.</h2>
               <div className={styles.logistics}>
-                <p><strong>Perioadă:</strong> 21–22 ianuarie 2027</p>
-                <p><strong>Oraș:</strong> București; locația exactă va fi comunicată ulterior</p>
-                <p><strong>Format:</strong> în sală, două zile · 16 ore</p>
-                <p><strong>Grup:</strong> maximum 15 participanți</p>
-                <p><strong>Investiție:</strong> 600 EUR / participant (preț standard)</p>
+                <p>
+                  <strong>Perioadă:</strong> 21–22 ianuarie 2027
+                </p>
+                <p>
+                  <strong>Oraș:</strong> București; locația exactă va fi comunicată ulterior
+                </p>
+                <p>
+                  <strong>Format:</strong> în sală, două zile · 16 ore
+                </p>
+                <p>
+                  <strong>Grup:</strong> maximum 15 participanți
+                </p>
+                <p>
+                  <strong>Investiție:</strong> 600 EUR / participant (preț standard)
+                </p>
                 <SalesLabPromoNote className={styles.promoNote} />
               </div>
             </div>
@@ -374,7 +409,10 @@ export default function SalesLabPage() {
               <div className={styles.faqs}>
                 {faqs.map((faq) => (
                   <details key={faq.question}>
-                    <summary>{faq.question}<span aria-hidden="true">+</span></summary>
+                    <summary>
+                      {faq.question}
+                      <span aria-hidden="true">+</span>
+                    </summary>
                     <p>{faq.answer}</p>
                   </details>
                 ))}
@@ -395,12 +433,12 @@ export default function SalesLabPage() {
               </p>
               <SalesLabPromoNote className={styles.promoNote} />
               <p>
-                Completează formularul și revenim pentru confirmarea disponibilității,
-                detaliile de plată și informațiile logistice. Nu se face plată pe această pagină.
+                Completează formularul și revenim pentru confirmarea disponibilității, detaliile de
+                plată și informațiile logistice. Nu se face plată pe această pagină.
               </p>
               <p className={styles.groupNote}>
-                Înscrii colegi din aceeași organizație? Poți solicita mai multe locuri
-                direct în formular.
+                Înscrii colegi din aceeași organizație? Poți solicita mai multe locuri direct în
+                formular.
               </p>
             </div>
             <div className={styles.formPanel}>
@@ -417,7 +455,9 @@ export default function SalesLabPage() {
           </div>
         </div>
       </section>
-      <SalesLabCta className={styles.mobileCta}>Solicită înscrierea <span aria-hidden="true">↗</span></SalesLabCta>
+      <SalesLabCta className={styles.mobileCta}>
+        Solicită înscrierea <span aria-hidden="true">↗</span>
+      </SalesLabCta>
     </div>
   )
 }

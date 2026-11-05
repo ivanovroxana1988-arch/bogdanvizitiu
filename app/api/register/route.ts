@@ -78,9 +78,14 @@ export async function POST(request: Request) {
   const utmSource = clean(raw.utm_source, 200)
   const utmMedium = clean(raw.utm_medium, 200)
   const utmCampaign = clean(raw.utm_campaign, 200)
-  const course = courseSlug === 'sales-lab' && locale === 'ro'
-    ? { slug: 'sales-lab', title: 'Sales Lab – 21–22 ianuarie 2027, București', dates: ['2027-01-21', '2027-01-22'] }
-    : getPrograms(locale).find((item) => item.slug === courseSlug)
+  const course =
+    courseSlug === 'sales-lab' && locale === 'ro'
+      ? {
+          slug: 'sales-lab',
+          title: 'Sales Lab – 21–22 ianuarie 2027, București',
+          dates: ['2027-01-21', '2027-01-22'],
+        }
+      : getPrograms(locale).find((item) => item.slug === courseSlug)
 
   if (!course) {
     return NextResponse.json({ ok: false, error: 'invalid_course' }, { status: 400 })

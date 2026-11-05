@@ -35,7 +35,10 @@ export default function Coaching({ searchParams }: { searchParams?: { lang?: str
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': `${canonical}#service`,
-    name: locale === 'ro' ? 'Coaching individual pentru manageri și profesioniști' : 'Individual coaching for managers and professionals',
+    name:
+      locale === 'ro'
+        ? 'Coaching individual pentru manageri și profesioniști'
+        : 'Individual coaching for managers and professionals',
     description: copy.intro,
     url: canonical,
     serviceType: 'Coaching',
@@ -93,7 +96,9 @@ export default function Coaching({ searchParams }: { searchParams?: { lang?: str
 
       <section className="shell conversion-content-section" aria-labelledby="coaching-next-step">
         <div className="prose" style={{ maxWidth: '900px' }}>
-          <Eyebrow>{locale === 'ro' ? 'Alege intervenția potrivită' : 'Find the right support'}</Eyebrow>
+          <Eyebrow>
+            {locale === 'ro' ? 'Alege intervenția potrivită' : 'Find the right support'}
+          </Eyebrow>
           <h2 id="coaching-next-step">
             {locale === 'ro'
               ? 'Coaching individual sau executive coaching?'
@@ -105,15 +110,24 @@ export default function Coaching({ searchParams }: { searchParams?: { lang?: str
               : 'If you work through leadership decisions, management responsibilities or difficult conversations, explore executive coaching.'}
           </p>
           <ArrowLink href={localizePath('/coaching/executive-coaching', locale)}>
-            {locale === 'ro' ? 'Executive coaching pentru manageri și lideri' : 'Executive coaching for managers and leaders'}
+            {locale === 'ro'
+              ? 'Executive coaching pentru manageri și lideri'
+              : 'Executive coaching for managers and leaders'}
           </ArrowLink>
           <p>
             {locale === 'ro'
               ? 'Nu ești sigur dacă ai nevoie de coaching sau consultanță? Citește comparația înainte să alegi.'
               : 'Not sure whether you need coaching or consulting? Read the comparison before deciding.'}
           </p>
-          <ArrowLink href={localizePath('/insights/coaching-sau-consultanta-de-ce-ai-nevoie-de-fapt', locale)}>
-            {locale === 'ro' ? 'Coaching sau consultanță: de ce ai nevoie?' : 'Coaching or consulting: what do you need?'}
+          <ArrowLink
+            href={localizePath(
+              '/insights/coaching-sau-consultanta-de-ce-ai-nevoie-de-fapt',
+              locale,
+            )}
+          >
+            {locale === 'ro'
+              ? 'Coaching sau consultanță: de ce ai nevoie?'
+              : 'Coaching or consulting: what do you need?'}
           </ArrowLink>
         </div>
       </section>

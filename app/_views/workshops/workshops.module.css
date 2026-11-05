@@ -21,7 +21,7 @@
 
 .heroGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
   gap: clamp(36px, 6vw, 84px);
   align-items: end;
 }
@@ -36,7 +36,7 @@
 
 .hero h1 {
   font-size: clamp(3.5rem, 6vw, 6.4rem);
-  line-height: .95;
+  line-height: 0.95;
   margin: 0;
   max-width: 900px;
 }
@@ -74,7 +74,7 @@
   width: min(calc(100% - 64px), 1360px);
   margin-inline: auto;
   display: grid;
-  grid-template-columns: minmax(260px, .7fr) minmax(0, 1.3fr);
+  grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1.3fr);
   gap: clamp(46px, 8vw, 120px);
 }
 
@@ -98,7 +98,7 @@
 
 .sectionHead {
   display: grid;
-  grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
   gap: clamp(46px, 8vw, 120px);
   margin-bottom: 46px;
   align-items: end;
@@ -109,7 +109,7 @@
   font-size: clamp(3rem, 5vw, 5.4rem);
   font-weight: 400;
   letter-spacing: -0.045em;
-  line-height: .98;
+  line-height: 0.98;
   margin: 0;
 }
 
@@ -124,7 +124,7 @@
 .summary {
   list-style: none;
   display: grid;
-  grid-template-columns: 66px minmax(260px, .82fr) minmax(300px, 1.18fr) 28px;
+  grid-template-columns: 66px minmax(260px, 0.82fr) minmax(300px, 1.18fr) 28px;
   gap: clamp(20px, 4vw, 58px);
   align-items: center;
   padding: clamp(28px, 3.4vw, 42px) 0;
@@ -138,7 +138,7 @@
 .number {
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: .16em;
+  letter-spacing: 0.16em;
   color: var(--accent);
 }
 
@@ -193,7 +193,7 @@
   margin-bottom: 18px;
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: .15em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -228,14 +228,14 @@
 .cta {
   padding-block: clamp(4.25rem, 6vw, 6rem);
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
   gap: clamp(50px, 8vw, 120px);
   align-items: end;
 }
 
 .cta h2 {
   font-size: clamp(3.4rem, 5.6vw, 6rem);
-  line-height: .98;
+  line-height: 0.98;
   margin: 0;
 }
 

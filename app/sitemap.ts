@@ -26,7 +26,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const normalizedRoRoutes = roRoutes.map((path) => path || '/')
   const routes = [
     ...normalizedRoRoutes,
-    ...normalizedRoRoutes.filter((path) => path !== '/sales-lab').map((path) => localizePath(path, 'en')),
+    ...normalizedRoRoutes
+      .filter((path) => path !== '/sales-lab')
+      .map((path) => localizePath(path, 'en')),
   ]
   return Array.from(new Set(routes)).map((path) => ({ url: base + (path === '/' ? '' : path) }))
 }

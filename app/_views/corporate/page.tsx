@@ -78,7 +78,9 @@ export default function Corporate({ searchParams }: { searchParams?: { lang?: st
           <div className="conversion-hero-copy">
             <p className={styles.heroIntro}>{copy.intro}</p>
             <ArrowLink href={contactHref}>
-              {locale === 'ro' ? 'Descrie problema organizației' : 'Describe the organization’s challenge'}
+              {locale === 'ro'
+                ? 'Descrie problema organizației'
+                : 'Describe the organization’s challenge'}
             </ArrowLink>
           </div>
         </div>
@@ -189,7 +191,9 @@ export default function Corporate({ searchParams }: { searchParams?: { lang?: st
             </ArrowLink>
           </article>
           <article className={styles.editorialCard}>
-            <h3>{locale === 'ro' ? 'Cursuri pentru profesioniști' : 'Open courses for professionals'}</h3>
+            <h3>
+              {locale === 'ro' ? 'Cursuri pentru profesioniști' : 'Open courses for professionals'}
+            </h3>
             <p>
               {locale === 'ro'
                 ? 'Explorează cursurile viitoare sau Sales Lab, cursul de vânzări și negociere din București.'
