@@ -35,6 +35,10 @@ const coachingConsultingSlug = 'coaching-sau-consultanta-de-ce-ai-nevoie-de-fapt
 const coachingConsultingImage = '/images/bogdan/bogdan-coaching-consultanta.webp'
 const aiAdoptionSlug = 'ai-adoption-is-a-change-problem'
 const aiAdoptionImage = '/api/ai-adoption-image'
+const salesLabRelatedInsightSlugs = new Set([
+  'negocierea-nu-este-doar-despre-argumente',
+  'cat-valoreaza-sa-te-simti-ascultat',
+])
 
 const commercialInsightSlugs = new Set([
   'networkingul-nu-incepe-cu-schimbul-de-contacte',
@@ -187,9 +191,8 @@ export default function Insight({
 
   const related = insights.filter((item) => item.slug !== insight.slug).slice(0, 2)
   const editorialCommercialLink = editorialCommercialLinks[insight.slug]
-  const commercialDestination = insight.cta.href === '/sales-lab' && locale === 'en'
-    ? '/cursuri'
-    : insight.cta.href
+  const commercialDestination =
+    insight.cta.href === '/sales-lab' && locale === 'en' ? '/cursuri' : insight.cta.href
   const hasCommercialCta = commercialInsightSlugs.has(insight.slug)
   const hasCoachingConsultingPortrait = insight.slug === coachingConsultingSlug
   const hasAiAdoptionImage = insight.slug === aiAdoptionSlug
@@ -200,9 +203,10 @@ export default function Insight({
       : { title: 'Working with a similar situation?', label: 'Start a conversation' }
   const midCta = editorialCommercialLink
     ? {
-        href: locale === 'ro' && insight.slug === 'cat-valoreaza-sa-te-simti-ascultat'
-          ? '/sales-lab'
-          : localizePath(editorialCommercialLink.href, locale),
+        href:
+          locale === 'ro' && insight.slug === 'cat-valoreaza-sa-te-simti-ascultat'
+            ? '/sales-lab'
+            : localizePath(editorialCommercialLink.href, locale),
         title:
           locale === 'ro'
             ? 'Vrei să duci ideea în practică?'
@@ -347,7 +351,7 @@ export default function Insight({
                   <h2>{midCta.title}</h2>
                   <ArrowLink href={midCta.href}>{midCta.label}</ArrowLink>
                   {locale === 'ro' &&
-                    ['negocierea-nu-este-doar-despre-argumente', 'cat-valoreaza-sa-te-simti-ascultat'].includes(insight.slug) && (
+                    salesLabRelatedInsightSlugs.has(insight.slug) && (
                       <p>
                         Dacă vrei să exersezi și conversații comerciale, vezi{' '}
                         <Link href="/sales-lab">
@@ -365,14 +369,15 @@ export default function Insight({
             <p key={paragraph}>{renderInlineLinks(paragraph, locale)}</p>
           ))}
 
-          {commercialDestination && !(hasCommercialCta && commercialDestination === '/contact') && (
-            <section>
-              <h2>{insight.cta.title}</h2>
-              <ArrowLink href={localizePath(commercialDestination, locale)}>
-                {insight.cta.label}
-              </ArrowLink>
-            </section>
-          )}
+          {commercialDestination &&
+            !(hasCommercialCta && commercialDestination === '/contact') && (
+              <section>
+                <h2>{insight.cta.title}</h2>
+                <ArrowLink href={localizePath(commercialDestination, locale)}>
+                  {insight.cta.label}
+                </ArrowLink>
+              </section>
+            )}
 
           {insight.sourceNote && (
             <section>
