@@ -339,14 +339,18 @@ export default function SalesLabPage() {
             </p>
             <p>
               Dacă vrei să aprofundezi tema, citește și articolul despre{' '}
-              <a href="/insights/cat-valoreaza-sa-te-simti-ascultat">
-                ascultarea și înțelegerea clientului în vânzări
-              </a>,{' '}
               <a href="/insights/negocierea-nu-este-doar-despre-argumente">
-                emoțiile în negociere
+                cum funcționează emoțiile în negociere
               </a>{' '}
               sau explorează{' '}
               <a href="/cursuri/arta-negocierii">programul Negotiation &amp; Influence</a>.
+            </p>
+            <p>
+              Mai multe despre ascultarea în conversațiile comerciale în articolul{' '}
+              <a href="/insights/cat-valoreaza-sa-te-simti-ascultat">
+                Cât valorează să te simți ascultat?
+              </a>
+              .
             </p>
           </div>
         </div>
