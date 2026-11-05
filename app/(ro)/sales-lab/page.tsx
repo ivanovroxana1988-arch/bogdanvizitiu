@@ -339,8 +339,11 @@ export default function SalesLabPage() {
             </p>
             <p>
               Dacă vrei să aprofundezi tema, citește și articolul despre{' '}
+              <a href="/insights/cat-valoreaza-sa-te-simti-ascultat">
+                ascultarea și înțelegerea clientului în vânzări
+              </a>,{' '}
               <a href="/insights/negocierea-nu-este-doar-despre-argumente">
-                cum funcționează emoțiile în negociere
+                emoțiile în negociere
               </a>{' '}
               sau explorează{' '}
               <a href="/cursuri/arta-negocierii">programul Negotiation &amp; Influence</a>.
