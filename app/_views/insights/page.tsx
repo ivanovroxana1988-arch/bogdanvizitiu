@@ -23,6 +23,7 @@ const insightConcepts: Record<
   'nu-invatam-doar-cu-mintea': 'emotionsLearningEditorial',
   'cat-din-viata-traim-pe-pilot-automat': 'mindfulnessAutopilotEditorial',
   'negocierea-nu-este-doar-despre-argumente': 'negotiationEditorial',
+  'cat-valoreaza-sa-te-simti-ascultat': 'negotiationEditorial',
   'stii-ce-ai-de-facut-de-ce-nu-faci': 'insightsWorkspace',
 }
 

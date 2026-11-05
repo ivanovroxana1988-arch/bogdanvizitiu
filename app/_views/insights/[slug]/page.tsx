@@ -28,6 +28,7 @@ const insightConcepts: Record<
   'nu-invatam-doar-cu-mintea': 'emotionsLearningEditorial',
   'cat-din-viata-traim-pe-pilot-automat': 'mindfulnessAutopilotEditorial',
   'negocierea-nu-este-doar-despre-argumente': 'negotiationEditorial',
+  'cat-valoreaza-sa-te-simti-ascultat': 'negotiationEditorial',
 }
 
 const coachingConsultingSlug = 'coaching-sau-consultanta-de-ce-ai-nevoie-de-fapt'
@@ -41,6 +42,7 @@ const commercialInsightSlugs = new Set([
   'nu-invatam-doar-cu-mintea',
   'cat-din-viata-traim-pe-pilot-automat',
   'negocierea-nu-este-doar-despre-argumente',
+  'cat-valoreaza-sa-te-simti-ascultat',
   'de-ce-unele-conversatii-manageriale-schimba-lucrurile',
   'stii-ce-ai-de-facut-de-ce-nu-faci',
   'o-decizie-buna-incepe-inainte-sa-alegi',
@@ -49,6 +51,11 @@ const commercialInsightSlugs = new Set([
 ])
 
 const editorialCommercialLinks: Record<string, { href: string; ro: string; en: string }> = {
+  'cat-valoreaza-sa-te-simti-ascultat': {
+    href: '/cursuri',
+    ro: 'Sales Lab: curs practic de vânzări și negociere',
+    en: 'Explore practical sales and negotiation courses',
+  },
   'de-la-unde-sunt-la-ce-fac-mai-departe-modelul-lives': {
     href: '/coaching/executive-coaching',
     ro: 'Executive coaching pentru manageri și lideri',
@@ -180,6 +187,8 @@ export default function Insight({
 
   const related = insights.filter((item) => item.slug !== insight.slug).slice(0, 2)
   const editorialCommercialLink = editorialCommercialLinks[insight.slug]
+  const commercialDestination =
+    insight.cta.href === '/sales-lab' && locale === 'en' ? '/cursuri' : insight.cta.href
   const hasCommercialCta = commercialInsightSlugs.has(insight.slug)
   const hasCoachingConsultingPortrait = insight.slug === coachingConsultingSlug
   const hasAiAdoptionImage = insight.slug === aiAdoptionSlug
@@ -190,7 +199,10 @@ export default function Insight({
       : { title: 'Working with a similar situation?', label: 'Start a conversation' }
   const midCta = editorialCommercialLink
     ? {
-        href: localizePath(editorialCommercialLink.href, locale),
+        href:
+          locale === 'ro' && insight.slug === 'cat-valoreaza-sa-te-simti-ascultat'
+            ? '/sales-lab'
+            : localizePath(editorialCommercialLink.href, locale),
         title:
           locale === 'ro'
             ? 'Vrei să duci ideea în practică?'
@@ -334,16 +346,6 @@ export default function Insight({
                   </Eyebrow>
                   <h2>{midCta.title}</h2>
                   <ArrowLink href={midCta.href}>{midCta.label}</ArrowLink>
-                  {locale === 'ro' &&
-                    insight.slug === 'negocierea-nu-este-doar-despre-argumente' && (
-                      <p>
-                        Dacă vrei să exersezi și conversații comerciale, vezi{' '}
-                        <Link href="/sales-lab">
-                          Sales Lab – curs practic de vânzări și negociere în București
-                        </Link>
-                        .
-                      </p>
-                    )}
                 </section>
               )}
             </Fragment>
@@ -353,10 +355,10 @@ export default function Insight({
             <p key={paragraph}>{renderInlineLinks(paragraph, locale)}</p>
           ))}
 
-          {insight.cta.href && !(hasCommercialCta && insight.cta.href === '/contact') && (
+          {commercialDestination && !(hasCommercialCta && commercialDestination === '/contact') && (
             <section>
               <h2>{insight.cta.title}</h2>
-              <ArrowLink href={localizePath(insight.cta.href, locale)}>
+              <ArrowLink href={localizePath(commercialDestination, locale)}>
                 {insight.cta.label}
               </ArrowLink>
             </section>

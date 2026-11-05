@@ -345,6 +345,12 @@ export default function SalesLabPage() {
               sau explorează{' '}
               <a href="/cursuri/arta-negocierii">programul Negotiation &amp; Influence</a>.
             </p>
+            <p>
+              Mai multe despre ascultarea în conversațiile comerciale în articolul{' '}
+              <a href="/insights/cat-valoreaza-sa-te-simti-ascultat">
+                Cât valorează să te simți ascultat?
+              </a>
+            </p>
           </div>
         </div>
       </section>
