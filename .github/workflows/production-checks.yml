@@ -24,9 +24,3 @@ jobs:
 
       - name: Lint, typecheck, test, format and build
         run: npm run check
-
-      - name: Show Prettier formatting diff (temporary diagnostic)
-        if: failure()
-        run: |
-          npx prettier --write 'app/_views/insights/[slug]/page.tsx'
-          git diff -- 'app/_views/insights/[slug]/page.tsx'
