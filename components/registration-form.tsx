@@ -278,7 +278,7 @@ export function RegistrationForm({
           try {
             localStorage.setItem('sales-lab-registration-submitted', 'true')
             const earlyBirdEntry = sessionStorage.getItem('sales-lab-early-bird-entry')
-            if (earlyBirdEntry) {
+            if (earlyBirdEntry && result.status === 'saved') {
               conversionEvent('early_bird_registration', earlyBirdEntry, courseSlug, locale)
               sessionStorage.removeItem('sales-lab-early-bird-entry')
             }
