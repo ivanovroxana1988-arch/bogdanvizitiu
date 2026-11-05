@@ -5,6 +5,7 @@ import { getPrograms } from '@/lib/data'
 import { checkContactRateLimit, getClientIdentifier } from '@/lib/rate-limit'
 import { sendSalesLabConfirmation } from '@/lib/sales-lab-confirmation'
 import { syncSalesLabToSheets } from '@/lib/sales-lab-sheets'
+import { classifySalesLabRegistration, isSalesLabRequestId } from '@/lib/sales-lab-outcome'
 
 const MAX_BODY_BYTES = 10_000
 
@@ -89,7 +90,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: 'invalid_course' }, { status: 400 })
   }
 
-  if (courseSlug === 'sales-lab' && !/^SL-[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(requestId)) {
+  if (courseSlug === 'sales-lab' && !isSalesLabRequestId(requestId)) {
     return NextResponse.json({ ok: false, error: 'invalid_request_id' }, { status: 400 })
   }
 
@@ -197,7 +198,7 @@ export async function POST(request: Request) {
 
       return NextResponse.json({
         ok: true,
-        status: sheetSync === 'already_stored' ? 'duplicate' : sheetSync === 'stored' ? 'saved' : 'email_only',
+        status: classifySalesLabRegistration(sheetSync),
         request_id: requestId,
         delivery: 'email',
         acknowledgement: acknowledgement === 'failed' ? 'not_sent' : acknowledgement === 'previously_processed' ? 'previously_processed' : 'sent',
