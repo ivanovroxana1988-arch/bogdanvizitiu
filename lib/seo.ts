@@ -21,22 +21,17 @@ export function buildPageMetadata({
   const canonical = localizedUrl(path, locale)
   const socialImage = `${SITE_URL}/opengraph-image`
   const imageAlt = `${title} — Bogdan Vizitiu`
-  // Sales Lab is currently Romanian-only; do not advertise a nonexistent English translation.
-  const languageAlternates =
-    path === '/sales-lab'
-      ? { 'ro-RO': localizedUrl(path, 'ro'), 'x-default': localizedUrl(path, 'ro') }
-      : {
-          'ro-RO': localizedUrl(path, 'ro'),
-          en: localizedUrl(path, 'en'),
-          'x-default': localizedUrl(path, 'ro'),
-        }
 
   return {
     title,
     description,
     alternates: {
       canonical,
-      languages: languageAlternates,
+      languages: {
+        'ro-RO': localizedUrl(path, 'ro'),
+        en: localizedUrl(path, 'en'),
+        'x-default': localizedUrl(path, 'ro'),
+      },
     },
     openGraph: {
       type: 'website',
