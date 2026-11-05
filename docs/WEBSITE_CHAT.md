@@ -83,3 +83,15 @@ and offers a page/form action when the visitor is ready or requests it.
 The permanent consent checkbox and footer link list are removed. The first
 message remains local until the visitor chooses AI or guided mode in the chat.
 The options menu exposes AI withdrawal, new conversation, contact and privacy.
+
+## Private monitoring (5 November 2026)
+
+The private `/chat-monitor` route in the existing Command Center reuses its Google session gate. The `CHAT_STATS` D1 binding points to the chatbot budget database; the dashboard performs aggregate SELECTs only. No new subscription or AI call is needed for measurement.
+
+Measurement requires a separate, versioned choice: `AI și statistici`; `Doar AI` keeps AI available without measurement. Statistics can be stopped in chat options. Consent and random UUIDs stay in component memory. No cookies, transcript storage or free-text analytics. Existing chat Vercel events are also gated by this choice.
+
+The website classifies only the latest user message into controlled topic/intent IDs. Only those IDs, response mode/outcome, typed vs suggestion source and allowed CTA IDs reach the authenticated Worker `/monitor/event` endpoint. IDs are HMAC-transformed on the website server. Event deduplication and aggregate increments run in a D1 transaction. Conversations are temporary identifiers, never people. Test events have `isTest: true` and are excluded by default; the dashboard offers a separate test view. No historic usage is backfilled.
+
+Limits: 2,000 deduplication keys per UTC day, including conversation keys; measurement failures do not block replies. Daily cleanup removes aggregates and deduplication keys older than 89 days (at most 90 days retention). Uncertain replies are an approximate wording signal, not a correctness assessment. Provider fallback is separate. CTA clicks do not mean completed registrations. The dashboard labels these limitations and partial consent coverage explicitly.
+
+Validation: `npm test`, `npm run lint`, `npm run typecheck`, `npm run build`; Command Center `node --test tests/chat-monitor.test.mjs tests/google-auth.test.mjs` and `npx vite build`. Synthetic production API events must use `isTest:true`; never create fake visitor metrics.

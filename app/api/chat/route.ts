@@ -3,6 +3,9 @@ import { guidedChatReply, validateChatMessages } from '@/lib/chatbot'
 import { generateChatReply, isChatAiConfigured } from '@/lib/chatbot-ai'
 import { checkChatRateLimit, getClientIdentifier } from '@/lib/rate-limit'
 
+import { classifyChatQuestion } from '@/lib/chat-monitoring'
+import { recordChatObservation } from '@/lib/chat-monitoring-server'
+
 export const runtime = 'nodejs'
 export const maxDuration = 20
 const MAX_BODY_BYTES = 12000
@@ -54,14 +57,28 @@ export async function POST(request: Request) {
       ? raw.pathname
       : '/'
   const fallback = guidedChatReply(raw.messages, pathname, locale)
+  let reply = fallback
+  let outcome = 'guided'
   if (raw.aiConsent === true && isChatAiConfigured()) {
     try {
-      return json(
-        await generateChatReply(raw.messages, pathname, locale, getClientIdentifier(request)),
-      )
+      reply = await generateChatReply(raw.messages, pathname, locale, getClientIdentifier(request))
+      outcome =
+        /nu (știu|stiu|am informa|pot confirma)|I (don.t know|cannot confirm)|not (available|provided) in/i.test(
+          reply.text,
+        )
+          ? 'uncertain'
+          : 'answered'
     } catch {
+      outcome = 'fallback'
       /* Never log conversation text, personal data or provider errors. */
     }
   }
-  return json(fallback)
+  await recordChatObservation(raw, {
+    kind: 'message',
+    source: raw.source === 'suggestion' ? 'suggestion' : 'typed',
+    ...classifyChatQuestion(raw.messages.at(-1).content),
+    mode: reply.mode,
+    outcome,
+  })
+  return json(reply)
 }

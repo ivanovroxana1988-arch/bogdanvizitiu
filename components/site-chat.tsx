@@ -9,10 +9,13 @@ import {
   type ChatMessage,
   type ChatReply,
 } from '@/lib/chatbot'
+import { CHAT_MEASUREMENT_VERSION } from '@/lib/chat-monitoring'
 import type { Locale } from '@/lib/routes'
 import styles from './site-chat.module.css'
 
 type Message = ChatMessage & {
+  eventId?: string
+  source?: 'typed' | 'suggestion'
   actions?: ChatAction[]
   suggestions?: string[]
   mode?: ChatReply['mode']
@@ -33,6 +36,9 @@ export function SiteChat({
   const [pending, setPending] = useState(false)
   const [error, setError] = useState('')
   const [aiConsent, setAiConsent] = useState<boolean | null>(null)
+  const [analyticsConsent, setAnalyticsConsent] = useState(false)
+  const measurement = useRef(false)
+  const conversationId = useRef('')
   const [consentRequested, setConsentRequested] = useState(false)
   const deferredMessages = useRef<Message[] | null>(null)
   const launcher = useRef<HTMLButtonElement>(null)
@@ -62,6 +68,23 @@ export function SiteChat({
     return () => document.removeEventListener('keydown', dismiss)
   }, [open])
 
+  function observe(kind: 'open' | 'cta', action?: string) {
+    if (!measurement.current) return
+    if (!conversationId.current) conversationId.current = crypto.randomUUID()
+    void fetch('/api/chat-events', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify({
+        kind,
+        action,
+        analyticsConsent: true,
+        analyticsConsentVersion: CHAT_MEASUREMENT_VERSION,
+        conversationId: conversationId.current,
+        eventId: crypto.randomUUID(),
+      }),
+    }).catch(() => {})
+  }
   async function requestReply(next: Message[], allowAi: boolean) {
     if (inFlight.current) return
     setError('')
@@ -79,6 +102,11 @@ export function SiteChat({
           locale,
           pathname,
           aiConsent: allowAi,
+          analyticsConsent: measurement.current,
+          analyticsConsentVersion: CHAT_MEASUREMENT_VERSION,
+          conversationId: conversationId.current,
+          eventId: next.at(-1)?.eventId,
+          source: next.at(-1)?.source,
           messages: next.slice(-11).map(({ role, content }) => ({
             role,
             content: content.slice(0, MAX_CHAT_MESSAGE_LENGTH),
@@ -97,7 +125,7 @@ export function SiteChat({
           mode: reply.mode,
         },
       ])
-      conversionEvent('chat_response', 'chat', reply.mode, locale)
+      if (measurement.current) conversionEvent('chat_response', 'chat', reply.mode, locale)
     } catch (failure) {
       setInput(next.at(-1)?.content || '')
       setMessages(next.slice(0, -1))
@@ -117,10 +145,14 @@ export function SiteChat({
     }
   }
 
-  function send(value: string) {
+  function send(value: string, source: 'typed' | 'suggestion' = 'typed') {
     const text = value.trim().slice(0, MAX_CHAT_MESSAGE_LENGTH)
     if (!text || inFlight.current || consentRequested) return
-    const next: Message[] = [...messages, { role: 'user' as const, content: text }].slice(-40)
+    if (!conversationId.current) conversationId.current = crypto.randomUUID()
+    const next: Message[] = [
+      ...messages,
+      { role: 'user' as const, content: text, source, eventId: crypto.randomUUID() },
+    ].slice(-40)
     setMessages(next)
     setInput('')
     setError('')
@@ -132,7 +164,10 @@ export function SiteChat({
     void requestReply(next, aiConsent === true)
   }
 
-  function chooseMode(allowAi: boolean) {
+  function chooseMode(allowAi: boolean, allowMeasurement = false) {
+    measurement.current = allowMeasurement
+    setAnalyticsConsent(allowMeasurement)
+    if (allowMeasurement) observe('open')
     setAiConsent(allowAi)
     setConsentRequested(false)
     const next = deferredMessages.current
@@ -148,6 +183,7 @@ export function SiteChat({
     launcher.current?.focus()
   }
   function clear() {
+    conversationId.current = crypto.randomUUID()
     setMessages([])
     setInput('')
     setError('')
@@ -175,7 +211,7 @@ export function SiteChat({
         aria-label={ro ? 'Poți răspunde și așa' : 'You could reply'}
       >
         {items.map((text) => (
-          <button type="button" key={text} disabled={busy} onClick={() => send(text)}>
+          <button type="button" key={text} disabled={busy} onClick={() => send(text, 'suggestion')}>
             {text}
           </button>
         ))}
@@ -229,6 +265,30 @@ export function SiteChat({
                         : ro
                           ? 'Activează răspunsurile AI'
                           : 'Switch AI replies on'}
+                    </button>
+                  )}
+                  {analyticsConsent && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        measurement.current = false
+                        setAnalyticsConsent(false)
+                        if (options.current) options.current.open = false
+                      }}
+                    >
+                      {ro ? 'Oprește statisticile' : 'Switch statistics off'}
+                    </button>
+                  )}
+                  {!analyticsConsent && aiAvailable && (
+                    <button
+                      type="button"
+                      disabled={pending || consentRequested}
+                      onClick={() => {
+                        setConsentRequested(true)
+                        if (options.current) options.current.open = false
+                      }}
+                    >
+                      {ro ? 'Opțiuni AI și statistici' : 'AI and statistics options'}
                     </button>
                   )}
                   <a href={contact}>{ro ? 'Discută cu Bogdan' : 'Contact Bogdan'}</a>
@@ -290,7 +350,9 @@ export function SiteChat({
                           key={action.id}
                           href={action.href}
                           onClick={() => {
-                            conversionEvent('chat_cta_click', 'chat', action.id, locale)
+                            observe('cta', action.id)
+                            if (measurement.current)
+                              conversionEvent('chat_cta_click', 'chat', action.id, locale)
                             close()
                           }}
                         >
@@ -319,11 +381,21 @@ export function SiteChat({
                   {ro
                     ? 'Cu acordul tău, mesajele sunt prelucrate de Cloudflare Workers AI. Evită datele personale. '
                     : 'With your permission, Cloudflare Workers AI processes your messages. Avoid personal data. '}
+                  {ro
+                    ? 'Statisticile opționale numără temele, intențiile și clickurile, fără salvarea textelor. Le poți opri din opțiuni. '
+                    : 'Optional statistics count topics, intentions and clicks without saving message text. You can turn them off in options. '}
                   <a href={privacy}>{ro ? 'Detalii' : 'Details'}</a>
                 </p>
                 <div className={styles.suggestions}>
-                  <button className={styles.accept} type="button" onClick={() => chooseMode(true)}>
-                    {ro ? 'Da, hai să vorbim' : 'Yes, let’s talk'}
+                  <button
+                    className={styles.accept}
+                    type="button"
+                    onClick={() => chooseMode(true, true)}
+                  >
+                    {ro ? 'AI și statistici' : 'AI and statistics'}
+                  </button>
+                  <button type="button" onClick={() => chooseMode(true, false)}>
+                    {ro ? 'Doar AI' : 'AI only'}
                   </button>
                   <button type="button" onClick={() => chooseMode(false)}>
                     {ro ? 'Prefer fără AI' : 'Continue without AI'}
@@ -390,7 +462,8 @@ export function SiteChat({
         aria-controls={open ? 'site-chat-panel' : undefined}
         onClick={() => {
           setOpen(!open)
-          if (!open)
+          if (!open) observe('open')
+          if (!open && measurement.current)
             conversionEvent(
               'chat_open',
               'chat',

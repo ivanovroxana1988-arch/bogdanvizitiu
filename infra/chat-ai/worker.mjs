@@ -40,9 +40,47 @@ async function readBoundedJson(request) {
   return JSON.parse(new TextDecoder().decode(bytes))
 }
 
+
+export const MONITOR_INSERT = `INSERT OR IGNORE INTO chat_metric_events(event_key,day,is_test)
+ SELECT ?,?,? WHERE (SELECT COUNT(*) FROM chat_metric_events WHERE day=?) < 2000`
+export const MONITOR_INCREMENT = `INSERT INTO chat_metrics(day,kind,dimension,is_test,value)
+ SELECT ?,?,?,?,1 WHERE changes()>0
+ ON CONFLICT(day,kind,dimension,is_test) DO UPDATE SET value=value+1`
+const topicIds = ['sales','coaching','leadership','corporate','networking','ai','courses','other']
+const intentIds = ['price','signup','date','venue','duration','availability','online','payment','discount','certificate','cancellation','contact','content','other']
+const actionIds = ['courses','sales','signup','corporate','coaching','contact','about','insights']
+export function monitorDimensions(body) {
+  if (!body || !/^[a-f0-9]{64}$/.test(body.eventKey) || !/^[a-f0-9]{64}$/.test(body.conversationKey)) return null
+  if (body.kind === 'open') return [['open','all']]
+  if (body.kind === 'cta' && actionIds.includes(body.action)) return [['cta',body.action]]
+  if (body.kind !== 'message' || !['typed','suggestion'].includes(body.source) || !['ai','guided'].includes(body.mode) || !['answered','uncertain','guided','fallback'].includes(body.outcome)) return null
+  if (!Array.isArray(body.topics) || body.topics.length > 8 || !body.topics.length || body.topics.some(t=>!topicIds.includes(t)) || !Array.isArray(body.intents) || !body.intents.length || body.intents.length>14 || body.intents.some(t=>!intentIds.includes(t))) return null
+  return [['message',body.source],['mode',body.mode],['outcome',body.outcome],...new Set(body.topics).values()].map(item=>typeof item==='string'?['topic',item]:item).concat([...new Set(body.intents)].map(id=>['intent_'+body.source,id]))
+}
+async function monitorEvent(body, env) {
+  const dimensions = monitorDimensions(body)
+  if (!dimensions) return reply({error:'invalid_event'},400)
+  const day = new Date().toISOString().slice(0,10)
+  const test = body.isTest === true ? 1 : 0
+  try {
+    const statements = [env.DB.prepare(MONITOR_INSERT).bind(body.eventKey,day,test,day), ...dimensions.map(([kind,dimension])=>env.DB.prepare(MONITOR_INCREMENT).bind(day,kind,dimension,test))]
+    // batch is transactional. changes() propagates the insert result: duplicate events increment nothing.
+    await env.DB.batch(statements)
+    if (body.kind === 'message') {
+      await env.DB.batch([
+        env.DB.prepare(MONITOR_INSERT).bind('conversation:'+body.conversationKey,day,test,day),
+        env.DB.prepare(MONITOR_INCREMENT).bind(day,'conversation','all',test),
+      ])
+    }
+    return reply({ok:true})
+  } catch { return reply({error:'monitor_unavailable'},503) }
+}
+
 export async function cleanup(env, now = Date.now()) {
   const oldest = new Date(now - 89 * 86400000).toISOString().slice(0, 10)
   await env.DB.prepare('DELETE FROM chat_reservations WHERE day < ?').bind(oldest).run()
+  await env.DB.prepare('DELETE FROM chat_metrics WHERE day < ?').bind(oldest).run()
+  await env.DB.prepare('DELETE FROM chat_metric_events WHERE day < ?').bind(oldest).run()
 }
 
 export default {
@@ -52,7 +90,7 @@ export default {
       request.headers.get('authorization') !== `Bearer ${env.CHAT_SERVICE_TOKEN}`
     )
       return reply({ error: 'unauthorized' }, 401)
-    if (request.method !== 'POST' || new URL(request.url).pathname !== '/chat')
+    if (request.method !== 'POST' || !['/chat','/monitor/event'].includes(new URL(request.url).pathname))
       return reply({ error: 'not_found' }, 404)
     if (!request.headers.get('content-type')?.startsWith('application/json'))
       return reply({ error: 'invalid_content_type' }, 415)
@@ -64,6 +102,7 @@ export default {
     } catch {
       return reply({ error: 'invalid_body' }, 400)
     }
+    if (new URL(request.url).pathname === '/monitor/event') return monitorEvent(body,env)
     if (
       !body ||
       !/^[a-f0-9]{64}$/.test(body.clientHash) ||
