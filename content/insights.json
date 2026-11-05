@@ -350,7 +350,16 @@
         "Avraham Kluger și colaboratorii săi au reunit cercetări despre ascultarea percepută în contexte profesionale. Meta-analiza lor, publicată în Journal of Business and Psychology, arată că senzația de a fi ascultat este asociată cu rezultate mai bune la muncă. Legătura cea mai puternică apare în calitatea relațiilor, iar cea cu performanța este mai modestă.",
         "Pentru cei care lucrează în sales, diferența merită atenție. Ascultarea poate crea condițiile unei conversații comerciale bune. Dar nu garantează, de una singură, că vom înțelege corect problema sau că vom recomanda soluția potrivită."
       ],
-      "en": []
+      "en": [
+        "In a sales conversation, you can ask all the right questions and still misunderstand the customer.",
+        "You can give them time to speak, take notes and follow every objection carefully. By the end, the meeting feels productive: the customer was open, the conversation flowed and you collected the information you needed. Yet the proposal you send afterwards fails to address their actual problem.",
+        "Where did understanding break down? One trap in sales listening is that we can pay close attention to what the customer says while also being too eager to find the right moment to present our solution.",
+        "We recognize a familiar phrase, connect it to a need we have seen before and begin forming our response, sometimes before the other person has finished. That is not necessarily a failure of attention. It may be a failure of interpretation.",
+        "Listening is one of those sales skills almost everyone agrees matters. We recommend it, teach it in training and expect it from teams. Less often do we ask what it actually produces.",
+        "Does it build trust? Help us understand customers? Improve performance? It is tempting to answer yes to everything. Research offers a more nuanced, and therefore more useful, picture.",
+        "Avraham Kluger and colleagues brought together studies of perceived listening across workplace contexts. Their meta-analysis, published in the Journal of Business and Psychology, found that feeling listened to was associated with better work outcomes. The association was strongest for relationship quality and more modest for performance.",
+        "For sales professionals, that distinction matters. Listening can create the conditions for a good commercial conversation. On its own, however, it does not guarantee that we understand the problem or recommend the right solution."
+      ]
     },
     "sections": {
       "ro": [
@@ -414,13 +423,75 @@
           ]
         }
       ],
-      "en": []
+      "en": [
+        {
+          "heading": "Who decides whether you listened well?",
+          "paragraphs": [
+            "An important detail is what the researchers studied: perceived listening. In other words, the experience of the person speaking.",
+            "You may leave a meeting convinced that you paid attention. You let the customer finish, noted important information and asked your prepared questions. Yet the customer may still feel that you were mainly waiting for an opportunity to present your product.",
+            "Imagine a customer describing difficulties with their current supplier. The salesperson listens, identifies the complaints and starts presenting the benefits of their own solution. But the customer was trying to explain something else: the problem was not only the service itself, but the fact that no one took responsibility when things went wrong.",
+            "A presentation about product features may miss that concern entirely. The distinction is not simply between listening and not listening. It is between hearing information and understanding what it means to the other person.",
+            "That is why a useful question after a meeting is not only 'Did I listen?' but 'What showed the customer that I understood what mattered to them?' The answer may lie in a clarifying question, a thoughtful summary or the way we adapt the proposal."
+          ]
+        },
+        {
+          "heading": "When the customer's answer changes our understanding",
+          "paragraphs": [
+            "In needs discovery, it is easy to recognize a word and assume we understand the problem. A customer says they want 'security'. For one person, that means predictable costs. For another, uninterrupted service. A third may be thinking about the support they will receive if something goes wrong. The same word can point to very different recommendations.",
+            "Consider another B2B sales scenario. A customer says the offer is too expensive. Our first instinct may be to defend the price, compare features with competitors or suggest a cheaper option.",
+            "But asking what makes the investment difficult to approve may uncover a different issue. The budget might be available, while the customer is unsure how to demonstrate to leadership that the investment will deliver the promised results. In that situation, a discount does not necessarily solve the problem.",
+            "It may be more useful to discuss a pilot project, evaluation criteria or the evidence the customer needs to support an internal decision. Notice how much the recommendation changes once we understand the issue behind the first statement.",
+            "Instead of immediately responding to the objection, we might say: 'I initially assumed the main difficulty was the budget. From what you're telling me, it sounds more like the challenge is justifying the investment and evaluating the results. Have I understood correctly?'",
+            "This gives the customer room to confirm, correct or add something important. It also requires the salesperson to remain open to an explanation other than the one they brought into the conversation. One of the most valuable forms of listening is the willingness to revise our first interpretation.",
+            "This is a practical application of the ideas discussed here, not a conclusion directly tested by Kluger and colleagues' meta-analysis."
+          ]
+        },
+        {
+          "heading": "A good relationship and a good recommendation",
+          "paragraphs": [
+            "The distinction between relationships and performance also matters when we evaluate a meeting. A conversation may be warm, open and appreciated by the customer, yet leave essential questions unanswered: how urgent is the problem, which trade-offs are acceptable, who is involved in the decision and what evidence would help them assess the offer?",
+            "A customer can genuinely enjoy the conversation and still lack a reason to move forward. This is where consultative sales structure matters. Listening supports the relationship. Questions about needs, decision criteria, constraints and doubts help turn the conversation into clarity.",
+            "Suppose a customer says: 'We need a more flexible solution.' We might interpret flexibility as the ability to change a subscription or add services. But the customer may mean implementing the solution gradually without disrupting their team's work.",
+            "If we do not check what the term means, we risk presenting a genuine benefit that is irrelevant to the decision. A good recommendation requires more than identifying a keyword. It requires understanding the context that gives that word meaning.",
+            "Sometimes professional judgment also leads us to conclude that our offer is not a good fit. That is not necessarily a failed sales conversation. It can be a sound assessment that protects trust and credibility over time."
+          ]
+        },
+        {
+          "heading": "What I would look for when developing a sales team",
+          "paragraphs": [
+            "The research makes me look more carefully at how we assess listening. The number of questions asked and the amount of time the salesperson remained silent can tell us something, but they do not describe the entire conversation.",
+            "A professional may follow every rule in an active-listening exercise and still leave with exactly the same interpretation they had before the meeting. That is why I would introduce a simple exercise into sales conversation reviews."
+          ]
+        },
+        {
+          "heading": "Sales Listening Review: five questions after every meeting",
+          "paragraphs": [
+            "1. What did I learn about the customer that I did not know before? If the answer contains only things I already expected, it may be worth asking how deeply I explored the problem.",
+            "2. Which initial assumption did I revise? There does not have to be a mistaken assumption in every meeting. But if nothing ever changes our perspective, we may be looking only for confirmation.",
+            "3. What matters most to the customer's decision? Not only which features they request, but what outcome they want, which risks they perceive and which constraints they face.",
+            "4. How did I check that I understood correctly? Did I restate the problem, ask for confirmation and give the customer an opportunity to correct me?",
+            "5. What will I change in my recommendation because of what I learned? This question connects listening with commercial action.",
+            "If the proposal looks exactly the same regardless of what the customer says, it is worth asking what role the conversation played in shaping it.",
+            "These five questions are a practical reflection and managerial coaching tool, not a scientifically validated assessment instrument. They can be used after important meetings, in conversation reviews or in one-to-one coaching. The goal is not to turn every discussion into another form, but to develop our ability to adjust our understanding."
+          ]
+        },
+        {
+          "heading": "Listening is also visible in what you do afterwards",
+          "paragraphs": [
+            "Kluger and colleagues' meta-analysis gives us a strong reason to take the experience of being listened to seriously. But the stronger association with relationship quality than with performance also calls for caution.",
+            "A good relationship does not replace needs analysis, commercial expertise or a sound recommendation. Listening creates the possibility of better understanding. What we do with that possibility depends on the questions we ask, the interpretations we are willing to revisit and the decisions we make afterwards.",
+            "In sales, customers can tell that you paid attention not only from how you participated in the conversation, but also from what you choose to propose once you have listened."
+          ]
+        }
+      ]
     },
     "closing": {
       "ro": [
         "Poate că adevărata întrebare nu este cât de bine știm să ascultăm, ci cât de mult suntem dispuși să ne schimbăm perspectiva în urma a ceea ce auzim."
       ],
-      "en": []
+      "en": [
+        "Perhaps the real question is not how well we know how to listen, but how willing we are to change our perspective because of what we hear."
+      ]
     },
     "cta": {
       "title": {
@@ -435,7 +506,7 @@
     },
     "sourceNote": {
       "ro": "Cercetare: Kluger și colaboratorii, A Meta-analytic Systematic Review and Theory of the Effects of Perceived Listening on Work Outcomes, Journal of Business and Psychology (online 2023, volum 2024).",
-      "en": "Research: Kluger et al., Journal of Business and Psychology (2023/2024)."
+      "en": "Research: Kluger and colleagues, A Meta-analytic Systematic Review and Theory of the Effects of Perceived Listening on Work Outcomes, Journal of Business and Psychology (published online in 2023, 2024 volume)."
     },
     "sources": [
       {
