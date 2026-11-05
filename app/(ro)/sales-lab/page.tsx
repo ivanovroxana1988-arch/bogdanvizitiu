@@ -350,7 +350,6 @@ export default function SalesLabPage() {
               <a href="/insights/cat-valoreaza-sa-te-simti-ascultat">
                 Cât valorează să te simți ascultat?
               </a>
-              .
             </p>
           </div>
         </div>
