@@ -1,4 +1,4 @@
-import { createSign, randomUUID } from 'node:crypto'
+import { createPrivateKey, createSign, randomUUID } from 'node:crypto'
 
 const SHEET_NAME = 'Inscrieri'
 const OAUTH_SCOPE = 'https://www.googleapis.com/auth/spreadsheets'
@@ -17,6 +17,36 @@ export type RegistrationRecord = {
 }
 
 export type SyncOutcome = 'stored' | 'unconfigured' | 'failed'
+
+/** Normalize common environment-variable copy formats without logging key material. */
+export function normalizeSheetsPrivateKey(raw: string): string {
+  try {
+    let value = raw.trim()
+    if (value.startsWith('{')) {
+      const parsed = JSON.parse(value) as { private_key?: unknown }
+      if (typeof parsed.private_key !== 'string') throw new Error()
+      value = parsed.private_key
+    } else if (value.startsWith('"')) {
+      value = JSON.parse(value) as string
+      if (typeof value !== 'string') throw new Error()
+    }
+    value = value.replace(/\\+r\\+n|\\+n|\\+r/g, '\n').trim()
+    const match = /^-----BEGIN PRIVATE KEY-----([A-Za-z0-9+/=\s]+)-----END PRIVATE KEY-----$/.exec(
+      value,
+    )
+    if (!match) throw new Error()
+    const body = match[1].replace(/\s/g, '')
+    const lines = body.match(/.{1,64}/g)
+    if (!lines) throw new Error()
+    const pem = '-----BEGIN PRIVATE KEY-----\n' + lines.join('\n') + '\n-----END PRIVATE KEY-----\n'
+    const key = createPrivateKey(pem)
+    if (key.asymmetricKeyType !== 'rsa') throw new Error()
+    return pem
+  } catch {
+    // Do not include parser errors or input fragments; they may contain secrets.
+    throw new Error('GOOGLE_SHEETS_PRIVATE_KEY is not a complete, valid RSA private key')
+  }
+}
 
 function base64Url(value: string) {
   return Buffer.from(value).toString('base64url')
@@ -126,12 +156,15 @@ export async function syncSalesLabToSheets(
 ): Promise<SyncOutcome> {
   const spreadsheetId = process.env.SALES_LAB_SHEET_ID
   const clientEmail = process.env.GOOGLE_SHEETS_CLIENT_EMAIL
-  const privateKey = process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, '\n')
+  const privateKey = process.env.GOOGLE_SHEETS_PRIVATE_KEY
 
   if (!spreadsheetId || !clientEmail || !privateKey) return 'unconfigured'
 
   try {
-    const token = await getGoogleAccessToken(clientEmail, privateKey)
+    const token = await getGoogleAccessToken(
+      clientEmail.trim(),
+      normalizeSheetsPrivateKey(privateKey),
+    )
     const status = await getWaitlistStatus(spreadsheetId, token)
     const row = makeRegistrationRow(record, new Date().toISOString(), reference, status)
     const range = encodeURIComponent("'" + SHEET_NAME + "'!A:O")
