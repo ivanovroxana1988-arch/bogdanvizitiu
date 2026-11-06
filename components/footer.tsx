@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import navigation from '@/content/navigation.json'
 import { withLocale, type Locale } from '@/lib/i18n'
+import { PrivacyPreferencesButton } from '@/components/privacy-banner'
 import { BrandLogo } from '@/components/brand-logo'
 import styles from './footer.module.css'
 
@@ -66,6 +67,7 @@ export function Footer({ locale }: { locale: Locale }) {
           <p className="footer-label">{copy.information}</p>
           <Link href={withLocale('/confidentialitate', locale)}>{copy.privacy}</Link>
           <Link href={withLocale('/termeni', locale)}>{copy.terms}</Link>
+          <PrivacyPreferencesButton locale={locale} />
           <div className={styles.social}>
             <p className="footer-label">Social</p>
             {socialLinks.map((link) => (

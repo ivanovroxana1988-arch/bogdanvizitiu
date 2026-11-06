@@ -1,5 +1,20 @@
+import { hasAdsMeasurementConsent } from './privacy-consent'
+
 export const GOOGLE_ADS_ID = 'AW-18556060620'
 export const SALES_LAB_SEND_TO = GOOGLE_ADS_ID + '/aCgXCJXPgLIdEMyHnJBF'
+
+type AdsWindow = Window & { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void }
+
+export function updateGoogleAdsConsent() {
+  if (typeof window === 'undefined') return
+  const target = window as AdsWindow
+  target.gtag?.('consent', 'update', {
+    ad_storage: 'denied',
+    analytics_storage: 'denied',
+    ad_user_data: hasAdsMeasurementConsent() ? 'granted' : 'denied',
+    ad_personalization: 'denied',
+  })
+}
 
 type RegistrationResult = { ok?: boolean; record?: string; registrationId?: string }
 
@@ -22,15 +37,11 @@ export function salesLabConversion(result: RegistrationResult, consent: boolean,
 }
 
 /** Load advertising measurement only for an explicitly consented, saved request. */
-export function trackSalesLabRegistration(
-  result: RegistrationResult,
-  consent: boolean,
-  course: string,
-) {
-  const parameters = salesLabConversion(result, consent, course)
+export function trackSalesLabRegistration(result: RegistrationResult, course: string) {
+  const parameters = salesLabConversion(result, hasAdsMeasurementConsent(), course)
   if (!parameters || typeof window === 'undefined') return
   try {
-    const target = window as Window & { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void }
+    const target = window as AdsWindow
     target.dataLayer ??= []
     target.gtag ??= function () {
       target.dataLayer!.push(arguments)

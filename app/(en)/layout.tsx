@@ -9,6 +9,7 @@ import '../spacing.css'
 import '../editorial-cleanup.css'
 import '../a11y.css'
 import { Header } from '@/components/header'
+import { PrivacyBanner } from '@/components/privacy-banner'
 import { Footer } from '@/components/footer'
 import { JsonLd } from '@/components/json-ld'
 import { siteIdentityJsonLd } from '@/lib/seo'
@@ -58,6 +59,7 @@ export default function EnglishLayout({ children }: { children: React.ReactNode 
           {children}
         </main>
         <Footer locale="en" />
+        <PrivacyBanner locale="en" />
         <Analytics />
         <ConversionTracking />
         <SiteChat locale="en" aiAvailable={isChatAiConfigured()} />

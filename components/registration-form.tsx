@@ -195,7 +195,6 @@ export function RegistrationForm({
     }
 
     const data = new FormData(form)
-    const adsConsent = data.get('adsMeasurement') === 'on'
     const referrer = typeof document !== 'undefined' ? document.referrer : ''
     const original = attribution(tracking)
     const payload = {
@@ -238,7 +237,7 @@ export function RegistrationForm({
       }
 
       if (response.ok && result.ok) {
-        trackSalesLabRegistration(result, adsConsent, courseSlug)
+        trackSalesLabRegistration(result, courseSlug)
         form.reset()
         setErrors({})
         // A delivered email alone is not a saved Sales Lab registration.
@@ -375,20 +374,6 @@ export function RegistrationForm({
           <input name="website" tabIndex={-1} autoComplete="off" />
         </label>
       </div>
-
-      {courseSlug === 'sales-lab' && (
-        <label
-          className={commercialStyles.full}
-          style={{ display: 'flex', alignItems: 'start', gap: 10 }}
-        >
-          <input name="adsMeasurement" type="checkbox" style={{ width: 'auto', marginTop: 5 }} />
-          <span>
-            {locale === 'ro'
-              ? 'Opțional: permit trimiterea către Google Ads a unui eveniment de înscriere și a datelor tehnice necesare pentru măsurarea reclamelor, fără cookie-uri publicitare și fără nume, email sau telefon. Pot trimite formularul și fără acest acord.'
-              : 'Optional: I allow a registration event and technical measurement data to be sent to Google Ads, without advertising cookies or my name, email or phone. I can submit without agreeing.'}
-          </span>
-        </label>
-      )}
 
       <p className={commercialStyles.full} style={{ margin: 0, fontSize: 13, lineHeight: 1.7 }}>
         {copy.privacyPrefix}{' '}
