@@ -28,10 +28,6 @@ export default function Corporate({ searchParams }: { searchParams?: { lang?: st
   const canonical = localizedUrl('/corporate', locale)
   const contactHref = `${localizePath('/contact', locale)}?source=corporate`
 
-  const heroTitle =
-    locale === 'ro'
-      ? 'Nu pornim de la curs. Pornim de la problema reală.'
-      : 'We do not start with the course. We start with the real problem.'
   const diagnosticItems =
     locale === 'ro'
       ? copy.diagnosticItems.map((item) =>
@@ -74,7 +70,7 @@ export default function Corporate({ searchParams }: { searchParams?: { lang?: st
       <section className={styles.hero}>
         <Eyebrow>{copy.eyebrow}</Eyebrow>
         <div className={styles.heroGrid}>
-          <h1>{heroTitle}</h1>
+          <h1>{copy.title}</h1>
           <div className="conversion-hero-copy">
             <p className={styles.heroIntro}>{copy.intro}</p>
             <ArrowLink href={contactHref}>

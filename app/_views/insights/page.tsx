@@ -93,7 +93,9 @@ export function generateMetadata({ searchParams }: { searchParams?: { lang?: str
   const locale = getLocale(searchParams?.lang)
   const isRo = locale === 'ro'
   return buildPageMetadata({
-    title: 'Insights',
+    title: isRo
+      ? 'Articole despre leadership, coaching și negociere'
+      : 'Articles on leadership, coaching and negotiation',
     description: isRo
       ? 'Idei pe care Bogdan Vizitiu le folosește în coaching, training și conversațiile de lucru despre leadership, negociere, relații și performanță.'
       : 'Ideas Bogdan Vizitiu uses in coaching, training and working conversations about leadership, negotiation, relationships and performance.',

@@ -2,13 +2,17 @@ import type { Metadata } from 'next'
 import styles from '@/app/commercial.module.css'
 import { ConceptImage } from '@/components/portrait'
 import { ArrowLink, Eyebrow } from '@/components/ui'
+import { buildPageMetadata } from '@/lib/seo'
 import visual from './page.module.css'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: 'ACT · ADAPT · EXECUTE — program de dezvoltare',
   description:
     'Program experiențial de dezvoltare inspirat de ideile lui Adam Grant: acțiune, adaptare, execuție și transfer în munca reală.',
-}
+  path: '/cursuri/act-adapt-execute',
+  locale: 'ro',
+  hasEnglishVersion: false,
+})
 
 type Move = {
   index: string

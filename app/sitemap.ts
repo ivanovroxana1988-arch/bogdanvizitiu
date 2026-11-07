@@ -4,6 +4,7 @@ import { localizePath } from '@/lib/routes'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://bogdanvizitiu.com'
+  const romanianOnlyRoutes = ['/sales-lab', '/cursuri/leadership-ai', '/cursuri/act-adapt-execute']
   const roRoutes = [
     '',
     '/despre',
@@ -19,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/confidentialitate',
     '/termeni',
-    '/sales-lab',
+    ...romanianOnlyRoutes,
     ...programSlugs.map((slug) => `/cursuri/${slug}`),
     ...publishedInsightSlugs.map((slug) => `/insights/${slug}`),
   ]
@@ -27,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     ...normalizedRoRoutes,
     ...normalizedRoRoutes
-      .filter((path) => path !== '/sales-lab')
+      .filter((path) => !romanianOnlyRoutes.includes(path))
       .map((path) => localizePath(path, 'en')),
   ]
   return Array.from(new Set(routes)).map((path) => ({ url: base + (path === '/' ? '' : path) }))

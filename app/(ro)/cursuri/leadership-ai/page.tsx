@@ -1,13 +1,17 @@
 import type { Metadata } from 'next'
 import styles from '@/app/commercial.module.css'
 import { ArrowLink, Eyebrow } from '@/components/ui'
+import { buildPageMetadata } from '@/lib/seo'
 import visual from './page.module.css'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: 'Leadership in the AI Era — program pentru manageri',
   description:
     'Parcurs de învățare pentru manageri despre judecată managerială, delegare human–AI, autonomie, responsabilitate și dezvoltarea oamenilor în munca asistată de AI.',
-}
+  path: '/cursuri/leadership-ai',
+  locale: 'ro',
+  hasEnglishVersion: false,
+})
 
 type IconType = 'decision' | 'handoff' | 'target' | 'learning'
 

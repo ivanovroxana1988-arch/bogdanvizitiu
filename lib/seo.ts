@@ -12,11 +12,13 @@ export function buildPageMetadata({
   description,
   path,
   locale,
+  hasEnglishVersion = true,
 }: {
   title: string
   description: string
   path: string
   locale: Locale
+  hasEnglishVersion?: boolean
 }): Metadata {
   const canonical = localizedUrl(path, locale)
   const socialImage = `${SITE_URL}/opengraph-image`
@@ -29,7 +31,7 @@ export function buildPageMetadata({
       canonical,
       languages: {
         'ro-RO': localizedUrl(path, 'ro'),
-        en: localizedUrl(path, 'en'),
+        ...(hasEnglishVersion ? { en: localizedUrl(path, 'en') } : {}),
         'x-default': localizedUrl(path, 'ro'),
       },
     },

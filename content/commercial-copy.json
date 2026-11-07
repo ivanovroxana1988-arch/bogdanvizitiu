@@ -2,8 +2,8 @@
   "ro": {
     "programs": {
       "eyebrow": "Programe deschise",
-      "title": "Nu ai nevoie de încă un curs pe care să-l uiți luni.",
-      "intro": "Ai nevoie de un spațiu în care să lucrezi pe situații pe care chiar le întâlnești: conversații, relații, decizii și negocieri care au miză.",
+      "title": "Cursuri de vânzări, negociere și leadership",
+      "intro": "Nu ai nevoie de încă un curs pe care să-l uiți luni. Ai nevoie de un spațiu în care să lucrezi pe situații pe care chiar le întâlnești: conversații, relații, decizii și negocieri care au miză.",
       "approachEyebrow": "Ce au în comun",
       "approachTitle": "Înțelegi. Exersezi. Aplici.",
       "approachItems": [
@@ -38,8 +38,8 @@
     },
     "corporate": {
       "eyebrow": "Pentru organizații",
-      "title": "Nu pornim de la curs. Pornim de la ce trebuie să funcționeze mai bine.",
-      "intro": "O echipă nu are nevoie de un program generic. Are nevoie de o intervenție care pornește de la conversațiile, deciziile și comportamentele care îi influențează rezultatele.",
+      "title": "Training corporate pentru leadership, negociere și echipe",
+      "intro": "Nu pornim de la curs. Pornim de la problema reală. O echipă nu are nevoie de un program generic. Are nevoie de o intervenție care pornește de la conversațiile, deciziile și comportamentele care îi influențează rezultatele.",
       "diagnosticEyebrow": "Înainte de format",
       "diagnosticTitle": "Ce se întâmplă acum?",
       "diagnosticItems": [
@@ -129,8 +129,8 @@
   "en": {
     "programs": {
       "eyebrow": "Open programs",
-      "title": "You do not need another course to forget by Monday.",
-      "intro": "You need a place to work on situations you actually face: conversations, relationships, decisions and negotiations where something is at stake.",
+      "title": "Courses in sales, negotiation and leadership",
+      "intro": "You do not need another course to forget by Monday. You need a place to work on situations you actually face: conversations, relationships, decisions and negotiations where something is at stake.",
       "approachEyebrow": "What they share",
       "approachTitle": "Understand. Practice. Apply.",
       "approachItems": [
@@ -165,8 +165,8 @@
     },
     "corporate": {
       "eyebrow": "For organizations",
-      "title": "We do not start with the course. We start with what needs to work better.",
-      "intro": "A team does not need a generic program. It needs an intervention built around the conversations, decisions and behaviors that shape its results.",
+      "title": "Corporate training for leadership, negotiation and teams",
+      "intro": "We do not start with the course. We start with the real problem. A team does not need a generic program. It needs an intervention built around the conversations, decisions and behaviors that shape its results.",
       "diagnosticEyebrow": "Before the format",
       "diagnosticTitle": "What is happening now?",
       "diagnosticItems": [

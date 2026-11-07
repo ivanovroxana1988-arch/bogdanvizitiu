@@ -7,7 +7,7 @@ const contentSecurityPolicy = [
   "img-src 'self' data: blob: https://images.unsplash.com https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://www.google.com https://www.google.ro",
   "font-src 'self' data:",
   "connect-src 'self' https://vitals.vercel-insights.com https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://www.google.com https://www.google.ro https://ad.doubleclick.net",
-  "frame-src https://www.googletagmanager.com",
+  'frame-src https://www.googletagmanager.com',
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
