@@ -23,8 +23,8 @@ test('only a saved, consented Sales Lab registration produces an Ads conversion'
   equal(salesLabConversion({ ...saved, registrationId: '' }, true, 'sales-lab'), null)
 })
 
-test('the browser loader stays off without a saved consented lead and queues consent before conversion', async () => {
-  const { trackSalesLabRegistration } = await import('../lib/google-ads')
+test('the browser initializes on consent without a conversion and reuses the tag for saved leads', async () => {
+  const { trackSalesLabRegistration, updateGoogleAdsConsent } = await import('../lib/google-ads')
   const storage = new Map<string, string>()
   const browser: { dataLayer?: unknown[]; localStorage: unknown; dispatchEvent: () => boolean } = {
     localStorage: {
@@ -37,19 +37,25 @@ test('the browser loader stays off without a saved consented lead and queues con
   Object.defineProperty(globalThis, 'window', { value: browser, configurable: true })
   Object.defineProperty(globalThis, 'document', {
     value: {
-      getElementById: () => null,
+      getElementById: (id: string) => scripts.find((script) => script.id === id) || null,
       createElement: () => ({}),
       head: { appendChild: (script: { id?: string; src?: string }) => scripts.push(script) },
     },
     configurable: true,
   })
   try {
+    updateGoogleAdsConsent()
     trackSalesLabRegistration(saved, 'sales-lab')
-    savePrivacyChoice(true)
-    trackSalesLabRegistration({ ok: true }, 'sales-lab')
+    savePrivacyChoice(false)
+    updateGoogleAdsConsent()
     equal(scripts.length, 0)
     equal(browser.dataLayer, undefined)
-    trackSalesLabRegistration(saved, 'sales-lab')
+    savePrivacyChoice(true)
+    updateGoogleAdsConsent()
+    updateGoogleAdsConsent() // React effects and preferences must not duplicate config.
+    trackSalesLabRegistration({ ok: true }, 'sales-lab')
+    trackSalesLabRegistration({ ...saved, record: 'email_only' }, 'sales-lab')
+    trackSalesLabRegistration(saved, 'other-course')
     equal(scripts.length, 1)
     equal(scripts[0].src, 'https://www.googletagmanager.com/gtag/js?id=AW-18556060620')
     const commands = browser.dataLayer!.map((entry) => Array.from(entry as IArguments))
@@ -63,14 +69,22 @@ test('the browser loader stays off without a saved consented lead and queues con
         ad_personalization: 'denied',
       },
     ])
-    deepStrictEqual(commands[1], ['consent', 'update', { ad_user_data: 'granted' }])
-    equal(commands[4][0], 'event')
-    equal(commands[4][1], 'conversion')
-    deepStrictEqual(commands[4][2], salesLabConversion(saved, true, 'sales-lab'))
+    equal((commands[1][2] as { ad_user_data: string }).ad_user_data, 'granted')
+    deepStrictEqual(commands[3], ['config', 'AW-18556060620', { send_page_view: false }])
+    equal(commands.filter((command) => command[0] === 'event').length, 0)
+    trackSalesLabRegistration(saved, 'sales-lab')
+    const afterSaved = browser.dataLayer!.map((entry) => Array.from(entry as IArguments))
+    const events = afterSaved.filter((command) => command[0] === 'event')
+    deepStrictEqual(events, [['event', 'conversion', salesLabConversion(saved, true, 'sales-lab')]])
+    equal(afterSaved.filter((command) => command[0] === 'config').length, 1)
+    equal(scripts.length, 1)
     savePrivacyChoice(false)
+    updateGoogleAdsConsent()
     const count = browser.dataLayer!.length
     trackSalesLabRegistration(saved, 'sales-lab')
     equal(browser.dataLayer!.length, count)
+    const revoked = Array.from(browser.dataLayer![count - 1] as IArguments)
+    equal((revoked[2] as { ad_user_data: string }).ad_user_data, 'denied')
   } finally {
     Reflect.deleteProperty(globalThis, 'window')
     Reflect.deleteProperty(globalThis, 'document')
