@@ -1,5 +1,6 @@
 'use client'
 import { track } from '@vercel/analytics'
+import { salesLabEventFlags } from './sales-lab-analytics'
 const key = 'bgv-attribution'
 export type Attribution = {
   source?: string
@@ -36,7 +37,9 @@ export function attribution(explicit: Attribution): Attribution {
 }
 export function conversionEvent(event: string, form: string, offer: string, locale: string) {
   try {
-    track(event, { form, offer, locale, page: location.pathname })
+    const page = location.pathname
+    const flags = salesLabEventFlags(page, offer)
+    track(event, { form, offer, locale, page }, flags ? { flags } : undefined)
   } catch {
     /* Analytics must never block a lead. */
   }

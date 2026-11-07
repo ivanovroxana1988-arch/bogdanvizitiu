@@ -5,6 +5,7 @@ import { RegistrationForm } from '@/components/registration-form'
 import { SalesLabCta } from '@/components/sales-lab-cta'
 import { SalesLabBanner } from '@/components/sales-lab-promotion'
 import { SalesLabPromoNote } from '@/components/sales-lab-promo-note'
+import { SALES_LAB_PAGE_FLAGS } from '@/lib/sales-lab-analytics'
 import business from '@/content/business.json'
 import styles from './sales-lab.module.css'
 
@@ -186,6 +187,13 @@ const faqs = [
 export default function SalesLabPage() {
   return (
     <div className={styles.page}>
+      <script
+        type="application/json"
+        data-flag-values
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(SALES_LAB_PAGE_FLAGS).replace(/</g, '\\u003c'),
+        }}
+      />
       <JsonLd data={structuredData} />
       <div className="shell" style={{ paddingTop: '1.1rem' }}>
         <SalesLabBanner />
