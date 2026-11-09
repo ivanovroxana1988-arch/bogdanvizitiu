@@ -514,5 +514,193 @@
         "url": "https://doi.org/10.1007/s10869-023-09897-5"
       }
     ]
+  },
+  {
+    "slug": "ai-pus-intrebarile-dar-ai-schimbat-ceva-in-oferta",
+    "status": "published",
+    "category": {
+      "ro": "Sales",
+      "en": "Sales"
+    },
+    "title": {
+      "ro": "Ai pus întrebările. Dar ai schimbat ceva în ofertă?",
+      "en": "You Asked the Questions. Did You Change the Proposal?"
+    },
+    "subtitle": {
+      "ro": "De ce vânzarea consultativă se vede în recomandarea construită, nu doar în întrebările puse.",
+      "en": "Why consultative selling shows in the recommendation, not just the questions."
+    },
+    "excerpt": {
+      "ro": "Vânzarea consultativă nu se termină când clientul răspunde. Descoperă cum cercetarea nevoilor, criteriile de decizie și obiecțiile pot schimba oferta.",
+      "en": "Consultative selling does not end when customers answer. Explore how needs discovery, decision criteria and objections can reshape the proposal."
+    },
+    "readTime": {
+      "ro": "6 min",
+      "en": "6 min"
+    },
+    "publishedAt": "2026-11-09",
+    "intro": {
+      "ro": [
+        "Imaginează-ți două întâlniri comerciale. În prima, vânzătorul prezintă o soluție după câteva întrebări despre nevoile clientului. În a doua, cercetează situația, identifică probleme, discută despre obiective și verifică prioritățile. La final, ambii trimit aceeași ofertă standard.",
+        "Care dintre ei a făcut vânzare consultativă? Nu este obligatoriu ca o ofertă să se schimbe după fiecare conversație. Uneori, soluția inițială este potrivită. Important este să putem explica de ce.",
+        "Pentru mine, diferența dintre a parcurge etapele unei vânzări și a le folosi pentru a lua decizii mai bune se vede tocmai aici."
+      ],
+      "en": [
+        "Imagine two sales meetings. In the first, a salesperson presents a solution after asking a few questions about the customer's needs. In the second, the salesperson explores the situation, identifies problems, discusses goals and checks priorities. Both end up sending the same standard proposal.",
+        "Which one practised consultative selling? A proposal does not have to change after every conversation. Sometimes the original solution is exactly right. What matters is being able to explain why.",
+        "To me, this is where the difference becomes visible between following the stages of a sales process and using them to make better decisions."
+      ]
+    },
+    "sections": {
+      "ro": [
+        {
+          "heading": "De la ascultare la valoare",
+          "paragraphs": [
+            "În articolul anterior, despre ascultarea percepută, discutam despre faptul că sentimentul de a fi ascultat este asociat mai puternic cu relațiile de calitate decât cu performanța. O conversație bună și o recomandare bună nu sunt automat același lucru.",
+            "Alnakhli, Inyang și Itani au analizat date de la 201 vânzători B2B din industria bunurilor industriale, combinând chestionare și indicatori obiectivi de performanță. Studiul, publicat în Journal of Business-to-Business Marketing, a identificat asocieri pozitive între ascultare, comunicare, vânzarea adaptivă și co-crearea valorii, precum și între co-crearea valorii și performanța comercială.",
+            "În modelul lor, co-crearea valorii a avut și un rol de mediator. Rezultatele nu demonstrează însă că simpla personalizare a unei oferte provoacă o creștere a vânzărilor. Cercetarea ne invită să analizăm nu doar dacă vânzătorul ascultă, ci și ce construiește împreună cu clientul pornind de la informațiile obținute."
+          ]
+        },
+        {
+          "heading": "Clientul cere un training. Dar ce problemă încearcă să rezolve?",
+          "paragraphs": [
+            "Un director comercial solicită un program de negociere pentru echipa sa. Răspunsul imediat ar putea fi o prezentare a cursului: module, durată, metode și preț. Dar de ce negociere? Ce dificultăți întâmpină echipa? Unde se pierd oportunitățile?",
+            "Din conversație ar putea reieși că oamenii cunosc tehnicile de negociere, însă intră prea repede în discuții despre preț. Nu explorează suficient nevoile clientului și ajung să ofere reduceri înainte de a demonstra valoarea.",
+            "În această situație, un program concentrat exclusiv pe negociere poate rata problema. O recomandare mai relevantă ar putea include cercetarea nevoilor, identificarea criteriilor de decizie, argumentarea valorii și apoi negocierea. Nu am schimbat doar ordinea modulelor. Am schimbat diagnosticul și, în consecință, soluția propusă."
+          ]
+        },
+        {
+          "heading": "Adaptarea nu înseamnă să spui fiecărui client ce vrea să audă",
+          "paragraphs": [
+            "Vânzarea adaptivă este uneori redusă la schimbarea stilului de comunicare. Cu un client vorbești direct; altuia îi oferi mai multe explicații. Dar adaptarea poate merge dincolo de ton.",
+            "Doi clienți cer aceeași soluție software. Primul vrea să reducă timpul pierdut cu activități repetitive. Al doilea este preocupat de controlul operațional și riscul erorilor. Putem prezenta ambilor aceeași listă de funcționalități, schimbând ordinea slide-urilor. Sau putem construi recomandări diferite: automatizare și măsurarea timpului economisit pentru primul; trasabilitate, verificări și implementare controlată pentru al doilea.",
+            "Produsul poate rămâne același. Dar demonstrația, configurația și criteriile de evaluare se schimbă. Adaptarea nu înseamnă neapărat schimbarea produsului, ci schimbarea justificată a recomandării. Dacă produsul nu răspunde unei nevoi esențiale, promisiunile suplimentare nu sunt o soluție."
+          ]
+        },
+        {
+          "heading": "Criteriile clientului nu sunt neapărat criteriile noastre",
+          "paragraphs": [
+            "Experiența îl ajută pe vânzător să recunoască rapid situații familiare. Însă aceeași experiență îl poate împinge să presupună ce contează pentru client.",
+            "Szymanski și Churchill au comparat indiciile utilizate de vânzători pentru evaluarea potențialilor clienți. Au identificat diferențe în importanța acordată anumitor indicii și în standardele de evaluare. Studiul nu analizează direct personalizarea ofertelor, dar amintește cât de diferit pot fi interpretate informațiile disponibile.",
+            "Un client poate spune că prețul, calitatea, viteza implementării și suportul sunt toate importante. Întrebarea decisivă este ce se întâmplă când trebuie să aleagă. Ar accepta un cost mai mare pentru implementare rapidă? Ar prefera mai puține funcționalități, dar suport mai bun? Fără această ierarhizare, riscăm să construim oferta în jurul priorităților noastre, nu ale lui."
+          ]
+        },
+        {
+          "heading": "Ce înseamnă, de fapt, «e prea scump»?",
+          "paragraphs": [
+            "Obiecția de preț arată cât de ușor putem răspunde unei interpretări, nu unei probleme. «E prea scump» poate însemna că bugetul este insuficient, că există o ofertă concurentă mai ieftină, că beneficiile sunt neclare sau că investiția este greu de justificat intern.",
+            "Fiecare situație cere alt răspuns. Uneori trebuie revizuită configurația; alteori sunt necesare dovezi, criterii de evaluare sau o comparație relevantă.",
+            "Înainte de argumentare, o întrebare simplă poate schimba direcția discuției: «Când spuneți că este prea scump, la ce vă raportați?» Nu întrebarea în sine produce valoare, ci disponibilitatea de a folosi răspunsul pentru a decide ce urmează."
+          ]
+        },
+        {
+          "heading": "Ce rămâne după training?",
+          "paragraphs": [
+            "Pentru un manager de sales, provocarea nu se oprește la a-i învăța pe oameni să pună întrebări. Contează și ce comportamente observă și discută ulterior.",
+            "Pelham și Kravitz au analizat, într-un studiu exploratoriu pe 420 de vânzători din afara retailului, relațiile dintre conținutul trainingului, criteriile de evaluare și comportamentele consultative. Evaluarea pe criterii consultative a fost mai puternic asociată cu comportamentele analizate decât conținutul trainingului.",
+            "Acest rezultat nu demonstrează că evaluarea produce automat schimbarea sau că trainingul nu funcționează. Ridică însă o întrebare practică: dacă evaluăm doar numărul întâlnirilor și valoarea contractelor, cum observăm calitatea diagnosticului comercial? Merită să discutăm și dacă vânzătorul a verificat prioritățile clientului, a corectat o presupunere și a putut justifica recomandarea."
+          ]
+        },
+        {
+          "heading": "Valoarea nu se construiește doar în prezentare",
+          "paragraphs": [
+            "Cercetarea nevoilor nu este un ritual înainte de prezentarea produsului. Este procesul prin care stabilim ce merită recomandat și de ce.",
+            "O ofertă standard poate fi foarte potrivită. Una personalizată poate fi greșită. Diferența nu este numărul modificărilor, ci legătura dintre problema identificată și soluția propusă.",
+            "După o întâlnire comercială, întrebarea utilă nu este doar «Am pus întrebările potrivite?», ci «Ce am aflat de la client și cum a influențat ceea ce îi recomand?» Dacă putem răspunde concret, avem un punct de plecare solid pentru vânzarea consultativă. Dacă nu, poate că am ascultat răspunsurile fără să le lăsăm să schimbe ceva."
+          ]
+        }
+      ],
+      "en": [
+        {
+          "heading": "From listening to value",
+          "paragraphs": [
+            "In the previous article on perceived listening, we explored how feeling heard is more strongly associated with relationship quality than with performance. A good conversation and a good recommendation are not automatically the same thing.",
+            "Alnakhli, Inyang and Itani analysed data from 201 B2B salespeople in industrial goods, combining questionnaires with objective sales performance indicators. Their study in the Journal of Business-to-Business Marketing found positive associations involving listening, communication, adaptive selling and value co-creation, as well as between value co-creation and sales performance.",
+            "Value co-creation also played a mediating role in their model. These findings do not prove that changing a proposal causes sales to increase. They do invite us to examine not only whether the salesperson listens, but what the salesperson and customer build from the information exchanged."
+          ]
+        },
+        {
+          "heading": "The client asks for negotiation training. What problem are they trying to solve?",
+          "paragraphs": [
+            "A sales director requests negotiation training for the team. The immediate response might be a course brochure with modules, duration, methods and price. But why negotiation? Where does the team struggle? At which points are opportunities lost?",
+            "The conversation might reveal that the team knows negotiation techniques but starts discussing price too early. They do not explore customer needs deeply enough and offer discounts before establishing value.",
+            "A programme focused exclusively on negotiation might miss the real problem. A more relevant recommendation could include needs discovery, decision criteria, value articulation and only then negotiation. We have not simply rearranged modules. We have changed the diagnosis and therefore the recommendation."
+          ]
+        },
+        {
+          "heading": "Adaptation is not telling every customer what they want to hear",
+          "paragraphs": [
+            "Adaptive selling is sometimes reduced to communication style: be direct with one customer and provide more detail to another. Yet adaptation can go beyond tone.",
+            "Two customers request the same software. One wants to reduce time spent on repetitive work; the other cares most about operational control and error risk. We could show both the same features in a different order. Or we could offer different recommendations: automation and time-saved measures for the first, traceability, checks and controlled implementation for the second.",
+            "The product may remain unchanged while the demonstration, configuration and evaluation criteria differ. Adaptation does not necessarily mean changing the product. It means changing the recommendation for a defensible reason. If the product cannot meet an essential need, additional promises are not the answer."
+          ]
+        },
+        {
+          "heading": "The customer's criteria are not necessarily ours",
+          "paragraphs": [
+            "Experience helps salespeople recognise familiar situations quickly. It can also encourage them to assume they know what matters to a customer.",
+            "Szymanski and Churchill compared the cues salespeople use to evaluate prospective customers. They found differences in how particular cues were weighted and in the standards used for evaluation. The study did not directly examine proposal customisation, but it shows how the same information can be interpreted differently.",
+            "A customer may say that price, quality, implementation speed and support all matter. The decisive question is what happens when trade-offs are necessary. Would they pay more for faster implementation? Prefer fewer features with stronger support? Without ranking these criteria, we risk designing a proposal around our own priorities."
+          ]
+        },
+        {
+          "heading": "What does 'too expensive' actually mean?",
+          "paragraphs": [
+            "A price objection shows how easily we can respond to an interpretation rather than the underlying problem. 'Too expensive' might mean an insufficient budget, a cheaper competing offer, unclear benefits or difficulty justifying the investment internally.",
+            "Each situation calls for a different response. Sometimes the configuration needs reviewing; sometimes the customer needs evidence, evaluation criteria or a meaningful comparison.",
+            "Before arguing, one question can redirect the discussion: 'When you say it is too expensive, what are you comparing it with?' The value lies not in the question itself, but in using the answer to decide what to do next."
+          ]
+        },
+        {
+          "heading": "What remains after training?",
+          "paragraphs": [
+            "For a sales manager, the challenge does not end with teaching people to ask questions. It also matters which behaviours managers observe and discuss afterwards.",
+            "In an exploratory study involving 420 non-retail salespeople, Pelham and Kravitz examined relationships between training content, salesperson evaluation and consultative behaviours. Evaluation against consultative criteria was more strongly associated with the behaviours examined than training content.",
+            "This does not prove that evaluation automatically changes behaviour or that training is ineffective. It does raise a practical question: if we measure only meetings and closed revenue, how do we observe the quality of the sales diagnosis? We can also discuss whether a salesperson checked priorities, corrected an assumption and justified the recommendation."
+          ]
+        },
+        {
+          "heading": "Value is not built only during the presentation",
+          "paragraphs": [
+            "Needs discovery is not a ritual before the product presentation. It is how we determine what deserves to be recommended, and why.",
+            "A standard proposal may be exactly right. A customised proposal may be wrong. The difference is not the number of changes but the connection between the identified problem and the proposed solution.",
+            "After a sales meeting, the useful question is not only 'Did I ask the right questions?' but 'What did I learn from the customer, and how did it influence my recommendation?' If we can answer specifically, we have a solid starting point for consultative selling. If not, perhaps we heard the answers without allowing them to change anything."
+          ]
+        }
+      ]
+    },
+    "closing": {
+      "ro": "Întrebarea decisivă nu este câte întrebări am pus, ci ce am făcut cu răspunsurile.",
+      "en": "The decisive question is not how many questions we asked, but what we did with the answers."
+    },
+    "cta": {
+      "title": {
+        "ro": "Transformă conversațiile comerciale în recomandări relevante",
+        "en": "Turn sales conversations into relevant recommendations"
+      },
+      "label": {
+        "ro": "Descoperă Sales Lab",
+        "en": "Explore Sales Lab"
+      },
+      "href": "/sales-lab"
+    },
+    "sourceNote": {
+      "ro": "Articol editorial bazat pe cercetări despre co-crearea valorii, evaluarea clienților și comportamentele consultative. Exemplele sunt scenarii explicative, nu experiențe personale documentate.",
+      "en": "Editorial article drawing on research into value co-creation, customer evaluation and consultative behaviours. Examples are illustrative, not documented personal experiences."
+    },
+    "sources": [
+      {
+        "title": "The Role of Salespeople in Value Co-Creation and Its Impact on Sales Performance",
+        "url": "https://doi.org/10.1080/1051712X.2021.2012079"
+      },
+      {
+        "title": "Client Evaluation Cues: A Comparison of Successful and Unsuccessful Salespeople",
+        "url": "https://doi.org/10.1177/002224379002700204"
+      },
+      {
+        "title": "An Exploratory Study of the Influence of Sales Training Content and Salesperson Evaluation",
+        "url": "https://doi.org/10.1080/09652540802480837"
+      }
+    ]
   }
 ]
