@@ -16,7 +16,7 @@ export function generateMetadata({ searchParams }: { searchParams?: { lang?: str
   return buildPageMetadata({
     title:
       locale === 'ro'
-        ? 'Bogdan Vizitiu | Leadership, negociere și relații profesionale'
+        ? 'Training și coaching pentru leadership și negociere | Bogdan Vizitiu'
         : 'Leadership, negotiation and professional relationships',
     description:
       locale === 'ro'

@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import styles from '@/app/commercial.module.css'
 import { ConceptImage } from '@/components/portrait'
 import { ArrowLink, Eyebrow } from '@/components/ui'
-import { buildPageMetadata } from '@/lib/seo'
+import { buildPageMetadata, corporateCourseJsonLd } from '@/lib/seo'
+import { JsonLd } from '@/components/json-ld'
 import visual from './page.module.css'
 
 export const metadata: Metadata = buildPageMetadata({
@@ -148,6 +149,14 @@ const contactHref = '/contact?source=act-adapt-execute'
 export default function ActAdaptExecutePage() {
   return (
     <div className={`${styles.page} conversion-page`}>
+      <JsonLd
+        data={corporateCourseJsonLd({
+          name: 'ACT · ADAPT · EXECUTE',
+          description:
+            'Program experiențial de dezvoltare inspirat de ideile lui Adam Grant: acțiune, adaptare, execuție și transfer în munca reală.',
+          path: '/cursuri/act-adapt-execute',
+        })}
+      />
       <section className={styles.hero}>
         <Eyebrow>Program experiențial · inspirat de Adam Grant</Eyebrow>
         <div className={styles.heroGrid}>
