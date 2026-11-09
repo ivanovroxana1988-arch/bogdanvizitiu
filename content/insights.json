@@ -670,8 +670,12 @@
       ]
     },
     "closing": {
-      "ro": "Întrebarea decisivă nu este câte întrebări am pus, ci ce am făcut cu răspunsurile.",
-      "en": "The decisive question is not how many questions we asked, but what we did with the answers."
+      "ro": [
+        "Întrebarea decisivă nu este câte întrebări am pus, ci ce am făcut cu răspunsurile."
+      ],
+      "en": [
+        "The decisive question is not how many questions we asked, but what we did with the answers."
+      ]
     },
     "cta": {
       "title": {
@@ -690,15 +694,15 @@
     },
     "sources": [
       {
-        "title": "The Role of Salespeople in Value Co-Creation and Its Impact on Sales Performance",
+        "label": "The Role of Salespeople in Value Co-Creation and Its Impact on Sales Performance",
         "url": "https://doi.org/10.1080/1051712X.2021.2012079"
       },
       {
-        "title": "Client Evaluation Cues: A Comparison of Successful and Unsuccessful Salespeople",
+        "label": "Client Evaluation Cues: A Comparison of Successful and Unsuccessful Salespeople",
         "url": "https://doi.org/10.1177/002224379002700204"
       },
       {
-        "title": "An Exploratory Study of the Influence of Sales Training Content and Salesperson Evaluation",
+        "label": "An Exploratory Study of the Influence of Sales Training Content and Salesperson Evaluation",
         "url": "https://doi.org/10.1080/09652540802480837"
       }
     ]
