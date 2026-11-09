@@ -47,6 +47,9 @@ function buildFallback(
     `Email: ${String(data.get('email') || '')}`,
     `Telefon / Phone: ${String(data.get('phone') || '')}`,
     String(data.get('company') || '') ? `Companie: ${String(data.get('company') || '')}` : '',
+    String(data.get('voucher') || '')
+      ? `Voucher solicitat: ${String(data.get('voucher') || '')}`
+      : '',
     String(data.get('seats') || '') ? `Locuri solicitate: ${String(data.get('seats') || '')}` : '',
     '',
     String(data.get('source') || '') ? `Source: ${String(data.get('source') || '')}` : '',
@@ -88,6 +91,8 @@ export function RegistrationForm({
   const emit = (event: string) => conversionEvent(event, 'course', courseSlug, locale)
   const [state, setState] = useState<SubmitState>('idle')
   const [errors, setErrors] = useState<FieldErrors>({})
+  const [voucherMessage, setVoucherMessage] = useState('')
+  const [voucherChecking, setVoucherChecking] = useState(false)
   const [fallbackHref, setFallbackHref] = useState('')
 
   const copy =
@@ -205,6 +210,7 @@ export function RegistrationForm({
       phone: String(data.get('phone') || ''),
       company: courseSlug === 'sales-lab' ? String(data.get('company') || '') : '',
       seats: courseSlug === 'sales-lab' ? Number(data.get('seats') || 1) : undefined,
+      voucher: String(data.get('voucher') || '').trim(),
       website: String(data.get('website') || ''),
       source: original.source || String(data.get('source') || ''),
       referrer: original.referrer || referrer,
@@ -240,6 +246,7 @@ export function RegistrationForm({
         trackSalesLabRegistration(result, courseSlug)
         form.reset()
         setErrors({})
+        setVoucherMessage('')
         // A delivered email alone is not a saved Sales Lab registration.
         const savedLead = isSavedRegistration(courseSlug, result.record)
         emit(savedLead ? 'form_success' : 'form_email_only')
@@ -261,6 +268,16 @@ export function RegistrationForm({
       }
 
       if (result.error) emit('form_error')
+      if (result.error === 'invalid_voucher') {
+        setVoucherMessage(
+          locale === 'ro'
+            ? 'Codul voucher nu este valid. Verifică-l sau șterge-l pentru a continua.'
+            : 'Invalid voucher code. Check or remove it to continue.',
+        )
+        ;(form.elements.namedItem('voucher') as HTMLInputElement | null)?.focus()
+        setState('idle')
+        return
+      }
       if (result.error === 'invalid_fields' && result.invalidFields?.length) {
         const nextErrors: FieldErrors = {}
         result.invalidFields.forEach((field) => {
@@ -287,6 +304,44 @@ export function RegistrationForm({
         buildFallback(form, locale, courseTitle, original.referrer || referrer, waitlist),
       )
       setState('fallback')
+    }
+  }
+
+  async function checkVoucher(form: HTMLFormElement) {
+    const data = new FormData(form)
+    const code = String(data.get('voucher') || '').trim()
+    if (!code) {
+      setVoucherMessage('')
+      return
+    }
+    setVoucherChecking(true)
+    try {
+      const response = await fetch('/api/voucher', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code, course: courseSlug, seats: Number(data.get('seats') || 1) }),
+      })
+      const result = await response.json()
+      if (!response.ok || !result.quote) {
+        setVoucherMessage(
+          locale === 'ro' ? 'Voucher invalid sau indisponibil.' : 'Invalid or unavailable voucher.',
+        )
+      } else {
+        const q = result.quote
+        setVoucherMessage(
+          locale === 'ro'
+            ? `Voucher valid: reducere 10%. ${q.pricePerSeatEur} EUR / participant, total ${q.totalEur} EUR.${q.conditionalEarlyBirdPriceEur != null ? ` Cu Early Bird: ${q.conditionalEarlyBirdPriceEur} EUR / participant, dacă se confirmă disponibilitatea. Tariful final se confirmă personal.` : ''}`
+            : `Valid voucher: 10% off. EUR ${q.pricePerSeatEur} per participant, EUR ${q.totalEur} total.${q.conditionalEarlyBirdPriceEur != null ? ` With Early Bird: EUR ${q.conditionalEarlyBirdPriceEur} per participant, subject to availability and personal confirmation.` : ''}`,
+        )
+      }
+    } catch {
+      setVoucherMessage(
+        locale === 'ro'
+          ? 'Nu am putut verifica voucherul. Încearcă din nou.'
+          : 'Could not check voucher. Please try again.',
+      )
+    } finally {
+      setVoucherChecking(false)
     }
   }
 
@@ -357,7 +412,12 @@ export function RegistrationForm({
           </label>
           <label className={commercialStyles.full}>
             Numărul de participanți
-            <select name="seats" defaultValue="1" aria-label="Numărul de participanți solicitați">
+            <select
+              onChange={() => setVoucherMessage('')}
+              name="seats"
+              defaultValue="1"
+              aria-label="Numărul de participanți solicitați"
+            >
               {Array.from({ length: 15 }, (_, index) => index + 1).map((count) => (
                 <option key={count} value={count}>
                   {count} {count === 1 ? 'participant' : 'participanți'}
@@ -366,6 +426,38 @@ export function RegistrationForm({
             </select>
           </label>
         </>
+      )}
+
+      {courseSlug === 'sales-lab' && !waitlist && (
+        <div className={commercialStyles.full}>
+          <label>
+            {locale === 'ro' ? 'Cod voucher (opțional)' : 'Voucher code (optional)'}
+            <input
+              name="voucher"
+              maxLength={64}
+              autoComplete="off"
+              aria-describedby="voucher-status"
+              onChange={() => setVoucherMessage('')}
+              readOnly={voucherChecking || state === 'sending'}
+            />
+          </label>
+          <button
+            type="button"
+            disabled={voucherChecking || state === 'sending'}
+            onClick={(event) => checkVoucher(event.currentTarget.form!)}
+          >
+            {voucherChecking
+              ? locale === 'ro'
+                ? 'Se verifică…'
+                : 'Checking…'
+              : locale === 'ro'
+                ? 'Verifică voucherul'
+                : 'Check voucher'}
+          </button>
+          <p id="voucher-status" role="status">
+            {voucherMessage}
+          </p>
+        </div>
       )}
 
       <div aria-hidden="true" className={formStyles.honeypot}>
@@ -402,7 +494,11 @@ export function RegistrationForm({
         </a>
       )}
 
-      <button type="submit" disabled={state === 'sending'} aria-disabled={state === 'sending'}>
+      <button
+        type="submit"
+        disabled={state === 'sending' || voucherChecking}
+        aria-disabled={state === 'sending' || voucherChecking}
+      >
         {state === 'sending' ? copy.sending : submitLabel || copy.submit} →
       </button>
     </form>

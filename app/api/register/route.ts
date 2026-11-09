@@ -1,3 +1,4 @@
+import { quoteCourseVoucher, describeCourseVoucher } from '@/lib/course-vouchers'
 import { randomUUID } from 'node:crypto'
 import { NextResponse } from 'next/server'
 import business from '@/content/business.json'
@@ -16,6 +17,7 @@ type RegistrationPayload = {
   email?: string
   phone?: string
   company?: string
+  voucher?: string
   seats?: number
   website?: string
   source?: string
@@ -105,6 +107,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: 'invalid_fields', invalidFields }, { status: 400 })
   }
 
+  const voucherInput = typeof raw.voucher === 'string' ? raw.voucher.trim() : ''
+  const voucher = voucherInput ? quoteCourseVoucher(voucherInput, courseSlug, seats) : null
+  if ((raw.voucher != null && typeof raw.voucher !== 'string') || (voucherInput && !voucher)) {
+    return NextResponse.json({ ok: false, error: 'invalid_voucher' }, { status: 400 })
+  }
+
   const subject =
     course.dates.length === 0
       ? locale === 'ro'
@@ -120,6 +128,7 @@ export async function POST(request: Request) {
     `Email: ${email}`,
     `Telefon / Phone: ${phone}`,
     courseSlug === 'sales-lab' ? `Locuri solicitate: ${seats}` : '',
+    voucher ? describeCourseVoucher(voucher) : '',
     company ? `Companie: ${company}` : '',
     '',
     source ? `Source: ${source}` : '',
@@ -174,6 +183,7 @@ export async function POST(request: Request) {
           utmSource,
           utmMedium,
           utmCampaign,
+          voucher: voucher || undefined,
         },
         registrationId,
       )
@@ -185,6 +195,7 @@ export async function POST(request: Request) {
         name,
         seats,
         email,
+        voucher: voucher || undefined,
         replyTo: business.email,
         brevoKey: process.env.BREVO_API_KEY,
         brevoSenderEmail: process.env.BREVO_SENDER_EMAIL,

@@ -1,3 +1,4 @@
+import { describeCourseVoucher, type VoucherQuote } from './course-vouchers'
 import { isSalesLabEarlyBirdActive } from './sales-lab-offer'
 
 /**
@@ -10,6 +11,7 @@ export type SalesLabConfirmationContent = {
 }
 
 type SalesLabApplicant = {
+  voucher?: VoucherQuote
   name: string
   seats: number
 }
@@ -43,7 +45,7 @@ function escapeHtml(value: string) {
 }
 
 export function buildSalesLabConfirmation(
-  { name, seats }: SalesLabApplicant,
+  { name, seats, voucher }: SalesLabApplicant,
   now: number = Date.now(),
 ): SalesLabConfirmationContent {
   const firstName = name.trim().split(/\s+/)[0] || 'participant'
@@ -63,6 +65,7 @@ export function buildSalesLabConfirmation(
     'Locul: București (adresa exactă va fi comunicată ulterior)',
     'Format: 2 zile, 16 ore, în sală',
     'Preț standard: 600 EUR / participant',
+    ...(voucher ? [describeCourseVoucher(voucher)] : []),
     ...(promoActive ? [promoText] : []),
     'Locuri solicitate: ' + seatLabel,
     '',
@@ -94,6 +97,7 @@ export function buildSalesLabConfirmation(
     '<strong>Locație:</strong> București (adresa exactă urmează)<br>',
     '<strong>Format:</strong> 2 zile · 16 ore · în sală<br>',
     '<strong>Preț standard:</strong> 600 EUR / participant<br>',
+    ...(voucher ? [escapeHtml(describeCourseVoucher(voucher)) + '<br>'] : []),
     ...(promoActive
       ? [
           '<strong>Ofertă Early Bird:</strong> 500 EUR / participant pentru primele 5 locuri confirmate până la 30 noiembrie 2026, în limita disponibilității. Tariful final va fi confirmat individual.<br>',

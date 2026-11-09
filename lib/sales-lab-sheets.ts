@@ -1,9 +1,11 @@
+import type { VoucherQuote } from './course-vouchers'
 import { createPrivateKey, createSign, randomUUID } from 'node:crypto'
 
 const SHEET_NAME = 'Inscrieri'
 const OAUTH_SCOPE = 'https://www.googleapis.com/auth/spreadsheets'
 
 export type RegistrationRecord = {
+  voucher?: VoucherQuote
   name: string
   email: string
   phone: string
@@ -116,6 +118,16 @@ export function makeRegistrationRow(
     record.referrer,
     '',
     reference,
+    ...(record.voucher
+      ? [
+          record.voucher.code,
+          record.voucher.discountPercent,
+          record.voucher.standardPriceEur,
+          record.voucher.pricePerSeatEur,
+          record.voucher.totalEur,
+          record.voucher.conditionalEarlyBirdPriceEur ?? '',
+        ]
+      : []),
   ]
 }
 
@@ -167,7 +179,7 @@ export async function syncSalesLabToSheets(
     )
     const status = await getWaitlistStatus(spreadsheetId, token)
     const row = makeRegistrationRow(record, new Date().toISOString(), reference, status)
-    const range = encodeURIComponent("'" + SHEET_NAME + "'!A:O")
+    const range = encodeURIComponent("'" + SHEET_NAME + "'!A:U")
     const url =
       'https://sheets.googleapis.com/v4/spreadsheets/' +
       encodeURIComponent(spreadsheetId) +
