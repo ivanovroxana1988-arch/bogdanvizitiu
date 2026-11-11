@@ -8,3 +8,7 @@ out/
 .DS_Store
 npm-debug.log*
 source/*.xlsx
+
+# Local Graphify tooling and generated code maps
+.venv-graphify/
+graphify-out/
