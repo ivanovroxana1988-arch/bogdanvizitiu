@@ -14,7 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/corporate',
     '/workshopuri',
     '/portofoliu',
-    '/media',
     '/insights',
     '/resurse',
     '/contact',
