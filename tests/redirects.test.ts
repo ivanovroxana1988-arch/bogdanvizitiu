@@ -115,3 +115,43 @@ test('Romanian-only Sales Lab and corporate courses never send EN visitors to no
   equal(englishNavigationTarget('/coaching'), '/en/coaching')
   equal(englishNavigationTarget('/cursuri/arta-negocierii'), '/en/programs/negotiation-influence')
 })
+
+test('legacy registration and translated article URLs resolve to existing canonical routes', () => {
+  for (const [pathname, expected] of [
+    ['/register', '/en/register'],
+    [
+      '/en/insights/coaching-sau-consultanta-de-ce-ai-nevoie-de-fapt',
+      '/en/insights/coaching-or-consulting-what-do-you-actually-need',
+    ],
+    [
+      '/en/insights/de-ce-unele-conversatii-manageriale-schimba-lucrurile',
+      '/en/insights/why-some-management-conversations-change-things',
+    ],
+  ]) {
+    const target = resolveCanonicalRedirect({
+      hostname: 'bogdanvizitiu.com',
+      pathname,
+      search: '?utm_source=test',
+    })
+    equal(target?.pathname, expected)
+    equal(target?.search, '?utm_source=test')
+    equal(resolveCanonicalRedirect({ hostname: 'bogdanvizitiu.com', pathname: expected }), null)
+  }
+})
+
+test('language query for Romanian-only pages uses the existing English catalogue', () => {
+  for (const pathname of ['/sales-lab', '/cursuri/leadership-ai', '/cursuri/act-adapt-execute']) {
+    deepStrictEqual(
+      resolveCanonicalRedirect({
+        hostname: 'bogdanvizitiu.com',
+        pathname,
+        search: '?lang=en&utm_source=test',
+      }),
+      {
+        hostname: 'bogdanvizitiu.com',
+        pathname: '/en/programs',
+        search: '?utm_source=test',
+      },
+    )
+  }
+})
