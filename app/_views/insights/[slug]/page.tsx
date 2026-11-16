@@ -31,6 +31,9 @@ const insightConcepts: Record<
   'cat-valoreaza-sa-te-simti-ascultat': 'negotiationEditorial',
 }
 
+const decisionCriteriaSlug = 'clientul-ti-a-spus-ce-conteaza-de-ce-ii-prezinti-altceva'
+const decisionCriteriaImage = '/images/editorial/criterii-decizie.webp'
+
 const coachingConsultingSlug = 'coaching-sau-consultanta-de-ce-ai-nevoie-de-fapt'
 const coachingConsultingImage = '/images/bogdan/bogdan-coaching-consultanta.webp'
 const aiAdoptionSlug = 'ai-adoption-is-a-change-problem'
@@ -190,6 +193,7 @@ export default function Insight({
   const commercialDestination =
     insight.cta.href === '/sales-lab' && locale === 'en' ? '/cursuri' : insight.cta.href
   const hasCommercialCta = commercialInsightSlugs.has(insight.slug)
+  const hasDecisionCriteriaImage = insight.slug === decisionCriteriaSlug
   const hasCoachingConsultingPortrait = insight.slug === coachingConsultingSlug
   const hasAiAdoptionImage = insight.slug === aiAdoptionSlug
   const hasAiApprenticeshipImage = insight.slug === aiApprenticeshipSlug
@@ -230,7 +234,9 @@ export default function Insight({
     insight.slug === 'networkingul-nu-incepe-cu-schimbul-de-contacte'
       ? ('networkingEditorial' as const)
       : insightConcepts[insight.slug]
-  const structuredImageSource = hasAiApprenticeshipImage
+  const structuredImageSource = hasDecisionCriteriaImage
+    ? decisionCriteriaImage
+    : hasAiApprenticeshipImage
     ? aiApprenticeshipImage
     : hasAiAdoptionImage
       ? aiAdoptionImage
@@ -280,7 +286,16 @@ export default function Insight({
           </p>
         </aside>
         <article className={styles.body}>
-          {hasAiApprenticeshipImage ? (
+          {hasDecisionCriteriaImage ? (
+            <figure className={`${styles.heroImage} ${styles.directImage}`}>
+              <img
+                src={decisionCriteriaImage}
+                alt={locale === 'ro' ? 'Criteriile de decizie ale clientului conectate la argumentele de valoare' : 'Customer decision criteria connected to relevant value arguments'}
+                loading="eager"
+                decoding="async"
+              />
+            </figure>
+          ) : hasAiApprenticeshipImage ? (
             <AiApprenticeshipImage className={styles.heroImage} locale={locale} />
           ) : hasAiAdoptionImage ? (
             <figure className={`${styles.heroImage} ${styles.directImage}`}>
