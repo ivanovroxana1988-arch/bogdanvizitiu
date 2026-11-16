@@ -706,5 +706,155 @@
         "url": "https://doi.org/10.1080/09652540802480837"
       }
     ]
+  },
+  {
+    "slug": "clientul-ti-a-spus-ce-conteaza-de-ce-ii-prezinti-altceva",
+    "status": "published",
+    "category": {
+      "ro": "Sales",
+      "en": "Sales"
+    },
+    "title": {
+      "ro": "Clientul ți-a spus ce contează. De ce îi prezinți altceva?",
+      "en": "Your Customer Told You What Matters. Why Are You Presenting Something Else?"
+    },
+    "subtitle": {
+      "ro": "În vânzarea consultativă, relevanța argumentelor contează mai mult decât numărul lor.",
+      "en": "In consultative selling, the relevance of an argument matters more than the number of arguments."
+    },
+    "excerpt": {
+      "ro": "Caracteristici, beneficii sau valoare? Cum alegi argumentele comerciale pornind de la criteriile reale de decizie ale clientului.",
+      "en": "Features, benefits or value? How to choose sales arguments based on the customer's actual decision criteria."
+    },
+    "readTime": {
+      "ro": "4 min",
+      "en": "4 min"
+    },
+    "publishedAt": "2026-11-16",
+    "intro": {
+      "ro": [
+        "Un client îți spune că principala lui preocupare este timpul de implementare. Tu îi prezinți toate funcționalitățile produsului.",
+        "Altul îți explică faptul că are nevoie de predictibilitate și control. Tu îi vorbești despre flexibilitate și inovație.",
+        "În ambele situații, argumentele pot fi corecte. Problema este că nu răspund neapărat lucrurilor care contează pentru client. Uneori, cu cât cunoaștem mai bine produsul, cu atât ne este mai greu să renunțăm la informațiile irelevante pentru cumpărător."
+      ],
+      "en": [
+        "A customer tells you implementation time is their main concern. You present every feature of the product.",
+        "Another needs predictability and control. You talk about flexibility and innovation.",
+        "Both presentations may be accurate. But neither necessarily addresses what matters to the customer. Sometimes the better we know our product, the harder it is to leave out information that is irrelevant to the buyer."
+      ]
+    },
+    "sections": {
+      "ro": [
+        {
+          "heading": "Există un argument comercial universal?",
+          "paragraphs": [
+            "O cercetare publicată în Journal of Personal Selling & Sales Management a analizat patru direcții ale comunicării comerciale: caracteristicile produsului, beneficiile, reducerile și valoarea economică. Studiul, realizat pe un eșantion de 226 de vânzători B2B, nu a identificat o direcție de comunicare clar asociată cu performanța în toate situațiile analizate.",
+            "Nu putem concluziona că prezentarea beneficiilor este întotdeauna superioară prezentării caracteristicilor sau că argumentarea valorii economice garantează rezultate mai bune. Cercetarea este observațională, iar analiza relațiilor cu performanța este exploratorie. Poate că întrebarea utilă nu este care argument convinge în general, ci care argument este relevant pentru decizia acestui client."
+          ]
+        },
+        {
+          "heading": "Același produs. Două priorități diferite.",
+          "paragraphs": [
+            "Două companii solicită un program de dezvoltare a competențelor comerciale. Prima are o echipă experimentată, dar oportunitățile avansează greu: managerul urmărește creșterea conversiei. A doua are rezultate acceptabile, însă vânzătorii acordă frecvent reduceri: managerul este preocupat de marja comercială.",
+            "Ambele organizații ar putea beneficia de același program. Dar ar fi logic să le prezentăm identic? Pentru prima, discuția relevantă poate fi despre criteriile de decizie, clarificarea nevoilor și progresul oportunităților. Pentru a doua, despre argumentarea valorii și negocierea fără discounturi automate.",
+            "Produsul poate rămâne același. Ceea ce se schimbă este problema pe care încercăm să o rezolvăm, argumentația și modul în care vom evalua rezultatele."
+          ]
+        },
+        {
+          "heading": "Criteriile trebuie descoperite, nu presupuse",
+          "paragraphs": [
+            "Experiența îl ajută pe vânzător să recunoască situații familiare. Dar îl poate determina să presupună că știe deja ce contează pentru client. Dacă mulți cumpărători sunt preocupați de preț, putem ajunge să tratăm prețul drept prioritate pentru toți. Însă o ipoteză nu este o concluzie.",
+            "Un client poate considera importante prețul, calitatea, rapiditatea implementării și suportul. Prioritățile devin mai clare când trebuie să facă un compromis: ar accepta un cost mai mare pentru implementare rapidă? Ar prefera mai puține funcționalități, dar suport mai bun? Fără asemenea clarificări, riscăm să construim oferta în jurul priorităților noastre."
+          ]
+        },
+        {
+          "heading": "Valoarea nu este doar un cuvânt din prezentare",
+          "paragraphs": [
+            "Un studiu publicat în Journal of Business-to-Business Marketing, realizat pe date de la 186 de directori și manageri de vânzări din China, a identificat o asociere pozitivă între capacitatea organizațională de a vinde pe baza valorii și performanța comercială. Relația era mai puternică în contexte cu nevoi complexe și concurență intensă.",
+            "Fiind o cercetare transversală, bazată pe date subiective, rezultatele nu demonstrează cauzalitate și nu pot fi generalizate automat. Totuși, ele susțin interesul pentru înțelegerea valorii în contextul afacerii clientului.",
+            "Dacă afirmăm că o soluție economisește timp, trebuie să explicăm unde apare economia. Dacă promitem îmbunătățirea performanței, trebuie să clarificăm cum ar putea fi evaluată. Altfel, valoarea rămâne doar o promisiune."
+          ]
+        },
+        {
+          "heading": "Poate că nu ai nevoie de un argument în plus",
+          "paragraphs": [
+            "Când un client nu este convins, reacția firească este să adăugăm argumente: încă o funcționalitate, încă un beneficiu, încă o comparație. Dar dacă problema nu este lipsa informațiilor? Dacă ceea ce prezentăm este corect, însă nu răspunde criteriului care contează pentru cumpărător?",
+            "Vânzarea consultativă presupune mai mult decât capacitatea de a explica un produs. Presupune să înțelegem decizia clientului suficient de bine încât să știm ce merită explicat, demonstrat sau reconsiderat."
+          ]
+        }
+      ],
+      "en": [
+        {
+          "heading": "Is There a Universal Sales Argument?",
+          "paragraphs": [
+            "Research in the Journal of Personal Selling & Sales Management examined four communication approaches: product features, benefits, discounts, and economic value. Based on 226 B2B salespeople, the study did not identify one communication focus clearly associated with superior sales performance across all examined situations.",
+            "We cannot conclude that benefits always outperform features, or that economic value arguments guarantee better outcomes. The research is observational and its performance analysis exploratory. Perhaps the useful question is not which argument is generally persuasive, but which one matters for this customer's decision."
+          ]
+        },
+        {
+          "heading": "Same Product. Different Priorities.",
+          "paragraphs": [
+            "Two companies request a sales development programme. The first has an experienced team, but opportunities move slowly through the pipeline: its manager wants better conversion. The second performs reasonably well, but its salespeople regularly discount: its manager wants to protect margins.",
+            "Both might benefit from the same programme. Should we present it identically? For the first, relevant themes may include decision criteria, needs discovery, and opportunity progression. For the second, value justification and negotiating without automatic discounts.",
+            "The product may remain the same. What changes is the problem we are trying to solve, the argument, and how we would assess results."
+          ]
+        },
+        {
+          "heading": "Discover Criteria, Don't Assume Them",
+          "paragraphs": [
+            "Experience helps salespeople recognise familiar situations. It can also tempt them to assume they already know what matters. If many buyers focus on price, we may treat price as everyone's priority. Yet a hypothesis is not a conclusion.",
+            "A customer may value price, quality, speed of implementation, and support. Priorities become clearer when trade-offs arise. Would they pay more for faster implementation? Prefer fewer features with better support? Without such questions, we risk designing a proposal around our own priorities."
+          ]
+        },
+        {
+          "heading": "Value Is More Than a Word in a Presentation",
+          "paragraphs": [
+            "A study in the Journal of Business-to-Business Marketing, drawing on 186 sales directors and managers in China, found a positive association between organisational value-based selling capability and sales performance. The relationship was stronger when customer needs were complex and competition intense.",
+            "The cross-sectional, self-reported data do not establish causality or automatically generalise to other markets. Still, the findings make it worth examining how value is understood in the customer's business context.",
+            "If we claim a solution saves time, we should explain where. If we promise better performance, we should clarify how it could be measured. Otherwise, value remains a promise."
+          ]
+        },
+        {
+          "heading": "Perhaps You Don't Need Another Argument",
+          "paragraphs": [
+            "When a customer is unconvinced, the instinct is to add more: another feature, benefit, or comparison. But what if the problem is not missing information? What if the information is accurate but does not address the buyer's decisive criterion?",
+            "Consultative selling is more than explaining a product. It requires understanding the customer's decision well enough to know what deserves explanation, evidence, or reconsideration."
+          ]
+        }
+      ]
+    },
+    "closing": {
+      "ro": [
+        "Nu câștigăm relevanță spunând mai multe despre produs. O câștigăm atunci când ceea ce spunem răspunde lucrurilor care contează pentru client."
+      ],
+      "en": [
+        "We do not become more relevant by saying more about the product. We become relevant when what we say addresses what matters to the customer."
+      ]
+    },
+    "cta": {
+      "title": {
+        "ro": "De la criteriile clientului la o ofertă relevantă",
+        "en": "From customer criteria to a relevant proposal"
+      },
+      "label": {
+        "ro": "Descoperă Sales Lab",
+        "en": "Explore Sales Lab"
+      },
+      "href": "/sales-lab"
+    },
+    "sourceNote": {
+      "ro": "Studiile citate sunt observaționale. Asocierile raportate nu demonstrează relații cauzale și nu stabilesc o formulă universală de comunicare comercială.",
+      "en": "The cited studies are observational. Their associations do not establish causality or a universally superior sales communication approach."
+    },
+    "sources": [
+      {
+        "label": "Benefits, discounts, features, and value as communication foci in selling (2022 online)",
+        "url": "https://doi.org/10.1080/08853134.2022.2082451"
+      },
+      {
+        "label": "Value-Based Selling Capability: Antecedents and Implications for B2B Sales Performance (2023)",
+        "url": "https://doi.org/10.1080/1051712X.2023.2272985"
+      }
+    ]
   }
 ]
