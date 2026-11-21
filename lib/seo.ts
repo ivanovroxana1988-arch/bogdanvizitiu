@@ -80,3 +80,40 @@ export function siteIdentityJsonLd(locale: Locale = 'ro') {
     ],
   }
 }
+
+export function corporateCourseJsonLd({
+  name,
+  description,
+  path,
+}: {
+  name: string
+  description: string
+  path: string
+}) {
+  const url = `${SITE_URL}${path}`
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Course',
+        '@id': `${url}#course`,
+        name,
+        description,
+        url,
+        inLanguage: 'ro-RO',
+        provider: { '@id': `${SITE_URL}/#person` },
+        mainEntityOfPage: { '@id': `${url}#webpage` },
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${url}#webpage`,
+        name,
+        description,
+        url,
+        inLanguage: 'ro-RO',
+        isPartOf: { '@id': `${SITE_URL}/#website` },
+        mainEntity: { '@id': `${url}#course` },
+      },
+    ],
+  }
+}
