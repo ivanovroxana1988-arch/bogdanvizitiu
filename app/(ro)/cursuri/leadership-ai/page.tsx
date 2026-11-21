@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import styles from '@/app/commercial.module.css'
 import { ArrowLink, Eyebrow } from '@/components/ui'
-import { buildPageMetadata } from '@/lib/seo'
+import { buildPageMetadata, corporateCourseJsonLd } from '@/lib/seo'
+import { JsonLd } from '@/components/json-ld'
 import visual from './page.module.css'
 
 export const metadata: Metadata = buildPageMetadata({
@@ -147,6 +148,14 @@ const contactHref = '/contact?source=leadership-ai'
 export default function LeadershipAiPage() {
   return (
     <div className={`${styles.page} conversion-page`}>
+      <JsonLd
+        data={corporateCourseJsonLd({
+          name: 'Leadership in the AI Era',
+          description:
+            'Parcurs de învățare pentru manageri despre judecată managerială, delegare human–AI, autonomie, responsabilitate și dezvoltarea oamenilor în munca asistată de AI.',
+          path: '/cursuri/leadership-ai',
+        })}
+      />
       <section className={visual.hero}>
         <div className={visual.heroContent}>
           <Eyebrow>Program corporate · parcurs de învățare pentru manageri</Eyebrow>

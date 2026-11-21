@@ -118,7 +118,10 @@ export default function Insights({ searchParams }: { searchParams?: { lang?: str
       year: 'numeric',
       timeZone: 'UTC',
     }).format(new Date(`${date}T00:00:00Z`))
-  const title = 'Insights'
+  const title =
+    locale === 'ro'
+      ? 'Articole despre leadership, coaching și negociere'
+      : 'Articles on leadership, coaching and negotiation'
   const intro =
     locale === 'ro'
       ? 'Idei pe care le folosesc în coaching, training și în conversațiile cu oamenii cu care lucrez.'
