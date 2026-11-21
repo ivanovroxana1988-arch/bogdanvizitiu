@@ -89,3 +89,18 @@ Create an editorial personal-brand website rather than a SaaS landing page. Use 
 - Never generate a likeness of Bogdan or substitute stock photography.
 - Run lint, typecheck, and production build after major changes.
 - Before marking the site launch-ready, pass the release gate in `IMPLEMENTATION_PLAN.md`.
+
+## Graphify code map
+
+Graphify is optional development tooling; it is not part of the website runtime.
+Run `bash scripts/graphify-setup.sh` to install the pinned local tool and rebuild
+the code graph. See `docs/GRAPHIFY.md` for usage.
+
+- If `graphify-out/graph.json` exists and is current, use
+  `.venv-graphify/bin/graphify query "<question>"` to orient code investigations.
+- Verify relevant findings in source files; the graph may omit dynamic behavior.
+- After code changes, run `.venv-graphify/bin/graphify update . --no-cluster`.
+- If the graph or tool is unavailable, continue with normal source inspection.
+- Keep generated graphs local and out of public assets and version control.
+- Use AST-only analysis by default. Configuring an external AI backend requires
+  a separate decision about credentials, data sharing, and API costs.

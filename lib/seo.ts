@@ -113,16 +113,6 @@ export function corporateCourseJsonLd({
         inLanguage: 'ro-RO',
         isPartOf: { '@id': `${SITE_URL}/#website` },
         mainEntity: { '@id': `${url}#course` },
-        breadcrumb: { '@id': `${url}#breadcrumb` },
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': `${url}#breadcrumb`,
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Acasă', item: SITE_URL },
-          { '@type': 'ListItem', position: 2, name: 'Cursuri', item: `${SITE_URL}/cursuri` },
-          { '@type': 'ListItem', position: 3, name, item: url },
-        ],
       },
     ],
   }

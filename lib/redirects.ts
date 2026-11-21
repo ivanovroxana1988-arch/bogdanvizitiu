@@ -1,4 +1,4 @@
-import { localizePath, type Locale } from './routes'
+import { englishNavigationTarget, localizePath, toEnglishInsightSlug, type Locale } from './routes'
 
 const legacyEnglishExact: Record<string, string> = {
   '/about': '/despre',
@@ -6,6 +6,7 @@ const legacyEnglishExact: Record<string, string> = {
   '/speaking': '/media',
   '/privacy': '/confidentialitate',
   '/terms': '/termeni',
+  '/register': '/inscriere',
 }
 
 const legacyEnglishPublic: Record<string, string> = {
@@ -70,12 +71,26 @@ export function resolveCanonicalRedirect({
   const requestedLocale = searchParams.get('lang')
   if (requestedLocale === 'ro' || requestedLocale === 'en') {
     const canonicalPath = legacyToRomanian(nextPathname)
-    nextPathname = localizePath(canonicalPath, requestedLocale as Locale)
+    nextPathname =
+      requestedLocale === 'en'
+        ? englishNavigationTarget(canonicalPath)
+        : localizePath(canonicalPath, requestedLocale as Locale)
     searchParams.delete('lang')
     shouldRedirect = true
   } else if (isLegacyEnglishPath(nextPathname)) {
     nextPathname = localizePath(legacyToRomanian(nextPathname), 'en')
     shouldRedirect = true
+  }
+
+  // Normalize all translated article slugs, including routes reached via ?lang=en.
+  const insightPrefix = '/en/insights/'
+  if (nextPathname.startsWith(insightPrefix)) {
+    const translatedPath =
+      insightPrefix + toEnglishInsightSlug(nextPathname.slice(insightPrefix.length))
+    if (translatedPath !== nextPathname) {
+      nextPathname = translatedPath
+      shouldRedirect = true
+    }
   }
 
   if (!shouldRedirect) return null
