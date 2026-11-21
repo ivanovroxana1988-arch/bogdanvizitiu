@@ -237,14 +237,14 @@ export default function Insight({
   const structuredImageSource = hasDecisionCriteriaImage
     ? decisionCriteriaImage
     : hasAiApprenticeshipImage
-    ? aiApprenticeshipImage
-    : hasAiAdoptionImage
-      ? aiAdoptionImage
-      : hasCoachingConsultingPortrait
-        ? coachingConsultingImage
-        : conceptAsset
-          ? media.concepts[conceptAsset].src
-          : media.images.candid.src
+      ? aiApprenticeshipImage
+      : hasAiAdoptionImage
+        ? aiAdoptionImage
+        : hasCoachingConsultingPortrait
+          ? coachingConsultingImage
+          : conceptAsset
+            ? media.concepts[conceptAsset].src
+            : media.images.candid.src
   const structuredImage = structuredImageSource.startsWith('http')
     ? structuredImageSource
     : `${SITE_URL}${structuredImageSource}`
@@ -290,7 +290,11 @@ export default function Insight({
             <figure className={`${styles.heroImage} ${styles.directImage}`}>
               <img
                 src={decisionCriteriaImage}
-                alt={locale === 'ro' ? 'Criteriile de decizie ale clientului conectate la argumentele de valoare' : 'Customer decision criteria connected to relevant value arguments'}
+                alt={
+                  locale === 'ro'
+                    ? 'Criteriile de decizie ale clientului conectate la argumentele de valoare'
+                    : 'Customer decision criteria connected to relevant value arguments'
+                }
                 loading="eager"
                 decoding="async"
               />
